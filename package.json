@@ -18,7 +18,9 @@
 		"eslint-config-turbo": "^2.3.3",
 		"eslint-plugin-react": "^7.37.3",
 		"eslint-plugin-tailwindcss": "^3.17.5",
+		"git-cz": "^4.9.0",
 		"prettier": "^3.2.5",
+		"tailwindcss-animate": "^1.0.7",
 		"turbo": "^2.3.3",
 		"typescript": "5.5.4",
 		"typescript-eslint": "^8.19.0"

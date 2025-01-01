@@ -1,0 +1,16 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"compilerOptions": {
+		"jsx": "react",
+		"target": "es2018",
+		"moduleResolution": "bundler",
+		"esModuleInterop": true,
+		"lib": ["esnext", "dom", "dom.iterable"],
+		"strict": true,
+		"paths": {
+			"@/*": ["./*"]
+		}
+	},
+	"include": ["src/**/*.ts", "src/**/*.tsx"],
+	"exclude": ["node_modules"]
+}

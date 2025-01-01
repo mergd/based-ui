@@ -5,7 +5,7 @@ const config = {
 	maxMessageLength: 64,
 	minMessageLength: 3,
 	questions: ["type", "scope", "subject", "body", "lerna"],
-	scopes: ["docs", "core"],
+	scopes: ["docs", "9ui", "*"],
 	types: {
 		chore: {
 			description: "Changes that don't fix a bug or add a feature",
@@ -29,4 +29,4 @@ const config = {
 	},
 }
 
-export default config
+module.exports = config

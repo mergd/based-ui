@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+		scroll-padding-top: 80px;
+	}
+
+	:root {
+		/* Global Colors */
+		--white: #ffffff;
+		--black: #000000;
+		--blue-10: #f2f7ff;
+		--blue-20: #e5f0ff;
+		--blue-30: #c2dcff;
+		--blue-40: #75b1ff;
+		--blue-50: #308aff;
+		--blue-60: #0a69fa;
+		--blue-70: #0050c7;
+		--blue-80: #003c94;
+		--blue-90: #042961;
+		--green-10: #e8faf0;
+		--green-100: #021f10;
+		--green-20: #d7f5e5;
+		--green-30: #9bebbf;
+		--green-40: #51c285;
+		--green-50: #23a15d;
+		--green-60: #008557;
+		--green-70: #006341;
+		--green-80: #0d4f2b;
+		--green-90: #05381d;
+		--grey-10: #f4f6f7;
+		--grey-100: #131214;
+		--grey-20: #e6e9eb;
+		--grey-30: #daddde;
+		--grey-40: #4a4c4d;
+		--grey-50: #898d8f;
+		--grey-60: #6e7375;
+		--grey-70: #53575a;
+		--grey-80: #2f3133;
+		--grey-90: #1f2224;
+		--red-10: #fff3f0;
+		--red-100: #290800;
+		--red-20: #ffe9e3;
+		--red-30: #ffcec2;
+		--red-40: #ff9175;
+		--red-50: #ff5226;
+		--red-60: #db340b;
+		--red-70: #ad1d00;
+		--red-80: #8a1700;
+		--red-90: #611000;
+		--yellow-10: #fff9e6;
+		--yellow-100: #331c03;
+		--yellow-20: #ffefb3;
+		--yellow-30: #ffd84d;
+		--yellow-40: #ed9b16;
+		--yellow-50: #d67507;
+		--yellow-60: #b26205;
+		--yellow-70: #824b0d;
+		--yellow-80: #663c0c;
+		--yellow-90: #4d2b05;
+
+		/* Accent */
+		--accent: #308aff;
+
+		/* Link */
+		--link-fg: var(--accent);
+
+		/* Light theme defaults */
+		--dark: var(--grey-100);
+		--light: var(--white);
+
+		--background: var(--light);
+		--foreground: var(--dark);
+		--accent-fg: var(--dark);
+
+		--primary: var(--grey-10);
+		--primary-fg: var(--grey-50);
+
+		--secondary: var(--grey-20);
+		--secondary-fg: var(--grey-60);
+
+		--success: var(--green-20);
+		--success-fg: var(--green-60);
+
+		--danger: var(--red-20);
+		--danger-fg: var(--red-60);
+
+		--warning: var(--yellow-20);
+		--warning-fg: var(--yellow-60);
+
+		--info: var(--blue-20);
+		--info-fg: var(--blue-60);
+	}
+
+	/* Dark theme defaults */
+	:root.dark {
+		--dark: var(--black);
+		--light: var(--grey-10);
+
+		--background: var(--dark);
+		--foreground: var(--light);
+		--accent-fg: var(--dark);
+
+		--primary: var(--grey-90);
+		--primary-fg: var(--grey-60);
+
+		--secondary: var(--grey-80);
+		--secondary-fg: var(--grey-50);
+
+		--success: var(--green-70);
+		--success-fg: var(--green-30);
+
+		--danger: var(--red-80);
+		--danger-fg: var(--red-40);
+
+		--warning: var(--yellow-30);
+		--warning-fg: var(--yellow-80);
+
+		--info: var(--blue-60);
+		--info-fg: var(--blue-20);
+	}
+
+	body {
+		@apply bg-bg;
+	}
+
+	.Root {
+		@apply bg-bg text-fg antialiased isolate min-h-screen;
+	}
+
+	.container {
+		@apply px-4 md:px-0 max-w-screen-2xl;
+	}
+
+	/* Custom Scrollbar Styles */
+	* {
+		scrollbar-width: thin;
+		scrollbar-color: var(--primary) transparent;
+	}
+	::-webkit-scrollbar {
+		width: 4px;
+	}
+	::-webkit-scrollbar-track {
+		background: transparent;
+	}
+	::-webkit-scrollbar-thumb {
+		background: var(--primary);
+		border-radius: 4px;
+	}
+}
+
+@layer utilities {
+	/* Hide scrollbar for Chrome, Safari and Opera */
+	.scrollbar-hidden::-webkit-scrollbar {
+		display: none;
+	}
+
+	/* Hide scrollbar for IE, Edge and Firefox */
+	.scrollbar-hidden {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
+}

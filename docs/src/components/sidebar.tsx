@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { type SidebarNavGroup } from "@/types/nav"
 import { merge } from "9ui"
@@ -28,11 +27,11 @@ export function DocsSidebarNavItems({
 		<div className="mt-1 space-y-0.5 text-sm">
 			{items.map((item, index) =>
 				!item.disabled && item.href ? (
-					<Link
+					<a
 						key={index}
 						href={item.href}
 						className={merge(
-							"flex w-full items-center rounded-md border border-transparent px-2 py-1 text-secondary-fg transition-colors hover:text-fg",
+							"-mx-2 flex w-full items-center rounded-md border border-transparent px-2 py-1 text-secondary-fg transition-colors hover:text-fg md:mx-0",
 							pathname === item.href && "border-secondary bg-primary/50 text-fg"
 						)}
 						target={item.external ? "_blank" : ""}
@@ -40,12 +39,12 @@ export function DocsSidebarNavItems({
 					>
 						{item.title}
 						{item.label && <Label>{item.label}</Label>}
-					</Link>
+					</a>
 				) : (
 					<span
 						key={index}
 						className={merge(
-							"flex w-full cursor-not-allowed items-center px-2 py-1 text-secondary-fg opacity-60"
+							"-mx-2 flex w-full cursor-not-allowed items-center px-2 py-1 text-secondary-fg opacity-60 md:mx-0"
 						)}
 					>
 						{item.title}

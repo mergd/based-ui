@@ -51,7 +51,7 @@ export const Catalog: Catalog = {
 	},
 	"badge-custom": {
 		content:
-			'import { Badge } from "9ui"\n\nexport function BadgeCustom() {\n\treturn (\n\t\t<div className="flex items-center justify-center gap-2 text-secondary-fg text-xs">\n\t\t\t<Badge variant="danger" className="gap-x-1 p-0.5 pr-2">\n\t\t\t\t<span className="bg-danger-fg size-4 rounded-full" />\n\t\t\t\tOffline\n\t\t\t</Badge>\n\t\t</div>\n\t)\n}\n',
+			'import { Badge } from "9ui"\n\nexport function BadgeCustom() {\n\treturn (\n\t\t<div className="flex items-center justify-center gap-2 text-xs text-secondary-fg">\n\t\t\t<Badge variant="danger" className="gap-x-1 p-0.5 pr-2">\n\t\t\t\t<span className="size-4 rounded-full bg-danger-fg" />\n\t\t\t\tOffline\n\t\t\t</Badge>\n\t\t</div>\n\t)\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/badge/badge-custom")
 		),
@@ -65,7 +65,7 @@ export const Catalog: Catalog = {
 	},
 	"badge-status": {
 		content:
-			'import { Badge } from "9ui"\n\nexport function BadgeStatus() {\n\treturn (\n\t\t<div className="flex items-center justify-center gap-2">\n\t\t\t<Badge variant="success">Active</Badge>\n\t\t\t<span className="text-secondary-fg text-xs">Ready to use</span>\n\t\t</div>\n\t)\n}\n',
+			'import { Badge } from "9ui"\n\nexport function BadgeStatus() {\n\treturn (\n\t\t<div className="flex items-center justify-center gap-2">\n\t\t\t<Badge variant="success">Active</Badge>\n\t\t\t<span className="text-xs text-secondary-fg">Ready to use</span>\n\t\t</div>\n\t)\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/badge/badge-status")
 		),
@@ -98,7 +98,7 @@ export const Catalog: Catalog = {
 	},
 	"button-custom": {
 		content:
-			'import { Monicon } from "@monicon/react"\nimport { Button } from "9ui"\n\nexport function ButtonCustom() {\n\treturn (\n\t\t<Button\n\t\t\tclassName="rounded-full bg-transparent text-primary-fg hover:text-fg hover:bg-transparent border border-primary hover:border-fg"\n\t\t\tsize="icon-sm"\n\t\t>\n\t\t\t<Monicon name="ri:add-fill" />\n\t\t</Button>\n\t)\n}\n',
+			'import { Monicon } from "@monicon/react"\nimport { Button } from "9ui"\n\nexport function ButtonCustom() {\n\treturn (\n\t\t<Button\n\t\t\tclassName="rounded-full border border-primary bg-transparent text-primary-fg hover:border-fg hover:bg-transparent hover:text-fg"\n\t\t\tsize="icon-sm"\n\t\t>\n\t\t\t<Monicon name="ri:add-fill" />\n\t\t</Button>\n\t)\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/button/button-custom")
 		),

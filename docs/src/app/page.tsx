@@ -24,11 +24,11 @@ export default function Home() {
 
 				<div className="flex flex-col items-center gap-4 sm:flex-row">
 					<Button asChild>
-						<Link href="/docs">Get Started</Link>
+						<Link href="/docs/components">View Components</Link>
 					</Button>
 				</div>
 
-				<div className="mt-8 grid w-full grid-cols-1 gap-4 sm:grid-cols-3">
+				<div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-3">
 					<div className="flex flex-col gap-4 rounded-md border border-primary p-6 text-left">
 						<div className="flex size-10 items-center justify-center rounded-full bg-primary/50">
 							<Monicon name="ri:flashlight-fill" />
@@ -67,31 +67,6 @@ export default function Home() {
 					</div>
 				</div>
 			</main>
-
-			<div className="flex flex-wrap items-center justify-center gap-4 text-sm text-primary-fg">
-				<Link
-					className="flex items-center gap-2 transition-colors hover:text-fg"
-					href="https://github.com/borabaloglu/9ui"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					GitHub
-				</Link>
-				{" • "}
-				<Link
-					className="flex items-center gap-2 transition-colors hover:text-fg"
-					href="/docs"
-				>
-					Documentation
-				</Link>
-				{" • "}
-				<Link
-					className="flex items-center gap-2 transition-colors hover:text-fg"
-					href="/docs/components"
-				>
-					Components
-				</Link>
-			</div>
 		</div>
 	)
 }

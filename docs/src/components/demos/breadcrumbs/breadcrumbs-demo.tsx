@@ -20,10 +20,10 @@ export default function BreadcrumbsDemo() {
 				</BreadcrumbItem>
 				<BreadcrumbSeparator />
 				<BreadcrumbItem>
-					<Link href="/category">Category</Link>
+					<Link href="/docs/components">Components</Link>
 				</BreadcrumbItem>
 				<BreadcrumbSeparator />
-				<BreadcrumbItem active>Current Page</BreadcrumbItem>
+				<BreadcrumbItem active>Breadcrumbs</BreadcrumbItem>
 			</BreadcrumbList>
 		</Breadcrumb>
 	)

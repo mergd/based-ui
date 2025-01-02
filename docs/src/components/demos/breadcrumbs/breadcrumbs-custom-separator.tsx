@@ -1,5 +1,4 @@
 import Link from "next/link"
-import Monicon from "@monicon/react"
 import {
 	Breadcrumb,
 	BreadcrumbItem,
@@ -18,18 +17,12 @@ export default function BreadcrumbsCustomSeparator() {
 					<span>/</span>
 				</BreadcrumbSeparator>
 				<BreadcrumbItem>
-					<Monicon name="ri:more-fill" />
+					<Link href="/docs/components">Components</Link>
 				</BreadcrumbItem>
 				<BreadcrumbSeparator>
 					<span>/</span>
 				</BreadcrumbSeparator>
-				<BreadcrumbItem>
-					<Link href="/category">Category</Link>
-				</BreadcrumbItem>
-				<BreadcrumbSeparator>
-					<span>/</span>
-				</BreadcrumbSeparator>
-				<BreadcrumbItem active>Current Page</BreadcrumbItem>
+				<BreadcrumbItem active>Breadcrumbs</BreadcrumbItem>
 			</BreadcrumbList>
 		</Breadcrumb>
 	)

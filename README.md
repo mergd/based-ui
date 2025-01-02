@@ -16,7 +16,7 @@ Beautiful, customizable components built with [Base UI](https://base-ui.com/) an
 - [ ] Command
 - [ ] Context Menu
 - [ ] Dialog
-- [ ] Drawer
+- [ ] Drawer (WIP)
 - [ ] Dropdown Menu
 - [ ] Form
 - [ ] Hover Card

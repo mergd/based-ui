@@ -10,7 +10,7 @@ const buttonVariants = cva(
 		variants: {
 			variant: {
 				solid: "bg-accent text-accent-fg hover:bg-accent/80",
-				ghost: "hover:bg-accent hover:text-accent-fg",
+				ghost: "text-accent hover:bg-accent hover:text-accent-fg",
 				outline:
 					"bg-background border border-accent text-accent shadow-elevation-low hover:bg-accent hover:text-accent-fg",
 				link: "text-link-fg hover:underline",

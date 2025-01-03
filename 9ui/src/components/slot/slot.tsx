@@ -43,8 +43,7 @@ const Slot = React.forwardRef<HTMLElement, SlotProps>((props, forwardedRef) => {
 		}
 	})
 
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	const childRef = (child as any).ref
+	const childRef = (child as React.ReactElement).props.ref
 	const combinedRef = childRef
 		? (node: HTMLElement) => {
 				if (typeof forwardedRef === "function") forwardedRef(node)
@@ -64,4 +63,3 @@ const Slot = React.forwardRef<HTMLElement, SlotProps>((props, forwardedRef) => {
 Slot.displayName = "Slot"
 
 export { Slot }
-export type { SlotProps }

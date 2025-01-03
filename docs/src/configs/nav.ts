@@ -72,6 +72,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/input",
 				},
 				{
+					title: "Form",
+					href: "/docs/components/form",
+				},
+				{
 					title: "Separator",
 					href: "/docs/components/separator",
 				},

@@ -152,6 +152,12 @@ export const Catalog: Catalog = {
 		),
 		title: "dialog-nested.tsx",
 	},
+	"form-demo": {
+		content:
+			'"use client"\n\nimport { zodResolver } from "@hookform/resolvers/zod"\nimport {\n\tButton,\n\tField,\n\tFieldContent,\n\tFieldControl,\n\tFieldDescription,\n\tFieldError,\n\tFieldLabel,\n\tForm,\n\tInput,\n} from "9ui"\nimport { useForm } from "react-hook-form"\nimport { z } from "zod"\n\nconst schema = z.object({\n\tdisplayName: z\n\t\t.string()\n\t\t.min(3, { message: "Please enter at least 3 characters." }),\n\temail: z.string().email({ message: "Please enter a valid email address." }),\n})\n\ntype FormValues = z.infer<typeof schema>\n\nexport function FormDemo() {\n\tconst form = useForm<FormValues>({\n\t\tresolver: zodResolver(schema),\n\t\tdefaultValues: {\n\t\t\tdisplayName: "",\n\t\t\temail: "",\n\t\t},\n\t})\n\n\tconst onSubmit = (data: FormValues) => {\n\t\tconsole.log(data)\n\t}\n\n\treturn (\n\t\t<Form\n\t\t\tclassName="flex w-96 flex-col gap-4"\n\t\t\tform={form}\n\t\t\tonSubmit={form.handleSubmit(onSubmit)}\n\t\t>\n\t\t\t<Field\n\t\t\t\tname="displayName"\n\t\t\t\tcontrol={form.control}\n\t\t\t\trender={({ field }) => (\n\t\t\t\t\t<FieldContent>\n\t\t\t\t\t\t<FieldLabel>Display Name</FieldLabel>\n\t\t\t\t\t\t<FieldControl>\n\t\t\t\t\t\t\t<Input className="w-full" placeholder="borabalogluu" {...field} />\n\t\t\t\t\t\t</FieldControl>\n\t\t\t\t\t\t<FieldDescription>\n\t\t\t\t\t\t\tThis is the name that will be displayed to other users.\n\t\t\t\t\t\t</FieldDescription>\n\t\t\t\t\t\t<FieldError />\n\t\t\t\t\t</FieldContent>\n\t\t\t\t)}\n\t\t\t/>\n\t\t\t<Field\n\t\t\t\tname="email"\n\t\t\t\tcontrol={form.control}\n\t\t\t\trender={({ field }) => (\n\t\t\t\t\t<FieldContent>\n\t\t\t\t\t\t<FieldLabel>Email</FieldLabel>\n\t\t\t\t\t\t<FieldControl>\n\t\t\t\t\t\t\t<Input\n\t\t\t\t\t\t\t\tclassName="w-full"\n\t\t\t\t\t\t\t\tplaceholder="your@email.com"\n\t\t\t\t\t\t\t\t{...field}\n\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t</FieldControl>\n\t\t\t\t\t\t<FieldDescription>Enter your email address</FieldDescription>\n\t\t\t\t\t\t<FieldError />\n\t\t\t\t\t</FieldContent>\n\t\t\t\t)}\n\t\t\t/>\n\t\t\t<Button type="submit">Submit</Button>\n\t\t</Form>\n\t)\n}\n',
+		component: React.lazy(() => import("@/components/demos/form/form-demo")),
+		title: "form-demo.tsx",
+	},
 	"input-demo": {
 		content:
 			'import { Input } from "9ui"\n\nexport function InputDemo() {\n\treturn <Input placeholder="Name" className="w-80" />\n}\n',

@@ -152,6 +152,20 @@ export const Catalog: Catalog = {
 		),
 		title: "dialog-nested.tsx",
 	},
+	"input-demo": {
+		content:
+			'import { Input } from "9ui"\n\nexport function InputDemo() {\n\treturn <Input placeholder="Name" className="w-80" />\n}\n',
+		component: React.lazy(() => import("@/components/demos/input/input-demo")),
+		title: "input-demo.tsx",
+	},
+	"input-with-icons": {
+		content:
+			'import { useState } from "react"\nimport Monicon from "@monicon/react"\nimport { Input, InputIcon } from "9ui"\n\nexport function InputWithIcons() {\n\tconst [isPasswordVisible, setIsPasswordVisible] = useState(false)\n\n\tconst togglePasswordVisibility = () => {\n\t\tsetIsPasswordVisible(!isPasswordVisible)\n\t}\n\n\tconst passwordType = isPasswordVisible ? "text" : "password"\n\tconst eyeIcon = isPasswordVisible ? "ri:eye-fill" : "ri:eye-close-fill"\n\n\treturn (\n\t\t<Input placeholder="Password" className="w-80" type={passwordType}>\n\t\t\t<InputIcon side="leading">\n\t\t\t\t<Monicon name="ri:lock-password-fill" />\n\t\t\t</InputIcon>\n\t\t\t<InputIcon\n\t\t\t\tside="trailing"\n\t\t\t\tclassName="cursor-pointer transition-colors duration-200 hover:[&>svg]:text-fg"\n\t\t\t\tonClick={togglePasswordVisibility}\n\t\t\t>\n\t\t\t\t<Monicon name={eyeIcon} />\n\t\t\t</InputIcon>\n\t\t</Input>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/input/input-with-icons")
+		),
+		title: "input-with-icons.tsx",
+	},
 	"separator-demo": {
 		content:
 			'import { Separator } from "9ui"\n\nexport function SeparatorDemo() {\n\treturn (\n\t\t<div>\n\t\t\t<p>9ui is a component library for building modern web applications.</p>\n\t\t\t<Separator className="my-2.5" />\n\t\t\t<div className="flex gap-2.5">\n\t\t\t\t<p>Website</p>\n\t\t\t\t<Separator orientation="vertical" />\n\t\t\t\t<p>Documentation</p>\n\t\t\t\t<Separator orientation="vertical" />\n\t\t\t\t<p>Community</p>\n\t\t\t</div>\n\t\t</div>\n\t)\n}\n',

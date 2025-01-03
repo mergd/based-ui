@@ -68,6 +68,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/dialog",
 				},
 				{
+					title: "Input",
+					href: "/docs/components/input",
+				},
+				{
 					title: "Separator",
 					href: "/docs/components/separator",
 				},

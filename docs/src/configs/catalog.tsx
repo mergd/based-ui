@@ -158,6 +158,20 @@ export const Catalog: Catalog = {
 		component: React.lazy(() => import("@/components/demos/input/input-demo")),
 		title: "input-demo.tsx",
 	},
+	"input-disabled": {
+		content:
+			'import { Input } from "9ui"\n\nexport function InputDisabled() {\n\treturn <Input className="w-80" placeholder="Name" disabled />\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/input/input-disabled")
+		),
+		title: "input-disabled.tsx",
+	},
+	"input-error": {
+		content:
+			'import { Input } from "9ui"\n\nexport function InputError() {\n\treturn <Input className="w-80" placeholder="Name" aria-invalid />\n}\n',
+		component: React.lazy(() => import("@/components/demos/input/input-error")),
+		title: "input-error.tsx",
+	},
 	"input-with-icons": {
 		content:
 			'import { useState } from "react"\nimport Monicon from "@monicon/react"\nimport { Input, InputIcon } from "9ui"\n\nexport function InputWithIcons() {\n\tconst [isPasswordVisible, setIsPasswordVisible] = useState(false)\n\n\tconst togglePasswordVisibility = () => {\n\t\tsetIsPasswordVisible(!isPasswordVisible)\n\t}\n\n\tconst passwordType = isPasswordVisible ? "text" : "password"\n\tconst eyeIcon = isPasswordVisible ? "ri:eye-fill" : "ri:eye-close-fill"\n\n\treturn (\n\t\t<Input placeholder="Password" className="w-80" type={passwordType}>\n\t\t\t<InputIcon side="leading">\n\t\t\t\t<Monicon name="ri:lock-password-fill" />\n\t\t\t</InputIcon>\n\t\t\t<InputIcon\n\t\t\t\tside="trailing"\n\t\t\t\tclassName="cursor-pointer transition-colors duration-200 hover:[&>svg]:text-fg"\n\t\t\t\tonClick={togglePasswordVisibility}\n\t\t\t>\n\t\t\t\t<Monicon name={eyeIcon} />\n\t\t\t</InputIcon>\n\t\t</Input>\n\t)\n}\n',

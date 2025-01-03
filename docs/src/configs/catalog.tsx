@@ -188,4 +188,28 @@ export const Catalog: Catalog = {
 		),
 		title: "separator-demo.tsx",
 	},
+	"textarea-demo": {
+		content:
+			'import { Textarea } from "9ui"\n\nexport function TextareaDemo() {\n\treturn <Textarea className="w-80" placeholder="Enter your message..." />\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/textarea/textarea-demo")
+		),
+		title: "textarea-demo.tsx",
+	},
+	"textarea-disabled": {
+		content:
+			'import { Textarea } from "9ui"\n\nexport function TextareaDisabled() {\n\treturn (\n\t\t<Textarea className="w-80" placeholder="Enter your message..." disabled />\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/textarea/textarea-disabled")
+		),
+		title: "textarea-disabled.tsx",
+	},
+	"textarea-error": {
+		content:
+			'import { Textarea } from "9ui"\n\nexport function TextareaError() {\n\treturn (\n\t\t<Textarea\n\t\t\tclassName="w-80"\n\t\t\tplaceholder="Enter your message..."\n\t\t\taria-invalid\n\t\t/>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/textarea/textarea-error")
+		),
+		title: "textarea-error.tsx",
+	},
 }

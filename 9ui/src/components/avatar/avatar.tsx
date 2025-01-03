@@ -3,12 +3,12 @@
 import * as React from "react"
 import { cva, VariantProps } from "class-variance-authority"
 
+import { merge } from "../../utils"
 import {
 	AvatarContext,
 	AvatarImageStatus,
 	useAvatarContext,
-} from "@/src/components/avatar/avatar.context"
-import { merge } from "@/src/utils"
+} from "./avatar.context"
 
 const avatarVariants = cva(
 	"relative flex shrink-0 overflow-hidden rounded-full",

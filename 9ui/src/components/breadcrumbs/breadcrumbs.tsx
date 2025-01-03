@@ -1,7 +1,7 @@
 import * as React from "react"
 import { ChevronRightIcon } from "lucide-react"
 
-import { merge } from "@/src/utils"
+import { merge } from "../../utils"
 
 /********
 Breadcrumbs Root

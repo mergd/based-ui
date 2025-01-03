@@ -4,9 +4,9 @@ import {
 	TRANSITIONS,
 	WINDOW_WIDTH_OFFSET,
 	WRAPPER_BORDER_RADIUS,
-} from "@/src/components/drawer/drawer.constants"
-import { useDrawerContext } from "@/src/components/drawer/drawer.context"
-import { assignStyle, compose } from "@/src/components/drawer/drawer.utils"
+} from "./drawer.constants"
+import { useDrawerContext } from "./drawer.context"
+import { assignStyle, compose } from "./drawer.utils"
 
 export function useLayeredBackground() {
 	const { isOpen, enableLayeredBackground, layeredBackgroundColor } =

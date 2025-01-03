@@ -2,7 +2,7 @@ import * as React from "react"
 import { Accordion as BaseAccordion } from "@base-ui-components/react/accordion"
 import { ChevronDownIcon } from "lucide-react"
 
-import { merge } from "@/src/utils"
+import { merge } from "../../utils"
 
 const Accordion = BaseAccordion.Root
 

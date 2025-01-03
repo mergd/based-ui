@@ -1,6 +1,6 @@
 import React from "react"
 import { Separator } from "9ui"
-import { merge } from "9ui/utils"
+import { merge } from "9ui/src/utils"
 
 import { ComponentPreview } from "@/components/component-preview"
 import { ComponentVariants } from "@/components/component-variants"
@@ -24,14 +24,11 @@ const components: MDXComponents = {
 		<h3 className={merge("mt-8 text-xl font-semibold", className)} {...props} />
 	),
 	h4: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-		<h4 className={merge("text-lg font-semibold", className)} {...props} />
+		<h4 className={merge("mt-4 text-lg font-semibold", className)} {...props} />
 	),
 	p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
 		<p
-			className={merge(
-				"text-secondary-fg [&:not(:first-child)]:mt-4",
-				className
-			)}
+			className={merge("text-fg [&:not(:first-child)]:mt-4", className)}
 			{...props}
 		/>
 	),
@@ -53,7 +50,7 @@ const components: MDXComponents = {
 	code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
 		<code
 			className={merge(
-				"relative  px-[0.3rem] py-[0.2rem] font-mono text-sm",
+				"relative px-[0.3rem] py-[0.2rem] font-mono text-sm text-accent",
 				className
 			)}
 			{...props}

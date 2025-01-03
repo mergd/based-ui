@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import { merge } from "@/src/utils"
+import { merge } from "../../utils"
 
 const Label = React.forwardRef<
 	HTMLLabelElement,

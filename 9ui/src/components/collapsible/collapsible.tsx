@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Collapsible as BaseCollapsible } from "@base-ui-components/react/collapsible"
 
-import { merge } from "@/src/utils"
+import { merge } from "../../utils"
 
 const Collapsible = BaseCollapsible.Root
 

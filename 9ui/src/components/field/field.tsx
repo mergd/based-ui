@@ -9,9 +9,9 @@ import {
 	useFormContext,
 } from "react-hook-form"
 
-import { Label } from "@/src/components/label/label"
-import { Slot } from "@/src/components/slot/slot"
-import { merge } from "@/src/utils"
+import { merge } from "../../utils"
+import { Label } from "../label/label"
+import { Slot } from "../slot/slot"
 
 /********
 Field

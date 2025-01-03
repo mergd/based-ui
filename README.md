@@ -13,15 +13,16 @@ Beautiful, customizable components built with [Base UI](https://base-ui.com/) an
 - [x] Button
 - [ ] Card
 - [ ] Checkbox
+- [x] Collapsible
 - [ ] Command
 - [ ] Context Menu
-- [ ] Dialog
+- [x] Dialog
 - [ ] Drawer (WIP)
 - [ ] Dropdown Menu
-- [ ] Form
+- [x] Form
 - [ ] Hover Card
-- [ ] Input
-- [ ] Label
+- [x] Input
+- [x] Label
 - [ ] Menubar
 - [ ] Navigation Menu
 - [ ] Popover
@@ -36,7 +37,7 @@ Beautiful, customizable components built with [Base UI](https://base-ui.com/) an
 - [ ] Switch
 - [ ] Table
 - [ ] Tabs
-- [ ] Textarea
+- [x] Textarea
 - [ ] Toast
 - [ ] Toggle
 - [ ] Tooltip

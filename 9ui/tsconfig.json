@@ -6,11 +6,7 @@
 		"moduleResolution": "bundler",
 		"esModuleInterop": true,
 		"lib": ["esnext", "dom", "dom.iterable"],
-		"strict": true,
-		"paths": {
-			"@/*": ["./*"]
-		}
+		"strict": true
 	},
-	"include": ["src/**/*.ts", "src/**/*.tsx"],
 	"exclude": ["node_modules"]
 }

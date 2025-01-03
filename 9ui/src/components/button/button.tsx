@@ -1,8 +1,8 @@
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 
-import { Slot } from "@/src/components/slot/slot"
-import { merge } from "@/src/utils"
+import { merge } from "../../utils"
+import { Slot } from "../slot/slot"
 
 const buttonVariants = cva(
 	"inline-flex items-center justify-center whitespace-nowrap rounded font-semibold transition-colors disabled:pointer-events-none disabled:opacity-50",

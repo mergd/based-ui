@@ -4,7 +4,7 @@ import * as React from "react"
 import { Dialog as BaseDialog } from "@base-ui-components/react"
 import { XIcon } from "lucide-react"
 
-import { createChildElement, merge } from "@/src/utils"
+import { createChildElement, merge } from "../../utils"
 
 /********
 Dialog Mappings

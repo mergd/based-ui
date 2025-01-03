@@ -101,11 +101,11 @@ importers:
         specifier: ^5.3.3
         version: 5.5.4
 
-  docs:
+  apps/www:
     dependencies:
       9ui:
         specifier: workspace:*
-        version: link:../9ui
+        version: link:../../9ui
       '@hookform/resolvers':
         specifier: ^3.9.1
         version: 3.9.1(react-hook-form@7.54.2(react@18.3.1))

@@ -3,19 +3,13 @@
 import * as React from "react"
 import { Dialog } from "@base-ui-components/react/dialog"
 
-import "@/src/components/drawer/drawer.css"
+import "./drawer.css"
 
-import {
-	THRESHOLDS,
-	TRANSITIONS,
-} from "@/src/components/drawer/drawer.constants"
-import {
-	DrawerContext,
-	useDrawerContext,
-} from "@/src/components/drawer/drawer.context"
-import { useControlledState } from "@/src/components/drawer/use-controlled-state"
-import { useLayeredBackground } from "@/src/components/drawer/use-layered-background"
-import { merge } from "@/src/utils"
+import { merge } from "../../utils"
+import { THRESHOLDS, TRANSITIONS } from "./drawer.constants"
+import { DrawerContext, useDrawerContext } from "./drawer.context"
+import { useControlledState } from "./use-controlled-state"
+import { useLayeredBackground } from "./use-layered-background"
 
 /********
 Drawer Mappings

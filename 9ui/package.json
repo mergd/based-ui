@@ -10,28 +10,10 @@
 		"name": "Bora",
 		"url": "https://x.com/borabalogluu"
 	},
-	"files": [
-		"dist"
-	],
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"import": "./dist/index.mjs",
-			"require": "./dist/index.js"
-		},
-		"./utils": {
-			"types": "./dist/utils/index.d.ts",
-			"import": "./dist/utils/index.mjs",
-			"require": "./dist/utils/index.js"
-		}
-	},
-	"main": "./dist/index.js",
-	"module": "./dist/index.mjs",
+	"main": "src/index.ts",
+	"types": "src/index.ts",
 	"scripts": {
-		"build": "pnpm typecheck && bunchee",
-		"dev": "bunchee --watch",
-		"format": "prettier --write .",
-		"typecheck": "tsc --noEmit"
+		"lint": "eslint . --max-warnings 0"
 	},
 	"peerDependencies": {
 		"@base-ui-components/react": "^1.0.0-alpha.4",

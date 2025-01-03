@@ -1,6 +1,8 @@
+const path = require("path")
+
 /** @type {import('tailwindcss').Config} */
 const config = {
-	content: [],
+	content: [path.resolve(__dirname, "9ui/**/*.{js,ts,jsx,tsx,mdx}")],
 	darkMode: "class",
 	theme: {
 		extend: {

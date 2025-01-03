@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Input as BaseInput } from "@base-ui-components/react/input"
 
-import { merge } from "@/src/utils"
+import { merge } from "../../utils"
 
 /********
 Input

@@ -1,11 +1,11 @@
 const config = {
 	disableEmoji: true,
 	format: "{type}{scope}: {subject}",
-	list: ["feat", "fix", "chore"],
+	list: ["feat", "fix", "chore", "refactor"],
 	maxMessageLength: 64,
 	minMessageLength: 3,
 	questions: ["type", "scope", "subject", "body", "lerna"],
-	scopes: ["docs", "9ui", "*"],
+	scopes: ["www", "9ui", "*"],
 	types: {
 		chore: {
 			description: "Changes that don't fix a bug or add a feature",
@@ -18,6 +18,10 @@ const config = {
 		fix: {
 			description: "A bug fix",
 			value: "fix",
+		},
+		refactor: {
+			description: "A code refactor",
+			value: "refactor",
 		},
 		messages: {
 			type: "Select the type of change that you're committing:",

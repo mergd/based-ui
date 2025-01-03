@@ -64,6 +64,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/button",
 				},
 				{
+					title: "Collapsible",
+					href: "/docs/components/collapsible",
+				},
+				{
 					title: "Dialog",
 					href: "/docs/components/dialog",
 				},

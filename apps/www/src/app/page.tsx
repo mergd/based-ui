@@ -15,7 +15,7 @@ export default function Home() {
 						Beautiful UI components <br />
 						built with Base UI
 					</h1>
-					<p className="max-w-2xl text-balance text-base text-secondary-fg">
+					<p className="text-secondary-fg max-w-2xl text-balance text-base">
 						A collection of modern, accessible, and performant UI components for
 						building your next web application. Fully customizable and open
 						source.
@@ -29,37 +29,37 @@ export default function Home() {
 				</div>
 
 				<div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-3">
-					<div className="flex flex-col gap-4 rounded-md border border-primary p-6 text-left">
-						<div className="flex size-10 items-center justify-center rounded-full bg-primary/50">
+					<div className="border-primary flex flex-col gap-4 rounded-md border p-6 text-left">
+						<div className="bg-primary/50 flex size-10 items-center justify-center rounded-full">
 							<Monicon name="ri:flashlight-fill" />
 						</div>
 						<div className="flex flex-col gap-1">
 							<h3 className="font-semibold">Performance First</h3>
-							<p className="text-sm text-secondary-fg">
+							<p className="text-secondary-fg text-sm">
 								Built with performance in mind, ensuring smooth interactions and
 								fast load times.
 							</p>
 						</div>
 					</div>
-					<div className="flex flex-col gap-4 rounded-md border border-primary p-6 text-left">
-						<div className="flex size-10 items-center justify-center rounded-full bg-info/50 text-info-fg">
+					<div className="border-primary flex flex-col gap-4 rounded-md border p-6 text-left">
+						<div className="bg-info/50 text-info-fg flex size-10 items-center justify-center rounded-full">
 							<Monicon name="ri:brush-fill" />
 						</div>
 						<div className="flex flex-col gap-1">
 							<h3 className="font-semibold">Customizable</h3>
-							<p className="text-sm text-secondary-fg">
+							<p className="text-secondary-fg text-sm">
 								Fully customizable components that adapt to your brand and
 								design needs.
 							</p>
 						</div>
 					</div>
-					<div className="flex flex-col gap-4 rounded-md border border-primary p-6 text-left">
-						<div className="flex size-10 items-center justify-center rounded-full bg-success/50 text-success-fg">
+					<div className="border-primary flex flex-col gap-4 rounded-md border p-6 text-left">
+						<div className="bg-success/50 text-success-fg flex size-10 items-center justify-center rounded-full">
 							<Monicon name="ri:shield-check-fill" />
 						</div>
 						<div className="flex flex-col gap-1">
 							<h3 className="font-semibold">Accessible</h3>
-							<p className="text-sm text-secondary-fg">
+							<p className="text-secondary-fg text-sm">
 								Built with accessibility in mind, following WAI-ARIA standards
 								and best practices.
 							</p>

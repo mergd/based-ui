@@ -34,13 +34,13 @@ const components: MDXComponents = {
 	),
 	ul: ({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
 		<ul
-			className={merge("space-y-2 text-secondary-fg", className)}
+			className={merge("text-secondary-fg space-y-2", className)}
 			{...props}
 		/>
 	),
 	ol: ({ className, ...props }: React.HTMLAttributes<HTMLOListElement>) => (
 		<ol
-			className={merge("space-y-2 text-secondary-fg", className)}
+			className={merge("text-secondary-fg space-y-2", className)}
 			{...props}
 		/>
 	),
@@ -50,7 +50,7 @@ const components: MDXComponents = {
 	code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
 		<code
 			className={merge(
-				"relative px-[0.3rem] py-[0.2rem] font-mono text-sm text-accent",
+				"text-accent relative px-[0.3rem] py-[0.2rem] font-mono text-sm",
 				className
 			)}
 			{...props}
@@ -62,7 +62,7 @@ const components: MDXComponents = {
 	}: React.BlockquoteHTMLAttributes<HTMLQuoteElement>) => (
 		<blockquote
 			className={merge(
-				"mt-6 border-l-2 border-secondary pl-6 italic text-secondary-fg",
+				"border-secondary text-secondary-fg mt-6 border-l-2 pl-6 italic",
 				className
 			)}
 			{...props}
@@ -72,7 +72,7 @@ const components: MDXComponents = {
 		className,
 		...props
 	}: React.TableHTMLAttributes<HTMLTableElement>) => (
-		<div className="my-6 w-full overflow-hidden rounded-lg border border-secondary">
+		<div className="border-secondary my-6 w-full overflow-hidden rounded-lg border">
 			<table className={merge("w-full", className)} {...props} />
 		</div>
 	),
@@ -81,7 +81,7 @@ const components: MDXComponents = {
 		...props
 	}: React.HTMLAttributes<HTMLTableSectionElement>) => (
 		<thead
-			className={merge("border-b border-secondary bg-secondary/40", className)}
+			className={merge("border-secondary bg-secondary/40 border-b", className)}
 			{...props}
 		/>
 	),
@@ -90,7 +90,7 @@ const components: MDXComponents = {
 		...props
 	}: React.HTMLAttributes<HTMLTableSectionElement>) => (
 		<tbody
-			className={merge("divide-y divide-secondary", className)}
+			className={merge("divide-secondary divide-y", className)}
 			{...props}
 		/>
 	),
@@ -111,7 +111,7 @@ const components: MDXComponents = {
 		...props
 	}: React.TdHTMLAttributes<HTMLTableDataCellElement>) => (
 		<td
-			className={merge("p-4 text-sm text-secondary-fg", className)}
+			className={merge("text-secondary-fg p-4 text-sm", className)}
 			{...props}
 		/>
 	),
@@ -130,7 +130,7 @@ const components: MDXComponents = {
 	}: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
 		<a
 			className={merge(
-				"font-medium text-link-fg underline underline-offset-4",
+				"text-link-fg font-medium underline underline-offset-4",
 				className
 			)}
 			{...props}
@@ -146,7 +146,7 @@ const components: MDXComponents = {
 	}: React.ImgHTMLAttributes<HTMLImageElement>) => (
 		// eslint-disable-next-line @next/next/no-img-element
 		<img
-			className={merge("rounded-lg border border-secondary", className)}
+			className={merge("border-secondary rounded-lg border", className)}
 			alt={alt}
 			{...props}
 		/>
@@ -183,7 +183,7 @@ const components: MDXComponents = {
 
 		return (
 			<React.Fragment>
-				<p className={merge("mt-4 text-secondary-fg", className)} {...props}>
+				<p className={merge("text-secondary-fg mt-4", className)} {...props}>
 					{content}
 				</p>
 				<meta name="description" content={content} />

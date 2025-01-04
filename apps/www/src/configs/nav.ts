@@ -80,6 +80,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/form",
 				},
 				{
+					title: "Popover",
+					href: "/docs/components/popover",
+				},
+				{
 					title: "Separator",
 					href: "/docs/components/separator",
 				},

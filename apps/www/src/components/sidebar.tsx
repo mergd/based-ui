@@ -13,7 +13,7 @@ interface DocsSidebarNavItemsProps {
 
 function Label({ children }: { children: React.ReactNode }) {
 	return (
-		<span className="ml-2 rounded bg-accent px-1 py-0.5 text-xs font-semibold leading-none text-accent-fg">
+		<span className="bg-accent text-accent-fg ml-2 rounded px-1 py-0.5 text-xs font-semibold leading-none">
 			{children}
 		</span>
 	)
@@ -31,7 +31,7 @@ export function DocsSidebarNavItems({
 						key={index}
 						href={item.href}
 						className={merge(
-							"-mx-2 flex w-full items-center rounded-md border border-transparent px-2 py-1 text-secondary-fg transition-colors hover:text-fg md:mx-0",
+							"text-secondary-fg hover:text-fg -mx-2 flex w-full items-center rounded-md border border-transparent px-2 py-1 transition-colors md:mx-0",
 							pathname === item.href && "border-secondary bg-primary/50 text-fg"
 						)}
 						target={item.external ? "_blank" : ""}
@@ -44,7 +44,7 @@ export function DocsSidebarNavItems({
 					<span
 						key={index}
 						className={merge(
-							"-mx-2 flex w-full cursor-not-allowed items-center px-2 py-1 text-secondary-fg opacity-60 md:mx-0"
+							"text-secondary-fg -mx-2 flex w-full cursor-not-allowed items-center px-2 py-1 opacity-60 md:mx-0"
 						)}
 					>
 						{item.title}
@@ -63,7 +63,7 @@ export function DocsSidebarNav() {
 		<>
 			{navConfig.sidebarNav.map((group, index) => (
 				<div key={index} className="pb-4">
-					<h4 className="mb-1 text-sm font-semibold text-fg">{group.title}</h4>
+					<h4 className="text-fg mb-1 text-sm font-semibold">{group.title}</h4>
 					{group.items.length && (
 						<DocsSidebarNavItems items={group.items} pathname={pathname} />
 					)}

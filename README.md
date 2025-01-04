@@ -25,7 +25,7 @@ Beautiful, customizable components built with [Base UI](https://base-ui.com/) an
 - [x] Label
 - [ ] Menubar
 - [ ] Navigation Menu
-- [ ] Popover
+- [x] Popover
 - [ ] Progress
 - [ ] Radio Group
 - [ ] Scroll Area

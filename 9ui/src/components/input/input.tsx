@@ -8,10 +8,11 @@ Input
 ********/
 interface InputProps extends React.ComponentProps<typeof BaseInput> {
 	children?: React.ReactNode
+	inputWrapperClassName?: string
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-	({ children, className, ...props }, ref) => {
+	({ children, className, inputWrapperClassName, ...props }, ref) => {
 		const hasLeadingIcon = React.Children.toArray(children).some(
 			(child) =>
 				React.isValidElement(child) &&
@@ -26,19 +27,19 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 		)
 
 		return (
-			<div className="relative">
+			<div className={merge("relative", inputWrapperClassName)}>
 				{children}
 				<BaseInput
-					{...props}
 					ref={ref}
 					className={merge(
-						"h-10 rounded border border-primary bg-bg p-4 text-sm text-fg placeholder:text-primary-fg focus:outline focus:outline-2 focus:outline-offset-1 focus:outline-accent disabled:cursor-not-allowed disabled:opacity-50",
+						"h-9 w-full rounded border border-primary bg-bg p-4 text-sm text-fg placeholder:text-primary-fg focus:outline focus:outline-2 focus:outline-offset-1 focus:outline-accent disabled:cursor-not-allowed disabled:opacity-50",
 						props["aria-invalid"] &&
 							"border-danger-fg bg-danger text-danger-fg placeholder:text-danger-fg focus:outline-danger",
 						hasLeadingIcon && "pl-10",
 						hasTrailingIcon && "pr-10",
 						className
 					)}
+					{...props}
 				/>
 			</div>
 		)

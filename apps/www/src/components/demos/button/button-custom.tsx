@@ -4,7 +4,7 @@ import { Button } from "9ui"
 export default function ButtonCustom() {
 	return (
 		<Button
-			className="rounded-full border border-primary bg-transparent text-primary-fg hover:border-fg hover:bg-transparent hover:text-fg"
+			className="border-primary text-primary-fg hover:border-fg hover:text-fg rounded-full border bg-transparent hover:bg-transparent"
 			size="icon-sm"
 		>
 			<Monicon name="ri:add-fill" />

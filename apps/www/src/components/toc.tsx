@@ -57,12 +57,12 @@ export function TableOfContents({ items }: TableOfContentsProps) {
 							key={item.url}
 							href={item.url}
 							className={merge(
-								"flex py-1 text-sm text-secondary-fg transition-colors hover:text-fg",
+								"text-secondary-fg hover:text-fg flex py-1 text-sm transition-colors",
 								item.depth === 3 && "pl-2",
 								item.depth === 4 && "pl-4",
 								item.depth === 5 && "pl-6",
 								item.depth === 6 && "pl-8",
-								activeId === getIdFromUrl(item.url) && "font-medium text-fg"
+								activeId === getIdFromUrl(item.url) && "text-fg font-medium"
 							)}
 						>
 							<span>{item.value}</span>

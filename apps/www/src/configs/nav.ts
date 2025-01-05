@@ -44,6 +44,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/accordion",
 				},
 				{
+					title: "Alert",
+					href: "/docs/components/alert",
+				},
+				{
 					title: "Aspect Ratio",
 					href: "/docs/components/aspect-ratio",
 				},

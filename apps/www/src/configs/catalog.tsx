@@ -17,6 +17,20 @@ export const Catalog: Catalog = {
 		),
 		title: "accordion-demo.tsx",
 	},
+	"alert-demo": {
+		content:
+			'import { Monicon } from "@monicon/react"\nimport {\n\tAlert,\n\tAlertContent,\n\tAlertDescription,\n\tAlertIcon,\n\tAlertTitle,\n} from "9ui"\n\nexport function AlertDemo() {\n\treturn (\n\t\t<Alert>\n\t\t\t<AlertIcon>\n\t\t\t\t<Monicon name="ri:wifi-off-fill" />\n\t\t\t</AlertIcon>\n\t\t\t<AlertContent>\n\t\t\t\t<AlertTitle>No Internet Connection</AlertTitle>\n\t\t\t\t<AlertDescription>\n\t\t\t\t\tPlease check your internet connection and try again.\n\t\t\t\t</AlertDescription>\n\t\t\t</AlertContent>\n\t\t</Alert>\n\t)\n}\n',
+		component: React.lazy(() => import("@/components/demos/alert/alert-demo")),
+		title: "alert-demo.tsx",
+	},
+	"alert-with-action": {
+		content:
+			'import Monicon from "@monicon/react"\nimport {\n\tAlert,\n\tAlertAction,\n\tAlertContent,\n\tAlertDescription,\n\tAlertIcon,\n\tAlertTitle,\n\tButton,\n} from "9ui"\n\nexport function AlertWithAction() {\n\treturn (\n\t\t<Alert>\n\t\t\t<AlertIcon>\n\t\t\t\t<Monicon name="ri:wifi-off-fill" />\n\t\t\t</AlertIcon>\n\t\t\t<AlertContent>\n\t\t\t\t<AlertTitle>No Internet Connection</AlertTitle>\n\t\t\t\t<AlertDescription>\n\t\t\t\t\tPlease check your internet connection and try again.\n\t\t\t\t</AlertDescription>\n\t\t\t</AlertContent>\n\t\t\t<AlertAction>\n\t\t\t\t<Button size="sm" variant="outline">\n\t\t\t\t\tTry Again\n\t\t\t\t</Button>\n\t\t\t</AlertAction>\n\t\t</Alert>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/alert/alert-with-action")
+		),
+		title: "alert-with-action.tsx",
+	},
 	"aspect-ratio-demo": {
 		content:
 			'import { AspectRatio } from "9ui"\n\nexport function AspectRatioDemo() {\n\treturn (\n\t\t<AspectRatio ratio={16 / 9} className="bg-primary rounded-lg">\n\t\t\t<div className="flex size-full items-center justify-center">Content</div>\n\t\t</AspectRatio>\n\t)\n}\n',

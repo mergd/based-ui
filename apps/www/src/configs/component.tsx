@@ -1,7 +1,17 @@
-import { AspectRatio, Badge, Button } from "9ui"
+import { Monicon } from "@monicon/react"
+import {
+	Alert,
+	AlertContent,
+	AlertDescription,
+	AlertIcon,
+	AlertTitle,
+	AspectRatio,
+	Badge,
+	Button,
+} from "9ui"
 
 type ComponentConfig = {
-	anatomy: {
+	anatomy?: {
 		preview: React.ReactNode
 		structure: {
 			name: string
@@ -12,7 +22,30 @@ type ComponentConfig = {
 	variants?: React.ReactNode[]
 }
 
+const ALERT_VARIANTS = [
+	"default",
+	"info",
+	"warning",
+	"error",
+	"success",
+] as const
+
 export const ComponentConfig: Record<string, ComponentConfig> = {
+	alert: {
+		variants: ALERT_VARIANTS.map((variant) => (
+			<Alert key={variant} variant={variant}>
+				<AlertIcon>
+					<Monicon name="ri:alert-fill" />
+				</AlertIcon>
+				<AlertContent>
+					<AlertTitle>Alert: {variant}</AlertTitle>
+					<AlertDescription>
+						This is an alert with a &quot;{variant}&quot; variant.
+					</AlertDescription>
+				</AlertContent>
+			</Alert>
+		)),
+	},
 	aspectRatio: {
 		anatomy: {
 			preview: <AspectRatio ratio={16 / 9}></AspectRatio>,

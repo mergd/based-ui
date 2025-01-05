@@ -119,8 +119,8 @@
 		--warning: var(--yellow-30);
 		--warning-fg: var(--yellow-80);
 
-		--info: var(--blue-60);
-		--info-fg: var(--blue-20);
+		--info: var(--blue-80);
+		--info-fg: var(--blue-30);
 	}
 
 	body {

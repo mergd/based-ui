@@ -80,12 +80,16 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/dropdown",
 				},
 				{
+					title: "Form",
+					href: "/docs/components/form",
+				},
+				{
 					title: "Input",
 					href: "/docs/components/input",
 				},
 				{
-					title: "Form",
-					href: "/docs/components/form",
+					title: "Input OTP",
+					href: "/docs/components/input-otp",
 				},
 				{
 					title: "Popover",

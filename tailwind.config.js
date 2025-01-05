@@ -49,6 +49,15 @@ const config = {
 				"elevation-high":
 					"0px 8px 16px 8px rgba(20, 20, 20, 0.04), 0px 0px 1px 0px rgba(20, 20, 20, 0.12)",
 			},
+			animation: {
+				blink: "blink 1s infinite",
+			},
+			keyframes: {
+				blink: {
+					"0%, 100%": { opacity: "1" },
+					"50%": { opacity: "0" },
+				},
+			},
 		},
 	},
 	plugins: [require("tailwindcss-animate")],

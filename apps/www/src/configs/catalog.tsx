@@ -216,6 +216,22 @@ export const Catalog: Catalog = {
 		),
 		title: "input-with-icons.tsx",
 	},
+	"input-otp-custom": {
+		content:
+			'import { InputOTP, InputOTPGroup, InputOTPSlot } from "9ui"\n\nexport function InputOTPDemo() {\n\treturn (\n\t\t<InputOTP maxLength={4}>\n\t\t\t<InputOTPGroup className="gap-0">\n\t\t\t\t<InputOTPSlot className="rounded-r-none" index={0} />\n\t\t\t\t<InputOTPSlot className="rounded-none border-x-0" index={1} />\n\t\t\t\t<InputOTPSlot className="rounded-none border-r-0" index={2} />\n\t\t\t\t<InputOTPSlot className="rounded-l-none" index={3} />\n\t\t\t</InputOTPGroup>\n\t\t</InputOTP>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/input-otp/input-otp-custom")
+		),
+		title: "input-otp-custom.tsx",
+	},
+	"input-otp-demo": {
+		content:
+			'import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from "9ui"\n\nexport function InputOTPDemo() {\n\treturn (\n\t\t<InputOTP maxLength={6}>\n\t\t\t<InputOTPGroup>\n\t\t\t\t<InputOTPSlot index={0} />\n\t\t\t\t<InputOTPSlot index={1} />\n\t\t\t\t<InputOTPSlot index={2} />\n\t\t\t</InputOTPGroup>\n\t\t\t<InputOTPSeparator />\n\t\t\t<InputOTPGroup>\n\t\t\t\t<InputOTPSlot index={3} />\n\t\t\t\t<InputOTPSlot index={4} />\n\t\t\t\t<InputOTPSlot index={5} />\n\t\t\t</InputOTPGroup>\n\t\t</InputOTP>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/input-otp/input-otp-demo")
+		),
+		title: "input-otp-demo.tsx",
+	},
 	"popover-demo": {
 		content:
 			'import Monicon from "@monicon/react"\nimport {\n\tInput,\n\tPopover,\n\tPopoverContent,\n\tPopoverDescription,\n\tPopoverTitle,\n\tPopoverTrigger,\n} from "9ui"\nimport { Button } from "9ui/src/components/button/button"\n\nexport function PopoverDemo() {\n\tconst copyToClipboard = () => {\n\t\tnavigator.clipboard.writeText(window.location.href)\n\t}\n\n\treturn (\n\t\t<Popover>\n\t\t\t<PopoverTrigger className="border-secondary hover:bg-primary cursor-pointer rounded border p-2 transition-colors">\n\t\t\t\t<Monicon name="ri:share-box-fill" />\n\t\t\t</PopoverTrigger>\n\t\t\t<PopoverContent className="w-[calc(100vw-4rem)] sm:w-[500px]">\n\t\t\t\t<div className="flex flex-col space-y-3.5">\n\t\t\t\t\t<div className="flex flex-col space-y-1">\n\t\t\t\t\t\t<PopoverTitle>Share</PopoverTitle>\n\t\t\t\t\t\t<PopoverDescription>Share this component.</PopoverDescription>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div className="flex w-full gap-2">\n\t\t\t\t\t\t<Input\n\t\t\t\t\t\t\tinputWrapperClassName="w-full"\n\t\t\t\t\t\t\tdefaultValue={window.location.href}\n\t\t\t\t\t\t\tautoFocus={false}\n\t\t\t\t\t\t\treadOnly\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t<Button\n\t\t\t\t\t\t\tclassName="shrink-0"\n\t\t\t\t\t\t\tsize="icon-md"\n\t\t\t\t\t\t\tonClick={copyToClipboard}\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\t<Monicon name="ri:file-copy-fill" />\n\t\t\t\t\t\t</Button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</PopoverContent>\n\t\t</Popover>\n\t)\n}\n',

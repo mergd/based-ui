@@ -30,6 +30,7 @@
 		"node": ">=20"
 	},
 	"dependencies": {
+		"input-otp": "^1.4.1",
 		"tailwindcss": "^3.4.1"
 	}
 }

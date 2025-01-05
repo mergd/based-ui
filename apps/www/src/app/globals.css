@@ -63,7 +63,7 @@
 		--yellow-90: #4d2b05;
 
 		/* Accent */
-		--accent: #308aff;
+		--accent: var(--grey-10);
 
 		/* Link */
 		--link-fg: var(--accent);

@@ -76,6 +76,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/dialog",
 				},
 				{
+					title: "Dropdown",
+					href: "/docs/components/dropdown",
+				},
+				{
 					title: "Input",
 					href: "/docs/components/input",
 				},

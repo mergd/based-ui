@@ -18,7 +18,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 
 export function Header() {
 	return (
-		<header className="border-secondary bg-bg supports-[backdrop-filter]:bg-bg/60 sticky top-0 z-50 w-full border-b backdrop-blur">
+		<header className="sticky top-0 z-50 w-full border-b border-secondary bg-bg backdrop-blur supports-[backdrop-filter]:bg-bg/60">
 			<div className="container mx-auto flex h-14 items-center px-4">
 				<Drawer enableLayeredBackground>
 					<DrawerTrigger className="mr-4 md:hidden">
@@ -28,16 +28,18 @@ export function Header() {
 					</DrawerTrigger>
 					<DrawerPortal>
 						<DrawerBackdrop />
-						<DrawerContent className="h-[70vh] w-[95%] px-8 py-12">
-							<DocsSidebarNav />
+						<DrawerContent className="h-[70vh] w-[95%] py-12">
+							<div className="scrollbar-hidden h-full overflow-y-auto overflow-x-visible px-8">
+								<DocsSidebarNav />
+							</div>
 						</DrawerContent>
 					</DrawerPortal>
 				</Drawer>
 				<Link
 					href="/"
-					className="hover:text-accent flex items-center font-semibold italic transition-colors"
+					className="flex items-center font-semibold italic transition-colors hover:text-accent"
 				>
-					<Logo className="text-fg h-8" />
+					<Logo className="h-8 text-fg" />
 				</Link>
 				<div className="flex-1" />
 				<div className="flex items-center gap-2">
@@ -45,7 +47,7 @@ export function Header() {
 						href="https://github.com/borabaloglu/9ui"
 						target="_blank"
 						rel="noreferrer"
-						className="text-secondary-fg hover:text-fg flex size-8 items-center justify-center rounded"
+						className="flex size-8 items-center justify-center rounded text-secondary-fg hover:text-fg"
 					>
 						<Monicon name="ri:github-fill" size={20} />
 						<span className="sr-only">GitHub</span>

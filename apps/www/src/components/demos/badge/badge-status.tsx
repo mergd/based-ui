@@ -4,7 +4,7 @@ export default function BadgeStatus() {
 	return (
 		<div className="flex items-center justify-center gap-2">
 			<Badge variant="success">Active</Badge>
-			<span className="text-secondary-fg text-xs">Ready to use</span>
+			<span className="text-xs text-secondary-fg">Ready to use</span>
 		</div>
 	)
 }

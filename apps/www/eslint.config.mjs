@@ -26,7 +26,7 @@ const config = [
 		settings: {
 			tailwindcss: {
 				callees: ["merge"],
-				config: "../tailwind.config.js",
+				config: "./tailwind.config.js",
 			},
 		},
 	}),

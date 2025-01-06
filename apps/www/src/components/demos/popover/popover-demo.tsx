@@ -16,7 +16,7 @@ export default function PopoverDemo() {
 
 	return (
 		<Popover>
-			<PopoverTrigger className="border-secondary hover:bg-primary cursor-pointer rounded border p-2 transition-colors">
+			<PopoverTrigger className="cursor-pointer rounded border border-secondary p-2 transition-colors hover:bg-primary">
 				<Monicon name="ri:share-box-fill" />
 			</PopoverTrigger>
 			<PopoverContent className="w-[calc(100vw-4rem)] sm:w-[500px]">

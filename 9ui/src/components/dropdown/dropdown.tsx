@@ -65,7 +65,7 @@ const DropdownContent = React.forwardRef<
 				<DropdownPopup
 					ref={ref}
 					className={merge(
-						"bg-bg border-secondary text-fg min-w-40 rounded-md border p-1 outline-none",
+						"min-w-40 rounded-md border border-secondary bg-bg p-1 text-fg outline-none",
 						className
 					)}
 					{...props}
@@ -87,7 +87,7 @@ const DropdownItem = React.forwardRef<
 		<Menu.Item
 			ref={ref}
 			className={merge(
-				"data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg flex select-none items-center gap-2 rounded px-2 py-1.5 text-sm outline-none",
+				"flex select-none items-center gap-2 rounded px-2 py-1.5 text-sm outline-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg",
 				className
 			)}
 			{...props}
@@ -106,7 +106,7 @@ const DropdownSeparator = React.forwardRef<
 	return (
 		<Menu.Separator
 			ref={ref}
-			className={merge("bg-secondary -mx-1 my-1 h-px", className)}
+			className={merge("-mx-1 my-1 h-px bg-secondary", className)}
 			{...props}
 		/>
 	)
@@ -138,7 +138,7 @@ const DropdownGroupLabel = React.forwardRef<
 	return (
 		<Menu.GroupLabel
 			ref={ref}
-			className={merge("text-primary-fg px-2 py-1.5 text-xs", className)}
+			className={merge("px-2 py-1.5 text-xs text-primary-fg", className)}
 			{...props}
 		/>
 	)
@@ -156,7 +156,7 @@ const DropdownCheckboxItem = React.forwardRef<
 		<Menu.CheckboxItem
 			ref={ref}
 			className={merge(
-				"data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg grid select-none grid-cols-[0.75rem_auto] items-center gap-2 rounded px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+				"grid select-none grid-cols-[0.75rem_auto] items-center gap-2 rounded px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg data-[disabled]:opacity-50",
 				className
 			)}
 			{...props}
@@ -196,7 +196,7 @@ const DropdownRadioItem = React.forwardRef<
 		<Menu.RadioItem
 			ref={ref}
 			className={merge(
-				"data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg grid select-none grid-cols-[0.75rem_auto] items-center gap-2 rounded px-2 py-1.5 text-sm outline-none",
+				"grid select-none grid-cols-[0.75rem_auto] items-center gap-2 rounded px-2 py-1.5 text-sm outline-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg",
 				className
 			)}
 			{...props}
@@ -221,7 +221,7 @@ const DropdownSubTrigger = React.forwardRef<
 		<Menu.SubmenuTrigger
 			ref={ref}
 			className={merge(
-				"data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg grid select-none grid-cols-[0.75rem_auto_0.75rem] items-center gap-2 rounded px-2 py-1.5 text-sm outline-none",
+				"grid select-none grid-cols-[0.75rem_auto_0.75rem] items-center gap-2 rounded px-2 py-1.5 text-sm outline-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg",
 				className
 			)}
 			{...props}

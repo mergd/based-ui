@@ -50,8 +50,8 @@ const InputOTPSlot = React.forwardRef<
 		<div
 			ref={ref}
 			className={merge(
-				"bordertext-sm border-secondary shadow-elevation-low relative flex h-10 w-8 items-center justify-center rounded-md border transition-all",
-				isActive && "outline-accent z-50 outline outline-2 outline-offset-1",
+				"bordertext-sm relative flex h-10 w-8 items-center justify-center rounded-md border border-secondary shadow-elevation-low transition-all",
+				isActive && "z-50 outline outline-2 outline-offset-1 outline-accent",
 				className
 			)}
 			{...props}
@@ -59,7 +59,7 @@ const InputOTPSlot = React.forwardRef<
 			{char}
 			{hasFakeCaret && (
 				<div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-					<div className="animate-blink bg-fg h-4 w-px duration-1000" />
+					<div className="h-4 w-px animate-blink bg-fg duration-1000" />
 				</div>
 			)}
 		</div>

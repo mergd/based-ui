@@ -19,7 +19,7 @@ export default function InputWithIcons() {
 			</InputIcon>
 			<InputIcon
 				side="trailing"
-				className="hover:[&>svg]:text-fg cursor-pointer transition-colors duration-200"
+				className="cursor-pointer transition-colors duration-200 hover:[&>svg]:text-fg"
 				onClick={togglePasswordVisibility}
 			>
 				<Monicon name={eyeIcon} />

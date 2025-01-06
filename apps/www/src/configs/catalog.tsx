@@ -248,6 +248,18 @@ export const Catalog: Catalog = {
 		),
 		title: "separator-demo.tsx",
 	},
+	"sheet-demo": {
+		content:
+			'"use client"\n\nimport {\n\tButton,\n\tLabel,\n\tSheet,\n\tSheetBackdrop,\n\tSheetClose,\n\tSheetContent,\n\tSheetDescription,\n\tSheetFooter,\n\tSheetHeader,\n\tSheetPortal,\n\tSheetTitle,\n\tSheetTrigger,\n\tTextarea,\n} from "9ui"\n\nexport function SheetDemo() {\n\treturn (\n\t\t<Sheet>\n\t\t\t<SheetTrigger asChild>\n\t\t\t\t<Button>Open Sheet</Button>\n\t\t\t</SheetTrigger>\n\t\t\t<SheetPortal>\n\t\t\t\t<SheetBackdrop />\n\t\t\t\t<SheetContent>\n\t\t\t\t\t<SheetClose />\n\t\t\t\t\t<SheetHeader>\n\t\t\t\t\t\t<SheetTitle>Submit Feedback</SheetTitle>\n\t\t\t\t\t\t<SheetDescription>\n\t\t\t\t\t\t\tPlease share your feedback with us to help improve our service.\n\t\t\t\t\t\t</SheetDescription>\n\t\t\t\t\t</SheetHeader>\n\t\t\t\t\t<div className="my-4 space-y-2">\n\t\t\t\t\t\t<Label htmlFor="feedback">Your Feedback</Label>\n\t\t\t\t\t\t<Textarea id="feedback" placeholder="Type your feedback here." />\n\t\t\t\t\t</div>\n\t\t\t\t\t<SheetFooter>\n\t\t\t\t\t\t<SheetClose asChild>\n\t\t\t\t\t\t\t<Button size="sm" variant="destructive">\n\t\t\t\t\t\t\t\tClose\n\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t</SheetClose>\n\t\t\t\t\t\t<Button size="sm">Submit</Button>\n\t\t\t\t\t</SheetFooter>\n\t\t\t\t</SheetContent>\n\t\t\t</SheetPortal>\n\t\t</Sheet>\n\t)\n}\n',
+		component: React.lazy(() => import("@/components/demos/sheet/sheet-demo")),
+		title: "sheet-demo.tsx",
+	},
+	"sheet-sides": {
+		content:
+			'"use client"\n\nimport {\n\tButton,\n\tLabel,\n\tSheet,\n\tSheetBackdrop,\n\tSheetClose,\n\tSheetContent,\n\tSheetDescription,\n\tSheetFooter,\n\tSheetHeader,\n\tSheetPortal,\n\tSheetTitle,\n\tSheetTrigger,\n\tTextarea,\n} from "9ui"\n\nconst SHEET_SIDES = ["top", "right", "bottom", "left"] as const\n\nexport function SheetSides() {\n\treturn (\n\t\t<div className="mx-auto mt-10 grid max-w-sm grid-cols-2 gap-2">\n\t\t\t{SHEET_SIDES.map((side) => (\n\t\t\t\t<Sheet key={side}>\n\t\t\t\t\t<SheetTrigger asChild>\n\t\t\t\t\t\t<Button className="w-full">{side}</Button>\n\t\t\t\t\t</SheetTrigger>\n\t\t\t\t\t<SheetPortal>\n\t\t\t\t\t\t<SheetBackdrop />\n\t\t\t\t\t\t<SheetContent side={side}>\n\t\t\t\t\t\t\t<SheetClose />\n\t\t\t\t\t\t\t<SheetHeader>\n\t\t\t\t\t\t\t\t<SheetTitle>Submit Feedback</SheetTitle>\n\t\t\t\t\t\t\t\t<SheetDescription>\n\t\t\t\t\t\t\t\t\tPlease share your feedback with us to help improve our\n\t\t\t\t\t\t\t\t\tservice.\n\t\t\t\t\t\t\t\t</SheetDescription>\n\t\t\t\t\t\t\t</SheetHeader>\n\t\t\t\t\t\t\t<div className="my-4 space-y-2">\n\t\t\t\t\t\t\t\t<Label htmlFor="feedback">Your Feedback</Label>\n\t\t\t\t\t\t\t\t<Textarea\n\t\t\t\t\t\t\t\t\tid="feedback"\n\t\t\t\t\t\t\t\t\tplaceholder="Type your feedback here."\n\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<SheetFooter>\n\t\t\t\t\t\t\t\t<SheetClose asChild>\n\t\t\t\t\t\t\t\t\t<Button size="sm" variant="destructive">\n\t\t\t\t\t\t\t\t\t\tClose\n\t\t\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t\t\t</SheetClose>\n\t\t\t\t\t\t\t\t<Button size="sm">Submit</Button>\n\t\t\t\t\t\t\t</SheetFooter>\n\t\t\t\t\t\t</SheetContent>\n\t\t\t\t\t</SheetPortal>\n\t\t\t\t</Sheet>\n\t\t\t))}\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(() => import("@/components/demos/sheet/sheet-sides")),
+		title: "sheet-sides.tsx",
+	},
 	"textarea-demo": {
 		content:
 			'import { Textarea } from "9ui"\n\nexport function TextareaDemo() {\n\treturn <Textarea className="w-80" placeholder="Enter your message..." />\n}\n',

@@ -100,6 +100,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/separator",
 				},
 				{
+					title: "Sheet",
+					href: "/docs/components/sheet",
+				},
+				{
 					title: "Textarea",
 					href: "/docs/components/textarea",
 				},

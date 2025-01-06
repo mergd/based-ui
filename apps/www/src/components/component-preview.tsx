@@ -2,7 +2,7 @@
 
 import React from "react"
 import { Monicon } from "@monicon/react"
-import { merge } from "9ui"
+import { Button, merge } from "9ui"
 import { createHighlighter } from "shiki"
 
 import { Catalog } from "@/configs/catalog"
@@ -13,14 +13,20 @@ type DemoName = keyof typeof Catalog
 
 interface ComponentPreviewProps {
 	name: DemoName
+	showReload?: boolean
 	className?: string
 }
 
-export function ComponentPreview({ name, className }: ComponentPreviewProps) {
+export function ComponentPreview({
+	name,
+	showReload = false,
+	className,
+}: ComponentPreviewProps) {
 	const { component: Component, content } = Catalog[name]
 	const { theme } = useTheme()
 
 	const [code, setCode] = React.useState<string | null>(null)
+	const [key, setKey] = React.useState(0)
 	const [copied, setCopied] = React.useState(false)
 
 	React.useEffect(() => {
@@ -65,7 +71,17 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
 				className
 			)}
 		>
-			<div className="flex items-center justify-center p-10">
+			<div className="relative flex items-center justify-center p-10">
+				{showReload && (
+					<Button
+						variant="ghost"
+						size="icon-sm"
+						className="absolute right-2 top-2 size-6"
+						onClick={() => setKey((prev) => prev + 1)}
+					>
+						<Monicon name="ri:restart-line" size={14} />
+					</Button>
+				)}
 				<React.Suspense
 					fallback={
 						<div className="flex animate-spin items-center justify-center">
@@ -73,7 +89,7 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
 						</div>
 					}
 				>
-					<Component />
+					<Component key={key} />
 				</React.Suspense>
 			</div>
 
@@ -93,9 +109,9 @@ export function ComponentPreview({ name, className }: ComponentPreviewProps) {
 					)}
 				>
 					{copied ? (
-						<Monicon name="ri:check-line" size={14} />
+						<Monicon name="ri:check-fill" size={14} />
 					) : (
-						<Monicon name="ri:file-copy-line" size={14} />
+						<Monicon name="ri:file-copy-fill" size={14} />
 					)}
 				</button>
 			</div>

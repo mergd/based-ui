@@ -29,7 +29,7 @@ Beautiful, customizable components built with [Base UI](https://base-ui.com/) an
 - [ ] Menubar
 - [ ] Navigation Menu
 - [x] Popover
-- [ ] Progress
+- [x] Progress
 - [ ] Radio Group
 - [ ] Scroll Area
 - [ ] Select

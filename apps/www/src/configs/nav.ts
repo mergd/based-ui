@@ -100,6 +100,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/popover",
 				},
 				{
+					title: "Progress",
+					href: "/docs/components/progress",
+				},
+				{
 					title: "Separator",
 					href: "/docs/components/separator",
 				},

@@ -63,7 +63,7 @@
 		--yellow-90: #4d2b05;
 
 		/* Accent */
-		--accent: var(--grey-10);
+		--accent: var(--grey-90);
 
 		/* Link */
 		--link-fg: var(--accent);
@@ -74,7 +74,7 @@
 
 		--background: var(--light);
 		--foreground: var(--dark);
-		--accent-fg: var(--dark);
+		--accent-fg: var(--light);
 
 		--primary: var(--grey-10);
 		--primary-fg: var(--grey-50);
@@ -97,6 +97,8 @@
 
 	/* Dark theme defaults */
 	:root.dark {
+		--accent: var(--grey-10);
+
 		--dark: var(--black);
 		--light: var(--grey-10);
 

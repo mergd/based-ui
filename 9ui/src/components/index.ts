@@ -1,4 +1,5 @@
 export * from "./accordion/accordion"
+export * from "./alert-dialog/alert-dialog"
 export * from "./alert/alert"
 export * from "./aspect-ratio/aspect-ratio"
 export * from "./avatar/avatar"

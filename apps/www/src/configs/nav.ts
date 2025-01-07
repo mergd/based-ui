@@ -44,6 +44,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/accordion",
 				},
 				{
+					title: "Alert Dialog",
+					href: "/docs/components/alert-dialog",
+				},
+				{
 					title: "Alert",
 					href: "/docs/components/alert",
 				},

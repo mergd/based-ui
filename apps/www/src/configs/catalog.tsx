@@ -31,6 +31,14 @@ export const Catalog: Catalog = {
 		),
 		title: "alert-with-action.tsx",
 	},
+	"alert-dialog-demo": {
+		content:
+			'import {\n\tAlertDialog,\n\tAlertDialogClose,\n\tAlertDialogContent,\n\tAlertDialogDescription,\n\tAlertDialogFooter,\n\tAlertDialogHeader,\n\tAlertDialogTitle,\n\tAlertDialogTrigger,\n\tButton,\n} from "9ui"\n\nexport function AlertDialogDemo() {\n\treturn (\n\t\t<AlertDialog>\n\t\t\t<AlertDialogTrigger asChild>\n\t\t\t\t<Button variant="destructive">Delete Post</Button>\n\t\t\t</AlertDialogTrigger>\n\t\t\t<AlertDialogContent className="space-y-4">\n\t\t\t\t<AlertDialogHeader>\n\t\t\t\t\t<AlertDialogTitle>Are you sure?</AlertDialogTitle>\n\t\t\t\t\t<AlertDialogDescription>\n\t\t\t\t\t\tThis action cannot be undone. Your post will be permanently deleted.\n\t\t\t\t\t</AlertDialogDescription>\n\t\t\t\t</AlertDialogHeader>\n\t\t\t\t<AlertDialogFooter>\n\t\t\t\t\t<AlertDialogClose asChild>\n\t\t\t\t\t\t<Button size="sm" variant="ghost">\n\t\t\t\t\t\t\tCancel\n\t\t\t\t\t\t</Button>\n\t\t\t\t\t</AlertDialogClose>\n\t\t\t\t\t<Button size="sm" variant="destructive">\n\t\t\t\t\t\tDelete\n\t\t\t\t\t</Button>\n\t\t\t\t</AlertDialogFooter>\n\t\t\t</AlertDialogContent>\n\t\t</AlertDialog>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/alert-dialog/alert-dialog-demo")
+		),
+		title: "alert-dialog-demo.tsx",
+	},
 	"aspect-ratio-demo": {
 		content:
 			'import { AspectRatio } from "9ui"\n\nexport function AspectRatioDemo() {\n\treturn (\n\t\t<AspectRatio ratio={16 / 9} className="rounded-lg bg-primary">\n\t\t\t<div className="flex size-full items-center justify-center">Content</div>\n\t\t</AspectRatio>\n\t)\n}\n',

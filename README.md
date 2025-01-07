@@ -38,7 +38,7 @@ Beautiful, customizable components built with [Base UI](https://base-ui.com/) an
 - [x] Sheet
 - [ ] Skeleton
 - [ ] Slider
-- [ ] Switch
+- [x] Switch
 - [ ] Table
 - [ ] Tabs
 - [x] Textarea

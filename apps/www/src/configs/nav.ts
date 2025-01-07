@@ -116,6 +116,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/sheet",
 				},
 				{
+					title: "Switch",
+					href: "/docs/components/switch",
+				},
+				{
 					title: "Textarea",
 					href: "/docs/components/textarea",
 				},

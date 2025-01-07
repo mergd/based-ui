@@ -316,6 +316,30 @@ export const Catalog: Catalog = {
 		component: React.lazy(() => import("@/components/demos/sheet/sheet-sides")),
 		title: "sheet-sides.tsx",
 	},
+	"switch-demo": {
+		content:
+			'import { Switch } from "9ui"\n\nexport function SwitchDemo() {\n\treturn <Switch />\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/switch/switch-demo")
+		),
+		title: "switch-demo.tsx",
+	},
+	"switch-disabled": {
+		content:
+			'import { Switch } from "9ui"\n\nexport function SwitchDisabled() {\n\treturn <Switch disabled />\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/switch/switch-disabled")
+		),
+		title: "switch-disabled.tsx",
+	},
+	"switch-with-label": {
+		content:
+			'import { Label, Switch } from "9ui"\n\nexport function SwitchWithLabel() {\n\treturn (\n\t\t<div className="flex items-center gap-2">\n\t\t\t<Switch id="enable-notifications" />\n\t\t\t<Label htmlFor="enable-notifications">Enable notifications</Label>\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/switch/switch-with-label")
+		),
+		title: "switch-with-label.tsx",
+	},
 	"textarea-demo": {
 		content:
 			'import { Textarea } from "9ui"\n\nexport function TextareaDemo() {\n\treturn <Textarea className="w-80" placeholder="Enter your message..." />\n}\n',

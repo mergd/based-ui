@@ -88,13 +88,13 @@ const DialogContent = React.forwardRef<
 		<BaseDialog.Popup
 			ref={ref}
 			className={merge(
-				"fixed left-1/2 top-1/2 z-50 grid w-full max-w-[90%] -translate-x-1/2 -translate-y-1/2 scale-[calc(1-0.1*var(--nested-dialogs))] gap-4 rounded-md border border-primary bg-bg p-4 shadow-elevation-low duration-200 data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 sm:max-w-96",
+				"fixed left-1/2 top-1/2 z-50 grid w-full max-w-[90%] -translate-x-1/2 -translate-y-1/2 scale-[calc(1-0.1*var(--nested-dialogs))] gap-4 rounded-md border border-muted bg-bg p-4 shadow-elevation-low duration-200 data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 sm:max-w-96",
 				className
 			)}
 			{...props}
 		>
 			{children}
-			<DialogClose className="absolute right-4 top-4 rounded-sm text-primary-fg opacity-70 transition-opacity hover:opacity-100 focus:outline-none">
+			<DialogClose className="absolute right-4 top-4 rounded-sm text-subtle-fg opacity-50 transition-opacity hover:opacity-100 focus:outline-none">
 				<XIcon className="size-4 text-current" />
 				<span className="sr-only">Close</span>
 			</DialogClose>
@@ -147,7 +147,7 @@ const DialogDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseDialog.Description
 		ref={ref}
-		className={merge("text-sm text-primary-fg", className)}
+		className={merge("text-sm text-subtle-fg", className)}
 		{...props}
 	/>
 ))

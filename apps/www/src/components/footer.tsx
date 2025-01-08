@@ -1,8 +1,8 @@
 export function Footer() {
 	return (
-		<footer className="border-t border-primary">
+		<footer className="border-t border-muted">
 			<div className="container mx-auto p-4">
-				<div className="text-balance text-center text-sm text-secondary-fg md:text-left">
+				<div className="text-balance text-center text-sm text-muted-fg md:text-left">
 					Built by{" "}
 					<a
 						href="https://twitter.com/borabalogluu"

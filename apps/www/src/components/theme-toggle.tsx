@@ -10,7 +10,7 @@ export function ThemeToggle() {
 	return (
 		<button
 			onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-			className="flex size-8 items-center justify-center rounded text-secondary-fg hover:text-fg"
+			className="flex size-8 items-center justify-center text-muted-fg hover:text-fg"
 		>
 			{theme === "light" ? (
 				<Monicon name="ri:moon-fill" size={20} />

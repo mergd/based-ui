@@ -18,7 +18,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 
 export function Header() {
 	return (
-		<header className="sticky top-0 z-50 w-full border-b border-secondary bg-bg backdrop-blur supports-[backdrop-filter]:bg-bg/60">
+		<header className="sticky top-0 z-50 w-full border-b border-muted bg-bg backdrop-blur supports-[backdrop-filter]:bg-bg/60">
 			<div className="container mx-auto flex h-14 items-center px-4">
 				<Drawer enableLayeredBackground>
 					<DrawerTrigger className="mr-4 md:hidden">
@@ -47,7 +47,7 @@ export function Header() {
 						href="https://github.com/borabaloglu/9ui"
 						target="_blank"
 						rel="noreferrer"
-						className="flex size-8 items-center justify-center rounded text-secondary-fg hover:text-fg"
+						className="flex size-8 items-center justify-center text-muted-fg hover:text-fg"
 					>
 						<Monicon name="ri:github-fill" size={20} />
 						<span className="sr-only">GitHub</span>

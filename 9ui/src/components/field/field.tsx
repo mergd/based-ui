@@ -112,9 +112,7 @@ const FieldDescription = ({
 	className,
 	...props
 }: React.HTMLAttributes<HTMLParagraphElement>) => {
-	return (
-		<p className={merge("text-sm text-primary-fg", className)} {...props} />
-	)
+	return <p className={merge("text-sm text-subtle-fg", className)} {...props} />
 }
 
 /********

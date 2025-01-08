@@ -50,7 +50,7 @@ const InputOTPSlot = React.forwardRef<
 		<div
 			ref={ref}
 			className={merge(
-				"bordertext-sm relative flex h-10 w-8 items-center justify-center rounded-md border border-secondary shadow-elevation-low transition-all",
+				"relative flex h-10 w-8 items-center justify-center rounded-md border border-muted text-sm shadow-elevation-low transition-all",
 				isActive && "z-50 outline outline-2 outline-offset-1 outline-accent",
 				className
 			)}

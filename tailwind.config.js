@@ -9,13 +9,13 @@ const config = {
 			colors: {
 				bg: "oklch(from var(--background) l c h / <alpha-value>)",
 				fg: "oklch(from var(--foreground) l c h / <alpha-value>)",
-				primary: {
-					DEFAULT: "oklch(from var(--primary) l c h / <alpha-value>)",
-					fg: "oklch(from var(--primary-fg) l c h / <alpha-value>)",
+				subtle: {
+					DEFAULT: "oklch(from var(--subtle) l c h / <alpha-value>)",
+					fg: "oklch(from var(--subtle-fg) l c h / <alpha-value>)",
 				},
-				secondary: {
-					DEFAULT: "oklch(from var(--secondary) l c h / <alpha-value>)",
-					fg: "oklch(from var(--secondary-fg) l c h / <alpha-value>)",
+				muted: {
+					DEFAULT: "oklch(from var(--muted) l c h / <alpha-value>)",
+					fg: "oklch(from var(--muted-fg) l c h / <alpha-value>)",
 				},
 				accent: {
 					DEFAULT: "oklch(from var(--accent) l c h / <alpha-value>)",

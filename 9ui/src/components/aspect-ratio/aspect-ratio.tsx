@@ -21,7 +21,7 @@ const AspectRatio = React.forwardRef<HTMLDivElement, AspectRatioProps>(
 				className={merge("relative w-full", className)}
 				{...props}
 			>
-				<div className="absolute inset-0 size-full	">{props.children}</div>
+				<div className="absolute inset-0 size-full">{props.children}</div>
 			</div>
 		)
 	}

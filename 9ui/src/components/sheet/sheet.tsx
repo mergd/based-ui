@@ -97,7 +97,7 @@ SheetClose.displayName = "SheetClose"
 Sheet Content
 ********/
 const sheetContentVariants = cva(
-	"fixed max-h-[calc(100vh-2rem)] border-secondary bg-bg p-6 text-fg shadow-elevation-medium outline-none transition-all duration-500 ease-in-out",
+	"fixed max-h-[calc(100vh-2rem)] border-muted bg-bg p-6 text-fg shadow-elevation-medium outline-none transition-all duration-500 ease-in-out",
 	{
 		variants: {
 			side: {
@@ -129,7 +129,7 @@ const SheetContent = React.forwardRef<
 			className={merge(sheetContentVariants({ side, className }))}
 			{...props}
 		>
-			<SheetClose className="absolute right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline focus:outline-offset-2 focus:outline-accent disabled:pointer-events-none">
+			<SheetClose className="absolute right-4 top-4 rounded-sm opacity-50 transition-opacity hover:opacity-100 focus:outline focus:outline-offset-2 focus:outline-accent disabled:pointer-events-none">
 				<XIcon className="size-4" />
 				<span className="sr-only">Close</span>
 			</SheetClose>
@@ -183,7 +183,7 @@ const SheetDescription = React.forwardRef<
 	return (
 		<p
 			ref={ref}
-			className={merge("text-sm text-secondary-fg", className)}
+			className={merge("text-sm text-muted-fg", className)}
 			{...props}
 		/>
 	)

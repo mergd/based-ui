@@ -17,7 +17,7 @@ const Checkbox = React.forwardRef<
 		<BaseCheckbox.Root
 			ref={ref}
 			className={merge(
-				"peer flex size-4 shrink-0 items-center justify-center rounded-sm border border-secondary bg-bg transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-50 aria-[invalid]:border-danger-fg aria-[invalid]:bg-danger aria-[invalid]:text-danger-fg aria-[invalid]:focus:outline-danger data-[checked]:border-accent data-[checked]:bg-accent data-[indeterminate]:bg-accent data-[checked]:text-accent-fg",
+				"peer flex size-4 shrink-0 items-center justify-center rounded-sm border border-muted bg-bg transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-50 aria-[invalid]:border-danger-fg aria-[invalid]:bg-danger aria-[invalid]:text-danger-fg aria-[invalid]:focus:outline-danger data-[checked]:border-accent data-[checked]:bg-accent data-[indeterminate]:bg-accent data-[checked]:text-accent-fg",
 				className
 			)}
 			{...props}

@@ -266,7 +266,7 @@ const DrawerDragHandle = ({ children, className }: DrawerDragHandleProps) => {
 			onTouchCancel={handleTouchEnd}
 		>
 			{children || (
-				<div className="h-1 w-20 rounded-full bg-secondary/50 transition-colors group-active:bg-secondary/70" />
+				<div className="h-1 w-20 rounded-full bg-muted/50 transition-colors group-active:bg-muted/70" />
 			)}
 		</div>
 	)
@@ -316,7 +316,7 @@ const DrawerContent = ({
 		<DrawerPopup
 			ref={scrollRef}
 			className={merge(
-				"fixed inset-x-0 bottom-0 mx-auto h-full origin-bottom rounded-t-md border border-b-0 border-primary bg-bg pt-8 text-fg outline-none",
+				"fixed inset-x-0 bottom-0 mx-auto h-full origin-bottom rounded-t-md border border-b-0 border-muted bg-bg pt-8 text-fg outline-none",
 				className
 			)}
 			style={{

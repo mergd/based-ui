@@ -13,7 +13,7 @@ interface DocsSidebarNavItemsProps {
 
 function Label({ children }: { children: React.ReactNode }) {
 	return (
-		<span className="ml-2 rounded bg-accent px-1 py-0.5 text-xs font-semibold leading-none text-accent-fg">
+		<span className="ml-2 rounded-md bg-accent px-1 py-0.5 text-xs font-semibold leading-none text-accent-fg">
 			{children}
 		</span>
 	)
@@ -31,8 +31,8 @@ export function DocsSidebarNavItems({
 						key={index}
 						href={item.href}
 						className={merge(
-							"-mx-2 flex w-full items-center rounded-md border border-transparent px-2 py-1 text-secondary-fg transition-colors hover:text-fg md:mx-0",
-							pathname === item.href && "border-secondary bg-primary/50 text-fg"
+							"-mx-2 flex w-full items-center rounded-md border border-transparent px-2 py-1 text-muted-fg transition-colors hover:text-fg md:mx-0",
+							pathname === item.href && "border-muted bg-subtle text-fg"
 						)}
 						target={item.external ? "_blank" : ""}
 						rel={item.external ? "noreferrer" : ""}
@@ -44,7 +44,7 @@ export function DocsSidebarNavItems({
 					<span
 						key={index}
 						className={merge(
-							"-mx-2 flex w-full cursor-not-allowed items-center px-2 py-1 text-secondary-fg opacity-60 md:mx-0"
+							"-mx-2 flex w-full cursor-not-allowed items-center px-2 py-1 text-muted-fg opacity-60 md:mx-0"
 						)}
 					>
 						{item.title}

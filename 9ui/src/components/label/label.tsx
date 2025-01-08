@@ -10,7 +10,7 @@ const Label = React.forwardRef<
 		<label
 			ref={ref}
 			className={merge(
-				"text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:text-primary-fg",
+				"text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:text-subtle-fg",
 				className
 			)}
 			{...props}

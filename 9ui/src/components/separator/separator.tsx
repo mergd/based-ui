@@ -16,7 +16,7 @@ const Separator = React.forwardRef<
 	<BaseSeparator
 		ref={ref}
 		className={merge(
-			"shrink-0 bg-primary",
+			"shrink-0 bg-muted",
 			orientation === "horizontal" ? "h-px" : "w-px",
 			className
 		)}

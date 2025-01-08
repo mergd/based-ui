@@ -104,7 +104,7 @@ const AvatarFallback = React.forwardRef<
 		<span
 			ref={ref}
 			className={merge(
-				"flex size-full items-center justify-center rounded-full bg-primary text-primary-fg",
+				"flex size-full items-center justify-center rounded-full bg-subtle text-subtle-fg",
 				className
 			)}
 			{...props}

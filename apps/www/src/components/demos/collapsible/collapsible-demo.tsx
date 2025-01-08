@@ -17,13 +17,13 @@ export default function CollapsibleDemo() {
 			</CollapsibleTrigger>
 			<CollapsibleContent>
 				<ol className="mt-2 space-y-1">
-					<li className="rounded border border-secondary bg-primary/50 px-2 py-1">
+					<li className="rounded border border-muted bg-subtle px-2 py-1">
 						Button
 					</li>
-					<li className="rounded border border-secondary bg-primary/50 px-2 py-1">
+					<li className="rounded border border-muted bg-subtle px-2 py-1">
 						Badge
 					</li>
-					<li className="rounded border border-secondary bg-primary/50 px-2 py-1">
+					<li className="rounded border border-muted bg-subtle px-2 py-1">
 						Breadcrumbs
 					</li>
 				</ol>

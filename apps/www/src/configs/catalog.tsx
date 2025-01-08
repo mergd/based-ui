@@ -41,7 +41,7 @@ export const Catalog: Catalog = {
 	},
 	"aspect-ratio-demo": {
 		content:
-			'import { AspectRatio } from "9ui"\n\nexport function AspectRatioDemo() {\n\treturn (\n\t\t<AspectRatio ratio={16 / 9} className="rounded-lg bg-primary">\n\t\t\t<div className="flex size-full items-center justify-center">Content</div>\n\t\t</AspectRatio>\n\t)\n}\n',
+			'import { AspectRatio } from "9ui"\n\nexport function AspectRatioDemo() {\n\treturn (\n\t\t<AspectRatio ratio={16 / 9} className="rounded-lg bg-subtle">\n\t\t\t<div className="flex size-full items-center justify-center text-fg font-medium">\n\t\t\t\tContent\n\t\t\t</div>\n\t\t</AspectRatio>\n\t)\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/aspect-ratio/aspect-ratio-demo")
 		),
@@ -73,7 +73,7 @@ export const Catalog: Catalog = {
 	},
 	"badge-custom": {
 		content:
-			'import { Badge } from "9ui"\n\nexport function BadgeCustom() {\n\treturn (\n\t\t<div className="flex items-center justify-center gap-2 text-xs text-secondary-fg">\n\t\t\t<Badge variant="danger" className="gap-x-1 p-0.5 pr-2">\n\t\t\t\t<span className="size-4 rounded-full bg-danger-fg" />\n\t\t\t\tOffline\n\t\t\t</Badge>\n\t\t</div>\n\t)\n}\n',
+			'import { Badge } from "9ui"\n\nexport function BadgeCustom() {\n\treturn (\n\t\t<div className="flex items-center justify-center gap-2 text-xs text-muted-fg">\n\t\t\t<Badge variant="danger" className="gap-x-1 p-0.5 pr-2">\n\t\t\t\t<span className="size-4 rounded-full bg-danger-fg" />\n\t\t\t\tOffline\n\t\t\t</Badge>\n\t\t</div>\n\t)\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/badge/badge-custom")
 		),
@@ -87,7 +87,7 @@ export const Catalog: Catalog = {
 	},
 	"badge-status": {
 		content:
-			'import { Badge } from "9ui"\n\nexport function BadgeStatus() {\n\treturn (\n\t\t<div className="flex items-center justify-center gap-2">\n\t\t\t<Badge variant="success">Active</Badge>\n\t\t\t<span className="text-xs text-secondary-fg">Ready to use</span>\n\t\t</div>\n\t)\n}\n',
+			'import { Badge } from "9ui"\n\nexport function BadgeStatus() {\n\treturn (\n\t\t<div className="flex items-center justify-center gap-2">\n\t\t\t<Badge variant="success">Active</Badge>\n\t\t\t<span className="text-xs text-muted-fg">Ready to use</span>\n\t\t</div>\n\t)\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/badge/badge-status")
 		),
@@ -120,7 +120,7 @@ export const Catalog: Catalog = {
 	},
 	"button-custom": {
 		content:
-			'import { Monicon } from "@monicon/react"\nimport { Button } from "9ui"\n\nexport function ButtonCustom() {\n\treturn (\n\t\t<Button\n\t\t\tclassName="rounded-full border border-primary bg-transparent text-primary-fg hover:border-fg hover:bg-transparent hover:text-fg"\n\t\t\tsize="icon-sm"\n\t\t>\n\t\t\t<Monicon name="ri:add-fill" />\n\t\t</Button>\n\t)\n}\n',
+			'import { Monicon } from "@monicon/react"\nimport { Button } from "9ui"\n\nexport function ButtonCustom() {\n\treturn (\n\t\t<Button\n\t\t\tclassName="rounded-full border border-muted bg-transparent text-subtle-fg hover:border-fg hover:bg-transparent hover:text-fg"\n\t\t\tsize="icon-sm"\n\t\t>\n\t\t\t<Monicon name="ri:add-fill" />\n\t\t</Button>\n\t)\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/button/button-custom")
 		),
@@ -192,7 +192,7 @@ export const Catalog: Catalog = {
 	},
 	"collapsible-demo": {
 		content:
-			'import { useState } from "react"\nimport Monicon from "@monicon/react"\nimport { Collapsible, CollapsibleContent, CollapsibleTrigger, merge } from "9ui"\n\nexport function CollapsibleDemo() {\n\tconst [open, setOpen] = useState(false)\n\n\treturn (\n\t\t<Collapsible className="mx-auto w-40" open={open} onOpenChange={setOpen}>\n\t\t\t<CollapsibleTrigger className="flex w-full items-center justify-between px-1.5 py-1">\n\t\t\t\t<span className="text-sm font-medium">Components</span>\n\t\t\t\t<div\n\t\t\t\t\tclassName={merge("transition-all duration-200", open && "rotate-90")}\n\t\t\t\t>\n\t\t\t\t\t<Monicon name="ri:arrow-right-s-line" size={16} />\n\t\t\t\t</div>\n\t\t\t</CollapsibleTrigger>\n\t\t\t<CollapsibleContent>\n\t\t\t\t<ol className="mt-2 space-y-1">\n\t\t\t\t\t<li className="rounded border border-secondary bg-primary/50 px-2 py-1">\n\t\t\t\t\t\tButton\n\t\t\t\t\t</li>\n\t\t\t\t\t<li className="rounded border border-secondary bg-primary/50 px-2 py-1">\n\t\t\t\t\t\tBadge\n\t\t\t\t\t</li>\n\t\t\t\t\t<li className="rounded border border-secondary bg-primary/50 px-2 py-1">\n\t\t\t\t\t\tBreadcrumbs\n\t\t\t\t\t</li>\n\t\t\t\t</ol>\n\t\t\t</CollapsibleContent>\n\t\t</Collapsible>\n\t)\n}\n',
+			'import { useState } from "react"\nimport Monicon from "@monicon/react"\nimport { Collapsible, CollapsibleContent, CollapsibleTrigger, merge } from "9ui"\n\nexport function CollapsibleDemo() {\n\tconst [open, setOpen] = useState(false)\n\n\treturn (\n\t\t<Collapsible className="mx-auto w-40" open={open} onOpenChange={setOpen}>\n\t\t\t<CollapsibleTrigger className="flex w-full items-center justify-between px-1.5 py-1">\n\t\t\t\t<span className="text-sm font-medium">Components</span>\n\t\t\t\t<div\n\t\t\t\t\tclassName={merge("transition-all duration-200", open && "rotate-90")}\n\t\t\t\t>\n\t\t\t\t\t<Monicon name="ri:arrow-right-s-line" size={16} />\n\t\t\t\t</div>\n\t\t\t</CollapsibleTrigger>\n\t\t\t<CollapsibleContent>\n\t\t\t\t<ol className="mt-2 space-y-1">\n\t\t\t\t\t<li className="rounded border border-muted bg-subtle px-2 py-1">\n\t\t\t\t\t\tButton\n\t\t\t\t\t</li>\n\t\t\t\t\t<li className="rounded border border-muted bg-subtle px-2 py-1">\n\t\t\t\t\t\tBadge\n\t\t\t\t\t</li>\n\t\t\t\t\t<li className="rounded border border-muted bg-subtle px-2 py-1">\n\t\t\t\t\t\tBreadcrumbs\n\t\t\t\t\t</li>\n\t\t\t\t</ol>\n\t\t\t</CollapsibleContent>\n\t\t</Collapsible>\n\t)\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/collapsible/collapsible-demo")
 		),
@@ -274,7 +274,7 @@ export const Catalog: Catalog = {
 	},
 	"popover-demo": {
 		content:
-			'import Monicon from "@monicon/react"\nimport {\n\tInput,\n\tPopover,\n\tPopoverContent,\n\tPopoverDescription,\n\tPopoverTitle,\n\tPopoverTrigger,\n} from "9ui"\nimport { Button } from "9ui/src/components/button/button"\n\nexport function PopoverDemo() {\n\tconst copyToClipboard = () => {\n\t\tnavigator.clipboard.writeText(window.location.href)\n\t}\n\n\treturn (\n\t\t<Popover>\n\t\t\t<PopoverTrigger className="cursor-pointer rounded border border-secondary p-2 transition-colors hover:bg-primary">\n\t\t\t\t<Monicon name="ri:share-box-fill" />\n\t\t\t</PopoverTrigger>\n\t\t\t<PopoverContent className="w-[calc(100vw-4rem)] sm:w-[500px]">\n\t\t\t\t<div className="flex flex-col space-y-3.5">\n\t\t\t\t\t<div className="flex flex-col space-y-1">\n\t\t\t\t\t\t<PopoverTitle>Share</PopoverTitle>\n\t\t\t\t\t\t<PopoverDescription>Share this component.</PopoverDescription>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div className="flex w-full gap-2">\n\t\t\t\t\t\t<Input\n\t\t\t\t\t\t\tinputWrapperClassName="w-full"\n\t\t\t\t\t\t\tdefaultValue={window.location.href}\n\t\t\t\t\t\t\tautoFocus={false}\n\t\t\t\t\t\t\treadOnly\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t<Button\n\t\t\t\t\t\t\tclassName="shrink-0"\n\t\t\t\t\t\t\tsize="icon-md"\n\t\t\t\t\t\t\tonClick={copyToClipboard}\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\t<Monicon name="ri:file-copy-fill" />\n\t\t\t\t\t\t</Button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</PopoverContent>\n\t\t</Popover>\n\t)\n}\n',
+			'import Monicon from "@monicon/react"\nimport {\n\tInput,\n\tPopover,\n\tPopoverContent,\n\tPopoverDescription,\n\tPopoverTitle,\n\tPopoverTrigger,\n} from "9ui"\nimport { Button } from "9ui/src/components/button/button"\n\nexport function PopoverDemo() {\n\tconst copyToClipboard = () => {\n\t\tnavigator.clipboard.writeText(window.location.href)\n\t}\n\n\treturn (\n\t\t<Popover>\n\t\t\t<PopoverTrigger className="cursor-pointer rounded-md border border-muted p-2 transition-colors hover:bg-subtle">\n\t\t\t\t<Monicon name="ri:share-box-fill" />\n\t\t\t</PopoverTrigger>\n\t\t\t<PopoverContent className="w-[calc(100vw-4rem)] sm:w-[500px]">\n\t\t\t\t<div className="flex flex-col space-y-3.5">\n\t\t\t\t\t<div className="flex flex-col space-y-1">\n\t\t\t\t\t\t<PopoverTitle>Share</PopoverTitle>\n\t\t\t\t\t\t<PopoverDescription>Share this component.</PopoverDescription>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div className="flex w-full gap-2">\n\t\t\t\t\t\t<Input\n\t\t\t\t\t\t\tinputWrapperClassName="w-full"\n\t\t\t\t\t\t\tdefaultValue={window.location.href}\n\t\t\t\t\t\t\tautoFocus={false}\n\t\t\t\t\t\t\treadOnly\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t<Button\n\t\t\t\t\t\t\tclassName="shrink-0"\n\t\t\t\t\t\t\tsize="icon-md"\n\t\t\t\t\t\t\tonClick={copyToClipboard}\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\t<Monicon name="ri:file-copy-fill" />\n\t\t\t\t\t\t</Button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</PopoverContent>\n\t\t</Popover>\n\t)\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/popover/popover-demo")
 		),

@@ -14,7 +14,7 @@ const Switch = React.forwardRef<
 		<BaseSwitch.Root
 			ref={ref}
 			className={merge(
-				"peer inline-flex h-6 w-10 items-center rounded-full bg-primary p-0.5 transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-50 data-[checked]:border-accent-fg data-[checked]:bg-accent",
+				"peer inline-flex h-6 w-10 items-center rounded-full bg-muted p-0.5 transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-50 data-[checked]:border-accent-fg data-[checked]:bg-accent",
 				className
 			)}
 			{...props}

@@ -14,7 +14,7 @@ const Progress = React.forwardRef<
 		<BaseProgress.Root ref={ref} className="relative" {...props}>
 			<BaseProgress.Track
 				className={merge(
-					"block h-1 w-full overflow-hidden rounded bg-primary",
+					"block h-1 w-full overflow-hidden rounded-full bg-muted",
 					className
 				)}
 			>

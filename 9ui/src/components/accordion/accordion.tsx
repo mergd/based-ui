@@ -16,7 +16,7 @@ const AccordionItem = React.forwardRef<
 	return (
 		<BaseAccordion.Item
 			ref={ref}
-			className={merge("border-b border-primary", className)}
+			className={merge("border-b border-muted", className)}
 			{...props}
 		>
 			{children}

@@ -12,6 +12,8 @@
 		/* Global Colors */
 		--white: #ffffff;
 		--black: #000000;
+
+		/* Blue */
 		--blue-10: #f2f7ff;
 		--blue-20: #e5f0ff;
 		--blue-30: #c2dcff;
@@ -21,8 +23,10 @@
 		--blue-70: #0050c7;
 		--blue-80: #003c94;
 		--blue-90: #042961;
+		--blue-100: #001a33;
+
+		/* Green */
 		--green-10: #e8faf0;
-		--green-100: #021f10;
 		--green-20: #d7f5e5;
 		--green-30: #9bebbf;
 		--green-40: #51c285;
@@ -31,18 +35,22 @@
 		--green-70: #006341;
 		--green-80: #0d4f2b;
 		--green-90: #05381d;
-		--grey-10: #f4f6f7;
-		--grey-100: #131214;
-		--grey-20: #e6e9eb;
-		--grey-30: #daddde;
-		--grey-40: #4a4c4d;
-		--grey-50: #898d8f;
-		--grey-60: #6e7375;
-		--grey-70: #53575a;
-		--grey-80: #2f3133;
-		--grey-90: #1f2224;
+		--green-100: #021f10;
+
+		/* Grey */
+		--grey-10: #f4f4f5;
+		--grey-20: #e4e4e7;
+		--grey-30: #d4d4d8;
+		--grey-40: #a1a1aa;
+		--grey-50: #71717a;
+		--grey-60: #52525b;
+		--grey-70: #3f3f46;
+		--grey-80: #27272a;
+		--grey-90: #18181b;
+		--grey-100: #09090b;
+
+		/* Red */
 		--red-10: #fff3f0;
-		--red-100: #290800;
 		--red-20: #ffe9e3;
 		--red-30: #ffcec2;
 		--red-40: #ff9175;
@@ -51,8 +59,10 @@
 		--red-70: #ad1d00;
 		--red-80: #8a1700;
 		--red-90: #611000;
+		--red-100: #290800;
+
+		/* Yellow */
 		--yellow-10: #fff9e6;
-		--yellow-100: #331c03;
 		--yellow-20: #ffefb3;
 		--yellow-30: #ffd84d;
 		--yellow-40: #ed9b16;
@@ -61,26 +71,23 @@
 		--yellow-70: #824b0d;
 		--yellow-80: #663c0c;
 		--yellow-90: #4d2b05;
+		--yellow-100: #331c03;
 
 		/* Accent */
-		--accent: var(--grey-90);
+		--accent: var(--grey-100);
 
 		/* Link */
 		--link-fg: var(--accent);
 
-		/* Light theme defaults */
-		--dark: var(--grey-100);
-		--light: var(--white);
+		--background: var(--grey-10);
+		--foreground: var(--grey-100);
+		--accent-fg: var(--grey-10);
 
-		--background: var(--light);
-		--foreground: var(--dark);
-		--accent-fg: var(--light);
+		--subtle: var(--grey-20);
+		--subtle-fg: var(--grey-50);
 
-		--primary: var(--grey-10);
-		--primary-fg: var(--grey-50);
-
-		--secondary: var(--grey-20);
-		--secondary-fg: var(--grey-60);
+		--muted: var(--grey-30);
+		--muted-fg: var(--grey-60);
 
 		--success: var(--green-20);
 		--success-fg: var(--green-60);
@@ -99,18 +106,15 @@
 	:root.dark {
 		--accent: var(--grey-10);
 
-		--dark: var(--black);
-		--light: var(--grey-10);
+		--background: var(--grey-100);
+		--foreground: var(--grey-10);
+		--accent-fg: var(--grey-100);
 
-		--background: var(--dark);
-		--foreground: var(--light);
-		--accent-fg: var(--dark);
+		--subtle: var(--grey-90);
+		--subtle-fg: var(--grey-50);
 
-		--primary: var(--grey-90);
-		--primary-fg: var(--grey-60);
-
-		--secondary: var(--grey-80);
-		--secondary-fg: var(--grey-50);
+		--muted: var(--grey-80);
+		--muted-fg: var(--grey-40);
 
 		--success: var(--green-70);
 		--success-fg: var(--green-30);
@@ -118,8 +122,8 @@
 		--danger: var(--red-80);
 		--danger-fg: var(--red-40);
 
-		--warning: var(--yellow-30);
-		--warning-fg: var(--yellow-80);
+		--warning: var(--yellow-70);
+		--warning-fg: var(--yellow-20);
 
 		--info: var(--blue-80);
 		--info-fg: var(--blue-30);
@@ -140,7 +144,7 @@
 	/* Custom Scrollbar Styles */
 	* {
 		scrollbar-width: thin;
-		scrollbar-color: var(--primary) transparent;
+		scrollbar-color: var(--subtle) transparent;
 	}
 	::-webkit-scrollbar {
 		width: 4px;
@@ -149,7 +153,7 @@
 		background: transparent;
 	}
 	::-webkit-scrollbar-thumb {
-		background: var(--primary);
+		background: var(--subtle);
 		border-radius: 4px;
 	}
 }

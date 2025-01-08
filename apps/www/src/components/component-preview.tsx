@@ -67,7 +67,7 @@ export function ComponentPreview({
 	return (
 		<div
 			className={merge(
-				"mt-4 overflow-hidden rounded-lg border border-secondary",
+				"mt-4 overflow-hidden rounded-lg border border-muted",
 				className
 			)}
 		>
@@ -93,7 +93,7 @@ export function ComponentPreview({
 				</React.Suspense>
 			</div>
 
-			<div className="flex items-center justify-between border-y border-secondary bg-primary/50 px-3">
+			<div className="flex items-center justify-between border-y border-muted bg-subtle px-3">
 				<div className="flex h-8 items-center overflow-x-auto">
 					<div className="flex min-w-fit gap-2">
 						<span className="rounded px-2 py-0.5 text-xs font-semibold">
@@ -105,7 +105,7 @@ export function ComponentPreview({
 				<button
 					onClick={onCopy}
 					className={merge(
-						"flex size-6 items-center justify-center rounded text-secondary-fg transition-colors hover:bg-secondary/60 hover:text-fg"
+						"flex size-6 items-center justify-center rounded-md text-muted-fg transition-colors hover:bg-muted hover:text-fg"
 					)}
 				>
 					{copied ? (
@@ -117,7 +117,7 @@ export function ComponentPreview({
 			</div>
 
 			<div
-				className="scrollbar-custom text-xs [&>pre>code]:!bg-transparent [&>pre]:!m-0 [&>pre]:max-h-[300px] [&>pre]:overflow-auto [&>pre]:!bg-primary/20 [&>pre]:p-4"
+				className="scrollbar-custom text-xs [&>pre>code]:!bg-transparent [&>pre]:!m-0 [&>pre]:max-h-[300px] [&>pre]:overflow-auto [&>pre]:!bg-bg [&>pre]:p-4"
 				dangerouslySetInnerHTML={{ __html: code! }}
 			/>
 		</div>

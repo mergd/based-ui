@@ -14,6 +14,7 @@ Beautiful, customizable components built with [Base UI](https://base-ui.com/) an
 - [x] Badge
 - [x] Breadcrumbs
 - [x] Button
+- [x] Calendar
 - [ ] Card
 - [x] Checkbox
 - [x] Collapsible

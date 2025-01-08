@@ -158,6 +158,46 @@ export const Catalog: Catalog = {
 		),
 		title: "button-sizes.tsx",
 	},
+	"calendar-demo": {
+		content:
+			'import { Calendar } from "9ui"\n\nexport function CalendarDemo() {\n\treturn <Calendar showOutsideDays />\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/calendar/calendar-demo")
+		),
+		title: "calendar-demo.tsx",
+	},
+	"calendar-disabled": {
+		content:
+			'"use client"\n\nimport { useState } from "react"\nimport { Calendar } from "9ui"\n\nexport function CalendarDisabled() {\n\tconst [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined)\n\n\treturn (\n\t\t<Calendar\n\t\t\tmode="single"\n\t\t\tdisabled={(date) => date < new Date()}\n\t\t\tselected={selectedDate}\n\t\t\tonSelect={setSelectedDate}\n\t\t/>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/calendar/calendar-disabled")
+		),
+		title: "calendar-disabled.tsx",
+	},
+	"calendar-multiple": {
+		content:
+			'"use client"\n\nimport { useState } from "react"\nimport { Calendar } from "9ui"\n\nexport function CalendarMultiple() {\n\tconst [selectedDates, setSelectedDates] = useState<Date[] | undefined>(\n\t\tundefined\n\t)\n\n\treturn (\n\t\t<Calendar\n\t\t\tmode="multiple"\n\t\t\tselected={selectedDates}\n\t\t\tonSelect={setSelectedDates}\n\t\t\tshowOutsideDays\n\t\t/>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/calendar/calendar-multiple")
+		),
+		title: "calendar-multiple.tsx",
+	},
+	"calendar-range": {
+		content:
+			'"use client"\n\nimport { useState } from "react"\nimport { Calendar } from "9ui"\nimport { DateRange } from "react-day-picker"\n\nexport function CalendarRange() {\n\tconst [range, setRange] = useState<DateRange | undefined>(undefined)\n\n\treturn (\n\t\t<Calendar\n\t\t\tmode="range"\n\t\t\tselected={range}\n\t\t\tonSelect={setRange}\n\t\t\tshowOutsideDays\n\t\t/>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/calendar/calendar-range")
+		),
+		title: "calendar-range.tsx",
+	},
+	"calendar-single": {
+		content:
+			'"use client"\n\nimport { useState } from "react"\nimport { Calendar } from "9ui"\n\nexport function CalendarSingle() {\n\tconst [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined)\n\n\treturn (\n\t\t<Calendar\n\t\t\tmode="single"\n\t\t\tselected={selectedDate}\n\t\t\tonSelect={setSelectedDate}\n\t\t\tshowOutsideDays\n\t\t/>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/calendar/calendar-single")
+		),
+		title: "calendar-single.tsx",
+	},
 	"checkbox-demo": {
 		content:
 			'import { Checkbox } from "9ui"\n\nexport function CheckboxDemo() {\n\treturn <Checkbox />\n}\n',

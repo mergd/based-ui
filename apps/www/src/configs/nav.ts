@@ -72,6 +72,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/button",
 				},
 				{
+					title: "Calendar",
+					href: "/docs/components/calendar",
+				},
+				{
 					title: "Checkbox",
 					href: "/docs/components/checkbox",
 				},

@@ -198,6 +198,46 @@ export const Catalog: Catalog = {
 		),
 		title: "calendar-single.tsx",
 	},
+	"carousel-demo": {
+		content:
+			'import {\n\tAspectRatio,\n\tCarousel,\n\tCarouselContent,\n\tCarouselItem,\n\tCarouselNavigation,\n\tCarouselNext,\n\tCarouselPrevious,\n} from "9ui"\n\nconst slides = [1, 2, 3, 4, 5]\n\nexport function CarouselDemo() {\n\treturn (\n\t\t<div className="w-60 sm:w-80 lg:w-96">\n\t\t\t<Carousel>\n\t\t\t\t<CarouselContent>\n\t\t\t\t\t{slides.map((slide) => (\n\t\t\t\t\t\t<CarouselItem key={slide}>\n\t\t\t\t\t\t\t<AspectRatio\n\t\t\t\t\t\t\t\tratio={16 / 9}\n\t\t\t\t\t\t\t\tclassName="rounded-lg bg-bg border border-muted"\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<div className="flex size-full items-center justify-center text-fg font-semibold text-xl">\n\t\t\t\t\t\t\t\t\t{slide}\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</AspectRatio>\n\t\t\t\t\t\t</CarouselItem>\n\t\t\t\t\t))}\n\t\t\t\t</CarouselContent>\n\t\t\t\t<CarouselNavigation>\n\t\t\t\t\t<CarouselPrevious />\n\t\t\t\t\t<CarouselNext />\n\t\t\t\t</CarouselNavigation>\n\t\t\t</Carousel>\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/carousel/carousel-demo")
+		),
+		title: "carousel-demo.tsx",
+	},
+	"carousel-looped": {
+		content:
+			'import {\n\tAspectRatio,\n\tCarousel,\n\tCarouselContent,\n\tCarouselItem,\n\tCarouselNavigation,\n\tCarouselNext,\n\tCarouselPrevious,\n} from "9ui"\n\nconst slides = [1, 2, 3, 4, 5]\n\nexport function CarouselLooped() {\n\treturn (\n\t\t<div className="w-60 sm:w-80 lg:w-96">\n\t\t\t<Carousel options={{ loop: true }}>\n\t\t\t\t<CarouselContent>\n\t\t\t\t\t{slides.map((slide) => (\n\t\t\t\t\t\t<CarouselItem key={slide}>\n\t\t\t\t\t\t\t<AspectRatio\n\t\t\t\t\t\t\t\tratio={16 / 9}\n\t\t\t\t\t\t\t\tclassName="rounded-lg bg-bg border border-muted"\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<div className="flex size-full items-center justify-center text-fg font-semibold text-xl">\n\t\t\t\t\t\t\t\t\t{slide}\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</AspectRatio>\n\t\t\t\t\t\t</CarouselItem>\n\t\t\t\t\t))}\n\t\t\t\t</CarouselContent>\n\t\t\t\t<CarouselNavigation>\n\t\t\t\t\t<CarouselPrevious />\n\t\t\t\t\t<CarouselNext />\n\t\t\t\t</CarouselNavigation>\n\t\t\t</Carousel>\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/carousel/carousel-looped")
+		),
+		title: "carousel-looped.tsx",
+	},
+	"carousel-multiple": {
+		content:
+			'import {\n\tAspectRatio,\n\tCarousel,\n\tCarouselContent,\n\tCarouselItem,\n\tCarouselNavigation,\n\tCarouselNext,\n\tCarouselPrevious,\n} from "9ui"\n\nconst slides = [1, 2, 3, 4, 5]\n\nexport function CarouselMultiple() {\n\treturn (\n\t\t<div className="w-60 sm:w-80 lg:w-96">\n\t\t\t<Carousel>\n\t\t\t\t<CarouselContent>\n\t\t\t\t\t{slides.map((slide) => (\n\t\t\t\t\t\t<CarouselItem key={slide} className="basis-1/3">\n\t\t\t\t\t\t\t<AspectRatio\n\t\t\t\t\t\t\t\tratio={16 / 9}\n\t\t\t\t\t\t\t\tclassName="rounded-lg bg-bg border border-muted"\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<div className="flex size-full items-center justify-center text-fg font-semibold text-xl">\n\t\t\t\t\t\t\t\t\t{slide}\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</AspectRatio>\n\t\t\t\t\t\t</CarouselItem>\n\t\t\t\t\t))}\n\t\t\t\t</CarouselContent>\n\t\t\t\t<CarouselNavigation>\n\t\t\t\t\t<CarouselPrevious />\n\t\t\t\t\t<CarouselNext />\n\t\t\t\t</CarouselNavigation>\n\t\t\t</Carousel>\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/carousel/carousel-multiple")
+		),
+		title: "carousel-multiple.tsx",
+	},
+	"carousel-thumbnail": {
+		content:
+			'import { useState } from "react"\nimport Image from "next/image"\nimport {\n\tAspectRatio,\n\tCarousel,\n\tCarouselApi,\n\tCarouselContent,\n\tCarouselItem,\n} from "9ui"\n\nconst slides = [\n\t"https://images.pexels.com/photos/1616403/pexels-photo-1616403.jpeg?auto=compress&cs=tinysrgb&w=450&h=800&dpr=2",\n\t"https://images.pexels.com/photos/1293120/pexels-photo-1293120.jpeg?auto=compress&cs=tinysrgb&w=450&h=800&dpr=2",\n\t"https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&w=450&h=800&dpr=2",\n\t"https://images.pexels.com/photos/2011824/pexels-photo-2011824.jpeg?auto=compress&cs=tinysrgb&w=450&h=800&dpr=2",\n\t"https://images.pexels.com/photos/2471235/pexels-photo-2471235.jpeg?auto=compress&cs=tinysrgb&w=450&h=800&dpr=2",\n]\n\nexport function CarouselThumbnail() {\n\tconst [api, setApi] = useState<CarouselApi>()\n\n\treturn (\n\t\t<div className="w-60 sm:w-80 lg:w-96">\n\t\t\t<Carousel setApi={setApi}>\n\t\t\t\t<CarouselContent>\n\t\t\t\t\t{slides.map((slide) => (\n\t\t\t\t\t\t<CarouselItem key={slide}>\n\t\t\t\t\t\t\t<AspectRatio\n\t\t\t\t\t\t\t\tratio={16 / 9}\n\t\t\t\t\t\t\t\tclassName="rounded-lg bg-bg border border-muted"\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<Image\n\t\t\t\t\t\t\t\t\tsrc={slide}\n\t\t\t\t\t\t\t\t\talt="Carousel slide"\n\t\t\t\t\t\t\t\t\tfill\n\t\t\t\t\t\t\t\t\tclassName="object-cover rounded-lg"\n\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t</AspectRatio>\n\t\t\t\t\t\t</CarouselItem>\n\t\t\t\t\t))}\n\t\t\t\t</CarouselContent>\n\t\t\t\t<div className="flex gap-2 items-center justify-center mt-2">\n\t\t\t\t\t{slides.map((slide, index) => (\n\t\t\t\t\t\t<button\n\t\t\t\t\t\t\tkey={slide}\n\t\t\t\t\t\t\tclassName="relative size-10"\n\t\t\t\t\t\t\tonClick={() => api?.scrollTo(index)}\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\t<Image\n\t\t\t\t\t\t\t\tsrc={slide}\n\t\t\t\t\t\t\t\talt="Carousel slide"\n\t\t\t\t\t\t\t\tfill\n\t\t\t\t\t\t\t\tclassName="object-cover rounded-md opacity-80 hover:opacity-100 transition-opacity duration-200"\n\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t</button>\n\t\t\t\t\t))}\n\t\t\t\t</div>\n\t\t\t</Carousel>\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/carousel/carousel-thumbnail")
+		),
+		title: "carousel-thumbnail.tsx",
+	},
+	"carousel-vertical": {
+		content:
+			'import {\n\tAspectRatio,\n\tCarousel,\n\tCarouselContent,\n\tCarouselItem,\n\tCarouselNavigation,\n\tCarouselNext,\n\tCarouselPrevious,\n} from "9ui"\n\nconst slides = [1, 2, 3, 4, 5]\n\nexport function CarouselVertical() {\n\treturn (\n\t\t<div className="w-60 sm:w-80 lg:w-96">\n\t\t\t<Carousel orientation="vertical" options={{ loop: true }}>\n\t\t\t\t<CarouselContent className="w-full aspect-video h-[-webkit-fill-available] p-1">\n\t\t\t\t\t{slides.map((slide) => (\n\t\t\t\t\t\t<CarouselItem key={slide} className="basis-full">\n\t\t\t\t\t\t\t<AspectRatio\n\t\t\t\t\t\t\t\tratio={16 / 9}\n\t\t\t\t\t\t\t\tclassName="rounded-lg bg-bg border border-muted"\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<div className="flex size-full items-center justify-center text-fg font-medium">\n\t\t\t\t\t\t\t\t\t{slide}\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</AspectRatio>\n\t\t\t\t\t\t</CarouselItem>\n\t\t\t\t\t))}\n\t\t\t\t</CarouselContent>\n\t\t\t\t<CarouselNavigation className="bottom-0.5">\n\t\t\t\t\t<CarouselPrevious />\n\t\t\t\t\t<CarouselNext />\n\t\t\t\t</CarouselNavigation>\n\t\t\t</Carousel>\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/carousel/carousel-vertical")
+		),
+		title: "carousel-vertical.tsx",
+	},
 	"checkbox-demo": {
 		content:
 			'import { Checkbox } from "9ui"\n\nexport function CheckboxDemo() {\n\treturn <Checkbox />\n}\n',

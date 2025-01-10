@@ -404,6 +404,38 @@ export const Catalog: Catalog = {
 		component: React.lazy(() => import("@/components/demos/sheet/sheet-sides")),
 		title: "sheet-sides.tsx",
 	},
+	"slider-demo": {
+		content:
+			'import { Slider } from "9ui"\n\nexport function SliderDemo() {\n\treturn <Slider defaultValue={50} />\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/slider/slider-demo")
+		),
+		title: "slider-demo.tsx",
+	},
+	"slider-disabled": {
+		content:
+			'import { Slider } from "9ui"\n\nexport function SliderDisabled() {\n\treturn <Slider defaultValue={50} disabled />\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/slider/slider-disabled")
+		),
+		title: "slider-disabled.tsx",
+	},
+	"slider-range": {
+		content:
+			'import { Slider } from "9ui"\n\nexport function SliderRange() {\n\treturn <Slider defaultValue={[20, 80]} />\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/slider/slider-range")
+		),
+		title: "slider-range.tsx",
+	},
+	"slider-with-label": {
+		content:
+			'import { Slider, SliderLabel } from "9ui"\n\nexport function SliderWithLabel() {\n\treturn (\n\t\t<Slider defaultValue={50}>\n\t\t\t<div className="flex justify-between">\n\t\t\t\t<span className="text-xs font-medium text-muted-fg">Opacity</span>\n\t\t\t\t<SliderLabel />\n\t\t\t</div>\n\t\t</Slider>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/slider/slider-with-label")
+		),
+		title: "slider-with-label.tsx",
+	},
 	"switch-demo": {
 		content:
 			'import { Switch } from "9ui"\n\nexport function SwitchDemo() {\n\treturn <Switch />\n}\n',

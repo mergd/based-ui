@@ -16,6 +16,7 @@ Beautiful, customizable components built with [Base UI](https://base-ui.com/) an
 - [x] Button
 - [x] Calendar
 - [ ] Card
+- [x] Carousel
 - [x] Checkbox
 - [x] Collapsible
 - [ ] Command
@@ -24,13 +25,13 @@ Beautiful, customizable components built with [Base UI](https://base-ui.com/) an
 - [ ] Drawer (WIP)
 - [x] Dropdown
 - [x] Form
-- [ ] Hover Card
 - [x] Input
 - [x] Input OTP
 - [x] Label
 - [ ] Menubar
 - [ ] Navigation Menu
 - [x] Popover
+- [x] Preview Card
 - [x] Progress
 - [ ] Radio Group
 - [ ] Scroll Area
@@ -38,7 +39,7 @@ Beautiful, customizable components built with [Base UI](https://base-ui.com/) an
 - [x] Separator
 - [x] Sheet
 - [ ] Skeleton
-- [ ] Slider
+- [x] Slider
 - [x] Switch
 - [ ] Table
 - [ ] Tabs

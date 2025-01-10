@@ -128,6 +128,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/sheet",
 				},
 				{
+					title: "Slider",
+					href: "/docs/components/slider",
+				},
+				{
 					title: "Switch",
 					href: "/docs/components/switch",
 				},

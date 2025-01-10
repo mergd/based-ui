@@ -384,6 +384,22 @@ export const Catalog: Catalog = {
 		),
 		title: "progress-with-label.tsx",
 	},
+	"scroll-area-demo": {
+		content:
+			'import { ScrollArea, Separator } from "9ui"\n\nconst versions = Array.from({ length: 50 }, (_, i) => `v${i + 1}.0.0`)\n\nexport function ScrollAreaDemo() {\n\treturn (\n\t\t<ScrollArea className="h-60 max-w-60 w-full border border-muted rounded-lg p-2">\n\t\t\t<h4 className="text-sm font-medium text-fg">Versions</h4>\n\t\t\t<Separator className="my-2" />\n\t\t\t<div className="flex flex-col gap-2 text-sm mt-2 text-fg">\n\t\t\t\t{versions.map((version) => (\n\t\t\t\t\t<div key={version}>{version}</div>\n\t\t\t\t))}\n\t\t\t</div>\n\t\t</ScrollArea>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/scroll-area/scroll-area-demo")
+		),
+		title: "scroll-area-demo.tsx",
+	},
+	"scroll-area-horizontal": {
+		content:
+			'import { ScrollArea, Separator } from "9ui"\n\nconst versions = Array.from({ length: 50 }, (_, i) => `v${i + 1}.0.0`).join(\n\t", "\n)\n\nexport function ScrollAreaHorizontal() {\n\treturn (\n\t\t<ScrollArea\n\t\t\tclassName="h-fit max-w-60 w-full border border-muted rounded-lg p-2"\n\t\t\torientation="horizontal"\n\t\t>\n\t\t\t<div className="flex flex-col gap-2 text-sm mt-2 text-fg pb-2 text-nowrap">\n\t\t\t\t{versions}\n\t\t\t</div>\n\t\t</ScrollArea>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/scroll-area/scroll-area-horizontal")
+		),
+		title: "scroll-area-horizontal.tsx",
+	},
 	"separator-demo": {
 		content:
 			'import { Separator } from "9ui"\n\nexport function SeparatorDemo() {\n\treturn (\n\t\t<div>\n\t\t\t<p>9ui is a component library for building modern web applications.</p>\n\t\t\t<Separator className="my-2.5" />\n\t\t\t<div className="flex gap-2.5">\n\t\t\t\t<p>Website</p>\n\t\t\t\t<Separator orientation="vertical" />\n\t\t\t\t<p>Documentation</p>\n\t\t\t\t<Separator orientation="vertical" />\n\t\t\t\t<p>Community</p>\n\t\t\t</div>\n\t\t</div>\n\t)\n}\n',

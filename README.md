@@ -34,7 +34,7 @@ Beautiful, customizable components built with [Base UI](https://base-ui.com/) an
 - [x] Preview Card
 - [x] Progress
 - [ ] Radio Group
-- [ ] Scroll Area
+- [x] Scroll Area
 - [ ] Select
 - [x] Separator
 - [x] Sheet

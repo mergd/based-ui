@@ -120,6 +120,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/progress",
 				},
 				{
+					title: "Scroll Area",
+					href: "/docs/components/scroll-area",
+				},
+				{
 					title: "Separator",
 					href: "/docs/components/separator",
 				},

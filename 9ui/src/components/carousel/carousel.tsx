@@ -286,5 +286,6 @@ export {
 	CarouselNavigation,
 	CarouselNext,
 	CarouselPrevious,
-	CarouselApi,
 }
+
+export type { CarouselApi }

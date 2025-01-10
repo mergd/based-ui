@@ -112,6 +112,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/popover",
 				},
 				{
+					title: "Preview Card",
+					href: "/docs/components/preview-card",
+				},
+				{
 					title: "Progress",
 					href: "/docs/components/progress",
 				},

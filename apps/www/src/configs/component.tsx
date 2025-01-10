@@ -8,6 +8,7 @@ import {
 	AspectRatio,
 	Badge,
 	Button,
+	Toggle,
 } from "9ui"
 
 type ComponentConfig = {
@@ -29,6 +30,8 @@ const ALERT_VARIANTS = [
 	"error",
 	"success",
 ] as const
+
+const TOGGLE_VARIANTS = ["default", "outline"] as const
 
 export const ComponentConfig: Record<string, ComponentConfig> = {
 	alert: {
@@ -134,5 +137,12 @@ export const ComponentConfig: Record<string, ComponentConfig> = {
 				Destructive
 			</Button>,
 		],
+	},
+	toggle: {
+		variants: TOGGLE_VARIANTS.map((variant) => (
+			<Toggle key={variant} variant={variant}>
+				<Monicon name="ri:bold" />
+			</Toggle>
+		)),
 	},
 }

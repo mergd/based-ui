@@ -500,4 +500,36 @@ export const Catalog: Catalog = {
 		),
 		title: "textarea-error.tsx",
 	},
+	"toggle-custom-control": {
+		content:
+			'"use client"\n\nimport { useState } from "react"\nimport Monicon from "@monicon/react"\nimport { Toggle } from "9ui"\n\nexport function ToggleCustomControl() {\n\tconst [isPinned, setIsPinned] = useState(false)\n\n\treturn (\n\t\t<Toggle aria-label="Pin" pressed={isPinned} onPressedChange={setIsPinned}>\n\t\t\t<Monicon name={isPinned ? "ri:unpin-line" : "ri:pushpin-line"} />\n\t\t</Toggle>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/toggle/toggle-custom-control")
+		),
+		title: "toggle-custom-control.tsx",
+	},
+	"toggle-demo": {
+		content:
+			'import Monicon from "@monicon/react"\nimport { Toggle } from "9ui"\n\nexport function ToggleDemo() {\n\treturn (\n\t\t<Toggle aria-label="Pin">\n\t\t\t<Monicon name="ri:pushpin-line" />\n\t\t</Toggle>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/toggle/toggle-demo")
+		),
+		title: "toggle-demo.tsx",
+	},
+	"toggle-disabled": {
+		content:
+			'import Monicon from "@monicon/react"\nimport { Toggle } from "9ui"\n\nexport function ToggleDisabled() {\n\treturn (\n\t\t<Toggle aria-label="Pin" disabled>\n\t\t\t<Monicon name="ri:pushpin-line" />\n\t\t</Toggle>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/toggle/toggle-disabled")
+		),
+		title: "toggle-disabled.tsx",
+	},
+	"toggle-sizes": {
+		content:
+			'import Monicon from "@monicon/react"\nimport { Toggle } from "9ui"\n\nexport function ToggleSizes() {\n\treturn (\n\t\t<div className="flex items-center gap-4">\n\t\t\t<Toggle aria-label="Pin" size="sm">\n\t\t\t\t<Monicon name="ri:pushpin-line" />\n\t\t\t</Toggle>\n\t\t\t<Toggle aria-label="Pin" size="md">\n\t\t\t\t<Monicon name="ri:pushpin-line" />\n\t\t\t</Toggle>\n\t\t\t<Toggle aria-label="Pin" size="lg">\n\t\t\t\t<Monicon name="ri:pushpin-line" />\n\t\t\t</Toggle>\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/toggle/toggle-sizes")
+		),
+		title: "toggle-sizes.tsx",
+	},
 }

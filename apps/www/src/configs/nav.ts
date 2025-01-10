@@ -143,6 +143,10 @@ export const navConfig: NavConfig = {
 					title: "Textarea",
 					href: "/docs/components/textarea",
 				},
+				{
+					title: "Toggle",
+					href: "/docs/components/toggle",
+				},
 			],
 		},
 	],

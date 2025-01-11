@@ -151,6 +151,10 @@ export const navConfig: NavConfig = {
 					title: "Toggle Group",
 					href: "/docs/components/toggle-group",
 				},
+				{
+					title: "Tooltip",
+					href: "/docs/components/tooltip",
+				},
 			],
 		},
 	],

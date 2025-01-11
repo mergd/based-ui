@@ -548,4 +548,20 @@ export const Catalog: Catalog = {
 		),
 		title: "toggle-group-multiple.tsx",
 	},
+	"tooltip-custom-position": {
+		content:
+			'import {\n\tTooltip,\n\tTooltipContent,\n\tTooltipTrigger,\n} from "9ui/src/components/tooltip/tooltip"\n\nconst positions = ["top", "right", "bottom", "left"] as const\n\nexport function TooltipCustomPosition() {\n\treturn (\n\t\t<div className="grid grid-cols-2 gap-2">\n\t\t\t{positions.map((position) => (\n\t\t\t\t<Tooltip>\n\t\t\t\t\t<TooltipTrigger className="rounded-md border border-muted bg-bg px-2 py-1.5 text-sm text-fg">\n\t\t\t\t\t\t{position}\n\t\t\t\t\t</TooltipTrigger>\n\t\t\t\t\t<TooltipContent\n\t\t\t\t\t\tclassName="max-w-56"\n\t\t\t\t\t\tpositionerProps={{ side: position }}\n\t\t\t\t\t>\n\t\t\t\t\t\t<span>This tooltip is positioned at the {position} side.</span>\n\t\t\t\t\t</TooltipContent>\n\t\t\t\t</Tooltip>\n\t\t\t))}\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/tooltip/tooltip-custom-position")
+		),
+		title: "tooltip-custom-position.tsx",
+	},
+	"tooltip-demo": {
+		content:
+			'import Monicon from "@monicon/react"\nimport {\n\tTooltip,\n\tTooltipContent,\n\tTooltipTrigger,\n} from "9ui/src/components/tooltip/tooltip"\n\nexport function TooltipDemo() {\n\treturn (\n\t\t<Tooltip>\n\t\t\t<TooltipTrigger className="rounded-md border border-muted p-2">\n\t\t\t\t<Monicon name="ri:twitter-x-fill" />\n\t\t\t</TooltipTrigger>\n\t\t\t<TooltipContent>\n\t\t\t\t<span>\n\t\t\t\t\tFollow me{" "}\n\t\t\t\t\t<a\n\t\t\t\t\t\tclassName="font-medium"\n\t\t\t\t\t\thref="https://x.com/borabalogluu"\n\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t>\n\t\t\t\t\t\t@borabalogluu\n\t\t\t\t\t</a>\n\t\t\t\t</span>\n\t\t\t</TooltipContent>\n\t\t</Tooltip>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/tooltip/tooltip-demo")
+		),
+		title: "tooltip-demo.tsx",
+	},
 }

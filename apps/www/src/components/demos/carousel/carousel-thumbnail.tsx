@@ -27,19 +27,19 @@ export default function CarouselThumbnail() {
 						<CarouselItem key={slide}>
 							<AspectRatio
 								ratio={16 / 9}
-								className="rounded-lg bg-bg border border-muted"
+								className="rounded-lg border border-muted bg-bg"
 							>
 								<Image
 									src={slide}
 									alt="Carousel slide"
 									fill
-									className="object-cover rounded-lg"
+									className="rounded-lg object-cover"
 								/>
 							</AspectRatio>
 						</CarouselItem>
 					))}
 				</CarouselContent>
-				<div className="flex gap-2 items-center justify-center mt-2">
+				<div className="mt-2 flex items-center justify-center gap-2">
 					{slides.map((slide, index) => (
 						<button
 							key={slide}
@@ -50,7 +50,7 @@ export default function CarouselThumbnail() {
 								src={slide}
 								alt="Carousel slide"
 								fill
-								className="object-cover rounded-md opacity-80 hover:opacity-100 transition-opacity duration-200"
+								className="rounded-md object-cover opacity-80 transition-opacity duration-200 hover:opacity-100"
 							/>
 						</button>
 					))}

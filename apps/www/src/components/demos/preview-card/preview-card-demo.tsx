@@ -8,15 +8,15 @@ import Logo from "@/components/logo"
 export default function PreviewCardDemo() {
 	return (
 		<PreviewCard>
-			<p className="text-balance text-fg max-w-80">
+			<p className="max-w-80 text-balance text-fg">
 				This is a preview card component from{" "}
-				<PreviewCardTrigger className="underline underline-offset-2 cursor-pointer">
+				<PreviewCardTrigger className="cursor-pointer underline underline-offset-2">
 					9ui
 				</PreviewCardTrigger>
 				.
 			</p>
-			<PreviewCardContent className="text-sm max-w-80">
-				<Logo className="w-10 mx-auto" />
+			<PreviewCardContent className="max-w-80 text-sm">
+				<Logo className="mx-auto w-10" />
 				<p className="mt-2">
 					Beautiful, customizable components built with{" "}
 					<a
@@ -36,7 +36,7 @@ export default function PreviewCardDemo() {
 					</a>
 					.
 				</p>
-				<div className="flex flex-col gap-2 mt-2 text-sm">
+				<div className="mt-2 flex flex-col gap-2 text-sm">
 					<div className="flex items-center gap-2">
 						<span className="flex items-center gap-1 text-muted-fg">
 							<Monicon name="ri:user-3-fill" size={14} />

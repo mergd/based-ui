@@ -14,14 +14,14 @@ export default function CarouselVertical() {
 	return (
 		<div className="w-60 sm:w-80 lg:w-96">
 			<Carousel orientation="vertical" options={{ loop: true }}>
-				<CarouselContent className="w-full aspect-video h-[-webkit-fill-available] p-1">
+				<CarouselContent className="aspect-video h-[-webkit-fill-available] w-full p-1">
 					{slides.map((slide) => (
 						<CarouselItem key={slide} className="basis-full">
 							<AspectRatio
 								ratio={16 / 9}
-								className="rounded-lg bg-bg border border-muted"
+								className="rounded-lg border border-muted bg-bg"
 							>
-								<div className="flex size-full items-center justify-center text-fg font-medium">
+								<div className="flex size-full items-center justify-center font-medium text-fg">
 									{slide}
 								</div>
 							</AspectRatio>

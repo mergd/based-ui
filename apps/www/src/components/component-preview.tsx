@@ -71,7 +71,7 @@ export function ComponentPreview({
 				className
 			)}
 		>
-			<div className="relative flex items-center justify-center p-10 min-h-[200px]">
+			<div className="relative flex min-h-[200px] items-center justify-center p-10">
 				{showReload && (
 					<Button
 						variant="ghost"

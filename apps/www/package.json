@@ -7,7 +7,8 @@
 		"build": "pnpm generate:catalog && next build",
 		"start": "next start",
 		"lint": "next lint",
-		"generate:catalog": "npx tsx --tsconfig ./tsconfig.scripts.json ./scripts/generate-catalog.ts && prettier --log-level silent --write \"src/configs/catalog.tsx\" --cache"
+		"generate:catalog": "npx tsx --tsconfig ./tsconfig.scripts.json ./scripts/generate-catalog.ts && prettier --log-level silent --write \"src/configs/catalog.tsx\" --cache",
+		"fix": "next lint --fix"
 	},
 	"dependencies": {
 		"9ui": "workspace:*",

@@ -532,4 +532,20 @@ export const Catalog: Catalog = {
 		),
 		title: "toggle-sizes.tsx",
 	},
+	"toggle-group-demo": {
+		content:
+			'import Monicon from "@monicon/react"\nimport { ToggleGroup } from "9ui/src/components/toggle-group/toggle-group"\nimport { Toggle } from "9ui/src/components/toggle/toggle"\n\nexport function ToggleGroupDemo() {\n\treturn (\n\t\t<ToggleGroup>\n\t\t\t<Toggle value="left">\n\t\t\t\t<Monicon name="ri:align-left" />\n\t\t\t</Toggle>\n\t\t\t<Toggle value="center">\n\t\t\t\t<Monicon name="ri:align-center" />\n\t\t\t</Toggle>\n\t\t\t<Toggle value="right">\n\t\t\t\t<Monicon name="ri:align-right" />\n\t\t\t</Toggle>\n\t\t</ToggleGroup>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/toggle-group/toggle-group-demo")
+		),
+		title: "toggle-group-demo.tsx",
+	},
+	"toggle-group-multiple": {
+		content:
+			'import Monicon from "@monicon/react"\nimport { ToggleGroup } from "9ui/src/components/toggle-group/toggle-group"\nimport { Toggle } from "9ui/src/components/toggle/toggle"\n\nexport function ToggleGroupMultiple() {\n\treturn (\n\t\t<ToggleGroup toggleMultiple>\n\t\t\t<Toggle value="bold">\n\t\t\t\t<Monicon name="ri:bold" />\n\t\t\t</Toggle>\n\t\t\t<Toggle value="italic">\n\t\t\t\t<Monicon name="ri:italic" />\n\t\t\t</Toggle>\n\t\t\t<Toggle value="underline">\n\t\t\t\t<Monicon name="ri:underline" />\n\t\t\t</Toggle>\n\t\t</ToggleGroup>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/toggle-group/toggle-group-multiple")
+		),
+		title: "toggle-group-multiple.tsx",
+	},
 }

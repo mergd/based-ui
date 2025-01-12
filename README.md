@@ -43,7 +43,7 @@ Beautiful, customizable components built with [Base UI](https://base-ui.com/) an
 - [x] Slider
 - [x] Switch
 - [ ] Table
-- [ ] Tabs
+- [x] Tabs
 - [ ] Tag Input
 - [x] Textarea
 - [ ] Toast

@@ -1,6 +1,5 @@
 import Monicon from "@monicon/react"
-import { ToggleGroup } from "9ui/src/components/toggle-group/toggle-group"
-import { Toggle } from "9ui/src/components/toggle/toggle"
+import { Toggle, ToggleGroup } from "9ui"
 
 export default function ToggleGroupDemo() {
 	return (

@@ -1,9 +1,5 @@
 import Monicon from "@monicon/react"
-import {
-	Tooltip,
-	TooltipContent,
-	TooltipTrigger,
-} from "9ui/src/components/tooltip/tooltip"
+import { Tooltip, TooltipContent, TooltipTrigger } from "9ui"
 
 export default function TooltipDemo() {
 	return (

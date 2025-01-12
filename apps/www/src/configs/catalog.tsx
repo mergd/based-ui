@@ -354,7 +354,7 @@ export const Catalog: Catalog = {
 	},
 	"popover-demo": {
 		content:
-			'import Monicon from "@monicon/react"\nimport {\n\tInput,\n\tPopover,\n\tPopoverContent,\n\tPopoverDescription,\n\tPopoverTitle,\n\tPopoverTrigger,\n} from "9ui"\nimport { Button } from "9ui/src/components/button/button"\n\nexport function PopoverDemo() {\n\tconst copyToClipboard = () => {\n\t\tnavigator.clipboard.writeText(window.location.href)\n\t}\n\n\treturn (\n\t\t<Popover>\n\t\t\t<PopoverTrigger className="cursor-pointer rounded-md border border-muted p-2 transition-colors hover:bg-subtle">\n\t\t\t\t<Monicon name="ri:share-box-fill" />\n\t\t\t</PopoverTrigger>\n\t\t\t<PopoverContent className="w-[calc(100vw-4rem)] sm:w-[500px]">\n\t\t\t\t<div className="flex flex-col space-y-3.5">\n\t\t\t\t\t<div className="flex flex-col space-y-1">\n\t\t\t\t\t\t<PopoverTitle>Share</PopoverTitle>\n\t\t\t\t\t\t<PopoverDescription>Share this component.</PopoverDescription>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div className="flex w-full gap-2">\n\t\t\t\t\t\t<Input\n\t\t\t\t\t\t\tinputWrapperClassName="w-full"\n\t\t\t\t\t\t\tdefaultValue={window.location.href}\n\t\t\t\t\t\t\tautoFocus={false}\n\t\t\t\t\t\t\treadOnly\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t<Button\n\t\t\t\t\t\t\tclassName="shrink-0"\n\t\t\t\t\t\t\tsize="icon-md"\n\t\t\t\t\t\t\tonClick={copyToClipboard}\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\t<Monicon name="ri:file-copy-fill" />\n\t\t\t\t\t\t</Button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</PopoverContent>\n\t\t</Popover>\n\t)\n}\n',
+			'import Monicon from "@monicon/react"\nimport {\n\tButton,\n\tInput,\n\tPopover,\n\tPopoverContent,\n\tPopoverDescription,\n\tPopoverTitle,\n\tPopoverTrigger,\n} from "9ui"\n\nexport function PopoverDemo() {\n\tconst copyToClipboard = () => {\n\t\tnavigator.clipboard.writeText(window.location.href)\n\t}\n\n\treturn (\n\t\t<Popover>\n\t\t\t<PopoverTrigger className="cursor-pointer rounded-md border border-muted p-2 transition-colors hover:bg-subtle">\n\t\t\t\t<Monicon name="ri:share-box-fill" />\n\t\t\t</PopoverTrigger>\n\t\t\t<PopoverContent className="w-[calc(100vw-4rem)] sm:w-[500px]">\n\t\t\t\t<div className="flex flex-col space-y-3.5">\n\t\t\t\t\t<div className="flex flex-col space-y-1">\n\t\t\t\t\t\t<PopoverTitle>Share</PopoverTitle>\n\t\t\t\t\t\t<PopoverDescription>Share this component.</PopoverDescription>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div className="flex w-full gap-2">\n\t\t\t\t\t\t<Input\n\t\t\t\t\t\t\tinputWrapperClassName="w-full"\n\t\t\t\t\t\t\tdefaultValue={window.location.href}\n\t\t\t\t\t\t\tautoFocus={false}\n\t\t\t\t\t\t\treadOnly\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t<Button\n\t\t\t\t\t\t\tclassName="shrink-0"\n\t\t\t\t\t\t\tsize="icon-md"\n\t\t\t\t\t\t\tonClick={copyToClipboard}\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\t<Monicon name="ri:file-copy-fill" />\n\t\t\t\t\t\t</Button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</PopoverContent>\n\t\t</Popover>\n\t)\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/popover/popover-demo")
 		),
@@ -558,7 +558,7 @@ export const Catalog: Catalog = {
 	},
 	"toggle-group-demo": {
 		content:
-			'import Monicon from "@monicon/react"\nimport { ToggleGroup } from "9ui/src/components/toggle-group/toggle-group"\nimport { Toggle } from "9ui/src/components/toggle/toggle"\n\nexport function ToggleGroupDemo() {\n\treturn (\n\t\t<ToggleGroup>\n\t\t\t<Toggle value="left">\n\t\t\t\t<Monicon name="ri:align-left" />\n\t\t\t</Toggle>\n\t\t\t<Toggle value="center">\n\t\t\t\t<Monicon name="ri:align-center" />\n\t\t\t</Toggle>\n\t\t\t<Toggle value="right">\n\t\t\t\t<Monicon name="ri:align-right" />\n\t\t\t</Toggle>\n\t\t</ToggleGroup>\n\t)\n}\n',
+			'import Monicon from "@monicon/react"\nimport { Toggle, ToggleGroup } from "9ui"\n\nexport function ToggleGroupDemo() {\n\treturn (\n\t\t<ToggleGroup>\n\t\t\t<Toggle value="left">\n\t\t\t\t<Monicon name="ri:align-left" />\n\t\t\t</Toggle>\n\t\t\t<Toggle value="center">\n\t\t\t\t<Monicon name="ri:align-center" />\n\t\t\t</Toggle>\n\t\t\t<Toggle value="right">\n\t\t\t\t<Monicon name="ri:align-right" />\n\t\t\t</Toggle>\n\t\t</ToggleGroup>\n\t)\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/toggle-group/toggle-group-demo")
 		),
@@ -566,7 +566,7 @@ export const Catalog: Catalog = {
 	},
 	"toggle-group-multiple": {
 		content:
-			'import Monicon from "@monicon/react"\nimport { ToggleGroup } from "9ui/src/components/toggle-group/toggle-group"\nimport { Toggle } from "9ui/src/components/toggle/toggle"\n\nexport function ToggleGroupMultiple() {\n\treturn (\n\t\t<ToggleGroup toggleMultiple>\n\t\t\t<Toggle value="bold">\n\t\t\t\t<Monicon name="ri:bold" />\n\t\t\t</Toggle>\n\t\t\t<Toggle value="italic">\n\t\t\t\t<Monicon name="ri:italic" />\n\t\t\t</Toggle>\n\t\t\t<Toggle value="underline">\n\t\t\t\t<Monicon name="ri:underline" />\n\t\t\t</Toggle>\n\t\t</ToggleGroup>\n\t)\n}\n',
+			'import Monicon from "@monicon/react"\nimport { Toggle, ToggleGroup } from "9ui"\n\nexport function ToggleGroupMultiple() {\n\treturn (\n\t\t<ToggleGroup toggleMultiple>\n\t\t\t<Toggle value="bold">\n\t\t\t\t<Monicon name="ri:bold" />\n\t\t\t</Toggle>\n\t\t\t<Toggle value="italic">\n\t\t\t\t<Monicon name="ri:italic" />\n\t\t\t</Toggle>\n\t\t\t<Toggle value="underline">\n\t\t\t\t<Monicon name="ri:underline" />\n\t\t\t</Toggle>\n\t\t</ToggleGroup>\n\t)\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/toggle-group/toggle-group-multiple")
 		),
@@ -574,7 +574,7 @@ export const Catalog: Catalog = {
 	},
 	"tooltip-custom-position": {
 		content:
-			'import {\n\tTooltip,\n\tTooltipContent,\n\tTooltipTrigger,\n} from "9ui/src/components/tooltip/tooltip"\n\nconst positions = ["top", "right", "bottom", "left"] as const\n\nexport function TooltipCustomPosition() {\n\treturn (\n\t\t<div className="grid grid-cols-2 gap-2">\n\t\t\t{positions.map((position) => (\n\t\t\t\t<Tooltip key={position}>\n\t\t\t\t\t<TooltipTrigger className="rounded-md border border-muted bg-bg px-2 py-1.5 text-sm text-fg">\n\t\t\t\t\t\t{position}\n\t\t\t\t\t</TooltipTrigger>\n\t\t\t\t\t<TooltipContent\n\t\t\t\t\t\tclassName="max-w-56"\n\t\t\t\t\t\tpositionerProps={{ side: position }}\n\t\t\t\t\t>\n\t\t\t\t\t\t<span>This tooltip is positioned at the {position} side.</span>\n\t\t\t\t\t</TooltipContent>\n\t\t\t\t</Tooltip>\n\t\t\t))}\n\t\t</div>\n\t)\n}\n',
+			'import { Tooltip, TooltipContent, TooltipTrigger } from "9ui"\n\nconst positions = ["top", "right", "bottom", "left"] as const\n\nexport function TooltipCustomPosition() {\n\treturn (\n\t\t<div className="grid grid-cols-2 gap-2">\n\t\t\t{positions.map((position) => (\n\t\t\t\t<Tooltip key={position}>\n\t\t\t\t\t<TooltipTrigger className="rounded-md border border-muted bg-bg px-2 py-1.5 text-sm text-fg">\n\t\t\t\t\t\t{position}\n\t\t\t\t\t</TooltipTrigger>\n\t\t\t\t\t<TooltipContent\n\t\t\t\t\t\tclassName="max-w-56"\n\t\t\t\t\t\tpositionerProps={{ side: position }}\n\t\t\t\t\t>\n\t\t\t\t\t\t<span>This tooltip is positioned at the {position} side.</span>\n\t\t\t\t\t</TooltipContent>\n\t\t\t\t</Tooltip>\n\t\t\t))}\n\t\t</div>\n\t)\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/tooltip/tooltip-custom-position")
 		),
@@ -582,7 +582,7 @@ export const Catalog: Catalog = {
 	},
 	"tooltip-demo": {
 		content:
-			'import Monicon from "@monicon/react"\nimport {\n\tTooltip,\n\tTooltipContent,\n\tTooltipTrigger,\n} from "9ui/src/components/tooltip/tooltip"\n\nexport function TooltipDemo() {\n\treturn (\n\t\t<Tooltip>\n\t\t\t<TooltipTrigger className="rounded-md border border-muted p-2">\n\t\t\t\t<Monicon name="ri:twitter-x-fill" />\n\t\t\t</TooltipTrigger>\n\t\t\t<TooltipContent>\n\t\t\t\t<span>\n\t\t\t\t\tFollow me{" "}\n\t\t\t\t\t<a\n\t\t\t\t\t\tclassName="font-medium"\n\t\t\t\t\t\thref="https://x.com/borabalogluu"\n\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t>\n\t\t\t\t\t\t@borabalogluu\n\t\t\t\t\t</a>\n\t\t\t\t</span>\n\t\t\t</TooltipContent>\n\t\t</Tooltip>\n\t)\n}\n',
+			'import Monicon from "@monicon/react"\nimport { Tooltip, TooltipContent, TooltipTrigger } from "9ui"\n\nexport function TooltipDemo() {\n\treturn (\n\t\t<Tooltip>\n\t\t\t<TooltipTrigger className="rounded-md border border-muted p-2">\n\t\t\t\t<Monicon name="ri:twitter-x-fill" />\n\t\t\t</TooltipTrigger>\n\t\t\t<TooltipContent>\n\t\t\t\t<span>\n\t\t\t\t\tFollow me{" "}\n\t\t\t\t\t<a\n\t\t\t\t\t\tclassName="font-medium"\n\t\t\t\t\t\thref="https://x.com/borabalogluu"\n\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t>\n\t\t\t\t\t\t@borabalogluu\n\t\t\t\t\t</a>\n\t\t\t\t</span>\n\t\t\t</TooltipContent>\n\t\t</Tooltip>\n\t)\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/tooltip/tooltip-demo")
 		),

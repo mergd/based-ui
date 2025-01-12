@@ -1,8 +1,4 @@
-import {
-	Tooltip,
-	TooltipContent,
-	TooltipTrigger,
-} from "9ui/src/components/tooltip/tooltip"
+import { Tooltip, TooltipContent, TooltipTrigger } from "9ui"
 
 const positions = ["top", "right", "bottom", "left"] as const
 

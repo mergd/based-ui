@@ -6,7 +6,17 @@ import { createChildElement, merge } from "../../utils"
 /********
 Tooltip Mappings
 ********/
-const Tooltip = BaseTooltip.Root
+const Tooltip = ({
+	children,
+	...props
+}: React.ComponentPropsWithoutRef<typeof BaseTooltip.Provider>) => {
+	return (
+		<BaseTooltip.Provider delay={200} closeDelay={200} {...props}>
+			<BaseTooltip.Root>{children}</BaseTooltip.Root>
+		</BaseTooltip.Provider>
+	)
+}
+Tooltip.displayName = "Tooltip"
 
 /********
 Tooltip Trigger

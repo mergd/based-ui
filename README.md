@@ -29,13 +29,14 @@ Beautiful, customizable components built with [Base UI](https://base-ui.com/) an
 - [x] Input OTP
 - [x] Label
 - [ ] Menubar
+- [ ] Multi Select
 - [ ] Navigation Menu
 - [x] Popover
 - [x] Preview Card
 - [x] Progress
 - [ ] Radio Group
 - [x] Scroll Area
-- [ ] Select
+- [x] Select
 - [x] Separator
 - [x] Sheet
 - [ ] Skeleton
@@ -43,7 +44,9 @@ Beautiful, customizable components built with [Base UI](https://base-ui.com/) an
 - [x] Switch
 - [ ] Table
 - [ ] Tabs
+- [ ] Tag Input
 - [x] Textarea
 - [ ] Toast
-- [ ] Toggle
-- [ ] Tooltip
+- [x] Toggle
+- [x] Toggle Group
+- [x] Tooltip

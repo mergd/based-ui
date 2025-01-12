@@ -124,6 +124,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/scroll-area",
 				},
 				{
+					title: "Select",
+					href: "/docs/components/select",
+				},
+				{
 					title: "Separator",
 					href: "/docs/components/separator",
 				},

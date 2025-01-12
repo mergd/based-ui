@@ -400,6 +400,30 @@ export const Catalog: Catalog = {
 		),
 		title: "scroll-area-horizontal.tsx",
 	},
+	"select-demo": {
+		content:
+			'import {\n\tSelect,\n\tSelectContent,\n\tSelectItem,\n\tSelectTrigger,\n\tSelectValue,\n} from "9ui"\n\nexport function SelectDemo() {\n\treturn (\n\t\t<div className="w-80">\n\t\t\t<Select>\n\t\t\t\t<SelectTrigger>\n\t\t\t\t\t<SelectValue placeholder="Select a fruit" />\n\t\t\t\t</SelectTrigger>\n\t\t\t\t<SelectContent>\n\t\t\t\t\t<SelectItem value="apple">Apple</SelectItem>\n\t\t\t\t\t<SelectItem value="banana">Banana</SelectItem>\n\t\t\t\t\t<SelectItem value="cherry">Cherry</SelectItem>\n\t\t\t\t</SelectContent>\n\t\t\t</Select>\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/select/select-demo")
+		),
+		title: "select-demo.tsx",
+	},
+	"select-with-custom-value": {
+		content:
+			'import { useState } from "react"\nimport Image from "next/image"\nimport {\n\tSelect,\n\tSelectContent,\n\tSelectItem,\n\tSelectTrigger,\n\tSelectValue,\n} from "9ui"\n\nconst users = {\n\t"karen-smith": {\n\t\tname: "Karen Smith",\n\t\timage: "/memoji-1.png",\n\t},\n\t"chris-williams": {\n\t\tname: "Chris Williams",\n\t\timage: "/memoji-3.png",\n\t},\n\t"melissa-johnson": {\n\t\tname: "Melissa Johnson",\n\t\timage: "/memoji-2.png",\n\t},\n\t"frank-lee": {\n\t\tname: "Frank Lee",\n\t\timage: "/memoji-4.png",\n\t},\n}\n\nexport function SelectWithCustomValue() {\n\tconst [selected, setSelected] = useState<keyof typeof users | null>(null)\n\n\treturn (\n\t\t<div className="w-80">\n\t\t\t<Select value={selected} onValueChange={setSelected}>\n\t\t\t\t<SelectTrigger>\n\t\t\t\t\t<SelectValue>\n\t\t\t\t\t\t{() =>\n\t\t\t\t\t\t\tselected ? (\n\t\t\t\t\t\t\t\t<div className="flex items-center gap-2">\n\t\t\t\t\t\t\t\t\t<Image\n\t\t\t\t\t\t\t\t\t\tsrc={users[selected].image}\n\t\t\t\t\t\t\t\t\t\talt={users[selected].name}\n\t\t\t\t\t\t\t\t\t\twidth={16}\n\t\t\t\t\t\t\t\t\t\theight={16}\n\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t\t{users[selected].name}\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t) : (\n\t\t\t\t\t\t\t\t"Assign to"\n\t\t\t\t\t\t\t)\n\t\t\t\t\t\t}\n\t\t\t\t\t</SelectValue>\n\t\t\t\t</SelectTrigger>\n\t\t\t\t<SelectContent>\n\t\t\t\t\t{Object.entries(users).map(([id, user]) => (\n\t\t\t\t\t\t<SelectItem key={id} value={id}>\n\t\t\t\t\t\t\t<div className="flex items-center gap-2">\n\t\t\t\t\t\t\t\t<Image\n\t\t\t\t\t\t\t\t\tsrc={user.image}\n\t\t\t\t\t\t\t\t\talt={user.name}\n\t\t\t\t\t\t\t\t\twidth={16}\n\t\t\t\t\t\t\t\t\theight={16}\n\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t{user.name}\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</SelectItem>\n\t\t\t\t\t))}\n\t\t\t\t</SelectContent>\n\t\t\t</Select>\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/select/select-with-custom-value")
+		),
+		title: "select-with-custom-value.tsx",
+	},
+	"select-with-groups": {
+		content:
+			'import {\n\tSelect,\n\tSelectContent,\n\tSelectGroup,\n\tSelectGroupLabel,\n\tSelectItem,\n\tSelectTrigger,\n\tSelectValue,\n} from "9ui"\n\nexport function SelectWithGroups() {\n\treturn (\n\t\t<div className="w-80">\n\t\t\t<Select>\n\t\t\t\t<SelectTrigger>\n\t\t\t\t\t<SelectValue placeholder="Select an option" />\n\t\t\t\t</SelectTrigger>\n\t\t\t\t<SelectContent>\n\t\t\t\t\t<SelectGroup>\n\t\t\t\t\t\t<SelectGroupLabel>Fruits</SelectGroupLabel>\n\t\t\t\t\t\t<SelectItem value="apple">Apple</SelectItem>\n\t\t\t\t\t\t<SelectItem value="banana">Banana</SelectItem>\n\t\t\t\t\t\t<SelectItem value="cherry">Cherry</SelectItem>\n\t\t\t\t\t</SelectGroup>\n\t\t\t\t\t<SelectGroup>\n\t\t\t\t\t\t<SelectGroupLabel>Vegetables</SelectGroupLabel>\n\t\t\t\t\t\t<SelectItem value="carrot">Carrot</SelectItem>\n\t\t\t\t\t\t<SelectItem value="potato">Potato</SelectItem>\n\t\t\t\t\t\t<SelectItem value="tomato">Tomato</SelectItem>\n\t\t\t\t\t</SelectGroup>\n\t\t\t\t</SelectContent>\n\t\t\t</Select>\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/select/select-with-groups")
+		),
+		title: "select-with-groups.tsx",
+	},
 	"separator-demo": {
 		content:
 			'import { Separator } from "9ui"\n\nexport function SeparatorDemo() {\n\treturn (\n\t\t<div>\n\t\t\t<p>9ui is a component library for building modern web applications.</p>\n\t\t\t<Separator className="my-2.5" />\n\t\t\t<div className="flex gap-2.5">\n\t\t\t\t<p>Website</p>\n\t\t\t\t<Separator orientation="vertical" />\n\t\t\t\t<p>Documentation</p>\n\t\t\t\t<Separator orientation="vertical" />\n\t\t\t\t<p>Community</p>\n\t\t\t</div>\n\t\t</div>\n\t)\n}\n',
@@ -550,7 +574,7 @@ export const Catalog: Catalog = {
 	},
 	"tooltip-custom-position": {
 		content:
-			'import {\n\tTooltip,\n\tTooltipContent,\n\tTooltipTrigger,\n} from "9ui/src/components/tooltip/tooltip"\n\nconst positions = ["top", "right", "bottom", "left"] as const\n\nexport function TooltipCustomPosition() {\n\treturn (\n\t\t<div className="grid grid-cols-2 gap-2">\n\t\t\t{positions.map((position) => (\n\t\t\t\t<Tooltip>\n\t\t\t\t\t<TooltipTrigger className="rounded-md border border-muted bg-bg px-2 py-1.5 text-sm text-fg">\n\t\t\t\t\t\t{position}\n\t\t\t\t\t</TooltipTrigger>\n\t\t\t\t\t<TooltipContent\n\t\t\t\t\t\tclassName="max-w-56"\n\t\t\t\t\t\tpositionerProps={{ side: position }}\n\t\t\t\t\t>\n\t\t\t\t\t\t<span>This tooltip is positioned at the {position} side.</span>\n\t\t\t\t\t</TooltipContent>\n\t\t\t\t</Tooltip>\n\t\t\t))}\n\t\t</div>\n\t)\n}\n',
+			'import {\n\tTooltip,\n\tTooltipContent,\n\tTooltipTrigger,\n} from "9ui/src/components/tooltip/tooltip"\n\nconst positions = ["top", "right", "bottom", "left"] as const\n\nexport function TooltipCustomPosition() {\n\treturn (\n\t\t<div className="grid grid-cols-2 gap-2">\n\t\t\t{positions.map((position) => (\n\t\t\t\t<Tooltip key={position}>\n\t\t\t\t\t<TooltipTrigger className="rounded-md border border-muted bg-bg px-2 py-1.5 text-sm text-fg">\n\t\t\t\t\t\t{position}\n\t\t\t\t\t</TooltipTrigger>\n\t\t\t\t\t<TooltipContent\n\t\t\t\t\t\tclassName="max-w-56"\n\t\t\t\t\t\tpositionerProps={{ side: position }}\n\t\t\t\t\t>\n\t\t\t\t\t\t<span>This tooltip is positioned at the {position} side.</span>\n\t\t\t\t\t</TooltipContent>\n\t\t\t\t</Tooltip>\n\t\t\t))}\n\t\t</div>\n\t)\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/tooltip/tooltip-custom-position")
 		),

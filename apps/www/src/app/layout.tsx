@@ -3,6 +3,8 @@ import { Geist as Jakarta } from "next/font/google"
 
 import "./globals.css"
 
+import { Toaster } from "9ui"
+
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 
@@ -31,6 +33,7 @@ export default function RootLayout({
 						<main className="flex-1">{children}</main>
 						<Footer />
 					</div>
+					<Toaster />
 				</ThemeProvider>
 			</body>
 		</html>

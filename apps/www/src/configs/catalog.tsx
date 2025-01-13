@@ -456,7 +456,7 @@ export const Catalog: Catalog = {
 	},
 	"sheet-sides": {
 		content:
-			'"use client"\n\nimport {\n\tButton,\n\tLabel,\n\tSheet,\n\tSheetBackdrop,\n\tSheetClose,\n\tSheetContent,\n\tSheetDescription,\n\tSheetFooter,\n\tSheetHeader,\n\tSheetPortal,\n\tSheetTitle,\n\tSheetTrigger,\n\tTextarea,\n} from "9ui"\n\nconst SHEET_SIDES = ["top", "right", "bottom", "left"] as const\n\nexport function SheetSides() {\n\treturn (\n\t\t<div className="mx-auto mt-10 grid max-w-sm grid-cols-2 gap-2">\n\t\t\t{SHEET_SIDES.map((side) => (\n\t\t\t\t<Sheet key={side}>\n\t\t\t\t\t<SheetTrigger asChild>\n\t\t\t\t\t\t<Button className="w-full">{side}</Button>\n\t\t\t\t\t</SheetTrigger>\n\t\t\t\t\t<SheetPortal>\n\t\t\t\t\t\t<SheetBackdrop />\n\t\t\t\t\t\t<SheetContent side={side}>\n\t\t\t\t\t\t\t<SheetClose />\n\t\t\t\t\t\t\t<SheetHeader>\n\t\t\t\t\t\t\t\t<SheetTitle>Submit Feedback</SheetTitle>\n\t\t\t\t\t\t\t\t<SheetDescription>\n\t\t\t\t\t\t\t\t\tPlease share your feedback with us to help improve our\n\t\t\t\t\t\t\t\t\tservice.\n\t\t\t\t\t\t\t\t</SheetDescription>\n\t\t\t\t\t\t\t</SheetHeader>\n\t\t\t\t\t\t\t<div className="my-4 space-y-2">\n\t\t\t\t\t\t\t\t<Label htmlFor="feedback">Your Feedback</Label>\n\t\t\t\t\t\t\t\t<Textarea\n\t\t\t\t\t\t\t\t\tid="feedback"\n\t\t\t\t\t\t\t\t\tplaceholder="Type your feedback here."\n\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<SheetFooter>\n\t\t\t\t\t\t\t\t<SheetClose asChild>\n\t\t\t\t\t\t\t\t\t<Button size="sm" variant="destructive">\n\t\t\t\t\t\t\t\t\t\tClose\n\t\t\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t\t\t</SheetClose>\n\t\t\t\t\t\t\t\t<Button size="sm">Submit</Button>\n\t\t\t\t\t\t\t</SheetFooter>\n\t\t\t\t\t\t</SheetContent>\n\t\t\t\t\t</SheetPortal>\n\t\t\t\t</Sheet>\n\t\t\t))}\n\t\t</div>\n\t)\n}\n',
+			'"use client"\n\nimport {\n\tButton,\n\tLabel,\n\tSheet,\n\tSheetBackdrop,\n\tSheetClose,\n\tSheetContent,\n\tSheetDescription,\n\tSheetFooter,\n\tSheetHeader,\n\tSheetPortal,\n\tSheetTitle,\n\tSheetTrigger,\n\tTextarea,\n} from "9ui"\n\nconst SHEET_SIDES = ["top", "right", "bottom", "left"] as const\n\nexport function SheetSides() {\n\treturn (\n\t\t<div className="grid grid-cols-2 gap-2">\n\t\t\t{SHEET_SIDES.map((side) => (\n\t\t\t\t<Sheet key={side}>\n\t\t\t\t\t<SheetTrigger asChild>\n\t\t\t\t\t\t<Button className="w-full">{side}</Button>\n\t\t\t\t\t</SheetTrigger>\n\t\t\t\t\t<SheetPortal>\n\t\t\t\t\t\t<SheetBackdrop />\n\t\t\t\t\t\t<SheetContent side={side}>\n\t\t\t\t\t\t\t<SheetClose />\n\t\t\t\t\t\t\t<SheetHeader>\n\t\t\t\t\t\t\t\t<SheetTitle>Submit Feedback</SheetTitle>\n\t\t\t\t\t\t\t\t<SheetDescription>\n\t\t\t\t\t\t\t\t\tPlease share your feedback with us to help improve our\n\t\t\t\t\t\t\t\t\tservice.\n\t\t\t\t\t\t\t\t</SheetDescription>\n\t\t\t\t\t\t\t</SheetHeader>\n\t\t\t\t\t\t\t<div className="my-4 space-y-2">\n\t\t\t\t\t\t\t\t<Label htmlFor="feedback">Your Feedback</Label>\n\t\t\t\t\t\t\t\t<Textarea\n\t\t\t\t\t\t\t\t\tid="feedback"\n\t\t\t\t\t\t\t\t\tplaceholder="Type your feedback here."\n\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<SheetFooter>\n\t\t\t\t\t\t\t\t<SheetClose asChild>\n\t\t\t\t\t\t\t\t\t<Button size="sm" variant="destructive">\n\t\t\t\t\t\t\t\t\t\tClose\n\t\t\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t\t\t</SheetClose>\n\t\t\t\t\t\t\t\t<Button size="sm">Submit</Button>\n\t\t\t\t\t\t\t</SheetFooter>\n\t\t\t\t\t\t</SheetContent>\n\t\t\t\t\t</SheetPortal>\n\t\t\t\t</Sheet>\n\t\t\t))}\n\t\t</div>\n\t)\n}\n',
 		component: React.lazy(() => import("@/components/demos/sheet/sheet-sides")),
 		title: "sheet-sides.tsx",
 	},
@@ -569,6 +569,36 @@ export const Catalog: Catalog = {
 			() => import("@/components/demos/textarea/textarea-error")
 		),
 		title: "textarea-error.tsx",
+	},
+	"toast-action": {
+		content:
+			'import { Button, toast } from "9ui"\n\nexport function ToastAction() {\n\treturn (\n\t\t<Button\n\t\t\tonClick={() =>\n\t\t\t\ttoast("Your email has been sent", {\n\t\t\t\t\tdescription: "We\'ll get back to you as soon as possible",\n\t\t\t\t\taction: {\n\t\t\t\t\t\tlabel: "Unsend",\n\t\t\t\t\t\tonClick: () => toast.success("Email unsent"),\n\t\t\t\t\t},\n\t\t\t\t})\n\t\t\t}\n\t\t>\n\t\t\tShow Toast\n\t\t</Button>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/toast/toast-action")
+		),
+		title: "toast-action.tsx",
+	},
+	"toast-demo": {
+		content:
+			'import { Button, toast } from "9ui"\n\nexport function ToastDemo() {\n\treturn (\n\t\t<Button\n\t\t\tonClick={() =>\n\t\t\t\ttoast("Your request has been sent", {\n\t\t\t\t\tdescription: "We\'ll get back to you as soon as possible",\n\t\t\t\t})\n\t\t\t}\n\t\t>\n\t\t\tShow Toast\n\t\t</Button>\n\t)\n}\n',
+		component: React.lazy(() => import("@/components/demos/toast/toast-demo")),
+		title: "toast-demo.tsx",
+	},
+	"toast-promise": {
+		content:
+			'import { Button, toast } from "9ui"\n\nexport function ToastPromise() {\n\treturn (\n\t\t<Button\n\t\t\tonClick={() =>\n\t\t\t\ttoast.promise(\n\t\t\t\t\tnew Promise((resolve) => {\n\t\t\t\t\t\tsetTimeout(() => {\n\t\t\t\t\t\t\tresolve("Request sent")\n\t\t\t\t\t\t}, 2000)\n\t\t\t\t\t}),\n\t\t\t\t\t{\n\t\t\t\t\t\tloading: "Sending request...",\n\t\t\t\t\t\tsuccess: "Request sent",\n\t\t\t\t\t}\n\t\t\t\t)\n\t\t\t}\n\t\t>\n\t\t\tShow Toast\n\t\t</Button>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/toast/toast-promise")
+		),
+		title: "toast-promise.tsx",
+	},
+	"toast-rich-colors": {
+		content:
+			'import { Button, toast } from "9ui"\n\nexport function ToastRichColors() {\n\treturn (\n\t\t<div className="grid grid-cols-2 gap-2">\n\t\t\t<Button onClick={() => toast.success("Success", { richColors: true })}>\n\t\t\t\tsuccess\n\t\t\t</Button>\n\t\t\t<Button onClick={() => toast.error("Error", { richColors: true })}>\n\t\t\t\terror\n\t\t\t</Button>\n\t\t\t<Button onClick={() => toast.warning("Warning", { richColors: true })}>\n\t\t\t\twarning\n\t\t\t</Button>\n\t\t\t<Button onClick={() => toast.info("Info", { richColors: true })}>\n\t\t\t\tinfo\n\t\t\t</Button>\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/toast/toast-rich-colors")
+		),
+		title: "toast-rich-colors.tsx",
 	},
 	"toggle-custom-control": {
 		content:

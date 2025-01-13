@@ -20,7 +20,7 @@ const SHEET_SIDES = ["top", "right", "bottom", "left"] as const
 
 export default function SheetSides() {
 	return (
-		<div className="mx-auto mt-10 grid max-w-sm grid-cols-2 gap-2">
+		<div className="grid grid-cols-2 gap-2">
 			{SHEET_SIDES.map((side) => (
 				<Sheet key={side}>
 					<SheetTrigger asChild>

@@ -160,6 +160,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/textarea",
 				},
 				{
+					title: "Toast",
+					href: "/docs/components/toast",
+				},
+				{
 					title: "Toggle",
 					href: "/docs/components/toggle",
 				},

@@ -16,9 +16,16 @@ const Toaster = ({ ...props }: ToasterProps) => {
 				unstyled: true,
 				classNames: {
 					toast:
-						"max-w-96 w-full bg-bg rounded-md p-4 border flex gap-4 border-muted right-0 shadow-elevation-low",
+						"group max-w-96 w-full bg-bg rounded-md p-4 border flex gap-4 border-muted right-0 shadow-elevation-low",
 					title: "font-medium",
-					description: "text-muted-fg",
+					success:
+						"data-[rich-colors]:!bg-success data-[rich-colors]:!text-success-fg data-[rich-colors]:!border-success-fg",
+					error:
+						"data-[rich-colors]:!bg-danger data-[rich-colors]:!text-danger-fg data-[rich-colors]:!border-danger-fg",
+					warning:
+						"data-[rich-colors]:!bg-warning data-[rich-colors]:!text-warning-fg data-[rich-colors]:!border-warning-fg",
+					info: "data-[rich-colors]:!bg-info data-[rich-colors]:!text-info-fg data-[rich-colors]:!border-info-fg",
+					description: "text-muted-fg group-data-[rich-colors]:text-fg",
 					actionButton: merge(
 						buttonVariants({ variant: "ghost", size: "sm" }),
 						"my-auto"

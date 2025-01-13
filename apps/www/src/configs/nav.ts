@@ -120,6 +120,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/progress",
 				},
 				{
+					title: "Radio Group",
+					href: "/docs/components/radio-group",
+				},
+				{
 					title: "Scroll Area",
 					href: "/docs/components/scroll-area",
 				},

@@ -384,6 +384,22 @@ export const Catalog: Catalog = {
 		),
 		title: "progress-with-label.tsx",
 	},
+	"radio-group-demo": {
+		content:
+			'import { Label, RadioGroup, RadioGroupItem } from "9ui"\n\nexport function RadioGroupDemo() {\n\treturn (\n\t\t<RadioGroup aria-labelledby="radio-group-plan">\n\t\t\t<div id="radio-group-plan" className="font-medium text-fg">\n\t\t\t\tSelect a plan\n\t\t\t</div>\n\t\t\t<div className="flex items-center space-x-2">\n\t\t\t\t<RadioGroupItem id="basic" value="basic" />\n\t\t\t\t<Label htmlFor="basic">Basic</Label>\n\t\t\t</div>\n\t\t\t<div className="flex items-center space-x-2">\n\t\t\t\t<RadioGroupItem id="standard" value="standard" />\n\t\t\t\t<Label htmlFor="standard">Standard</Label>\n\t\t\t</div>\n\t\t\t<div className="flex items-center space-x-2">\n\t\t\t\t<RadioGroupItem id="premium" value="premium" />\n\t\t\t\t<Label htmlFor="premium">Premium</Label>\n\t\t\t</div>\n\t\t</RadioGroup>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/radio-group/radio-group-demo")
+		),
+		title: "radio-group-demo.tsx",
+	},
+	"radio-group-disabled": {
+		content:
+			'import { Label, RadioGroup, RadioGroupItem } from "9ui"\n\nexport function RadioGroupDisabled() {\n\treturn (\n\t\t<RadioGroup disabled aria-labelledby="radio-group-notifications">\n\t\t\t<div id="radio-group-notifications" className="font-medium text-fg">\n\t\t\t\tNotifications\n\t\t\t</div>\n\t\t\t<div className="flex items-center space-x-2">\n\t\t\t\t<RadioGroupItem id="email" value="email" />\n\t\t\t\t<Label htmlFor="email">Email</Label>\n\t\t\t</div>\n\t\t\t<div className="flex items-center space-x-2">\n\t\t\t\t<RadioGroupItem id="sms" value="sms" />\n\t\t\t\t<Label htmlFor="sms">SMS</Label>\n\t\t\t</div>\n\t\t\t<div className="flex items-center space-x-2">\n\t\t\t\t<RadioGroupItem id="email-and-sms" value="email-and-sms" />\n\t\t\t\t<Label htmlFor="email-and-sms">Email & SMS</Label>\n\t\t\t</div>\n\t\t</RadioGroup>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/radio-group/radio-group-disabled")
+		),
+		title: "radio-group-disabled.tsx",
+	},
 	"scroll-area-demo": {
 		content:
 			'import { ScrollArea, Separator } from "9ui"\n\nconst versions = Array.from({ length: 50 }, (_, i) => `v${i + 1}.0.0`)\n\nexport function ScrollAreaDemo() {\n\treturn (\n\t\t<ScrollArea className="h-60 w-full max-w-60 rounded-lg border border-muted p-2">\n\t\t\t<h4 className="text-sm font-medium text-fg">Versions</h4>\n\t\t\t<Separator className="my-2" />\n\t\t\t<div className="mt-2 flex flex-col gap-2 text-sm text-fg">\n\t\t\t\t{versions.map((version) => (\n\t\t\t\t\t<div key={version}>{version}</div>\n\t\t\t\t))}\n\t\t\t</div>\n\t\t</ScrollArea>\n\t)\n}\n',

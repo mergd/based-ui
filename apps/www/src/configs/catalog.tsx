@@ -460,6 +460,14 @@ export const Catalog: Catalog = {
 		component: React.lazy(() => import("@/components/demos/sheet/sheet-sides")),
 		title: "sheet-sides.tsx",
 	},
+	"skeleton-demo": {
+		content:
+			'import { Skeleton } from "9ui"\n\nexport function SkeletonDemo() {\n\treturn (\n\t\t<div className="flex w-64 flex-col gap-4 rounded-lg border border-muted p-4">\n\t\t\t<Skeleton className="aspect-video w-full" />\n\t\t\t<Skeleton className="h-5 w-2/3" />\n\t\t\t<div className="flex flex-col gap-2">\n\t\t\t\t<Skeleton className="h-4 w-full" />\n\t\t\t\t<Skeleton className="h-4 w-full" />\n\t\t\t\t<Skeleton className="h-4 w-2/3" />\n\t\t\t</div>\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/skeleton/skeleton-demo")
+		),
+		title: "skeleton-demo.tsx",
+	},
 	"slider-demo": {
 		content:
 			'import { Slider } from "9ui"\n\nexport function SliderDemo() {\n\treturn <Slider defaultValue={50} />\n}\n',

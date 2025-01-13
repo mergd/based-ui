@@ -140,6 +140,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/sheet",
 				},
 				{
+					title: "Skeleton",
+					href: "/docs/components/skeleton",
+				},
+				{
 					title: "Slider",
 					href: "/docs/components/slider",
 				},

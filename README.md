@@ -34,12 +34,12 @@ Beautiful, customizable components built with [Base UI](https://base-ui.com/) an
 - [x] Popover
 - [x] Preview Card
 - [x] Progress
-- [ ] Radio Group
+- [x] Radio Group
 - [x] Scroll Area
 - [x] Select
 - [x] Separator
 - [x] Sheet
-- [ ] Skeleton
+- [x] Skeleton
 - [x] Slider
 - [x] Switch
 - [ ] Table

@@ -42,11 +42,11 @@ Beautiful, customizable components built with [Base UI](https://base-ui.com/) an
 - [x] Skeleton
 - [x] Slider
 - [x] Switch
-- [ ] Table
+- [x] Table
 - [x] Tabs
 - [ ] Tag Input
 - [x] Textarea
-- [ ] Toast
+- [x] Toast
 - [x] Toggle
 - [x] Toggle Group
 - [x] Tooltip

@@ -16,7 +16,7 @@
 		"lint": "eslint . --max-warnings 0"
 	},
 	"peerDependencies": {
-		"@base-ui-components/react": "^1.0.0-alpha.5",
+		"@base-ui-components/react": "1.0.0-alpha.5",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
 	},

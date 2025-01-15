@@ -156,15 +156,17 @@ const DropdownCheckboxItem = React.forwardRef<
 		<Menu.CheckboxItem
 			ref={ref}
 			className={merge(
-				"grid select-none grid-cols-[0.75rem_auto] items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg data-[disabled]:opacity-50",
+				"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg data-[disabled]:opacity-50",
 				className
 			)}
 			{...props}
 		>
-			<Menu.CheckboxItemIndicator className="col-start-1">
-				<CheckIcon className="size-3" />
-			</Menu.CheckboxItemIndicator>
-			<span className="col-start-2">{children}</span>
+			<div className="size-3">
+				<Menu.CheckboxItemIndicator>
+					<CheckIcon className="size-full" />
+				</Menu.CheckboxItemIndicator>
+			</div>
+			<span>{children}</span>
 		</Menu.CheckboxItem>
 	)
 })
@@ -196,15 +198,17 @@ const DropdownRadioItem = React.forwardRef<
 		<Menu.RadioItem
 			ref={ref}
 			className={merge(
-				"grid select-none grid-cols-[0.75rem_auto] items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg",
+				"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg",
 				className
 			)}
 			{...props}
 		>
-			<Menu.RadioItemIndicator className="col-start-1">
-				<CheckIcon className="size-3" />
-			</Menu.RadioItemIndicator>
-			<span className="col-start-2">{children}</span>
+			<div className="size-3">
+				<Menu.RadioItemIndicator>
+					<CheckIcon className="size-full" />
+				</Menu.RadioItemIndicator>
+			</div>
+			<span>{children}</span>
 		</Menu.RadioItem>
 	)
 })
@@ -221,13 +225,13 @@ const DropdownSubTrigger = React.forwardRef<
 		<Menu.SubmenuTrigger
 			ref={ref}
 			className={merge(
-				"grid select-none grid-cols-[0.75rem_auto_0.75rem] items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg",
+				"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg",
 				className
 			)}
 			{...props}
 		>
 			{children}
-			<ChevronRightIcon className="size-3" />
+			<ChevronRightIcon className="ml-auto size-3" />
 		</Menu.SubmenuTrigger>
 	)
 })

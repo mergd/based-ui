@@ -28,7 +28,7 @@ Beautiful, customizable components built with [Base UI](https://base-ui.com/) an
 - [x] Input
 - [x] Input OTP
 - [x] Label
-- [ ] Menubar
+- [x] Menubar
 - [ ] Multi Select
 - [ ] Navigation Menu
 - [x] Popover

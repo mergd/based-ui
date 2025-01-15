@@ -58,7 +58,7 @@ const Menubar = React.forwardRef<
 			<div
 				ref={ref}
 				className={merge(
-					"relative flex w-fit gap-1 rounded-md border border-muted px-1",
+					"relative flex w-fit gap-1 rounded-md border border-muted px-1 shadow-elevation-low",
 					className
 				)}
 				{...props}
@@ -176,7 +176,7 @@ const MenubarTrigger = React.forwardRef<
 		<Menu.Trigger
 			ref={mergeRefs([ref, triggerRef])}
 			className={merge(
-				"group relative flex cursor-default select-none items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium outline-none data-[popup-open]:text-fg",
+				"group relative flex min-h-10 cursor-default select-none items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium outline-none data-[popup-open]:text-fg",
 				className
 			)}
 			{...props}
@@ -229,7 +229,7 @@ const MenubarIndicator = React.forwardRef<
 		<div
 			ref={ref}
 			className={merge(
-				"absolute left-[var(--active-menu-left)] top-1/2 z-[-1] h-[calc(var(--active-menu-height)-0.5rem)] w-[var(--active-menu-width)] -translate-y-1/2 rounded-sm bg-muted transition-all duration-200 ease-in-out",
+				"absolute left-[var(--active-menu-left)] top-1/2 z-[-1] h-[calc(var(--active-menu-height)-0.5rem)] w-[var(--active-menu-width)] -translate-y-1/2 rounded-md bg-muted transition-all duration-200 ease-in-out",
 				className
 			)}
 			style={style}

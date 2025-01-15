@@ -116,6 +116,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/input-otp",
 				},
 				{
+					title: "Menubar",
+					href: "/docs/components/menubar",
+				},
+				{
 					title: "Popover",
 					href: "/docs/components/popover",
 				},

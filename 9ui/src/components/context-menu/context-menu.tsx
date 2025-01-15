@@ -198,7 +198,7 @@ const ContextMenuRadioItem = React.forwardRef<
 		<Menu.RadioItem
 			ref={ref}
 			className={merge(
-				"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg",
+				"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg data-[disabled]:opacity-50",
 				className
 			)}
 			{...props}
@@ -225,7 +225,7 @@ const ContextMenuSubTrigger = React.forwardRef<
 		<Menu.SubmenuTrigger
 			ref={ref}
 			className={merge(
-				"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[highlighted]:bg-accent data-[popup-open]:bg-accent data-[highlighted]:text-accent-fg data-[popup-open]:text-accent-fg",
+				"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg data-[disabled]:opacity-50",
 				className
 			)}
 			{...props}
@@ -248,7 +248,7 @@ const ContextMenuItem = React.forwardRef<
 		<Menu.Item
 			ref={ref}
 			className={merge(
-				"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg",
+				"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg data-[disabled]:opacity-50",
 				className
 			)}
 			{...props}

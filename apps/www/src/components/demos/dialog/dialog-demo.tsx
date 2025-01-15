@@ -12,7 +12,7 @@ export default function DialogDemo() {
 	return (
 		<Dialog>
 			<DialogTrigger asChild>
-				<Button variant="outline">Privacy Policy</Button>
+				<Button>Privacy Policy</Button>
 			</DialogTrigger>
 			<DialogContent>
 				<DialogTitle>Privacy Policy</DialogTitle>

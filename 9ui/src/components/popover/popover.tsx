@@ -5,6 +5,9 @@ import { createChildElement, merge } from "../../utils"
 
 const Popover = BasePopover.Root
 
+/********
+Popover Trigger
+********/
 interface PopoverTriggerProps extends BasePopover.Trigger.Props {
 	asChild?: boolean
 }
@@ -25,7 +28,11 @@ const PopoverTrigger = ({
 		</BasePopover.Trigger>
 	)
 }
+PopoverTrigger.displayName = "PopoverTrigger"
 
+/********
+Popover Title
+********/
 const PopoverTitle = React.forwardRef<
 	HTMLHeadingElement,
 	BasePopover.Title.Props
@@ -40,7 +47,11 @@ const PopoverTitle = React.forwardRef<
 		</BasePopover.Title>
 	)
 })
+PopoverTitle.displayName = "PopoverTitle"
 
+/********
+Popover Description
+********/
 const PopoverDescription = React.forwardRef<
 	HTMLParagraphElement,
 	BasePopover.Description.Props
@@ -55,7 +66,11 @@ const PopoverDescription = React.forwardRef<
 		</BasePopover.Description>
 	)
 })
+PopoverDescription.displayName = "PopoverDescription"
 
+/********
+Popover Content
+********/
 const PopoverContent = React.forwardRef<
 	HTMLDivElement,
 	BasePopover.Popup.Props
@@ -88,7 +103,7 @@ const PopoverContent = React.forwardRef<
 		</BasePopover.Portal>
 	)
 })
-
+PopoverContent.displayName = "PopoverContent"
 export {
 	Popover,
 	PopoverTrigger,

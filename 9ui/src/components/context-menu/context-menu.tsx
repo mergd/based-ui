@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Menu } from "@base-ui-components/react"
+import { Menu } from "@base-ui-components/react/menu"
 import { CheckIcon, ChevronRightIcon } from "lucide-react"
 
 import { useControlledState } from "../../hooks/use-controlled-state"
@@ -58,7 +58,7 @@ const ContextMenuContent = React.forwardRef<
 				<Menu.Popup
 					ref={ref}
 					className={merge(
-						"min-w-40 rounded-md border border-muted bg-bg p-1 text-fg outline-none",
+						"min-w-48 origin-[var(--transform-origin)] rounded-md border border-muted bg-bg p-1 text-fg shadow-elevation-low outline-none transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
 						className
 					)}
 					{...props}
@@ -77,19 +77,12 @@ const ContextMenuTrigger = React.forwardRef<
 	React.HTMLAttributes<HTMLDivElement>
 >(({ children, className, ...props }, ref) => {
 	const [position, setPosition] = React.useState({ x: 0, y: 0 })
-	const { open, setOpen } = useContextMenu()
+	const { setOpen } = useContextMenu()
 
 	const handleContextMenu = (e: React.MouseEvent) => {
 		e.preventDefault()
-
-		if (open) {
-			setOpen(false)
-		}
-
-		setTimeout(() => {
-			setPosition({ x: e.clientX, y: e.clientY })
-			setOpen(true)
-		}, 0)
+		setPosition({ x: e.clientX, y: e.clientY })
+		setOpen(true)
 	}
 
 	return (
@@ -112,6 +105,46 @@ const ContextMenuTrigger = React.forwardRef<
 	)
 })
 ContextMenuTrigger.displayName = "ContextMenuTrigger"
+
+/********
+Context Menu Item
+********/
+const ContextMenuItem = React.forwardRef<
+	HTMLDivElement,
+	React.ComponentPropsWithoutRef<typeof Menu.Item>
+>(({ className, ...props }, ref) => {
+	return (
+		<Menu.Item
+			ref={ref}
+			className={merge(
+				"group flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg data-[disabled]:opacity-50",
+				className
+			)}
+			{...props}
+		/>
+	)
+})
+ContextMenuItem.displayName = "ContextMenuItem"
+
+/********
+Context Menu Item Shortcut
+********/
+const ContextMenuItemShortcut = React.forwardRef<
+	HTMLSpanElement,
+	React.HTMLAttributes<HTMLSpanElement>
+>(({ className, ...props }, ref) => {
+	return (
+		<span
+			ref={ref}
+			className={merge(
+				"ml-auto pl-10 text-xs tracking-widest text-muted-fg group-data-[highlighted]:text-accent-fg",
+				className
+			)}
+			{...props}
+		/>
+	)
+})
+ContextMenuItemShortcut.displayName = "ContextMenuItemShortcut"
 
 /********
 Context Menu Group
@@ -225,7 +258,7 @@ const ContextMenuSubTrigger = React.forwardRef<
 		<Menu.SubmenuTrigger
 			ref={ref}
 			className={merge(
-				"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg data-[disabled]:opacity-50",
+				"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[popup-open]:bg-accent data-[highlighted]:text-accent-fg data-[popup-open]:text-accent-fg data-[disabled]:opacity-50",
 				className
 			)}
 			{...props}
@@ -236,26 +269,6 @@ const ContextMenuSubTrigger = React.forwardRef<
 	)
 })
 ContextMenuSubTrigger.displayName = "ContextMenuSubTrigger"
-
-/********
-Context Menu Item
-********/
-const ContextMenuItem = React.forwardRef<
-	HTMLDivElement,
-	React.ComponentPropsWithoutRef<typeof Menu.Item>
->(({ className, ...props }, ref) => {
-	return (
-		<Menu.Item
-			ref={ref}
-			className={merge(
-				"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg data-[disabled]:opacity-50",
-				className
-			)}
-			{...props}
-		/>
-	)
-})
-ContextMenuItem.displayName = "ContextMenuItem"
 
 /********
 Context Menu Separator
@@ -278,6 +291,7 @@ export {
 	ContextMenu,
 	ContextMenuContent,
 	ContextMenuItem,
+	ContextMenuItemShortcut,
 	ContextMenuTrigger,
 	ContextMenuSeparator,
 	ContextMenuGroup,

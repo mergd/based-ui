@@ -3,6 +3,9 @@ import { ToggleGroup as BaseToggleGroup } from "@base-ui-components/react/toggle
 
 import { merge } from "../../utils"
 
+/********
+Toggle Group
+********/
 const ToggleGroup = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof BaseToggleGroup>

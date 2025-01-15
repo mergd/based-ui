@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import * as React from "react"
 import { Monicon } from "@monicon/react"
 import { Button, merge } from "9ui"
 import { createHighlighter } from "shiki"

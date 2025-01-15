@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Menu } from "@base-ui-components/react"
+import { Menu } from "@base-ui-components/react/menu"
 import { CheckIcon, ChevronRightIcon } from "lucide-react"
 
 import { useControlledState } from "../../hooks/use-controlled-state"
@@ -289,11 +289,11 @@ MenubarItem.displayName = "MenubarItem"
 Menubar Item Shortcut
 ********/
 const MenubarItemShortcut = React.forwardRef<
-	HTMLDivElement,
-	React.ComponentPropsWithoutRef<typeof Menu.Item>
+	HTMLSpanElement,
+	React.HTMLAttributes<HTMLSpanElement>
 >(({ className, ...props }, ref) => {
 	return (
-		<Menu.Item
+		<span
 			ref={ref}
 			className={merge(
 				"ml-auto pl-10 text-xs tracking-widest text-muted-fg group-data-[highlighted]:text-accent-fg",

@@ -10,6 +10,7 @@ import {
 	DropdownGroup,
 	DropdownGroupLabel,
 	DropdownItem,
+	DropdownItemShortcut,
 	DropdownRadioGroup,
 	DropdownRadioItem,
 	DropdownSeparator,
@@ -33,18 +34,22 @@ export default function DropdownDemo() {
 					<DropdownItem>
 						<Monicon name="ri:play-fill" />
 						Play
+						<DropdownItemShortcut>⌘P</DropdownItemShortcut>
 					</DropdownItem>
 					<DropdownItem>
 						<Monicon name="ri:pause-fill" />
 						Pause
+						<DropdownItemShortcut>⇧⌘P</DropdownItemShortcut>
 					</DropdownItem>
 					<DropdownItem>
 						<Monicon name="ri:skip-back-fill" />
-						Play Previous
+						Previous
+						<DropdownItemShortcut>⌘[</DropdownItemShortcut>
 					</DropdownItem>
 					<DropdownItem>
 						<Monicon name="ri:skip-forward-fill" />
-						Play Next
+						Next
+						<DropdownItemShortcut>⌘]</DropdownItemShortcut>
 					</DropdownItem>
 				</DropdownGroup>
 				<DropdownSeparator />

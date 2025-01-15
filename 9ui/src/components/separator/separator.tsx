@@ -1,10 +1,11 @@
-"use client"
-
-import React from "react"
+import * as React from "react"
 import { Separator as BaseSeparator } from "@base-ui-components/react/separator"
 
 import { merge } from "../../utils"
 
+/********
+Separator
+********/
 interface SeparatorProps extends BaseSeparator.Props {
 	orientation?: "horizontal" | "vertical"
 }

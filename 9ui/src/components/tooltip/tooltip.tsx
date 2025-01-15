@@ -4,7 +4,7 @@ import { Tooltip as BaseTooltip } from "@base-ui-components/react/tooltip"
 import { createChildElement, merge } from "../../utils"
 
 /********
-Tooltip Mappings
+Tooltip
 ********/
 const Tooltip = ({
 	children,
@@ -54,9 +54,10 @@ interface TooltipContentProps
 const TooltipContent = React.forwardRef<HTMLDivElement, TooltipContentProps>(
 	({ children, className, portalProps, positionerProps, ...props }, ref) => {
 		return (
-			<BaseTooltip.Portal ref={ref} {...portalProps}>
+			<BaseTooltip.Portal {...portalProps}>
 				<BaseTooltip.Positioner sideOffset={8} {...positionerProps}>
 					<BaseTooltip.Popup
+						ref={ref}
 						className={merge(
 							"origin-[var(--transform-origin)] rounded-md bg-bg px-3.5 py-2 text-sm text-fg shadow-elevation-low outline outline-1 -outline-offset-1 outline-muted transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
 							className
@@ -82,5 +83,5 @@ const TooltipContent = React.forwardRef<HTMLDivElement, TooltipContentProps>(
 		)
 	}
 )
-
+TooltipContent.displayName = "TooltipContent"
 export { Tooltip, TooltipTrigger, TooltipContent }

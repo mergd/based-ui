@@ -6,10 +6,13 @@ import { Tabs as BaseTabs } from "@base-ui-components/react/tabs"
 import { merge } from "../../utils"
 
 /********
-Tabs
+Types
 ********/
 type TabsVariant = "capsule" | "underline"
 
+/********
+Tabs Context
+********/
 type TabsContext = {
 	variant: TabsVariant
 }
@@ -26,6 +29,9 @@ const useTabs = () => {
 	return context
 }
 
+/********
+Tabs
+********/
 interface TabsProps
 	extends React.ComponentPropsWithoutRef<typeof BaseTabs.Root> {
 	variant?: TabsVariant
@@ -78,7 +84,7 @@ const Tab = React.forwardRef<
 		<BaseTabs.Tab
 			ref={ref}
 			className={merge(
-				"h-8 w-full text-fg data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+				"min-h-10 w-full text-fg data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
 				className
 			)}
 			{...props}
@@ -102,7 +108,7 @@ const TabIndicator = React.forwardRef<
 				"absolute left-0 z-[-1] w-[var(--active-tab-width)] -translate-y-1/2 translate-x-[var(--active-tab-left)] transition-all duration-200 ease-in-out",
 				variant === "underline"
 					? "top-full h-px bg-accent"
-					: "top-1/2 h-[calc(var(--active-tab-height)-0.5rem)] rounded-sm bg-muted",
+					: "top-1/2 h-[calc(var(--active-tab-height)-0.5rem)] rounded-md bg-muted",
 				className
 			)}
 			{...props}

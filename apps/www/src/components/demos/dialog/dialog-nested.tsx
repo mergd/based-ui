@@ -16,7 +16,7 @@ export default function DialogNested() {
 	return (
 		<Dialog>
 			<DialogTrigger asChild>
-				<Button variant="outline">View Details</Button>
+				<Button>View Details</Button>
 			</DialogTrigger>
 			<DialogContent>
 				<DialogTitle>Profile</DialogTitle>

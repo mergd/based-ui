@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Menu } from "@base-ui-components/react"
+import { Menu } from "@base-ui-components/react/menu"
 import { CheckIcon, ChevronRightIcon } from "lucide-react"
 
 import { createChildElement, merge } from "../../utils"
@@ -10,24 +10,10 @@ import { createChildElement, merge } from "../../utils"
 Dropdown Mappings
 ********/
 const Dropdown = Menu.Root
-Dropdown.displayName = "Dropdown"
 
-const DropdownPositioner = Menu.Positioner
-DropdownPositioner.displayName = "DropdownPositioner"
+const DropdownGroup = Menu.Group
 
-const DropdownPopup = Menu.Popup
-DropdownPopup.displayName = "DropdownPopup"
-
-/********
-Dropdown Portal
-********/
-const DropdownPortal = React.forwardRef<
-	HTMLDivElement,
-	React.ComponentPropsWithoutRef<typeof Menu.Portal>
->((props, ref) => {
-	return <Menu.Portal ref={ref} {...props} />
-})
-DropdownPortal.displayName = "DropdownPortal"
+const DropdownRadioGroup = Menu.RadioGroup
 
 /********
 Dropdown Trigger
@@ -60,18 +46,18 @@ const DropdownContent = React.forwardRef<
 	React.ComponentPropsWithoutRef<typeof Menu.Popup>
 >(({ className, ...props }, ref) => {
 	return (
-		<DropdownPortal>
-			<DropdownPositioner sideOffset={8}>
-				<DropdownPopup
+		<Menu.Portal>
+			<Menu.Positioner sideOffset={4}>
+				<Menu.Popup
 					ref={ref}
 					className={merge(
-						"min-w-40 rounded-md border border-muted bg-bg p-1 text-fg outline-none",
+						"min-w-48 origin-[var(--transform-origin)] rounded-md border border-muted bg-bg p-1 text-fg shadow-elevation-low outline-none transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
 						className
 					)}
 					{...props}
 				/>
-			</DropdownPositioner>
-		</DropdownPortal>
+			</Menu.Positioner>
+		</Menu.Portal>
 	)
 })
 DropdownContent.displayName = "DropdownContent"
@@ -87,7 +73,7 @@ const DropdownItem = React.forwardRef<
 		<Menu.Item
 			ref={ref}
 			className={merge(
-				"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg data-[disabled]:opacity-50",
+				"group flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg data-[disabled]:opacity-50",
 				className
 			)}
 			{...props}
@@ -95,6 +81,26 @@ const DropdownItem = React.forwardRef<
 	)
 })
 DropdownItem.displayName = "DropdownItem"
+
+/********
+Dropdown Item Shortcut
+********/
+const DropdownItemShortcut = React.forwardRef<
+	HTMLSpanElement,
+	React.HTMLAttributes<HTMLSpanElement>
+>(({ className, ...props }, ref) => {
+	return (
+		<span
+			ref={ref}
+			className={merge(
+				"ml-auto pl-10 text-xs tracking-widest text-muted-fg group-data-[highlighted]:text-accent-fg",
+				className
+			)}
+			{...props}
+		/>
+	)
+})
+DropdownItemShortcut.displayName = "DropdownItemShortcut"
 
 /********
 Dropdown Separator
@@ -112,21 +118,6 @@ const DropdownSeparator = React.forwardRef<
 	)
 })
 DropdownSeparator.displayName = "DropdownSeparator"
-
-/********
-Dropdown Group
-********/
-const DropdownGroup = React.forwardRef<
-	HTMLDivElement,
-	React.ComponentPropsWithoutRef<typeof Menu.Group>
->(({ className, children, ...props }, ref) => {
-	return (
-		<Menu.Group ref={ref} className={className} {...props}>
-			{children}
-		</Menu.Group>
-	)
-})
-DropdownGroup.displayName = "DropdownGroup"
 
 /********
 Dropdown Group Label
@@ -173,21 +164,6 @@ const DropdownCheckboxItem = React.forwardRef<
 DropdownCheckboxItem.displayName = "DropdownCheckboxItem"
 
 /********
-Dropdown Radio Group
-********/
-const DropdownRadioGroup = React.forwardRef<
-	HTMLDivElement,
-	React.ComponentPropsWithoutRef<typeof Menu.RadioGroup>
->(({ className, children, ...props }, ref) => {
-	return (
-		<Menu.RadioGroup ref={ref} className={className} {...props}>
-			{children}
-		</Menu.RadioGroup>
-	)
-})
-DropdownRadioGroup.displayName = "DropdownRadioGroup"
-
-/********
 Dropdown Radio Item
 ********/
 const DropdownRadioItem = React.forwardRef<
@@ -225,7 +201,7 @@ const DropdownSubTrigger = React.forwardRef<
 		<Menu.SubmenuTrigger
 			ref={ref}
 			className={merge(
-				"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg data-[disabled]:opacity-50",
+				"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[popup-open]:bg-accent data-[highlighted]:text-accent-fg data-[popup-open]:text-accent-fg data-[disabled]:opacity-50",
 				className
 			)}
 			{...props}
@@ -241,9 +217,8 @@ export {
 	Dropdown,
 	DropdownContent,
 	DropdownItem,
+	DropdownItemShortcut,
 	DropdownGroupLabel,
-	DropdownPortal,
-	DropdownPositioner,
 	DropdownSeparator,
 	DropdownTrigger,
 	DropdownCheckboxItem,

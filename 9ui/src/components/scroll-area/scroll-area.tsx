@@ -4,7 +4,7 @@ import { ScrollArea as BaseScrollArea } from "@base-ui-components/react/scroll-a
 import { merge } from "../../utils"
 
 /********
-ScrollArea
+Scroll Area
 ********/
 interface ScrollAreaProps
 	extends React.ComponentPropsWithoutRef<typeof BaseScrollArea.Root> {

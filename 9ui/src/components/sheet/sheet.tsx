@@ -15,7 +15,7 @@ const SheetPopup = Dialog.Popup
 const SheetPortal = Dialog.Portal
 
 /********
-Sheet Root
+Sheet
 ********/
 const Sheet = React.forwardRef<
 	React.ElementRef<"div">,

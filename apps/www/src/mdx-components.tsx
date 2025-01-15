@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from "react"
 import { Separator } from "9ui"
 import { merge } from "9ui/src/utils"
 

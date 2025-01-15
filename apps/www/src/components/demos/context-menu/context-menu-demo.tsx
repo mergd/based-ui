@@ -7,6 +7,7 @@ import {
 	ContextMenuGroup,
 	ContextMenuGroupLabel,
 	ContextMenuItem,
+	ContextMenuItemShortcut,
 	ContextMenuRadioGroup,
 	ContextMenuRadioItem,
 	ContextMenuSeparator,
@@ -23,17 +24,26 @@ export default function ContextMenuDemo() {
 				</ContextMenuTrigger>
 				<ContextMenuContent>
 					<ContextMenuGroup>
-						<ContextMenuItem>Back</ContextMenuItem>
-						<ContextMenuItem disabled>Forward</ContextMenuItem>
-						<ContextMenuItem>Reload</ContextMenuItem>
+						<ContextMenuItem>
+							Back
+							<ContextMenuItemShortcut>⌘[</ContextMenuItemShortcut>
+						</ContextMenuItem>
+						<ContextMenuItem disabled>
+							Forward
+							<ContextMenuItemShortcut>⌘]</ContextMenuItemShortcut>
+						</ContextMenuItem>
+						<ContextMenuItem>
+							Reload
+							<ContextMenuItemShortcut>⌘R</ContextMenuItemShortcut>
+						</ContextMenuItem>
 						<ContextMenu>
 							<ContextMenuSubTrigger>More</ContextMenuSubTrigger>
 							<ContextMenuContent>
-								<ContextMenuItem>Save As...</ContextMenuItem>
-								<ContextMenuItem>Print...</ContextMenuItem>
-								<ContextMenuItem>Cast...</ContextMenuItem>
+								<ContextMenuItem>Save As</ContextMenuItem>
+								<ContextMenuItem>Print</ContextMenuItem>
+								<ContextMenuItem>Cast</ContextMenuItem>
 								<ContextMenuSeparator />
-								<ContextMenuItem>Inspect...</ContextMenuItem>
+								<ContextMenuItem>Inspect</ContextMenuItem>
 							</ContextMenuContent>
 						</ContextMenu>
 					</ContextMenuGroup>

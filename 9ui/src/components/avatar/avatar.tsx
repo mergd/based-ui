@@ -4,12 +4,38 @@ import * as React from "react"
 import { cva, VariantProps } from "class-variance-authority"
 
 import { merge } from "../../utils"
-import {
-	AvatarContext,
-	AvatarImageStatus,
-	useAvatarContext,
-} from "./avatar.context"
 
+/********
+Types
+********/
+type AvatarImageStatus = "loading" | "loaded" | "error"
+
+/********
+Avatar Context
+********/
+interface AvatarContextValue {
+	imageStatus: AvatarImageStatus
+	setImageStatus: (imageStatus: AvatarImageStatus) => void
+}
+
+const AvatarContext = React.createContext<AvatarContextValue>({
+	imageStatus: "loading",
+	setImageStatus: () => {},
+})
+
+const useAvatarContext = () => {
+	const context = React.useContext(AvatarContext)
+
+	if (!context) {
+		throw new Error("useAvatarContext must be used within a Avatar.Root")
+	}
+
+	return context
+}
+
+/********
+Avatar Variants
+********/
 const avatarVariants = cva(
 	"relative flex shrink-0 overflow-hidden rounded-full",
 	{
@@ -26,13 +52,13 @@ const avatarVariants = cva(
 	}
 )
 
+/********
+Avatar
+********/
 export interface AvatarProps
 	extends React.HTMLAttributes<HTMLDivElement>,
 		VariantProps<typeof avatarVariants> {}
 
-/********
-Avatar Root
-********/
 const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
 	({ className, size, ...props }, ref) => {
 		const [imageStatus, setImageStatus] =

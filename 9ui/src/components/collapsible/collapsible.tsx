@@ -3,10 +3,16 @@ import { Collapsible as BaseCollapsible } from "@base-ui-components/react/collap
 
 import { merge } from "../../utils"
 
+/********
+Collapsible Mappings
+********/
 const Collapsible = BaseCollapsible.Root
 
 const CollapsibleTrigger = BaseCollapsible.Trigger
 
+/********
+Collapsible Content
+********/
 const CollapsibleContent = React.forwardRef<
 	HTMLButtonElement,
 	BaseCollapsible.Panel.Props
@@ -22,5 +28,6 @@ const CollapsibleContent = React.forwardRef<
 		/>
 	)
 })
+CollapsibleContent.displayName = "CollapsibleContent"
 
 export { Collapsible, CollapsibleTrigger, CollapsibleContent }

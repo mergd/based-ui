@@ -5,7 +5,7 @@ import { CheckIcon, ChevronDownIcon } from "lucide-react"
 import { merge } from "../../utils"
 
 /********
-Select Mappings
+Select
 ********/
 const Select = <T,>(props: BaseSelect.Root.Props<T>) => {
 	return <BaseSelect.Root alignItemToTrigger={false} modal={false} {...props} />
@@ -80,6 +80,7 @@ const SelectContent = React.forwardRef<HTMLDivElement, SelectContentProps>(
 		)
 	}
 )
+SelectContent.displayName = "SelectContent"
 
 /********
 Select Item

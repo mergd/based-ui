@@ -18,8 +18,10 @@ export default function TabsUnderline() {
 			<TabsList>
 				<Tab value="login">Login</Tab>
 				<Tooltip>
-					<TooltipTrigger className="w-full">
-						<Tab disabled>Sign up</Tab>
+					<TooltipTrigger className="w-full" asChild>
+						<div>
+							<Tab disabled>Sign up</Tab>
+						</div>
 					</TooltipTrigger>
 					<TooltipContent className="w-64">
 						<span>

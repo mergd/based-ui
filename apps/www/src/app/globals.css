@@ -8,6 +8,10 @@
 		scroll-padding-top: 80px;
 	}
 
+	html[data-base-ui-scroll-locked] {
+		scroll-behavior: auto;
+	}
+
 	:root {
 		/* Global Colors */
 		--white: #ffffff;

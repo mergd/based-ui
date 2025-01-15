@@ -20,7 +20,7 @@ Beautiful, customizable components built with [Base UI](https://base-ui.com/) an
 - [x] Checkbox
 - [x] Collapsible
 - [ ] Command
-- [ ] Context Menu
+- [x] Context Menu
 - [x] Dialog
 - [ ] Drawer (WIP)
 - [x] Dropdown

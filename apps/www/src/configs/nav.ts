@@ -92,6 +92,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/collapsible",
 				},
 				{
+					title: "Context Menu",
+					href: "/docs/components/context-menu",
+				},
+				{
 					title: "Dialog",
 					href: "/docs/components/dialog",
 				},

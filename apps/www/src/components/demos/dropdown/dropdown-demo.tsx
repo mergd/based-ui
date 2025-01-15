@@ -27,7 +27,7 @@ export default function DropdownDemo() {
 			<DropdownTrigger asChild>
 				<Button>Controls</Button>
 			</DropdownTrigger>
-			<DropdownContent className="w-80">
+			<DropdownContent>
 				<DropdownGroup>
 					<DropdownGroupLabel>Playback</DropdownGroupLabel>
 					<DropdownItem>
@@ -66,10 +66,7 @@ export default function DropdownDemo() {
 				</DropdownGroup>
 				<DropdownSeparator />
 				<Dropdown>
-					<DropdownSubTrigger>
-						<Monicon name="ri:add-fill" />
-						Add to Playlist
-					</DropdownSubTrigger>
+					<DropdownSubTrigger>Add to Playlist</DropdownSubTrigger>
 					<DropdownContent>
 						<DropdownItem>Jazz</DropdownItem>
 						<DropdownItem>Rock</DropdownItem>

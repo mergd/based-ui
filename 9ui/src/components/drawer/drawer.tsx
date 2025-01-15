@@ -5,10 +5,10 @@ import { Dialog } from "@base-ui-components/react/dialog"
 
 import "./drawer.css"
 
+import { useControlledState } from "../../hooks/use-controlled-state"
 import { merge } from "../../utils"
 import { THRESHOLDS, TRANSITIONS } from "./drawer.constants"
 import { DrawerContext, useDrawerContext } from "./drawer.context"
-import { useControlledState } from "./use-controlled-state"
 import { useLayeredBackground } from "./use-layered-background"
 
 /********

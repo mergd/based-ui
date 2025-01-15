@@ -225,7 +225,7 @@ const ContextMenuSubTrigger = React.forwardRef<
 		<Menu.SubmenuTrigger
 			ref={ref}
 			className={merge(
-				"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg",
+				"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[highlighted]:bg-accent data-[popup-open]:bg-accent data-[highlighted]:text-accent-fg data-[popup-open]:text-accent-fg",
 				className
 			)}
 			{...props}

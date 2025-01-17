@@ -12,11 +12,13 @@ interface DocPageProps {
 }
 
 async function getDocFromParams({ params }: DocPageProps) {
-	const { slug } = await params
+	const { slug: slugs } = await params
 
-	const doc = await import(`@/content/components/${slug}.mdx`)
+	const slug = slugs.join("/")
+
+	const doc = await import(`@/content/${slug}.mdx`)
 	const source = await readFile(
-		join(process.cwd(), "src/content", `components/${slug}.mdx`),
+		join(process.cwd(), "src/content", `/${slug}.mdx`),
 		"utf-8"
 	)
 

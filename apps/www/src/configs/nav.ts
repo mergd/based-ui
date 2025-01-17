@@ -11,22 +11,21 @@ export const navConfig: NavConfig = {
 			items: [
 				{
 					title: "Introduction",
-					href: "/docs",
-					disabled: true,
+					href: "/docs/getting-started/introduction",
 				},
 				{
 					title: "Installation",
-					href: "/docs/installation",
+					href: "/docs/getting-started/installation",
 					disabled: true,
 				},
 				{
 					title: "Theming",
-					href: "/docs/theming",
+					href: "/docs/getting-started/theming",
 					disabled: true,
 				},
 				{
 					title: "Dark mode",
-					href: "/docs/dark-mode",
+					href: "/docs/getting-started/dark-mode",
 					disabled: true,
 				},
 				{

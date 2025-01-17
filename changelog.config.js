@@ -1,10 +1,10 @@
 const config = {
 	disableEmoji: true,
 	format: "{type}{scope}: {subject}",
-	list: ["feat", "fix", "chore", "refactor"],
+	list: ["feat", "fix", "chore", "refactor", "docs"],
 	maxMessageLength: 64,
 	minMessageLength: 3,
-	questions: ["type", "scope", "subject", "body", "lerna"],
+	questions: ["type", "scope", "subject", "body"],
 	scopes: ["www", "9ui", "*"],
 	types: {
 		chore: {
@@ -22,6 +22,10 @@ const config = {
 		refactor: {
 			description: "A code refactor",
 			value: "refactor",
+		},
+		docs: {
+			description: "Documentation changes",
+			value: "docs",
 		},
 		messages: {
 			type: "Select the type of change that you're committing:",

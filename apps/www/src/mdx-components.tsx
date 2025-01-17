@@ -1,5 +1,11 @@
 import * as React from "react"
-import { Separator } from "9ui"
+import {
+	Accordion,
+	AccordionContent,
+	AccordionItem,
+	AccordionTrigger,
+	Separator,
+} from "9ui"
 import { merge } from "9ui/src/utils"
 
 import { ComponentPreview } from "@/components/component-preview"
@@ -44,7 +50,7 @@ const components: MDXComponents = {
 	code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
 		<code
 			className={merge(
-				"relative px-[0.3rem] py-[0.2rem] font-mono text-sm text-accent",
+				"relative bg-bg px-[0.3rem] py-[0.2rem] font-mono text-sm text-accent",
 				className
 			)}
 			{...props}
@@ -105,7 +111,7 @@ const components: MDXComponents = {
 	),
 	pre: ({ className, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
 		<pre
-			className={merge("overflow-x-scroll bg-red-500 p-4", className)}
+			className={merge("overflow-x-scroll bg-bg p-4", className)}
 			{...props}
 		/>
 	),
@@ -139,6 +145,10 @@ const components: MDXComponents = {
 			{...props}
 		/>
 	),
+	Accordion,
+	AccordionTrigger,
+	AccordionItem,
+	AccordionContent,
 	ComponentPreview,
 	Title: ({
 		className,

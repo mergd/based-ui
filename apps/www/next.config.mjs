@@ -23,6 +23,16 @@ const nextConfig = {
 	redirects() {
 		return [
 			{
+				source: "/docs",
+				destination: "/docs/getting-started/introduction",
+				permanent: true,
+			},
+			{
+				source: "/docs/getting-started",
+				destination: "/docs/getting-started/introduction",
+				permanent: true,
+			},
+			{
 				source: "/docs/components",
 				destination: "/docs/components/accordion",
 				permanent: true,

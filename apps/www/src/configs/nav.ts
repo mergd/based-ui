@@ -14,6 +14,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/getting-started/introduction",
 				},
 				{
+					title: "Roadmap",
+					href: "/docs/getting-started/roadmap",
+				},
+				{
 					title: "Installation",
 					href: "/docs/getting-started/installation",
 					disabled: true,

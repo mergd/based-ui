@@ -23,8 +23,11 @@ export default function Home() {
 				</div>
 
 				<div className="flex flex-col items-center gap-4 sm:flex-row">
-					<Button asChild>
-						<Link href="/docs/components">View Components</Link>
+					<Button>
+						<Link href="/docs">Get Started</Link>
+					</Button>
+					<Button variant="ghost">
+						<Link href="/docs/components">Browse Components</Link>
 					</Button>
 				</div>
 

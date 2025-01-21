@@ -17,7 +17,7 @@ export default async function DocsLayout(params: {
 					<DocsSidebarNav />
 				</div>
 			</aside>
-			<div className="py-8">{params.children}</div>
+			<main className="min-h-screen py-8">{params.children}</main>
 		</div>
 	)
 }

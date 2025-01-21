@@ -18,23 +18,35 @@ interface MDXComponents {
 
 const components: MDXComponents = {
 	h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-		<h1 className={merge("text-4xl font-bold", className)} {...props} />
+		<h1
+			className={merge("scroll-m-20 text-4xl font-bold", className)}
+			{...props}
+		/>
 	),
 	h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
 		<h2
-			className={merge("mt-10 text-2xl font-semibold", className)}
+			className={merge("mt-10 scroll-m-20 text-2xl font-semibold", className)}
 			{...props}
 		/>
 	),
 	h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-		<h3 className={merge("mt-8 text-xl font-semibold", className)} {...props} />
+		<h3
+			className={merge("mt-8 scroll-m-20 text-xl font-semibold", className)}
+			{...props}
+		/>
 	),
 	h4: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-		<h4 className={merge("mt-4 text-lg font-semibold", className)} {...props} />
+		<h4
+			className={merge("mt-4 scroll-m-20 text-lg font-semibold", className)}
+			{...props}
+		/>
 	),
 	p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
 		<p
-			className={merge("text-fg [&:not(:first-child)]:mt-4", className)}
+			className={merge(
+				"scroll-m-20 text-fg [&:not(:first-child)]:mt-4",
+				className
+			)}
 			{...props}
 		/>
 	),

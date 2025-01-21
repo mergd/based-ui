@@ -4,12 +4,11 @@
 
 @layer base {
 	html {
-		scroll-behavior: smooth;
-		scroll-padding-top: 80px;
+		@apply scroll-smooth;
 	}
 
 	html[data-base-ui-scroll-locked] {
-		scroll-behavior: auto;
+		@apply scroll-auto;
 	}
 
 	:root {

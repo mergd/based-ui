@@ -1,4 +1,5 @@
 import Monicon from "@monicon/react"
+
 import {
 	Alert,
 	AlertAction,
@@ -6,8 +7,8 @@ import {
 	AlertDescription,
 	AlertIcon,
 	AlertTitle,
-	Button,
-} from "9ui"
+} from "@/components/ui/alert"
+import { Button } from "@/components/ui/button"
 
 export default function AlertWithAction() {
 	return (

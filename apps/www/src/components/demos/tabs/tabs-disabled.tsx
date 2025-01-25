@@ -1,16 +1,18 @@
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 import {
-	Button,
-	Input,
-	Label,
 	Tab,
 	TabContent,
 	TabIndicator,
 	Tabs,
 	TabsList,
+} from "@/components/ui/tabs"
+import {
 	Tooltip,
 	TooltipContent,
 	TooltipTrigger,
-} from "9ui"
+} from "@/components/ui/tooltip"
 
 export default function TabsUnderline() {
 	return (
@@ -18,11 +20,14 @@ export default function TabsUnderline() {
 			<TabsList>
 				<Tab value="login">Login</Tab>
 				<Tooltip>
-					<TooltipTrigger className="w-full" asChild>
-						<div>
-							<Tab disabled>Sign up</Tab>
-						</div>
-					</TooltipTrigger>
+					<TooltipTrigger
+						className="w-full"
+						render={(props) => (
+							<div {...props}>
+								<Tab disabled>Sign up</Tab>
+							</div>
+						)}
+					/>
 					<TooltipContent className="w-64">
 						<span>
 							Sign ups are temporarily disabled. Please check back later.

@@ -1,8 +1,9 @@
 "use client"
 
 import { useState } from "react"
-import { Calendar } from "9ui"
 import { DateRange } from "react-day-picker"
+
+import { Calendar } from "@/components/ui/calendar"
 
 export default function CalendarRange() {
 	const [range, setRange] = useState<DateRange | undefined>(undefined)

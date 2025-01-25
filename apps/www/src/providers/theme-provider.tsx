@@ -30,7 +30,7 @@ function getThemePreference(): Theme {
 		: "light"
 }
 
-export function ThemeProvider({ children }: ThemeProviderProps) {
+export const ThemeProvider = ({ children }: ThemeProviderProps) => {
 	const [theme, setTheme] = React.useState<Theme>("dark")
 	const [mounted, setMounted] = React.useState(false)
 

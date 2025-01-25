@@ -1,8 +1,8 @@
 "use client"
 
+import { Button } from "@/components/ui/button"
+import { Label } from "@/components/ui/label"
 import {
-	Button,
-	Label,
 	Sheet,
 	SheetBackdrop,
 	SheetClose,
@@ -13,8 +13,8 @@ import {
 	SheetPortal,
 	SheetTitle,
 	SheetTrigger,
-	Textarea,
-} from "9ui"
+} from "@/components/ui/sheet"
+import { Textarea } from "@/components/ui/textarea"
 
 const SHEET_SIDES = ["top", "right", "bottom", "left"] as const
 
@@ -23,9 +23,13 @@ export default function SheetSides() {
 		<div className="grid grid-cols-2 gap-2">
 			{SHEET_SIDES.map((side) => (
 				<Sheet key={side}>
-					<SheetTrigger asChild>
-						<Button className="w-full">{side}</Button>
-					</SheetTrigger>
+					<SheetTrigger
+						render={(props) => (
+							<Button {...props} className="w-full">
+								{side}
+							</Button>
+						)}
+					/>
 					<SheetPortal>
 						<SheetBackdrop />
 						<SheetContent side={side}>
@@ -45,11 +49,13 @@ export default function SheetSides() {
 								/>
 							</div>
 							<SheetFooter>
-								<SheetClose asChild>
-									<Button size="sm" variant="destructive">
-										Close
-									</Button>
-								</SheetClose>
+								<SheetClose
+									render={(props) => (
+										<Button {...props} size="sm" variant="destructive">
+											Close
+										</Button>
+									)}
+								/>
 								<Button size="sm">Submit</Button>
 							</SheetFooter>
 						</SheetContent>

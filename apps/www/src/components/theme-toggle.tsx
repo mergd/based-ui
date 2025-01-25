@@ -4,7 +4,7 @@ import { Monicon } from "@monicon/react"
 
 import { useTheme } from "@/providers/theme-provider"
 
-export function ThemeToggle() {
+export const ThemeToggle = () => {
 	const { theme, setTheme } = useTheme()
 
 	return (

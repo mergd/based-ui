@@ -1,4 +1,8 @@
-import { InputOTP, InputOTPGroup, InputOTPSlot } from "9ui"
+import {
+	InputOTP,
+	InputOTPGroup,
+	InputOTPSlot,
+} from "@/components/ui/input-otp"
 
 export default function InputOTPDemo() {
 	return (

@@ -1,12 +1,13 @@
 import Image from "next/image"
+
+import { Button } from "@/components/ui/button"
 import {
-	Button,
 	Card,
 	CardDescription,
 	CardFooter,
 	CardHeader,
 	CardTitle,
-} from "9ui"
+} from "@/components/ui/card"
 
 export default function CardWithImage() {
 	return (

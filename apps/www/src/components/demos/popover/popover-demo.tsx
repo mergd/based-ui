@@ -1,13 +1,14 @@
 import Monicon from "@monicon/react"
+
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import {
-	Button,
-	Input,
 	Popover,
 	PopoverContent,
 	PopoverDescription,
 	PopoverTitle,
 	PopoverTrigger,
-} from "9ui"
+} from "@/components/ui/popover"
 
 export default function PopoverDemo() {
 	const copyToClipboard = () => {

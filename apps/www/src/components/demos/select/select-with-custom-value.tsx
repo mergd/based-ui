@@ -1,12 +1,13 @@
 import { useState } from "react"
 import Image from "next/image"
+
 import {
 	Select,
 	SelectContent,
 	SelectItem,
 	SelectTrigger,
 	SelectValue,
-} from "9ui"
+} from "@/components/ui/select"
 
 const users = {
 	"karen-smith": {

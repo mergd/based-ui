@@ -2,12 +2,15 @@
 
 import * as React from "react"
 import { Monicon } from "@monicon/react"
-import { Button, merge } from "9ui"
 import { createHighlighter } from "shiki"
+
+import { Button } from "@/components/ui/button"
 
 import { Catalog } from "@/configs/catalog"
 
 import { useTheme } from "@/providers/theme-provider"
+
+import { merge } from "@/lib/utils"
 
 type DemoName = keyof typeof Catalog
 
@@ -17,11 +20,11 @@ interface ComponentPreviewProps {
 	className?: string
 }
 
-export function ComponentPreview({
+export const ComponentPreview = ({
 	name,
 	showReload = false,
 	className,
-}: ComponentPreviewProps) {
+}: ComponentPreviewProps) => {
 	const { component: Component, content } = Catalog[name]
 	const { theme } = useTheme()
 

@@ -7,15 +7,19 @@ import {
 	AlertDialogHeader,
 	AlertDialogTitle,
 	AlertDialogTrigger,
-	Button,
-} from "9ui"
+} from "@/components/ui/alert-dialog"
+import { Button } from "@/components/ui/button"
 
 export default function AlertDialogDemo() {
 	return (
 		<AlertDialog>
-			<AlertDialogTrigger asChild>
-				<Button variant="destructive">Delete Post</Button>
-			</AlertDialogTrigger>
+			<AlertDialogTrigger
+				render={(props) => (
+					<Button {...props} variant="destructive">
+						Delete Post
+					</Button>
+				)}
+			/>
 			<AlertDialogContent className="space-y-4">
 				<AlertDialogHeader>
 					<AlertDialogTitle>Are you sure?</AlertDialogTitle>
@@ -24,11 +28,13 @@ export default function AlertDialogDemo() {
 					</AlertDialogDescription>
 				</AlertDialogHeader>
 				<AlertDialogFooter>
-					<AlertDialogClose asChild>
-						<Button size="sm" variant="ghost">
-							Cancel
-						</Button>
-					</AlertDialogClose>
+					<AlertDialogClose
+						render={(props) => (
+							<Button {...props} size="sm" variant="ghost">
+								Cancel
+							</Button>
+						)}
+					/>
 					<Button size="sm" variant="destructive">
 						Delete
 					</Button>

@@ -1,11 +1,12 @@
 import Link from "next/link"
 import Monicon from "@monicon/react"
+
 import {
 	Breadcrumb,
 	BreadcrumbItem,
 	BreadcrumbList,
 	BreadcrumbSeparator,
-} from "9ui"
+} from "@/components/ui/breadcrumbs"
 
 export default function BreadcrumbsDemo() {
 	return (

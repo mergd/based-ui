@@ -1,8 +1,8 @@
 "use client"
 
+import { Button } from "@/components/ui/button"
+import { Label } from "@/components/ui/label"
 import {
-	Button,
-	Label,
 	Sheet,
 	SheetBackdrop,
 	SheetClose,
@@ -13,15 +13,15 @@ import {
 	SheetPortal,
 	SheetTitle,
 	SheetTrigger,
-	Textarea,
-} from "9ui"
+} from "@/components/ui/sheet"
+import { Textarea } from "@/components/ui/textarea"
 
 export default function SheetDemo() {
 	return (
 		<Sheet>
-			<SheetTrigger asChild>
-				<Button>Open Sheet</Button>
-			</SheetTrigger>
+			<SheetTrigger
+				render={(props) => <Button {...props}>Open Sheet</Button>}
+			/>
 			<SheetPortal>
 				<SheetBackdrop />
 				<SheetContent>
@@ -37,11 +37,13 @@ export default function SheetDemo() {
 						<Textarea id="feedback" placeholder="Type your feedback here." />
 					</div>
 					<SheetFooter>
-						<SheetClose asChild>
-							<Button size="sm" variant="destructive">
-								Close
-							</Button>
-						</SheetClose>
+						<SheetClose
+							render={(props) => (
+								<Button {...props} size="sm" variant="destructive">
+									Close
+								</Button>
+							)}
+						/>
 						<Button size="sm">Submit</Button>
 					</SheetFooter>
 				</SheetContent>

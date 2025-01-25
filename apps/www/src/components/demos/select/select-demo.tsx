@@ -4,7 +4,7 @@ import {
 	SelectItem,
 	SelectTrigger,
 	SelectValue,
-} from "9ui"
+} from "@/components/ui/select"
 
 export default function SelectDemo() {
 	return (

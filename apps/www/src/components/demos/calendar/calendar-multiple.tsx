@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { Calendar } from "9ui"
+
+import { Calendar } from "@/components/ui/calendar"
 
 export default function CalendarMultiple() {
 	const [selectedDates, setSelectedDates] = useState<Date[] | undefined>(

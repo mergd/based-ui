@@ -13,7 +13,7 @@ import {
 	ContextMenuSeparator,
 	ContextMenuSubTrigger,
 	ContextMenuTrigger,
-} from "9ui"
+} from "@/components/ui/context-menu"
 
 export default function ContextMenuDemo() {
 	return (

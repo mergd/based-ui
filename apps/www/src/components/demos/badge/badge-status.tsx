@@ -1,4 +1,4 @@
-import { Badge } from "9ui"
+import { Badge } from "@/components/ui/badge"
 
 export default function BadgeStatus() {
 	return (

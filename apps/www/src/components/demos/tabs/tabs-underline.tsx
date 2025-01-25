@@ -1,13 +1,13 @@
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 import {
-	Button,
-	Input,
-	Label,
 	Tab,
 	TabContent,
 	TabIndicator,
 	Tabs,
 	TabsList,
-} from "9ui"
+} from "@/components/ui/tabs"
 
 export default function TabsUnderline() {
 	return (

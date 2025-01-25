@@ -1,4 +1,5 @@
-import { Checkbox, Label } from "9ui"
+import { Checkbox } from "@/components/ui/checkbox"
+import { Label } from "@/components/ui/label"
 
 export default function CheckboxWithLabel() {
 	return (

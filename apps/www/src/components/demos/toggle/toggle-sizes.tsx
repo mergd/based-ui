@@ -1,5 +1,6 @@
 import Monicon from "@monicon/react"
-import { Toggle } from "9ui"
+
+import { Toggle } from "@/components/ui/toggle"
 
 export default function ToggleSizes() {
 	return (

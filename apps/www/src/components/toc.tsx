@@ -1,7 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { merge } from "9ui"
+
+import { merge } from "@/lib/utils"
 
 interface TocItem {
 	value: string
@@ -15,7 +16,7 @@ interface TableOfContentsProps {
 
 const getIdFromUrl = (url: string) => decodeURIComponent(url.slice(1))
 
-export function TableOfContents({ items }: TableOfContentsProps) {
+export const TableOfContents = ({ items }: TableOfContentsProps) => {
 	const [activeId, setActiveId] = React.useState<string>("")
 
 	React.useEffect(() => {

@@ -1,4 +1,4 @@
-import { Textarea } from "9ui"
+import { Textarea } from "@/components/ui/textarea"
 
 export default function TextareaDisabled() {
 	return (

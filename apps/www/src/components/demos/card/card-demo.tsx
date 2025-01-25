@@ -1,16 +1,17 @@
 import Image from "next/image"
 import Monicon from "@monicon/react"
+
+import { Button } from "@/components/ui/button"
 import {
-	Button,
 	Card,
 	CardContent,
 	CardDescription,
 	CardFooter,
 	CardHeader,
 	CardTitle,
-	Input,
-	toast,
-} from "9ui"
+} from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { toast } from "@/components/ui/sonner"
 
 export default function CardDemo() {
 	return (

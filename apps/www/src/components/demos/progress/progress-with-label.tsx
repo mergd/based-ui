@@ -1,5 +1,6 @@
 import * as React from "react"
-import { Progress, ProgressLabel } from "9ui"
+
+import { Progress, ProgressLabel } from "@/components/ui/progress"
 
 export default function ProgressDemo() {
 	const [value, setValue] = React.useState(0)

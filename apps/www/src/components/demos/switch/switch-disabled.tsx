@@ -1,4 +1,4 @@
-import { Switch } from "9ui"
+import { Switch } from "@/components/ui/switch"
 
 export default function SwitchDisabled() {
 	return <Switch disabled />

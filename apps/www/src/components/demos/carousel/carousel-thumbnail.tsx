@@ -1,12 +1,13 @@
 import { useState } from "react"
 import Image from "next/image"
+
+import { AspectRatio } from "@/components/ui/aspect-ratio"
 import {
-	AspectRatio,
 	Carousel,
 	CarouselApi,
 	CarouselContent,
 	CarouselItem,
-} from "9ui"
+} from "@/components/ui/carousel"
 
 const slides = [
 	"https://images.pexels.com/photos/1616403/pexels-photo-1616403.jpeg?auto=compress&cs=tinysrgb&w=450&h=800&dpr=2",

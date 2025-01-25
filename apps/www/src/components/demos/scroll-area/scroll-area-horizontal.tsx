@@ -1,4 +1,4 @@
-import { ScrollArea } from "9ui"
+import { ScrollArea } from "@/components/ui/scroll-area"
 
 const versions = Array.from({ length: 50 }, (_, i) => `v${i + 1}.0.0`).join(
 	", "

@@ -1,5 +1,6 @@
 import { Monicon } from "@monicon/react"
-import { Button } from "9ui"
+
+import { Button } from "@/components/ui/button"
 
 export default function ButtonLoading() {
 	return (

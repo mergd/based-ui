@@ -1,9 +1,13 @@
 "use client"
 
 import Monicon from "@monicon/react"
-import { PreviewCard, PreviewCardContent, PreviewCardTrigger } from "9ui"
 
 import Logo from "@/components/logo"
+import {
+	PreviewCard,
+	PreviewCardContent,
+	PreviewCardTrigger,
+} from "@/components/ui/preview-card"
 
 export default function PreviewCardDemo() {
 	return (

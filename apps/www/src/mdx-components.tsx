@@ -1,15 +1,15 @@
 import * as React from "react"
+
+import { ComponentPreview } from "@/components/component-preview"
 import {
 	Accordion,
 	AccordionContent,
 	AccordionItem,
 	AccordionTrigger,
-	Separator,
-} from "9ui"
-import { merge } from "9ui/src/utils"
+} from "@/components/ui/accordion"
+import { Separator } from "@/components/ui/separator"
 
-import { ComponentPreview } from "@/components/component-preview"
-import { ComponentVariants } from "@/components/component-variants"
+import { merge } from "@/lib/utils"
 
 interface MDXComponents {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -150,7 +150,6 @@ const components: MDXComponents = {
 		alt,
 		...props
 	}: React.ImgHTMLAttributes<HTMLImageElement>) => (
-		// eslint-disable-next-line @next/next/no-img-element
 		<img
 			className={merge("rounded-lg border border-muted", className)}
 			alt={alt}
@@ -203,9 +202,5 @@ const components: MDXComponents = {
 }
 
 export function useMDXComponents(): MDXComponents {
-	return {
-		...components,
-		ComponentPreview,
-		ComponentVariants,
-	}
+	return components
 }

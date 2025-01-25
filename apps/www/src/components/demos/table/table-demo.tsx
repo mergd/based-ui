@@ -6,7 +6,7 @@ import {
 	TableHead,
 	TableHeader,
 	TableRow,
-} from "9ui"
+} from "@/components/ui/table"
 
 const movies = [
 	{ title: "The Shawshank Redemption", year: 1994, rating: 9.3 },

@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Monicon from "@monicon/react"
-import { Input, InputIcon } from "9ui"
+
+import { Input, InputIcon } from "@/components/ui/input"
 
 export default function InputWithIcons() {
 	const [isPasswordVisible, setIsPasswordVisible] = useState(false)

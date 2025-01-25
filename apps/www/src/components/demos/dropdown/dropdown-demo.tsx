@@ -2,8 +2,9 @@
 
 import { useState } from "react"
 import Monicon from "@monicon/react"
+
+import { Button } from "@/components/ui/button"
 import {
-	Button,
 	Dropdown,
 	DropdownCheckboxItem,
 	DropdownContent,
@@ -16,7 +17,7 @@ import {
 	DropdownSeparator,
 	DropdownSubTrigger,
 	DropdownTrigger,
-} from "9ui"
+} from "@/components/ui/dropdown"
 
 export default function DropdownDemo() {
 	const [shuffle, setShuffle] = useState(false)
@@ -25,9 +26,9 @@ export default function DropdownDemo() {
 
 	return (
 		<Dropdown>
-			<DropdownTrigger asChild>
-				<Button>Controls</Button>
-			</DropdownTrigger>
+			<DropdownTrigger
+				render={(props) => <Button {...props}>Controls</Button>}
+			/>
 			<DropdownContent>
 				<DropdownGroup>
 					<DropdownGroupLabel>Playback</DropdownGroupLabel>

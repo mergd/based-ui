@@ -1,10 +1,11 @@
 import Link from "next/link"
+
 import {
 	Breadcrumb,
 	BreadcrumbItem,
 	BreadcrumbList,
 	BreadcrumbSeparator,
-} from "9ui"
+} from "@/components/ui/breadcrumbs"
 
 export default function BreadcrumbsCustomSeparator() {
 	return (

@@ -1,12 +1,12 @@
+import { AspectRatio } from "@/components/ui/aspect-ratio"
 import {
-	AspectRatio,
 	Carousel,
 	CarouselContent,
 	CarouselItem,
 	CarouselNavigation,
 	CarouselNext,
 	CarouselPrevious,
-} from "9ui"
+} from "@/components/ui/carousel"
 
 const slides = [1, 2, 3, 4, 5]
 

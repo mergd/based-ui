@@ -5,7 +5,7 @@ const config = {
 	maxMessageLength: 64,
 	minMessageLength: 3,
 	questions: ["type", "scope", "subject", "body"],
-	scopes: ["www", "9ui", "*"],
+	scopes: ["www", "*"],
 	types: {
 		chore: {
 			description: "Changes that don't fix a bug or add a feature",

@@ -9,7 +9,6 @@ import remarkGfm from "remark-gfm"
 const nextConfig = {
 	pageExtensions: ["mdx", "tsx", "ts", "js", "jsx"],
 	reactStrictMode: true,
-	transpilePackages: ["9ui"],
 	webpack: (config) => {
 		config.plugins.push(
 			new MoniconPlugin({

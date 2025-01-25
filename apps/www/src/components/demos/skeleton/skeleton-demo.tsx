@@ -1,4 +1,4 @@
-import { Skeleton } from "9ui"
+import { Skeleton } from "@/components/ui/skeleton"
 
 export default function SkeletonDemo() {
 	return (

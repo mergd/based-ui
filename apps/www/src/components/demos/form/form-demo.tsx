@@ -1,19 +1,20 @@
 "use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
+
+import { Button } from "@/components/ui/button"
 import {
-	Button,
 	Field,
 	FieldContent,
 	FieldControl,
 	FieldDescription,
 	FieldError,
 	FieldLabel,
-	Form,
-	Input,
-} from "9ui"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
+} from "@/components/ui/field"
+import { Form } from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
 
 const schema = z.object({
 	displayName: z

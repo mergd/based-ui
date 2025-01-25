@@ -1,8 +1,6 @@
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Button } from "@/components/ui/button"
 import {
-	Avatar,
-	AvatarFallback,
-	AvatarImage,
-	Button,
 	Dialog,
 	DialogClose,
 	DialogContent,
@@ -10,14 +8,14 @@ import {
 	DialogFooter,
 	DialogTitle,
 	DialogTrigger,
-} from "9ui"
+} from "@/components/ui/dialog"
 
 export default function DialogNested() {
 	return (
 		<Dialog>
-			<DialogTrigger asChild>
-				<Button>View Details</Button>
-			</DialogTrigger>
+			<DialogTrigger
+				render={(props) => <Button {...props}>View Details</Button>}
+			/>
 			<DialogContent>
 				<DialogTitle>Profile</DialogTitle>
 				<DialogDescription>
@@ -34,22 +32,26 @@ export default function DialogNested() {
 				</div>
 				<DialogFooter>
 					<Dialog>
-						<DialogTrigger asChild>
-							<Button variant="outline" size="sm">
-								Edit
-							</Button>
-						</DialogTrigger>
+						<DialogTrigger
+							render={(props) => (
+								<Button {...props} variant="outline" size="sm">
+									Edit
+								</Button>
+							)}
+						/>
 						<DialogContent>
 							<DialogTitle>Edit</DialogTitle>
 							<DialogDescription>
 								Edit the details of the item
 							</DialogDescription>
 							<DialogFooter>
-								<DialogClose asChild>
-									<Button size="sm" variant="ghost">
-										Cancel
-									</Button>
-								</DialogClose>
+								<DialogClose
+									render={(props) => (
+										<Button {...props} size="sm" variant="ghost">
+											Cancel
+										</Button>
+									)}
+								/>
 								<Button size="sm">Save</Button>
 							</DialogFooter>
 						</DialogContent>

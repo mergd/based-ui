@@ -1,5 +1,6 @@
 import { Monicon } from "@monicon/react"
-import { Badge } from "9ui"
+
+import { Badge } from "@/components/ui/badge"
 
 export default function BadgeWithIcon() {
 	return (

@@ -10,7 +10,7 @@ import {
 	MenubarSubMenu,
 	MenubarSubTrigger,
 	MenubarTrigger,
-} from "9ui"
+} from "@/components/ui/menubar"
 
 export default function MenubarDemo() {
 	return (

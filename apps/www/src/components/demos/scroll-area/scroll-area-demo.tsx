@@ -1,4 +1,5 @@
-import { ScrollArea, Separator } from "9ui"
+import { ScrollArea } from "@/components/ui/scroll-area"
+import { Separator } from "@/components/ui/separator"
 
 const versions = Array.from({ length: 50 }, (_, i) => `v${i + 1}.0.0`)
 

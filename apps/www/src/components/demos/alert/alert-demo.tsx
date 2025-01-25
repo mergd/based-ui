@@ -1,11 +1,12 @@
 import { Monicon } from "@monicon/react"
+
 import {
 	Alert,
 	AlertContent,
 	AlertDescription,
 	AlertIcon,
 	AlertTitle,
-} from "9ui"
+} from "@/components/ui/alert"
 
 export default function AlertDemo() {
 	return (

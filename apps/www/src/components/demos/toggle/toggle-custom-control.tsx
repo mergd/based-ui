@@ -2,7 +2,8 @@
 
 import { useState } from "react"
 import Monicon from "@monicon/react"
-import { Toggle } from "9ui"
+
+import { Toggle } from "@/components/ui/toggle"
 
 export default function ToggleCustomControl() {
 	const [isPinned, setIsPinned] = useState(false)

@@ -22,6 +22,7 @@ const config = [
 			"@next/next/no-html-link-for-pages": "off",
 			"react/jsx-key": "off",
 			"tailwindcss/no-custom-classname": "off",
+			"@next/next/no-img-element": "off",
 		},
 		settings: {
 			tailwindcss: {

@@ -1,4 +1,4 @@
-import { Slider, SliderLabel } from "9ui"
+import { Slider, SliderLabel } from "@/components/ui/slider"
 
 export default function SliderWithLabel() {
 	return (

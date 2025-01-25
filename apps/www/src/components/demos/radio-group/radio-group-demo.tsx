@@ -1,4 +1,5 @@
-import { Label, RadioGroup, RadioGroupItem } from "9ui"
+import { Label } from "@/components/ui/label"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 export default function RadioGroupDemo() {
 	return (

@@ -1,9 +1,10 @@
 import { readFile } from "fs/promises"
 import { join } from "path"
 import { notFound } from "next/navigation"
-import { getTableOfContents } from "@/lib/toc"
 
 import { TableOfContents } from "@/components/toc"
+
+import { getTableOfContents } from "@/lib/toc"
 
 interface DocPageProps {
 	params: Promise<{
@@ -25,7 +26,7 @@ async function getDocFromParams({ params }: DocPageProps) {
 	return { Doc: doc.default, source }
 }
 
-export default async function DocPage({ params }: DocPageProps) {
+const DocPage = async ({ params }: DocPageProps) => {
 	const doc = await getDocFromParams({ params })
 
 	if (!doc.Doc) {
@@ -45,3 +46,5 @@ export default async function DocPage({ params }: DocPageProps) {
 }
 
 export const dynamicParams = false
+
+export default DocPage

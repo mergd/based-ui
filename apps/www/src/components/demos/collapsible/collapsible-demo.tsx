@@ -1,6 +1,13 @@
 import { useState } from "react"
 import Monicon from "@monicon/react"
-import { Collapsible, CollapsibleContent, CollapsibleTrigger, merge } from "9ui"
+
+import {
+	Collapsible,
+	CollapsibleContent,
+	CollapsibleTrigger,
+} from "@/components/ui/collapsible"
+
+import { merge } from "@/lib/utils"
 
 export default function CollapsibleDemo() {
 	const [open, setOpen] = useState(false)

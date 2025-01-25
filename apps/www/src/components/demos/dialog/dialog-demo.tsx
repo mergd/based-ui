@@ -1,19 +1,19 @@
+import { Button } from "@/components/ui/button"
 import {
-	Button,
 	Dialog,
 	DialogContent,
 	DialogDescription,
 	DialogFooter,
 	DialogTitle,
 	DialogTrigger,
-} from "9ui"
+} from "@/components/ui/dialog"
 
 export default function DialogDemo() {
 	return (
 		<Dialog>
-			<DialogTrigger asChild>
-				<Button>Privacy Policy</Button>
-			</DialogTrigger>
+			<DialogTrigger
+				render={(props) => <Button {...props}>Privacy Policy</Button>}
+			/>
 			<DialogContent>
 				<DialogTitle>Privacy Policy</DialogTitle>
 				<DialogDescription>

@@ -22,7 +22,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => (
 	<html lang="en" suppressHydrationWarning>
 		<body className={jakarta.className}>
 			<ThemeProvider>
-				<div className="Root flex flex-1 flex-col" drawer-wrapper="">
+				<div className="Root flex flex-1 flex-col" data-vaul-drawer-wrapper="">
 					<Header />
 					<main className="flex-1">{children}</main>
 					<Footer />

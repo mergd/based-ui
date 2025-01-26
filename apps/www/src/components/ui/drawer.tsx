@@ -52,12 +52,12 @@ const DrawerContent = React.forwardRef<
 		<BaseDrawer.Content
 			ref={ref}
 			className={merge(
-				"fixed inset-x-0 bottom-0 z-50 flex h-auto flex-col rounded-t-lg border border-muted bg-bg",
+				"fixed inset-x-0 bottom-0 z-50 flex h-auto flex-col rounded-t-lg border border-muted bg-bg text-fg",
 				className
 			)}
 			{...props}
 		>
-			<div className="mx-auto mb-8 mt-4 h-2 w-20 rounded-full bg-muted" />
+			<div className="mx-auto mt-4 h-2 w-20 rounded-full bg-muted" />
 			{children}
 		</BaseDrawer.Content>
 	</DrawerPortal>
@@ -71,10 +71,7 @@ const DrawerHeader = ({
 	className,
 	...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
-	<div
-		className={merge("grid gap-1.5 p-4 text-center sm:text-left", className)}
-		{...props}
-	/>
+	<div className={merge("grid gap-1.5 p-4", className)} {...props} />
 )
 DrawerHeader.displayName = "DrawerHeader"
 

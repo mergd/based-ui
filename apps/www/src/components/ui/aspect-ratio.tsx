@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Aspect Ratio
@@ -17,7 +17,7 @@ const AspectRatio = React.forwardRef<HTMLDivElement, AspectRatioProps>(
 				...style,
 				paddingBottom: `${(1 / ratio) * 100}%`,
 			}}
-			className={merge("relative w-full", className)}
+			className={cn("relative w-full", className)}
 			{...props}
 		>
 			<div className="absolute inset-0 size-full">{children}</div>

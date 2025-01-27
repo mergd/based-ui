@@ -1,7 +1,7 @@
 import * as React from "react"
 import { AlertDialog as BaseAlertDialog } from "@base-ui-components/react/alert-dialog"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Alert Dialog Mappings
@@ -21,7 +21,7 @@ const AlertDialogBackdrop = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseAlertDialog.Backdrop
 		ref={ref}
-		className={merge(
+		className={cn(
 			"fixed inset-0 h-dvh bg-black/70 transition-all [&[data-ending-style]]:opacity-0 [&[data-starting-style]]:opacity-0",
 			className
 		)}
@@ -41,8 +41,8 @@ const AlertDialogContent = React.forwardRef<
 		<AlertDialogBackdrop />
 		<BaseAlertDialog.Popup
 			ref={ref}
-			className={merge(
-				"fixed left-1/2 top-1/2 z-50 grid w-full max-w-[90%] -translate-x-1/2 -translate-y-1/2 scale-[calc(1-0.1*var(--nested-dialogs))] rounded-md border border-muted bg-bg p-4 shadow-elevation-low duration-200 data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 sm:max-w-96",
+			className={cn(
+				"fixed left-1/2 top-1/2 z-50 grid w-full max-w-[90%] -translate-x-1/2 -translate-y-1/2 scale-[calc(1-0.1*var(--nested-dialogs))] rounded-md border border-border bg-background p-4 shadow-elevation-low duration-200 data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 sm:max-w-96",
 				className
 			)}
 			{...props}
@@ -60,7 +60,7 @@ const AlertDialogHeader = ({
 	className,
 	...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
-	<div className={merge("flex flex-col space-y-2", className)} {...props} />
+	<div className={cn("flex flex-col space-y-2", className)} {...props} />
 )
 AlertDialogHeader.displayName = "AlertDialogHeader"
 
@@ -72,7 +72,7 @@ const AlertDialogFooter = ({
 	...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
 	<div
-		className={merge(
+		className={cn(
 			"flex flex-col-reverse gap-2 sm:flex-row sm:justify-end",
 			className
 		)}
@@ -90,7 +90,7 @@ const AlertDialogTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseAlertDialog.Title
 		ref={ref}
-		className={merge("text-lg font-semibold text-fg", className)}
+		className={cn("text-lg font-semibold text-foreground", className)}
 		{...props}
 	/>
 ))
@@ -105,7 +105,7 @@ const AlertDialogDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseAlertDialog.Description
 		ref={ref}
-		className={merge("text-sm text-subtle-fg", className)}
+		className={cn("text-sm text-muted-foreground", className)}
 		{...props}
 	/>
 ))

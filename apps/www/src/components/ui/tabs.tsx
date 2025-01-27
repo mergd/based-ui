@@ -3,7 +3,7 @@
 import * as React from "react"
 import { Tabs as BaseTabs } from "@base-ui-components/react/tabs"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Tabs Types
@@ -58,11 +58,11 @@ const TabsList = React.forwardRef<
 	return (
 		<BaseTabs.List
 			ref={ref}
-			className={merge(
+			className={cn(
 				"relative flex gap-1 px-1 text-sm font-medium",
 				variant === "capsule"
-					? "rounded-md border border-muted"
-					: "border-b border-muted",
+					? "rounded-md border border-border"
+					: "border-b border-border",
 				className
 			)}
 			{...props}
@@ -80,8 +80,8 @@ const Tab = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseTabs.Tab
 		ref={ref}
-		className={merge(
-			"min-h-10 w-full text-fg data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+		className={cn(
+			"min-h-10 w-full text-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
 			className
 		)}
 		{...props}
@@ -100,7 +100,7 @@ const TabIndicator = React.forwardRef<
 	return (
 		<BaseTabs.Indicator
 			ref={ref}
-			className={merge(
+			className={cn(
 				"absolute left-0 z-[-1] w-[var(--active-tab-width)] -translate-y-1/2 translate-x-[var(--active-tab-left)] transition-all duration-200 ease-in-out",
 				variant === "underline"
 					? "top-full h-px bg-accent"
@@ -122,10 +122,7 @@ const TabContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseTabs.Panel
 		ref={ref}
-		className={merge(
-			"mt-2 flex-1 rounded-md border border-muted p-4",
-			className
-		)}
+		className={cn("mt-2 flex-1 rounded-md border border-border p-4", className)}
 		{...props}
 	/>
 ))

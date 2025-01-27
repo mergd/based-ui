@@ -2,7 +2,7 @@
 
 import * as React from "react"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 interface TocItem {
 	value: string
@@ -57,13 +57,14 @@ export const TableOfContents = ({ items }: TableOfContentsProps) => {
 						<a
 							key={item.url}
 							href={item.url}
-							className={merge(
-								"flex py-1 text-sm text-muted-fg transition-colors hover:text-fg",
+							className={cn(
+								"flex py-1 text-sm text-muted-fg transition-colors hover:text-foreground",
 								item.depth === 3 && "pl-2",
 								item.depth === 4 && "pl-4",
 								item.depth === 5 && "pl-6",
 								item.depth === 6 && "pl-8",
-								activeId === getIdFromUrl(item.url) && "font-medium text-fg"
+								activeId === getIdFromUrl(item.url) &&
+									"font-medium text-foreground"
 							)}
 						>
 							<span>{item.value}</span>

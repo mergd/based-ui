@@ -1,7 +1,7 @@
 import * as React from "react"
 import { ChevronRightIcon } from "lucide-react"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Breadcrumbs Root
@@ -22,7 +22,7 @@ const BreadcrumbList = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<ol
 		ref={ref}
-		className={merge(
+		className={cn(
 			"flex flex-wrap items-center gap-2 break-words text-sm",
 			className
 		)}
@@ -44,9 +44,9 @@ const BreadcrumbItem = React.forwardRef<HTMLLIElement, BreadcrumbItemProps>(
 		<li
 			ref={ref}
 			aria-current={active ? "page" : undefined}
-			className={merge(
-				"inline-flex items-center gap-2 text-muted-fg [&>a]:transition-colors [&>a]:hover:text-fg",
-				active && "text-fg",
+			className={cn(
+				"inline-flex items-center gap-2 text-muted-fg [&>a]:transition-colors [&>a]:hover:text-foreground",
+				active && "text-foreground",
 				className
 			)}
 			{...props}
@@ -66,7 +66,7 @@ const BreadcrumbSeparator = React.forwardRef<
 		ref={ref}
 		aria-hidden="true"
 		role="presentation"
-		className={merge("text-muted-fg [&>svg]:size-3", className)}
+		className={cn("text-muted-fg [&>svg]:size-3", className)}
 		{...props}
 	>
 		{children || <ChevronRightIcon />}

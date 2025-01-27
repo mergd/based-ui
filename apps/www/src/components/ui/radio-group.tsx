@@ -2,7 +2,7 @@ import * as React from "react"
 import { Radio } from "@base-ui-components/react/radio"
 import { RadioGroup as BaseRadioGroup } from "@base-ui-components/react/radio-group"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Radio Group
@@ -13,7 +13,7 @@ const RadioGroup = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseRadioGroup
 		ref={ref}
-		className={merge("flex flex-col gap-2", className)}
+		className={cn("flex flex-col gap-2", className)}
 		{...props}
 	/>
 ))
@@ -28,8 +28,8 @@ const RadioGroupItem = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<Radio.Root
 		ref={ref}
-		className={merge(
-			"peer flex size-4 items-center justify-center rounded-full border border-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-50 data-[checked]:border-accent",
+		className={cn(
+			"peer flex size-4 items-center justify-center rounded-full border border-border focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-50 data-[checked]:border-accent",
 			className
 		)}
 		{...props}

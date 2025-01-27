@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Slider as BaseSlider } from "@base-ui-components/react/slider"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Slider
@@ -17,7 +17,7 @@ const Slider = React.forwardRef<
 	return (
 		<BaseSlider.Root
 			ref={ref}
-			className={merge(
+			className={cn(
 				"relative touch-none select-none",
 				props.disabled && "pointer-events-none opacity-50",
 				className
@@ -54,7 +54,10 @@ const SliderLabel = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseSlider.Value
 		ref={ref}
-		className={merge("flex justify-end text-xs font-medium text-fg", className)}
+		className={cn(
+			"flex justify-end text-xs font-medium text-foreground",
+			className
+		)}
 		{...props}
 	/>
 ))

@@ -1,7 +1,7 @@
 import * as React from "react"
 import { ScrollArea as BaseScrollArea } from "@base-ui-components/react/scroll-area"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Scroll Area
@@ -15,7 +15,7 @@ const ScrollArea = React.forwardRef<HTMLDivElement, ScrollAreaProps>(
 	({ children, className, orientation = "vertical", ...props }, ref) => (
 		<BaseScrollArea.Root
 			ref={ref}
-			className={merge("relative h-96 overflow-hidden", className)}
+			className={cn("relative h-96 overflow-hidden", className)}
 			{...props}
 		>
 			<BaseScrollArea.Viewport className="size-full overscroll-contain">
@@ -23,7 +23,7 @@ const ScrollArea = React.forwardRef<HTMLDivElement, ScrollAreaProps>(
 			</BaseScrollArea.Viewport>
 			<BaseScrollArea.Scrollbar
 				orientation={orientation}
-				className={merge(
+				className={cn(
 					"m-2 rounded-full bg-muted opacity-0 transition-opacity delay-300 data-[hovering]:opacity-100 data-[scrolling]:opacity-100 data-[hovering]:delay-0 data-[scrolling]:delay-0 data-[hovering]:duration-100 data-[scrolling]:duration-100",
 					orientation === "horizontal" && "h-1",
 					orientation === "vertical" && "w-1"

@@ -4,7 +4,7 @@ import * as React from "react"
 import { Dialog as BaseDialog } from "@base-ui-components/react"
 import { XIcon } from "lucide-react"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Dialog Mappings
@@ -26,7 +26,7 @@ const DialogBackdrop = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseDialog.Backdrop
 		ref={ref}
-		className={merge(
+		className={cn(
 			"fixed inset-0 h-dvh bg-black/70 transition-all duration-200 [&[data-ending-style]]:opacity-0 [&[data-starting-style]]:opacity-0",
 			className
 		)}
@@ -47,8 +47,8 @@ const DialogContent = React.forwardRef<
 		<DialogBackdrop />
 		<BaseDialog.Popup
 			ref={ref}
-			className={merge(
-				"fixed left-1/2 top-1/2 z-50 grid w-full max-w-[90%] -translate-x-1/2 -translate-y-1/2 scale-[calc(1-0.1*var(--nested-dialogs))] gap-4 rounded-md border border-muted bg-bg p-4 shadow-elevation-low duration-200 data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 sm:max-w-96",
+			className={cn(
+				"fixed left-1/2 top-1/2 z-50 grid w-full max-w-[90%] -translate-x-1/2 -translate-y-1/2 scale-[calc(1-0.1*var(--nested-dialogs))] gap-4 rounded-md border border-border bg-background p-4 shadow-elevation-low duration-200 data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 sm:max-w-96",
 				className
 			)}
 			{...props}
@@ -72,7 +72,7 @@ const DialogFooter = ({
 	...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
 	<div
-		className={merge(
+		className={cn(
 			"flex flex-col-reverse gap-2 sm:flex-row sm:justify-end",
 			className
 		)}
@@ -91,7 +91,7 @@ const DialogTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseDialog.Title
 		ref={ref}
-		className={merge("text-lg font-semibold text-fg", className)}
+		className={cn("text-lg font-semibold text-foreground", className)}
 		{...props}
 	/>
 ))
@@ -107,7 +107,7 @@ const DialogDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseDialog.Description
 		ref={ref}
-		className={merge("text-sm text-subtle-fg", className)}
+		className={cn("text-sm text-subtle-fg", className)}
 		{...props}
 	/>
 ))

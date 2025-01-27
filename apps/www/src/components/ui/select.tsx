@@ -2,7 +2,7 @@ import * as React from "react"
 import { Select as BaseSelect } from "@base-ui-components/react/select"
 import { CheckIcon, ChevronDownIcon } from "lucide-react"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Select Mappings
@@ -27,8 +27,8 @@ const SelectTrigger = React.forwardRef<
 >(({ children, className, ...props }, ref) => (
 	<BaseSelect.Trigger
 		ref={ref}
-		className={merge(
-			"flex h-9 cursor-pointer items-center justify-between rounded-md border border-muted px-4 py-2 focus:outline focus:outline-2 focus:outline-offset-1 focus:outline-accent data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:size-4",
+		className={cn(
+			"flex h-9 cursor-pointer items-center justify-between rounded-md border border-border px-4 py-2 focus:outline focus:outline-2 focus:outline-offset-1 focus:outline-accent data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:size-4",
 			className
 		)}
 		{...props}
@@ -50,7 +50,7 @@ const SelectValue = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseSelect.Value
 		ref={ref}
-		className={merge("text-sm text-fg", className)}
+		className={cn("text-sm text-foreground", className)}
 		{...props}
 	/>
 ))
@@ -69,8 +69,8 @@ const SelectContent = React.forwardRef<HTMLDivElement, SelectContentProps>(
 		<BaseSelect.Positioner sideOffset={4} {...positionerProps}>
 			<BaseSelect.Popup
 				ref={ref}
-				className={merge(
-					"w-[--anchor-width] origin-[var(--transform-origin)] overflow-y-auto overscroll-contain rounded-md bg-bg p-2 text-sm text-fg shadow-elevation-low outline outline-1 -outline-offset-1 outline-muted transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
+				className={cn(
+					"w-[--anchor-width] origin-[var(--transform-origin)] overflow-y-auto overscroll-contain rounded-md bg-background p-2 text-sm text-foreground shadow-elevation-low outline outline-1 -outline-offset-1 outline-muted transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
 					className
 				)}
 				{...props}
@@ -91,8 +91,8 @@ const SelectItem = React.forwardRef<
 >(({ children, className, ...props }, ref) => (
 	<BaseSelect.Item
 		ref={ref}
-		className={merge(
-			"grid select-none grid-cols-[0.75rem_auto] items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-muted data-[highlighted]:text-fg data-[disabled]:opacity-50",
+		className={cn(
+			"grid select-none grid-cols-[0.75rem_auto] items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-muted data-[highlighted]:text-foreground data-[disabled]:opacity-50",
 			className
 		)}
 		{...props}
@@ -116,7 +116,7 @@ const SelectGroupLabel = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseSelect.GroupLabel
 		ref={ref}
-		className={merge("px-2 py-1.5 font-medium text-muted-fg", className)}
+		className={cn("px-2 py-1.5 font-medium text-muted-fg", className)}
 		{...props}
 	/>
 ))
@@ -131,7 +131,7 @@ const SelectSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseSelect.Separator
 		ref={ref}
-		className={merge("-mx-1 my-1 h-px bg-muted", className)}
+		className={cn("-mx-1 my-1 h-px bg-muted", className)}
 		{...props}
 	/>
 ))

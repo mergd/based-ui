@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/accordion"
 import { Separator } from "@/components/ui/separator"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 interface MDXComponents {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -19,50 +19,50 @@ interface MDXComponents {
 const components: MDXComponents = {
 	h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
 		<h1
-			className={merge("scroll-m-20 text-4xl font-bold", className)}
+			className={cn("scroll-m-20 text-4xl font-bold", className)}
 			{...props}
 		/>
 	),
 	h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
 		<h2
-			className={merge("mt-10 scroll-m-20 text-2xl font-semibold", className)}
+			className={cn("mt-10 scroll-m-20 text-2xl font-semibold", className)}
 			{...props}
 		/>
 	),
 	h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
 		<h3
-			className={merge("mt-8 scroll-m-20 text-xl font-semibold", className)}
+			className={cn("mt-8 scroll-m-20 text-xl font-semibold", className)}
 			{...props}
 		/>
 	),
 	h4: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
 		<h4
-			className={merge("mt-4 scroll-m-20 text-lg font-semibold", className)}
+			className={cn("mt-4 scroll-m-20 text-lg font-semibold", className)}
 			{...props}
 		/>
 	),
 	p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
 		<p
-			className={merge(
-				"scroll-m-20 text-fg [&:not(:first-child)]:mt-4",
+			className={cn(
+				"scroll-m-20 text-foreground [&:not(:first-child)]:mt-4",
 				className
 			)}
 			{...props}
 		/>
 	),
 	ul: ({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
-		<ul className={merge("space-y-2 text-muted-fg", className)} {...props} />
+		<ul className={cn("space-y-2 text-muted-fg", className)} {...props} />
 	),
 	ol: ({ className, ...props }: React.HTMLAttributes<HTMLOListElement>) => (
-		<ol className={merge("space-y-2 text-muted-fg", className)} {...props} />
+		<ol className={cn("space-y-2 text-muted-fg", className)} {...props} />
 	),
 	li: ({ className, ...props }: React.HTMLAttributes<HTMLLIElement>) => (
-		<li className={merge("", className)} {...props} />
+		<li className={cn("", className)} {...props} />
 	),
 	code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
 		<code
-			className={merge(
-				"relative bg-bg px-[0.3rem] py-[0.2rem] font-mono text-sm text-accent",
+			className={cn(
+				"relative bg-background px-[0.3rem] py-[0.2rem] font-mono text-sm text-accent",
 				className
 			)}
 			{...props}
@@ -73,8 +73,8 @@ const components: MDXComponents = {
 		...props
 	}: React.BlockquoteHTMLAttributes<HTMLQuoteElement>) => (
 		<blockquote
-			className={merge(
-				"mt-6 border-l-2 border-muted pl-6 italic text-muted-fg",
+			className={cn(
+				"mt-6 border-l-2 border-border pl-6 italic text-muted-fg",
 				className
 			)}
 			{...props}
@@ -84,8 +84,8 @@ const components: MDXComponents = {
 		className,
 		...props
 	}: React.TableHTMLAttributes<HTMLTableElement>) => (
-		<div className="my-6 w-full overflow-hidden rounded-lg border border-muted">
-			<table className={merge("w-full", className)} {...props} />
+		<div className="my-6 w-full overflow-hidden rounded-lg border border-border">
+			<table className={cn("w-full", className)} {...props} />
 		</div>
 	),
 	thead: ({
@@ -93,7 +93,7 @@ const components: MDXComponents = {
 		...props
 	}: React.HTMLAttributes<HTMLTableSectionElement>) => (
 		<thead
-			className={merge("border-b border-muted bg-muted/40", className)}
+			className={cn("border-b border-border bg-muted/40", className)}
 			{...props}
 		/>
 	),
@@ -101,17 +101,17 @@ const components: MDXComponents = {
 		className,
 		...props
 	}: React.HTMLAttributes<HTMLTableSectionElement>) => (
-		<tbody className={merge("divide-y divide-muted", className)} {...props} />
+		<tbody className={cn("divide-y divide-muted", className)} {...props} />
 	),
 	tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
-		<tr className={merge("", className)} {...props} />
+		<tr className={cn("", className)} {...props} />
 	),
 	th: ({
 		className,
 		...props
 	}: React.ThHTMLAttributes<HTMLTableHeaderCellElement>) => (
 		<th
-			className={merge("p-4 text-left text-sm font-semibold", className)}
+			className={cn("p-4 text-left text-sm font-semibold", className)}
 			{...props}
 		/>
 	),
@@ -119,23 +119,23 @@ const components: MDXComponents = {
 		className,
 		...props
 	}: React.TdHTMLAttributes<HTMLTableDataCellElement>) => (
-		<td className={merge("p-4 text-sm text-muted-fg", className)} {...props} />
+		<td className={cn("p-4 text-sm text-muted-fg", className)} {...props} />
 	),
 	pre: ({ className, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
 		<pre
-			className={merge("overflow-x-scroll bg-bg p-4", className)}
+			className={cn("overflow-x-scroll bg-background p-4", className)}
 			{...props}
 		/>
 	),
 	hr: ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
-		<Separator className={merge("my-8", className)} {...props} />
+		<Separator className={cn("my-8", className)} {...props} />
 	),
 	a: ({
 		className,
 		...props
 	}: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
 		<a
-			className={merge(
+			className={cn(
 				"font-medium text-link-fg underline underline-offset-4",
 				className
 			)}
@@ -143,7 +143,7 @@ const components: MDXComponents = {
 		/>
 	),
 	strong: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
-		<strong className={merge("font-semibold", className)} {...props} />
+		<strong className={cn("font-semibold", className)} {...props} />
 	),
 	img: ({
 		className,
@@ -151,7 +151,7 @@ const components: MDXComponents = {
 		...props
 	}: React.ImgHTMLAttributes<HTMLImageElement>) => (
 		<img
-			className={merge("rounded-lg border border-muted", className)}
+			className={cn("rounded-lg border border-border", className)}
 			alt={alt}
 			{...props}
 		/>
@@ -172,7 +172,7 @@ const components: MDXComponents = {
 
 		return (
 			<React.Fragment>
-				<h1 className={merge("text-4xl font-bold", className)} {...props}>
+				<h1 className={cn("text-4xl font-bold", className)} {...props}>
 					{content}
 				</h1>
 				<title>{`${content} | 9ui`}</title>
@@ -192,7 +192,7 @@ const components: MDXComponents = {
 
 		return (
 			<React.Fragment>
-				<p className={merge("mt-4 text-muted-fg", className)} {...props}>
+				<p className={cn("mt-4 text-muted-fg", className)} {...props}>
 					{content}
 				</p>
 				<meta name="description" content={content} />

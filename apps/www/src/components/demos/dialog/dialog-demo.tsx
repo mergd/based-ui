@@ -19,7 +19,7 @@ export default function DialogDemo() {
 				<DialogDescription>
 					Please read our privacy policy carefully.
 				</DialogDescription>
-				<div className="max-h-80 overflow-y-auto text-sm text-fg">
+				<div className="max-h-80 overflow-y-auto text-sm text-foreground">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
 					ultricies, odio quis blandit vestibulum, orci elit suscipit urna, at
 					lobortis arcu enim vel purus. Maecenas luctus sem dui, lobortis

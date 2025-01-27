@@ -3,7 +3,7 @@
 import * as React from "react"
 import { cva, VariantProps } from "class-variance-authority"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Avatar Types
@@ -68,7 +68,7 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
 			<AvatarContext.Provider value={{ imageStatus, setImageStatus }}>
 				<div
 					ref={ref}
-					className={merge(avatarVariants({ size }), className)}
+					className={cn(avatarVariants({ size }), className)}
 					{...props}
 				/>
 			</AvatarContext.Provider>
@@ -93,7 +93,7 @@ const AvatarImage = React.forwardRef<
 	return (
 		<img
 			ref={ref}
-			className={merge("aspect-square size-full object-cover", className)}
+			className={cn("aspect-square size-full object-cover", className)}
 			alt={alt}
 			onLoad={(e) => {
 				setImageStatus("loaded")
@@ -125,8 +125,8 @@ const AvatarFallback = React.forwardRef<
 	return (
 		<span
 			ref={ref}
-			className={merge(
-				"flex size-full items-center justify-center rounded-full bg-subtle text-subtle-fg",
+			className={cn(
+				"flex size-full items-center justify-center rounded-full bg-accent text-accent-foreground",
 				className
 			)}
 			{...props}

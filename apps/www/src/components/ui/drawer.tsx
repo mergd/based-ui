@@ -3,7 +3,7 @@
 import * as React from "react"
 import { Drawer as BaseDrawer } from "vaul-base"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Drawer Mappings
@@ -34,7 +34,7 @@ const DrawerBackdrop = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseDrawer.Overlay
 		ref={ref}
-		className={merge("fixed inset-0 z-50 bg-black/70", className)}
+		className={cn("fixed inset-0 z-50 bg-black/70", className)}
 		{...props}
 	/>
 ))
@@ -51,8 +51,8 @@ const DrawerContent = React.forwardRef<
 		<DrawerBackdrop />
 		<BaseDrawer.Content
 			ref={ref}
-			className={merge(
-				"fixed inset-x-0 bottom-0 z-50 flex h-auto flex-col rounded-t-lg border border-muted bg-bg text-fg",
+			className={cn(
+				"fixed inset-x-0 bottom-0 z-50 flex h-auto flex-col rounded-t-lg border border-border bg-background text-foreground",
 				className
 			)}
 			{...props}
@@ -71,7 +71,7 @@ const DrawerHeader = ({
 	className,
 	...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
-	<div className={merge("grid gap-1.5 p-4", className)} {...props} />
+	<div className={cn("grid gap-1.5 p-4", className)} {...props} />
 )
 DrawerHeader.displayName = "DrawerHeader"
 
@@ -83,7 +83,7 @@ const DrawerFooter = ({
 	...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
 	<div
-		className={merge("mt-auto flex flex-col gap-2 p-4", className)}
+		className={cn("mt-auto flex flex-col gap-2 p-4", className)}
 		{...props}
 	/>
 )
@@ -98,7 +98,7 @@ const DrawerTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseDrawer.Title
 		ref={ref}
-		className={merge(
+		className={cn(
 			"text-lg font-semibold leading-none tracking-tight",
 			className
 		)}
@@ -116,7 +116,7 @@ const DrawerDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseDrawer.Description
 		ref={ref}
-		className={merge("text-sm text-muted-fg", className)}
+		className={cn("text-sm text-muted-fg", className)}
 		{...props}
 	/>
 ))

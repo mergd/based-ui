@@ -5,7 +5,7 @@ import { Dialog } from "@base-ui-components/react/dialog"
 import { cva, VariantProps } from "class-variance-authority"
 import { XIcon } from "lucide-react"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Sheet Mappings
@@ -32,7 +32,7 @@ const SheetBackdrop = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<Dialog.Backdrop
 		ref={ref}
-		className={merge(
+		className={cn(
 			"fixed inset-0 h-dvh bg-black/70 transition-all duration-300 [&[data-ending-style]]:opacity-0 [&[data-starting-style]]:opacity-0",
 			className
 		)}
@@ -45,7 +45,7 @@ SheetBackdrop.displayName = "SheetBackdrop"
 Sheet Content
 ********/
 const sheetContentVariants = cva(
-	"fixed max-h-[calc(100vh-2rem)] border-muted bg-bg p-6 text-fg shadow-elevation-medium outline-none transition-all duration-500 ease-in-out",
+	"fixed max-h-[calc(100vh-2rem)] border-border bg-background p-6 text-foreground shadow-elevation-medium outline-none transition-all duration-500 ease-in-out",
 	{
 		variants: {
 			side: {
@@ -73,7 +73,7 @@ const SheetContent = React.forwardRef<
 >(({ className, side, children, ...props }, ref) => (
 	<Dialog.Popup
 		ref={ref}
-		className={merge(sheetContentVariants({ side, className }))}
+		className={cn(sheetContentVariants({ side, className }))}
 		{...props}
 	>
 		<SheetClose className="absolute right-4 top-4 rounded-sm opacity-50 transition-opacity hover:opacity-100 focus:outline focus:outline-offset-2 focus:outline-accent disabled:pointer-events-none">
@@ -94,7 +94,7 @@ const SheetHeader = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<div
 		ref={ref}
-		className={merge("flex flex-col space-y-2", className)}
+		className={cn("flex flex-col space-y-2", className)}
 		{...props}
 	/>
 ))
@@ -109,7 +109,7 @@ const SheetTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<h4
 		ref={ref}
-		className={merge("text-lg font-medium text-fg", className)}
+		className={cn("text-lg font-medium text-foreground", className)}
 		{...props}
 	/>
 ))
@@ -122,11 +122,7 @@ const SheetDescription = React.forwardRef<
 	HTMLParagraphElement,
 	React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
-	<p
-		ref={ref}
-		className={merge("text-sm text-muted-fg", className)}
-		{...props}
-	/>
+	<p ref={ref} className={cn("text-sm text-muted-fg", className)} {...props} />
 ))
 SheetDescription.displayName = "SheetDescription"
 
@@ -139,7 +135,7 @@ const SheetFooter = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<div
 		ref={ref}
-		className={merge(
+		className={cn(
 			"flex flex-col-reverse gap-2 sm:flex-row sm:justify-end",
 			className
 		)}

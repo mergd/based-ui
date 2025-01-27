@@ -4,14 +4,14 @@ import * as React from "react"
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react"
 import { DayPicker } from "react-day-picker"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Calendar
 ********/
 const Calendar = (props: React.ComponentProps<typeof DayPicker>) => (
 	<DayPicker
-		className={merge("rounded-md border border-muted p-3", props.className)}
+		className={cn("rounded-md border border-border p-3", props.className)}
 		classNames={{
 			root: "relative select-none",
 			month: "text-center m-0 space-y-1",
@@ -24,7 +24,7 @@ const Calendar = (props: React.ComponentProps<typeof DayPicker>) => (
 			weekdays: "flex justify-center",
 			weekday: "size-8 text-sm text-muted-fg font-normal",
 			outside: "text-subtle-fg",
-			selected: "!bg-accent !text-accent-fg hover:!bg-accent",
+			selected: "!bg-accent !text-accent-foreground hover:!bg-accent",
 			range_middle: "rounded-none last:rounded-r-md first:rounded-l-md",
 			range_start:
 				props.mode === "range" &&

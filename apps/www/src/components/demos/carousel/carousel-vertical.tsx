@@ -19,9 +19,9 @@ export default function CarouselVertical() {
 						<CarouselItem key={slide} className="basis-full">
 							<AspectRatio
 								ratio={16 / 9}
-								className="rounded-lg border border-muted bg-bg"
+								className="rounded-lg border border-border bg-background"
 							>
-								<div className="flex size-full items-center justify-center font-medium text-fg">
+								<div className="flex size-full items-center justify-center font-medium text-foreground">
 									{slide}
 								</div>
 							</AspectRatio>

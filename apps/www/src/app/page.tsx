@@ -33,7 +33,7 @@ const Home = () => (
 			</div>
 
 			<div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-3">
-				<div className="flex flex-col gap-4 rounded-md border border-muted p-6 text-left">
+				<div className="flex flex-col gap-4 rounded-md border border-border p-6 text-left">
 					<div className="flex size-10 items-center justify-center rounded-full bg-subtle/50">
 						<Monicon name="ri:flashlight-fill" />
 					</div>
@@ -45,7 +45,7 @@ const Home = () => (
 						</p>
 					</div>
 				</div>
-				<div className="flex flex-col gap-4 rounded-md border border-muted p-6 text-left">
+				<div className="flex flex-col gap-4 rounded-md border border-border p-6 text-left">
 					<div className="flex size-10 items-center justify-center rounded-full bg-info/50 text-info-fg">
 						<Monicon name="ri:brush-fill" />
 					</div>
@@ -57,7 +57,7 @@ const Home = () => (
 						</p>
 					</div>
 				</div>
-				<div className="flex flex-col gap-4 rounded-md border border-muted p-6 text-left">
+				<div className="flex flex-col gap-4 rounded-md border border-border p-6 text-left">
 					<div className="flex size-10 items-center justify-center rounded-full bg-success/50 text-success-fg">
 						<Monicon name="ri:shield-check-fill" />
 					</div>

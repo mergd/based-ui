@@ -11,7 +11,7 @@ export default function TooltipCustomPosition() {
 		<div className="grid grid-cols-2 gap-2">
 			{positions.map((position) => (
 				<Tooltip key={position}>
-					<TooltipTrigger className="rounded-md border border-muted bg-bg px-2 py-1.5 text-sm text-fg">
+					<TooltipTrigger className="rounded-md border border-border bg-background px-2 py-1.5 text-sm text-foreground">
 						{position}
 					</TooltipTrigger>
 					<TooltipContent

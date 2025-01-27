@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Skeleton
@@ -10,7 +10,7 @@ const Skeleton = ({
 	...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
 	<div
-		className={merge("animate-pulse rounded-md bg-muted", className)}
+		className={cn("animate-pulse rounded-md bg-muted", className)}
 		{...props}
 	/>
 )

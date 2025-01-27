@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Popover as BasePopover } from "@base-ui-components/react/popover"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Popover Mappings
@@ -19,7 +19,7 @@ const PopoverTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BasePopover.Title
 		ref={ref}
-		className={merge("text-sm font-semibold", className)}
+		className={cn("text-sm font-semibold", className)}
 		{...props}
 	/>
 ))
@@ -34,7 +34,7 @@ const PopoverDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BasePopover.Description
 		ref={ref}
-		className={merge("text-sm text-subtle-fg", className)}
+		className={cn("text-sm text-subtle-fg", className)}
 		{...props}
 	/>
 ))
@@ -50,8 +50,8 @@ const PopoverContent = React.forwardRef<
 	<BasePopover.Portal ref={ref}>
 		<BasePopover.Positioner sideOffset={8}>
 			<BasePopover.Popup
-				className={merge(
-					"origin-[var(--transform-origin)] rounded-lg bg-bg p-4 text-fg shadow-elevation-low outline outline-1 -outline-offset-1 outline-muted transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
+				className={cn(
+					"origin-[var(--transform-origin)] rounded-lg bg-background p-4 text-foreground shadow-elevation-low outline outline-1 -outline-offset-1 outline-muted transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
 					className
 				)}
 				{...props}

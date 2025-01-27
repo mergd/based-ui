@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Card
@@ -11,8 +11,8 @@ const Card = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<div
 		ref={ref}
-		className={merge(
-			"rounded-lg border border-muted bg-bg shadow-elevation-low",
+		className={cn(
+			"rounded-lg border border-border bg-background shadow-elevation-low",
 			className
 		)}
 		{...props}
@@ -29,7 +29,7 @@ const CardHeader = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<div
 		ref={ref}
-		className={merge("relative flex flex-col gap-y-1 p-6", className)}
+		className={cn("relative flex flex-col gap-y-1 p-6", className)}
 		{...props}
 	/>
 ))
@@ -44,7 +44,7 @@ const CardTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<h3
 		ref={ref}
-		className={merge("text-base font-semibold", className)}
+		className={cn("text-base font-semibold", className)}
 		{...props}
 	/>
 ))
@@ -57,11 +57,7 @@ const CardDescription = React.forwardRef<
 	HTMLParagraphElement,
 	React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
-	<p
-		ref={ref}
-		className={merge("text-sm text-muted-fg", className)}
-		{...props}
-	/>
+	<p ref={ref} className={cn("text-sm text-muted-fg", className)} {...props} />
 ))
 CardDescription.displayName = "CardDescription"
 
@@ -74,7 +70,7 @@ const CardContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<div
 		ref={ref}
-		className={merge("px-6 pb-6 text-sm text-fg", className)}
+		className={cn("px-6 pb-6 text-sm text-foreground", className)}
 		{...props}
 	/>
 ))
@@ -89,7 +85,7 @@ const CardFooter = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<div
 		ref={ref}
-		className={merge("flex items-center gap-1 px-6 pb-6", className)}
+		className={cn("flex items-center gap-1 px-6 pb-6", className)}
 		{...props}
 	/>
 ))

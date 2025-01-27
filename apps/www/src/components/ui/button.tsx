@@ -1,7 +1,7 @@
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Button Variants
@@ -11,12 +11,13 @@ const buttonVariants = cva(
 	{
 		variants: {
 			variant: {
-				solid: "bg-accent text-accent-fg hover:bg-accent/80",
-				ghost: "text-accent hover:bg-accent hover:text-accent-fg",
+				default: "bg-primary text-primary-foreground hover:bg-primary/80",
+				ghost: "text-foreground hover:bg-accent hover:text-accent-foreground",
 				outline:
-					"border border-accent bg-bg text-accent shadow-elevation-low hover:bg-accent hover:text-accent-fg",
+					"border border-accent bg-background text-accent-foreground hover:bg-accent hover:text-accent-foreground",
 				link: "text-link-fg hover:underline",
-				destructive: "bg-danger text-danger-fg hover:bg-danger/80",
+				destructive:
+					"bg-destructive text-destructive-fg hover:bg-destructive/80",
 			},
 			size: {
 				sm: "h-8 px-3 text-xs",
@@ -28,7 +29,7 @@ const buttonVariants = cva(
 			},
 		},
 		defaultVariants: {
-			variant: "solid",
+			variant: "default",
 			size: "md",
 		},
 	}
@@ -44,7 +45,7 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 	({ className, variant, size, ...props }, ref) => (
 		<button
-			className={merge(buttonVariants({ variant, size, className }))}
+			className={cn(buttonVariants({ variant, size, className }))}
 			ref={ref}
 			{...props}
 		/>

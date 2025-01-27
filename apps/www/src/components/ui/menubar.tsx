@@ -69,8 +69,8 @@ const Menubar = React.forwardRef<
 		>
 			<div
 				ref={ref}
-				className={merge(
-					"relative flex w-fit gap-1 rounded-md border border-muted px-1 shadow-elevation-low",
+				className={cn(
+					"relative flex w-fit gap-1 rounded-md border border-border px-1 shadow-elevation-low",
 					className
 				)}
 				{...props}
@@ -178,8 +178,8 @@ const MenubarTrigger = React.forwardRef<
 	return (
 		<Menu.Trigger
 			ref={mergeRefs([ref, triggerRef])}
-			className={merge(
-				"group relative flex min-h-10 cursor-default select-none items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium outline-none data-[popup-open]:text-fg",
+			className={cn(
+				"group relative flex min-h-10 cursor-default select-none items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium outline-none data-[popup-open]:text-foreground",
 				className
 			)}
 			{...props}
@@ -229,7 +229,7 @@ const MenubarIndicator = React.forwardRef<
 	return (
 		<div
 			ref={ref}
-			className={merge(
+			className={cn(
 				"absolute left-[var(--active-menu-left)] top-1/2 z-[-1] h-[calc(var(--active-menu-height)-0.5rem)] w-[var(--active-menu-width)] -translate-y-1/2 rounded-md bg-muted transition-all duration-200 ease-in-out",
 				className
 			)}
@@ -253,8 +253,8 @@ const MenubarContent = React.forwardRef<
 		<Menu.Positioner sideOffset={4} alignOffset={-5} align="start">
 			<Menu.Popup
 				ref={ref}
-				className={merge(
-					"min-w-48 origin-[var(--transform-origin)] rounded-md border border-muted bg-bg p-1 text-fg shadow-elevation-low outline-none transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
+				className={cn(
+					"min-w-48 origin-[var(--transform-origin)] rounded-md border border-border bg-background p-1 text-foreground shadow-elevation-low outline-none transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
 					className
 				)}
 				{...props}
@@ -273,8 +273,8 @@ const MenubarItem = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<Menu.Item
 		ref={ref}
-		className={merge(
-			"group flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg data-[disabled]:opacity-50",
+		className={cn(
+			"group flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50",
 			className
 		)}
 		{...props}
@@ -291,8 +291,8 @@ const MenubarItemShortcut = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<span
 		ref={ref}
-		className={merge(
-			"ml-auto pl-10 text-xs tracking-widest text-muted-fg group-data-[highlighted]:text-accent-fg",
+		className={cn(
+			"ml-auto pl-10 text-xs tracking-widest text-muted-fg group-data-[highlighted]:text-accent-foreground",
 			className
 		)}
 		{...props}
@@ -309,7 +309,7 @@ const MenubarSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<Menu.Separator
 		ref={ref}
-		className={merge("-mx-1 my-1 h-px bg-muted", className)}
+		className={cn("-mx-1 my-1 h-px bg-muted", className)}
 		{...props}
 	/>
 ))
@@ -324,8 +324,8 @@ const MenubarSubTrigger = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
 	<Menu.SubmenuTrigger
 		ref={ref}
-		className={merge(
-			"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[popup-open]:bg-accent data-[highlighted]:text-accent-fg data-[popup-open]:text-accent-fg data-[disabled]:opacity-50",
+		className={cn(
+			"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[popup-open]:bg-accent data-[highlighted]:text-accent-foreground data-[popup-open]:text-accent-foreground data-[disabled]:opacity-50",
 			className
 		)}
 		{...props}
@@ -345,8 +345,8 @@ const MenubarCheckboxItem = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
 	<Menu.CheckboxItem
 		ref={ref}
-		className={merge(
-			"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg data-[disabled]:opacity-50",
+		className={cn(
+			"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50",
 			className
 		)}
 		{...props}
@@ -370,8 +370,8 @@ const MenubarRadioItem = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
 	<Menu.RadioItem
 		ref={ref}
-		className={merge(
-			"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg data-[disabled]:opacity-50",
+		className={cn(
+			"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50",
 			className
 		)}
 		{...props}

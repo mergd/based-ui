@@ -4,7 +4,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 export default function RadioGroupDemo() {
 	return (
 		<RadioGroup aria-labelledby="radio-group-plan">
-			<div id="radio-group-plan" className="font-medium text-fg">
+			<div id="radio-group-plan" className="font-medium text-foreground">
 				Select a plan
 			</div>
 			<div className="flex items-center space-x-2">

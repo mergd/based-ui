@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Tooltip as BaseTooltip } from "@base-ui-components/react/tooltip"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Tooltip Mappings
@@ -36,8 +36,8 @@ const TooltipContent = React.forwardRef<HTMLDivElement, TooltipContentProps>(
 			<BaseTooltip.Positioner sideOffset={8} {...positionerProps}>
 				<BaseTooltip.Popup
 					ref={ref}
-					className={merge(
-						"origin-[var(--transform-origin)] rounded-md bg-bg px-3.5 py-2 text-sm text-fg shadow-elevation-low outline outline-1 -outline-offset-1 outline-muted transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
+					className={cn(
+						"origin-[var(--transform-origin)] rounded-md bg-background px-3.5 py-2 text-sm text-foreground shadow-elevation-low outline outline-1 -outline-offset-1 outline-muted transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
 						className
 					)}
 					{...props}

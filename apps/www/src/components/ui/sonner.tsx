@@ -5,36 +5,37 @@ import { Toaster as Sonner, toast } from "sonner"
 
 import { buttonVariants } from "@/components/ui/button"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 type ToasterProps = React.ComponentProps<typeof Sonner>
 
 const Toaster = ({ ...props }: ToasterProps) => (
 	<Sonner
-		className="text-xs text-fg"
+		className="text-xs text-foreground"
 		toastOptions={{
 			unstyled: true,
 			classNames: {
 				toast:
-					"group max-w-96 w-full bg-bg rounded-md p-4 border flex gap-4 border-muted right-0 shadow-elevation-low",
+					"group max-w-96 w-full bg-background rounded-md p-4 border flex gap-4 border-border right-0 shadow-elevation-low",
 				title: "font-medium",
 				success:
 					"data-[rich-colors]:!bg-success data-[rich-colors]:!text-success-fg data-[rich-colors]:!border-success-fg",
 				error:
-					"data-[rich-colors]:!bg-danger data-[rich-colors]:!text-danger-fg data-[rich-colors]:!border-danger-fg",
+					"data-[rich-colors]:!bg-destructive data-[rich-colors]:!text-destructive-fg data-[rich-colors]:!border-danger-fg",
 				warning:
 					"data-[rich-colors]:!bg-warning data-[rich-colors]:!text-warning-fg data-[rich-colors]:!border-warning-fg",
 				info: "data-[rich-colors]:!bg-info data-[rich-colors]:!text-info-fg data-[rich-colors]:!border-info-fg",
-				description: "text-muted-fg group-data-[rich-colors]:text-fg",
-				actionButton: merge(
+				description: "text-muted-fg group-data-[rich-colors]:text-foreground",
+				actionButton: cn(
 					buttonVariants({ variant: "ghost", size: "sm" }),
 					"my-auto"
 				),
-				cancelButton: merge(
+				cancelButton: cn(
 					buttonVariants({ variant: "destructive", size: "sm" }),
 					"my-auto"
 				),
-				closeButton: "!bg-bg border-muted text-fg transition-colors",
+				closeButton:
+					"!bg-background border-border text-foreground transition-colors",
 				icon: "my-auto",
 			},
 		}}

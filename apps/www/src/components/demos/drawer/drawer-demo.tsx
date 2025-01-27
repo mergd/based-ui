@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/drawer"
 import { Textarea } from "@/components/ui/textarea"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 export default function DrawerDemo() {
 	const [rating, setRating] = useState<number | undefined>(undefined)
@@ -49,7 +49,7 @@ export default function DrawerDemo() {
 							{[1, 2, 3, 4, 5].map((star) => (
 								<StarIcon
 									key={star}
-									className={merge(
+									className={cn(
 										"size-8 cursor-pointer transition-all",
 										rating && star <= rating
 											? "fill-yellow-300 text-yellow-300"

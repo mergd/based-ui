@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Progress as BaseProgress } from "@base-ui-components/react/progress"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Progress
@@ -12,7 +12,7 @@ const Progress = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
 	<BaseProgress.Root ref={ref} className="relative" {...props}>
 		<BaseProgress.Track
-			className={merge(
+			className={cn(
 				"block h-1 w-full overflow-hidden rounded-full bg-muted",
 				className
 			)}
@@ -33,8 +33,8 @@ const ProgressLabel = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<span
 		ref={ref}
-		className={merge(
-			"absolute right-0 top-2 text-xs font-medium text-fg",
+		className={cn(
+			"absolute right-0 top-2 text-xs font-medium text-foreground",
 			className
 		)}
 		{...props}

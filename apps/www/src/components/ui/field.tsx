@@ -11,7 +11,7 @@ import {
 
 import { Label } from "@/components/ui/label"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Field Context
@@ -70,7 +70,7 @@ const FieldContent = ({
 	className,
 	...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
-	<div className={merge("flex flex-col gap-2", className)} {...props} />
+	<div className={cn("flex flex-col gap-2", className)} {...props} />
 )
 
 /********
@@ -85,7 +85,7 @@ const FieldLabel = ({
 	return (
 		<Label
 			htmlFor={id}
-			className={merge(error && "text-danger-fg", className)}
+			className={cn(error && "text-destructive-fg", className)}
 			{...props}
 		/>
 	)
@@ -119,7 +119,7 @@ const FieldDescription = ({
 	className,
 	...props
 }: React.HTMLAttributes<HTMLParagraphElement>) => (
-	<p className={merge("text-sm text-subtle-fg", className)} {...props} />
+	<p className={cn("text-sm text-subtle-fg", className)} {...props} />
 )
 
 /********
@@ -133,7 +133,7 @@ const FieldError = ({
 	const { error } = useField()
 
 	return (
-		<p className={merge("text-sm text-danger-fg", className)} {...props}>
+		<p className={cn("text-sm text-destructive-fg", className)} {...props}>
 			{error || children}
 		</p>
 	)

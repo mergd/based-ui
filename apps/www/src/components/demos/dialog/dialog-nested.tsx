@@ -27,7 +27,7 @@ export default function DialogNested() {
 							<AvatarImage src="/user.png" />
 							<AvatarFallback>BB</AvatarFallback>
 						</Avatar>
-						<span className="text-fg">Bora Baloglu</span>
+						<span className="text-foreground">Bora Baloglu</span>
 					</div>
 				</div>
 				<DialogFooter>

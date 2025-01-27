@@ -2,7 +2,7 @@ import * as React from "react"
 import { Accordion as BaseAccordion } from "@base-ui-components/react/accordion"
 import { ChevronDownIcon } from "lucide-react"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Accordion Mappings
@@ -18,7 +18,7 @@ const AccordionItem = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseAccordion.Item
 		ref={ref}
-		className={merge("border-b border-muted", className)}
+		className={cn("border-b border-border", className)}
 		{...props}
 	/>
 ))
@@ -34,7 +34,7 @@ const AccordionTrigger = React.forwardRef<
 	<BaseAccordion.Header>
 		<BaseAccordion.Trigger
 			ref={ref}
-			className={merge(
+			className={cn(
 				"flex w-full items-center justify-between py-2.5 font-semibold hover:underline [&>svg]:transition-transform [&>svg]:duration-200 [&[data-panel-open]>svg]:rotate-180",
 				className
 			)}
@@ -56,8 +56,8 @@ const AccordionContent = ({
 	...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
 	<BaseAccordion.Panel
-		className={merge(
-			"h-[var(--accordion-panel-height)] overflow-hidden text-sm text-fg transition-[height] data-[ending-style]:h-0	data-[starting-style]:h-0",
+		className={cn(
+			"h-[var(--accordion-panel-height)] overflow-hidden text-sm text-foreground transition-[height] data-[ending-style]:h-0 data-[starting-style]:h-0",
 			className
 		)}
 		{...props}

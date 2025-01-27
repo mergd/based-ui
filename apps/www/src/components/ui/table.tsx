@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Table
@@ -12,7 +12,7 @@ const Table = React.forwardRef<
 	<div className="relative w-full overflow-auto">
 		<table
 			ref={ref}
-			className={merge("w-full caption-bottom text-sm", className)}
+			className={cn("w-full caption-bottom text-sm", className)}
 			{...props}
 		/>
 	</div>
@@ -28,7 +28,7 @@ const TableHeader = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<thead
 		ref={ref}
-		className={merge("bg-subtle/50 [&_tr]:border-b", className)}
+		className={cn("bg-subtle/50 [&_tr]:border-b", className)}
 		{...props}
 	/>
 ))
@@ -43,7 +43,7 @@ const TableBody = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<tbody
 		ref={ref}
-		className={merge("[&_tr:last-child]:border-0", className)}
+		className={cn("[&_tr:last-child]:border-0", className)}
 		{...props}
 	/>
 ))
@@ -58,8 +58,8 @@ const TableFooter = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<tfoot
 		ref={ref}
-		className={merge(
-			"border-t border-muted text-sm [&>tr]:last:border-b-0",
+		className={cn(
+			"border-t border-border text-sm [&>tr]:last:border-b-0",
 			className
 		)}
 		{...props}
@@ -76,7 +76,7 @@ const TableRow = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<tr
 		ref={ref}
-		className={merge("border-b border-muted transition-colors", className)}
+		className={cn("border-b border-border transition-colors", className)}
 		{...props}
 	/>
 ))
@@ -91,8 +91,8 @@ const TableHead = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<th
 		ref={ref}
-		className={merge(
-			"h-12 px-4 text-left align-middle text-sm font-medium text-fg",
+		className={cn(
+			"h-12 px-4 text-left align-middle text-sm font-medium text-foreground",
 			className
 		)}
 		{...props}
@@ -109,7 +109,7 @@ const TableCell = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<td
 		ref={ref}
-		className={merge("h-12 px-4 align-middle text-fg", className)}
+		className={cn("h-12 px-4 align-middle text-foreground", className)}
 		{...props}
 	/>
 ))
@@ -124,7 +124,7 @@ const TableCaption = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<caption
 		ref={ref}
-		className={merge("mt-4 text-xs text-muted-fg", className)}
+		className={cn("mt-4 text-xs text-muted-fg", className)}
 		{...props}
 	/>
 ))

@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Label
@@ -11,7 +11,7 @@ const Label = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<label
 		ref={ref}
-		className={merge(
+		className={cn(
 			"text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:text-subtle-fg",
 			className
 		)}

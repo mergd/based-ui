@@ -1,27 +1,31 @@
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Badge Variants
 ********/
 const badgeVariants = cva(
-	"inline-flex items-center rounded-full px-3 py-0.5 text-xs font-semibold",
+	"inline-flex items-center rounded-full px-3 py-0.5 text-xs font-semibold gap-2",
 	{
 		variants: {
 			variant: {
-				solid: "border border-accent-fg bg-accent text-accent-fg",
-				secondary: "border border-subtle-fg bg-subtle text-subtle-fg",
-				success: "border border-success-fg bg-success text-success-fg",
-				danger: "border border-danger-fg bg-danger text-danger-fg",
-				warning: "border border-warning-fg bg-warning text-warning-fg",
-				info: "border border-info-fg bg-info text-info-fg",
-				outline: "border border-fg text-fg",
+				default: "border border-primary-fg bg-primary text-primary-foreground",
+				secondary:
+					"border border-muted-foreground bg-muted text-muted-foreground",
+				success:
+					"border border-green-800 bg-green-200 text-green-800 dark:border-green-600 dark:bg-green-800 dark:text-green-100",
+				danger:
+					"border border-destructive-foreground bg-destructive text-destructive-foreground",
+				warning:
+					"border border-yellow-800 bg-yellow-200 text-yellow-800 dark:border-yellow-600 dark:bg-yellow-800 dark:text-yellow-100",
+				info: "border border-blue-800 bg-blue-200 text-blue-800 dark:border-blue-600 dark:bg-blue-800 dark:text-blue-100",
+				outline: "border border-border text-foreground",
 			},
 		},
 		defaultVariants: {
-			variant: "solid",
+			variant: "default",
 		},
 	}
 )
@@ -34,7 +38,7 @@ export interface BadgeProps
 		VariantProps<typeof badgeVariants> {}
 
 const Badge = ({ className, variant, ...props }: BadgeProps) => (
-	<div className={merge(badgeVariants({ variant }), className)} {...props} />
+	<div className={cn(badgeVariants({ variant }), className)} {...props} />
 )
 
 export { Badge, badgeVariants }

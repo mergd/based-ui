@@ -12,7 +12,7 @@ import {
 export default function PreviewCardDemo() {
 	return (
 		<PreviewCard>
-			<p className="max-w-80 text-balance text-fg">
+			<p className="max-w-80 text-balance text-foreground">
 				This is a preview card component from{" "}
 				<PreviewCardTrigger className="cursor-pointer underline underline-offset-2">
 					9ui

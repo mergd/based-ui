@@ -1,7 +1,7 @@
 import * as React from "react"
 import { ToggleGroup as BaseToggleGroup } from "@base-ui-components/react/toggle-group"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Toggle Group
@@ -12,8 +12,8 @@ const ToggleGroup = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseToggleGroup
 		ref={ref}
-		className={merge(
-			"flex gap-1 rounded-md border border-muted bg-bg p-1",
+		className={cn(
+			"flex gap-1 rounded-md border border-border bg-background p-1",
 			className
 		)}
 		{...props}

@@ -10,7 +10,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Carousel Types
@@ -129,11 +129,7 @@ const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
 					canScrollPrev,
 				}}
 			>
-				<div
-					ref={ref}
-					className={merge("relative w-full", className)}
-					{...props}
-				>
+				<div ref={ref} className={cn("relative w-full", className)} {...props}>
 					{children}
 				</div>
 			</CarouselContext.Provider>
@@ -155,7 +151,7 @@ const CarouselContent = React.forwardRef<
 		<div ref={carouselRef} className="overflow-hidden">
 			<div
 				ref={ref}
-				className={merge(
+				className={cn(
 					"flex",
 					orientation === "vertical" && "flex-col",
 					className
@@ -183,7 +179,7 @@ const CarouselItem = React.forwardRef<
 			ref={ref}
 			role="group"
 			aria-roledescription="slide"
-			className={merge(
+			className={cn(
 				"shrink-0 grow-0	basis-full",
 				orientation === "vertical" ? "py-2" : "px-2",
 				className
@@ -205,7 +201,7 @@ const CarouselNavigation = React.forwardRef<
 	return (
 		<div
 			ref={ref}
-			className={merge(
+			className={cn(
 				"flex",
 				orientation === "horizontal"
 					? "mr-2 mt-2 items-center justify-end space-x-2"
@@ -234,7 +230,7 @@ const CarouselNext = React.forwardRef<
 			size="icon-sm"
 			onClick={scrollNext}
 			disabled={!canScrollNext}
-			className={merge(
+			className={cn(
 				"[&>svg]:size-5",
 				orientation === "vertical" ? "rotate-90" : "",
 				className
@@ -263,7 +259,7 @@ const CarouselPrevious = React.forwardRef<
 			size="icon-sm"
 			onClick={scrollPrev}
 			disabled={!canScrollPrev}
-			className={merge(
+			className={cn(
 				"[&>svg]:size-5",
 				orientation === "vertical" ? "rotate-90" : "",
 				className

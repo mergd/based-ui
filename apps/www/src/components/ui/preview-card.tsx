@@ -3,7 +3,7 @@
 import * as React from "react"
 import { PreviewCard as BasePreviewCard } from "@base-ui-components/react"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Preview Card Mappings
@@ -22,8 +22,8 @@ const PreviewCardContent = React.forwardRef<
 	<BasePreviewCard.Portal ref={ref}>
 		<BasePreviewCard.Positioner sideOffset={8}>
 			<BasePreviewCard.Popup
-				className={merge(
-					"origin-[var(--transform-origin)] rounded-lg bg-bg p-4 text-fg shadow-elevation-low outline outline-1 -outline-offset-1 outline-muted transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
+				className={cn(
+					"origin-[var(--transform-origin)] rounded-lg bg-background p-4 text-foreground shadow-elevation-low outline outline-1 -outline-offset-1 outline-muted transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
 					className
 				)}
 				{...props}

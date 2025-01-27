@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Separator as BaseSeparator } from "@base-ui-components/react/separator"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Separator
@@ -16,7 +16,7 @@ const Separator = React.forwardRef<
 >(({ className, orientation = "horizontal", ...props }, ref) => (
 	<BaseSeparator
 		ref={ref}
-		className={merge(
+		className={cn(
 			"shrink-0 bg-muted",
 			orientation === "horizontal" ? "h-px" : "w-px",
 			className

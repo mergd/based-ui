@@ -1,7 +1,7 @@
 import * as React from "react"
 import { cva, VariantProps } from "class-variance-authority"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Alert Variants
@@ -11,9 +11,9 @@ const alertVariants = cva(
 	{
 		variants: {
 			variant: {
-				default: "border-muted bg-bg text-fg",
+				default: "border-border bg-background text-foreground",
 				warning: "border-warning-fg bg-warning text-warning-fg",
-				error: "border-danger-fg bg-danger text-danger-fg",
+				error: "border-danger-fg bg-destructive text-destructive-fg",
 				info: "border-info-fg bg-info text-info-fg",
 				success: "border-success-fg bg-success text-success-fg",
 			},
@@ -35,7 +35,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
 	({ className, variant, ...props }, ref) => (
 		<div
 			ref={ref}
-			className={merge(alertVariants({ variant }), className)}
+			className={cn(alertVariants({ variant }), className)}
 			{...props}
 		/>
 	)
@@ -51,7 +51,7 @@ const AlertContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<div
 		ref={ref}
-		className={merge("flex flex-1 flex-col gap-y-2", className)}
+		className={cn("flex flex-1 flex-col gap-y-2", className)}
 		{...props}
 	/>
 ))
@@ -64,7 +64,7 @@ const AlertIcon = React.forwardRef<
 	HTMLDivElement,
 	React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-	<div ref={ref} className={merge("[&>svg]:size-3.5", className)} {...props} />
+	<div ref={ref} className={cn("[&>svg]:size-3.5", className)} {...props} />
 ))
 AlertIcon.displayName = "AlertIcon"
 
@@ -77,7 +77,7 @@ const AlertTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<h4
 		ref={ref}
-		className={merge("text-sm font-medium leading-none", className)}
+		className={cn("text-sm font-medium leading-none", className)}
 		{...props}
 	/>
 ))
@@ -90,7 +90,7 @@ const AlertDescription = React.forwardRef<
 	HTMLParagraphElement,
 	React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
-	<p ref={ref} className={merge("text-sm", className)} {...props} />
+	<p ref={ref} className={cn("text-sm", className)} {...props} />
 ))
 AlertDescription.displayName = "AlertDescription"
 
@@ -101,11 +101,7 @@ const AlertAction = React.forwardRef<
 	HTMLButtonElement,
 	React.HTMLAttributes<HTMLButtonElement>
 >(({ className, ...props }, ref) => (
-	<button
-		ref={ref}
-		className={merge("ml-auto self-center", className)}
-		{...props}
-	/>
+	<div ref={ref} className={cn("ml-auto self-center", className)} {...props} />
 ))
 AlertAction.displayName = "AlertAction"
 

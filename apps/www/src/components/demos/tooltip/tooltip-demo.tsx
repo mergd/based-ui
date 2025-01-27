@@ -9,7 +9,7 @@ import {
 export default function TooltipDemo() {
 	return (
 		<Tooltip>
-			<TooltipTrigger className="rounded-md border border-muted p-2">
+			<TooltipTrigger className="rounded-md border border-border p-2">
 				<Monicon name="ri:twitter-x-fill" />
 			</TooltipTrigger>
 			<TooltipContent>

@@ -4,7 +4,10 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 export default function RadioGroupDisabled() {
 	return (
 		<RadioGroup disabled aria-labelledby="radio-group-notifications">
-			<div id="radio-group-notifications" className="font-medium text-fg">
+			<div
+				id="radio-group-notifications"
+				className="font-medium text-foreground"
+			>
 				Notifications
 			</div>
 			<div className="flex items-center space-x-2">

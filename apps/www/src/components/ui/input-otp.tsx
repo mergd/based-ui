@@ -4,7 +4,7 @@ import * as React from "react"
 import { OTPInput, OTPInputContext } from "input-otp"
 import { MinusIcon } from "lucide-react"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 OTP Input
@@ -15,7 +15,7 @@ const InputOTP = React.forwardRef<
 >(({ containerClassName, ...props }, ref) => (
 	<OTPInput
 		ref={ref}
-		containerClassName={merge("flex items-center gap-x-2", containerClassName)}
+		containerClassName={cn("flex items-center gap-x-2", containerClassName)}
 		{...props}
 	/>
 ))
@@ -30,7 +30,7 @@ const InputOTPGroup = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<div
 		ref={ref}
-		className={merge("flex items-center gap-x-2", className)}
+		className={cn("flex items-center gap-x-2", className)}
 		{...props}
 	/>
 ))
@@ -49,8 +49,8 @@ const InputOTPSlot = React.forwardRef<
 	return (
 		<div
 			ref={ref}
-			className={merge(
-				"relative flex h-10 w-8 items-center justify-center rounded-md border border-muted text-sm shadow-elevation-low transition-all",
+			className={cn(
+				"relative flex h-10 w-8 items-center justify-center rounded-md border border-border text-sm shadow-elevation-low transition-all",
 				isActive && "z-50 outline outline-2 outline-offset-1 outline-accent",
 				className
 			)}
@@ -76,7 +76,7 @@ const InputOTPSeparator = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
 	<div
 		ref={ref}
-		className={merge("text-fg [&_svg]:size-3", className)}
+		className={cn("text-foreground [&_svg]:size-3", className)}
 		role="separator"
 		{...props}
 	>

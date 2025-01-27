@@ -5,7 +5,7 @@ import { Menu } from "@base-ui-components/react/menu"
 import { useControlled } from "@base-ui-components/react/utils"
 import { CheckIcon, ChevronRightIcon } from "lucide-react"
 
-import { merge } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Context Menu Mappings
@@ -66,8 +66,8 @@ const ContextMenuContent = React.forwardRef<
 		<Menu.Positioner align="start">
 			<Menu.Popup
 				ref={ref}
-				className={merge(
-					"min-w-48 origin-[var(--transform-origin)] rounded-md border border-muted bg-bg p-1 text-fg shadow-elevation-low outline-none transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
+				className={cn(
+					"min-w-48 origin-[var(--transform-origin)] rounded-md border border-border bg-background p-1 text-foreground shadow-elevation-low outline-none transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
 					className
 				)}
 				{...props}
@@ -123,8 +123,8 @@ const ContextMenuItem = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<Menu.Item
 		ref={ref}
-		className={merge(
-			"group flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg data-[disabled]:opacity-50",
+		className={cn(
+			"group flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50",
 			className
 		)}
 		{...props}
@@ -141,8 +141,8 @@ const ContextMenuItemShortcut = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<span
 		ref={ref}
-		className={merge(
-			"ml-auto pl-10 text-xs tracking-widest text-muted-fg group-data-[highlighted]:text-accent-fg",
+		className={cn(
+			"ml-auto pl-10 text-xs tracking-widest text-muted-fg group-data-[highlighted]:text-accent-foreground",
 			className
 		)}
 		{...props}
@@ -159,7 +159,7 @@ const ContextMenuGroupLabel = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<Menu.GroupLabel
 		ref={ref}
-		className={merge("px-2 py-1.5 text-xs text-subtle-fg", className)}
+		className={cn("px-2 py-1.5 text-xs text-subtle-fg", className)}
 		{...props}
 	/>
 ))
@@ -174,8 +174,8 @@ const ContextMenuCheckboxItem = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
 	<Menu.CheckboxItem
 		ref={ref}
-		className={merge(
-			"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg data-[disabled]:opacity-50",
+		className={cn(
+			"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50",
 			className
 		)}
 		{...props}
@@ -199,8 +199,8 @@ const ContextMenuRadioItem = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
 	<Menu.RadioItem
 		ref={ref}
-		className={merge(
-			"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-fg data-[disabled]:opacity-50",
+		className={cn(
+			"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50",
 			className
 		)}
 		{...props}
@@ -224,8 +224,8 @@ const ContextMenuSubTrigger = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
 	<Menu.SubmenuTrigger
 		ref={ref}
-		className={merge(
-			"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[popup-open]:bg-accent data-[highlighted]:text-accent-fg data-[popup-open]:text-accent-fg data-[disabled]:opacity-50",
+		className={cn(
+			"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[popup-open]:bg-accent data-[highlighted]:text-accent-foreground data-[popup-open]:text-accent-foreground data-[disabled]:opacity-50",
 			className
 		)}
 		{...props}
@@ -245,7 +245,7 @@ const ContextMenuSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<Menu.Separator
 		ref={ref}
-		className={merge("-mx-1 my-1 h-px bg-muted", className)}
+		className={cn("-mx-1 my-1 h-px bg-muted", className)}
 		{...props}
 	/>
 ))

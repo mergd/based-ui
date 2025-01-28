@@ -1,4 +1,4 @@
-import { XIcon } from "@/components/icons"
+import { Icons } from "@/components/icons"
 import {
 	Tooltip,
 	TooltipContent,
@@ -9,7 +9,7 @@ export default function TooltipDemo() {
 	return (
 		<Tooltip>
 			<TooltipTrigger className="rounded-md border p-2">
-				<XIcon />
+				<Icons.twitter />
 			</TooltipTrigger>
 			<TooltipContent>
 				<span>

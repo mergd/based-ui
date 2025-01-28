@@ -12,7 +12,6 @@ const config = [
 		extends: [
 			"next/core-web-vitals",
 			"next/typescript",
-			"turbo",
 			"prettier",
 			"plugin:tailwindcss/recommended",
 		],

@@ -174,7 +174,7 @@ const components: MDXComponents = {
 
 		return (
 			<React.Fragment>
-				<h1 className={cn("text-4xl font-bold", className)} {...props}>
+				<h1 className={cn("text-3xl font-bold", className)} {...props}>
 					{content}
 				</h1>
 				<title>{`${content} | 9ui`}</title>
@@ -194,7 +194,7 @@ const components: MDXComponents = {
 
 		return (
 			<React.Fragment>
-				<p className={cn("mt-4 text-muted-foreground", className)} {...props}>
+				<p className={cn("mt-2 text-muted-foreground", className)} {...props}>
 					{content}
 				</p>
 				<meta name="description" content={content} />

@@ -2,7 +2,6 @@
 
 import * as React from "react"
 import { CheckIcon, CopyIcon, Loader2Icon, RefreshCwIcon } from "lucide-react"
-import { createHighlighter } from "shiki"
 
 import { Button } from "@/components/ui/button"
 
@@ -10,6 +9,7 @@ import { Catalog } from "@/configs/catalog"
 
 import { useTheme } from "@/providers/theme-provider"
 
+import { getHighlighter } from "@/lib/shiki"
 import { cn } from "@/lib/utils"
 
 type DemoName = keyof typeof Catalog
@@ -34,28 +34,29 @@ export const ComponentPreview = ({
 
 	React.useEffect(() => {
 		async function highlight() {
-			const highlighter = await createHighlighter({
-				themes: ["github-dark-default", "github-light-default"],
-				langs: ["tsx"],
-			})
+			try {
+				const highlighter = await getHighlighter()
 
-			const highlighted = highlighter.codeToHtml(content, {
-				lang: "tsx",
-				theme:
-					theme === "dark" ? "github-dark-default" : "github-light-default",
-				transformers: [
-					{
-						pre(node) {
-							node.properties.style = "tab-size: 2"
+				const highlighted = highlighter.codeToHtml(content, {
+					lang: "tsx",
+					theme:
+						theme === "dark" ? "github-dark-default" : "github-light-default",
+					transformers: [
+						{
+							pre(node) {
+								node.properties.style = "tab-size: 2"
+							},
+							code(node) {
+								node.properties.style = "tab-size: 2"
+							},
 						},
-						code(node) {
-							node.properties.style = "tab-size: 2"
-						},
-					},
-				],
-			})
+					],
+				})
 
-			setCode(highlighted)
+				setCode(highlighted)
+			} catch (error) {
+				console.error("Failed to highlight code:", error)
+			}
 		}
 
 		highlight()
@@ -68,7 +69,7 @@ export const ComponentPreview = ({
 	}
 
 	return (
-		<div className={cn("mt-4 overflow-hidden rounded-lg border", className)}>
+		<div className={cn("mt-8 overflow-hidden rounded-lg border", className)}>
 			<div className="relative flex min-h-[200px] items-center justify-center p-10">
 				{showReload && (
 					<Button

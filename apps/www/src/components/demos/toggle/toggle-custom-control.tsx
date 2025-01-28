@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import Monicon from "@monicon/react"
+import { PinIcon, PinOffIcon } from "lucide-react"
 
 import { Toggle } from "@/components/ui/toggle"
 
@@ -10,7 +10,7 @@ export default function ToggleCustomControl() {
 
 	return (
 		<Toggle aria-label="Pin" pressed={isPinned} onPressedChange={setIsPinned}>
-			<Monicon name={isPinned ? "ri:unpin-line" : "ri:pushpin-line"} />
+			{isPinned ? <PinIcon /> : <PinOffIcon />}
 		</Toggle>
 	)
 }

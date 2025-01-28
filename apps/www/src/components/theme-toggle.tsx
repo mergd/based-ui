@@ -1,6 +1,8 @@
 "use client"
 
-import { Monicon } from "@monicon/react"
+import { MoonIcon, SunIcon } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
 
 import { useTheme } from "@/providers/theme-provider"
 
@@ -8,16 +10,13 @@ export const ThemeToggle = () => {
 	const { theme, setTheme } = useTheme()
 
 	return (
-		<button
+		<Button
 			onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-			className="flex size-8 items-center justify-center text-muted-fg hover:text-foreground"
+			variant="ghost"
+			size="icon"
 		>
-			{theme === "light" ? (
-				<Monicon name="ri:moon-fill" size={20} />
-			) : (
-				<Monicon name="ri:sun-fill" size={20} />
-			)}
+			{theme === "light" ? <MoonIcon /> : <SunIcon />}
 			<span className="sr-only">Toggle theme</span>
-		</button>
+		</Button>
 	)
 }

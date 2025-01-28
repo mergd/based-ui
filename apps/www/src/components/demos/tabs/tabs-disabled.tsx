@@ -39,7 +39,7 @@ export default function TabsUnderline() {
 			<TabContent value="login" className="space-y-4">
 				<div className="flex flex-col gap-2">
 					<h4 className="text-2xl font-bold">Login</h4>
-					<p className="text-sm text-muted-fg">
+					<p className="text-sm text-muted-foreground">
 						Login to your account to continue
 					</p>
 				</div>

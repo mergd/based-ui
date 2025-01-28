@@ -1,11 +1,11 @@
-import { Monicon } from "@monicon/react"
+import { PencilIcon } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 
 export default function ButtonIcon() {
 	return (
-		<Button size="icon-sm" variant="outline">
-			<Monicon name="ri:edit-fill" />
+		<Button size="icon" variant="outline">
+			<PencilIcon />
 		</Button>
 	)
 }

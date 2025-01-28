@@ -12,10 +12,7 @@ const ToggleGroup = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseToggleGroup
 		ref={ref}
-		className={cn(
-			"flex gap-1 rounded-md border border-border bg-background p-1",
-			className
-		)}
+		className={cn("flex gap-1 rounded-md border bg-background p-1", className)}
 		{...props}
 	/>
 ))

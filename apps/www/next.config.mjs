@@ -1,4 +1,3 @@
-import { MoniconPlugin } from "@monicon/webpack"
 import createMDX from "@next/mdx"
 import rehypeExtractToc from "@stefanprobst/rehype-extract-toc"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
@@ -9,16 +8,6 @@ import remarkGfm from "remark-gfm"
 const nextConfig = {
 	pageExtensions: ["mdx", "tsx", "ts", "js", "jsx"],
 	reactStrictMode: true,
-	webpack: (config) => {
-		config.plugins.push(
-			new MoniconPlugin({
-				collections: ["ri"],
-				type: "esm",
-			})
-		)
-
-		return config
-	},
 	redirects() {
 		return [
 			{

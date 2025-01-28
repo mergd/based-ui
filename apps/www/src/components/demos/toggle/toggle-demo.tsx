@@ -1,11 +1,11 @@
-import Monicon from "@monicon/react"
+import { PinIcon } from "lucide-react"
 
 import { Toggle } from "@/components/ui/toggle"
 
 export default function ToggleDemo() {
 	return (
 		<Toggle aria-label="Pin">
-			<Monicon name="ri:pushpin-line" />
+			<PinIcon />
 		</Toggle>
 	)
 }

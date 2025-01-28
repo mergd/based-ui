@@ -1,5 +1,4 @@
-import Monicon from "@monicon/react"
-
+import { XIcon } from "@/components/icons"
 import {
 	Tooltip,
 	TooltipContent,
@@ -9,8 +8,8 @@ import {
 export default function TooltipDemo() {
 	return (
 		<Tooltip>
-			<TooltipTrigger className="rounded-md border border-border p-2">
-				<Monicon name="ri:twitter-x-fill" />
+			<TooltipTrigger className="rounded-md border p-2">
+				<XIcon />
 			</TooltipTrigger>
 			<TooltipContent>
 				<span>

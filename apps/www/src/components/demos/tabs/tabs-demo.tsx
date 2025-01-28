@@ -20,7 +20,7 @@ export default function TabsDemo() {
 			<TabContent value="login" className="space-y-4">
 				<div className="flex flex-col gap-2">
 					<h4 className="text-2xl font-bold">Login</h4>
-					<p className="text-sm text-muted-fg">
+					<p className="text-sm text-muted-foreground">
 						Login to your account to continue
 					</p>
 				</div>
@@ -37,7 +37,9 @@ export default function TabsDemo() {
 			<TabContent value="signup" className="space-y-4">
 				<div className="flex flex-col gap-2">
 					<h4 className="text-2xl font-bold">Sign up</h4>
-					<p className="text-sm text-muted-fg">Sign up to create an account</p>
+					<p className="text-sm text-muted-foreground">
+						Sign up to create an account
+					</p>
 				</div>
 				<div className="flex flex-col gap-2">
 					<Label htmlFor="email">Email</Label>

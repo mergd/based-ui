@@ -19,7 +19,7 @@ export default function ContextMenuDemo() {
 	return (
 		<div className="w-80">
 			<ContextMenu>
-				<ContextMenuTrigger className="flex aspect-video w-full items-center justify-center rounded-lg border border-dashed border-border text-sm">
+				<ContextMenuTrigger className="flex aspect-video w-full items-center justify-center rounded-lg border border-dashed text-sm">
 					Right Click Here
 				</ContextMenuTrigger>
 				<ContextMenuContent>

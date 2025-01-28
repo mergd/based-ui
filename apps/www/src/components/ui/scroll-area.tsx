@@ -24,12 +24,12 @@ const ScrollArea = React.forwardRef<HTMLDivElement, ScrollAreaProps>(
 			<BaseScrollArea.Scrollbar
 				orientation={orientation}
 				className={cn(
-					"m-2 rounded-full bg-muted opacity-0 transition-opacity delay-300 data-[hovering]:opacity-100 data-[scrolling]:opacity-100 data-[hovering]:delay-0 data-[scrolling]:delay-0 data-[hovering]:duration-100 data-[scrolling]:duration-100",
-					orientation === "horizontal" && "h-1",
-					orientation === "vertical" && "w-1"
+					"m-1 rounded-full opacity-0 transition-opacity delay-300 data-[hovering]:opacity-100 data-[scrolling]:opacity-100 data-[hovering]:delay-0 data-[scrolling]:delay-0 data-[hovering]:duration-100 data-[scrolling]:duration-100",
+					orientation === "horizontal" && "h-1.5",
+					orientation === "vertical" && "w-1.5"
 				)}
 			>
-				<BaseScrollArea.Thumb className="size-full rounded-full bg-muted-fg" />
+				<BaseScrollArea.Thumb className="size-full rounded-full bg-muted" />
 			</BaseScrollArea.Scrollbar>
 		</BaseScrollArea.Root>
 	)

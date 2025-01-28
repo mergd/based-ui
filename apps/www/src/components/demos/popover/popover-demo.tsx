@@ -1,4 +1,5 @@
-import Monicon from "@monicon/react"
+import { CopyIcon, Share2Icon } from "lucide-react"
+import { toast } from "sonner"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -12,14 +13,19 @@ import {
 
 export default function PopoverDemo() {
 	const copyToClipboard = () => {
+		toast.success("Copied to clipboard")
 		navigator.clipboard.writeText(window.location.href)
 	}
 
 	return (
 		<Popover>
-			<PopoverTrigger className="cursor-pointer rounded-md border border-border p-2 transition-colors hover:bg-subtle">
-				<Monicon name="ri:share-box-fill" />
-			</PopoverTrigger>
+			<PopoverTrigger
+				render={(props) => (
+					<Button {...props} variant="outline" size="icon">
+						<Share2Icon />
+					</Button>
+				)}
+			/>
 			<PopoverContent className="w-[calc(100vw-4rem)] sm:w-[500px]">
 				<div className="flex flex-col space-y-3.5">
 					<div className="flex flex-col space-y-1">
@@ -33,12 +39,8 @@ export default function PopoverDemo() {
 							autoFocus={false}
 							readOnly
 						/>
-						<Button
-							className="shrink-0"
-							size="icon-md"
-							onClick={copyToClipboard}
-						>
-							<Monicon name="ri:file-copy-fill" />
+						<Button className="shrink-0" size="icon" onClick={copyToClipboard}>
+							<CopyIcon />
 						</Button>
 					</div>
 				</div>

@@ -45,7 +45,7 @@ const BreadcrumbItem = React.forwardRef<HTMLLIElement, BreadcrumbItemProps>(
 			ref={ref}
 			aria-current={active ? "page" : undefined}
 			className={cn(
-				"inline-flex items-center gap-2 text-muted-fg [&>a]:transition-colors [&>a]:hover:text-foreground",
+				"inline-flex items-center gap-2 text-muted-foreground [&>a]:transition-colors [&>a]:hover:text-foreground [&>svg]:size-4",
 				active && "text-foreground",
 				className
 			)}
@@ -66,7 +66,7 @@ const BreadcrumbSeparator = React.forwardRef<
 		ref={ref}
 		aria-hidden="true"
 		role="presentation"
-		className={cn("text-muted-fg [&>svg]:size-3", className)}
+		className={cn("text-muted-foreground [&>svg]:size-3", className)}
 		{...props}
 	>
 		{children || <ChevronRightIcon />}

@@ -1,4 +1,4 @@
-import { Monicon } from "@monicon/react"
+import { Loader2Icon } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 
@@ -6,7 +6,7 @@ export default function ButtonLoading() {
 	return (
 		<Button className="gap-2" disabled>
 			<div className="animate-spin">
-				<Monicon name="ri:loader-5-fill" />
+				<Loader2Icon size={16} />
 			</div>
 			Loading
 		</Button>

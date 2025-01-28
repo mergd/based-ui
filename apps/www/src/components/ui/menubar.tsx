@@ -2,10 +2,10 @@
 
 import * as React from "react"
 import { Menu } from "@base-ui-components/react/menu"
-import { useControlled } from "@base-ui-components/react/utils"
+import { useControlled, useForkRef } from "@base-ui-components/react/utils"
 import { CheckIcon, ChevronRightIcon } from "lucide-react"
 
-import { merge, mergeRefs } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 /********
 Menubar Mappings
@@ -70,7 +70,7 @@ const Menubar = React.forwardRef<
 			<div
 				ref={ref}
 				className={cn(
-					"relative flex w-fit gap-1 rounded-md border border-border px-1 shadow-elevation-low",
+					"relative flex w-fit gap-1 rounded-md border px-1 shadow-sm",
 					className
 				)}
 				{...props}
@@ -177,9 +177,9 @@ const MenubarTrigger = React.forwardRef<
 
 	return (
 		<Menu.Trigger
-			ref={mergeRefs([ref, triggerRef])}
+			ref={useForkRef(ref, triggerRef)}
 			className={cn(
-				"group relative flex min-h-10 cursor-default select-none items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium outline-none data-[popup-open]:text-foreground",
+				"relative flex min-h-10 cursor-default select-none items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium outline-none data-[popup-open]:text-foreground",
 				className
 			)}
 			{...props}
@@ -230,7 +230,7 @@ const MenubarIndicator = React.forwardRef<
 		<div
 			ref={ref}
 			className={cn(
-				"absolute left-[var(--active-menu-left)] top-1/2 z-[-1] h-[calc(var(--active-menu-height)-0.5rem)] w-[var(--active-menu-width)] -translate-y-1/2 rounded-md bg-muted transition-all duration-200 ease-in-out",
+				"absolute left-[var(--active-menu-left)] top-1/2 z-[-1] h-[calc(var(--active-menu-height)-0.5rem)] w-[var(--active-menu-width)] -translate-y-1/2 rounded-md bg-accent transition-all duration-200 ease-in-out",
 				className
 			)}
 			style={style}
@@ -254,7 +254,7 @@ const MenubarContent = React.forwardRef<
 			<Menu.Popup
 				ref={ref}
 				className={cn(
-					"min-w-48 origin-[var(--transform-origin)] rounded-md border border-border bg-background p-1 text-foreground shadow-elevation-low outline-none transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
+					"min-w-48 origin-[var(--transform-origin)] rounded-md border bg-background p-1 text-foreground shadow-sm outline-none transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
 					className
 				)}
 				{...props}
@@ -274,7 +274,7 @@ const MenubarItem = React.forwardRef<
 	<Menu.Item
 		ref={ref}
 		className={cn(
-			"group flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50",
+			"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50",
 			className
 		)}
 		{...props}
@@ -292,7 +292,7 @@ const MenubarItemShortcut = React.forwardRef<
 	<span
 		ref={ref}
 		className={cn(
-			"ml-auto pl-10 text-xs tracking-widest text-muted-fg group-data-[highlighted]:text-accent-foreground",
+			"ml-auto pl-10 text-xs tracking-widest text-muted-foreground",
 			className
 		)}
 		{...props}

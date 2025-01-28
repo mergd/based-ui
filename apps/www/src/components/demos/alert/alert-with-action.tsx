@@ -1,4 +1,4 @@
-import Monicon from "@monicon/react"
+import { AlertTriangleIcon } from "lucide-react"
 
 import {
 	Alert,
@@ -14,7 +14,7 @@ export default function AlertWithAction() {
 	return (
 		<Alert>
 			<AlertIcon>
-				<Monicon name="ri:wifi-off-fill" />
+				<AlertTriangleIcon />
 			</AlertIcon>
 			<AlertContent>
 				<AlertTitle>No Internet Connection</AlertTitle>

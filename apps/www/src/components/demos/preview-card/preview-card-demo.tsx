@@ -1,8 +1,8 @@
 "use client"
 
-import Monicon from "@monicon/react"
+import { GithubIcon, GlobeIcon, UserIcon } from "lucide-react"
 
-import Logo from "@/components/logo"
+import { Icons } from "@/components/icons"
 import {
 	PreviewCard,
 	PreviewCardContent,
@@ -20,7 +20,7 @@ export default function PreviewCardDemo() {
 				.
 			</p>
 			<PreviewCardContent className="max-w-80 text-sm">
-				<Logo className="mx-auto w-10" />
+				<Icons.logo className="mx-auto w-10" />
 				<p className="mt-2">
 					Beautiful, customizable components built with{" "}
 					<a
@@ -42,8 +42,8 @@ export default function PreviewCardDemo() {
 				</p>
 				<div className="mt-2 flex flex-col gap-2 text-sm">
 					<div className="flex items-center gap-2">
-						<span className="flex items-center gap-1 text-muted-fg">
-							<Monicon name="ri:user-3-fill" size={14} />
+						<span className="flex items-center gap-1 text-muted-foreground">
+							<UserIcon size={14} />
 							Creator:
 						</span>
 						<a
@@ -55,8 +55,8 @@ export default function PreviewCardDemo() {
 						</a>
 					</div>
 					<div className="flex items-center gap-2">
-						<span className="flex items-center gap-1 text-muted-fg">
-							<Monicon name="ri:github-fill" size={14} />
+						<span className="flex items-center gap-1 text-muted-foreground">
+							<GithubIcon size={14} />
 							Source code:
 						</span>
 						<a
@@ -68,8 +68,8 @@ export default function PreviewCardDemo() {
 						</a>
 					</div>
 					<div className="flex items-center gap-2">
-						<span className="flex items-center gap-1 text-muted-fg">
-							<Monicon name="ri:global-fill" size={14} />
+						<span className="flex items-center gap-1 text-muted-foreground">
+							<GlobeIcon size={14} />
 							Website
 						</span>
 						<a

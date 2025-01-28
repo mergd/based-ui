@@ -99,12 +99,12 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/context-menu",
 				},
 				{
-					title: "Drawer",
-					href: "/docs/components/drawer",
-				},
-				{
 					title: "Dialog",
 					href: "/docs/components/dialog",
+				},
+				{
+					title: "Drawer",
+					href: "/docs/components/drawer",
 				},
 				{
 					title: "Dropdown",

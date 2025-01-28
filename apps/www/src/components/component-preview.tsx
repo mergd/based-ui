@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Monicon } from "@monicon/react"
+import { CheckIcon, CopyIcon, Loader2Icon, RefreshCwIcon } from "lucide-react"
 import { createHighlighter } from "shiki"
 
 import { Button } from "@/components/ui/button"
@@ -68,12 +68,7 @@ export const ComponentPreview = ({
 	}
 
 	return (
-		<div
-			className={cn(
-				"mt-4 overflow-hidden rounded-lg border border-border",
-				className
-			)}
-		>
+		<div className={cn("mt-4 overflow-hidden rounded-lg border", className)}>
 			<div className="relative flex min-h-[200px] items-center justify-center p-10">
 				{showReload && (
 					<Button
@@ -82,13 +77,13 @@ export const ComponentPreview = ({
 						className="absolute right-2 top-2 size-6"
 						onClick={() => setKey((prev) => prev + 1)}
 					>
-						<Monicon name="ri:restart-line" size={14} />
+						<RefreshCwIcon size={16} />
 					</Button>
 				)}
 				<React.Suspense
 					fallback={
 						<div className="flex animate-spin items-center justify-center">
-							<Monicon name="ri:loader-5-fill" size={20} />
+							<Loader2Icon size={16} />
 						</div>
 					}
 				>
@@ -96,7 +91,7 @@ export const ComponentPreview = ({
 				</React.Suspense>
 			</div>
 
-			<div className="flex items-center justify-between border-y border-border bg-subtle px-3">
+			<div className="flex items-center justify-between border-y bg-secondary px-3">
 				<div className="flex h-8 items-center overflow-x-auto">
 					<div className="flex min-w-fit gap-2">
 						<span className="rounded px-2 py-0.5 text-xs font-semibold">
@@ -108,14 +103,10 @@ export const ComponentPreview = ({
 				<button
 					onClick={onCopy}
 					className={cn(
-						"flex size-6 items-center justify-center rounded-md text-muted-fg transition-colors hover:bg-muted hover:text-foreground"
+						"flex size-6 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
 					)}
 				>
-					{copied ? (
-						<Monicon name="ri:check-fill" size={14} />
-					) : (
-						<Monicon name="ri:file-copy-fill" size={14} />
-					)}
+					{copied ? <CheckIcon size={14} /> : <CopyIcon size={14} />}
 				</button>
 			</div>
 

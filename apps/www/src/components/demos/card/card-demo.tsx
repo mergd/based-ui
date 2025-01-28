@@ -1,5 +1,5 @@
 import Image from "next/image"
-import Monicon from "@monicon/react"
+import { LinkIcon, SendIcon } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -25,12 +25,12 @@ export default function CardDemo() {
 			<CardContent className="space-y-4">
 				<div className="flex gap-2">
 					<Input inputWrapperClassName="w-full" placeholder="Email" />
-					<Button className="shrink-0" size="icon-md">
-						<Monicon name="ri:send-plane-fill" />
+					<Button className="shrink-0" size="icon">
+						<SendIcon />
 					</Button>
 				</div>
 				<div className="flex flex-col gap-2">
-					<p className="text-sm text-muted-fg">
+					<p className="text-sm text-muted-foreground">
 						You can invite up to 10 team members. You have 8 invites left.
 					</p>
 				</div>
@@ -46,7 +46,7 @@ export default function CardDemo() {
 						/>
 						<div className="flex flex-col text-xs">
 							<p className="font-medium">Karen Smith</p>
-							<p className="text-muted-fg">karen@9.ui</p>
+							<p className="text-muted-foreground">karen@9.ui</p>
 						</div>
 					</div>
 					<div className="flex items-center gap-2">
@@ -59,7 +59,7 @@ export default function CardDemo() {
 						/>
 						<div className="flex flex-col text-xs">
 							<p className="font-medium">Chris Williams</p>
-							<p className="text-muted-fg">chris@9.ui</p>
+							<p className="text-muted-foreground">chris@9.ui</p>
 						</div>
 					</div>
 				</div>
@@ -72,7 +72,7 @@ export default function CardDemo() {
 						toast.success("Invite link copied to clipboard")
 					}}
 				>
-					<Monicon name="ri:link" />
+					<LinkIcon size={16} />
 					Invite with link
 				</Button>
 			</CardFooter>

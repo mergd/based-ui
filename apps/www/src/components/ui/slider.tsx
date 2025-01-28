@@ -26,14 +26,14 @@ const Slider = React.forwardRef<
 		>
 			<BaseSlider.Control className="flex w-56 items-center py-3">
 				<BaseSlider.Track className="h-1 w-full rounded bg-muted">
-					<BaseSlider.Indicator className="relative rounded bg-accent" />
+					<BaseSlider.Indicator className="relative rounded bg-primary" />
 					<BaseSlider.Thumb
-						className="size-4 rounded-full bg-accent shadow-elevation-medium"
+						className="size-4 rounded-full bg-primary shadow-sm dark:shadow-none"
 						inputId="1"
 					/>
 					{isRange && (
 						<BaseSlider.Thumb
-							className="size-4 rounded-full bg-accent shadow-elevation-medium"
+							className="size-4 rounded-full bg-primary shadow-sm dark:shadow-none"
 							inputId="2"
 						/>
 					)}

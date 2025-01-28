@@ -1,4 +1,4 @@
-import Monicon from "@monicon/react"
+import { AlignCenterIcon, AlignLeftIcon, AlignRightIcon } from "lucide-react"
 
 import { Toggle } from "@/components/ui/toggle"
 import { ToggleGroup } from "@/components/ui/toggle-group"
@@ -7,13 +7,13 @@ export default function ToggleGroupDemo() {
 	return (
 		<ToggleGroup>
 			<Toggle value="left">
-				<Monicon name="ri:align-left" />
+				<AlignLeftIcon />
 			</Toggle>
 			<Toggle value="center">
-				<Monicon name="ri:align-center" />
+				<AlignCenterIcon />
 			</Toggle>
 			<Toggle value="right">
-				<Monicon name="ri:align-right" />
+				<AlignRightIcon />
 			</Toggle>
 		</ToggleGroup>
 	)

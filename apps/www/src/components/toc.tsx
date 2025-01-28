@@ -58,7 +58,7 @@ export const TableOfContents = ({ items }: TableOfContentsProps) => {
 							key={item.url}
 							href={item.url}
 							className={cn(
-								"flex py-1 text-sm text-muted-fg transition-colors hover:text-foreground",
+								"flex py-1 text-sm text-muted-foreground transition-colors hover:text-foreground",
 								item.depth === 3 && "pl-2",
 								item.depth === 4 && "pl-4",
 								item.depth === 5 && "pl-6",

@@ -28,7 +28,7 @@ export default function CarouselThumbnail() {
 						<CarouselItem key={slide}>
 							<AspectRatio
 								ratio={16 / 9}
-								className="rounded-lg border border-border bg-background"
+								className="rounded-lg border bg-background"
 							>
 								<Image
 									src={slide}

@@ -51,10 +51,16 @@ const components: MDXComponents = {
 		/>
 	),
 	ul: ({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
-		<ul className={cn("space-y-2 text-muted-fg", className)} {...props} />
+		<ul
+			className={cn("space-y-2 text-muted-foreground", className)}
+			{...props}
+		/>
 	),
 	ol: ({ className, ...props }: React.HTMLAttributes<HTMLOListElement>) => (
-		<ol className={cn("space-y-2 text-muted-fg", className)} {...props} />
+		<ol
+			className={cn("space-y-2 text-muted-foreground", className)}
+			{...props}
+		/>
 	),
 	li: ({ className, ...props }: React.HTMLAttributes<HTMLLIElement>) => (
 		<li className={cn("", className)} {...props} />
@@ -74,7 +80,7 @@ const components: MDXComponents = {
 	}: React.BlockquoteHTMLAttributes<HTMLQuoteElement>) => (
 		<blockquote
 			className={cn(
-				"mt-6 border-l-2 border-border pl-6 italic text-muted-fg",
+				"mt-6 border-l-2 pl-6 italic text-muted-foreground",
 				className
 			)}
 			{...props}
@@ -84,7 +90,7 @@ const components: MDXComponents = {
 		className,
 		...props
 	}: React.TableHTMLAttributes<HTMLTableElement>) => (
-		<div className="my-6 w-full overflow-hidden rounded-lg border border-border">
+		<div className="my-6 w-full overflow-hidden rounded-lg border">
 			<table className={cn("w-full", className)} {...props} />
 		</div>
 	),
@@ -92,10 +98,7 @@ const components: MDXComponents = {
 		className,
 		...props
 	}: React.HTMLAttributes<HTMLTableSectionElement>) => (
-		<thead
-			className={cn("border-b border-border bg-muted/40", className)}
-			{...props}
-		/>
+		<thead className={cn("border-b bg-muted/40", className)} {...props} />
 	),
 	tbody: ({
 		className,
@@ -119,7 +122,10 @@ const components: MDXComponents = {
 		className,
 		...props
 	}: React.TdHTMLAttributes<HTMLTableDataCellElement>) => (
-		<td className={cn("p-4 text-sm text-muted-fg", className)} {...props} />
+		<td
+			className={cn("p-4 text-sm text-muted-foreground", className)}
+			{...props}
+		/>
 	),
 	pre: ({ className, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
 		<pre
@@ -136,7 +142,7 @@ const components: MDXComponents = {
 	}: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
 		<a
 			className={cn(
-				"font-medium text-link-fg underline underline-offset-4",
+				"font-medium text-foreground underline underline-offset-4",
 				className
 			)}
 			{...props}
@@ -150,11 +156,7 @@ const components: MDXComponents = {
 		alt,
 		...props
 	}: React.ImgHTMLAttributes<HTMLImageElement>) => (
-		<img
-			className={cn("rounded-lg border border-border", className)}
-			alt={alt}
-			{...props}
-		/>
+		<img className={cn("rounded-lg border", className)} alt={alt} {...props} />
 	),
 	Accordion,
 	AccordionTrigger,
@@ -192,7 +194,7 @@ const components: MDXComponents = {
 
 		return (
 			<React.Fragment>
-				<p className={cn("mt-4 text-muted-fg", className)} {...props}>
+				<p className={cn("mt-4 text-muted-foreground", className)} {...props}>
 					{content}
 				</p>
 				<meta name="description" content={content} />

@@ -7,21 +7,12 @@ import { cn } from "@/lib/utils"
 Badge Variants
 ********/
 const badgeVariants = cva(
-	"inline-flex items-center rounded-full px-3 py-0.5 text-xs font-semibold gap-2",
+	"inline-flex items-center rounded-full px-3 py-0.5 text-xs font-semibold gap-2 border",
 	{
 		variants: {
 			variant: {
-				default: "border border-primary-fg bg-primary text-primary-foreground",
-				secondary:
-					"border border-muted-foreground bg-muted text-muted-foreground",
-				success:
-					"border border-green-800 bg-green-200 text-green-800 dark:border-green-600 dark:bg-green-800 dark:text-green-100",
-				danger:
-					"border border-destructive-foreground bg-destructive text-destructive-foreground",
-				warning:
-					"border border-yellow-800 bg-yellow-200 text-yellow-800 dark:border-yellow-600 dark:bg-yellow-800 dark:text-yellow-100",
-				info: "border border-blue-800 bg-blue-200 text-blue-800 dark:border-blue-600 dark:bg-blue-800 dark:text-blue-100",
-				outline: "border border-border text-foreground",
+				default: "bg-primary border-primary text-primary-foreground",
+				outline: "bg-transparent text-foreground",
 			},
 		},
 		defaultVariants: {
@@ -41,4 +32,33 @@ const Badge = ({ className, variant, ...props }: BadgeProps) => (
 	<div className={cn(badgeVariants({ variant }), className)} {...props} />
 )
 
-export { Badge, badgeVariants }
+/********
+Badge Indicator
+********/
+const badgeIndicatorVariants = cva("rounded-full size-2", {
+	variants: {
+		variant: {
+			success: "bg-success-foreground",
+			warning: "bg-warning-foreground",
+			info: "bg-info-foreground",
+			danger: "bg-danger-foreground",
+		},
+	},
+})
+
+export interface BadgeIndicatorProps
+	extends React.HTMLAttributes<HTMLSpanElement>,
+		VariantProps<typeof badgeIndicatorVariants> {}
+
+const BadgeIndicator = ({
+	className,
+	variant,
+	...props
+}: BadgeIndicatorProps) => (
+	<span
+		className={cn(badgeIndicatorVariants({ variant }), className)}
+		{...props}
+	/>
+)
+
+export { Badge, badgeVariants, BadgeIndicator, badgeIndicatorVariants }

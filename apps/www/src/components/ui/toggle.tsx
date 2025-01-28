@@ -10,12 +10,12 @@ import { cn } from "@/lib/utils"
 Toggle Variants
 ********/
 const toggleVariants = cva(
-	"inline-flex items-center justify-center rounded-md text-sm font-medium text-foreground transition-colors duration-200 hover:bg-subtle hover:text-muted-fg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-subtle data-[pressed]:text-foreground",
+	"inline-flex items-center justify-center rounded-md text-sm font-medium text-foreground transition-colors duration-200 hover:bg-muted hover:text-muted-foreground focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-muted data-[pressed]:text-foreground [&>svg]:size-4",
 	{
 		variants: {
 			variant: {
 				default: "",
-				outline: "border border-border",
+				outline: "border",
 			},
 			size: {
 				sm: "h-8 px-2",

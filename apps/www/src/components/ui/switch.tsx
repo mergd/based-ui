@@ -13,12 +13,12 @@ const Switch = React.forwardRef<
 	<BaseSwitch.Root
 		ref={ref}
 		className={cn(
-			"peer inline-flex h-6 w-10 items-center rounded-full bg-muted p-0.5 transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-50 data-[checked]:border-accent-fg data-[checked]:bg-accent",
+			"peer inline-flex h-6 w-10 items-center rounded-full bg-muted p-0.5 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[checked]:bg-primary",
 			className
 		)}
 		{...props}
 	>
-		<BaseSwitch.Thumb className="left-0 top-0 aspect-square h-5 rounded-full bg-accent transition-[colors,transform] duration-300 ease-in-out data-[checked]:translate-x-4 data-[checked]:bg-accent-fg" />
+		<BaseSwitch.Thumb className="left-0 top-0 aspect-square h-5 rounded-full bg-primary transition-[colors,transform] duration-300 ease-in-out data-[checked]:translate-x-4 data-[checked]:bg-primary-foreground" />
 	</BaseSwitch.Root>
 ))
 Switch.displayName = "Switch"

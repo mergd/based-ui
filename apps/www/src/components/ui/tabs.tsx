@@ -59,10 +59,8 @@ const TabsList = React.forwardRef<
 		<BaseTabs.List
 			ref={ref}
 			className={cn(
-				"relative flex gap-1 px-1 text-sm font-medium",
-				variant === "capsule"
-					? "rounded-md border border-border"
-					: "border-b border-border",
+				"relative flex gap-1 text-sm font-medium",
+				variant === "capsule" ? "rounded-md border px-1" : "border-b",
 				className
 			)}
 			{...props}
@@ -103,7 +101,7 @@ const TabIndicator = React.forwardRef<
 			className={cn(
 				"absolute left-0 z-[-1] w-[var(--active-tab-width)] -translate-y-1/2 translate-x-[var(--active-tab-left)] transition-all duration-200 ease-in-out",
 				variant === "underline"
-					? "top-full h-px bg-accent"
+					? "top-full z-10 h-px bg-primary"
 					: "top-1/2 h-[calc(var(--active-tab-height)-0.5rem)] rounded-md bg-muted",
 				className
 			)}
@@ -122,7 +120,7 @@ const TabContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseTabs.Panel
 		ref={ref}
-		className={cn("mt-2 flex-1 rounded-md border border-border p-4", className)}
+		className={cn("mt-2 flex-1 rounded-md border p-4", className)}
 		{...props}
 	/>
 ))

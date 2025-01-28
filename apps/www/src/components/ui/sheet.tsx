@@ -45,7 +45,7 @@ SheetBackdrop.displayName = "SheetBackdrop"
 Sheet Content
 ********/
 const sheetContentVariants = cva(
-	"fixed max-h-[calc(100vh-2rem)] border-border bg-background p-6 text-foreground shadow-elevation-medium outline-none transition-all duration-500 ease-in-out",
+	"fixed max-h-[calc(100vh-2rem)] bg-background p-6 text-foreground shadow-md outline-none transition-all duration-500 ease-in-out",
 	{
 		variants: {
 			side: {
@@ -76,7 +76,7 @@ const SheetContent = React.forwardRef<
 		className={cn(sheetContentVariants({ side, className }))}
 		{...props}
 	>
-		<SheetClose className="absolute right-4 top-4 rounded-sm opacity-50 transition-opacity hover:opacity-100 focus:outline focus:outline-offset-2 focus:outline-accent disabled:pointer-events-none">
+		<SheetClose className="absolute right-4 top-4 rounded-sm opacity-50 transition-opacity hover:opacity-100 focus:outline-none disabled:pointer-events-none">
 			<XIcon className="size-4" />
 			<span className="sr-only">Close</span>
 		</SheetClose>
@@ -122,7 +122,11 @@ const SheetDescription = React.forwardRef<
 	HTMLParagraphElement,
 	React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
-	<p ref={ref} className={cn("text-sm text-muted-fg", className)} {...props} />
+	<p
+		ref={ref}
+		className={cn("text-sm text-muted-foreground", className)}
+		{...props}
+	/>
 ))
 SheetDescription.displayName = "SheetDescription"
 

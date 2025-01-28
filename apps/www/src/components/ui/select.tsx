@@ -28,7 +28,7 @@ const SelectTrigger = React.forwardRef<
 	<BaseSelect.Trigger
 		ref={ref}
 		className={cn(
-			"flex h-9 cursor-pointer items-center justify-between rounded-md border border-border px-4 py-2 focus:outline focus:outline-2 focus:outline-offset-1 focus:outline-accent data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:size-4",
+			"flex h-9 cursor-pointer items-center justify-between rounded-md border px-4 py-2 focus:outline-none focus:ring-1 focus:ring-ring data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:size-4",
 			className
 		)}
 		{...props}
@@ -70,7 +70,7 @@ const SelectContent = React.forwardRef<HTMLDivElement, SelectContentProps>(
 			<BaseSelect.Popup
 				ref={ref}
 				className={cn(
-					"w-[--anchor-width] origin-[var(--transform-origin)] overflow-y-auto overscroll-contain rounded-md bg-background p-2 text-sm text-foreground shadow-elevation-low outline outline-1 -outline-offset-1 outline-muted transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
+					"w-[--anchor-width] origin-[var(--transform-origin)] overflow-y-auto overscroll-contain rounded-md border bg-background p-1.5 text-sm text-foreground shadow-sm transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
 					className
 				)}
 				{...props}
@@ -92,17 +92,17 @@ const SelectItem = React.forwardRef<
 	<BaseSelect.Item
 		ref={ref}
 		className={cn(
-			"grid select-none grid-cols-[0.75rem_auto] items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-muted data-[highlighted]:text-foreground data-[disabled]:opacity-50",
+			"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50",
 			className
 		)}
 		{...props}
 	>
-		<BaseSelect.ItemIndicator className="col-start-1">
-			<CheckIcon className="size-3" />
-		</BaseSelect.ItemIndicator>
-		<BaseSelect.ItemText className="col-start-2">
-			{children}
-		</BaseSelect.ItemText>
+		<div className="size-3">
+			<BaseSelect.ItemIndicator>
+				<CheckIcon className="size-full" />
+			</BaseSelect.ItemIndicator>
+		</div>
+		<BaseSelect.ItemText>{children}</BaseSelect.ItemText>
 	</BaseSelect.Item>
 ))
 SelectItem.displayName = "SelectItem"
@@ -116,7 +116,10 @@ const SelectGroupLabel = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseSelect.GroupLabel
 		ref={ref}
-		className={cn("px-2 py-1.5 font-medium text-muted-fg", className)}
+		className={cn(
+			"px-2 py-1.5 text-sm font-medium text-muted-foreground",
+			className
+		)}
 		{...props}
 	/>
 ))

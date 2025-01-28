@@ -16,12 +16,12 @@ const Checkbox = React.forwardRef<
 	<BaseCheckbox.Root
 		ref={ref}
 		className={cn(
-			"peer flex size-4 shrink-0 items-center justify-center rounded-sm border border-border bg-background transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-50 aria-[invalid=true]:border-danger-fg aria-[invalid=true]:bg-destructive aria-[invalid=true]:text-destructive-fg aria-[invalid=true]:focus:outline-danger data-[checked]:border-accent data-[checked]:bg-accent data-[indeterminate]:bg-accent data-[checked]:text-accent-foreground",
+			"peer flex size-4 shrink-0 items-center justify-center rounded-sm border bg-background outline-none transition-colors duration-150 focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 aria-[invalid=true]:border-destructive aria-[invalid=true]:text-destructive aria-[invalid=true]:focus:ring-destructive data-[checked]:border-primary data-[checked]:bg-primary data-[indeterminate]:bg-primary data-[checked]:text-primary-foreground",
 			className
 		)}
 		{...props}
 	>
-		<BaseCheckbox.Indicator className="block text-accent-foreground data-[unchecked]:hidden">
+		<BaseCheckbox.Indicator className="block text-primary-foreground data-[unchecked]:hidden">
 			{props.indeterminate ? (
 				<MinusIcon className="size-3" />
 			) : (

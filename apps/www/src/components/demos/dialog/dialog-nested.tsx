@@ -6,6 +6,7 @@ import {
 	DialogContent,
 	DialogDescription,
 	DialogFooter,
+	DialogHeader,
 	DialogTitle,
 	DialogTrigger,
 } from "@/components/ui/dialog"
@@ -17,10 +18,12 @@ export default function DialogNested() {
 				render={(props) => <Button {...props}>View Details</Button>}
 			/>
 			<DialogContent>
-				<DialogTitle>Profile</DialogTitle>
-				<DialogDescription>
-					View and edit your profile details.
-				</DialogDescription>
+				<DialogHeader>
+					<DialogTitle>Profile</DialogTitle>
+					<DialogDescription>
+						View and edit your profile details.
+					</DialogDescription>
+				</DialogHeader>
 				<div>
 					<div className="flex items-center gap-4">
 						<Avatar>
@@ -34,7 +37,7 @@ export default function DialogNested() {
 					<Dialog>
 						<DialogTrigger
 							render={(props) => (
-								<Button {...props} variant="outline" size="sm">
+								<Button {...props} variant="outline">
 									Edit
 								</Button>
 							)}
@@ -47,12 +50,12 @@ export default function DialogNested() {
 							<DialogFooter>
 								<DialogClose
 									render={(props) => (
-										<Button {...props} size="sm" variant="ghost">
+										<Button {...props} variant="ghost">
 											Cancel
 										</Button>
 									)}
 								/>
-								<Button size="sm">Save</Button>
+								<Button>Save</Button>
 							</DialogFooter>
 						</DialogContent>
 					</Dialog>

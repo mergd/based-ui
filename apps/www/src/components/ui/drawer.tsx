@@ -52,7 +52,7 @@ const DrawerContent = React.forwardRef<
 		<BaseDrawer.Content
 			ref={ref}
 			className={cn(
-				"fixed inset-x-0 bottom-0 z-50 flex h-auto flex-col rounded-t-lg border border-border bg-background text-foreground",
+				"fixed inset-x-0 bottom-0 z-50 flex h-auto flex-col rounded-t-lg border bg-background text-foreground",
 				className
 			)}
 			{...props}
@@ -116,7 +116,7 @@ const DrawerDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseDrawer.Description
 		ref={ref}
-		className={cn("text-sm text-muted-fg", className)}
+		className={cn("text-sm text-muted-foreground", className)}
 		{...props}
 	/>
 ))

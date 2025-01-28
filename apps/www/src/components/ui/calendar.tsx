@@ -11,20 +11,20 @@ Calendar
 ********/
 const Calendar = (props: React.ComponentProps<typeof DayPicker>) => (
 	<DayPicker
-		className={cn("rounded-md border border-border p-3", props.className)}
+		className={cn("rounded-md border p-3", props.className)}
 		classNames={{
 			root: "relative select-none",
 			month: "text-center m-0 space-y-1",
 			month_caption: "flex justify-center items-center h-8 font-medium text-sm",
-			today: "bg-muted",
+			today: "bg-secondary",
 			week: "flex justify-center py-0.5",
-			day: "size-8 flex items-center justify-center rounded-md [&:has(>button)]:hover:bg-muted text-sm font-normal",
+			day: "size-8 flex items-center justify-center rounded-md [&:has(>button)]:hover:bg-accent [&:has(>button)]:hover:text-accent-foreground text-sm font-normal",
 			day_button:
 				"size-8 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent rounded-md",
 			weekdays: "flex justify-center",
-			weekday: "size-8 text-sm text-muted-fg font-normal",
-			outside: "text-subtle-fg",
-			selected: "!bg-accent !text-accent-foreground hover:!bg-accent",
+			weekday: "size-8 text-sm text-muted-foreground font-normal",
+			outside: "text-muted-foreground/50 hover:!text-muted-foreground/50",
+			selected: "!bg-primary !text-primary-foreground hover:!bg-primary",
 			range_middle: "rounded-none last:rounded-r-md first:rounded-l-md",
 			range_start:
 				props.mode === "range" &&

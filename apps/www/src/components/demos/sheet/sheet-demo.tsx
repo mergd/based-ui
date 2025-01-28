@@ -39,7 +39,7 @@ export default function SheetDemo() {
 					<SheetFooter>
 						<SheetClose
 							render={(props) => (
-								<Button {...props} size="sm" variant="destructive">
+								<Button {...props} size="sm" variant="ghost">
 									Close
 								</Button>
 							)}

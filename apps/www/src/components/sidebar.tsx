@@ -30,10 +30,10 @@ export const DocsSidebarNavItems = ({
 					key={index}
 					href={item.href}
 					className={cn(
-						"-mx-2 flex w-full items-center rounded-md border border-transparent px-2 py-1 transition-colors hover:text-foreground md:mx-0",
+						"-mx-2 flex w-full items-center rounded-md border px-2 py-1 transition-colors hover:text-foreground md:mx-0",
 						pathname === item.href
-							? "border-border bg-muted/30 text-foreground"
-							: "text-muted-foreground"
+							? "bg-secondary/50 text-foreground"
+							: "border-transparent text-muted-foreground"
 					)}
 					target={item.external ? "_blank" : ""}
 					rel={item.external ? "noreferrer" : ""}
@@ -45,7 +45,7 @@ export const DocsSidebarNavItems = ({
 				<span
 					key={index}
 					className={cn(
-						"-mx-2 flex w-full cursor-not-allowed items-center px-2 py-1 text-muted-fg opacity-60 md:mx-0"
+						"-mx-2 flex w-full cursor-not-allowed items-center px-2 py-1 text-muted-foreground opacity-60 md:mx-0"
 					)}
 				>
 					{item.title}

@@ -17,7 +17,7 @@ const Progress = React.forwardRef<
 				className
 			)}
 		>
-			<BaseProgress.Indicator className="block bg-accent transition-all duration-300" />
+			<BaseProgress.Indicator className="block bg-primary transition-all duration-300" />
 		</BaseProgress.Track>
 		{children}
 	</BaseProgress.Root>

@@ -32,7 +32,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 				<BaseInput
 					ref={ref}
 					className={cn(
-						"h-9 w-full rounded-md border border-border bg-background p-4 text-sm text-foreground placeholder:text-muted-fg focus:outline focus:outline-2 focus:outline-offset-1 focus:outline-accent disabled:cursor-not-allowed disabled:opacity-50 aria-[invalid=true]:border-danger-fg aria-[invalid=true]:bg-destructive aria-[invalid=true]:text-destructive-fg aria-[invalid=true]:placeholder:text-destructive-fg aria-[invalid=true]:focus:outline-danger",
+						"h-9 w-full rounded-md border border-input bg-background p-4 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 aria-[invalid=true]:border-destructive aria-[invalid=true]:text-destructive aria-[invalid=true]:placeholder:text-destructive aria-[invalid=true]:focus:ring-destructive/50",
 						hasLeadingIcon && "pl-10",
 						hasTrailingIcon && "pr-10",
 						className
@@ -58,7 +58,7 @@ const InputIcon = React.forwardRef<HTMLDivElement, InputIconProps>(
 		<div
 			ref={ref}
 			className={cn(
-				"absolute top-1/2 -translate-y-1/2 text-muted-fg [&_svg]:size-4",
+				"absolute top-1/2 -translate-y-1/2 text-muted-foreground [&_svg]:size-4",
 				side === "leading" && "left-3",
 				side === "trailing" && "right-3",
 				className

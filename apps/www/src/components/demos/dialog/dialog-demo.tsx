@@ -4,6 +4,7 @@ import {
 	DialogContent,
 	DialogDescription,
 	DialogFooter,
+	DialogHeader,
 	DialogTitle,
 	DialogTrigger,
 } from "@/components/ui/dialog"
@@ -15,10 +16,12 @@ export default function DialogDemo() {
 				render={(props) => <Button {...props}>Privacy Policy</Button>}
 			/>
 			<DialogContent>
-				<DialogTitle>Privacy Policy</DialogTitle>
-				<DialogDescription>
-					Please read our privacy policy carefully.
-				</DialogDescription>
+				<DialogHeader>
+					<DialogTitle>Privacy Policy</DialogTitle>
+					<DialogDescription>
+						Please read our privacy policy carefully.
+					</DialogDescription>
+				</DialogHeader>
 				<div className="max-h-80 overflow-y-auto text-sm text-foreground">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
 					ultricies, odio quis blandit vestibulum, orci elit suscipit urna, at
@@ -61,9 +64,7 @@ export default function DialogDemo() {
 					arcu, fermentum scelerisque nibh at, lacinia sagittis neque.
 				</div>
 				<DialogFooter>
-					<Button className="w-full" size="sm">
-						Accept
-					</Button>
+					<Button className="w-full">Accept</Button>
 				</DialogFooter>
 			</DialogContent>
 		</Dialog>

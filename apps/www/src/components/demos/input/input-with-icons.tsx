@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Monicon from "@monicon/react"
+import { EyeIcon, EyeOffIcon, LockIcon } from "lucide-react"
 
 import { Input, InputIcon } from "@/components/ui/input"
 
@@ -11,19 +11,19 @@ export default function InputWithIcons() {
 	}
 
 	const passwordType = isPasswordVisible ? "text" : "password"
-	const eyeIcon = isPasswordVisible ? "ri:eye-fill" : "ri:eye-close-fill"
+	const eyeIcon = isPasswordVisible ? <EyeIcon /> : <EyeOffIcon />
 
 	return (
 		<Input placeholder="Password" className="w-80" type={passwordType}>
 			<InputIcon side="leading">
-				<Monicon name="ri:lock-password-fill" />
+				<LockIcon />
 			</InputIcon>
 			<InputIcon
 				side="trailing"
 				className="cursor-pointer transition-colors duration-200 hover:[&>svg]:text-foreground"
 				onClick={togglePasswordVisibility}
 			>
-				<Monicon name={eyeIcon} />
+				{eyeIcon}
 			</InputIcon>
 		</Input>
 	)

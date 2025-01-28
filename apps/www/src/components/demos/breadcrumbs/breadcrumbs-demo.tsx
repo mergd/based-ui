@@ -1,5 +1,5 @@
 import Link from "next/link"
-import Monicon from "@monicon/react"
+import { EllipsisIcon } from "lucide-react"
 
 import {
 	Breadcrumb,
@@ -17,7 +17,7 @@ export default function BreadcrumbsDemo() {
 				</BreadcrumbItem>
 				<BreadcrumbSeparator />
 				<BreadcrumbItem>
-					<Monicon name="ri:more-fill" />
+					<EllipsisIcon />
 				</BreadcrumbItem>
 				<BreadcrumbSeparator />
 				<BreadcrumbItem>

@@ -33,7 +33,7 @@ const DropdownContent = React.forwardRef<
 			<Menu.Popup
 				ref={ref}
 				className={cn(
-					"min-w-48 origin-[var(--transform-origin)] rounded-md border border-border bg-background p-1 text-foreground shadow-elevation-low outline-none transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
+					"min-w-48 origin-[var(--transform-origin)] rounded-md border bg-background p-1 text-foreground shadow-sm outline-none transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
 					className
 				)}
 				{...props}
@@ -53,7 +53,7 @@ const DropdownItem = React.forwardRef<
 	<Menu.Item
 		ref={ref}
 		className={cn(
-			"group flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50",
+			"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50 [&>svg]:size-3",
 			className
 		)}
 		{...props}
@@ -71,7 +71,7 @@ const DropdownItemShortcut = React.forwardRef<
 	<span
 		ref={ref}
 		className={cn(
-			"ml-auto pl-10 text-xs tracking-widest text-muted-fg group-data-[highlighted]:text-accent-foreground",
+			"ml-auto pl-10 text-xs tracking-widest text-muted-foreground",
 			className
 		)}
 		{...props}
@@ -103,7 +103,7 @@ const DropdownGroupLabel = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<Menu.GroupLabel
 		ref={ref}
-		className={cn("px-2 py-1.5 text-xs text-subtle-fg", className)}
+		className={cn("px-2 py-1.5 text-xs text-muted-foreground", className)}
 		{...props}
 	/>
 ))

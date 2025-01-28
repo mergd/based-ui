@@ -11,11 +11,12 @@ const alertVariants = cva(
 	{
 		variants: {
 			variant: {
-				default: "border-border bg-background text-foreground",
-				warning: "border-warning-fg bg-warning text-warning-fg",
-				error: "border-danger-fg bg-destructive text-destructive-fg",
-				info: "border-info-fg bg-info text-info-fg",
-				success: "border-success-fg bg-success text-success-fg",
+				default:
+					"bg-background text-foreground [&_p[data-description=true]]:text-muted-foreground",
+				warning: "bg-warning border-warning-border text-warning-foreground",
+				danger: "bg-danger border-danger-border text-danger-foreground",
+				info: "bg-info border-info-border text-info-foreground",
+				success: "bg-success border-success-border text-success-foreground",
 			},
 		},
 		defaultVariants: {
@@ -64,7 +65,7 @@ const AlertIcon = React.forwardRef<
 	HTMLDivElement,
 	React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-	<div ref={ref} className={cn("[&>svg]:size-3.5", className)} {...props} />
+	<div ref={ref} className={cn("[&>svg]:size-4", className)} {...props} />
 ))
 AlertIcon.displayName = "AlertIcon"
 
@@ -77,7 +78,7 @@ const AlertTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<h4
 		ref={ref}
-		className={cn("text-sm font-medium leading-none", className)}
+		className={cn("text-sm font-medium leading-none tracking-tight", className)}
 		{...props}
 	/>
 ))
@@ -90,7 +91,12 @@ const AlertDescription = React.forwardRef<
 	HTMLParagraphElement,
 	React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
-	<p ref={ref} className={cn("text-sm", className)} {...props} />
+	<p
+		ref={ref}
+		className={cn("text-sm", className)}
+		data-description={true}
+		{...props}
+	/>
 ))
 AlertDescription.displayName = "AlertDescription"
 
@@ -98,8 +104,8 @@ AlertDescription.displayName = "AlertDescription"
 Alert Action
 ********/
 const AlertAction = React.forwardRef<
-	HTMLButtonElement,
-	React.HTMLAttributes<HTMLButtonElement>
+	HTMLDivElement,
+	React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
 	<div ref={ref} className={cn("ml-auto self-center", className)} {...props} />
 ))

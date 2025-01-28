@@ -85,7 +85,7 @@ const FieldLabel = ({
 	return (
 		<Label
 			htmlFor={id}
-			className={cn(error && "text-destructive-fg", className)}
+			className={cn(error && "text-destructive", className)}
 			{...props}
 		/>
 	)
@@ -119,7 +119,7 @@ const FieldDescription = ({
 	className,
 	...props
 }: React.HTMLAttributes<HTMLParagraphElement>) => (
-	<p className={cn("text-sm text-subtle-fg", className)} {...props} />
+	<p className={cn("text-sm text-muted-foreground", className)} {...props} />
 )
 
 /********
@@ -133,7 +133,7 @@ const FieldError = ({
 	const { error } = useField()
 
 	return (
-		<p className={cn("text-sm text-destructive-fg", className)} {...props}>
+		<p className={cn("text-sm text-destructive", className)} {...props}>
 			{error || children}
 		</p>
 	)

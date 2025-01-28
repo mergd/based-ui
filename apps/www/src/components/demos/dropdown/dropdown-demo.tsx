@@ -1,7 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import Monicon from "@monicon/react"
+import {
+	PauseIcon,
+	PlayIcon,
+	SkipBackIcon,
+	SkipForwardIcon,
+} from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -33,22 +38,22 @@ export default function DropdownDemo() {
 				<DropdownGroup>
 					<DropdownGroupLabel>Playback</DropdownGroupLabel>
 					<DropdownItem>
-						<Monicon name="ri:play-fill" />
+						<PlayIcon />
 						Play
 						<DropdownItemShortcut>⌘P</DropdownItemShortcut>
 					</DropdownItem>
 					<DropdownItem>
-						<Monicon name="ri:pause-fill" />
+						<PauseIcon />
 						Pause
 						<DropdownItemShortcut>⇧⌘P</DropdownItemShortcut>
 					</DropdownItem>
 					<DropdownItem>
-						<Monicon name="ri:skip-back-fill" />
+						<SkipBackIcon />
 						Previous
 						<DropdownItemShortcut>⌘[</DropdownItemShortcut>
 					</DropdownItem>
 					<DropdownItem>
-						<Monicon name="ri:skip-forward-fill" />
+						<SkipForwardIcon />
 						Next
 						<DropdownItemShortcut>⌘]</DropdownItemShortcut>
 					</DropdownItem>

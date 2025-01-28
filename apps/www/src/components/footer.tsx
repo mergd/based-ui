@@ -1,7 +1,7 @@
 export const Footer = () => (
-	<footer className="border-t border-border">
+	<footer className="border-t">
 		<div className="container mx-auto p-4">
-			<div className="text-balance text-center text-sm text-muted-fg md:text-left">
+			<div className="text-balance text-center text-sm text-muted-foreground md:text-left">
 				Built by{" "}
 				<a
 					href="https://twitter.com/borabalogluu"

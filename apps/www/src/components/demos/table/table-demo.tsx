@@ -31,7 +31,7 @@ const movies = [
 
 export default function TableDemo() {
 	return (
-		<div className="w-full overflow-hidden rounded-lg border border-border pb-2">
+		<div className="w-full overflow-hidden rounded-lg border pb-2">
 			<Table>
 				<TableCaption>Top 10 Movies of All Time</TableCaption>
 				<TableHeader>

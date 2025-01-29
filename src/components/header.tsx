@@ -22,9 +22,18 @@ export const Header = () => {
 		<header className="sticky top-0 z-50 w-full border-b bg-background backdrop-blur supports-[backdrop-filter]:bg-background/60">
 			<div className="container mx-auto flex h-14 items-center px-4">
 				<Drawer open={open} onOpenChange={setOpen}>
-					<DrawerTrigger className="mr-2 flex size-8 items-center justify-center md:hidden">
-						<EqualIcon size={20} />
-					</DrawerTrigger>
+					<DrawerTrigger
+						render={() => (
+							<Button
+								className="mr-2 md:hidden"
+								variant="ghost"
+								size="icon"
+								onClick={() => setOpen(true)}
+							>
+								<EqualIcon />
+							</Button>
+						)}
+					/>
 					<DrawerPortal>
 						<DrawerContent className="mx-auto max-h-[70svh]">
 							<div className="overflow-auto p-6">

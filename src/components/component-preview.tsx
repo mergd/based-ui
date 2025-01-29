@@ -7,9 +7,7 @@ import { Button } from "@/components/ui/button"
 
 import { Catalog } from "@/configs/catalog"
 
-import { useTheme } from "@/providers/theme-provider"
-
-import { getHighlighter } from "@/lib/shiki"
+import { highlighter } from "@/lib/rehype/syntax-highlighting"
 import { cn } from "@/lib/utils"
 
 type DemoName = keyof typeof Catalog
@@ -26,41 +24,19 @@ export const ComponentPreview = ({
 	className,
 }: ComponentPreviewProps) => {
 	const { component: Component, content } = Catalog[name]
-	const { theme } = useTheme()
 
-	const [code, setCode] = React.useState<string | null>(null)
 	const [key, setKey] = React.useState(0)
 	const [copied, setCopied] = React.useState(false)
 
-	React.useEffect(() => {
-		async function highlight() {
-			try {
-				const highlighter = await getHighlighter()
-
-				const highlighted = highlighter.codeToHtml(content, {
-					lang: "tsx",
-					theme:
-						theme === "dark" ? "github-dark-default" : "github-light-default",
-					transformers: [
-						{
-							pre(node) {
-								node.properties.style = "tab-size: 2"
-							},
-							code(node) {
-								node.properties.style = "tab-size: 2"
-							},
-						},
-					],
-				})
-
-				setCode(highlighted)
-			} catch (error) {
-				console.error("Failed to highlight code:", error)
-			}
-		}
-
-		highlight()
-	}, [content, theme])
+	const prettyCode = React.useMemo(() => {
+		return highlighter.codeToHtml(content, {
+			lang: "tsx",
+			themes: {
+				dark: "github-dark-default",
+				light: "github-light-default",
+			},
+		})
+	}, [content])
 
 	const onCopy = async () => {
 		await navigator.clipboard.writeText(content!)
@@ -112,8 +88,10 @@ export const ComponentPreview = ({
 			</div>
 
 			<div
-				className="scrollbar-custom text-xs [&>pre>code]:!bg-transparent [&>pre]:!m-0 [&>pre]:max-h-[300px] [&>pre]:overflow-auto [&>pre]:!bg-background [&>pre]:p-4"
-				dangerouslySetInnerHTML={{ __html: code! }}
+				className={cn(
+					"scrollbar-custom text-xs [&>pre>code]:!bg-transparent [&>pre]:!m-0 [&>pre]:max-h-[300px] [&>pre]:overflow-auto [&>pre]:!bg-background [&>pre]:p-4"
+				)}
+				dangerouslySetInnerHTML={{ __html: prettyCode }}
 			/>
 		</div>
 	)

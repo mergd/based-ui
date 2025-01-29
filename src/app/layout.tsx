@@ -3,11 +3,11 @@ import { Geist as Jakarta } from "next/font/google"
 
 import "./globals.css"
 
+import { ThemeProvider } from "next-themes"
+
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 import { Toaster } from "@/components/ui/sonner"
-
-import { ThemeProvider } from "@/providers/theme-provider"
 
 const jakarta = Jakarta({
 	subsets: ["latin"],
@@ -21,7 +21,13 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
 	<html lang="en" suppressHydrationWarning>
 		<body className={jakarta.className}>
-			<ThemeProvider>
+			<ThemeProvider
+				attribute="class"
+				defaultTheme="system"
+				enableSystem
+				disableTransitionOnChange
+				enableColorScheme
+			>
 				<div className="Root flex flex-1 flex-col" data-vaul-drawer-wrapper="">
 					<Header />
 					<main className="flex-1">{children}</main>

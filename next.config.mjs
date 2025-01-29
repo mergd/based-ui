@@ -4,6 +4,8 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypeSlug from "rehype-slug"
 import remarkGfm from "remark-gfm"
 
+import { rehypeSyntaxHighlighting } from "./src/lib/rehype/syntax-highlighting/index.mjs"
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	pageExtensions: ["mdx", "tsx", "ts", "js", "jsx"],
@@ -40,7 +42,12 @@ const nextConfig = {
 const withMDX = createMDX({
 	options: {
 		remarkPlugins: [remarkGfm],
-		rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings, rehypeExtractToc],
+		rehypePlugins: [
+			rehypeSlug,
+			rehypeAutolinkHeadings,
+			rehypeExtractToc,
+			...rehypeSyntaxHighlighting,
+		],
 	},
 })
 

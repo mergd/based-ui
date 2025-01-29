@@ -95,6 +95,11 @@
 		@apply scroll-auto;
 	}
 
+	html.dark .shiki,
+	html.dark .shiki span {
+		color: var(--shiki-dark) !important;
+	}
+
 	body {
 		@apply bg-background text-foreground;
 	}

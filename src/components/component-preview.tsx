@@ -2,7 +2,6 @@
 
 import * as React from "react"
 import { CheckIcon, CopyIcon, Loader2Icon, RefreshCwIcon } from "lucide-react"
-import { useTheme } from "next-themes"
 
 import { Button } from "@/components/ui/button"
 
@@ -25,20 +24,19 @@ export const ComponentPreview = ({
 	className,
 }: ComponentPreviewProps) => {
 	const { component: Component, content } = Catalog[name]
-	const { theme } = useTheme()
 
-	const [code, setCode] = React.useState<string | null>(null)
 	const [key, setKey] = React.useState(0)
 	const [copied, setCopied] = React.useState(false)
 
-	React.useEffect(() => {
-		const prettyCode = highlighter.codeToHtml(content, {
+	const prettyCode = React.useMemo(() => {
+		return highlighter.codeToHtml(content, {
 			lang: "tsx",
-			theme: theme === "dark" ? "github-dark-default" : "github-light-default",
+			themes: {
+				dark: "github-dark-default",
+				light: "github-light-default",
+			},
 		})
-
-		setCode(prettyCode)
-	}, [content, theme])
+	}, [content])
 
 	const onCopy = async () => {
 		await navigator.clipboard.writeText(content!)
@@ -90,8 +88,10 @@ export const ComponentPreview = ({
 			</div>
 
 			<div
-				className="scrollbar-custom text-xs [&>pre>code]:!bg-transparent [&>pre]:!m-0 [&>pre]:max-h-[300px] [&>pre]:overflow-auto [&>pre]:!bg-background [&>pre]:p-4"
-				dangerouslySetInnerHTML={{ __html: code! }}
+				className={cn(
+					"scrollbar-custom text-xs [&>pre>code]:!bg-transparent [&>pre]:!m-0 [&>pre]:max-h-[300px] [&>pre]:overflow-auto [&>pre]:!bg-background [&>pre]:p-4"
+				)}
+				dangerouslySetInnerHTML={{ __html: prettyCode }}
 			/>
 		</div>
 	)

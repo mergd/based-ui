@@ -23,7 +23,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => (
 		<body className={jakarta.className}>
 			<ThemeProvider
 				attribute="class"
-				defaultTheme="dark"
+				defaultTheme="system"
 				enableSystem
 				disableTransitionOnChange
 				enableColorScheme

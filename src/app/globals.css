@@ -100,7 +100,7 @@
 	}
 
 	.Root {
-		@apply isolate min-h-screen;
+		@apply bg-background isolate min-h-screen;
 	}
 }
 

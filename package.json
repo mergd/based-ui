@@ -65,7 +65,7 @@
 		"tailwind-merge": "^2.6.0",
 		"tailwindcss-animate": "^1.0.7",
 		"unist-util-visit": "^5.0.0",
-		"vaul-base": "^0.0.2",
+		"vaul-base": "^0.0.3",
 		"vfile": "^6.0.3",
 		"zod": "^3.24.1",
 		"embla-carousel-react": "^8.5.2",

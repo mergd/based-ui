@@ -1,5 +1,6 @@
 import * as React from "react"
 
+import ComponentLinks from "@/components/component-links"
 import { ComponentPreview } from "@/components/component-preview"
 import {
 	Accordion,
@@ -163,6 +164,7 @@ const components: MDXComponents = {
 	AccordionItem,
 	AccordionContent,
 	ComponentPreview,
+	ComponentLinks,
 	Title: ({
 		className,
 		content,

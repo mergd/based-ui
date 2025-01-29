@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils"
 interface DocsSidebarNavItemsProps {
 	items: SidebarNavGroup["items"]
 	pathname: string | null
+	onNavItemClick?: () => void
 }
 
 const Label = ({ children }: { children: React.ReactNode }) => (
@@ -22,6 +23,7 @@ const Label = ({ children }: { children: React.ReactNode }) => (
 export const DocsSidebarNavItems = ({
 	items,
 	pathname,
+	onNavItemClick,
 }: DocsSidebarNavItemsProps) => (
 	<div className="mt-1 space-y-0.5 text-sm">
 		{items.map((item, index) =>
@@ -29,6 +31,7 @@ export const DocsSidebarNavItems = ({
 				<Link
 					key={index}
 					href={item.href}
+					onClick={onNavItemClick}
 					className={cn(
 						"-mx-2 flex w-full items-center rounded-md border px-2 py-1 transition-colors hover:text-foreground md:mx-0",
 						pathname === item.href
@@ -56,7 +59,11 @@ export const DocsSidebarNavItems = ({
 	</div>
 )
 
-export const DocsSidebarNav = () => {
+interface DocsSidebarNavProps {
+	onNavItemClick?: () => void
+}
+
+export const DocsSidebarNav = ({ onNavItemClick }: DocsSidebarNavProps) => {
 	const pathname = usePathname()
 
 	return (
@@ -67,7 +74,11 @@ export const DocsSidebarNav = () => {
 						{group.title}
 					</h4>
 					{group.items.length && (
-						<DocsSidebarNavItems items={group.items} pathname={pathname} />
+						<DocsSidebarNavItems
+							items={group.items}
+							pathname={pathname}
+							onNavItemClick={onNavItemClick}
+						/>
 					)}
 				</div>
 			))}

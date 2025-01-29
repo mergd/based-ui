@@ -69,7 +69,7 @@ const components: MDXComponents = {
 	code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
 		<code
 			className={cn(
-				"relative bg-background px-[0.3rem] py-[0.2rem] font-mono text-sm text-accent",
+				"relative rounded-sm bg-accent px-[0.3rem] py-[0.2rem] font-mono text-sm [&[data-inline]]:text-accent-foreground",
 				className
 			)}
 			{...props}

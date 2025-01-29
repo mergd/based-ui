@@ -1,7 +1,7 @@
 const config = {
 	disableEmoji: true,
 	format: "{type}{scope}: {subject}",
-	list: ["feat", "fix", "chore", "refactor", "docs"],
+	list: ["feat", "fix", "chore", "refactor", "docs", "perf"],
 	maxMessageLength: 64,
 	minMessageLength: 3,
 	questions: ["type", "subject", "body"],
@@ -25,6 +25,10 @@ const config = {
 		docs: {
 			description: "Documentation changes",
 			value: "docs",
+		},
+		perf: {
+			description: "A performance improvement",
+			value: "perf",
 		},
 		messages: {
 			type: "Select the type of change that you're committing:",

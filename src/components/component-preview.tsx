@@ -9,7 +9,7 @@ import { Catalog } from "@/configs/catalog"
 
 import { useTheme } from "@/providers/theme-provider"
 
-import { getHighlighter } from "@/lib/shiki"
+import { highlighter } from "@/lib/rehype/syntax-highlighting"
 import { cn } from "@/lib/utils"
 
 type DemoName = keyof typeof Catalog
@@ -33,33 +33,12 @@ export const ComponentPreview = ({
 	const [copied, setCopied] = React.useState(false)
 
 	React.useEffect(() => {
-		async function highlight() {
-			try {
-				const highlighter = await getHighlighter()
+		const prettyCode = highlighter.codeToHtml(content, {
+			lang: "tsx",
+			theme: theme === "dark" ? "github-dark-default" : "github-light-default",
+		})
 
-				const highlighted = highlighter.codeToHtml(content, {
-					lang: "tsx",
-					theme:
-						theme === "dark" ? "github-dark-default" : "github-light-default",
-					transformers: [
-						{
-							pre(node) {
-								node.properties.style = "tab-size: 2"
-							},
-							code(node) {
-								node.properties.style = "tab-size: 2"
-							},
-						},
-					],
-				})
-
-				setCode(highlighted)
-			} catch (error) {
-				console.error("Failed to highlight code:", error)
-			}
-		}
-
-		highlight()
+		setCode(prettyCode)
 	}, [content, theme])
 
 	const onCopy = async () => {

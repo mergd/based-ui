@@ -2,12 +2,11 @@
 
 import * as React from "react"
 import { CheckIcon, CopyIcon, Loader2Icon, RefreshCwIcon } from "lucide-react"
+import { useTheme } from "next-themes"
 
 import { Button } from "@/components/ui/button"
 
 import { Catalog } from "@/configs/catalog"
-
-import { useTheme } from "@/providers/theme-provider"
 
 import { highlighter } from "@/lib/rehype/syntax-highlighting"
 import { cn } from "@/lib/utils"

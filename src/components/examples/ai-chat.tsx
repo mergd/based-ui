@@ -3,17 +3,17 @@
 import { useState } from "react"
 import {
 	BotIcon,
-	MessageSquareMore,
-	MessageSquarePlus,
+	GlobeIcon,
+	MessageSquareMoreIcon,
+	MessageSquarePlusIcon,
 	MoreHorizontalIcon,
-	PanelRightClose,
-	PanelRightOpen,
-	Paperclip,
+	PanelRightCloseIcon,
+	PanelRightOpenIcon,
+	PaperclipIcon,
 	PencilIcon,
-	Search,
+	SearchIcon,
 	ShareIcon,
 	TrashIcon,
-	User,
 	UserIcon,
 } from "lucide-react"
 
@@ -41,7 +41,6 @@ interface Message {
 interface Chat {
 	id: number
 	title: string
-	timestamp: string
 }
 
 const initialMessages: Message[] = [
@@ -57,17 +56,14 @@ const sampleChats: Chat[] = [
 	{
 		id: 1,
 		title: "New Chat",
-		timestamp: "10:30 AM",
 	},
 	{
 		id: 2,
 		title: "Project Discussion",
-		timestamp: "Yesterday",
 	},
 	{
 		id: 3,
 		title: "Code Review",
-		timestamp: "2 days ago",
 	},
 ]
 
@@ -116,7 +112,7 @@ export const AIChatInterface = () => {
 			{/* Sidebar - hidden on mobile by default */}
 			<div
 				className={cn(
-					"absolute inset-y-0 left-0 z-20 w-[240px] border-r bg-background transition-transform md:static md:translate-x-0",
+					"absolute inset-y-0 left-0 z-20 w-[240px] border-r bg-secondary transition-transform md:static md:translate-x-0",
 					isSidebarOpen ? "translate-x-0" : "-translate-x-full"
 				)}
 			>
@@ -125,10 +121,10 @@ export const AIChatInterface = () => {
 						<h2 className="text-lg font-semibold">Chats</h2>
 						<div className="flex gap-2">
 							<Button variant="ghost" size="icon">
-								<Search />
+								<SearchIcon />
 							</Button>
 							<Button variant="ghost" size="icon">
-								<MessageSquarePlus />
+								<MessageSquarePlusIcon />
 							</Button>
 						</div>
 					</div>
@@ -170,7 +166,7 @@ export const AIChatInterface = () => {
 
 					<div className="mt-auto px-3 pb-3">
 						<Button variant="ghost" className="w-full justify-start gap-2">
-							<User className="size-4" />
+							<UserIcon className="size-4" />
 							Account
 						</Button>
 					</div>
@@ -181,7 +177,7 @@ export const AIChatInterface = () => {
 					className="absolute -right-11 top-2 z-50 md:hidden"
 					onClick={() => setIsSidebarOpen(!isSidebarOpen)}
 				>
-					{isSidebarOpen ? <PanelRightOpen /> : <PanelRightClose />}
+					{isSidebarOpen ? <PanelRightOpenIcon /> : <PanelRightCloseIcon />}
 				</Button>
 			</div>
 
@@ -223,23 +219,23 @@ export const AIChatInterface = () => {
 						))}
 						{isLoading && (
 							<div className="flex items-center gap-2 text-muted-foreground">
-								<MessageSquareMore className="size-4 animate-pulse" />
+								<MessageSquareMoreIcon className="size-4 animate-pulse" />
 								<span className="text-sm">AI is typing...</span>
 							</div>
 						)}
 					</div>
 				</ScrollArea>
 
-				<div className="border-t p-4">
+				<div className="relative border-t p-4">
 					<form
 						onSubmit={handleSubmit}
-						className="flex flex-col gap-2 overflow-hidden rounded-md border focus-within:ring-1 focus-within:ring-primary"
+						className="flex flex-col gap-2 overflow-hidden rounded-md border bg-secondary p-2"
 					>
 						<Textarea
 							placeholder="Type your message..."
 							value={inputValue}
 							onChange={(e) => setInputValue(e.target.value)}
-							className="flex-1 resize-none border-none focus-visible:ring-0"
+							className="min-h-20 flex-1 resize-none"
 							disabled={isLoading}
 							onKeyDown={(e) => {
 								if (e.key === "Enter" && !e.shiftKey) {
@@ -248,9 +244,12 @@ export const AIChatInterface = () => {
 								}
 							}}
 						/>
-						<div className="flex items-center gap-2 p-2">
-							<Button type="button" variant="ghost" size="icon">
-								<Paperclip className="size-4" />
+						<div className="flex gap-1">
+							<Button type="button" variant="ghost" size="icon-sm">
+								<PaperclipIcon className="size-4" />
+							</Button>
+							<Button type="button" variant="ghost" size="icon-sm">
+								<GlobeIcon className="size-4" />
 							</Button>
 						</div>
 					</form>

@@ -1,17 +1,10 @@
 import Link from "next/link"
 import { AlarmClockIcon, ArrowRightIcon, BookOpenIcon } from "lucide-react"
 
-import { AIChatInterface } from "@/components/examples/ai-chat"
+import Examples from "@/components/examples"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
-import {
-	Tab,
-	TabContent,
-	TabIndicator,
-	Tabs,
-	TabsList,
-} from "@/components/ui/tabs"
 
 const Home = () => (
 	<div className="container flex flex-col gap-12 py-10">
@@ -62,49 +55,7 @@ const Home = () => (
 
 			<Separator />
 
-			<div className="flex flex-col gap-4">
-				<h2 className="text-2xl font-semibold">Examples</h2>
-				<Tabs defaultValue="ai-chat">
-					<TabsList className="max-w-2xl border-none">
-						<Tab
-							className="text-muted-foreground transition-colors hover:text-foreground"
-							value="ai-chat"
-						>
-							AI Chat
-						</Tab>
-						<Tab
-							className="text-muted-foreground transition-colors hover:text-foreground"
-							value="mail"
-						>
-							Mail
-						</Tab>
-						<Tab
-							className="text-muted-foreground transition-colors hover:text-foreground"
-							value="calendar"
-						>
-							Calendar
-						</Tab>
-						<Tab
-							className="text-muted-foreground transition-colors hover:text-foreground"
-							value="dashboard"
-						>
-							Dashboard
-						</Tab>
-						<Tab
-							className="text-muted-foreground transition-colors hover:text-foreground"
-							value="settings"
-						>
-							Settings
-						</Tab>
-						<TabIndicator />
-					</TabsList>
-					<TabContent value="ai-chat" className="border-none p-0">
-						<AIChatInterface />
-					</TabContent>
-				</Tabs>
-			</div>
-
-			{/* <MailApp /> */}
+			<Examples />
 		</main>
 	</div>
 )

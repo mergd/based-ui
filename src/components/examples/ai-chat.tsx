@@ -108,7 +108,7 @@ export const AIChatInterface = () => {
 	}
 
 	return (
-		<Card className="relative grid h-[600px] grid-cols-1 overflow-hidden md:grid-cols-[240px_1fr]">
+		<Card className="relative grid h-[600px] grid-cols-1 overflow-hidden md:h-[800px] md:grid-cols-[240px_1fr]">
 			{/* Sidebar - hidden on mobile by default */}
 			<div
 				className={cn(
@@ -174,7 +174,7 @@ export const AIChatInterface = () => {
 				<Button
 					variant="ghost"
 					size="icon"
-					className="absolute -right-11 top-2 z-50 md:hidden"
+					className="absolute -right-11 top-2 z-50 bg-background md:hidden"
 					onClick={() => setIsSidebarOpen(!isSidebarOpen)}
 				>
 					{isSidebarOpen ? <PanelRightOpenIcon /> : <PanelRightCloseIcon />}

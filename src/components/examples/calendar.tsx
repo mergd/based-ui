@@ -59,7 +59,7 @@ export const CalendarInterface = () => {
 
 	const timeSlots = useMemo(() => generateTimeSlots(), [])
 	return (
-		<Card className="relative flex flex-col overflow-hidden md:h-[600px]">
+		<Card className="relative flex h-[600px] flex-col overflow-y-auto md:h-[800px] md:overflow-hidden">
 			<div className="grid h-full md:grid-cols-3 lg:grid-cols-[300px_1fr_1fr] xl:grid-cols-[300px_1fr_400px]">
 				<div className="flex flex-col gap-4 border-r p-4">
 					<Avatar size="sm">
@@ -205,7 +205,7 @@ export const CalendarInterface = () => {
 						showOutsideDays
 					/>
 				</div>
-				<div className="overflow-y-auto">
+				<div className="md:overflow-y-auto">
 					<div className="relative flex-1">
 						<div className="sticky top-0 z-10 flex items-center justify-between bg-background p-4">
 							<h2 className="font-medium">

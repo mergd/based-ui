@@ -298,7 +298,7 @@ export const MailInterface = () => {
 	const selectedEmail = emails.find((email) => email.id === selectedEmailId)!
 
 	return (
-		<Card className="relative grid h-[800px] overflow-hidden md:grid-cols-[400px_1fr] lg:grid-cols-[240px_400px_1fr]">
+		<Card className="relative grid h-[600px] overflow-hidden md:h-[800px] md:grid-cols-[400px_1fr] lg:grid-cols-[240px_400px_1fr]">
 			<div
 				className={cn(
 					"absolute inset-y-0 left-0 z-20 w-[240px] bg-background p-4 transition-transform lg:static lg:translate-x-0 lg:border-r",
@@ -376,7 +376,7 @@ export const MailInterface = () => {
 					</Input>
 				</div>
 
-				<div className="h-full space-y-2 overflow-y-auto overscroll-contain p-2">
+				<div className="h-full space-y-2 overflow-y-auto p-2">
 					{emails.map((email) => (
 						<MailItem
 							key={email.id}
@@ -408,6 +408,10 @@ export const MailInterface = () => {
 							>
 								<ArrowLeftIcon className="size-4" />
 							</Button>
+							<Separator
+								orientation="vertical"
+								className="mx-1 h-4 md:hidden"
+							/>
 							<Button variant="ghost" size="icon">
 								<ArchiveX className="size-4" />
 							</Button>
@@ -478,22 +482,22 @@ export const MailInterface = () => {
 					</div>
 				</header>
 
-				<div className="flex items-center justify-between border-b px-3 py-4">
-					<div className="flex items-center gap-x-2">
-						<Avatar>
-							<AvatarFallback>{selectedEmail.from[0]}</AvatarFallback>
-						</Avatar>
-						<div className="flex flex-1 flex-col space-y-0.5">
-							<h3 className="text-sm font-medium">{selectedEmail.subject}</h3>
-							<p className="text-xs text-muted-foreground">
-								From: {selectedEmail.from} &lt;{selectedEmail.email}&gt;
-							</p>
-						</div>
+				<div className="flex items-center gap-x-2 border-b px-3 py-4">
+					<Avatar>
+						<AvatarFallback>{selectedEmail.from[0]}</AvatarFallback>
+					</Avatar>
+					<div className="flex flex-1 flex-col space-y-0.5">
+						<h3 className="text-sm font-medium">{selectedEmail.subject}</h3>
+						<p className="text-xs text-muted-foreground">
+							From: {selectedEmail.from} &lt;{selectedEmail.email}&gt;
+						</p>
+						<p className="text-xs text-muted-foreground">
+							{selectedEmail.time}
+						</p>
 					</div>
-					<p className="text-xs text-muted-foreground">{selectedEmail.time}</p>
 				</div>
 
-				<ScrollArea className="grow">
+				<ScrollArea className="overscoll-auto grow">
 					<div className="whitespace-pre-wrap p-4 text-sm leading-relaxed">
 						{selectedEmail.preview}
 					</div>

@@ -23,12 +23,12 @@ export const Header = () => {
 			<div className="container mx-auto flex h-14 items-center px-4">
 				<Drawer open={open} onOpenChange={setOpen}>
 					<DrawerTrigger
-						render={() => (
+						render={(props) => (
 							<Button
 								className="mr-2 md:hidden"
 								variant="ghost"
 								size="icon"
-								onClick={() => setOpen(true)}
+								{...props}
 							>
 								<EqualIcon />
 							</Button>

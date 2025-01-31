@@ -4,6 +4,7 @@ import { useMemo, useState } from "react"
 
 import { AIChatInterface } from "@/components/examples/ai-chat"
 import { CalendarInterface } from "@/components/examples/calendar"
+import { MailInterface } from "@/components/examples/mail"
 import { Button } from "@/components/ui/button"
 
 import { cn } from "@/lib/utils"
@@ -17,23 +18,12 @@ const tabs = [
 	{
 		label: "Mail",
 		value: "mail",
+		content: <MailInterface />,
 	},
 	{
 		label: "Calendar",
 		value: "calendar",
 		content: <CalendarInterface />,
-	},
-	{
-		label: "Notes",
-		value: "notes",
-	},
-	{
-		label: "Tasks",
-		value: "tasks",
-	},
-	{
-		label: "Settings",
-		value: "settings",
 	},
 ]
 

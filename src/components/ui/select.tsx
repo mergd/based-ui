@@ -66,7 +66,7 @@ interface SelectContentProps
 
 const SelectContent = React.forwardRef<HTMLDivElement, SelectContentProps>(
 	({ children, className, positionerProps, ...props }, ref) => (
-		<BaseSelect.Positioner sideOffset={4} {...positionerProps}>
+		<BaseSelect.Positioner sideOffset={4} {...positionerProps} className="z-10">
 			<BaseSelect.Popup
 				ref={ref}
 				className={cn(

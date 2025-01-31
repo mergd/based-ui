@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react"
 
 import { AIChatInterface } from "@/components/examples/ai-chat"
+import { CalendarInterface } from "@/components/examples/calendar"
 import { Button } from "@/components/ui/button"
 
 import { cn } from "@/lib/utils"
@@ -20,6 +21,7 @@ const tabs = [
 	{
 		label: "Calendar",
 		value: "calendar",
+		content: <CalendarInterface />,
 	},
 	{
 		label: "Notes",
@@ -45,7 +47,7 @@ const Examples = () => {
 	return (
 		<div className="flex flex-col">
 			<h2 className="text-2xl font-semibold">Examples</h2>
-			<div className="flex gap-4 overflow-x-auto py-4">
+			<div className="flex gap-4 overflow-x-auto py-3">
 				{tabs.map((tab) => (
 					<Button
 						key={tab.value}
@@ -61,7 +63,7 @@ const Examples = () => {
 					</Button>
 				))}
 			</div>
-			<div className="flex-1">{selectedTabContent}</div>
+			<div className="mt-1 flex-1">{selectedTabContent}</div>
 		</div>
 	)
 }

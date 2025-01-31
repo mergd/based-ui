@@ -4,46 +4,83 @@ import * as React from "react"
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react"
 import { DayPicker } from "react-day-picker"
 
+import { buttonVariants } from "@/components/ui/button"
+
 import { cn } from "@/lib/utils"
 
 /********
 Calendar
 ********/
-const Calendar = (props: React.ComponentProps<typeof DayPicker>) => (
+const Calendar = ({
+	classNames,
+	...props
+}: React.ComponentProps<typeof DayPicker>) => (
 	<DayPicker
-		className={cn("rounded-md border p-3", props.className)}
 		classNames={{
-			root: "relative select-none",
-			month: "text-center m-0 space-y-1",
-			month_caption: "flex justify-center items-center h-8 font-medium text-sm",
-			today: "bg-secondary",
-			week: "flex justify-center py-0.5",
-			day: "size-8 flex items-center justify-center rounded-md [&:has(>button)]:hover:bg-accent [&:has(>button)]:hover:text-accent-foreground text-sm font-normal",
-			day_button:
-				"size-8 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent rounded-md",
-			weekdays: "flex justify-center",
-			weekday: "size-8 text-sm text-muted-foreground font-normal",
-			outside: "text-muted-foreground/50 hover:!text-muted-foreground/50",
-			selected: "!bg-primary !text-primary-foreground hover:!bg-primary",
-			range_middle: "rounded-none last:rounded-r-md first:rounded-l-md",
-			range_start:
+			root: cn(
+				"relative size-fit select-none rounded-md border p-3",
+				props.className
+			),
+			month: cn("m-0 space-y-1 text-center", classNames?.month),
+			month_caption: cn(
+				"flex h-8 items-center justify-center text-sm font-medium",
+				classNames?.month_caption
+			),
+			today: cn("bg-secondary", classNames?.today),
+			week: cn("flex justify-center py-0.5", classNames?.week),
+			day: cn(
+				"flex size-8 items-center justify-center rounded-md text-sm font-normal [&:has(>button)]:hover:bg-accent [&:has(>button)]:hover:text-accent-foreground",
+				classNames?.day
+			),
+			day_button: cn(
+				"size-8 rounded-md focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent",
+				classNames?.day_button
+			),
+			weekdays: cn("flex justify-center", classNames?.weekdays),
+			weekday: cn(
+				"size-8 text-sm font-normal text-muted-foreground",
+				classNames?.weekday
+			),
+			outside: cn(
+				"text-muted-foreground/50 hover:!text-muted-foreground/50",
+				classNames?.outside
+			),
+			selected: cn(
+				"!bg-primary !text-primary-foreground hover:!bg-primary",
+				classNames?.selected
+			),
+			range_middle: cn(
+				"rounded-none first:rounded-l-md last:rounded-r-md",
+				classNames?.range_middle
+			),
+			range_start: cn(
 				props.mode === "range" &&
-				props.selected?.from?.getTime() !== props.selected?.to?.getTime()
+					props.selected?.from?.getTime() !== props.selected?.to?.getTime()
 					? "rounded-r-none last:rounded-r-md"
 					: "",
-			range_end:
+				classNames?.range_start
+			),
+			range_end: cn(
 				props.mode === "range" &&
-				props.selected?.from?.getTime() !== props.selected?.to?.getTime()
+					props.selected?.from?.getTime() !== props.selected?.to?.getTime()
 					? "rounded-l-none first:rounded-l-md"
 					: "",
-			disabled: "pointer-events-none opacity-30",
-			hidden: "pointer-events-none",
+				classNames?.range_end
+			),
+			disabled: cn("pointer-events-none opacity-30", classNames?.disabled),
+			hidden: cn("pointer-events-none", classNames?.hidden),
+			nav: cn("", classNames?.nav),
+			month_grid: cn("", classNames?.month_grid),
 		}}
 		components={{
 			NextMonthButton: (props) => (
 				<button
 					{...props}
-					className="absolute right-3 flex size-8 items-center justify-center opacity-50 transition-opacity duration-200 hover:opacity-100"
+					className={cn(
+						buttonVariants({ variant: "ghost", size: "icon-sm" }),
+						"absolute right-3",
+						classNames?.button_next
+					)}
 				>
 					<ChevronRightIcon className="size-4" />
 				</button>
@@ -51,7 +88,11 @@ const Calendar = (props: React.ComponentProps<typeof DayPicker>) => (
 			PreviousMonthButton: (props) => (
 				<button
 					{...props}
-					className="absolute left-3 flex size-8 items-center justify-center opacity-50 transition-opacity duration-200 hover:opacity-100"
+					className={cn(
+						buttonVariants({ variant: "ghost", size: "icon-sm" }),
+						"absolute left-3",
+						classNames?.button_previous
+					)}
 				>
 					<ChevronLeftIcon className="size-4" />
 				</button>

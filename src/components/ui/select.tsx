@@ -66,11 +66,11 @@ interface SelectContentProps
 
 const SelectContent = React.forwardRef<HTMLDivElement, SelectContentProps>(
 	({ children, className, positionerProps, ...props }, ref) => (
-		<BaseSelect.Positioner sideOffset={4} {...positionerProps}>
+		<BaseSelect.Positioner sideOffset={4} {...positionerProps} className="z-10">
 			<BaseSelect.Popup
 				ref={ref}
 				className={cn(
-					"w-[--anchor-width] origin-[var(--transform-origin)] overflow-y-auto overscroll-contain rounded-md border bg-background p-1.5 text-sm text-foreground shadow-sm transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
+					"w-[--anchor-width] origin-[var(--transform-origin)] overflow-y-auto overscroll-contain rounded-md border bg-background p-1.5 text-sm text-foreground shadow-sm outline-none transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
 					className
 				)}
 				{...props}

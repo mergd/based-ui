@@ -37,7 +37,7 @@ const DocPage = async ({ params }: DocPageProps) => {
 
 	return (
 		<main className="relative xl:grid xl:grid-cols-[1fr_240px] xl:gap-10">
-			<div className="w-full xl:mx-auto xl:max-w-2xl">
+			<div className="w-full">
 				<doc.Doc />
 			</div>
 			{toc.length > 0 && <TableOfContents items={toc} />}

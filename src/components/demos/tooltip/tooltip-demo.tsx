@@ -8,8 +8,8 @@ import {
 export default function TooltipDemo() {
 	return (
 		<Tooltip>
-			<TooltipTrigger className="rounded-md border p-2">
-				<Icons.twitter />
+			<TooltipTrigger className="rounded-md border p-3">
+				<Icons.twitter className="size-4" />
 			</TooltipTrigger>
 			<TooltipContent>
 				<span>

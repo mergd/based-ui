@@ -35,6 +35,16 @@ export const ComponentPreview = ({
 				dark: "github-dark-default",
 				light: "github-light-default",
 			},
+			transformers: [
+				{
+					pre(node) {
+						node.properties.style = "tab-size: 2"
+					},
+					code(node) {
+						node.properties.style = "tab-size: 2"
+					},
+				},
+			],
 		})
 	}, [content])
 
@@ -88,9 +98,7 @@ export const ComponentPreview = ({
 			</div>
 
 			<div
-				className={cn(
-					"scrollbar-custom text-xs [&>pre>code]:!bg-transparent [&>pre]:!m-0 [&>pre]:max-h-[300px] [&>pre]:overflow-auto [&>pre]:!bg-background [&>pre]:p-4"
-				)}
+				className="scrollbar-custom text-xs [&>pre>code]:!bg-transparent [&>pre]:!m-0 [&>pre]:max-h-[300px] [&>pre]:overflow-auto [&>pre]:!bg-background [&>pre]:p-4"
 				dangerouslySetInnerHTML={{ __html: prettyCode }}
 			/>
 		</div>

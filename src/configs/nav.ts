@@ -95,6 +95,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/collapsible",
 				},
 				{
+					title: "Command",
+					href: "/docs/components/command",
+				},
+				{
 					title: "Context Menu",
 					href: "/docs/components/context-menu",
 				},
@@ -121,6 +125,10 @@ export const navConfig: NavConfig = {
 				{
 					title: "Input OTP",
 					href: "/docs/components/input-otp",
+				},
+				{
+					title: "Kbd",
+					href: "/docs/components/kbd",
 				},
 				{
 					title: "Menubar",

@@ -97,7 +97,7 @@ const SelectItem = React.forwardRef<
 		)}
 		{...props}
 	>
-		<div className="size-3">
+		<div className="size-4">
 			<BaseSelect.ItemIndicator>
 				<CheckIcon className="size-full" />
 			</BaseSelect.ItemIndicator>

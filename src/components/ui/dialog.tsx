@@ -54,7 +54,10 @@ const DialogContent = React.forwardRef<
 			{...props}
 		>
 			{children}
-			<DialogClose className="absolute right-4 top-4 rounded-sm text-muted-foreground opacity-50 transition-opacity hover:opacity-100 focus:outline-none">
+			<DialogClose
+				data-dialog-close
+				className="absolute right-4 top-4 rounded-sm text-muted-foreground opacity-50 transition-opacity hover:opacity-100 focus:outline-none"
+			>
 				<XIcon className="size-4 text-current" />
 				<span className="sr-only">Close</span>
 			</DialogClose>

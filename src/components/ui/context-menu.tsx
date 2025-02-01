@@ -124,7 +124,7 @@ const ContextMenuItem = React.forwardRef<
 	<Menu.Item
 		ref={ref}
 		className={cn(
-			"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50",
+			"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
 			className
 		)}
 		{...props}
@@ -180,7 +180,7 @@ const ContextMenuCheckboxItem = React.forwardRef<
 		)}
 		{...props}
 	>
-		<div className="size-3">
+		<div className="size-4">
 			<Menu.CheckboxItemIndicator>
 				<CheckIcon className="size-full" />
 			</Menu.CheckboxItemIndicator>
@@ -205,7 +205,7 @@ const ContextMenuRadioItem = React.forwardRef<
 		)}
 		{...props}
 	>
-		<div className="size-3">
+		<div className="size-4">
 			<Menu.RadioItemIndicator>
 				<CheckIcon className="size-full" />
 			</Menu.RadioItemIndicator>

@@ -85,7 +85,6 @@ const config = {
 			},
 			animation: {
 				blink: "blink 1s infinite",
-				"spin-slow": "spin 3s linear infinite",
 			},
 			keyframes: {
 				blink: {

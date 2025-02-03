@@ -1,11 +1,4 @@
-import { Metadata } from "next"
-
 import { DocsSidebarNav } from "@/components/sidebar"
-
-export const metadata: Metadata = {
-	title: null,
-	description: null,
-}
 
 const DocsLayout = ({ children }: { children: React.ReactNode }) => (
 	<div className="container mx-auto gap-8 px-4 md:grid md:grid-cols-[220px_minmax(0,1fr)] xl:grid-cols-[240px_1fr]">

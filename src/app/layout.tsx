@@ -1,26 +1,65 @@
 import type { Metadata } from "next"
-import { Geist as Jakarta } from "next/font/google"
+import { Inter } from "next/font/google"
 
 import "./globals.css"
 
 import { ThemeProvider } from "next-themes"
 
+import { Analytics } from "@/components/analytics"
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 import { Toaster } from "@/components/ui/sonner"
 
-const jakarta = Jakarta({
+import { siteConfig } from "@/configs/site"
+
+const inter = Inter({
 	subsets: ["latin"],
 })
 
 export const metadata: Metadata = {
-	title: "9ui - Documentation",
-	description: "Documentation for 9ui components",
+	title: {
+		default: siteConfig.name,
+		template: `%s - ${siteConfig.name}`,
+	},
+	metadataBase: new URL(siteConfig.url),
+	description: siteConfig.description,
+	keywords: ["React", "Base UI", "Tailwind CSS", "9ui"],
+	authors: [{ name: "Bora Baloglu", url: "https://x.com/borabalogluu" }],
+	creator: "Bora Baloglu",
+	openGraph: {
+		type: "website",
+		locale: "en_US",
+		url: siteConfig.url,
+		title: siteConfig.name,
+		description: siteConfig.description,
+		siteName: siteConfig.name,
+		images: [
+			{
+				url: siteConfig.ogImage,
+				width: 1200,
+				height: 630,
+				alt: siteConfig.name,
+			},
+		],
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: siteConfig.name,
+		description: siteConfig.description,
+		images: [siteConfig.ogImage],
+		creator: "@borabalogluu",
+	},
+	icons: {
+		icon: "/favicon.ico",
+		shortcut: "/favicon-16x16.png",
+		apple: "/apple-touch-icon.png",
+	},
+	manifest: `${siteConfig.url}/site.webmanifest`,
 }
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
 	<html lang="en" suppressHydrationWarning>
-		<body className={jakarta.className}>
+		<body className={inter.className}>
 			<ThemeProvider
 				attribute="class"
 				defaultTheme="system"
@@ -35,6 +74,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => (
 				</div>
 				<Toaster />
 			</ThemeProvider>
+			<Analytics />
 		</body>
 	</html>
 )

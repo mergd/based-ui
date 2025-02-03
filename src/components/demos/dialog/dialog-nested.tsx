@@ -27,7 +27,7 @@ export default function DialogNested() {
 				<div>
 					<div className="flex items-center gap-4">
 						<Avatar>
-							<AvatarImage src="/user.png" />
+							<AvatarImage src="/avatars/bora.png" />
 							<AvatarFallback>BB</AvatarFallback>
 						</Avatar>
 						<span className="text-foreground">Bora Baloglu</span>

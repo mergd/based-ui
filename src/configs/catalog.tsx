@@ -79,7 +79,7 @@ export const Catalog: Catalog = {
 	},
 	"avatar-demo": {
 		content:
-			'import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"\n\nexport function AvatarDemo() {\n\treturn (\n\t\t<Avatar size="md">\n\t\t\t<AvatarImage src="/user.png" alt="User" />\n\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t</Avatar>\n\t)\n}\n',
+			'import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"\n\nexport function AvatarDemo() {\n\treturn (\n\t\t<Avatar size="md">\n\t\t\t<AvatarImage src="/avatars/bora.png" alt="User" />\n\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t</Avatar>\n\t)\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/avatar/avatar-demo")
 		),
@@ -87,7 +87,7 @@ export const Catalog: Catalog = {
 	},
 	"avatar-fallback": {
 		content:
-			'import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"\n\nexport function AvatarWithFallback() {\n\treturn (\n\t\t<Avatar size="md">\n\t\t\t<AvatarImage src="/user.jpg" alt="User" />\n\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t</Avatar>\n\t)\n}\n',
+			'import { Avatar, AvatarFallback } from "@/components/ui/avatar"\n\nexport function AvatarWithFallback() {\n\treturn (\n\t\t<Avatar size="md">\n\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t</Avatar>\n\t)\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/avatar/avatar-fallback")
 		),
@@ -95,7 +95,7 @@ export const Catalog: Catalog = {
 	},
 	"avatar-sizes": {
 		content:
-			'import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"\n\nexport function AvatarSizes() {\n\treturn (\n\t\t<div className="flex flex-row items-center gap-4">\n\t\t\t<Avatar size="sm">\n\t\t\t\t<AvatarImage src="/user.png" alt="User" />\n\t\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t\t</Avatar>\n\t\t\t<Avatar size="md">\n\t\t\t\t<AvatarImage src="/user.png" alt="User" />\n\t\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t\t</Avatar>\n\t\t\t<Avatar size="lg">\n\t\t\t\t<AvatarImage src="/user.png" alt="User" />\n\t\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t\t</Avatar>\n\t\t</div>\n\t)\n}\n',
+			'import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"\n\nexport function AvatarSizes() {\n\treturn (\n\t\t<div className="flex flex-row items-center gap-4">\n\t\t\t<Avatar size="sm">\n\t\t\t\t<AvatarImage src="/avatars/bora.png" alt="User" />\n\t\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t\t</Avatar>\n\t\t\t<Avatar size="md">\n\t\t\t\t<AvatarImage src="/avatars/bora.png" alt="User" />\n\t\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t\t</Avatar>\n\t\t\t<Avatar size="lg">\n\t\t\t\t<AvatarImage src="/avatars/bora.png" alt="User" />\n\t\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t\t</Avatar>\n\t\t</div>\n\t)\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/avatar/avatar-sizes")
 		),
@@ -150,7 +150,7 @@ export const Catalog: Catalog = {
 	},
 	"button-destructive": {
 		content:
-			'import { Button } from "@/components/ui/button"\n\nexport function ButtonDestructive() {\n\treturn <Button variant="destructive">Delete</Button>\n}\n',
+			'import { Button } from "@/components/ui/button"\n\nexport function ButtonDestructive() {\n\treturn <Button variant="destructive">Destructive</Button>\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/button/button-destructive")
 		),
@@ -158,7 +158,7 @@ export const Catalog: Catalog = {
 	},
 	"button-ghost": {
 		content:
-			'import { Button } from "@/components/ui/button"\n\nexport function ButtonGhost() {\n\treturn <Button variant="ghost">Save</Button>\n}\n',
+			'import { Button } from "@/components/ui/button"\n\nexport function ButtonGhost() {\n\treturn <Button variant="ghost">Ghost</Button>\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/button/button-ghost")
 		),
@@ -174,7 +174,7 @@ export const Catalog: Catalog = {
 	},
 	"button-link": {
 		content:
-			'import { Button } from "@/components/ui/button"\n\nexport function ButtonLink() {\n\treturn <Button variant="link">Open</Button>\n}\n',
+			'import { Button } from "@/components/ui/button"\n\nexport function ButtonLink() {\n\treturn <Button variant="link">Link</Button>\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/button/button-link")
 		),
@@ -190,11 +190,19 @@ export const Catalog: Catalog = {
 	},
 	"button-outline": {
 		content:
-			'import { Button } from "@/components/ui/button"\n\nexport function ButtonOutline() {\n\treturn <Button variant="outline">Save</Button>\n}\n',
+			'import { Button } from "@/components/ui/button"\n\nexport function ButtonOutline() {\n\treturn <Button variant="outline">Outline</Button>\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/button/button-outline")
 		),
 		title: "button-outline.tsx",
+	},
+	"button-secondary": {
+		content:
+			'import { Button } from "@/components/ui/button"\n\nexport function ButtonSecondary() {\n\treturn <Button variant="secondary">Secondary</Button>\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/button/button-secondary")
+		),
+		title: "button-secondary.tsx",
 	},
 	"button-sizes": {
 		content:
@@ -372,7 +380,7 @@ export const Catalog: Catalog = {
 	},
 	"dialog-nested": {
 		content:
-			'import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"\nimport { Button } from "@/components/ui/button"\nimport {\n\tDialog,\n\tDialogClose,\n\tDialogContent,\n\tDialogDescription,\n\tDialogFooter,\n\tDialogHeader,\n\tDialogTitle,\n\tDialogTrigger,\n} from "@/components/ui/dialog"\n\nexport function DialogNested() {\n\treturn (\n\t\t<Dialog>\n\t\t\t<DialogTrigger\n\t\t\t\trender={(props) => <Button {...props}>View Details</Button>}\n\t\t\t/>\n\t\t\t<DialogContent>\n\t\t\t\t<DialogHeader>\n\t\t\t\t\t<DialogTitle>Profile</DialogTitle>\n\t\t\t\t\t<DialogDescription>\n\t\t\t\t\t\tView and edit your profile details.\n\t\t\t\t\t</DialogDescription>\n\t\t\t\t</DialogHeader>\n\t\t\t\t<div>\n\t\t\t\t\t<div className="flex items-center gap-4">\n\t\t\t\t\t\t<Avatar>\n\t\t\t\t\t\t\t<AvatarImage src="/user.png" />\n\t\t\t\t\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t\t\t\t\t</Avatar>\n\t\t\t\t\t\t<span className="text-foreground">Bora Baloglu</span>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<DialogFooter>\n\t\t\t\t\t<Dialog>\n\t\t\t\t\t\t<DialogTrigger\n\t\t\t\t\t\t\trender={(props) => (\n\t\t\t\t\t\t\t\t<Button {...props} variant="outline">\n\t\t\t\t\t\t\t\t\tEdit\n\t\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t<DialogContent>\n\t\t\t\t\t\t\t<DialogTitle>Edit</DialogTitle>\n\t\t\t\t\t\t\t<DialogDescription>\n\t\t\t\t\t\t\t\tEdit the details of the item\n\t\t\t\t\t\t\t</DialogDescription>\n\t\t\t\t\t\t\t<DialogFooter>\n\t\t\t\t\t\t\t\t<DialogClose\n\t\t\t\t\t\t\t\t\trender={(props) => (\n\t\t\t\t\t\t\t\t\t\t<Button {...props} variant="ghost">\n\t\t\t\t\t\t\t\t\t\t\tCancel\n\t\t\t\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t<Button>Save</Button>\n\t\t\t\t\t\t\t</DialogFooter>\n\t\t\t\t\t\t</DialogContent>\n\t\t\t\t\t</Dialog>\n\t\t\t\t</DialogFooter>\n\t\t\t</DialogContent>\n\t\t</Dialog>\n\t)\n}\n',
+			'import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"\nimport { Button } from "@/components/ui/button"\nimport {\n\tDialog,\n\tDialogClose,\n\tDialogContent,\n\tDialogDescription,\n\tDialogFooter,\n\tDialogHeader,\n\tDialogTitle,\n\tDialogTrigger,\n} from "@/components/ui/dialog"\n\nexport function DialogNested() {\n\treturn (\n\t\t<Dialog>\n\t\t\t<DialogTrigger\n\t\t\t\trender={(props) => <Button {...props}>View Details</Button>}\n\t\t\t/>\n\t\t\t<DialogContent>\n\t\t\t\t<DialogHeader>\n\t\t\t\t\t<DialogTitle>Profile</DialogTitle>\n\t\t\t\t\t<DialogDescription>\n\t\t\t\t\t\tView and edit your profile details.\n\t\t\t\t\t</DialogDescription>\n\t\t\t\t</DialogHeader>\n\t\t\t\t<div>\n\t\t\t\t\t<div className="flex items-center gap-4">\n\t\t\t\t\t\t<Avatar>\n\t\t\t\t\t\t\t<AvatarImage src="/avatars/bora.png" />\n\t\t\t\t\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t\t\t\t\t</Avatar>\n\t\t\t\t\t\t<span className="text-foreground">Bora Baloglu</span>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<DialogFooter>\n\t\t\t\t\t<Dialog>\n\t\t\t\t\t\t<DialogTrigger\n\t\t\t\t\t\t\trender={(props) => (\n\t\t\t\t\t\t\t\t<Button {...props} variant="outline">\n\t\t\t\t\t\t\t\t\tEdit\n\t\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t<DialogContent>\n\t\t\t\t\t\t\t<DialogTitle>Edit</DialogTitle>\n\t\t\t\t\t\t\t<DialogDescription>\n\t\t\t\t\t\t\t\tEdit the details of the item\n\t\t\t\t\t\t\t</DialogDescription>\n\t\t\t\t\t\t\t<DialogFooter>\n\t\t\t\t\t\t\t\t<DialogClose\n\t\t\t\t\t\t\t\t\trender={(props) => (\n\t\t\t\t\t\t\t\t\t\t<Button {...props} variant="ghost">\n\t\t\t\t\t\t\t\t\t\t\tCancel\n\t\t\t\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t<Button>Save</Button>\n\t\t\t\t\t\t\t</DialogFooter>\n\t\t\t\t\t\t</DialogContent>\n\t\t\t\t\t</Dialog>\n\t\t\t\t</DialogFooter>\n\t\t\t</DialogContent>\n\t\t</Dialog>\n\t)\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/dialog/dialog-nested")
 		),
@@ -468,7 +476,7 @@ export const Catalog: Catalog = {
 	},
 	"preview-card-demo": {
 		content:
-			'"use client"\n\nimport { GithubIcon, GlobeIcon, UserIcon } from "lucide-react"\n\nimport { Icons } from "@/components/icons"\nimport {\n\tPreviewCard,\n\tPreviewCardContent,\n\tPreviewCardTrigger,\n} from "@/components/ui/preview-card"\n\nexport function PreviewCardDemo() {\n\treturn (\n\t\t<PreviewCard>\n\t\t\t<p className="max-w-80 text-balance text-foreground">\n\t\t\t\tThis is a preview card component from{" "}\n\t\t\t\t<PreviewCardTrigger className="cursor-pointer underline underline-offset-2">\n\t\t\t\t\t9ui\n\t\t\t\t</PreviewCardTrigger>\n\t\t\t\t.\n\t\t\t</p>\n\t\t\t<PreviewCardContent className="max-w-80 text-sm">\n\t\t\t\t<Icons.logo className="mx-auto w-10" />\n\t\t\t\t<p className="mt-2">\n\t\t\t\t\tBeautiful, customizable components built with{" "}\n\t\t\t\t\t<a\n\t\t\t\t\t\thref="https://base-ui.com"\n\t\t\t\t\t\tclassName="underline underline-offset-2"\n\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t>\n\t\t\t\t\t\tBase UI\n\t\t\t\t\t</a>{" "}\n\t\t\t\t\tand{" "}\n\t\t\t\t\t<a\n\t\t\t\t\t\thref="https://tailwindcss.com"\n\t\t\t\t\t\tclassName="underline underline-offset-2"\n\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t>\n\t\t\t\t\t\tTailwind CSS\n\t\t\t\t\t</a>\n\t\t\t\t\t.\n\t\t\t\t</p>\n\t\t\t\t<div className="mt-2 flex flex-col gap-2 text-sm">\n\t\t\t\t\t<div className="flex items-center gap-2">\n\t\t\t\t\t\t<span className="flex items-center gap-1 text-muted-foreground">\n\t\t\t\t\t\t\t<UserIcon size={14} />\n\t\t\t\t\t\t\tCreator:\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<a\n\t\t\t\t\t\t\thref="https://x.com/borabalogluu"\n\t\t\t\t\t\t\tclassName="underline underline-offset-2"\n\t\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\tBora Baloglu\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div className="flex items-center gap-2">\n\t\t\t\t\t\t<span className="flex items-center gap-1 text-muted-foreground">\n\t\t\t\t\t\t\t<GithubIcon size={14} />\n\t\t\t\t\t\t\tSource code:\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<a\n\t\t\t\t\t\t\thref="https://github.com/borabaloglu/9ui"\n\t\t\t\t\t\t\tclassName="underline underline-offset-2"\n\t\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\tGithub\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div className="flex items-center gap-2">\n\t\t\t\t\t\t<span className="flex items-center gap-1 text-muted-foreground">\n\t\t\t\t\t\t\t<GlobeIcon size={14} />\n\t\t\t\t\t\t\tWebsite\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<a\n\t\t\t\t\t\t\thref="https://9ui.vercel.app"\n\t\t\t\t\t\t\tclassName="underline underline-offset-2"\n\t\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\t9ui.vercel.app\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</PreviewCardContent>\n\t\t</PreviewCard>\n\t)\n}\n',
+			'"use client"\n\nimport { GithubIcon, GlobeIcon, UserIcon } from "lucide-react"\n\nimport { Icons } from "@/components/icons"\nimport {\n\tPreviewCard,\n\tPreviewCardContent,\n\tPreviewCardTrigger,\n} from "@/components/ui/preview-card"\n\nexport function PreviewCardDemo() {\n\treturn (\n\t\t<PreviewCard>\n\t\t\t<p className="max-w-80 text-balance text-foreground">\n\t\t\t\tThis is a preview card component from{" "}\n\t\t\t\t<PreviewCardTrigger className="cursor-pointer underline underline-offset-2">\n\t\t\t\t\t9ui\n\t\t\t\t</PreviewCardTrigger>\n\t\t\t\t.\n\t\t\t</p>\n\t\t\t<PreviewCardContent className="max-w-80 text-sm">\n\t\t\t\t<Icons.logo className="mx-auto w-10" />\n\t\t\t\t<p className="mt-2">\n\t\t\t\t\tBeautiful, customizable components built with{" "}\n\t\t\t\t\t<a\n\t\t\t\t\t\thref="https://base-ui.com"\n\t\t\t\t\t\tclassName="underline underline-offset-2"\n\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t>\n\t\t\t\t\t\tBase UI\n\t\t\t\t\t</a>{" "}\n\t\t\t\t\tand{" "}\n\t\t\t\t\t<a\n\t\t\t\t\t\thref="https://tailwindcss.com"\n\t\t\t\t\t\tclassName="underline underline-offset-2"\n\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t>\n\t\t\t\t\t\tTailwind CSS\n\t\t\t\t\t</a>\n\t\t\t\t\t.\n\t\t\t\t</p>\n\t\t\t\t<div className="mt-2 flex flex-col gap-2 text-sm">\n\t\t\t\t\t<div className="flex items-center gap-2">\n\t\t\t\t\t\t<span className="flex items-center gap-1 text-muted-foreground">\n\t\t\t\t\t\t\t<UserIcon size={14} />\n\t\t\t\t\t\t\tCreator:\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<a\n\t\t\t\t\t\t\thref="https://x.com/borabalogluu"\n\t\t\t\t\t\t\tclassName="underline underline-offset-2"\n\t\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\tBora Baloglu\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div className="flex items-center gap-2">\n\t\t\t\t\t\t<span className="flex items-center gap-1 text-muted-foreground">\n\t\t\t\t\t\t\t<GithubIcon size={14} />\n\t\t\t\t\t\t\tSource code:\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<a\n\t\t\t\t\t\t\thref="https://github.com/borabaloglu/9ui"\n\t\t\t\t\t\t\tclassName="underline underline-offset-2"\n\t\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\tGithub\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div className="flex items-center gap-2">\n\t\t\t\t\t\t<span className="flex items-center gap-1 text-muted-foreground">\n\t\t\t\t\t\t\t<GlobeIcon size={14} />\n\t\t\t\t\t\t\tWebsite\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<a\n\t\t\t\t\t\t\thref="https://9ui.dev"\n\t\t\t\t\t\t\tclassName="underline underline-offset-2"\n\t\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\t9ui.dev\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</PreviewCardContent>\n\t\t</PreviewCard>\n\t)\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/preview-card/preview-card-demo")
 		),

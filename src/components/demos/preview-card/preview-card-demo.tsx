@@ -73,11 +73,11 @@ export default function PreviewCardDemo() {
 							Website
 						</span>
 						<a
-							href="https://9ui.vercel.app"
+							href="https://9ui.dev"
 							className="underline underline-offset-2"
 							target="_blank"
 						>
-							9ui.vercel.app
+							9ui.dev
 						</a>
 					</div>
 				</div>

@@ -5,14 +5,8 @@ import { Tabs as BaseTabs } from "@base-ui-components/react/tabs"
 
 import { cn } from "@/lib/utils"
 
-/********
-Tabs Types
-********/
 type TabsVariant = "capsule" | "underline"
 
-/********
-Tabs Context
-********/
 type TabsContext = {
 	variant: TabsVariant
 }
@@ -29,9 +23,6 @@ const useTabs = () => {
 	return context
 }
 
-/********
-Tabs
-********/
 interface TabsProps
 	extends React.ComponentPropsWithoutRef<typeof BaseTabs.Root> {
 	variant?: TabsVariant
@@ -46,9 +37,6 @@ const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
 )
 Tabs.displayName = "Tabs"
 
-/********
-Tabs List
-********/
 const TabsList = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof BaseTabs.List>
@@ -69,9 +57,6 @@ const TabsList = React.forwardRef<
 })
 TabsList.displayName = "TabsList"
 
-/********
-Tab
-********/
 const Tab = React.forwardRef<
 	HTMLButtonElement,
 	React.ComponentPropsWithoutRef<typeof BaseTabs.Tab>
@@ -87,9 +72,6 @@ const Tab = React.forwardRef<
 ))
 Tab.displayName = "Tab"
 
-/********
-Tab Indicator
-********/
 const TabIndicator = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof BaseTabs.Indicator>
@@ -111,9 +93,6 @@ const TabIndicator = React.forwardRef<
 })
 TabIndicator.displayName = "TabIndicator"
 
-/********
-Tab Content
-********/
 const TabContent = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof BaseTabs.Panel>

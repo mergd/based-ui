@@ -4,23 +4,14 @@ import { CheckIcon, ChevronDownIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
-/********
-Select Mappings
-********/
 const SelectGroup = BaseSelect.Group
 SelectGroup.displayName = "SelectGroup"
 
-/********
-Select
-********/
 const Select = <T,>(props: BaseSelect.Root.Props<T>) => (
 	<BaseSelect.Root alignItemToTrigger={false} modal={false} {...props} />
 )
 Select.displayName = "Select"
 
-/********
-Select Trigger
-********/
 const SelectTrigger = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof BaseSelect.Trigger>
@@ -41,9 +32,6 @@ const SelectTrigger = React.forwardRef<
 ))
 SelectTrigger.displayName = "SelectTrigger"
 
-/********
-Select Value
-********/
 const SelectValue = React.forwardRef<
 	HTMLSpanElement,
 	React.ComponentPropsWithoutRef<typeof BaseSelect.Value>
@@ -56,9 +44,6 @@ const SelectValue = React.forwardRef<
 ))
 SelectValue.displayName = "SelectValue"
 
-/********
-Select Content
-********/
 interface SelectContentProps
 	extends React.ComponentPropsWithoutRef<typeof BaseSelect.Popup> {
 	positionerProps?: BaseSelect.Positioner.Props
@@ -82,9 +67,6 @@ const SelectContent = React.forwardRef<HTMLDivElement, SelectContentProps>(
 )
 SelectContent.displayName = "SelectContent"
 
-/********
-Select Item
-********/
 const SelectItem = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof BaseSelect.Item>
@@ -107,9 +89,6 @@ const SelectItem = React.forwardRef<
 ))
 SelectItem.displayName = "SelectItem"
 
-/********
-Select Group Label
-********/
 const SelectGroupLabel = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof BaseSelect.GroupLabel>
@@ -125,9 +104,6 @@ const SelectGroupLabel = React.forwardRef<
 ))
 SelectGroupLabel.displayName = "SelectGroupLabel"
 
-/********
-Select Separator
-********/
 const SelectSeparator = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof BaseSelect.Separator>

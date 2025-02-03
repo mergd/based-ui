@@ -2,9 +2,6 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
-/********
-Skeleton
-********/
 const Skeleton = ({
 	className,
 	...props

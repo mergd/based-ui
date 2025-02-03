@@ -6,9 +6,6 @@ import { MinusIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
-/********
-OTP Input
-********/
 const InputOTP = React.forwardRef<
 	React.ElementRef<typeof OTPInput>,
 	React.ComponentPropsWithoutRef<typeof OTPInput>
@@ -21,9 +18,6 @@ const InputOTP = React.forwardRef<
 ))
 InputOTP.displayName = "InputOTP"
 
-/********
-OTP Group
-********/
 const InputOTPGroup = React.forwardRef<
 	React.ElementRef<"div">,
 	React.ComponentPropsWithoutRef<"div">
@@ -36,9 +30,6 @@ const InputOTPGroup = React.forwardRef<
 ))
 InputOTPGroup.displayName = "InputOTPGroup"
 
-/********
-OTP Slot
-********/
 const InputOTPSlot = React.forwardRef<
 	React.ElementRef<"div">,
 	React.ComponentPropsWithoutRef<"div"> & { index: number }
@@ -67,9 +58,6 @@ const InputOTPSlot = React.forwardRef<
 })
 InputOTPSlot.displayName = "InputOTPSlot"
 
-/********
-OTP Separator
-********/
 const InputOTPSeparator = React.forwardRef<
 	React.ElementRef<"div">,
 	React.ComponentPropsWithoutRef<"div">

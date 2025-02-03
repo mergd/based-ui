@@ -8,9 +8,6 @@ import { buttonVariants } from "@/components/ui/button"
 
 import { cn } from "@/lib/utils"
 
-/********
-Calendar
-********/
 const Calendar = ({
 	classNames,
 	...props

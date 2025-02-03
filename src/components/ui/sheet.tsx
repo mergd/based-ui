@@ -7,9 +7,6 @@ import { XIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
-/********
-Sheet Mappings
-********/
 const Sheet = Dialog.Root
 
 const SheetTrigger = Dialog.Trigger
@@ -23,9 +20,6 @@ const SheetPortal = Dialog.Portal
 const SheetClose = Dialog.Close
 SheetClose.displayName = "SheetClose"
 
-/********
-Sheet Backdrop
-********/
 const SheetBackdrop = React.forwardRef<
 	React.ElementRef<"div">,
 	React.ComponentPropsWithoutRef<typeof Dialog.Backdrop>
@@ -41,9 +35,6 @@ const SheetBackdrop = React.forwardRef<
 ))
 SheetBackdrop.displayName = "SheetBackdrop"
 
-/********
-Sheet Content
-********/
 const sheetContentVariants = cva(
 	"fixed max-h-[calc(100vh-2rem)] bg-background p-6 text-foreground shadow-md outline-none transition-all duration-500 ease-in-out",
 	{
@@ -85,9 +76,6 @@ const SheetContent = React.forwardRef<
 ))
 SheetContent.displayName = "SheetContent"
 
-/********
-Sheet Header
-********/
 const SheetHeader = React.forwardRef<
 	HTMLDivElement,
 	React.HTMLAttributes<HTMLDivElement>
@@ -100,9 +88,6 @@ const SheetHeader = React.forwardRef<
 ))
 SheetHeader.displayName = "SheetHeader"
 
-/********
-Sheet Title
-********/
 const SheetTitle = React.forwardRef<
 	HTMLHeadingElement,
 	React.HTMLAttributes<HTMLHeadingElement>
@@ -115,9 +100,6 @@ const SheetTitle = React.forwardRef<
 ))
 SheetTitle.displayName = "SheetTitle"
 
-/********
-Sheet Description
-********/
 const SheetDescription = React.forwardRef<
 	HTMLParagraphElement,
 	React.HTMLAttributes<HTMLParagraphElement>
@@ -130,9 +112,6 @@ const SheetDescription = React.forwardRef<
 ))
 SheetDescription.displayName = "SheetDescription"
 
-/********
-Sheet Footer
-********/
 const SheetFooter = React.forwardRef<
 	HTMLDivElement,
 	React.HTMLAttributes<HTMLDivElement>

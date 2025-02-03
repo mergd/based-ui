@@ -3,9 +3,6 @@ import { Switch as BaseSwitch } from "@base-ui-components/react/switch"
 
 import { cn } from "@/lib/utils"
 
-/********
-Switch
-********/
 const Switch = React.forwardRef<
 	HTMLButtonElement,
 	React.ComponentPropsWithoutRef<typeof BaseSwitch.Root>

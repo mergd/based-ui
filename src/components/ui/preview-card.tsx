@@ -5,16 +5,10 @@ import { PreviewCard as BasePreviewCard } from "@base-ui-components/react"
 
 import { cn } from "@/lib/utils"
 
-/********
-Preview Card Mappings
-********/
 const PreviewCard = BasePreviewCard.Root
 
 const PreviewCardTrigger = BasePreviewCard.Trigger
 
-/********
-Preview Card Content
-********/
 const PreviewCardContent = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof BasePreviewCard.Popup>

@@ -3,9 +3,6 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
-/********
-Badge Variants
-********/
 const badgeVariants = cva(
 	"inline-flex items-center rounded-full px-3 py-0.5 text-xs font-semibold gap-2 border",
 	{
@@ -21,9 +18,6 @@ const badgeVariants = cva(
 	}
 )
 
-/********
-Badge
-********/
 export interface BadgeProps
 	extends React.HTMLAttributes<HTMLDivElement>,
 		VariantProps<typeof badgeVariants> {}
@@ -32,9 +26,6 @@ const Badge = ({ className, variant, ...props }: BadgeProps) => (
 	<div className={cn(badgeVariants({ variant }), className)} {...props} />
 )
 
-/********
-Badge Indicator
-********/
 const badgeIndicatorVariants = cva("rounded-full size-2", {
 	variants: {
 		variant: {

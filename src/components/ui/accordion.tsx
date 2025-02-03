@@ -4,14 +4,8 @@ import { ChevronDownIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
-/********
-Accordion Mappings
-********/
 const Accordion = BaseAccordion.Root
 
-/********
-Accordion Item
-********/
 const AccordionItem = React.forwardRef<
 	HTMLDivElement,
 	BaseAccordion.Item.Props
@@ -24,9 +18,6 @@ const AccordionItem = React.forwardRef<
 ))
 AccordionItem.displayName = "AccordionItem"
 
-/********
-Accordion Trigger
-********/
 const AccordionTrigger = React.forwardRef<
 	HTMLButtonElement,
 	BaseAccordion.Trigger.Props
@@ -47,9 +38,6 @@ const AccordionTrigger = React.forwardRef<
 ))
 AccordionTrigger.displayName = "AccordionTrigger"
 
-/********
-Accordion Content
-********/
 const AccordionContent = ({
 	children,
 	className,

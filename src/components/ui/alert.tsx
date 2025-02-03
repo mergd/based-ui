@@ -3,9 +3,6 @@ import { cva, VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
-/********
-Alert Variants
-********/
 const alertVariants = cva(
 	"flex w-full items-start space-x-4 rounded-md border p-4",
 	{
@@ -25,9 +22,6 @@ const alertVariants = cva(
 	}
 )
 
-/********
-Alert
-********/
 export interface AlertProps
 	extends VariantProps<typeof alertVariants>,
 		React.HTMLAttributes<HTMLDivElement> {}
@@ -43,9 +37,6 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
 )
 Alert.displayName = "Alert"
 
-/********
-Alert Content
-********/
 const AlertContent = React.forwardRef<
 	HTMLDivElement,
 	React.HTMLAttributes<HTMLDivElement>
@@ -58,9 +49,6 @@ const AlertContent = React.forwardRef<
 ))
 AlertContent.displayName = "AlertContent"
 
-/********
-Alert Icon
-********/
 const AlertIcon = React.forwardRef<
 	HTMLDivElement,
 	React.HTMLAttributes<HTMLDivElement>
@@ -69,9 +57,6 @@ const AlertIcon = React.forwardRef<
 ))
 AlertIcon.displayName = "AlertIcon"
 
-/********
-Alert Title
-********/
 const AlertTitle = React.forwardRef<
 	HTMLHeadingElement,
 	React.HTMLAttributes<HTMLHeadingElement>
@@ -84,9 +69,6 @@ const AlertTitle = React.forwardRef<
 ))
 AlertTitle.displayName = "AlertTitle"
 
-/********
-Alert Description
-********/
 const AlertDescription = React.forwardRef<
 	HTMLParagraphElement,
 	React.HTMLAttributes<HTMLParagraphElement>
@@ -100,9 +82,6 @@ const AlertDescription = React.forwardRef<
 ))
 AlertDescription.displayName = "AlertDescription"
 
-/********
-Alert Action
-********/
 const AlertAction = React.forwardRef<
 	HTMLDivElement,
 	React.HTMLAttributes<HTMLDivElement>

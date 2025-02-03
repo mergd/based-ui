@@ -3,9 +3,6 @@ import { ChevronRightIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
-/********
-Breadcrumbs Root
-********/
 const Breadcrumb = React.forwardRef<
 	HTMLElement,
 	React.ComponentPropsWithoutRef<"nav">
@@ -13,9 +10,6 @@ const Breadcrumb = React.forwardRef<
 
 Breadcrumb.displayName = "Breadcrumb"
 
-/********
-Breadcrumb List
-********/
 const BreadcrumbList = React.forwardRef<
 	HTMLOListElement,
 	React.OlHTMLAttributes<HTMLOListElement>
@@ -31,9 +25,6 @@ const BreadcrumbList = React.forwardRef<
 ))
 BreadcrumbList.displayName = "BreadcrumbList"
 
-/********
-Breadcrumb Item
-********/
 export interface BreadcrumbItemProps
 	extends React.LiHTMLAttributes<HTMLLIElement> {
 	active?: boolean
@@ -55,9 +46,6 @@ const BreadcrumbItem = React.forwardRef<HTMLLIElement, BreadcrumbItemProps>(
 )
 BreadcrumbItem.displayName = "BreadcrumbItem"
 
-/********
-Breadcrumb Separator
-********/
 const BreadcrumbSeparator = React.forwardRef<
 	HTMLSpanElement,
 	React.HTMLAttributes<HTMLSpanElement>

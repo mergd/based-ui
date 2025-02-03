@@ -13,9 +13,6 @@ import { Label } from "@/components/ui/label"
 
 import { cn } from "@/lib/utils"
 
-/********
-Field Context
-********/
 type FieldContextType = {
 	name: string
 	id: string
@@ -24,9 +21,6 @@ type FieldContextType = {
 
 const FieldContext = React.createContext<FieldContextType | null>(null)
 
-/********
-Field
-********/
 const Field = <
 	TFieldValues extends FieldValues = FieldValues,
 	TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
@@ -63,9 +57,6 @@ const useField = () => {
 	}
 }
 
-/********
-Field Content
-********/
 const FieldContent = ({
 	className,
 	...props
@@ -73,9 +64,6 @@ const FieldContent = ({
 	<div className={cn("flex flex-col gap-2", className)} {...props} />
 )
 
-/********
-Field Label
-********/
 const FieldLabel = ({
 	className,
 	...props
@@ -91,9 +79,6 @@ const FieldLabel = ({
 	)
 }
 
-/********
-Field Control
-********/
 const FieldControl = ({
 	children,
 	...props
@@ -112,9 +97,6 @@ const FieldControl = ({
 	)
 }
 
-/********
-Field Description
-********/
 const FieldDescription = ({
 	className,
 	...props
@@ -122,9 +104,6 @@ const FieldDescription = ({
 	<p className={cn("text-sm text-muted-foreground", className)} {...props} />
 )
 
-/********
-Field Error
-********/
 const FieldError = ({
 	children,
 	className,

@@ -5,14 +5,8 @@ import { cva, VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
-/********
-Avatar Types
-********/
 type AvatarImageStatus = "loading" | "loaded" | "error"
 
-/********
-Avatar Context
-********/
 interface AvatarContextValue {
 	imageStatus: AvatarImageStatus
 	setImageStatus: (imageStatus: AvatarImageStatus) => void
@@ -33,9 +27,6 @@ const useAvatarContext = () => {
 	return context
 }
 
-/********
-Avatar Variants
-********/
 const avatarVariants = cva(
 	"relative flex shrink-0 overflow-hidden rounded-full",
 	{
@@ -52,9 +43,6 @@ const avatarVariants = cva(
 	}
 )
 
-/********
-Avatar
-********/
 export interface AvatarProps
 	extends React.HTMLAttributes<HTMLDivElement>,
 		VariantProps<typeof avatarVariants> {}
@@ -77,9 +65,6 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
 )
 Avatar.displayName = "Avatar"
 
-/********
-Avatar Image
-********/
 const AvatarImage = React.forwardRef<
 	HTMLImageElement,
 	React.ImgHTMLAttributes<HTMLImageElement>
@@ -109,9 +94,6 @@ const AvatarImage = React.forwardRef<
 })
 AvatarImage.displayName = "AvatarImage"
 
-/********
-Avatar Fallback
-********/
 const AvatarFallback = React.forwardRef<
 	HTMLSpanElement,
 	React.HTMLAttributes<HTMLSpanElement>

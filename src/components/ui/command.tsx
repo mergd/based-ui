@@ -8,9 +8,6 @@ import { Dialog, DialogContent } from "@/components/ui/dialog"
 
 import { cn } from "@/lib/utils"
 
-/********
-Command
-********/
 const Command = React.forwardRef<
 	React.ElementRef<typeof CommandBase>,
 	React.ComponentPropsWithoutRef<typeof CommandBase>
@@ -26,9 +23,6 @@ const Command = React.forwardRef<
 ))
 Command.displayName = "Command"
 
-/********
-Command Dialog
-********/
 const CommandDialog = ({
 	children,
 	...props
@@ -45,9 +39,6 @@ const CommandDialog = ({
 }
 CommandDialog.displayName = "CommandDialog"
 
-/********
-Command Input
-********/
 const CommandInput = React.forwardRef<
 	React.ElementRef<typeof CommandBase.Input>,
 	React.ComponentPropsWithoutRef<typeof CommandBase.Input>
@@ -66,9 +57,6 @@ const CommandInput = React.forwardRef<
 ))
 CommandInput.displayName = "CommandInput"
 
-/********
-Command List
-********/
 const CommandList = React.forwardRef<
 	React.ElementRef<typeof CommandBase.List>,
 	React.ComponentPropsWithoutRef<typeof CommandBase.List>
@@ -81,9 +69,6 @@ const CommandList = React.forwardRef<
 ))
 CommandList.displayName = "CommandList"
 
-/********
-Command
-********/
 const CommandEmpty = React.forwardRef<
 	React.ElementRef<typeof CommandBase.Empty>,
 	React.ComponentPropsWithoutRef<typeof CommandBase.Empty>
@@ -97,9 +82,6 @@ const CommandEmpty = React.forwardRef<
 
 CommandEmpty.displayName = "CommandEmpty"
 
-/********
-Command Group
-********/
 const CommandGroup = React.forwardRef<
 	React.ElementRef<typeof CommandBase.Group>,
 	React.ComponentPropsWithoutRef<typeof CommandBase.Group>
@@ -115,9 +97,6 @@ const CommandGroup = React.forwardRef<
 ))
 CommandGroup.displayName = "CommandGroup"
 
-/********
-Command Separator
-********/
 const CommandSeparator = React.forwardRef<
 	React.ElementRef<typeof CommandBase.Separator>,
 	React.ComponentPropsWithoutRef<typeof CommandBase.Separator>
@@ -130,9 +109,6 @@ const CommandSeparator = React.forwardRef<
 ))
 CommandSeparator.displayName = "CommandSeparator"
 
-/********
-Command Item
-********/
 const CommandItem = React.forwardRef<
 	React.ElementRef<typeof CommandBase.Item>,
 	React.ComponentPropsWithoutRef<typeof CommandBase.Item>
@@ -148,9 +124,6 @@ const CommandItem = React.forwardRef<
 ))
 CommandItem.displayName = "CommandItem"
 
-/********
-Command Shortcut
-********/
 const CommandShortcut = ({
 	className,
 	...props

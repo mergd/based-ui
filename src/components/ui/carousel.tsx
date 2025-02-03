@@ -12,18 +12,12 @@ import { Button } from "@/components/ui/button"
 
 import { cn } from "@/lib/utils"
 
-/********
-Carousel Types
-********/
 type CarouselRef = EmblaViewportRefType
 type CarouselApi = UseEmblaCarouselType[1]
 type CarouselOptions = EmblaOptionsType
 type CarouselPlugins = EmblaPluginType[]
 type CarouselOrientation = "horizontal" | "vertical"
 
-/********
-Carousel Context
-********/
 type CarouselContextType = {
 	carouselRef: CarouselRef
 	carouselApi: CarouselApi
@@ -46,9 +40,6 @@ const useCarousel = () => {
 	return context
 }
 
-/********
-Carousel
-********/
 interface CarouselProps extends React.HTMLAttributes<HTMLDivElement> {
 	options?: Omit<CarouselOptions, "axis">
 	plugins?: CarouselPlugins
@@ -138,9 +129,6 @@ const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
 )
 Carousel.displayName = "Carousel"
 
-/********
-Carousel Content
-********/
 const CarouselContent = React.forwardRef<
 	HTMLDivElement,
 	React.HTMLAttributes<HTMLDivElement>
@@ -165,9 +153,6 @@ const CarouselContent = React.forwardRef<
 })
 CarouselContent.displayName = "CarouselContent"
 
-/********
-Carousel Item
-********/
 const CarouselItem = React.forwardRef<
 	HTMLDivElement,
 	React.HTMLAttributes<HTMLDivElement>
@@ -190,9 +175,6 @@ const CarouselItem = React.forwardRef<
 })
 CarouselItem.displayName = "CarouselItem"
 
-/********
-Carousel Navigation
-********/
 const CarouselNavigation = React.forwardRef<
 	HTMLDivElement,
 	React.HTMLAttributes<HTMLDivElement>
@@ -214,9 +196,6 @@ const CarouselNavigation = React.forwardRef<
 })
 CarouselNavigation.displayName = "CarouselNavigation"
 
-/********
-Carousel Next
-********/
 const CarouselNext = React.forwardRef<
 	React.ElementRef<typeof Button>,
 	React.ComponentPropsWithoutRef<typeof Button>
@@ -243,9 +222,6 @@ const CarouselNext = React.forwardRef<
 })
 CarouselNext.displayName = "CarouselNext"
 
-/********
-Carousel Previous
-********/
 const CarouselPrevious = React.forwardRef<
 	React.ElementRef<typeof Button>,
 	React.ComponentPropsWithoutRef<typeof Button>

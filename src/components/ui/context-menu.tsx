@@ -7,18 +7,12 @@ import { CheckIcon, ChevronRightIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
-/********
-Context Menu Mappings
-********/
 const ContextMenuGroup = Menu.Group
 ContextMenuGroup.displayName = "ContextMenuGroup"
 
 const ContextMenuRadioGroup = Menu.RadioGroup
 ContextMenuRadioGroup.displayName = "ContextMenuRadioGroup"
 
-/********
-Context Menu Context
-********/
 type ContextMenuContext = {
 	open: boolean
 	setOpen: (open: boolean) => void
@@ -36,9 +30,6 @@ const useContextMenu = () => {
 	return context
 }
 
-/********
-Context Menu
-********/
 const ContextMenu = ({ ...props }: Menu.Root.Props) => {
 	const [open, setOpen] = useControlled({
 		controlled: props.open,
@@ -55,9 +46,6 @@ const ContextMenu = ({ ...props }: Menu.Root.Props) => {
 }
 ContextMenu.displayName = "ContextMenu"
 
-/********
-Context Menu Content
-********/
 const ContextMenuContent = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof Menu.Popup>
@@ -77,9 +65,6 @@ const ContextMenuContent = React.forwardRef<
 ))
 ContextMenuContent.displayName = "ContextMenuContent"
 
-/********
-Context Menu Trigger
-********/
 const ContextMenuTrigger = React.forwardRef<
 	HTMLDivElement,
 	React.HTMLAttributes<HTMLDivElement>
@@ -114,9 +99,6 @@ const ContextMenuTrigger = React.forwardRef<
 })
 ContextMenuTrigger.displayName = "ContextMenuTrigger"
 
-/********
-Context Menu Item
-********/
 const ContextMenuItem = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof Menu.Item>
@@ -132,9 +114,6 @@ const ContextMenuItem = React.forwardRef<
 ))
 ContextMenuItem.displayName = "ContextMenuItem"
 
-/********
-Context Menu Item Shortcut
-********/
 const ContextMenuItemShortcut = React.forwardRef<
 	HTMLSpanElement,
 	React.HTMLAttributes<HTMLSpanElement>
@@ -150,9 +129,6 @@ const ContextMenuItemShortcut = React.forwardRef<
 ))
 ContextMenuItemShortcut.displayName = "ContextMenuItemShortcut"
 
-/********
-Context Menu Group Label
-********/
 const ContextMenuGroupLabel = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof Menu.GroupLabel>
@@ -165,9 +141,6 @@ const ContextMenuGroupLabel = React.forwardRef<
 ))
 ContextMenuGroupLabel.displayName = "ContextMenuGroupLabel"
 
-/********
-Context Menu Checkbox Item
-********/
 const ContextMenuCheckboxItem = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof Menu.CheckboxItem>
@@ -190,9 +163,6 @@ const ContextMenuCheckboxItem = React.forwardRef<
 ))
 ContextMenuCheckboxItem.displayName = "ContextMenuCheckboxItem"
 
-/********
-Context Menu Radio Item
-********/
 const ContextMenuRadioItem = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof Menu.RadioItem>
@@ -215,9 +185,6 @@ const ContextMenuRadioItem = React.forwardRef<
 ))
 ContextMenuRadioItem.displayName = "ContextMenuRadioItem"
 
-/********
-Context Menu Sub Trigger
-********/
 const ContextMenuSubTrigger = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof Menu.SubmenuTrigger>
@@ -236,9 +203,6 @@ const ContextMenuSubTrigger = React.forwardRef<
 ))
 ContextMenuSubTrigger.displayName = "ContextMenuSubTrigger"
 
-/********
-Context Menu Separator
-********/
 const ContextMenuSeparator = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof Menu.Separator>

@@ -3,9 +3,6 @@ import { Progress as BaseProgress } from "@base-ui-components/react/progress"
 
 import { cn } from "@/lib/utils"
 
-/********
-Progress
-********/
 const Progress = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentProps<typeof BaseProgress.Root>
@@ -24,9 +21,6 @@ const Progress = React.forwardRef<
 ))
 Progress.displayName = "Progress"
 
-/********
-Progress Label
-********/
 const ProgressLabel = React.forwardRef<
 	HTMLSpanElement,
 	React.HTMLAttributes<HTMLSpanElement>

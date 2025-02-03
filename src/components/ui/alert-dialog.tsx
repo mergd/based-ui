@@ -3,18 +3,12 @@ import { AlertDialog as BaseAlertDialog } from "@base-ui-components/react/alert-
 
 import { cn } from "@/lib/utils"
 
-/********
-Alert Dialog Mappings
-********/
 const AlertDialog = BaseAlertDialog.Root
 
 const AlertDialogTrigger = BaseAlertDialog.Trigger
 
 const AlertDialogClose = BaseAlertDialog.Close
 
-/********
-Alert Dialog Backdrop
-********/
 const AlertDialogBackdrop = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof BaseAlertDialog.Backdrop>
@@ -30,9 +24,6 @@ const AlertDialogBackdrop = React.forwardRef<
 ))
 AlertDialogBackdrop.displayName = "AlertDialogBackdrop"
 
-/********
-Alert Dialog Content
-********/
 const AlertDialogContent = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof BaseAlertDialog.Popup>
@@ -53,9 +44,6 @@ const AlertDialogContent = React.forwardRef<
 ))
 AlertDialogContent.displayName = "AlertDialogContent"
 
-/********
-Alert Dialog Header
-********/
 const AlertDialogHeader = ({
 	className,
 	...props
@@ -64,9 +52,6 @@ const AlertDialogHeader = ({
 )
 AlertDialogHeader.displayName = "AlertDialogHeader"
 
-/********
-Alert Dialog Footer
-********/
 const AlertDialogFooter = ({
 	className,
 	...props
@@ -81,9 +66,6 @@ const AlertDialogFooter = ({
 )
 AlertDialogFooter.displayName = "AlertDialogFooter"
 
-/********
-Alert Dialog Title
-********/
 const AlertDialogTitle = React.forwardRef<
 	React.ElementRef<typeof BaseAlertDialog.Title>,
 	React.ComponentPropsWithoutRef<typeof BaseAlertDialog.Title>
@@ -96,9 +78,6 @@ const AlertDialogTitle = React.forwardRef<
 ))
 AlertDialogTitle.displayName = "AlertDialogTitle"
 
-/********
-Alert Dialog Description
-********/
 const AlertDialogDescription = React.forwardRef<
 	React.ElementRef<typeof BaseAlertDialog.Description>,
 	React.ComponentPropsWithoutRef<typeof BaseAlertDialog.Description>

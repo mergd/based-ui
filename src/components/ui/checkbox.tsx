@@ -6,9 +6,6 @@ import { CheckIcon, MinusIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
-/********
-Checkbox
-********/
 const Checkbox = React.forwardRef<
 	HTMLButtonElement,
 	React.ComponentPropsWithoutRef<typeof BaseCheckbox.Root>

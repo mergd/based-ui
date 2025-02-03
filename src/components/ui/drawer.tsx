@@ -5,18 +5,12 @@ import { Drawer as BaseDrawer } from "vaul-base"
 
 import { cn } from "@/lib/utils"
 
-/********
-Drawer Mappings
-********/
 const DrawerTrigger = BaseDrawer.Trigger
 
 const DrawerPortal = BaseDrawer.Portal
 
 const DrawerClose = BaseDrawer.Close
 
-/********
-Drawer
-********/
 const Drawer = ({
 	shouldScaleBackground = true,
 	...props
@@ -25,9 +19,6 @@ const Drawer = ({
 )
 Drawer.displayName = "Drawer"
 
-/********
-Drawer Backdrop
-********/
 const DrawerBackdrop = React.forwardRef<
 	React.ElementRef<typeof BaseDrawer.Overlay>,
 	React.ComponentPropsWithoutRef<typeof BaseDrawer.Overlay>
@@ -40,9 +31,6 @@ const DrawerBackdrop = React.forwardRef<
 ))
 DrawerBackdrop.displayName = "DrawerBackdrop"
 
-/********
-Drawer Content
-********/
 const DrawerContent = React.forwardRef<
 	React.ElementRef<typeof BaseDrawer.Content>,
 	React.ComponentPropsWithoutRef<typeof BaseDrawer.Content>
@@ -64,9 +52,6 @@ const DrawerContent = React.forwardRef<
 ))
 DrawerContent.displayName = "DrawerContent"
 
-/********
-Drawer Header
-********/
 const DrawerHeader = ({
 	className,
 	...props
@@ -75,9 +60,6 @@ const DrawerHeader = ({
 )
 DrawerHeader.displayName = "DrawerHeader"
 
-/********
-Drawer Footer
-********/
 const DrawerFooter = ({
 	className,
 	...props
@@ -89,9 +71,6 @@ const DrawerFooter = ({
 )
 DrawerFooter.displayName = "DrawerFooter"
 
-/********
-Drawer Title
-********/
 const DrawerTitle = React.forwardRef<
 	React.ElementRef<typeof BaseDrawer.Title>,
 	React.ComponentPropsWithoutRef<typeof BaseDrawer.Title>
@@ -107,9 +86,6 @@ const DrawerTitle = React.forwardRef<
 ))
 DrawerTitle.displayName = "DrawerTitle"
 
-/********
-Drawer Description
-********/
 const DrawerDescription = React.forwardRef<
 	React.ElementRef<typeof BaseDrawer.Description>,
 	React.ComponentPropsWithoutRef<typeof BaseDrawer.Description>

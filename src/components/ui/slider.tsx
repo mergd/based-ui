@@ -3,9 +3,6 @@ import { Slider as BaseSlider } from "@base-ui-components/react/slider"
 
 import { cn } from "@/lib/utils"
 
-/********
-Slider
-********/
 const Slider = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof BaseSlider.Root>
@@ -45,9 +42,6 @@ const Slider = React.forwardRef<
 })
 Slider.displayName = "Slider"
 
-/********
-Slider Label
-********/
 const SliderLabel = React.forwardRef<
 	HTMLOutputElement,
 	React.ComponentPropsWithoutRef<typeof BaseSlider.Value>

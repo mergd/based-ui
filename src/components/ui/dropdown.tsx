@@ -6,9 +6,6 @@ import { CheckIcon, ChevronRightIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
-/********
-Dropdown Mappings
-********/
 const Dropdown = Menu.Root
 Dropdown.displayName = "Dropdown"
 
@@ -21,9 +18,6 @@ DropdownRadioGroup.displayName = "DropdownRadioGroup"
 const DropdownTrigger = Menu.Trigger
 DropdownTrigger.displayName = "DropdownTrigger"
 
-/********
-Dropdown Content
-********/
 const DropdownContent = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof Menu.Popup>
@@ -43,9 +37,6 @@ const DropdownContent = React.forwardRef<
 ))
 DropdownContent.displayName = "DropdownContent"
 
-/********
-Dropdown Item
-********/
 const DropdownItem = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof Menu.Item>
@@ -61,9 +52,6 @@ const DropdownItem = React.forwardRef<
 ))
 DropdownItem.displayName = "DropdownItem"
 
-/********
-Dropdown Item Shortcut
-********/
 const DropdownItemShortcut = React.forwardRef<
 	HTMLSpanElement,
 	React.HTMLAttributes<HTMLSpanElement>
@@ -79,9 +67,6 @@ const DropdownItemShortcut = React.forwardRef<
 ))
 DropdownItemShortcut.displayName = "DropdownItemShortcut"
 
-/********
-Dropdown Separator
-********/
 const DropdownSeparator = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof Menu.Separator>
@@ -94,9 +79,6 @@ const DropdownSeparator = React.forwardRef<
 ))
 DropdownSeparator.displayName = "DropdownSeparator"
 
-/********
-Dropdown Group Label
-********/
 const DropdownGroupLabel = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof Menu.GroupLabel>
@@ -109,9 +91,6 @@ const DropdownGroupLabel = React.forwardRef<
 ))
 DropdownGroupLabel.displayName = "DropdownGroupLabel"
 
-/********
-Dropdown Checkbox Item
-********/
 const DropdownCheckboxItem = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof Menu.CheckboxItem>
@@ -134,9 +113,6 @@ const DropdownCheckboxItem = React.forwardRef<
 ))
 DropdownCheckboxItem.displayName = "DropdownCheckboxItem"
 
-/********
-Dropdown Radio Item
-********/
 const DropdownRadioItem = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof Menu.RadioItem>
@@ -159,9 +135,6 @@ const DropdownRadioItem = React.forwardRef<
 ))
 DropdownRadioItem.displayName = "DropdownRadioItem"
 
-/********
-Dropdown Sub Trigger
-********/
 const DropdownSubTrigger = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof Menu.SubmenuTrigger>

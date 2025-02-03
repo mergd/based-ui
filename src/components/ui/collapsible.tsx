@@ -3,16 +3,10 @@ import { Collapsible as BaseCollapsible } from "@base-ui-components/react/collap
 
 import { cn } from "@/lib/utils"
 
-/********
-Collapsible Mappings
-********/
 const Collapsible = BaseCollapsible.Root
 
 const CollapsibleTrigger = BaseCollapsible.Trigger
 
-/********
-Collapsible Content
-********/
 const CollapsibleContent = React.forwardRef<
 	HTMLButtonElement,
 	BaseCollapsible.Panel.Props

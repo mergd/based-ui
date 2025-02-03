@@ -7,27 +7,18 @@ import { CheckIcon, ChevronRightIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
-/********
-Menubar Mappings
-********/
 const MenubarSubMenu = Menu.Root
 MenubarSubMenu.displayName = "MenubarSubMenu"
 
 const MenubarRadioGroup = Menu.RadioGroup
 MenubarRadioGroup.displayName = "MenubarRadioGroup"
 
-/********
-Menubar Types
-********/
 type TriggerRect = {
 	left: number
 	width: number
 	height: number
 }
 
-/********
-Menubar Context
-********/
 type MenubarContext = {
 	activeMenuId: string | null
 	setActiveMenuId: (id: string | null) => void
@@ -47,9 +38,6 @@ const useMenubar = () => {
 	return context
 }
 
-/********
-Menubar Root
-********/
 const Menubar = React.forwardRef<
 	HTMLDivElement,
 	React.HTMLAttributes<HTMLDivElement>
@@ -83,9 +71,6 @@ const Menubar = React.forwardRef<
 })
 Menubar.displayName = "Menubar"
 
-/********
-Menubar Menu
-********/
 type MenubarMenuContext = {
 	id: string
 }
@@ -141,9 +126,6 @@ const MenubarMenu = ({
 }
 MenubarMenu.displayName = "MenubarMenu"
 
-/********
-Menubar Trigger
-********/
 const MenubarTrigger = React.forwardRef<
 	HTMLButtonElement,
 	React.ComponentPropsWithoutRef<typeof Menu.Trigger>
@@ -188,9 +170,6 @@ const MenubarTrigger = React.forwardRef<
 })
 MenubarTrigger.displayName = "MenubarTrigger"
 
-/********
-Menubar Indicator
-********/
 export const MenubarIndicatorCssVars = {
 	activeMenuLeft: "--active-menu-left",
 	activeMenuWidth: "--active-menu-width",
@@ -242,9 +221,6 @@ const MenubarIndicator = React.forwardRef<
 })
 MenubarIndicator.displayName = "MenubarIndicator"
 
-/********
-Menubar Content
-********/
 const MenubarContent = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof Menu.Popup>
@@ -264,9 +240,6 @@ const MenubarContent = React.forwardRef<
 ))
 MenubarContent.displayName = "MenubarContent"
 
-/********
-Menubar Item
-********/
 const MenubarItem = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof Menu.Item>
@@ -282,9 +255,6 @@ const MenubarItem = React.forwardRef<
 ))
 MenubarItem.displayName = "MenubarItem"
 
-/********
-Menubar Item Shortcut
-********/
 const MenubarItemShortcut = React.forwardRef<
 	HTMLSpanElement,
 	React.HTMLAttributes<HTMLSpanElement>
@@ -300,9 +270,6 @@ const MenubarItemShortcut = React.forwardRef<
 ))
 MenubarItemShortcut.displayName = "MenubarItemShortcut"
 
-/********
-Menubar Separator
-********/
 const MenubarSeparator = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof Menu.Separator>
@@ -315,9 +282,6 @@ const MenubarSeparator = React.forwardRef<
 ))
 MenubarSeparator.displayName = "MenubarSeparator"
 
-/********
-Menubar Sub Trigger
-********/
 const MenubarSubTrigger = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof Menu.SubmenuTrigger>
@@ -336,9 +300,6 @@ const MenubarSubTrigger = React.forwardRef<
 ))
 MenubarSubTrigger.displayName = "MenubarSubTrigger"
 
-/********
-Menubar Checkbox Item
-********/
 const MenubarCheckboxItem = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof Menu.CheckboxItem>
@@ -361,9 +322,6 @@ const MenubarCheckboxItem = React.forwardRef<
 ))
 MenubarCheckboxItem.displayName = "MenubarCheckboxItem"
 
-/********
-Menubar Radio Item
-********/
 const MenubarRadioItem = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof Menu.RadioItem>

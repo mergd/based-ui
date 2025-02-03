@@ -3,9 +3,6 @@ import { ScrollArea as BaseScrollArea } from "@base-ui-components/react/scroll-a
 
 import { cn } from "@/lib/utils"
 
-/********
-Scroll Area
-********/
 interface ScrollAreaProps
 	extends React.ComponentPropsWithoutRef<typeof BaseScrollArea.Root> {
 	orientation?: "horizontal" | "vertical"

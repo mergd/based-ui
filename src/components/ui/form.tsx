@@ -3,9 +3,6 @@
 import * as React from "react"
 import { FieldValues, FormProvider, UseFormReturn } from "react-hook-form"
 
-/********
-Form
-********/
 interface FormProps<T extends FieldValues = FieldValues>
 	extends React.FormHTMLAttributes<HTMLFormElement> {
 	form: UseFormReturn<T>

@@ -3,9 +3,6 @@ import { Separator as BaseSeparator } from "@base-ui-components/react/separator"
 
 import { cn } from "@/lib/utils"
 
-/********
-Separator
-********/
 interface SeparatorProps extends BaseSeparator.Props {
 	orientation?: "horizontal" | "vertical"
 }

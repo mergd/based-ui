@@ -3,16 +3,10 @@ import { Popover as BasePopover } from "@base-ui-components/react/popover"
 
 import { cn } from "@/lib/utils"
 
-/********
-Popover Mappings
-********/
 const Popover = BasePopover.Root
 
 const PopoverTrigger = BasePopover.Trigger
 
-/********
-Popover Title
-********/
 const PopoverTitle = React.forwardRef<
 	HTMLHeadingElement,
 	BasePopover.Title.Props
@@ -25,9 +19,6 @@ const PopoverTitle = React.forwardRef<
 ))
 PopoverTitle.displayName = "PopoverTitle"
 
-/********
-Popover Description
-********/
 const PopoverDescription = React.forwardRef<
 	HTMLParagraphElement,
 	BasePopover.Description.Props
@@ -40,9 +31,6 @@ const PopoverDescription = React.forwardRef<
 ))
 PopoverDescription.displayName = "PopoverDescription"
 
-/********
-Popover Content
-********/
 const PopoverContent = React.forwardRef<
 	HTMLDivElement,
 	BasePopover.Popup.Props

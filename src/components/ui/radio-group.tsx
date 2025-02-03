@@ -4,9 +4,6 @@ import { RadioGroup as BaseRadioGroup } from "@base-ui-components/react/radio-gr
 
 import { cn } from "@/lib/utils"
 
-/********
-Radio Group
-********/
 const RadioGroup = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof BaseRadioGroup>
@@ -19,9 +16,6 @@ const RadioGroup = React.forwardRef<
 ))
 RadioGroup.displayName = "RadioGroup"
 
-/********
-Radio Group Item
-********/
 const RadioGroupItem = React.forwardRef<
 	HTMLButtonElement,
 	React.ComponentPropsWithoutRef<typeof Radio.Root>

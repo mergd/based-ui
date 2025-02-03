@@ -3,14 +3,8 @@ import { Tooltip as BaseTooltip } from "@base-ui-components/react/tooltip"
 
 import { cn } from "@/lib/utils"
 
-/********
-Tooltip Mappings
-********/
 const TooltipTrigger = BaseTooltip.Trigger
 
-/********
-Tooltip
-********/
 const Tooltip = ({
 	children,
 	...props
@@ -21,9 +15,6 @@ const Tooltip = ({
 )
 Tooltip.displayName = "Tooltip"
 
-/********
-Tooltip Content
-********/
 interface TooltipContentProps
 	extends React.ComponentPropsWithoutRef<typeof BaseTooltip.Popup> {
 	positionerProps?: BaseTooltip.Positioner.Props

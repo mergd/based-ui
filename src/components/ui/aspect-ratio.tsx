@@ -2,9 +2,6 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
-/********
-Aspect Ratio
-********/
 export interface AspectRatioProps extends React.HTMLAttributes<HTMLDivElement> {
 	ratio?: number
 }

@@ -6,9 +6,6 @@ import { XIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
-/********
-Dialog Mappings
-********/
 const Dialog = BaseDialog.Root
 
 const DialogPortal = BaseDialog.Portal
@@ -17,9 +14,6 @@ const DialogClose = BaseDialog.Close
 
 const DialogTrigger = BaseDialog.Trigger
 
-/********
-Dialog Backdrop
-********/
 const DialogBackdrop = React.forwardRef<
 	React.ElementRef<typeof BaseDialog.Backdrop>,
 	React.ComponentPropsWithoutRef<typeof BaseDialog.Backdrop>
@@ -36,9 +30,6 @@ const DialogBackdrop = React.forwardRef<
 
 DialogBackdrop.displayName = BaseDialog.Backdrop.displayName
 
-/********
-Dialog Content
-********/
 const DialogContent = React.forwardRef<
 	React.ElementRef<typeof BaseDialog.Popup>,
 	React.ComponentPropsWithoutRef<typeof BaseDialog.Popup>
@@ -67,9 +58,6 @@ const DialogContent = React.forwardRef<
 
 DialogContent.displayName = "DialogContent"
 
-/********
-Dialog Header
-********/
 const DialogHeader = ({
 	className,
 	...props
@@ -79,9 +67,6 @@ const DialogHeader = ({
 
 DialogHeader.displayName = "DialogHeader"
 
-/********
-Dialog Footer
-********/
 const DialogFooter = ({
 	className,
 	...props
@@ -97,9 +82,6 @@ const DialogFooter = ({
 
 DialogFooter.displayName = "DialogFooter"
 
-/********
-Dialog Title
-********/
 const DialogTitle = React.forwardRef<
 	React.ElementRef<typeof BaseDialog.Title>,
 	React.ComponentPropsWithoutRef<typeof BaseDialog.Title>
@@ -113,9 +95,6 @@ const DialogTitle = React.forwardRef<
 
 DialogTitle.displayName = BaseDialog.Title.displayName
 
-/********
-Dialog Description
-********/
 const DialogDescription = React.forwardRef<
 	React.ElementRef<typeof BaseDialog.Description>,
 	React.ComponentPropsWithoutRef<typeof BaseDialog.Description>

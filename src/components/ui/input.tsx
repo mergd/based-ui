@@ -3,9 +3,6 @@ import { Input as BaseInput } from "@base-ui-components/react/input"
 
 import { cn } from "@/lib/utils"
 
-/********
-Input
-********/
 interface InputProps extends React.ComponentProps<typeof BaseInput> {
 	children?: React.ReactNode
 	inputWrapperClassName?: string
@@ -45,9 +42,6 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 )
 Input.displayName = "Input"
 
-/********
-Input Icons
-********/
 interface InputIconProps extends React.ComponentPropsWithoutRef<"div"> {
 	side: "leading" | "trailing"
 	children?: React.ReactNode

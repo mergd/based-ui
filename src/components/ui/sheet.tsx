@@ -12,11 +12,6 @@ const Sheet = Dialog.Root
 const SheetTrigger = Dialog.Trigger
 SheetTrigger.displayName = "SheetTrigger"
 
-const SheetPopup = Dialog.Popup
-SheetPopup.displayName = "SheetPopup"
-
-const SheetPortal = Dialog.Portal
-
 const SheetClose = Dialog.Close
 SheetClose.displayName = "SheetClose"
 
@@ -62,17 +57,20 @@ const SheetContent = React.forwardRef<
 	React.ElementRef<"div">,
 	SheetContentProps
 >(({ className, side, children, ...props }, ref) => (
-	<Dialog.Popup
-		ref={ref}
-		className={cn(sheetContentVariants({ side, className }))}
-		{...props}
-	>
-		<SheetClose className="absolute right-4 top-4 rounded-sm opacity-50 transition-opacity hover:opacity-100 focus:outline-none disabled:pointer-events-none">
-			<XIcon className="size-4" />
-			<span className="sr-only">Close</span>
-		</SheetClose>
-		{children}
-	</Dialog.Popup>
+	<Dialog.Portal>
+		<SheetBackdrop />
+		<Dialog.Popup
+			ref={ref}
+			className={cn(sheetContentVariants({ side, className }))}
+			{...props}
+		>
+			<SheetClose className="absolute right-4 top-4 rounded-sm opacity-50 transition-opacity hover:opacity-100 focus:outline-none disabled:pointer-events-none">
+				<XIcon className="size-4" />
+				<span className="sr-only">Close</span>
+			</SheetClose>
+			{children}
+		</Dialog.Popup>
+	</Dialog.Portal>
 ))
 SheetContent.displayName = "SheetContent"
 
@@ -132,8 +130,6 @@ export {
 	SheetBackdrop,
 	SheetContent,
 	SheetTrigger,
-	SheetPopup,
-	SheetPortal,
 	SheetClose,
 	SheetHeader,
 	SheetTitle,

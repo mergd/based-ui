@@ -1,0 +1,44 @@
+<Title content="Installation" />
+<Description content="Installing dependencies and setting up the project." />
+
+<Alert className="mt-4">
+	<AlertIcon>
+		<MessageSquareWarningIcon />
+	</AlertIcon>
+	<AlertContent>
+		<AlertTitle>Important Note</AlertTitle>
+		<AlertDescription>
+			9ui installation relies on shadcn cli to setting up your project and
+			install the components.
+		</AlertDescription>
+	</AlertContent>
+</Alert>
+
+<Steps>
+
+<Step>
+	Follow the [shadcn cli installation
+	guide](https://ui.shadcn.com/docs/installation) to setup your project.
+</Step>
+
+<Step>
+Install Base UI.
+
+```bash
+npm install @base-ui-components/react
+```
+
+</Step>
+
+<Step>
+Add 9ui theme to your project.
+
+```bash
+npx shadcn@latest add "https://9ui.dev/r/theme.json"
+```
+
+</Step>
+
+<Step>That's it! You can now install the components.</Step>
+
+</Steps>

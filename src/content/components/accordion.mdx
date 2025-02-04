@@ -1,5 +1,6 @@
 <Title content="Accordion" />
 <Description content="A collapsible section to show or hide content." />
+
 <ComponentLinks
 	links={[
 		{
@@ -10,3 +11,41 @@
 />
 
 <ComponentPreview name="accordion-demo" />
+
+## Installation
+
+<ComponentInstallation>
+<div>
+```bash title="Terminal"
+npx shadcn@latest add https://9ui.dev/r/accordion
+```
+</div>
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="accordion" />
+
+</Steps>
+</ComponentInstallation>
+
+## Usage
+
+```tsx title="Imports"
+import {
+	Accordion,
+	AccordionContent,
+	AccordionItem,
+	AccordionTrigger,
+} from "@/components/ui/accordion"
+```
+
+```tsx title="Anatomy"
+<Accordion>
+	<AccordionItem>
+		<AccordionTrigger />
+		<AccordionContent />
+	</AccordionItem>
+</Accordion>
+```

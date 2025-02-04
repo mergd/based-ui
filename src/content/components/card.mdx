@@ -3,6 +3,48 @@
 
 <ComponentPreview name="card-demo" />
 
+## Installation
+
+<ComponentInstallation>
+<div>
+```bash title="Terminal"
+npx shadcn@latest add https://9ui.dev/r/card
+```
+</div>
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="card" />
+
+</Steps>
+</ComponentInstallation>
+
+## Usage
+
+```tsx title="Imports"
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardFooter,
+	CardHeader,
+	CardTitle,
+} from "@/components/ui/card"
+```
+
+```tsx title="Anatomy"
+<Card>
+	<CardHeader>
+		<CardTitle />
+		<CardDescription />
+	</CardHeader>
+	<CardContent>
+	<CardFooter />
+</Card>
+```
+
 ## Examples
 
 ### With image

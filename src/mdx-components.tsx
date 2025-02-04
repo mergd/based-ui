@@ -1,14 +1,28 @@
 import * as React from "react"
+import { MessageSquareWarningIcon } from "lucide-react"
 
+import { CodeBlock } from "@/components/code-block"
+import { CommandBlock } from "@/components/command-block"
+import { ComponentAnatomy } from "@/components/component-anatomy"
+import { ComponentInstallation } from "@/components/component-installation"
 import ComponentLinks from "@/components/component-links"
 import { ComponentPreview } from "@/components/component-preview"
+import ComponentSource from "@/components/component-source"
 import {
 	Accordion,
 	AccordionContent,
 	AccordionItem,
 	AccordionTrigger,
 } from "@/components/ui/accordion"
+import {
+	Alert,
+	AlertContent,
+	AlertDescription,
+	AlertIcon,
+	AlertTitle,
+} from "@/components/ui/alert"
 import { Separator } from "@/components/ui/separator"
+import { Tab, TabContent, Tabs, TabsList } from "@/components/ui/tabs"
 
 import { cn } from "@/lib/utils"
 
@@ -44,32 +58,23 @@ const components: MDXComponents = {
 	),
 	p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
 		<p
-			className={cn(
-				"scroll-m-20 text-foreground [&:not(:first-child)]:mt-4",
-				className
-			)}
+			className={cn("leading-7 [&:not(:first-child)]:mt-4", className)}
 			{...props}
 		/>
 	),
 	ul: ({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
-		<ul
-			className={cn("space-y-2 text-muted-foreground", className)}
-			{...props}
-		/>
+		<ul className={cn("mt-2 space-y-2 font-normal", className)} {...props} />
 	),
 	ol: ({ className, ...props }: React.HTMLAttributes<HTMLOListElement>) => (
-		<ol
-			className={cn("space-y-2 text-muted-foreground", className)}
-			{...props}
-		/>
+		<ol className={cn("mt-2 space-y-2 font-normal", className)} {...props} />
 	),
 	li: ({ className, ...props }: React.HTMLAttributes<HTMLLIElement>) => (
-		<li className={cn("", className)} {...props} />
+		<li className={cn("ml-2 list-inside list-disc", className)} {...props} />
 	),
 	code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
 		<code
 			className={cn(
-				"relative rounded-sm bg-accent px-[0.3rem] py-[0.2rem] font-mono text-sm [&[data-inline]]:text-accent-foreground",
+				"relative rounded-sm bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm [&[data-inline]]:text-accent-foreground",
 				className
 			)}
 			{...props}
@@ -128,12 +133,47 @@ const components: MDXComponents = {
 			{...props}
 		/>
 	),
-	pre: ({ className, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
-		<pre
-			className={cn("overflow-x-scroll bg-background p-4", className)}
-			{...props}
-		/>
-	),
+	pre: ({
+		__rawString__,
+		__npmCommand__,
+		__yarnCommand__,
+		__pnpmCommand__,
+		__bunCommand__,
+		__title__,
+	}: React.HTMLAttributes<HTMLPreElement> & {
+		__rawString__?: string
+		__npmCommand__?: string
+		__yarnCommand__?: string
+		__pnpmCommand__?: string
+		__bunCommand__?: string
+		__title__?: string
+	}) => {
+		const isCommand =
+			!!__npmCommand__ &&
+			!!__yarnCommand__ &&
+			!!__pnpmCommand__ &&
+			!!__bunCommand__
+
+		if (isCommand) {
+			return (
+				<CommandBlock
+					npmCommand={__npmCommand__}
+					yarnCommand={__yarnCommand__}
+					pnpmCommand={__pnpmCommand__}
+					bunCommand={__bunCommand__}
+				/>
+			)
+		}
+
+		const hasTitle = !!__title__
+
+		return (
+			<CodeBlock
+				content={__rawString__ ?? ""}
+				topBar={hasTitle ? { label: __title__ } : undefined}
+			/>
+		)
+	},
 	hr: ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
 		<Separator className={cn("my-8", className)} {...props} />
 	),
@@ -159,12 +199,6 @@ const components: MDXComponents = {
 	}: React.ImgHTMLAttributes<HTMLImageElement>) => (
 		<img className={cn("rounded-lg border", className)} alt={alt} {...props} />
 	),
-	Accordion,
-	AccordionTrigger,
-	AccordionItem,
-	AccordionContent,
-	ComponentPreview,
-	ComponentLinks,
 	Title: ({
 		className,
 		content,
@@ -203,6 +237,40 @@ const components: MDXComponents = {
 			</React.Fragment>
 		)
 	},
+	Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
+		<h3
+			className={cn(
+				"step mt-8 text-sm font-semibold tracking-tight",
+				className
+			)}
+			{...props}
+		/>
+	),
+	Steps: ({ ...props }) => (
+		<div
+			className="steps mb-12 ml-4 border-l pl-8 [counter-reset:step]"
+			{...props}
+		/>
+	),
+	Accordion,
+	AccordionTrigger,
+	AccordionItem,
+	AccordionContent,
+	MessageSquareWarningIcon,
+	Alert,
+	AlertContent,
+	AlertTitle,
+	AlertDescription,
+	AlertIcon,
+	ComponentPreview,
+	ComponentLinks,
+	ComponentSource,
+	Tabs,
+	TabContent,
+	Tab,
+	TabsList,
+	ComponentInstallation,
+	ComponentAnatomy,
 }
 
 export function useMDXComponents(): MDXComponents {

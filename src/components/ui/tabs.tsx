@@ -40,7 +40,7 @@ Tabs.displayName = "Tabs"
 const TabsList = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof BaseTabs.List>
->(({ className, ...props }, ref) => {
+>(({ className, children, ...props }, ref) => {
 	const { variant } = useTabs()
 
 	return (
@@ -52,7 +52,10 @@ const TabsList = React.forwardRef<
 				className
 			)}
 			{...props}
-		/>
+		>
+			{children}
+			<TabIndicator />
+		</BaseTabs.List>
 	)
 })
 TabsList.displayName = "TabsList"
@@ -105,4 +108,4 @@ const TabContent = React.forwardRef<
 ))
 TabContent.displayName = "TabContent"
 
-export { Tabs, TabsList, Tab, TabContent, TabIndicator }
+export { Tabs, TabsList, Tab, TabContent }

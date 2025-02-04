@@ -7,6 +7,7 @@ import {
 	Popover,
 	PopoverContent,
 	PopoverDescription,
+	PopoverHeader,
 	PopoverTitle,
 	PopoverTrigger,
 } from "@/components/ui/popover"
@@ -27,22 +28,20 @@ export default function PopoverDemo() {
 				)}
 			/>
 			<PopoverContent className="w-[calc(100vw-4rem)] sm:w-[500px]">
-				<div className="flex flex-col space-y-3.5">
-					<div className="flex flex-col space-y-1">
-						<PopoverTitle>Share</PopoverTitle>
-						<PopoverDescription>Share this component.</PopoverDescription>
-					</div>
-					<div className="flex w-full gap-2">
-						<Input
-							inputWrapperClassName="w-full"
-							defaultValue={window.location.href}
-							autoFocus={false}
-							readOnly
-						/>
-						<Button className="shrink-0" size="icon" onClick={copyToClipboard}>
-							<CopyIcon />
-						</Button>
-					</div>
+				<PopoverHeader>
+					<PopoverTitle>Share</PopoverTitle>
+					<PopoverDescription>Share this component.</PopoverDescription>
+				</PopoverHeader>
+				<div className="mt-2 flex w-full gap-2">
+					<Input
+						inputWrapperClassName="w-full"
+						defaultValue={window.location.href}
+						autoFocus={false}
+						readOnly
+					/>
+					<Button className="shrink-0" size="icon" onClick={copyToClipboard}>
+						<CopyIcon />
+					</Button>
 				</div>
 			</PopoverContent>
 		</Popover>

@@ -3,6 +3,47 @@
 
 <ComponentPreview name="alert-demo" />
 
+## Installation
+
+<ComponentInstallation>
+<div>
+```bash title="Terminal"
+npx shadcn@latest add https://9ui.dev/r/alert
+```
+</div>
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="alert" />
+
+</Steps>
+</ComponentInstallation>
+
+## Usage
+
+```tsx title="Imports"
+import {
+	Alert,
+	AlertContent,
+	AlertDescription,
+	AlertIcon,
+	AlertTitle,
+} from "@/components/ui/alert"
+```
+
+```tsx title="Anatomy"
+<Alert>
+	<AlertIcon />
+	<AlertContent>
+		<AlertTitle />
+		<AlertDescription />
+	</AlertContent>
+	<AlertAction />
+</Alert>
+```
+
 ## Examples
 
 ### Success

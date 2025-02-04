@@ -1,13 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import {
-	Tab,
-	TabContent,
-	TabIndicator,
-	Tabs,
-	TabsList,
-} from "@/components/ui/tabs"
+import { Tab, TabContent, Tabs, TabsList } from "@/components/ui/tabs"
 
 export default function TabsUnderline() {
 	return (
@@ -15,7 +9,6 @@ export default function TabsUnderline() {
 			<TabsList>
 				<Tab value="login">Login</Tab>
 				<Tab value="signup">Sign up</Tab>
-				<TabIndicator />
 			</TabsList>
 			<TabContent value="login" className="space-y-4">
 				<div className="flex flex-col gap-2">

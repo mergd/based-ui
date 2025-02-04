@@ -7,6 +7,20 @@ const Popover = BasePopover.Root
 
 const PopoverTrigger = BasePopover.Trigger
 
+const PopoverClose = BasePopover.Close
+
+const PopoverHeader = React.forwardRef<
+	HTMLDivElement,
+	React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+	<div
+		ref={ref}
+		className={cn("relative flex flex-col gap-y-1", className)}
+		{...props}
+	/>
+))
+PopoverHeader.displayName = "PopoverHeader"
+
 const PopoverTitle = React.forwardRef<
 	HTMLHeadingElement,
 	BasePopover.Title.Props
@@ -63,10 +77,28 @@ const PopoverContent = React.forwardRef<
 ))
 PopoverContent.displayName = "PopoverContent"
 
+const PopoverFooter = React.forwardRef<
+	HTMLDivElement,
+	React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+	<div
+		ref={ref}
+		className={cn(
+			"flex flex-col-reverse gap-2 sm:flex-row sm:justify-end",
+			className
+		)}
+		{...props}
+	/>
+))
+PopoverFooter.displayName = "PopoverFooter"
+
 export {
 	Popover,
 	PopoverTrigger,
-	PopoverContent,
+	PopoverHeader,
 	PopoverTitle,
 	PopoverDescription,
+	PopoverContent,
+	PopoverFooter,
+	PopoverClose,
 }

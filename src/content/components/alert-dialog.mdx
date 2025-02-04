@@ -10,3 +10,50 @@
 />
 
 <ComponentPreview name="alert-dialog-demo" />
+
+## Installation
+
+<ComponentInstallation>
+<div>
+```bash title="Terminal"
+npx shadcn@latest add https://9ui.dev/r/alert-dialog
+```
+</div>
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="alert-dialog" />
+
+</Steps>
+</ComponentInstallation>
+
+## Usage
+
+```tsx title="Imports"
+import {
+	AlertDialog,
+	AlertDialogContent,
+	AlertDialogDescription,
+	AlertDialogFooter,
+	AlertDialogHeader,
+	AlertDialogTitle,
+	AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
+```
+
+```tsx title="Anatomy"
+<AlertDialog>
+	<AlertDialogTrigger />
+	<AlertDialogContent>
+		<AlertDialogHeader>
+			<AlertDialogTitle />
+			<AlertDialogDescription />
+		</AlertDialogHeader>
+		<AlertDialogFooter>
+			<AlertDialogClose />
+		</AlertDialogFooter>
+	</AlertDialogContent>
+</AlertDialog>
+```

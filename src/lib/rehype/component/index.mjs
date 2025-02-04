@@ -31,6 +31,14 @@ export function rehypeRawString() {
 					node.__pnpmCommand__ = npmCommand.replace("npm install", "pnpm add")
 					node.__bunCommand__ = npmCommand.replace("npm install", "bun add")
 				}
+
+				if (node.__rawString__?.startsWith("npx")) {
+					const npxCommand = node.__rawString__
+					node.__npmCommand__ = npxCommand
+					node.__yarnCommand__ = npxCommand.replace("npx", "yarn dlx")
+					node.__pnpmCommand__ = npxCommand.replace("npx", "pnpm dlx")
+					node.__bunCommand__ = npxCommand.replace("npx", "bunx")
+				}
 			}
 		})
 	}

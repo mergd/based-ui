@@ -13,4 +13,57 @@
 
 ## About
 
-The Drawer is built on top of [Vaul Base](https://vaul-base.vercel.app), which is ported from [Vaul](https://vaul.emilkowal.ski), originally created by [@emilkowalski\_](https://x.com/emilkowalski_).
+The Drawer is built on top of [`vaul-base`](https://vaul-base.vercel.app), which is ported from [`vaul`](https://vaul.emilkowal.ski), originally created by [@emilkowalski\_](https://x.com/emilkowalski_).
+
+## Installation
+
+<ComponentInstallation>
+<div>
+```bash title="Terminal"
+npx shadcn@latest add https://9ui.dev/r/drawer
+```
+</div>
+
+<Steps>
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install vaul-base
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="drawer" />
+
+</Steps>
+</ComponentInstallation>
+
+## Usage
+
+```tsx title="Imports"
+import {
+	Drawer,
+	DrawerClose,
+	DrawerContent,
+	DrawerDescription,
+	DrawerFooter,
+	DrawerHeader,
+	DrawerTitle,
+	DrawerTrigger,
+} from "@/components/ui/drawer"
+```
+
+```tsx title="Anatomy"
+<Drawer>
+	<DrawerTrigger>
+	<DrawerContent>
+		<DrawerHeader>
+			<DrawerTitle />
+			<DrawerDescription />
+		</DrawerHeader>
+		<DrawerFooter>
+			<DrawerClose />
+		</DrawerFooter>
+	</DrawerContent>
+</Drawer>
+```

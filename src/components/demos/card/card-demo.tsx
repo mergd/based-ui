@@ -34,7 +34,7 @@ export default function CardDemo() {
 						You can invite up to 10 team members. You have 8 invites left.
 					</p>
 				</div>
-				<div className="flex flex-col gap-2">
+				<div className="flex flex-col gap-4">
 					<h4 className="text-sm font-medium">Invited Members</h4>
 					<div className="flex items-center gap-2">
 						<Image

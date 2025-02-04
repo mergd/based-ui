@@ -11,6 +11,81 @@
 
 <ComponentPreview name="toast-demo" />
 
+## About
+
+The Toast is built on top of [`sonner`](https://sonner.emilkowal.ski), which is created by [@emilkowalski\_](https://x.com/emilkowalski_).
+
+## Installation
+
+<ComponentInstallation>
+<div>
+<Steps>
+
+<Step>Run the following command.</Step>
+
+```bash title="Terminal"
+npx shadcn@latest add https://9ui.dev/r/sonner
+```
+
+<Step>Add Toaster to your app layout.</Step>
+
+```tsx title="app/layout.tsx"
+import { Toaster } from "@/components/ui/sonner"
+
+export default function RootLayout({ children }) {
+	return (
+		<html lang="en">
+			<head />
+			<body>
+				<main>{children}</main>
+				<Toaster />
+			</body>
+		</html>
+	)
+}
+```
+
+</Steps>
+
+</div>
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="sonner" />
+
+<Step>Add Toaster to your app layout.</Step>
+
+```tsx title="app/layout.tsx"
+import { Toaster } from "@/components/ui/sonner"
+
+export default function RootLayout({ children }) {
+	return (
+		<html lang="en">
+			<head />
+			<body>
+				<main>{children}</main>
+				<Toaster />
+			</body>
+		</html>
+	)
+}
+```
+
+</Steps>
+</ComponentInstallation>
+
+## Usage
+
+```tsx title="Imports"
+import { toast } from "sonner"
+```
+
+```tsx title="Toast"
+toast("Toast is working!")
+```
+
 ## Examples
 
 ### Promise

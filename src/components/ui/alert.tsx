@@ -9,7 +9,7 @@ const alertVariants = cva(
 		variants: {
 			variant: {
 				default:
-					"bg-background text-foreground [&_p[data-description=true]]:text-muted-foreground",
+					"bg-background text-foreground [&_[data-description=true]]:text-muted-foreground",
 				warning: "bg-warning border-warning-border text-warning-foreground",
 				danger: "bg-danger border-danger-border text-danger-foreground",
 				info: "bg-info border-info-border text-info-foreground",
@@ -70,10 +70,10 @@ const AlertTitle = React.forwardRef<
 AlertTitle.displayName = "AlertTitle"
 
 const AlertDescription = React.forwardRef<
-	HTMLParagraphElement,
-	React.HTMLAttributes<HTMLParagraphElement>
+	HTMLDivElement,
+	React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-	<p
+	<div
 		ref={ref}
 		className={cn("text-sm", className)}
 		data-description={true}

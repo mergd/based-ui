@@ -24,6 +24,11 @@ export function rehypeInlineCode() {
 			// Remove styles
 			delete node.properties.style
 			delete node.children[0].properties.style
+			if (ancestors.find(({ tagName }) => tagName === "a")) {
+				for (const child of node.children) {
+					delete child.properties.style
+				}
+			}
 		})
 	}
 }

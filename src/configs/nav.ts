@@ -20,7 +20,6 @@ export const navConfig: NavConfig = {
 				{
 					title: "Installation",
 					href: "/docs/getting-started/installation",
-					disabled: true,
 				},
 				{
 					title: "Theming",

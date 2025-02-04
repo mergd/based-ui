@@ -13,7 +13,61 @@
 
 ## About
 
-The Command is built on top of [Cmdk Base](https://cmdk-base.vercel.app), which is ported from [Cmdk](https://github.com/pacocoursey/cmdk), originally created by [@pacocoursey](https://x.com/pacocoursey).
+The Command is built on top of [`cmdk-base`](https://cmdk-base.vercel.app), which is ported from [`cmdk`](https://github.com/pacocoursey/cmdk), originally created by [@pacocoursey](https://x.com/pacocoursey).
+
+## Installation
+
+<ComponentInstallation>
+<div>
+```bash title="Terminal"
+npx shadcn@latest add https://9ui.dev/r/command
+```
+</div>
+
+<Steps>
+
+<Step>Install dependencies</Step>
+
+```bash title="Terminal"
+npm install cmdk-base
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="command" />
+
+</Steps>
+</ComponentInstallation>
+
+## Usage
+
+```tsx title="Imports"
+import {
+	Command,
+	CommandEmpty,
+	CommandGroup,
+	CommandInput,
+	CommandItem,
+	CommandList,
+	CommandSeparator,
+	CommandShortcut,
+} from "@/components/ui/command"
+```
+
+```tsx title="Anatomy"
+<Command>
+	<CommandInput />
+	<CommandList>
+		<CommandEmpty />
+		<CommandGroup>
+			<CommandItem>
+				<CommandShortcut />
+			</CommandItem>
+		</CommandGroup>
+		<CommandSeparator />
+	</CommandList>
+</Command>
+```
 
 ## Examples
 

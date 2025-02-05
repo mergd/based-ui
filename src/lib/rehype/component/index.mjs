@@ -23,6 +23,19 @@ export function rehypeRawString() {
 					codeEl.data.meta = codeEl.data.meta.replace(/title="([^"]+)"/, "")
 				}
 
+				if (
+					codeEl.properties.className &&
+					Array.isArray(codeEl.properties.className)
+				) {
+					const __lang__ = codeEl.properties.className.find((className) =>
+						className.startsWith("language-")
+					)
+
+					if (__lang__) {
+						node.__lang__ = __lang__.replace("language-", "")
+					}
+				}
+
 				// npm install.
 				if (node.__rawString__?.startsWith("npm install")) {
 					const npmCommand = node.__rawString__
@@ -96,6 +109,7 @@ export function rehypeCommandProperties() {
 				preElement.properties["__pnpmCommand__"] = node.__pnpmCommand__
 				preElement.properties["__bunCommand__"] = node.__bunCommand__
 				preElement.properties["__title__"] = node.__title__
+				preElement.properties["__lang__"] = node.__lang__
 			}
 		})
 	}

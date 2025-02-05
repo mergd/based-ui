@@ -39,7 +39,7 @@ export function rehypeInlineCode() {
 // so that the object persists between hot reloads and doesn't leak memory.
 globalThis.highlighter ??= await createHighlighter({
 	themes: ["github-dark-default", "github-light-default"],
-	langs: ["tsx", "bash"],
+	langs: ["tsx", "bash", "css"],
 })
 
 /** @type {Awaited<ReturnType<typeof import('shiki').createHighlighter>> } */

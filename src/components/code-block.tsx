@@ -11,12 +11,13 @@ interface CodeBlockProps {
 	topBar?: {
 		label: string
 	}
+	lang?: string
 }
 
-export const CodeBlock = ({ content, topBar }: CodeBlockProps) => {
+export const CodeBlock = ({ content, topBar, lang }: CodeBlockProps) => {
 	const prettyCode = React.useMemo(() => {
 		return highlighter.codeToHtml(content, {
-			lang: "tsx",
+			lang: lang ?? "tsx",
 			themes: {
 				dark: "github-dark-default",
 				light: "github-light-default",

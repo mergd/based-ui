@@ -74,7 +74,7 @@ const components: MDXComponents = {
 	code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
 		<code
 			className={cn(
-				"relative rounded-sm bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm [&[data-inline]]:text-accent-foreground",
+				"relative rounded-sm bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-normal [&[data-inline]]:text-accent-foreground",
 				className
 			)}
 			{...props}
@@ -140,6 +140,7 @@ const components: MDXComponents = {
 		__pnpmCommand__,
 		__bunCommand__,
 		__title__,
+		__lang__,
 	}: React.HTMLAttributes<HTMLPreElement> & {
 		__rawString__?: string
 		__npmCommand__?: string
@@ -147,6 +148,7 @@ const components: MDXComponents = {
 		__pnpmCommand__?: string
 		__bunCommand__?: string
 		__title__?: string
+		__lang__?: string
 	}) => {
 		const isCommand =
 			!!__npmCommand__ &&
@@ -171,6 +173,7 @@ const components: MDXComponents = {
 			<CodeBlock
 				content={__rawString__ ?? ""}
 				topBar={hasTitle ? { label: __title__ } : undefined}
+				lang={__lang__}
 			/>
 		)
 	},

@@ -31,6 +31,34 @@ npm install @base-ui-components/react
 </Step>
 
 <Step>
+Add `Root` class to your app layout.
+
+```tsx title="layout.tsx"
+<html>
+	<body className="Root">{children}</body>
+</html>
+```
+
+</Step>
+
+<Step>
+Update `globals.css` file.
+
+```css title="globals.css"
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	.Root {
+		@apply bg-background isolate;
+	}
+}
+```
+
+</Step>
+
+<Step>
 Add 9ui theme to your project.
 
 ```bash

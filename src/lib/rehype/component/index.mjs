@@ -1,6 +1,7 @@
 import fs from "fs"
 import path from "path"
-import strip from "strip-comments"
+import { glob } from "glob"
+import { u } from "unist-builder"
 import { visit } from "unist-util-visit"
 
 export function rehypeRawString() {
@@ -75,13 +76,100 @@ export function rehypeComponentSource() {
 
 				try {
 					const source = fs.readFileSync(filePath, "utf8")
-					const formattedSource = strip(source)
 
 					node.attributes?.push({
-						name: "content",
-						value: formattedSource,
+						name: "__source__",
+						value: source,
 						type: "mdxJsxAttribute",
 					})
+
+					node.children?.push(
+						u("element", {
+							tagName: "pre",
+							properties: {
+								"data-rehype-pretty-code-figure": "",
+							},
+							children: [
+								u("element", {
+									tagName: "code",
+									properties: {
+										className: ["language-tsx"],
+									},
+									children: [
+										{
+											type: "text",
+											value: source,
+										},
+									],
+								}),
+							],
+						})
+					)
+
+					node.children.at(-1).__unwrapCode__ = "true"
+				} catch (error) {
+					console.error(error)
+				}
+			}
+		})
+	}
+}
+
+export function rehypeComponentPreview() {
+	return async (tree) => {
+		visit(tree, async (node) => {
+			if (node.name === "ComponentPreview") {
+				const name = getNodeAttributeByName(node, "name")?.value
+
+				if (!name) {
+					return null
+				}
+
+				const files = glob.sync(`**/${name}.tsx`, {
+					cwd: path.join(process.cwd(), "src/components/demos"),
+					absolute: true,
+				})
+
+				if (files.length === 0) {
+					return null
+				}
+
+				const filePath = files[0]
+
+				try {
+					let source = fs.readFileSync(filePath, "utf8")
+					source = source.replaceAll("export default", "export")
+
+					node.attributes?.push({
+						name: "__source__",
+						value: source,
+						type: "mdxJsxAttribute",
+					})
+
+					node.children?.push(
+						u("element", {
+							tagName: "pre",
+							properties: {
+								"data-rehype-pretty-code-figure": "",
+							},
+							children: [
+								u("element", {
+									tagName: "code",
+									properties: {
+										className: ["language-tsx"],
+									},
+									children: [
+										{
+											type: "text",
+											value: source,
+										},
+									],
+								}),
+							],
+						})
+					)
+
+					node.children.at(-1).__unwrapCode__ = "true"
 				} catch (error) {
 					console.error(error)
 				}
@@ -103,6 +191,17 @@ export function rehypeCommandProperties() {
 					return
 				}
 
+				const shikiClasses =
+					"shiki shiki-themes github-light-default github-dark-default"
+				if (
+					preElement.properties.className &&
+					Array.isArray(preElement.properties.className)
+				) {
+					preElement.properties.className.push(shikiClasses)
+				} else {
+					preElement.properties.className = [shikiClasses]
+				}
+
 				preElement.properties["__rawString__"] = node.__rawString__
 				preElement.properties["__npmCommand__"] = node.__npmCommand__
 				preElement.properties["__yarnCommand__"] = node.__yarnCommand__
@@ -110,6 +209,7 @@ export function rehypeCommandProperties() {
 				preElement.properties["__bunCommand__"] = node.__bunCommand__
 				preElement.properties["__title__"] = node.__title__
 				preElement.properties["__lang__"] = node.__lang__
+				preElement.properties["__unwrapCode__"] = node.__unwrapCode__
 			}
 		})
 	}

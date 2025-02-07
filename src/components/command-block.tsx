@@ -86,7 +86,7 @@ export const CommandBlock = ({
 
 			<TabContent className="mt-0 border-none" value={activeTab}>
 				<div
-					className="code-wrapper [&_pre]:p-0"
+					className="command-block"
 					dangerouslySetInnerHTML={{ __html: prettyCode }}
 				/>
 			</TabContent>

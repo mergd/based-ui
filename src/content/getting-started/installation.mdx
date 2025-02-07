@@ -6,8 +6,8 @@
 		<MessageSquareWarningIcon />
 	</AlertIcon>
 	<AlertContent>
-		<AlertTitle>Important Note</AlertTitle>
-		<AlertDescription>
+		<AlertTitle>Important</AlertTitle>
+		<AlertDescription className="[&_p]:leading-normal">
 			9ui installation relies on shadcn cli to setting up your project and
 			install the components.
 		</AlertDescription>
@@ -16,22 +16,17 @@
 
 <Steps>
 
-<Step>
-	Follow the [shadcn cli installation
-	guide](https://ui.shadcn.com/docs/installation) to setup your project.
-</Step>
+<Step>Setup shadcn.</Step>
 
-<Step>
-Install Base UI.
+Follow the [shadcn installation guide](https://ui.shadcn.com/docs/installation) to setup your project.
 
-```bash
+<Step>Install Base UI.</Step>
+
+```bash title="Terminal"
 npm install @base-ui-components/react
 ```
 
-</Step>
-
-<Step>
-Add `Root` class to your app layout.
+<Step>Add `Root` class to your app layout.</Step>
 
 ```tsx title="layout.tsx"
 <html>
@@ -39,10 +34,7 @@ Add `Root` class to your app layout.
 </html>
 ```
 
-</Step>
-
-<Step>
-Update `globals.css` file.
+<Step>Update `globals.css` file.</Step>
 
 ```css title="globals.css"
 @tailwind base;
@@ -56,16 +48,11 @@ Update `globals.css` file.
 }
 ```
 
-</Step>
+<Step>Add 9ui theme to your project.</Step>
 
-<Step>
-Add 9ui theme to your project.
-
-```bash
+```bash title="Terminal"
 npx shadcn@latest add "https://9ui.dev/r/theme.json"
 ```
-
-</Step>
 
 <Step>That's it! You can now install the components.</Step>
 

@@ -95,11 +95,6 @@
 		@apply scroll-auto;
 	}
 
-	html.dark .shiki,
-	html.dark .shiki span {
-		color: var(--shiki-dark) !important;
-	}
-
 	body {
 		@apply bg-background text-foreground;
 	}
@@ -119,12 +114,8 @@
 	}
 
 	.step:before {
-		@apply absolute size-10 bg-muted rounded-full font-mono font-medium text-center text-sm inline-flex items-center justify-center -indent-px border-4 border-background ml-[-52px] mt-[-10px] tracking-tighter;
+		@apply absolute size-10 bg-muted rounded-full font-mono font-medium text-center text-sm inline-flex items-center justify-center -indent-px border-4 border-background ml-[-52px] mt-[-8px] tracking-tighter;
 		content: counter(step);
-	}
-
-	.code-wrapper {
-		@apply text-xs font-normal [&_pre]:max-h-[300px] [&_pre>code]:!bg-transparent [&_pre]:!m-0 [&_pre]:overflow-auto [&_pre]:!bg-background [&_pre]:p-4;
 	}
 }
 

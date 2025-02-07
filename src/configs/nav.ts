@@ -24,7 +24,6 @@ export const navConfig: NavConfig = {
 				{
 					title: "Theming",
 					href: "/docs/getting-started/theming",
-					disabled: true,
 				},
 				{
 					title: "Dark mode",

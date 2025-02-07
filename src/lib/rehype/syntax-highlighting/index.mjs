@@ -14,16 +14,19 @@ export function rehypeInlineCode() {
 			node.properties ??= {}
 			node.properties["data-inline"] = ""
 
-			// Unwrap the <span> that contains the <code> element
-			const span = ancestors.slice(-1)[0]
-			const spanParent = ancestors.slice(-2)[0]
-			const spanIndex = spanParent.children.indexOf(span)
-			spanParent.children[spanIndex] = node
-			node.children = node.children[0].children
+			if (ancestors.find(({ tagName }) => tagName === "span")) {
+				const span = ancestors.slice(-1)[0]
+				const spanParent = ancestors.slice(-2)[0]
+				const spanIndex = spanParent.children.indexOf(span)
+				spanParent.children[spanIndex] = node
+				node.children = node.children[0].children
 
-			// Remove styles
-			delete node.properties.style
-			delete node.children[0].properties.style
+				delete node.properties.style
+				for (const child of node.children) {
+					delete child.properties.style
+				}
+			}
+
 			if (ancestors.find(({ tagName }) => tagName === "a")) {
 				for (const child of node.children) {
 					delete child.properties.style
@@ -39,7 +42,7 @@ export function rehypeInlineCode() {
 // so that the object persists between hot reloads and doesn't leak memory.
 globalThis.highlighter ??= await createHighlighter({
 	themes: ["github-dark-default", "github-light-default"],
-	langs: ["tsx", "bash", "css"],
+	langs: ["tsx", "bash", "css", "js", "json", "jsx", "ts"],
 })
 
 /** @type {Awaited<ReturnType<typeof import('shiki').createHighlighter>> } */
@@ -51,8 +54,10 @@ export const rehypeSyntaxHighlighting = [
 		rehypePrettyCode,
 		{
 			getHighlighter: () => globalThis.highlighter,
-			grid: false,
-			theme: "github-dark-default",
+			theme: {
+				light: "github-light-default",
+				dark: "github-dark-default",
+			},
 			defaultLang: "tsx",
 		},
 	],

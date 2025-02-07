@@ -5,43 +5,26 @@ import * as React from "react"
 import { CodeBar } from "@/components/code-bar"
 import { Button } from "@/components/ui/button"
 
-import { highlighter } from "@/lib/rehype/syntax-highlighting"
 import { cn } from "@/lib/utils"
 
-interface ComponentSourceProps {
+interface ComponentSourceProps extends React.HTMLAttributes<HTMLDivElement> {
 	name: string
-	content: string
+	__source__: string
 }
 
-export default function ComponentSource(props: ComponentSourceProps) {
+export const ComponentSource = ({
+	name,
+	__source__,
+	children,
+}: ComponentSourceProps) => {
 	const [expanded, setExpanded] = React.useState(false)
-
-	const prettyCode = React.useMemo(() => {
-		return highlighter.codeToHtml(props.content, {
-			lang: "tsx",
-			themes: {
-				dark: "github-dark-default",
-				light: "github-light-default",
-			},
-			transformers: [
-				{
-					pre(node) {
-						node.properties.style = "tab-size: 2"
-					},
-					code(node) {
-						node.properties.style = "tab-size: 2"
-					},
-				},
-			],
-		})
-	}, [props.content])
 
 	return (
 		<div className="mt-4 overflow-hidden rounded-lg border">
 			<CodeBar
-				label={`${props.name}.tsx`}
+				label={`${name}.tsx`}
 				className="border-t-0"
-				content={props.content}
+				content={__source__}
 			/>
 
 			<div className="relative">
@@ -53,11 +36,12 @@ export default function ComponentSource(props: ComponentSourceProps) {
 				>
 					<div
 						className={cn(
-							"code-wrapper [&_pre]:max-h-[600px] [&_pre]:pb-16",
+							"[&_pre]:max-h-[600px] [&_pre]:!pb-16",
 							expanded ? "[&>pre]:overflow-auto" : "[&>pre]:overflow-hidden"
 						)}
-						dangerouslySetInnerHTML={{ __html: prettyCode }}
-					/>
+					>
+						{children}
+					</div>
 				</div>
 				<div
 					className={cn(

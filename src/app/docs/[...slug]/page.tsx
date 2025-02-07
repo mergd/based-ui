@@ -7,9 +7,10 @@ import { TableOfContents } from "@/components/toc"
 
 import { siteConfig } from "@/configs/site"
 
-import { getMetadata } from "@/lib/metadata"
 import { getTableOfContents } from "@/lib/toc"
 import { absoluteUrl } from "@/lib/url"
+
+import { contentRegistry } from "@/registry/contents"
 
 export async function generateMetadata({
 	params,
@@ -20,12 +21,14 @@ export async function generateMetadata({
 		return {}
 	}
 
+	const { metadata } = doc
+
 	return {
-		title: doc.metadata.title,
-		description: doc.metadata.description,
+		title: metadata.title,
+		description: metadata.description,
 		openGraph: {
-			title: doc.metadata.title,
-			description: doc.metadata.description,
+			title: metadata.title,
+			description: metadata.description,
 			type: "article",
 			url: absoluteUrl("docs", doc.slug),
 			images: [
@@ -39,8 +42,8 @@ export async function generateMetadata({
 		},
 		twitter: {
 			card: "summary_large_image",
-			title: doc.metadata.title,
-			description: doc.metadata.description,
+			title: metadata.title,
+			description: metadata.description,
 			images: [siteConfig.ogImage],
 			creator: "@borabalogluu",
 		},
@@ -55,22 +58,30 @@ interface DocPageProps {
 
 async function getDocFromParams({ params }: DocPageProps) {
 	const { slug: slugs } = await params
-
 	const slug = slugs.join("/")
 
-	const doc = await import(`@/content/${slug}.mdx`)
-	const source = await readFile(
-		join(process.cwd(), "src/content", `/${slug}.mdx`),
-		"utf-8"
-	)
+	const entry = contentRegistry[slug]
 
-	if (!doc || !source) {
+	if (!entry) {
 		return null
 	}
 
-	const metadata = await getMetadata(source)
+	try {
+		const doc = await import(`@/content/${entry.path}`)
+		const source = await readFile(
+			join(process.cwd(), "src/content", entry.path),
+			"utf-8"
+		)
 
-	return { Doc: doc.default, source, slug, metadata }
+		return {
+			Doc: doc.default,
+			source,
+			slug,
+			metadata: entry.meta,
+		}
+	} catch {
+		return null
+	}
 }
 
 const DocPage = async ({ params }: DocPageProps) => {

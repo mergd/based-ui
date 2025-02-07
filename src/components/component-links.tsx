@@ -7,7 +7,7 @@ interface ComponentLinksProps {
 	}[]
 }
 
-const ComponentLinks = ({ links }: ComponentLinksProps) => {
+export const ComponentLinks = ({ links }: ComponentLinksProps) => {
 	return (
 		<div className="mt-4 flex gap-2">
 			{links.map((link) => (
@@ -25,5 +25,3 @@ const ComponentLinks = ({ links }: ComponentLinksProps) => {
 		</div>
 	)
 }
-
-export default ComponentLinks

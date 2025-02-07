@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Geist, Geist_Mono } from "next/font/google"
 
 import "./globals.css"
+import "./syntax.css"
 
 import { ThemeProvider } from "next-themes"
 
@@ -12,8 +13,18 @@ import { Toaster } from "@/components/ui/sonner"
 
 import { siteConfig } from "@/configs/site"
 
-const inter = Inter({
+import { cn } from "@/lib/utils"
+
+const geist = Geist({
 	subsets: ["latin"],
+	display: "swap",
+	variable: "--font-geist",
+})
+
+const geistMono = Geist_Mono({
+	subsets: ["latin"],
+	display: "swap",
+	variable: "--font-geist-mono",
 })
 
 export const metadata: Metadata = {
@@ -59,7 +70,12 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
 	<html lang="en" suppressHydrationWarning>
-		<body className={inter.className}>
+		<body
+			className={cn(
+				`${geist.variable} ${geistMono.variable}`,
+				"font-sans antialiased"
+			)}
+		>
 			<ThemeProvider
 				attribute="class"
 				defaultTheme="system"

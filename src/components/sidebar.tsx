@@ -2,11 +2,12 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { type SidebarNavGroup } from "@/types/nav"
 
 import { navConfig } from "@/configs/nav"
 
 import { cn } from "@/lib/utils"
+
+import { type SidebarNavGroup } from "@/types/nav"
 
 interface DocsSidebarNavItemsProps {
 	items: SidebarNavGroup["items"]

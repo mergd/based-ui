@@ -1,13 +1,16 @@
 import * as React from "react"
+import Link from "next/link"
 import { MessageSquareWarningIcon } from "lucide-react"
 
 import { CodeBlock } from "@/components/code-block"
 import { CommandBlock } from "@/components/command-block"
 import { ComponentAnatomy } from "@/components/component-anatomy"
 import { ComponentInstallation } from "@/components/component-installation"
-import ComponentLinks from "@/components/component-links"
+import { ComponentLinks } from "@/components/component-links"
 import { ComponentPreview } from "@/components/component-preview"
-import ComponentSource from "@/components/component-source"
+import { ComponentSource } from "@/components/component-source"
+import { Icons } from "@/components/icons"
+import { ThemeToggle } from "@/components/theme-toggle"
 import {
 	Accordion,
 	AccordionContent,
@@ -71,15 +74,25 @@ const components: MDXComponents = {
 	li: ({ className, ...props }: React.HTMLAttributes<HTMLLIElement>) => (
 		<li className={cn("ml-2 list-inside list-disc", className)} {...props} />
 	),
-	code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
-		<code
-			className={cn(
-				"relative rounded-sm bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-normal [&[data-inline]]:text-accent-foreground",
-				className
-			)}
-			{...props}
-		/>
-	),
+	code: ({
+		className,
+		...props
+	}: React.HTMLAttributes<HTMLElement> & {
+		"data-inline"?: string
+	}) => {
+		const isInline = props["data-inline"] === ""
+
+		return (
+			<code
+				className={cn(
+					isInline &&
+						"relative rounded-sm bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-normal text-accent-foreground",
+					className
+				)}
+				{...props}
+			/>
+		)
+	},
 	blockquote: ({
 		className,
 		...props
@@ -141,6 +154,8 @@ const components: MDXComponents = {
 		__bunCommand__,
 		__title__,
 		__lang__,
+		__unwrapCode__,
+		...props
 	}: React.HTMLAttributes<HTMLPreElement> & {
 		__rawString__?: string
 		__npmCommand__?: string
@@ -149,6 +164,7 @@ const components: MDXComponents = {
 		__bunCommand__?: string
 		__title__?: string
 		__lang__?: string
+		__unwrapCode__?: string
 	}) => {
 		const isCommand =
 			!!__npmCommand__ &&
@@ -167,6 +183,12 @@ const components: MDXComponents = {
 			)
 		}
 
+		const shouldUnwrap = __unwrapCode__ === "true"
+
+		if (shouldUnwrap) {
+			return <pre {...props} />
+		}
+
 		const hasTitle = !!__title__
 
 		return (
@@ -174,6 +196,7 @@ const components: MDXComponents = {
 				content={__rawString__ ?? ""}
 				topBar={hasTitle ? { label: __title__ } : undefined}
 				lang={__lang__}
+				{...props}
 			/>
 		)
 	},
@@ -242,16 +265,22 @@ const components: MDXComponents = {
 	},
 	Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
 		<h3
-			className={cn(
-				"step mt-8 text-sm font-semibold tracking-tight",
-				className
-			)}
+			className={cn("step mt-8 font-semibold tracking-tight", className)}
 			{...props}
 		/>
 	),
 	Steps: ({ ...props }) => (
 		<div
 			className="steps mb-12 ml-4 border-l pl-8 [counter-reset:step]"
+			{...props}
+		/>
+	),
+	LinkCard: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
+		<Link
+			className={cn(
+				"flex w-full flex-col items-center justify-center gap-3 rounded-lg border bg-card p-10 font-medium text-card-foreground shadow transition-colors hover:bg-card/80 md:p-10",
+				className
+			)}
 			{...props}
 		/>
 	),
@@ -274,6 +303,8 @@ const components: MDXComponents = {
 	TabsList,
 	ComponentInstallation,
 	ComponentAnatomy,
+	Icons,
+	ThemeToggle,
 }
 
 export function useMDXComponents(): MDXComponents {

@@ -1,42 +1,17 @@
-"use client"
-
 import React from "react"
 
 import { CodeBar } from "@/components/code-bar"
-
-import { highlighter } from "@/lib/rehype/syntax-highlighting"
 
 interface CodeBlockProps {
 	content: string
 	topBar?: {
 		label: string
 	}
-	lang?: string
 }
 
-export const CodeBlock = ({ content, topBar, lang }: CodeBlockProps) => {
-	const prettyCode = React.useMemo(() => {
-		return highlighter.codeToHtml(content, {
-			lang: lang ?? "tsx",
-			themes: {
-				dark: "github-dark-default",
-				light: "github-light-default",
-			},
-			transformers: [
-				{
-					pre(node) {
-						node.properties.style = "tab-size: 2"
-					},
-					code(node) {
-						node.properties.style = "tab-size: 2"
-					},
-				},
-			],
-		})
-	}, [content])
-
+export const CodeBlock = ({ content, topBar, ...props }: CodeBlockProps) => {
 	return (
-		<div className="mt-4 overflow-hidden rounded-lg border">
+		<div className={"mt-4 overflow-hidden rounded-lg border"}>
 			{topBar && (
 				<CodeBar
 					label={topBar.label}
@@ -44,10 +19,7 @@ export const CodeBlock = ({ content, topBar, lang }: CodeBlockProps) => {
 					content={content}
 				/>
 			)}
-			<div
-				className="code-wrapper"
-				dangerouslySetInnerHTML={{ __html: prettyCode }}
-			/>
+			<pre {...props} />
 		</div>
 	)
 }

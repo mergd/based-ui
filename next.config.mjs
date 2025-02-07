@@ -6,6 +6,7 @@ import remarkGfm from "remark-gfm"
 
 import {
 	rehypeCommandProperties,
+	rehypeComponentPreview,
 	rehypeComponentSource,
 	rehypeRawString,
 } from "./src/lib/rehype/component/index.mjs"
@@ -52,6 +53,7 @@ const withMDX = createMDX({
 			rehypeAutolinkHeadings,
 			rehypeExtractToc,
 			rehypeRawString,
+			rehypeComponentPreview,
 			rehypeComponentSource,
 			...rehypeSyntaxHighlighting,
 			rehypeCommandProperties,

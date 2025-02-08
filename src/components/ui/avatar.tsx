@@ -1,31 +1,8 @@
-"use client"
-
 import * as React from "react"
+import { Avatar as AvatarBase } from "@base-ui-components/react/avatar"
 import { cva, VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
-
-type AvatarImageStatus = "loading" | "loaded" | "error"
-
-interface AvatarContextValue {
-	imageStatus: AvatarImageStatus
-	setImageStatus: (imageStatus: AvatarImageStatus) => void
-}
-
-const AvatarContext = React.createContext<AvatarContextValue>({
-	imageStatus: "loading",
-	setImageStatus: () => {},
-})
-
-const useAvatarContext = () => {
-	const context = React.useContext(AvatarContext)
-
-	if (!context) {
-		throw new Error("useAvatarContext must be used within a Avatar.Root")
-	}
-
-	return context
-}
 
 const avatarVariants = cva(
 	"relative flex shrink-0 overflow-hidden rounded-full",
@@ -44,22 +21,17 @@ const avatarVariants = cva(
 )
 
 export interface AvatarProps
-	extends React.HTMLAttributes<HTMLDivElement>,
+	extends React.ComponentPropsWithoutRef<typeof AvatarBase.Root>,
 		VariantProps<typeof avatarVariants> {}
 
-const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
+const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
 	({ className, size, ...props }, ref) => {
-		const [imageStatus, setImageStatus] =
-			React.useState<AvatarImageStatus>("loading")
-
 		return (
-			<AvatarContext.Provider value={{ imageStatus, setImageStatus }}>
-				<div
-					ref={ref}
-					className={cn(avatarVariants({ size }), className)}
-					{...props}
-				/>
-			</AvatarContext.Provider>
+			<AvatarBase.Root
+				ref={ref}
+				className={cn(avatarVariants({ size }), className)}
+				{...props}
+			/>
 		)
 	}
 )
@@ -67,27 +39,13 @@ Avatar.displayName = "Avatar"
 
 const AvatarImage = React.forwardRef<
 	HTMLImageElement,
-	React.ImgHTMLAttributes<HTMLImageElement>
->(({ className, alt = "", onError, onLoad, ...props }, ref) => {
-	const { imageStatus, setImageStatus } = useAvatarContext()
-
-	if (imageStatus === "error") {
-		return null
-	}
-
+	React.ComponentPropsWithoutRef<typeof AvatarBase.Image>
+>(({ className, alt = "", ...props }, ref) => {
 	return (
-		<img
+		<AvatarBase.Image
 			ref={ref}
-			className={cn("aspect-square size-full object-cover", className)}
+			className={cn("size-full object-cover", className)}
 			alt={alt}
-			onLoad={(e) => {
-				setImageStatus("loaded")
-				onLoad?.(e)
-			}}
-			onError={(e) => {
-				setImageStatus("error")
-				onError?.(e)
-			}}
 			{...props}
 		/>
 	)
@@ -96,16 +54,10 @@ AvatarImage.displayName = "AvatarImage"
 
 const AvatarFallback = React.forwardRef<
 	HTMLSpanElement,
-	React.HTMLAttributes<HTMLSpanElement>
+	React.ComponentPropsWithoutRef<typeof AvatarBase.Fallback>
 >(({ className, ...props }, ref) => {
-	const { imageStatus } = useAvatarContext()
-
-	if (imageStatus === "loaded") {
-		return null
-	}
-
 	return (
-		<span
+		<AvatarBase.Fallback
 			ref={ref}
 			className={cn(
 				"flex size-full items-center justify-center rounded-full bg-muted text-muted-foreground",

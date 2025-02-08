@@ -21,11 +21,11 @@ const Progress = React.forwardRef<
 ))
 Progress.displayName = "Progress"
 
-const ProgressLabel = React.forwardRef<
+const ProgressValue = React.forwardRef<
 	HTMLSpanElement,
-	React.HTMLAttributes<HTMLSpanElement>
+	React.ComponentPropsWithoutRef<typeof BaseProgress.Value>
 >(({ className, ...props }, ref) => (
-	<span
+	<BaseProgress.Value
 		ref={ref}
 		className={cn(
 			"absolute right-0 top-2 text-xs font-medium text-foreground",
@@ -34,6 +34,6 @@ const ProgressLabel = React.forwardRef<
 		{...props}
 	/>
 ))
-ProgressLabel.displayName = "ProgressLabel"
+ProgressValue.displayName = "ProgressValue"
 
-export { Progress, ProgressLabel }
+export { Progress, ProgressValue }

@@ -40,7 +40,7 @@ export function MobileNav() {
 					)}
 				/>
 				<DrawerPortal>
-					<DrawerContent className="mx-auto max-h-[70svh]">
+					<DrawerContent className="mx-auto max-h-[85svh]">
 						<div className="overflow-auto p-6 text-sm">
 							<div className="space-y-0.5">
 								{navConfig.mainNav.map((item) => (

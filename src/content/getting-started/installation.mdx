@@ -28,18 +28,20 @@ npm install @base-ui-components/react
 
 <Step>Add `Root` class to your app layout.</Step>
 
-```tsx title="layout.tsx"
-<html>
-	<body className="Root">{children}</body>
-</html>
+```tsx {2} title="layout.tsx"
+<body>
+	<div className="Root">{children}</div>
+</body>
 ```
 
 <Step>Update `globals.css` file.</Step>
 
-```css title="globals.css"
+```css {7-11} title="globals.css"
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+{/* Existing code */}
 
 @layer base {
 	.Root {
@@ -57,3 +59,7 @@ npx shadcn@latest add "https://9ui.dev/r/theme.json"
 <Step>That's it! You can now install the components.</Step>
 
 </Steps>
+
+# Icons
+
+9ui uses [`lucide-react`](https://lucide.dev/) for icons. You can replace it with the icon library of your choice. [Monicon](https://monicon-docs.vercel.app/) provides 200,000+ icons from popular libraries. I recommend you to use it.

@@ -28,7 +28,7 @@ const ProgressValue = React.forwardRef<
 	<BaseProgress.Value
 		ref={ref}
 		className={cn(
-			"absolute right-0 top-2 text-xs font-medium text-foreground",
+			"mt-2 flex justify-end text-xs font-medium text-foreground",
 			className
 		)}
 		{...props}

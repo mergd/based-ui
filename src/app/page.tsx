@@ -11,9 +11,7 @@ const Home = () => (
 		<main className="flex flex-col gap-8">
 			<div>
 				<Badge variant="outline" className="h-8 gap-2">
-					<AlarmClockIcon size={12} />
-					<Separator orientation="vertical" className="h-1/2" />
-					Coming Soon
+					<span>🎉</span>First components are here!
 				</Badge>
 				<div className="mt-4 space-y-2">
 					<h1 className="text-3xl font-semibold">Build your design system</h1>

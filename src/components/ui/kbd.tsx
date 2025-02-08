@@ -10,7 +10,7 @@ const Kbd = React.forwardRef<
 		<div
 			ref={ref}
 			className={cn(
-				"flex h-5 w-min min-w-5 items-center justify-center rounded bg-secondary text-center text-xs font-medium tracking-tight text-secondary-foreground shadow-sm",
+				"flex h-5 w-min min-w-5 items-center justify-center rounded-sm bg-secondary text-center text-xs font-medium tracking-tight text-secondary-foreground shadow-sm",
 				className
 			)}
 			{...props}

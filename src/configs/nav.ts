@@ -50,6 +50,12 @@ export const navConfig: NavConfig = {
 					title: "Changelog",
 					href: "/docs/getting-started/changelog",
 				},
+				{
+					title: "Figma",
+					href: "/docs/getting-started/figma",
+					disabled: true,
+					label: "Coming Soon",
+				},
 			],
 		},
 		{

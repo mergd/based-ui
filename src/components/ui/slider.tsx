@@ -21,9 +21,9 @@ const Slider = React.forwardRef<
 			)}
 			{...props}
 		>
-			<BaseSlider.Control className="flex w-56 items-center py-3">
-				<BaseSlider.Track className="h-1 w-full rounded bg-muted">
-					<BaseSlider.Indicator className="relative rounded bg-primary" />
+			<BaseSlider.Control className="flex w-56 items-center">
+				<BaseSlider.Track className="h-1 w-full rounded-full bg-muted">
+					<BaseSlider.Indicator className="relative rounded-full bg-primary" />
 					<BaseSlider.Thumb
 						className="size-4 rounded-full bg-primary shadow-sm dark:shadow-none"
 						inputId="1"
@@ -42,19 +42,19 @@ const Slider = React.forwardRef<
 })
 Slider.displayName = "Slider"
 
-const SliderLabel = React.forwardRef<
+const SliderValue = React.forwardRef<
 	HTMLOutputElement,
 	React.ComponentPropsWithoutRef<typeof BaseSlider.Value>
 >(({ className, ...props }, ref) => (
 	<BaseSlider.Value
 		ref={ref}
 		className={cn(
-			"flex justify-end text-xs font-medium text-foreground",
+			"mt-3 flex justify-end text-xs font-medium text-foreground",
 			className
 		)}
 		{...props}
 	/>
 ))
-SliderLabel.displayName = "SliderLabel"
+SliderValue.displayName = "SliderValue"
 
-export { Slider, SliderLabel }
+export { Slider, SliderValue }

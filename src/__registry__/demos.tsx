@@ -267,52 +267,6 @@ export const demoRegistry: DemoRegistry = {
 		category: "slider",
 		path: "src/components/demos/slider/slider-demo.tsx",
 	},
-	"skeleton-demo": {
-		source:
-			'import { Skeleton } from "@/components/ui/skeleton"\n\nexport default function SkeletonDemo() {\n\treturn (\n\t\t<div className="flex w-64 flex-col gap-4 rounded-lg border p-4">\n\t\t\t<Skeleton className="aspect-video w-full" />\n\t\t\t<Skeleton className="h-5 w-2/3" />\n\t\t\t<div className="flex flex-col gap-2">\n\t\t\t\t<Skeleton className="h-4 w-full" />\n\t\t\t\t<Skeleton className="h-4 w-full" />\n\t\t\t\t<Skeleton className="h-4 w-2/3" />\n\t\t\t</div>\n\t\t</div>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/skeleton/skeleton-demo")
-		),
-		title: "skeleton-demo",
-		category: "skeleton",
-		path: "src/components/demos/skeleton/skeleton-demo.tsx",
-	},
-	"sheet-sides": {
-		source:
-			'"use client"\n\nimport { Button } from "@/components/ui/button"\nimport { Label } from "@/components/ui/label"\nimport {\n\tSheet,\n\tSheetBackdrop,\n\tSheetClose,\n\tSheetContent,\n\tSheetDescription,\n\tSheetFooter,\n\tSheetHeader,\n\tSheetTitle,\n\tSheetTrigger,\n} from "@/components/ui/sheet"\nimport { Textarea } from "@/components/ui/textarea"\n\nconst SHEET_SIDES = ["top", "right", "bottom", "left"] as const\n\nexport default function SheetSides() {\n\treturn (\n\t\t<div className="grid grid-cols-2 gap-2">\n\t\t\t{SHEET_SIDES.map((side) => (\n\t\t\t\t<Sheet key={side}>\n\t\t\t\t\t<SheetTrigger\n\t\t\t\t\t\trender={(props) => (\n\t\t\t\t\t\t\t<Button {...props} className="w-full">\n\t\t\t\t\t\t\t\t{side}\n\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t)}\n\t\t\t\t\t/>\n\t\t\t\t\t<SheetContent side={side}>\n\t\t\t\t\t\t<SheetClose />\n\t\t\t\t\t\t<SheetHeader>\n\t\t\t\t\t\t\t<SheetTitle>Submit Feedback</SheetTitle>\n\t\t\t\t\t\t\t<SheetDescription>\n\t\t\t\t\t\t\t\tPlease share your feedback with us to help improve our service.\n\t\t\t\t\t\t\t</SheetDescription>\n\t\t\t\t\t\t</SheetHeader>\n\t\t\t\t\t\t<div className="my-4 space-y-2">\n\t\t\t\t\t\t\t<Label htmlFor="feedback">Your Feedback</Label>\n\t\t\t\t\t\t\t<Textarea id="feedback" placeholder="Type your feedback here." />\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<SheetFooter>\n\t\t\t\t\t\t\t<SheetClose\n\t\t\t\t\t\t\t\trender={(props) => (\n\t\t\t\t\t\t\t\t\t<Button {...props} size="sm" variant="ghost">\n\t\t\t\t\t\t\t\t\t\tClose\n\t\t\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t<Button size="sm">Submit</Button>\n\t\t\t\t\t\t</SheetFooter>\n\t\t\t\t\t</SheetContent>\n\t\t\t\t</Sheet>\n\t\t\t))}\n\t\t</div>\n\t)\n}\n',
-		component: React.lazy(() => import("@/components/demos/sheet/sheet-sides")),
-		title: "sheet-sides",
-		category: "sheet",
-		path: "src/components/demos/sheet/sheet-sides.tsx",
-	},
-	"sheet-demo": {
-		source:
-			'"use client"\n\nimport { Button } from "@/components/ui/button"\nimport { Label } from "@/components/ui/label"\nimport {\n\tSheet,\n\tSheetClose,\n\tSheetContent,\n\tSheetDescription,\n\tSheetFooter,\n\tSheetHeader,\n\tSheetTitle,\n\tSheetTrigger,\n} from "@/components/ui/sheet"\nimport { Textarea } from "@/components/ui/textarea"\n\nexport default function SheetDemo() {\n\treturn (\n\t\t<Sheet>\n\t\t\t<SheetTrigger\n\t\t\t\trender={(props) => <Button {...props}>Open Sheet</Button>}\n\t\t\t/>\n\t\t\t<SheetContent>\n\t\t\t\t<SheetClose />\n\t\t\t\t<SheetHeader>\n\t\t\t\t\t<SheetTitle>Submit Feedback</SheetTitle>\n\t\t\t\t\t<SheetDescription>\n\t\t\t\t\t\tPlease share your feedback with us to help improve our service.\n\t\t\t\t\t</SheetDescription>\n\t\t\t\t</SheetHeader>\n\t\t\t\t<div className="my-4 space-y-2">\n\t\t\t\t\t<Label htmlFor="feedback">Your Feedback</Label>\n\t\t\t\t\t<Textarea id="feedback" placeholder="Type your feedback here." />\n\t\t\t\t</div>\n\t\t\t\t<SheetFooter>\n\t\t\t\t\t<SheetClose\n\t\t\t\t\t\trender={(props) => (\n\t\t\t\t\t\t\t<Button {...props} size="sm" variant="ghost">\n\t\t\t\t\t\t\t\tClose\n\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t)}\n\t\t\t\t\t/>\n\t\t\t\t\t<Button size="sm">Submit</Button>\n\t\t\t\t</SheetFooter>\n\t\t\t</SheetContent>\n\t\t</Sheet>\n\t)\n}\n',
-		component: React.lazy(() => import("@/components/demos/sheet/sheet-demo")),
-		title: "sheet-demo",
-		category: "sheet",
-		path: "src/components/demos/sheet/sheet-demo.tsx",
-	},
-	"scroll-area-horizontal": {
-		source:
-			'import { ScrollArea } from "@/components/ui/scroll-area"\n\nconst versions = Array.from({ length: 50 }, (_, i) => `v${i + 1}.0.0`).join(\n\t", "\n)\n\nexport default function ScrollAreaHorizontal() {\n\treturn (\n\t\t<ScrollArea\n\t\t\tclassName="h-fit w-full max-w-60 rounded-lg border p-2"\n\t\t\torientation="horizontal"\n\t\t>\n\t\t\t<div className="mt-2 flex flex-col gap-2 text-nowrap pb-2 text-sm">\n\t\t\t\t{versions}\n\t\t\t</div>\n\t\t</ScrollArea>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/scroll-area/scroll-area-horizontal")
-		),
-		title: "scroll-area-horizontal",
-		category: "scroll-area",
-		path: "src/components/demos/scroll-area/scroll-area-horizontal.tsx",
-	},
-	"scroll-area-demo": {
-		source:
-			'import { ScrollArea } from "@/components/ui/scroll-area"\nimport { Separator } from "@/components/ui/separator"\n\nconst versions = Array.from({ length: 50 }, (_, i) => `v${i + 1}.0.0`)\n\nexport default function ScrollAreaDemo() {\n\treturn (\n\t\t<ScrollArea className="h-60 w-full max-w-60 rounded-lg border p-2">\n\t\t\t<h4 className="text-sm font-medium">Versions</h4>\n\t\t\t<Separator className="my-2" />\n\t\t\t<div className="mt-2 flex flex-col gap-2 text-sm">\n\t\t\t\t{versions.map((version) => (\n\t\t\t\t\t<div key={version}>{version}</div>\n\t\t\t\t))}\n\t\t\t</div>\n\t\t</ScrollArea>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/scroll-area/scroll-area-demo")
-		),
-		title: "scroll-area-demo",
-		category: "scroll-area",
-		path: "src/components/demos/scroll-area/scroll-area-demo.tsx",
-	},
 	"select-with-groups": {
 		source:
 			'import {\n\tSelect,\n\tSelectContent,\n\tSelectGroup,\n\tSelectGroupLabel,\n\tSelectItem,\n\tSelectTrigger,\n\tSelectValue,\n} from "@/components/ui/select"\n\nexport default function SelectWithGroups() {\n\treturn (\n\t\t<div className="w-80">\n\t\t\t<Select>\n\t\t\t\t<SelectTrigger>\n\t\t\t\t\t<SelectValue placeholder="Select an option" />\n\t\t\t\t</SelectTrigger>\n\t\t\t\t<SelectContent>\n\t\t\t\t\t<SelectGroup>\n\t\t\t\t\t\t<SelectGroupLabel>Fruits</SelectGroupLabel>\n\t\t\t\t\t\t<SelectItem value="apple">Apple</SelectItem>\n\t\t\t\t\t\t<SelectItem value="banana">Banana</SelectItem>\n\t\t\t\t\t\t<SelectItem value="cherry">Cherry</SelectItem>\n\t\t\t\t\t</SelectGroup>\n\t\t\t\t\t<SelectGroup>\n\t\t\t\t\t\t<SelectGroupLabel>Vegetables</SelectGroupLabel>\n\t\t\t\t\t\t<SelectItem value="carrot">Carrot</SelectItem>\n\t\t\t\t\t\t<SelectItem value="potato">Potato</SelectItem>\n\t\t\t\t\t\t<SelectItem value="tomato">Tomato</SelectItem>\n\t\t\t\t\t</SelectGroup>\n\t\t\t\t</SelectContent>\n\t\t\t</Select>\n\t\t</div>\n\t)\n}\n',
@@ -343,6 +297,32 @@ export const demoRegistry: DemoRegistry = {
 		category: "select",
 		path: "src/components/demos/select/select-demo.tsx",
 	},
+	"sheet-sides": {
+		source:
+			'"use client"\n\nimport { Button } from "@/components/ui/button"\nimport { Label } from "@/components/ui/label"\nimport {\n\tSheet,\n\tSheetClose,\n\tSheetContent,\n\tSheetDescription,\n\tSheetFooter,\n\tSheetHeader,\n\tSheetTitle,\n\tSheetTrigger,\n} from "@/components/ui/sheet"\nimport { Textarea } from "@/components/ui/textarea"\n\nconst SHEET_SIDES = ["top", "right", "bottom", "left"] as const\n\nexport default function SheetSides() {\n\treturn (\n\t\t<div className="grid grid-cols-2 gap-2">\n\t\t\t{SHEET_SIDES.map((side) => (\n\t\t\t\t<Sheet key={side}>\n\t\t\t\t\t<SheetTrigger\n\t\t\t\t\t\trender={(props) => (\n\t\t\t\t\t\t\t<Button {...props} className="w-full">\n\t\t\t\t\t\t\t\t{side}\n\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t)}\n\t\t\t\t\t/>\n\t\t\t\t\t<SheetContent side={side}>\n\t\t\t\t\t\t<SheetClose />\n\t\t\t\t\t\t<SheetHeader>\n\t\t\t\t\t\t\t<SheetTitle>Submit Feedback</SheetTitle>\n\t\t\t\t\t\t\t<SheetDescription>\n\t\t\t\t\t\t\t\tPlease share your feedback with us to help improve our service.\n\t\t\t\t\t\t\t</SheetDescription>\n\t\t\t\t\t\t</SheetHeader>\n\t\t\t\t\t\t<div className="my-4 space-y-2">\n\t\t\t\t\t\t\t<Label htmlFor="feedback">Your Feedback</Label>\n\t\t\t\t\t\t\t<Textarea id="feedback" placeholder="Type your feedback here." />\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<SheetFooter>\n\t\t\t\t\t\t\t<SheetClose\n\t\t\t\t\t\t\t\trender={(props) => (\n\t\t\t\t\t\t\t\t\t<Button {...props} size="sm" variant="ghost">\n\t\t\t\t\t\t\t\t\t\tClose\n\t\t\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t<Button size="sm">Submit</Button>\n\t\t\t\t\t\t</SheetFooter>\n\t\t\t\t\t</SheetContent>\n\t\t\t\t</Sheet>\n\t\t\t))}\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(() => import("@/components/demos/sheet/sheet-sides")),
+		title: "sheet-sides",
+		category: "sheet",
+		path: "src/components/demos/sheet/sheet-sides.tsx",
+	},
+	"sheet-demo": {
+		source:
+			'"use client"\n\nimport { Button } from "@/components/ui/button"\nimport { Label } from "@/components/ui/label"\nimport {\n\tSheet,\n\tSheetClose,\n\tSheetContent,\n\tSheetDescription,\n\tSheetFooter,\n\tSheetHeader,\n\tSheetTitle,\n\tSheetTrigger,\n} from "@/components/ui/sheet"\nimport { Textarea } from "@/components/ui/textarea"\n\nexport default function SheetDemo() {\n\treturn (\n\t\t<Sheet>\n\t\t\t<SheetTrigger\n\t\t\t\trender={(props) => <Button {...props}>Open Sheet</Button>}\n\t\t\t/>\n\t\t\t<SheetContent>\n\t\t\t\t<SheetClose />\n\t\t\t\t<SheetHeader>\n\t\t\t\t\t<SheetTitle>Submit Feedback</SheetTitle>\n\t\t\t\t\t<SheetDescription>\n\t\t\t\t\t\tPlease share your feedback with us to help improve our service.\n\t\t\t\t\t</SheetDescription>\n\t\t\t\t</SheetHeader>\n\t\t\t\t<div className="my-4 space-y-2">\n\t\t\t\t\t<Label htmlFor="feedback">Your Feedback</Label>\n\t\t\t\t\t<Textarea id="feedback" placeholder="Type your feedback here." />\n\t\t\t\t</div>\n\t\t\t\t<SheetFooter>\n\t\t\t\t\t<SheetClose\n\t\t\t\t\t\trender={(props) => (\n\t\t\t\t\t\t\t<Button {...props} size="sm" variant="ghost">\n\t\t\t\t\t\t\t\tClose\n\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t)}\n\t\t\t\t\t/>\n\t\t\t\t\t<Button size="sm">Submit</Button>\n\t\t\t\t</SheetFooter>\n\t\t\t</SheetContent>\n\t\t</Sheet>\n\t)\n}\n',
+		component: React.lazy(() => import("@/components/demos/sheet/sheet-demo")),
+		title: "sheet-demo",
+		category: "sheet",
+		path: "src/components/demos/sheet/sheet-demo.tsx",
+	},
+	"skeleton-demo": {
+		source:
+			'import { Skeleton } from "@/components/ui/skeleton"\n\nexport default function SkeletonDemo() {\n\treturn (\n\t\t<div className="flex w-64 flex-col gap-4 rounded-lg border p-4">\n\t\t\t<Skeleton className="aspect-video w-full" />\n\t\t\t<Skeleton className="h-5 w-2/3" />\n\t\t\t<div className="flex flex-col gap-2">\n\t\t\t\t<Skeleton className="h-4 w-full" />\n\t\t\t\t<Skeleton className="h-4 w-full" />\n\t\t\t\t<Skeleton className="h-4 w-2/3" />\n\t\t\t</div>\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/skeleton/skeleton-demo")
+		),
+		title: "skeleton-demo",
+		category: "skeleton",
+		path: "src/components/demos/skeleton/skeleton-demo.tsx",
+	},
 	"radio-group-disabled": {
 		source:
 			'import { Label } from "@/components/ui/label"\nimport { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"\n\nexport default function RadioGroupDisabled() {\n\treturn (\n\t\t<RadioGroup disabled aria-labelledby="radio-group-notifications">\n\t\t\t<div\n\t\t\t\tid="radio-group-notifications"\n\t\t\t\tclassName="font-medium text-foreground"\n\t\t\t>\n\t\t\t\tNotifications\n\t\t\t</div>\n\t\t\t<div className="flex items-center space-x-2">\n\t\t\t\t<RadioGroupItem id="email" value="email" />\n\t\t\t\t<Label htmlFor="email">Email</Label>\n\t\t\t</div>\n\t\t\t<div className="flex items-center space-x-2">\n\t\t\t\t<RadioGroupItem id="sms" value="sms" />\n\t\t\t\t<Label htmlFor="sms">SMS</Label>\n\t\t\t</div>\n\t\t\t<div className="flex items-center space-x-2">\n\t\t\t\t<RadioGroupItem id="email-and-sms" value="email-and-sms" />\n\t\t\t\t<Label htmlFor="email-and-sms">Email & SMS</Label>\n\t\t\t</div>\n\t\t</RadioGroup>\n\t)\n}\n',
@@ -363,15 +343,25 @@ export const demoRegistry: DemoRegistry = {
 		category: "radio-group",
 		path: "src/components/demos/radio-group/radio-group-demo.tsx",
 	},
-	"preview-card-demo": {
+	"scroll-area-horizontal": {
 		source:
-			'"use client"\n\nimport { GithubIcon, GlobeIcon, UserIcon } from "lucide-react"\n\nimport { Icons } from "@/components/icons"\nimport {\n\tPreviewCard,\n\tPreviewCardContent,\n\tPreviewCardTrigger,\n} from "@/components/ui/preview-card"\n\nexport default function PreviewCardDemo() {\n\treturn (\n\t\t<PreviewCard>\n\t\t\t<p className="max-w-80 text-balance text-foreground">\n\t\t\t\tThis is a preview card component from{" "}\n\t\t\t\t<PreviewCardTrigger className="cursor-pointer underline underline-offset-2">\n\t\t\t\t\t9ui\n\t\t\t\t</PreviewCardTrigger>\n\t\t\t\t.\n\t\t\t</p>\n\t\t\t<PreviewCardContent className="max-w-80 text-sm">\n\t\t\t\t<Icons.logo className="mx-auto w-10" />\n\t\t\t\t<p className="mt-2">\n\t\t\t\t\tBeautiful, customizable components built with{" "}\n\t\t\t\t\t<a\n\t\t\t\t\t\thref="https://base-ui.com"\n\t\t\t\t\t\tclassName="underline underline-offset-2"\n\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t>\n\t\t\t\t\t\tBase UI\n\t\t\t\t\t</a>{" "}\n\t\t\t\t\tand{" "}\n\t\t\t\t\t<a\n\t\t\t\t\t\thref="https://tailwindcss.com"\n\t\t\t\t\t\tclassName="underline underline-offset-2"\n\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t>\n\t\t\t\t\t\tTailwind CSS\n\t\t\t\t\t</a>\n\t\t\t\t\t.\n\t\t\t\t</p>\n\t\t\t\t<div className="mt-2 flex flex-col gap-2 text-sm">\n\t\t\t\t\t<div className="flex items-center gap-2">\n\t\t\t\t\t\t<span className="flex items-center gap-1 text-muted-foreground">\n\t\t\t\t\t\t\t<UserIcon size={14} />\n\t\t\t\t\t\t\tCreator:\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<a\n\t\t\t\t\t\t\thref="https://x.com/borabalogluu"\n\t\t\t\t\t\t\tclassName="underline underline-offset-2"\n\t\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\tBora Baloglu\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div className="flex items-center gap-2">\n\t\t\t\t\t\t<span className="flex items-center gap-1 text-muted-foreground">\n\t\t\t\t\t\t\t<GithubIcon size={14} />\n\t\t\t\t\t\t\tSource code:\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<a\n\t\t\t\t\t\t\thref="https://github.com/borabaloglu/9ui"\n\t\t\t\t\t\t\tclassName="underline underline-offset-2"\n\t\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\tGithub\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div className="flex items-center gap-2">\n\t\t\t\t\t\t<span className="flex items-center gap-1 text-muted-foreground">\n\t\t\t\t\t\t\t<GlobeIcon size={14} />\n\t\t\t\t\t\t\tWebsite\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<a\n\t\t\t\t\t\t\thref="https://9ui.dev"\n\t\t\t\t\t\t\tclassName="underline underline-offset-2"\n\t\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\t9ui.dev\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</PreviewCardContent>\n\t\t</PreviewCard>\n\t)\n}\n',
+			'import { ScrollArea } from "@/components/ui/scroll-area"\n\nconst versions = Array.from({ length: 50 }, (_, i) => `v${i + 1}.0.0`).join(\n\t", "\n)\n\nexport default function ScrollAreaHorizontal() {\n\treturn (\n\t\t<ScrollArea\n\t\t\tclassName="h-fit w-full max-w-60 rounded-lg border p-2"\n\t\t\torientation="horizontal"\n\t\t>\n\t\t\t<div className="mt-2 flex flex-col gap-2 text-nowrap pb-2 text-sm">\n\t\t\t\t{versions}\n\t\t\t</div>\n\t\t</ScrollArea>\n\t)\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/preview-card/preview-card-demo")
+			() => import("@/components/demos/scroll-area/scroll-area-horizontal")
 		),
-		title: "preview-card-demo",
-		category: "preview-card",
-		path: "src/components/demos/preview-card/preview-card-demo.tsx",
+		title: "scroll-area-horizontal",
+		category: "scroll-area",
+		path: "src/components/demos/scroll-area/scroll-area-horizontal.tsx",
+	},
+	"scroll-area-demo": {
+		source:
+			'import { ScrollArea } from "@/components/ui/scroll-area"\nimport { Separator } from "@/components/ui/separator"\n\nconst versions = Array.from({ length: 50 }, (_, i) => `v${i + 1}.0.0`)\n\nexport default function ScrollAreaDemo() {\n\treturn (\n\t\t<ScrollArea className="h-60 w-full max-w-60 rounded-lg border p-2">\n\t\t\t<h4 className="text-sm font-medium">Versions</h4>\n\t\t\t<Separator className="my-2" />\n\t\t\t<div className="mt-2 flex flex-col gap-2 text-sm">\n\t\t\t\t{versions.map((version) => (\n\t\t\t\t\t<div key={version}>{version}</div>\n\t\t\t\t))}\n\t\t\t</div>\n\t\t</ScrollArea>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/scroll-area/scroll-area-demo")
+		),
+		title: "scroll-area-demo",
+		category: "scroll-area",
+		path: "src/components/demos/scroll-area/scroll-area-demo.tsx",
 	},
 	"progress-with-label": {
 		source:
@@ -393,16 +383,6 @@ export const demoRegistry: DemoRegistry = {
 		category: "progress",
 		path: "src/components/demos/progress/progress-demo.tsx",
 	},
-	"popover-demo": {
-		source:
-			'import { CopyIcon, Share2Icon } from "lucide-react"\nimport { toast } from "sonner"\n\nimport { Button } from "@/components/ui/button"\nimport { Input } from "@/components/ui/input"\nimport {\n\tPopover,\n\tPopoverContent,\n\tPopoverDescription,\n\tPopoverHeader,\n\tPopoverTitle,\n\tPopoverTrigger,\n} from "@/components/ui/popover"\n\nexport default function PopoverDemo() {\n\tconst copyToClipboard = () => {\n\t\ttoast.success("Copied to clipboard")\n\t\tnavigator.clipboard.writeText(window.location.href)\n\t}\n\n\treturn (\n\t\t<Popover>\n\t\t\t<PopoverTrigger\n\t\t\t\trender={(props) => (\n\t\t\t\t\t<Button {...props} variant="outline" size="icon">\n\t\t\t\t\t\t<Share2Icon />\n\t\t\t\t\t</Button>\n\t\t\t\t)}\n\t\t\t/>\n\t\t\t<PopoverContent className="w-[calc(100vw-4rem)] sm:w-[500px]">\n\t\t\t\t<PopoverHeader>\n\t\t\t\t\t<PopoverTitle>Share</PopoverTitle>\n\t\t\t\t\t<PopoverDescription>Share this component.</PopoverDescription>\n\t\t\t\t</PopoverHeader>\n\t\t\t\t<div className="mt-2 flex w-full gap-2">\n\t\t\t\t\t<Input\n\t\t\t\t\t\tinputWrapperClassName="w-full"\n\t\t\t\t\t\tdefaultValue={window.location.href}\n\t\t\t\t\t\tautoFocus={false}\n\t\t\t\t\t\treadOnly\n\t\t\t\t\t/>\n\t\t\t\t\t<Button className="shrink-0" size="icon" onClick={copyToClipboard}>\n\t\t\t\t\t\t<CopyIcon />\n\t\t\t\t\t</Button>\n\t\t\t\t</div>\n\t\t\t</PopoverContent>\n\t\t</Popover>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/popover/popover-demo")
-		),
-		title: "popover-demo",
-		category: "popover",
-		path: "src/components/demos/popover/popover-demo.tsx",
-	},
 	"separator-demo": {
 		source:
 			'import { Separator } from "@/components/ui/separator"\n\nexport default function SeparatorDemo() {\n\treturn (\n\t\t<div>\n\t\t\t<p>9ui is a component library for building modern web applications.</p>\n\t\t\t<Separator className="my-2.5" />\n\t\t\t<div className="flex gap-2.5">\n\t\t\t\t<p>Website</p>\n\t\t\t\t<Separator orientation="vertical" />\n\t\t\t\t<p>Documentation</p>\n\t\t\t\t<Separator orientation="vertical" />\n\t\t\t\t<p>Community</p>\n\t\t\t</div>\n\t\t</div>\n\t)\n}\n',
@@ -413,6 +393,26 @@ export const demoRegistry: DemoRegistry = {
 		category: "separator",
 		path: "src/components/demos/separator/separator-demo.tsx",
 	},
+	"popover-demo": {
+		source:
+			'import { CopyIcon, Share2Icon } from "lucide-react"\nimport { toast } from "sonner"\n\nimport { Button } from "@/components/ui/button"\nimport { Input } from "@/components/ui/input"\nimport {\n\tPopover,\n\tPopoverContent,\n\tPopoverDescription,\n\tPopoverHeader,\n\tPopoverTitle,\n\tPopoverTrigger,\n} from "@/components/ui/popover"\n\nexport default function PopoverDemo() {\n\tconst copyToClipboard = () => {\n\t\ttoast.success("Copied to clipboard")\n\t\tnavigator.clipboard.writeText(window.location.href)\n\t}\n\n\treturn (\n\t\t<Popover>\n\t\t\t<PopoverTrigger\n\t\t\t\trender={(props) => (\n\t\t\t\t\t<Button {...props} variant="outline" size="icon">\n\t\t\t\t\t\t<Share2Icon />\n\t\t\t\t\t</Button>\n\t\t\t\t)}\n\t\t\t/>\n\t\t\t<PopoverContent className="w-[calc(100vw-4rem)] sm:w-[500px]">\n\t\t\t\t<PopoverHeader>\n\t\t\t\t\t<PopoverTitle>Share</PopoverTitle>\n\t\t\t\t\t<PopoverDescription>Share this component.</PopoverDescription>\n\t\t\t\t</PopoverHeader>\n\t\t\t\t<div className="mt-2 flex w-full gap-2">\n\t\t\t\t\t<Input\n\t\t\t\t\t\tinputWrapperClassName="w-full"\n\t\t\t\t\t\tdefaultValue={window.location.href}\n\t\t\t\t\t\tautoFocus={false}\n\t\t\t\t\t\treadOnly\n\t\t\t\t\t/>\n\t\t\t\t\t<Button className="shrink-0" size="icon" onClick={copyToClipboard}>\n\t\t\t\t\t\t<CopyIcon />\n\t\t\t\t\t</Button>\n\t\t\t\t</div>\n\t\t\t</PopoverContent>\n\t\t</Popover>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/popover/popover-demo")
+		),
+		title: "popover-demo",
+		category: "popover",
+		path: "src/components/demos/popover/popover-demo.tsx",
+	},
+	"preview-card-demo": {
+		source:
+			'"use client"\n\nimport { GithubIcon, GlobeIcon, UserIcon } from "lucide-react"\n\nimport { Icons } from "@/components/icons"\nimport {\n\tPreviewCard,\n\tPreviewCardContent,\n\tPreviewCardTrigger,\n} from "@/components/ui/preview-card"\n\nexport default function PreviewCardDemo() {\n\treturn (\n\t\t<PreviewCard>\n\t\t\t<p className="max-w-80 text-balance text-foreground">\n\t\t\t\tThis is a preview card component from{" "}\n\t\t\t\t<PreviewCardTrigger className="cursor-pointer underline underline-offset-2">\n\t\t\t\t\t9ui\n\t\t\t\t</PreviewCardTrigger>\n\t\t\t\t.\n\t\t\t</p>\n\t\t\t<PreviewCardContent className="max-w-80 text-sm">\n\t\t\t\t<Icons.logo className="mx-auto w-10" />\n\t\t\t\t<p className="mt-2">\n\t\t\t\t\tBeautiful, customizable components built with{" "}\n\t\t\t\t\t<a\n\t\t\t\t\t\thref="https://base-ui.com"\n\t\t\t\t\t\tclassName="underline underline-offset-2"\n\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t>\n\t\t\t\t\t\tBase UI\n\t\t\t\t\t</a>{" "}\n\t\t\t\t\tand{" "}\n\t\t\t\t\t<a\n\t\t\t\t\t\thref="https://tailwindcss.com"\n\t\t\t\t\t\tclassName="underline underline-offset-2"\n\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t>\n\t\t\t\t\t\tTailwind CSS\n\t\t\t\t\t</a>\n\t\t\t\t\t.\n\t\t\t\t</p>\n\t\t\t\t<div className="mt-2 flex flex-col gap-2 text-sm">\n\t\t\t\t\t<div className="flex items-center gap-2">\n\t\t\t\t\t\t<span className="flex items-center gap-1 text-muted-foreground">\n\t\t\t\t\t\t\t<UserIcon size={14} />\n\t\t\t\t\t\t\tCreator:\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<a\n\t\t\t\t\t\t\thref="https://x.com/borabalogluu"\n\t\t\t\t\t\t\tclassName="underline underline-offset-2"\n\t\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\tBora Baloglu\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div className="flex items-center gap-2">\n\t\t\t\t\t\t<span className="flex items-center gap-1 text-muted-foreground">\n\t\t\t\t\t\t\t<GithubIcon size={14} />\n\t\t\t\t\t\t\tSource code:\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<a\n\t\t\t\t\t\t\thref="https://github.com/borabaloglu/9ui"\n\t\t\t\t\t\t\tclassName="underline underline-offset-2"\n\t\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\tGithub\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div className="flex items-center gap-2">\n\t\t\t\t\t\t<span className="flex items-center gap-1 text-muted-foreground">\n\t\t\t\t\t\t\t<GlobeIcon size={14} />\n\t\t\t\t\t\t\tWebsite\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<a\n\t\t\t\t\t\t\thref="https://9ui.dev"\n\t\t\t\t\t\t\tclassName="underline underline-offset-2"\n\t\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\t9ui.dev\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</PreviewCardContent>\n\t\t</PreviewCard>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/preview-card/preview-card-demo")
+		),
+		title: "preview-card-demo",
+		category: "preview-card",
+		path: "src/components/demos/preview-card/preview-card-demo.tsx",
+	},
 	"menubar-demo": {
 		source:
 			'import {\n\tMenubar,\n\tMenubarContent,\n\tMenubarItem,\n\tMenubarItemShortcut,\n\tMenubarMenu,\n\tMenubarRadioGroup,\n\tMenubarRadioItem,\n\tMenubarSeparator,\n\tMenubarSubMenu,\n\tMenubarSubTrigger,\n\tMenubarTrigger,\n} from "@/components/ui/menubar"\n\nexport default function MenubarDemo() {\n\treturn (\n\t\t<Menubar>\n\t\t\t<MenubarMenu>\n\t\t\t\t<MenubarTrigger>File</MenubarTrigger>\n\t\t\t\t<MenubarContent>\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tNew File\n\t\t\t\t\t\t<MenubarItemShortcut>⌘N</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tNew Window\n\t\t\t\t\t\t<MenubarItemShortcut>⇧⌘N</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarSeparator />\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tOpen\n\t\t\t\t\t\t<MenubarItemShortcut>⌘O</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tOpen Folder\n\t\t\t\t\t\t<MenubarItemShortcut>⇧⌘O</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarItem>Open Recent</MenubarItem>\n\t\t\t\t\t<MenubarSeparator />\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tSave\n\t\t\t\t\t\t<MenubarItemShortcut>⌘S</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tSave As\n\t\t\t\t\t\t<MenubarItemShortcut>⇧⌘S</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarSeparator />\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tClose Window\n\t\t\t\t\t\t<MenubarItemShortcut>⌘W</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t</MenubarContent>\n\t\t\t</MenubarMenu>\n\t\t\t<MenubarMenu>\n\t\t\t\t<MenubarTrigger>Edit</MenubarTrigger>\n\t\t\t\t<MenubarContent>\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tUndo\n\t\t\t\t\t\t<MenubarItemShortcut>⌘Z</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tRedo\n\t\t\t\t\t\t<MenubarItemShortcut>⌘Y</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarSeparator />\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tCut\n\t\t\t\t\t\t<MenubarItemShortcut>⌘X</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tCopy\n\t\t\t\t\t\t<MenubarItemShortcut>⌘C</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tPaste\n\t\t\t\t\t\t<MenubarItemShortcut>⌘V</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarSeparator />\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tFind\n\t\t\t\t\t\t<MenubarItemShortcut>⌘F</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tReplace\n\t\t\t\t\t\t<MenubarItemShortcut>⌥⌘F</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t</MenubarContent>\n\t\t\t</MenubarMenu>\n\t\t\t<MenubarMenu>\n\t\t\t\t<MenubarTrigger>View</MenubarTrigger>\n\t\t\t\t<MenubarContent>\n\t\t\t\t\t<MenubarSubMenu>\n\t\t\t\t\t\t<MenubarSubTrigger>Appearance</MenubarSubTrigger>\n\t\t\t\t\t\t<MenubarContent>\n\t\t\t\t\t\t\t<MenubarRadioGroup>\n\t\t\t\t\t\t\t\t<MenubarRadioItem value="system">System</MenubarRadioItem>\n\t\t\t\t\t\t\t\t<MenubarRadioItem value="light">Light</MenubarRadioItem>\n\t\t\t\t\t\t\t\t<MenubarRadioItem value="dark">Dark</MenubarRadioItem>\n\t\t\t\t\t\t\t</MenubarRadioGroup>\n\t\t\t\t\t\t</MenubarContent>\n\t\t\t\t\t</MenubarSubMenu>\n\t\t\t\t\t<MenubarSeparator />\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tShow/Hide Sidebar\n\t\t\t\t\t\t<MenubarItemShortcut>⌃⌥⌘*</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tCommand Palette\n\t\t\t\t\t\t<MenubarItemShortcut>⇧⌘P</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarItem>Expand Tabs</MenubarItem>\n\t\t\t\t\t<MenubarSeparator />\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tZoom In\n\t\t\t\t\t\t<MenubarItemShortcut>⌘+</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tZoom Out\n\t\t\t\t\t\t<MenubarItemShortcut>⌘-</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tReset Zoom\n\t\t\t\t\t\t<MenubarItemShortcut>⌘0</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t</MenubarContent>\n\t\t\t</MenubarMenu>\n\t\t\t<MenubarMenu>\n\t\t\t\t<MenubarTrigger>Help</MenubarTrigger>\n\t\t\t\t<MenubarContent>\n\t\t\t\t\t<MenubarItem>Getting Started</MenubarItem>\n\t\t\t\t\t<MenubarItem>Report Issue</MenubarItem>\n\t\t\t\t\t<MenubarItem>Check for Updates</MenubarItem>\n\t\t\t\t\t<MenubarItem>Contact the Team</MenubarItem>\n\t\t\t\t</MenubarContent>\n\t\t\t</MenubarMenu>\n\t\t</Menubar>\n\t)\n}\n',
@@ -422,14 +422,6 @@ export const demoRegistry: DemoRegistry = {
 		title: "menubar-demo",
 		category: "menubar",
 		path: "src/components/demos/menubar/menubar-demo.tsx",
-	},
-	"kbd-demo": {
-		source:
-			'import { Kbd } from "@/components/ui/kbd"\n\nexport default function KbdDemo() {\n\treturn (\n\t\t<div className="flex items-center gap-2 text-sm">\n\t\t\t<Kbd>⌘</Kbd>+<Kbd>K</Kbd>\n\t\t</div>\n\t)\n}\n',
-		component: React.lazy(() => import("@/components/demos/kbd/kbd-demo")),
-		title: "kbd-demo",
-		category: "kbd",
-		path: "src/components/demos/kbd/kbd-demo.tsx",
 	},
 	"input-otp-demo": {
 		source:
@@ -451,15 +443,41 @@ export const demoRegistry: DemoRegistry = {
 		category: "input-otp",
 		path: "src/components/demos/input-otp/input-otp-custom.tsx",
 	},
-	"drawer-demo": {
+	"input-with-icons": {
 		source:
-			'"use client"\n\nimport { useState } from "react"\nimport { StarIcon } from "lucide-react"\n\nimport { Button } from "@/components/ui/button"\nimport {\n\tDrawer,\n\tDrawerClose,\n\tDrawerContent,\n\tDrawerDescription,\n\tDrawerFooter,\n\tDrawerHeader,\n\tDrawerTitle,\n\tDrawerTrigger,\n} from "@/components/ui/drawer"\nimport { Textarea } from "@/components/ui/textarea"\n\nimport { cn } from "@/lib/utils"\n\nexport default function DrawerDemo() {\n\tconst [rating, setRating] = useState<number | undefined>(undefined)\n\n\tconst handleChangeRating = (newRating: number) => {\n\t\tif (newRating === rating) {\n\t\t\tsetRating(undefined)\n\t\t} else {\n\t\t\tsetRating(newRating)\n\t\t}\n\t}\n\n\treturn (\n\t\t<Drawer shouldScaleBackground>\n\t\t\t<DrawerTrigger\n\t\t\t\trender={(props) => <Button {...props}>Open Drawer</Button>}\n\t\t\t/>\n\t\t\t<DrawerContent>\n\t\t\t\t<div className="mx-auto w-full max-w-md">\n\t\t\t\t\t<DrawerHeader>\n\t\t\t\t\t\t<DrawerTitle>Provide Your Feedback</DrawerTitle>\n\t\t\t\t\t\t<DrawerDescription>\n\t\t\t\t\t\t\tWe value your feedback. Please rate your experience and leave a\n\t\t\t\t\t\t\treview.\n\t\t\t\t\t\t</DrawerDescription>\n\t\t\t\t\t</DrawerHeader>\n\n\t\t\t\t\t<div className="flex flex-col gap-4 px-4">\n\t\t\t\t\t\t<div className="flex gap-2">\n\t\t\t\t\t\t\t{[1, 2, 3, 4, 5].map((star) => (\n\t\t\t\t\t\t\t\t<StarIcon\n\t\t\t\t\t\t\t\t\tkey={star}\n\t\t\t\t\t\t\t\t\tclassName={cn(\n\t\t\t\t\t\t\t\t\t\t"size-8 cursor-pointer transition-all",\n\t\t\t\t\t\t\t\t\t\trating && star <= rating\n\t\t\t\t\t\t\t\t\t\t\t? "fill-yellow-300 text-yellow-300"\n\t\t\t\t\t\t\t\t\t\t\t: "fill-none text-muted-foreground"\n\t\t\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t\t\t\tonClick={() => handleChangeRating(star)}\n\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t))}\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<Textarea placeholder="Write a review" />\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<DrawerFooter>\n\t\t\t\t\t\t<Button className="w-full">Submit</Button>\n\t\t\t\t\t\t<DrawerClose\n\t\t\t\t\t\t\trender={(props) => (\n\t\t\t\t\t\t\t\t<Button {...props} variant="outline" className="w-full">\n\t\t\t\t\t\t\t\t\tCancel\n\t\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t/>\n\t\t\t\t\t</DrawerFooter>\n\t\t\t\t</div>\n\t\t\t</DrawerContent>\n\t\t</Drawer>\n\t)\n}\n',
+			'import { useState } from "react"\nimport { EyeIcon, EyeOffIcon, LockIcon } from "lucide-react"\n\nimport { Input, InputIcon } from "@/components/ui/input"\n\nexport default function InputWithIcons() {\n\tconst [isPasswordVisible, setIsPasswordVisible] = useState(false)\n\n\tconst togglePasswordVisibility = () => {\n\t\tsetIsPasswordVisible(!isPasswordVisible)\n\t}\n\n\tconst passwordType = isPasswordVisible ? "text" : "password"\n\tconst eyeIcon = isPasswordVisible ? <EyeIcon /> : <EyeOffIcon />\n\n\treturn (\n\t\t<Input placeholder="Password" className="w-80" type={passwordType}>\n\t\t\t<InputIcon side="leading">\n\t\t\t\t<LockIcon />\n\t\t\t</InputIcon>\n\t\t\t<InputIcon\n\t\t\t\tside="trailing"\n\t\t\t\tclassName="cursor-pointer transition-colors duration-200 hover:[&>svg]:text-foreground"\n\t\t\t\tonClick={togglePasswordVisibility}\n\t\t\t>\n\t\t\t\t{eyeIcon}\n\t\t\t</InputIcon>\n\t\t</Input>\n\t)\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/drawer/drawer-demo")
+			() => import("@/components/demos/input/input-with-icons")
 		),
-		title: "drawer-demo",
-		category: "drawer",
-		path: "src/components/demos/drawer/drawer-demo.tsx",
+		title: "input-with-icons",
+		category: "input",
+		path: "src/components/demos/input/input-with-icons.tsx",
+	},
+	"input-error": {
+		source:
+			'import { Input } from "@/components/ui/input"\n\nexport default function InputError() {\n\treturn <Input className="w-80" placeholder="Name" aria-invalid />\n}\n',
+		component: React.lazy(() => import("@/components/demos/input/input-error")),
+		title: "input-error",
+		category: "input",
+		path: "src/components/demos/input/input-error.tsx",
+	},
+	"input-disabled": {
+		source:
+			'import { Input } from "@/components/ui/input"\n\nexport default function InputDisabled() {\n\treturn <Input className="w-80" placeholder="Name" disabled />\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/input/input-disabled")
+		),
+		title: "input-disabled",
+		category: "input",
+		path: "src/components/demos/input/input-disabled.tsx",
+	},
+	"input-demo": {
+		source:
+			'import { Input } from "@/components/ui/input"\n\nexport default function InputDemo() {\n\treturn <Input placeholder="Name" className="w-80" />\n}\n',
+		component: React.lazy(() => import("@/components/demos/input/input-demo")),
+		title: "input-demo",
+		category: "input",
+		path: "src/components/demos/input/input-demo.tsx",
 	},
 	"form-demo": {
 		source:
@@ -478,6 +496,34 @@ export const demoRegistry: DemoRegistry = {
 		title: "dropdown-demo",
 		category: "dropdown",
 		path: "src/components/demos/dropdown/dropdown-demo.tsx",
+	},
+	"drawer-demo": {
+		source:
+			'"use client"\n\nimport { useState } from "react"\nimport { StarIcon } from "lucide-react"\n\nimport { Button } from "@/components/ui/button"\nimport {\n\tDrawer,\n\tDrawerClose,\n\tDrawerContent,\n\tDrawerDescription,\n\tDrawerFooter,\n\tDrawerHeader,\n\tDrawerTitle,\n\tDrawerTrigger,\n} from "@/components/ui/drawer"\nimport { Textarea } from "@/components/ui/textarea"\n\nimport { cn } from "@/lib/utils"\n\nexport default function DrawerDemo() {\n\tconst [rating, setRating] = useState<number | undefined>(undefined)\n\n\tconst handleChangeRating = (newRating: number) => {\n\t\tif (newRating === rating) {\n\t\t\tsetRating(undefined)\n\t\t} else {\n\t\t\tsetRating(newRating)\n\t\t}\n\t}\n\n\treturn (\n\t\t<Drawer shouldScaleBackground>\n\t\t\t<DrawerTrigger\n\t\t\t\trender={(props) => <Button {...props}>Open Drawer</Button>}\n\t\t\t/>\n\t\t\t<DrawerContent>\n\t\t\t\t<div className="mx-auto w-full max-w-md">\n\t\t\t\t\t<DrawerHeader>\n\t\t\t\t\t\t<DrawerTitle>Provide Your Feedback</DrawerTitle>\n\t\t\t\t\t\t<DrawerDescription>\n\t\t\t\t\t\t\tWe value your feedback. Please rate your experience and leave a\n\t\t\t\t\t\t\treview.\n\t\t\t\t\t\t</DrawerDescription>\n\t\t\t\t\t</DrawerHeader>\n\n\t\t\t\t\t<div className="flex flex-col gap-4 px-4">\n\t\t\t\t\t\t<div className="flex gap-2">\n\t\t\t\t\t\t\t{[1, 2, 3, 4, 5].map((star) => (\n\t\t\t\t\t\t\t\t<StarIcon\n\t\t\t\t\t\t\t\t\tkey={star}\n\t\t\t\t\t\t\t\t\tclassName={cn(\n\t\t\t\t\t\t\t\t\t\t"size-8 cursor-pointer transition-all",\n\t\t\t\t\t\t\t\t\t\trating && star <= rating\n\t\t\t\t\t\t\t\t\t\t\t? "fill-yellow-300 text-yellow-300"\n\t\t\t\t\t\t\t\t\t\t\t: "fill-none text-muted-foreground"\n\t\t\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t\t\t\tonClick={() => handleChangeRating(star)}\n\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t))}\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<Textarea placeholder="Write a review" />\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<DrawerFooter>\n\t\t\t\t\t\t<Button className="w-full">Submit</Button>\n\t\t\t\t\t\t<DrawerClose\n\t\t\t\t\t\t\trender={(props) => (\n\t\t\t\t\t\t\t\t<Button {...props} variant="outline" className="w-full">\n\t\t\t\t\t\t\t\t\tCancel\n\t\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t/>\n\t\t\t\t\t</DrawerFooter>\n\t\t\t\t</div>\n\t\t\t</DrawerContent>\n\t\t</Drawer>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/drawer/drawer-demo")
+		),
+		title: "drawer-demo",
+		category: "drawer",
+		path: "src/components/demos/drawer/drawer-demo.tsx",
+	},
+	"kbd-demo": {
+		source:
+			'import { Kbd } from "@/components/ui/kbd"\n\nexport default function KbdDemo() {\n\treturn (\n\t\t<div className="flex items-center gap-2 text-sm">\n\t\t\t<Kbd>⌘</Kbd>+<Kbd>K</Kbd>\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(() => import("@/components/demos/kbd/kbd-demo")),
+		title: "kbd-demo",
+		category: "kbd",
+		path: "src/components/demos/kbd/kbd-demo.tsx",
+	},
+	"context-menu-demo": {
+		source:
+			'"use client"\n\nimport {\n\tContextMenu,\n\tContextMenuCheckboxItem,\n\tContextMenuContent,\n\tContextMenuGroup,\n\tContextMenuGroupLabel,\n\tContextMenuItem,\n\tContextMenuItemShortcut,\n\tContextMenuRadioGroup,\n\tContextMenuRadioItem,\n\tContextMenuSeparator,\n\tContextMenuSubTrigger,\n\tContextMenuTrigger,\n} from "@/components/ui/context-menu"\n\nexport default function ContextMenuDemo() {\n\treturn (\n\t\t<div className="w-80">\n\t\t\t<ContextMenu>\n\t\t\t\t<ContextMenuTrigger className="flex aspect-video w-full items-center justify-center rounded-lg border border-dashed text-sm">\n\t\t\t\t\tRight Click Here\n\t\t\t\t</ContextMenuTrigger>\n\t\t\t\t<ContextMenuContent>\n\t\t\t\t\t<ContextMenuGroup>\n\t\t\t\t\t\t<ContextMenuItem>\n\t\t\t\t\t\t\tBack\n\t\t\t\t\t\t\t<ContextMenuItemShortcut>⌘[</ContextMenuItemShortcut>\n\t\t\t\t\t\t</ContextMenuItem>\n\t\t\t\t\t\t<ContextMenuItem disabled>\n\t\t\t\t\t\t\tForward\n\t\t\t\t\t\t\t<ContextMenuItemShortcut>⌘]</ContextMenuItemShortcut>\n\t\t\t\t\t\t</ContextMenuItem>\n\t\t\t\t\t\t<ContextMenuItem>\n\t\t\t\t\t\t\tReload\n\t\t\t\t\t\t\t<ContextMenuItemShortcut>⌘R</ContextMenuItemShortcut>\n\t\t\t\t\t\t</ContextMenuItem>\n\t\t\t\t\t\t<ContextMenu>\n\t\t\t\t\t\t\t<ContextMenuSubTrigger>More</ContextMenuSubTrigger>\n\t\t\t\t\t\t\t<ContextMenuContent>\n\t\t\t\t\t\t\t\t<ContextMenuItem>Save As</ContextMenuItem>\n\t\t\t\t\t\t\t\t<ContextMenuItem>Print</ContextMenuItem>\n\t\t\t\t\t\t\t\t<ContextMenuItem>Cast</ContextMenuItem>\n\t\t\t\t\t\t\t\t<ContextMenuSeparator />\n\t\t\t\t\t\t\t\t<ContextMenuItem>Inspect</ContextMenuItem>\n\t\t\t\t\t\t\t</ContextMenuContent>\n\t\t\t\t\t\t</ContextMenu>\n\t\t\t\t\t</ContextMenuGroup>\n\t\t\t\t\t<ContextMenuSeparator />\n\t\t\t\t\t<ContextMenuGroup>\n\t\t\t\t\t\t<ContextMenuGroupLabel>Settings</ContextMenuGroupLabel>\n\t\t\t\t\t\t<ContextMenuCheckboxItem>Always on Top</ContextMenuCheckboxItem>\n\t\t\t\t\t\t<ContextMenuCheckboxItem>Show full URL</ContextMenuCheckboxItem>\n\t\t\t\t\t</ContextMenuGroup>\n\t\t\t\t\t<ContextMenuSeparator />\n\t\t\t\t\t<ContextMenuGroup>\n\t\t\t\t\t\t<ContextMenuGroupLabel>Zoom</ContextMenuGroupLabel>\n\t\t\t\t\t\t<ContextMenuRadioGroup defaultValue="100">\n\t\t\t\t\t\t\t<ContextMenuRadioItem value="50">50%</ContextMenuRadioItem>\n\t\t\t\t\t\t\t<ContextMenuRadioItem value="100">100%</ContextMenuRadioItem>\n\t\t\t\t\t\t\t<ContextMenuRadioItem value="150">150%</ContextMenuRadioItem>\n\t\t\t\t\t\t</ContextMenuRadioGroup>\n\t\t\t\t\t</ContextMenuGroup>\n\t\t\t\t</ContextMenuContent>\n\t\t\t</ContextMenu>\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/context-menu/context-menu-demo")
+		),
+		title: "context-menu-demo",
+		category: "context-menu",
+		path: "src/components/demos/context-menu/context-menu-demo.tsx",
 	},
 	"dialog-nested": {
 		source:
@@ -499,15 +545,15 @@ export const demoRegistry: DemoRegistry = {
 		category: "dialog",
 		path: "src/components/demos/dialog/dialog-demo.tsx",
 	},
-	"context-menu-demo": {
+	"collapsible-demo": {
 		source:
-			'"use client"\n\nimport {\n\tContextMenu,\n\tContextMenuCheckboxItem,\n\tContextMenuContent,\n\tContextMenuGroup,\n\tContextMenuGroupLabel,\n\tContextMenuItem,\n\tContextMenuItemShortcut,\n\tContextMenuRadioGroup,\n\tContextMenuRadioItem,\n\tContextMenuSeparator,\n\tContextMenuSubTrigger,\n\tContextMenuTrigger,\n} from "@/components/ui/context-menu"\n\nexport default function ContextMenuDemo() {\n\treturn (\n\t\t<div className="w-80">\n\t\t\t<ContextMenu>\n\t\t\t\t<ContextMenuTrigger className="flex aspect-video w-full items-center justify-center rounded-lg border border-dashed text-sm">\n\t\t\t\t\tRight Click Here\n\t\t\t\t</ContextMenuTrigger>\n\t\t\t\t<ContextMenuContent>\n\t\t\t\t\t<ContextMenuGroup>\n\t\t\t\t\t\t<ContextMenuItem>\n\t\t\t\t\t\t\tBack\n\t\t\t\t\t\t\t<ContextMenuItemShortcut>⌘[</ContextMenuItemShortcut>\n\t\t\t\t\t\t</ContextMenuItem>\n\t\t\t\t\t\t<ContextMenuItem disabled>\n\t\t\t\t\t\t\tForward\n\t\t\t\t\t\t\t<ContextMenuItemShortcut>⌘]</ContextMenuItemShortcut>\n\t\t\t\t\t\t</ContextMenuItem>\n\t\t\t\t\t\t<ContextMenuItem>\n\t\t\t\t\t\t\tReload\n\t\t\t\t\t\t\t<ContextMenuItemShortcut>⌘R</ContextMenuItemShortcut>\n\t\t\t\t\t\t</ContextMenuItem>\n\t\t\t\t\t\t<ContextMenu>\n\t\t\t\t\t\t\t<ContextMenuSubTrigger>More</ContextMenuSubTrigger>\n\t\t\t\t\t\t\t<ContextMenuContent>\n\t\t\t\t\t\t\t\t<ContextMenuItem>Save As</ContextMenuItem>\n\t\t\t\t\t\t\t\t<ContextMenuItem>Print</ContextMenuItem>\n\t\t\t\t\t\t\t\t<ContextMenuItem>Cast</ContextMenuItem>\n\t\t\t\t\t\t\t\t<ContextMenuSeparator />\n\t\t\t\t\t\t\t\t<ContextMenuItem>Inspect</ContextMenuItem>\n\t\t\t\t\t\t\t</ContextMenuContent>\n\t\t\t\t\t\t</ContextMenu>\n\t\t\t\t\t</ContextMenuGroup>\n\t\t\t\t\t<ContextMenuSeparator />\n\t\t\t\t\t<ContextMenuGroup>\n\t\t\t\t\t\t<ContextMenuGroupLabel>Settings</ContextMenuGroupLabel>\n\t\t\t\t\t\t<ContextMenuCheckboxItem>Always on Top</ContextMenuCheckboxItem>\n\t\t\t\t\t\t<ContextMenuCheckboxItem>Show full URL</ContextMenuCheckboxItem>\n\t\t\t\t\t</ContextMenuGroup>\n\t\t\t\t\t<ContextMenuSeparator />\n\t\t\t\t\t<ContextMenuGroup>\n\t\t\t\t\t\t<ContextMenuGroupLabel>Zoom</ContextMenuGroupLabel>\n\t\t\t\t\t\t<ContextMenuRadioGroup defaultValue="100">\n\t\t\t\t\t\t\t<ContextMenuRadioItem value="50">50%</ContextMenuRadioItem>\n\t\t\t\t\t\t\t<ContextMenuRadioItem value="100">100%</ContextMenuRadioItem>\n\t\t\t\t\t\t\t<ContextMenuRadioItem value="150">150%</ContextMenuRadioItem>\n\t\t\t\t\t\t</ContextMenuRadioGroup>\n\t\t\t\t\t</ContextMenuGroup>\n\t\t\t\t</ContextMenuContent>\n\t\t\t</ContextMenu>\n\t\t</div>\n\t)\n}\n',
+			'import { useState } from "react"\nimport { ChevronRightIcon } from "lucide-react"\n\nimport {\n\tCollapsible,\n\tCollapsibleContent,\n\tCollapsibleTrigger,\n} from "@/components/ui/collapsible"\n\nimport { cn } from "@/lib/utils"\n\nexport default function CollapsibleDemo() {\n\tconst [open, setOpen] = useState(false)\n\n\treturn (\n\t\t<Collapsible\n\t\t\tclassName="mx-auto w-40 py-12"\n\t\t\topen={open}\n\t\t\tonOpenChange={setOpen}\n\t\t>\n\t\t\t<CollapsibleTrigger className="flex w-full items-center justify-between px-1.5 py-1">\n\t\t\t\t<span className="text-sm font-medium">Components</span>\n\t\t\t\t<div className={cn("transition-all duration-200", open && "rotate-90")}>\n\t\t\t\t\t<ChevronRightIcon size={16} />\n\t\t\t\t</div>\n\t\t\t</CollapsibleTrigger>\n\t\t\t<CollapsibleContent>\n\t\t\t\t<ol className="mt-2 space-y-1">\n\t\t\t\t\t<li className="rounded border bg-secondary px-2 py-1">Button</li>\n\t\t\t\t\t<li className="rounded border bg-secondary px-2 py-1">Badge</li>\n\t\t\t\t\t<li className="rounded border bg-secondary px-2 py-1">Breadcrumbs</li>\n\t\t\t\t</ol>\n\t\t\t</CollapsibleContent>\n\t\t</Collapsible>\n\t)\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/context-menu/context-menu-demo")
+			() => import("@/components/demos/collapsible/collapsible-demo")
 		),
-		title: "context-menu-demo",
-		category: "context-menu",
-		path: "src/components/demos/context-menu/context-menu-demo.tsx",
+		title: "collapsible-demo",
+		category: "collapsible",
+		path: "src/components/demos/collapsible/collapsible-demo.tsx",
 	},
 	"command-dialog": {
 		source:
@@ -529,15 +575,113 @@ export const demoRegistry: DemoRegistry = {
 		category: "command",
 		path: "src/components/demos/command/command-demo.tsx",
 	},
-	"collapsible-demo": {
+	"calendar-single": {
 		source:
-			'import { useState } from "react"\nimport { ChevronRightIcon } from "lucide-react"\n\nimport {\n\tCollapsible,\n\tCollapsibleContent,\n\tCollapsibleTrigger,\n} from "@/components/ui/collapsible"\n\nimport { cn } from "@/lib/utils"\n\nexport default function CollapsibleDemo() {\n\tconst [open, setOpen] = useState(false)\n\n\treturn (\n\t\t<Collapsible\n\t\t\tclassName="mx-auto w-40 py-12"\n\t\t\topen={open}\n\t\t\tonOpenChange={setOpen}\n\t\t>\n\t\t\t<CollapsibleTrigger className="flex w-full items-center justify-between px-1.5 py-1">\n\t\t\t\t<span className="text-sm font-medium">Components</span>\n\t\t\t\t<div className={cn("transition-all duration-200", open && "rotate-90")}>\n\t\t\t\t\t<ChevronRightIcon size={16} />\n\t\t\t\t</div>\n\t\t\t</CollapsibleTrigger>\n\t\t\t<CollapsibleContent>\n\t\t\t\t<ol className="mt-2 space-y-1">\n\t\t\t\t\t<li className="rounded border bg-secondary px-2 py-1">Button</li>\n\t\t\t\t\t<li className="rounded border bg-secondary px-2 py-1">Badge</li>\n\t\t\t\t\t<li className="rounded border bg-secondary px-2 py-1">Breadcrumbs</li>\n\t\t\t\t</ol>\n\t\t\t</CollapsibleContent>\n\t\t</Collapsible>\n\t)\n}\n',
+			'"use client"\n\nimport { useState } from "react"\n\nimport { Calendar } from "@/components/ui/calendar"\n\nexport default function CalendarSingle() {\n\tconst [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined)\n\n\treturn (\n\t\t<Calendar\n\t\t\tmode="single"\n\t\t\tselected={selectedDate}\n\t\t\tonSelect={setSelectedDate}\n\t\t\tshowOutsideDays\n\t\t/>\n\t)\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/collapsible/collapsible-demo")
+			() => import("@/components/demos/calendar/calendar-single")
 		),
-		title: "collapsible-demo",
-		category: "collapsible",
-		path: "src/components/demos/collapsible/collapsible-demo.tsx",
+		title: "calendar-single",
+		category: "calendar",
+		path: "src/components/demos/calendar/calendar-single.tsx",
+	},
+	"calendar-range": {
+		source:
+			'"use client"\n\nimport { useState } from "react"\nimport { DateRange } from "react-day-picker"\n\nimport { Calendar } from "@/components/ui/calendar"\n\nexport default function CalendarRange() {\n\tconst [range, setRange] = useState<DateRange | undefined>(undefined)\n\n\treturn (\n\t\t<Calendar\n\t\t\tmode="range"\n\t\t\tselected={range}\n\t\t\tonSelect={setRange}\n\t\t\tshowOutsideDays\n\t\t/>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/calendar/calendar-range")
+		),
+		title: "calendar-range",
+		category: "calendar",
+		path: "src/components/demos/calendar/calendar-range.tsx",
+	},
+	"calendar-multiple": {
+		source:
+			'"use client"\n\nimport { useState } from "react"\n\nimport { Calendar } from "@/components/ui/calendar"\n\nexport default function CalendarMultiple() {\n\tconst [selectedDates, setSelectedDates] = useState<Date[] | undefined>(\n\t\tundefined\n\t)\n\n\treturn (\n\t\t<Calendar\n\t\t\tmode="multiple"\n\t\t\tselected={selectedDates}\n\t\t\tonSelect={setSelectedDates}\n\t\t\tshowOutsideDays\n\t\t/>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/calendar/calendar-multiple")
+		),
+		title: "calendar-multiple",
+		category: "calendar",
+		path: "src/components/demos/calendar/calendar-multiple.tsx",
+	},
+	"calendar-disabled": {
+		source:
+			'"use client"\n\nimport { useState } from "react"\n\nimport { Calendar } from "@/components/ui/calendar"\n\nexport default function CalendarDisabled() {\n\tconst [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined)\n\n\treturn (\n\t\t<Calendar\n\t\t\tmode="single"\n\t\t\tdisabled={(date) => date < new Date()}\n\t\t\tselected={selectedDate}\n\t\t\tonSelect={setSelectedDate}\n\t\t/>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/calendar/calendar-disabled")
+		),
+		title: "calendar-disabled",
+		category: "calendar",
+		path: "src/components/demos/calendar/calendar-disabled.tsx",
+	},
+	"calendar-demo": {
+		source:
+			'import { Calendar } from "@/components/ui/calendar"\n\nexport default function CalendarDemo() {\n\treturn <Calendar showOutsideDays />\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/calendar/calendar-demo")
+		),
+		title: "calendar-demo",
+		category: "calendar",
+		path: "src/components/demos/calendar/calendar-demo.tsx",
+	},
+	"card-with-image": {
+		source:
+			'import Image from "next/image"\n\nimport { Button } from "@/components/ui/button"\nimport {\n\tCard,\n\tCardDescription,\n\tCardFooter,\n\tCardHeader,\n\tCardTitle,\n} from "@/components/ui/card"\n\nexport default function CardWithImage() {\n\treturn (\n\t\t<Card className="max-w-80">\n\t\t\t<CardHeader>\n\t\t\t\t<div className="relative aspect-video rounded-lg">\n\t\t\t\t\t<Image\n\t\t\t\t\t\tsrc="https://images.pexels.com/photos/1616403/pexels-photo-1616403.jpeg?auto=compress&cs=tinysrgb&w=450&h=800&dpr=2"\n\t\t\t\t\t\talt="Blog Image"\n\t\t\t\t\t\tfill\n\t\t\t\t\t\tclassName="rounded-lg"\n\t\t\t\t\t/>\n\t\t\t\t</div>\n\t\t\t\t<CardTitle className="mt-2">What is 9ui?</CardTitle>\n\t\t\t\t<CardDescription>\n\t\t\t\t\tDeep dive into the 9ui components and learn how to use them in your\n\t\t\t\t\town projects.\n\t\t\t\t</CardDescription>\n\t\t\t</CardHeader>\n\t\t\t<CardFooter>\n\t\t\t\t<Button className="w-full">Read more</Button>\n\t\t\t</CardFooter>\n\t\t</Card>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/card/card-with-image")
+		),
+		title: "card-with-image",
+		category: "card",
+		path: "src/components/demos/card/card-with-image.tsx",
+	},
+	"card-demo": {
+		source:
+			'import Image from "next/image"\nimport { LinkIcon, SendIcon } from "lucide-react"\n\nimport { Button } from "@/components/ui/button"\nimport {\n\tCard,\n\tCardContent,\n\tCardDescription,\n\tCardFooter,\n\tCardHeader,\n\tCardTitle,\n} from "@/components/ui/card"\nimport { Input } from "@/components/ui/input"\nimport { toast } from "@/components/ui/sonner"\n\nexport default function CardDemo() {\n\treturn (\n\t\t<Card className="max-w-96">\n\t\t\t<CardHeader>\n\t\t\t\t<CardTitle>Invite Team Members</CardTitle>\n\t\t\t\t<CardDescription>\n\t\t\t\t\tInvite your team members to join your workspace.\n\t\t\t\t</CardDescription>\n\t\t\t</CardHeader>\n\t\t\t<CardContent className="space-y-4">\n\t\t\t\t<div className="flex gap-2">\n\t\t\t\t\t<Input inputWrapperClassName="w-full" placeholder="Email" />\n\t\t\t\t\t<Button className="shrink-0" size="icon">\n\t\t\t\t\t\t<SendIcon />\n\t\t\t\t\t</Button>\n\t\t\t\t</div>\n\t\t\t\t<div className="flex flex-col gap-2">\n\t\t\t\t\t<p className="text-sm text-muted-foreground">\n\t\t\t\t\t\tYou can invite up to 10 team members. You have 8 invites left.\n\t\t\t\t\t</p>\n\t\t\t\t</div>\n\t\t\t\t<div className="flex flex-col gap-4">\n\t\t\t\t\t<h4 className="text-sm font-medium">Invited Members</h4>\n\t\t\t\t\t<div className="flex items-center gap-2">\n\t\t\t\t\t\t<Image\n\t\t\t\t\t\t\tsrc="/memoji-1.png"\n\t\t\t\t\t\t\talt="Avatar"\n\t\t\t\t\t\t\twidth={24}\n\t\t\t\t\t\t\theight={24}\n\t\t\t\t\t\t\tclassName="size-8 rounded-full"\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t<div className="flex flex-col text-xs">\n\t\t\t\t\t\t\t<p className="font-medium">Karen Smith</p>\n\t\t\t\t\t\t\t<p className="text-muted-foreground">karen@9.ui</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div className="flex items-center gap-2">\n\t\t\t\t\t\t<Image\n\t\t\t\t\t\t\tsrc="/memoji-3.png"\n\t\t\t\t\t\t\talt="Avatar"\n\t\t\t\t\t\t\twidth={24}\n\t\t\t\t\t\t\theight={24}\n\t\t\t\t\t\t\tclassName="size-8 rounded-full"\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t<div className="flex flex-col text-xs">\n\t\t\t\t\t\t\t<p className="font-medium">Chris Williams</p>\n\t\t\t\t\t\t\t<p className="text-muted-foreground">chris@9.ui</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</CardContent>\n\t\t\t<CardFooter>\n\t\t\t\t<Button\n\t\t\t\t\tclassName="w-full gap-x-2"\n\t\t\t\t\tvariant="link"\n\t\t\t\t\tonClick={() => {\n\t\t\t\t\t\ttoast.success("Invite link copied to clipboard")\n\t\t\t\t\t}}\n\t\t\t\t>\n\t\t\t\t\t<LinkIcon size={16} />\n\t\t\t\t\tInvite with link\n\t\t\t\t</Button>\n\t\t\t</CardFooter>\n\t\t</Card>\n\t)\n}\n',
+		component: React.lazy(() => import("@/components/demos/card/card-demo")),
+		title: "card-demo",
+		category: "card",
+		path: "src/components/demos/card/card-demo.tsx",
+	},
+	"checkbox-with-label": {
+		source:
+			'import { Checkbox } from "@/components/ui/checkbox"\nimport { Label } from "@/components/ui/label"\n\nexport default function CheckboxWithLabel() {\n\treturn (\n\t\t<div className="flex items-center gap-2">\n\t\t\t<Checkbox id="terms" />\n\t\t\t<Label htmlFor="terms">Accept</Label>\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/checkbox/checkbox-with-label")
+		),
+		title: "checkbox-with-label",
+		category: "checkbox",
+		path: "src/components/demos/checkbox/checkbox-with-label.tsx",
+	},
+	"checkbox-error": {
+		source:
+			'import { Checkbox } from "@/components/ui/checkbox"\n\nexport default function CheckboxError() {\n\treturn <Checkbox aria-invalid />\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/checkbox/checkbox-error")
+		),
+		title: "checkbox-error",
+		category: "checkbox",
+		path: "src/components/demos/checkbox/checkbox-error.tsx",
+	},
+	"checkbox-disabled": {
+		source:
+			'import { Checkbox } from "@/components/ui/checkbox"\n\nexport default function CheckboxDisabled() {\n\treturn <Checkbox disabled />\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/checkbox/checkbox-disabled")
+		),
+		title: "checkbox-disabled",
+		category: "checkbox",
+		path: "src/components/demos/checkbox/checkbox-disabled.tsx",
+	},
+	"checkbox-demo": {
+		source:
+			'import { Checkbox } from "@/components/ui/checkbox"\n\nexport default function CheckboxDemo() {\n\treturn <Checkbox />\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/checkbox/checkbox-demo")
+		),
+		title: "checkbox-demo",
+		category: "checkbox",
+		path: "src/components/demos/checkbox/checkbox-demo.tsx",
 	},
 	"carousel-vertical": {
 		source:
@@ -589,99 +733,71 @@ export const demoRegistry: DemoRegistry = {
 		category: "carousel",
 		path: "src/components/demos/carousel/carousel-demo.tsx",
 	},
-	"checkbox-with-label": {
+	"badge-warning": {
 		source:
-			'import { Checkbox } from "@/components/ui/checkbox"\nimport { Label } from "@/components/ui/label"\n\nexport default function CheckboxWithLabel() {\n\treturn (\n\t\t<div className="flex items-center gap-2">\n\t\t\t<Checkbox id="terms" />\n\t\t\t<Label htmlFor="terms">Accept</Label>\n\t\t</div>\n\t)\n}\n',
+			'import { Badge, BadgeIndicator } from "@/components/ui/badge"\n\nexport default function BadgeWarning() {\n\treturn (\n\t\t<div className="flex items-center gap-2">\n\t\t\t<Badge variant="warning">Warning</Badge>\n\t\t\t<Badge variant="outline">\n\t\t\t\t<BadgeIndicator variant="warning" />\n\t\t\t\tWarning\n\t\t\t</Badge>\n\t\t</div>\n\t)\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/checkbox/checkbox-with-label")
+			() => import("@/components/demos/badge/badge-warning")
 		),
-		title: "checkbox-with-label",
-		category: "checkbox",
-		path: "src/components/demos/checkbox/checkbox-with-label.tsx",
+		title: "badge-warning",
+		category: "badge",
+		path: "src/components/demos/badge/badge-warning.tsx",
 	},
-	"checkbox-error": {
+	"badge-success": {
 		source:
-			'import { Checkbox } from "@/components/ui/checkbox"\n\nexport default function CheckboxError() {\n\treturn <Checkbox aria-invalid />\n}\n',
+			'import { Badge, BadgeIndicator } from "@/components/ui/badge"\n\nexport default function BadgeSuccess() {\n\treturn (\n\t\t<div className="flex items-center gap-2">\n\t\t\t<Badge variant="success">Success</Badge>\n\t\t\t<Badge variant="outline">\n\t\t\t\t<BadgeIndicator variant="success" />\n\t\t\t\tSuccess\n\t\t\t</Badge>\n\t\t</div>\n\t)\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/checkbox/checkbox-error")
+			() => import("@/components/demos/badge/badge-success")
 		),
-		title: "checkbox-error",
-		category: "checkbox",
-		path: "src/components/demos/checkbox/checkbox-error.tsx",
+		title: "badge-success",
+		category: "badge",
+		path: "src/components/demos/badge/badge-success.tsx",
 	},
-	"checkbox-disabled": {
+	"badge-secondary": {
 		source:
-			'import { Checkbox } from "@/components/ui/checkbox"\n\nexport default function CheckboxDisabled() {\n\treturn <Checkbox disabled />\n}\n',
+			'import { Badge } from "@/components/ui/badge"\n\nexport default function BadgeSecondary() {\n\treturn <Badge variant="secondary">Secondary</Badge>\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/checkbox/checkbox-disabled")
+			() => import("@/components/demos/badge/badge-secondary")
 		),
-		title: "checkbox-disabled",
-		category: "checkbox",
-		path: "src/components/demos/checkbox/checkbox-disabled.tsx",
+		title: "badge-secondary",
+		category: "badge",
+		path: "src/components/demos/badge/badge-secondary.tsx",
 	},
-	"checkbox-demo": {
+	"badge-outline": {
 		source:
-			'import { Checkbox } from "@/components/ui/checkbox"\n\nexport default function CheckboxDemo() {\n\treturn <Checkbox />\n}\n',
+			'import { Badge } from "@/components/ui/badge"\n\nexport default function BadgeOutline() {\n\treturn <Badge variant="outline">Outline</Badge>\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/checkbox/checkbox-demo")
+			() => import("@/components/demos/badge/badge-outline")
 		),
-		title: "checkbox-demo",
-		category: "checkbox",
-		path: "src/components/demos/checkbox/checkbox-demo.tsx",
+		title: "badge-outline",
+		category: "badge",
+		path: "src/components/demos/badge/badge-outline.tsx",
 	},
-	"card-with-image": {
+	"badge-info": {
 		source:
-			'import Image from "next/image"\n\nimport { Button } from "@/components/ui/button"\nimport {\n\tCard,\n\tCardDescription,\n\tCardFooter,\n\tCardHeader,\n\tCardTitle,\n} from "@/components/ui/card"\n\nexport default function CardWithImage() {\n\treturn (\n\t\t<Card className="max-w-80">\n\t\t\t<CardHeader>\n\t\t\t\t<div className="relative aspect-video rounded-lg">\n\t\t\t\t\t<Image\n\t\t\t\t\t\tsrc="https://images.pexels.com/photos/1616403/pexels-photo-1616403.jpeg?auto=compress&cs=tinysrgb&w=450&h=800&dpr=2"\n\t\t\t\t\t\talt="Blog Image"\n\t\t\t\t\t\tfill\n\t\t\t\t\t\tclassName="rounded-lg"\n\t\t\t\t\t/>\n\t\t\t\t</div>\n\t\t\t\t<CardTitle className="mt-2">What is 9ui?</CardTitle>\n\t\t\t\t<CardDescription>\n\t\t\t\t\tDeep dive into the 9ui components and learn how to use them in your\n\t\t\t\t\town projects.\n\t\t\t\t</CardDescription>\n\t\t\t</CardHeader>\n\t\t\t<CardFooter>\n\t\t\t\t<Button className="w-full">Read more</Button>\n\t\t\t</CardFooter>\n\t\t</Card>\n\t)\n}\n',
+			'import { Badge, BadgeIndicator } from "@/components/ui/badge"\n\nexport default function BadgeInfo() {\n\treturn (\n\t\t<div className="flex items-center gap-2">\n\t\t\t<Badge variant="info">Info</Badge>\n\t\t\t<Badge variant="outline">\n\t\t\t\t<BadgeIndicator variant="info" />\n\t\t\t\tInfo\n\t\t\t</Badge>\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(() => import("@/components/demos/badge/badge-info")),
+		title: "badge-info",
+		category: "badge",
+		path: "src/components/demos/badge/badge-info.tsx",
+	},
+	"badge-demo": {
+		source:
+			'import { Badge } from "@/components/ui/badge"\n\nexport default function BadgeDemo() {\n\treturn <Badge>Badge</Badge>\n}\n',
+		component: React.lazy(() => import("@/components/demos/badge/badge-demo")),
+		title: "badge-demo",
+		category: "badge",
+		path: "src/components/demos/badge/badge-demo.tsx",
+	},
+	"badge-danger": {
+		source:
+			'import { Badge, BadgeIndicator } from "@/components/ui/badge"\n\nexport default function BadgeDanger() {\n\treturn (\n\t\t<div className="flex items-center gap-2">\n\t\t\t<Badge variant="danger">Danger</Badge>\n\t\t\t<Badge variant="outline">\n\t\t\t\t<BadgeIndicator variant="danger" />\n\t\t\t\tDanger\n\t\t\t</Badge>\n\t\t</div>\n\t)\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/card/card-with-image")
+			() => import("@/components/demos/badge/badge-danger")
 		),
-		title: "card-with-image",
-		category: "card",
-		path: "src/components/demos/card/card-with-image.tsx",
-	},
-	"card-demo": {
-		source:
-			'import Image from "next/image"\nimport { LinkIcon, SendIcon } from "lucide-react"\n\nimport { Button } from "@/components/ui/button"\nimport {\n\tCard,\n\tCardContent,\n\tCardDescription,\n\tCardFooter,\n\tCardHeader,\n\tCardTitle,\n} from "@/components/ui/card"\nimport { Input } from "@/components/ui/input"\nimport { toast } from "@/components/ui/sonner"\n\nexport default function CardDemo() {\n\treturn (\n\t\t<Card className="max-w-96">\n\t\t\t<CardHeader>\n\t\t\t\t<CardTitle>Invite Team Members</CardTitle>\n\t\t\t\t<CardDescription>\n\t\t\t\t\tInvite your team members to join your workspace.\n\t\t\t\t</CardDescription>\n\t\t\t</CardHeader>\n\t\t\t<CardContent className="space-y-4">\n\t\t\t\t<div className="flex gap-2">\n\t\t\t\t\t<Input inputWrapperClassName="w-full" placeholder="Email" />\n\t\t\t\t\t<Button className="shrink-0" size="icon">\n\t\t\t\t\t\t<SendIcon />\n\t\t\t\t\t</Button>\n\t\t\t\t</div>\n\t\t\t\t<div className="flex flex-col gap-2">\n\t\t\t\t\t<p className="text-sm text-muted-foreground">\n\t\t\t\t\t\tYou can invite up to 10 team members. You have 8 invites left.\n\t\t\t\t\t</p>\n\t\t\t\t</div>\n\t\t\t\t<div className="flex flex-col gap-4">\n\t\t\t\t\t<h4 className="text-sm font-medium">Invited Members</h4>\n\t\t\t\t\t<div className="flex items-center gap-2">\n\t\t\t\t\t\t<Image\n\t\t\t\t\t\t\tsrc="/memoji-1.png"\n\t\t\t\t\t\t\talt="Avatar"\n\t\t\t\t\t\t\twidth={24}\n\t\t\t\t\t\t\theight={24}\n\t\t\t\t\t\t\tclassName="size-8 rounded-full"\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t<div className="flex flex-col text-xs">\n\t\t\t\t\t\t\t<p className="font-medium">Karen Smith</p>\n\t\t\t\t\t\t\t<p className="text-muted-foreground">karen@9.ui</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div className="flex items-center gap-2">\n\t\t\t\t\t\t<Image\n\t\t\t\t\t\t\tsrc="/memoji-3.png"\n\t\t\t\t\t\t\talt="Avatar"\n\t\t\t\t\t\t\twidth={24}\n\t\t\t\t\t\t\theight={24}\n\t\t\t\t\t\t\tclassName="size-8 rounded-full"\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t<div className="flex flex-col text-xs">\n\t\t\t\t\t\t\t<p className="font-medium">Chris Williams</p>\n\t\t\t\t\t\t\t<p className="text-muted-foreground">chris@9.ui</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</CardContent>\n\t\t\t<CardFooter>\n\t\t\t\t<Button\n\t\t\t\t\tclassName="w-full gap-x-2"\n\t\t\t\t\tvariant="link"\n\t\t\t\t\tonClick={() => {\n\t\t\t\t\t\ttoast.success("Invite link copied to clipboard")\n\t\t\t\t\t}}\n\t\t\t\t>\n\t\t\t\t\t<LinkIcon size={16} />\n\t\t\t\t\tInvite with link\n\t\t\t\t</Button>\n\t\t\t</CardFooter>\n\t\t</Card>\n\t)\n}\n',
-		component: React.lazy(() => import("@/components/demos/card/card-demo")),
-		title: "card-demo",
-		category: "card",
-		path: "src/components/demos/card/card-demo.tsx",
-	},
-	"input-with-icons": {
-		source:
-			'import { useState } from "react"\nimport { EyeIcon, EyeOffIcon, LockIcon } from "lucide-react"\n\nimport { Input, InputIcon } from "@/components/ui/input"\n\nexport default function InputWithIcons() {\n\tconst [isPasswordVisible, setIsPasswordVisible] = useState(false)\n\n\tconst togglePasswordVisibility = () => {\n\t\tsetIsPasswordVisible(!isPasswordVisible)\n\t}\n\n\tconst passwordType = isPasswordVisible ? "text" : "password"\n\tconst eyeIcon = isPasswordVisible ? <EyeIcon /> : <EyeOffIcon />\n\n\treturn (\n\t\t<Input placeholder="Password" className="w-80" type={passwordType}>\n\t\t\t<InputIcon side="leading">\n\t\t\t\t<LockIcon />\n\t\t\t</InputIcon>\n\t\t\t<InputIcon\n\t\t\t\tside="trailing"\n\t\t\t\tclassName="cursor-pointer transition-colors duration-200 hover:[&>svg]:text-foreground"\n\t\t\t\tonClick={togglePasswordVisibility}\n\t\t\t>\n\t\t\t\t{eyeIcon}\n\t\t\t</InputIcon>\n\t\t</Input>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/input/input-with-icons")
-		),
-		title: "input-with-icons",
-		category: "input",
-		path: "src/components/demos/input/input-with-icons.tsx",
-	},
-	"input-error": {
-		source:
-			'import { Input } from "@/components/ui/input"\n\nexport default function InputError() {\n\treturn <Input className="w-80" placeholder="Name" aria-invalid />\n}\n',
-		component: React.lazy(() => import("@/components/demos/input/input-error")),
-		title: "input-error",
-		category: "input",
-		path: "src/components/demos/input/input-error.tsx",
-	},
-	"input-disabled": {
-		source:
-			'import { Input } from "@/components/ui/input"\n\nexport default function InputDisabled() {\n\treturn <Input className="w-80" placeholder="Name" disabled />\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/input/input-disabled")
-		),
-		title: "input-disabled",
-		category: "input",
-		path: "src/components/demos/input/input-disabled.tsx",
-	},
-	"input-demo": {
-		source:
-			'import { Input } from "@/components/ui/input"\n\nexport default function InputDemo() {\n\treturn <Input placeholder="Name" className="w-80" />\n}\n',
-		component: React.lazy(() => import("@/components/demos/input/input-demo")),
-		title: "input-demo",
-		category: "input",
-		path: "src/components/demos/input/input-demo.tsx",
+		title: "badge-danger",
+		category: "badge",
+		path: "src/components/demos/badge/badge-danger.tsx",
 	},
 	"breadcrumbs-demo": {
 		source:
@@ -704,55 +820,101 @@ export const demoRegistry: DemoRegistry = {
 		category: "breadcrumbs",
 		path: "src/components/demos/breadcrumbs/breadcrumbs-custom-separator.tsx",
 	},
-	"calendar-single": {
+	"avatar-sizes": {
 		source:
-			'"use client"\n\nimport { useState } from "react"\n\nimport { Calendar } from "@/components/ui/calendar"\n\nexport default function CalendarSingle() {\n\tconst [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined)\n\n\treturn (\n\t\t<Calendar\n\t\t\tmode="single"\n\t\t\tselected={selectedDate}\n\t\t\tonSelect={setSelectedDate}\n\t\t\tshowOutsideDays\n\t\t/>\n\t)\n}\n',
+			'import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"\n\nexport default function AvatarSizes() {\n\treturn (\n\t\t<div className="flex flex-row items-center gap-4">\n\t\t\t<Avatar size="sm">\n\t\t\t\t<AvatarImage src="/avatars/bora.png" alt="User" />\n\t\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t\t</Avatar>\n\t\t\t<Avatar size="md">\n\t\t\t\t<AvatarImage src="/avatars/bora.png" alt="User" />\n\t\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t\t</Avatar>\n\t\t\t<Avatar size="lg">\n\t\t\t\t<AvatarImage src="/avatars/bora.png" alt="User" />\n\t\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t\t</Avatar>\n\t\t</div>\n\t)\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/calendar/calendar-single")
+			() => import("@/components/demos/avatar/avatar-sizes")
 		),
-		title: "calendar-single",
-		category: "calendar",
-		path: "src/components/demos/calendar/calendar-single.tsx",
+		title: "avatar-sizes",
+		category: "avatar",
+		path: "src/components/demos/avatar/avatar-sizes.tsx",
 	},
-	"calendar-range": {
+	"avatar-fallback": {
 		source:
-			'"use client"\n\nimport { useState } from "react"\nimport { DateRange } from "react-day-picker"\n\nimport { Calendar } from "@/components/ui/calendar"\n\nexport default function CalendarRange() {\n\tconst [range, setRange] = useState<DateRange | undefined>(undefined)\n\n\treturn (\n\t\t<Calendar\n\t\t\tmode="range"\n\t\t\tselected={range}\n\t\t\tonSelect={setRange}\n\t\t\tshowOutsideDays\n\t\t/>\n\t)\n}\n',
+			'import { Avatar, AvatarFallback } from "@/components/ui/avatar"\n\nexport default function AvatarWithFallback() {\n\treturn (\n\t\t<Avatar size="md">\n\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t</Avatar>\n\t)\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/calendar/calendar-range")
+			() => import("@/components/demos/avatar/avatar-fallback")
 		),
-		title: "calendar-range",
-		category: "calendar",
-		path: "src/components/demos/calendar/calendar-range.tsx",
+		title: "avatar-fallback",
+		category: "avatar",
+		path: "src/components/demos/avatar/avatar-fallback.tsx",
 	},
-	"calendar-multiple": {
+	"avatar-demo": {
 		source:
-			'"use client"\n\nimport { useState } from "react"\n\nimport { Calendar } from "@/components/ui/calendar"\n\nexport default function CalendarMultiple() {\n\tconst [selectedDates, setSelectedDates] = useState<Date[] | undefined>(\n\t\tundefined\n\t)\n\n\treturn (\n\t\t<Calendar\n\t\t\tmode="multiple"\n\t\t\tselected={selectedDates}\n\t\t\tonSelect={setSelectedDates}\n\t\t\tshowOutsideDays\n\t\t/>\n\t)\n}\n',
+			'import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"\n\nexport default function AvatarDemo() {\n\treturn (\n\t\t<Avatar size="md">\n\t\t\t<AvatarImage src="/avatars/bora.png" alt="User" />\n\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t</Avatar>\n\t)\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/calendar/calendar-multiple")
+			() => import("@/components/demos/avatar/avatar-demo")
 		),
-		title: "calendar-multiple",
-		category: "calendar",
-		path: "src/components/demos/calendar/calendar-multiple.tsx",
+		title: "avatar-demo",
+		category: "avatar",
+		path: "src/components/demos/avatar/avatar-demo.tsx",
 	},
-	"calendar-disabled": {
+	"aspect-ratio-demo": {
 		source:
-			'"use client"\n\nimport { useState } from "react"\n\nimport { Calendar } from "@/components/ui/calendar"\n\nexport default function CalendarDisabled() {\n\tconst [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined)\n\n\treturn (\n\t\t<Calendar\n\t\t\tmode="single"\n\t\t\tdisabled={(date) => date < new Date()}\n\t\t\tselected={selectedDate}\n\t\t\tonSelect={setSelectedDate}\n\t\t/>\n\t)\n}\n',
+			'import { AspectRatio } from "@/components/ui/aspect-ratio"\n\nexport default function AspectRatioDemo() {\n\treturn (\n\t\t<AspectRatio ratio={16 / 9} className="rounded-lg bg-secondary">\n\t\t\t<div className="flex size-full items-center justify-center font-medium text-foreground">\n\t\t\t\tContent\n\t\t\t</div>\n\t\t</AspectRatio>\n\t)\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/calendar/calendar-disabled")
+			() => import("@/components/demos/aspect-ratio/aspect-ratio-demo")
 		),
-		title: "calendar-disabled",
-		category: "calendar",
-		path: "src/components/demos/calendar/calendar-disabled.tsx",
+		title: "aspect-ratio-demo",
+		category: "aspect-ratio",
+		path: "src/components/demos/aspect-ratio/aspect-ratio-demo.tsx",
 	},
-	"calendar-demo": {
+	"alert-with-action": {
 		source:
-			'import { Calendar } from "@/components/ui/calendar"\n\nexport default function CalendarDemo() {\n\treturn <Calendar showOutsideDays />\n}\n',
+			'import { AlertTriangleIcon } from "lucide-react"\n\nimport {\n\tAlert,\n\tAlertAction,\n\tAlertContent,\n\tAlertDescription,\n\tAlertIcon,\n\tAlertTitle,\n} from "@/components/ui/alert"\nimport { Button } from "@/components/ui/button"\n\nexport default function AlertWithAction() {\n\treturn (\n\t\t<Alert>\n\t\t\t<AlertIcon>\n\t\t\t\t<AlertTriangleIcon />\n\t\t\t</AlertIcon>\n\t\t\t<AlertContent>\n\t\t\t\t<AlertTitle>No Internet Connection</AlertTitle>\n\t\t\t\t<AlertDescription>\n\t\t\t\t\tPlease check your internet connection and try again.\n\t\t\t\t</AlertDescription>\n\t\t\t</AlertContent>\n\t\t\t<AlertAction>\n\t\t\t\t<Button size="sm" variant="outline">\n\t\t\t\t\tTry Again\n\t\t\t\t</Button>\n\t\t\t</AlertAction>\n\t\t</Alert>\n\t)\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/calendar/calendar-demo")
+			() => import("@/components/demos/alert/alert-with-action")
 		),
-		title: "calendar-demo",
-		category: "calendar",
-		path: "src/components/demos/calendar/calendar-demo.tsx",
+		title: "alert-with-action",
+		category: "alert",
+		path: "src/components/demos/alert/alert-with-action.tsx",
+	},
+	"alert-warning": {
+		source:
+			'import { AlertTriangleIcon } from "lucide-react"\n\nimport {\n\tAlert,\n\tAlertContent,\n\tAlertDescription,\n\tAlertIcon,\n\tAlertTitle,\n} from "@/components/ui/alert"\n\nexport default function AlertWarning() {\n\treturn (\n\t\t<Alert variant="warning">\n\t\t\t<AlertIcon>\n\t\t\t\t<AlertTriangleIcon />\n\t\t\t</AlertIcon>\n\t\t\t<AlertContent>\n\t\t\t\t<AlertTitle>Your session is about to expire</AlertTitle>\n\t\t\t\t<AlertDescription>\n\t\t\t\t\tYou will be logged out in 5 minutes. Please save your work and refresh\n\t\t\t\t\tthe page.\n\t\t\t\t</AlertDescription>\n\t\t\t</AlertContent>\n\t\t</Alert>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/alert/alert-warning")
+		),
+		title: "alert-warning",
+		category: "alert",
+		path: "src/components/demos/alert/alert-warning.tsx",
+	},
+	"alert-success": {
+		source:
+			'import { CircleCheckIcon } from "lucide-react"\n\nimport {\n\tAlert,\n\tAlertContent,\n\tAlertDescription,\n\tAlertIcon,\n\tAlertTitle,\n} from "@/components/ui/alert"\n\nexport default function AlertSuccess() {\n\treturn (\n\t\t<Alert variant="success">\n\t\t\t<AlertIcon>\n\t\t\t\t<CircleCheckIcon />\n\t\t\t</AlertIcon>\n\t\t\t<AlertContent>\n\t\t\t\t<AlertTitle>Your account has been created</AlertTitle>\n\t\t\t\t<AlertDescription>\n\t\t\t\t\tYou can now sign in with your new account credentials.\n\t\t\t\t</AlertDescription>\n\t\t\t</AlertContent>\n\t\t</Alert>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/alert/alert-success")
+		),
+		title: "alert-success",
+		category: "alert",
+		path: "src/components/demos/alert/alert-success.tsx",
+	},
+	"alert-info": {
+		source:
+			'import { InfoIcon } from "lucide-react"\n\nimport {\n\tAlert,\n\tAlertContent,\n\tAlertDescription,\n\tAlertIcon,\n\tAlertTitle,\n} from "@/components/ui/alert"\n\nexport default function AlertInfo() {\n\treturn (\n\t\t<Alert variant="info">\n\t\t\t<AlertIcon>\n\t\t\t\t<InfoIcon />\n\t\t\t</AlertIcon>\n\t\t\t<AlertContent>\n\t\t\t\t<AlertTitle>Browser Update Available</AlertTitle>\n\t\t\t\t<AlertDescription>\n\t\t\t\t\tA new version of your browser is available. Updating your browser\n\t\t\t\t\tensures better security and performance.\n\t\t\t\t</AlertDescription>\n\t\t\t</AlertContent>\n\t\t</Alert>\n\t)\n}\n',
+		component: React.lazy(() => import("@/components/demos/alert/alert-info")),
+		title: "alert-info",
+		category: "alert",
+		path: "src/components/demos/alert/alert-info.tsx",
+	},
+	"alert-demo": {
+		source:
+			'import { AlertTriangleIcon } from "lucide-react"\n\nimport {\n\tAlert,\n\tAlertContent,\n\tAlertDescription,\n\tAlertIcon,\n\tAlertTitle,\n} from "@/components/ui/alert"\n\nexport default function AlertDemo() {\n\treturn (\n\t\t<Alert>\n\t\t\t<AlertIcon>\n\t\t\t\t<AlertTriangleIcon />\n\t\t\t</AlertIcon>\n\t\t\t<AlertContent>\n\t\t\t\t<AlertTitle>No Internet Connection</AlertTitle>\n\t\t\t\t<AlertDescription>\n\t\t\t\t\tPlease check your internet connection and try again.\n\t\t\t\t</AlertDescription>\n\t\t\t</AlertContent>\n\t\t</Alert>\n\t)\n}\n',
+		component: React.lazy(() => import("@/components/demos/alert/alert-demo")),
+		title: "alert-demo",
+		category: "alert",
+		path: "src/components/demos/alert/alert-demo.tsx",
+	},
+	"alert-danger": {
+		source:
+			'import { XCircleIcon } from "lucide-react"\n\nimport {\n\tAlert,\n\tAlertContent,\n\tAlertDescription,\n\tAlertIcon,\n\tAlertTitle,\n} from "@/components/ui/alert"\n\nexport default function AlertDanger() {\n\treturn (\n\t\t<Alert variant="danger">\n\t\t\t<AlertIcon>\n\t\t\t\t<XCircleIcon />\n\t\t\t</AlertIcon>\n\t\t\t<AlertContent>\n\t\t\t\t<AlertTitle>Your subscription has been canceled</AlertTitle>\n\t\t\t\t<AlertDescription>\n\t\t\t\t\tYour access to premium features will end in 30 days. You can\n\t\t\t\t\treactivate your subscription anytime.\n\t\t\t\t</AlertDescription>\n\t\t\t</AlertContent>\n\t\t</Alert>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/alert/alert-danger")
+		),
+		title: "alert-danger",
+		category: "alert",
+		path: "src/components/demos/alert/alert-danger.tsx",
 	},
 	"button-sizes": {
 		source:
@@ -844,112 +1006,6 @@ export const demoRegistry: DemoRegistry = {
 		category: "button",
 		path: "src/components/demos/button/button-demo.tsx",
 	},
-	"badge-warning": {
-		source:
-			'import { Badge, BadgeIndicator } from "@/components/ui/badge"\n\nexport default function BadgeWarning() {\n\treturn (\n\t\t<div className="flex items-center gap-2">\n\t\t\t<Badge variant="warning">Warning</Badge>\n\t\t\t<Badge variant="outline">\n\t\t\t\t<BadgeIndicator variant="warning" />\n\t\t\t\tWarning\n\t\t\t</Badge>\n\t\t</div>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/badge/badge-warning")
-		),
-		title: "badge-warning",
-		category: "badge",
-		path: "src/components/demos/badge/badge-warning.tsx",
-	},
-	"badge-success": {
-		source:
-			'import { Badge, BadgeIndicator } from "@/components/ui/badge"\n\nexport default function BadgeSuccess() {\n\treturn (\n\t\t<div className="flex items-center gap-2">\n\t\t\t<Badge variant="success">Success</Badge>\n\t\t\t<Badge variant="outline">\n\t\t\t\t<BadgeIndicator variant="success" />\n\t\t\t\tSuccess\n\t\t\t</Badge>\n\t\t</div>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/badge/badge-success")
-		),
-		title: "badge-success",
-		category: "badge",
-		path: "src/components/demos/badge/badge-success.tsx",
-	},
-	"badge-secondary": {
-		source:
-			'import { Badge } from "@/components/ui/badge"\n\nexport default function BadgeSecondary() {\n\treturn <Badge variant="secondary">Secondary</Badge>\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/badge/badge-secondary")
-		),
-		title: "badge-secondary",
-		category: "badge",
-		path: "src/components/demos/badge/badge-secondary.tsx",
-	},
-	"badge-outline": {
-		source:
-			'import { Badge } from "@/components/ui/badge"\n\nexport default function BadgeOutline() {\n\treturn <Badge variant="outline">Outline</Badge>\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/badge/badge-outline")
-		),
-		title: "badge-outline",
-		category: "badge",
-		path: "src/components/demos/badge/badge-outline.tsx",
-	},
-	"badge-info": {
-		source:
-			'import { Badge, BadgeIndicator } from "@/components/ui/badge"\n\nexport default function BadgeInfo() {\n\treturn (\n\t\t<div className="flex items-center gap-2">\n\t\t\t<Badge variant="info">Info</Badge>\n\t\t\t<Badge variant="outline">\n\t\t\t\t<BadgeIndicator variant="info" />\n\t\t\t\tInfo\n\t\t\t</Badge>\n\t\t</div>\n\t)\n}\n',
-		component: React.lazy(() => import("@/components/demos/badge/badge-info")),
-		title: "badge-info",
-		category: "badge",
-		path: "src/components/demos/badge/badge-info.tsx",
-	},
-	"badge-demo": {
-		source:
-			'import { Badge } from "@/components/ui/badge"\n\nexport default function BadgeDemo() {\n\treturn <Badge>Badge</Badge>\n}\n',
-		component: React.lazy(() => import("@/components/demos/badge/badge-demo")),
-		title: "badge-demo",
-		category: "badge",
-		path: "src/components/demos/badge/badge-demo.tsx",
-	},
-	"badge-danger": {
-		source:
-			'import { Badge, BadgeIndicator } from "@/components/ui/badge"\n\nexport default function BadgeDanger() {\n\treturn (\n\t\t<div className="flex items-center gap-2">\n\t\t\t<Badge variant="danger">Danger</Badge>\n\t\t\t<Badge variant="outline">\n\t\t\t\t<BadgeIndicator variant="danger" />\n\t\t\t\tDanger\n\t\t\t</Badge>\n\t\t</div>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/badge/badge-danger")
-		),
-		title: "badge-danger",
-		category: "badge",
-		path: "src/components/demos/badge/badge-danger.tsx",
-	},
-	"avatar-sizes": {
-		source:
-			'import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"\n\nexport default function AvatarSizes() {\n\treturn (\n\t\t<div className="flex flex-row items-center gap-4">\n\t\t\t<Avatar size="sm">\n\t\t\t\t<AvatarImage src="/avatars/bora.png" alt="User" />\n\t\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t\t</Avatar>\n\t\t\t<Avatar size="md">\n\t\t\t\t<AvatarImage src="/avatars/bora.png" alt="User" />\n\t\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t\t</Avatar>\n\t\t\t<Avatar size="lg">\n\t\t\t\t<AvatarImage src="/avatars/bora.png" alt="User" />\n\t\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t\t</Avatar>\n\t\t</div>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/avatar/avatar-sizes")
-		),
-		title: "avatar-sizes",
-		category: "avatar",
-		path: "src/components/demos/avatar/avatar-sizes.tsx",
-	},
-	"avatar-fallback": {
-		source:
-			'import { Avatar, AvatarFallback } from "@/components/ui/avatar"\n\nexport default function AvatarWithFallback() {\n\treturn (\n\t\t<Avatar size="md">\n\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t</Avatar>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/avatar/avatar-fallback")
-		),
-		title: "avatar-fallback",
-		category: "avatar",
-		path: "src/components/demos/avatar/avatar-fallback.tsx",
-	},
-	"avatar-demo": {
-		source:
-			'import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"\n\nexport default function AvatarDemo() {\n\treturn (\n\t\t<Avatar size="md">\n\t\t\t<AvatarImage src="/avatars/bora.png" alt="User" />\n\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t</Avatar>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/avatar/avatar-demo")
-		),
-		title: "avatar-demo",
-		category: "avatar",
-		path: "src/components/demos/avatar/avatar-demo.tsx",
-	},
-	"aspect-ratio-demo": {
-		source:
-			'import { AspectRatio } from "@/components/ui/aspect-ratio"\n\nexport default function AspectRatioDemo() {\n\treturn (\n\t\t<AspectRatio ratio={16 / 9} className="rounded-lg bg-secondary">\n\t\t\t<div className="flex size-full items-center justify-center font-medium text-foreground">\n\t\t\t\tContent\n\t\t\t</div>\n\t\t</AspectRatio>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/aspect-ratio/aspect-ratio-demo")
-		),
-		title: "aspect-ratio-demo",
-		category: "aspect-ratio",
-		path: "src/components/demos/aspect-ratio/aspect-ratio-demo.tsx",
-	},
 	"alert-dialog-demo": {
 		source:
 			'import {\n\tAlertDialog,\n\tAlertDialogClose,\n\tAlertDialogContent,\n\tAlertDialogDescription,\n\tAlertDialogFooter,\n\tAlertDialogHeader,\n\tAlertDialogTitle,\n\tAlertDialogTrigger,\n} from "@/components/ui/alert-dialog"\nimport { Button } from "@/components/ui/button"\n\nexport default function AlertDialogDemo() {\n\treturn (\n\t\t<AlertDialog>\n\t\t\t<AlertDialogTrigger\n\t\t\t\trender={(props) => (\n\t\t\t\t\t<Button {...props} variant="destructive">\n\t\t\t\t\t\tDelete Post\n\t\t\t\t\t</Button>\n\t\t\t\t)}\n\t\t\t/>\n\t\t\t<AlertDialogContent className="space-y-4">\n\t\t\t\t<AlertDialogHeader>\n\t\t\t\t\t<AlertDialogTitle>Are you sure?</AlertDialogTitle>\n\t\t\t\t\t<AlertDialogDescription>\n\t\t\t\t\t\tThis action cannot be undone. Your post will be permanently deleted.\n\t\t\t\t\t</AlertDialogDescription>\n\t\t\t\t</AlertDialogHeader>\n\t\t\t\t<AlertDialogFooter>\n\t\t\t\t\t<AlertDialogClose\n\t\t\t\t\t\trender={(props) => (\n\t\t\t\t\t\t\t<Button {...props} size="sm" variant="ghost">\n\t\t\t\t\t\t\t\tCancel\n\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t)}\n\t\t\t\t\t/>\n\t\t\t\t\t<Button size="sm" variant="destructive">\n\t\t\t\t\t\tDelete\n\t\t\t\t\t</Button>\n\t\t\t\t</AlertDialogFooter>\n\t\t\t</AlertDialogContent>\n\t\t</AlertDialog>\n\t)\n}\n',
@@ -969,61 +1025,5 @@ export const demoRegistry: DemoRegistry = {
 		title: "accordion-demo",
 		category: "accordion",
 		path: "src/components/demos/accordion/accordion-demo.tsx",
-	},
-	"alert-with-action": {
-		source:
-			'import { AlertTriangleIcon } from "lucide-react"\n\nimport {\n\tAlert,\n\tAlertAction,\n\tAlertContent,\n\tAlertDescription,\n\tAlertIcon,\n\tAlertTitle,\n} from "@/components/ui/alert"\nimport { Button } from "@/components/ui/button"\n\nexport default function AlertWithAction() {\n\treturn (\n\t\t<Alert>\n\t\t\t<AlertIcon>\n\t\t\t\t<AlertTriangleIcon />\n\t\t\t</AlertIcon>\n\t\t\t<AlertContent>\n\t\t\t\t<AlertTitle>No Internet Connection</AlertTitle>\n\t\t\t\t<AlertDescription>\n\t\t\t\t\tPlease check your internet connection and try again.\n\t\t\t\t</AlertDescription>\n\t\t\t</AlertContent>\n\t\t\t<AlertAction>\n\t\t\t\t<Button size="sm" variant="outline">\n\t\t\t\t\tTry Again\n\t\t\t\t</Button>\n\t\t\t</AlertAction>\n\t\t</Alert>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/alert/alert-with-action")
-		),
-		title: "alert-with-action",
-		category: "alert",
-		path: "src/components/demos/alert/alert-with-action.tsx",
-	},
-	"alert-warning": {
-		source:
-			'import { AlertTriangleIcon } from "lucide-react"\n\nimport {\n\tAlert,\n\tAlertContent,\n\tAlertDescription,\n\tAlertIcon,\n\tAlertTitle,\n} from "@/components/ui/alert"\n\nexport default function AlertWarning() {\n\treturn (\n\t\t<Alert variant="warning">\n\t\t\t<AlertIcon>\n\t\t\t\t<AlertTriangleIcon />\n\t\t\t</AlertIcon>\n\t\t\t<AlertContent>\n\t\t\t\t<AlertTitle>Your session is about to expire</AlertTitle>\n\t\t\t\t<AlertDescription>\n\t\t\t\t\tYou will be logged out in 5 minutes. Please save your work and refresh\n\t\t\t\t\tthe page.\n\t\t\t\t</AlertDescription>\n\t\t\t</AlertContent>\n\t\t</Alert>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/alert/alert-warning")
-		),
-		title: "alert-warning",
-		category: "alert",
-		path: "src/components/demos/alert/alert-warning.tsx",
-	},
-	"alert-success": {
-		source:
-			'import { CircleCheckIcon } from "lucide-react"\n\nimport {\n\tAlert,\n\tAlertContent,\n\tAlertDescription,\n\tAlertIcon,\n\tAlertTitle,\n} from "@/components/ui/alert"\n\nexport default function AlertSuccess() {\n\treturn (\n\t\t<Alert variant="success">\n\t\t\t<AlertIcon>\n\t\t\t\t<CircleCheckIcon />\n\t\t\t</AlertIcon>\n\t\t\t<AlertContent>\n\t\t\t\t<AlertTitle>Your account has been created</AlertTitle>\n\t\t\t\t<AlertDescription>\n\t\t\t\t\tYou can now sign in with your new account credentials.\n\t\t\t\t</AlertDescription>\n\t\t\t</AlertContent>\n\t\t</Alert>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/alert/alert-success")
-		),
-		title: "alert-success",
-		category: "alert",
-		path: "src/components/demos/alert/alert-success.tsx",
-	},
-	"alert-info": {
-		source:
-			'import { InfoIcon } from "lucide-react"\n\nimport {\n\tAlert,\n\tAlertContent,\n\tAlertDescription,\n\tAlertIcon,\n\tAlertTitle,\n} from "@/components/ui/alert"\n\nexport default function AlertInfo() {\n\treturn (\n\t\t<Alert variant="info">\n\t\t\t<AlertIcon>\n\t\t\t\t<InfoIcon />\n\t\t\t</AlertIcon>\n\t\t\t<AlertContent>\n\t\t\t\t<AlertTitle>Browser Update Available</AlertTitle>\n\t\t\t\t<AlertDescription>\n\t\t\t\t\tA new version of your browser is available. Updating your browser\n\t\t\t\t\tensures better security and performance.\n\t\t\t\t</AlertDescription>\n\t\t\t</AlertContent>\n\t\t</Alert>\n\t)\n}\n',
-		component: React.lazy(() => import("@/components/demos/alert/alert-info")),
-		title: "alert-info",
-		category: "alert",
-		path: "src/components/demos/alert/alert-info.tsx",
-	},
-	"alert-demo": {
-		source:
-			'import { AlertTriangleIcon } from "lucide-react"\n\nimport {\n\tAlert,\n\tAlertContent,\n\tAlertDescription,\n\tAlertIcon,\n\tAlertTitle,\n} from "@/components/ui/alert"\n\nexport default function AlertDemo() {\n\treturn (\n\t\t<Alert>\n\t\t\t<AlertIcon>\n\t\t\t\t<AlertTriangleIcon />\n\t\t\t</AlertIcon>\n\t\t\t<AlertContent>\n\t\t\t\t<AlertTitle>No Internet Connection</AlertTitle>\n\t\t\t\t<AlertDescription>\n\t\t\t\t\tPlease check your internet connection and try again.\n\t\t\t\t</AlertDescription>\n\t\t\t</AlertContent>\n\t\t</Alert>\n\t)\n}\n',
-		component: React.lazy(() => import("@/components/demos/alert/alert-demo")),
-		title: "alert-demo",
-		category: "alert",
-		path: "src/components/demos/alert/alert-demo.tsx",
-	},
-	"alert-danger": {
-		source:
-			'import { XCircleIcon } from "lucide-react"\n\nimport {\n\tAlert,\n\tAlertContent,\n\tAlertDescription,\n\tAlertIcon,\n\tAlertTitle,\n} from "@/components/ui/alert"\n\nexport default function AlertDanger() {\n\treturn (\n\t\t<Alert variant="danger">\n\t\t\t<AlertIcon>\n\t\t\t\t<XCircleIcon />\n\t\t\t</AlertIcon>\n\t\t\t<AlertContent>\n\t\t\t\t<AlertTitle>Your subscription has been canceled</AlertTitle>\n\t\t\t\t<AlertDescription>\n\t\t\t\t\tYour access to premium features will end in 30 days. You can\n\t\t\t\t\treactivate your subscription anytime.\n\t\t\t\t</AlertDescription>\n\t\t\t</AlertContent>\n\t\t</Alert>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/alert/alert-danger")
-		),
-		title: "alert-danger",
-		category: "alert",
-		path: "src/components/demos/alert/alert-danger.tsx",
 	},
 }

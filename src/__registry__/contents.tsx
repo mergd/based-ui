@@ -51,6 +51,16 @@ export const contentRegistry: ContentRegistry = {
 			{ label: "Installation", path: "/docs/getting-started/installation" },
 		],
 	},
+	"getting-started/changelog": {
+		type: "file",
+		path: "getting-started/changelog.mdx",
+		meta: { title: "Changelog", description: "Latest Updates" },
+		urlPath: "getting-started/changelog",
+		breadcrumbs: [
+			{ label: "Getting Started", path: "/docs/getting-started" },
+			{ label: "Changelog", path: "/docs/getting-started/changelog" },
+		],
+	},
 	"components/tooltip": {
 		type: "file",
 		path: "components/tooltip.mdx",

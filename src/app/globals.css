@@ -106,7 +106,7 @@
 
 @layer utilities {
 	.container {
-		@apply px-4 xl:px-6 2xl:px-4 mx-auto max-w-[1400px] w-full;
+		@apply px-4 xl:px-6 2xl:px-4 mx-auto max-w-[1400px] w-full 2xl:border-x;
 	}
 
 	.step {

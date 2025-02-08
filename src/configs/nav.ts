@@ -1,10 +1,27 @@
-import { type SidebarNavGroup } from "@/types/nav"
+import { type NavItem, type SidebarNavGroup } from "@/types/nav"
 
 export interface NavConfig {
+	mainNav: NavItem[]
 	sidebarNav: SidebarNavGroup[]
 }
 
 export const navConfig: NavConfig = {
+	mainNav: [
+		{
+			title: "Docs",
+			href: "/docs/getting-started",
+		},
+		{
+			title: "Components",
+			href: "/docs/components",
+		},
+		{
+			title: "Blocks",
+			href: "/docs/blocks",
+			disabled: true,
+			label: "Coming Soon",
+		},
+	],
 	sidebarNav: [
 		{
 			title: "Getting Started",
@@ -31,8 +48,7 @@ export const navConfig: NavConfig = {
 				},
 				{
 					title: "Changelog",
-					href: "/docs/changelog",
-					disabled: true,
+					href: "/docs/getting-started/changelog",
 				},
 			],
 		},

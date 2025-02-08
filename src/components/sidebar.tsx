@@ -3,6 +3,8 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
+import { Badge } from "@/components/ui/badge"
+
 import { navConfig } from "@/configs/nav"
 
 import { cn } from "@/lib/utils"
@@ -14,12 +16,6 @@ interface DocsSidebarNavItemsProps {
 	pathname: string | null
 	onNavItemClick?: () => void
 }
-
-const Label = ({ children }: { children: React.ReactNode }) => (
-	<span className="ml-2 rounded-md bg-primary px-1 py-0.5 text-xs font-semibold leading-none text-primary-foreground">
-		{children}
-	</span>
-)
 
 export const DocsSidebarNavItems = ({
 	items,
@@ -34,7 +30,7 @@ export const DocsSidebarNavItems = ({
 					href={item.href}
 					onClick={onNavItemClick}
 					className={cn(
-						"-mx-2 flex w-full items-center rounded-md border px-2 py-1 transition-colors hover:text-foreground md:mx-0",
+						"-mx-2 flex w-full items-center gap-2 rounded-md border px-2 py-1 transition-colors hover:text-foreground md:mx-0",
 						pathname === item.href
 							? "bg-secondary/50 text-foreground"
 							: "border-transparent text-muted-foreground"
@@ -43,17 +39,25 @@ export const DocsSidebarNavItems = ({
 					rel={item.external ? "noreferrer" : ""}
 				>
 					{item.title}
-					{item.label && <Label>{item.label}</Label>}
+					{item.label && (
+						<Badge variant="info" className="rounded-md px-2 py-0.5">
+							{item.label}
+						</Badge>
+					)}
 				</Link>
 			) : (
 				<span
 					key={index}
 					className={cn(
-						"-mx-2 flex w-full cursor-not-allowed items-center px-2 py-1 text-muted-foreground opacity-60 md:mx-0"
+						"-mx-2 flex w-full cursor-not-allowed items-center gap-2 px-2 py-1 text-muted-foreground opacity-60 md:mx-0"
 					)}
 				>
 					{item.title}
-					{item.label && <Label>{item.label}</Label>}
+					{item.label && (
+						<Badge variant="secondary" className="rounded-md px-2 py-0.5">
+							{item.label}
+						</Badge>
+					)}
 				</span>
 			)
 		)}

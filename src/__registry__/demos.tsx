@@ -323,25 +323,15 @@ export const demoRegistry: DemoRegistry = {
 		category: "skeleton",
 		path: "src/components/demos/skeleton/skeleton-demo.tsx",
 	},
-	"radio-group-disabled": {
+	"preview-card-demo": {
 		source:
-			'import { Label } from "@/components/ui/label"\nimport { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"\n\nexport default function RadioGroupDisabled() {\n\treturn (\n\t\t<RadioGroup disabled aria-labelledby="radio-group-notifications">\n\t\t\t<div\n\t\t\t\tid="radio-group-notifications"\n\t\t\t\tclassName="font-medium text-foreground"\n\t\t\t>\n\t\t\t\tNotifications\n\t\t\t</div>\n\t\t\t<div className="flex items-center space-x-2">\n\t\t\t\t<RadioGroupItem id="email" value="email" />\n\t\t\t\t<Label htmlFor="email">Email</Label>\n\t\t\t</div>\n\t\t\t<div className="flex items-center space-x-2">\n\t\t\t\t<RadioGroupItem id="sms" value="sms" />\n\t\t\t\t<Label htmlFor="sms">SMS</Label>\n\t\t\t</div>\n\t\t\t<div className="flex items-center space-x-2">\n\t\t\t\t<RadioGroupItem id="email-and-sms" value="email-and-sms" />\n\t\t\t\t<Label htmlFor="email-and-sms">Email & SMS</Label>\n\t\t\t</div>\n\t\t</RadioGroup>\n\t)\n}\n',
+			'"use client"\n\nimport { GithubIcon, GlobeIcon, UserIcon } from "lucide-react"\n\nimport { Icons } from "@/components/icons"\nimport {\n\tPreviewCard,\n\tPreviewCardContent,\n\tPreviewCardTrigger,\n} from "@/components/ui/preview-card"\n\nexport default function PreviewCardDemo() {\n\treturn (\n\t\t<PreviewCard>\n\t\t\t<p className="max-w-80 text-balance text-foreground">\n\t\t\t\tThis is a preview card component from{" "}\n\t\t\t\t<PreviewCardTrigger className="cursor-pointer underline underline-offset-2">\n\t\t\t\t\t9ui\n\t\t\t\t</PreviewCardTrigger>\n\t\t\t\t.\n\t\t\t</p>\n\t\t\t<PreviewCardContent className="max-w-80 text-sm">\n\t\t\t\t<Icons.logo className="mx-auto w-10" />\n\t\t\t\t<p className="mt-2">\n\t\t\t\t\tBeautiful, customizable components built with{" "}\n\t\t\t\t\t<a\n\t\t\t\t\t\thref="https://base-ui.com"\n\t\t\t\t\t\tclassName="underline underline-offset-2"\n\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t>\n\t\t\t\t\t\tBase UI\n\t\t\t\t\t</a>{" "}\n\t\t\t\t\tand{" "}\n\t\t\t\t\t<a\n\t\t\t\t\t\thref="https://tailwindcss.com"\n\t\t\t\t\t\tclassName="underline underline-offset-2"\n\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t>\n\t\t\t\t\t\tTailwind CSS\n\t\t\t\t\t</a>\n\t\t\t\t\t.\n\t\t\t\t</p>\n\t\t\t\t<div className="mt-2 flex flex-col gap-2 text-sm">\n\t\t\t\t\t<div className="flex items-center gap-2">\n\t\t\t\t\t\t<span className="flex items-center gap-1 text-muted-foreground">\n\t\t\t\t\t\t\t<UserIcon size={14} />\n\t\t\t\t\t\t\tCreator:\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<a\n\t\t\t\t\t\t\thref="https://x.com/borabalogluu"\n\t\t\t\t\t\t\tclassName="underline underline-offset-2"\n\t\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\tBora Baloglu\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div className="flex items-center gap-2">\n\t\t\t\t\t\t<span className="flex items-center gap-1 text-muted-foreground">\n\t\t\t\t\t\t\t<GithubIcon size={14} />\n\t\t\t\t\t\t\tSource code:\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<a\n\t\t\t\t\t\t\thref="https://github.com/borabaloglu/9ui"\n\t\t\t\t\t\t\tclassName="underline underline-offset-2"\n\t\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\tGithub\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div className="flex items-center gap-2">\n\t\t\t\t\t\t<span className="flex items-center gap-1 text-muted-foreground">\n\t\t\t\t\t\t\t<GlobeIcon size={14} />\n\t\t\t\t\t\t\tWebsite\n\t\t\t\t\t\t</span>\n\t\t\t\t\t\t<a\n\t\t\t\t\t\t\thref="https://9ui.dev"\n\t\t\t\t\t\t\tclassName="underline underline-offset-2"\n\t\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\t9ui.dev\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</PreviewCardContent>\n\t\t</PreviewCard>\n\t)\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/radio-group/radio-group-disabled")
+			() => import("@/components/demos/preview-card/preview-card-demo")
 		),
-		title: "radio-group-disabled",
-		category: "radio-group",
-		path: "src/components/demos/radio-group/radio-group-disabled.tsx",
-	},
-	"radio-group-demo": {
-		source:
-			'import { Label } from "@/components/ui/label"\nimport { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"\n\nexport default function RadioGroupDemo() {\n\treturn (\n\t\t<RadioGroup aria-labelledby="radio-group-plan">\n\t\t\t<div id="radio-group-plan" className="font-medium text-foreground">\n\t\t\t\tSelect a plan\n\t\t\t</div>\n\t\t\t<div className="flex items-center space-x-2">\n\t\t\t\t<RadioGroupItem id="basic" value="basic" />\n\t\t\t\t<Label htmlFor="basic">Basic</Label>\n\t\t\t</div>\n\t\t\t<div className="flex items-center space-x-2">\n\t\t\t\t<RadioGroupItem id="standard" value="standard" />\n\t\t\t\t<Label htmlFor="standard">Standard</Label>\n\t\t\t</div>\n\t\t\t<div className="flex items-center space-x-2">\n\t\t\t\t<RadioGroupItem id="premium" value="premium" />\n\t\t\t\t<Label htmlFor="premium">Premium</Label>\n\t\t\t</div>\n\t\t</RadioGroup>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/radio-group/radio-group-demo")
-		),
-		title: "radio-group-demo",
-		category: "radio-group",
-		path: "src/components/demos/radio-group/radio-group-demo.tsx",
+		title: "preview-card-demo",
+		category: "preview-card",
+		path: "src/components/demos/preview-card/preview-card-demo.tsx",
 	},
 	"scroll-area-horizontal": {
 		source:
@@ -579,51 +569,41 @@ export const demoRegistry: DemoRegistry = {
 		source:
 			'"use client"\n\nimport { useState } from "react"\n\nimport { Calendar } from "@/components/ui/calendar"\n\nexport default function CalendarSingle() {\n\tconst [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined)\n\n\treturn (\n\t\t<Calendar\n\t\t\tmode="single"\n\t\t\tselected={selectedDate}\n\t\t\tonSelect={setSelectedDate}\n\t\t\tshowOutsideDays\n\t\t/>\n\t)\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/calendar/calendar-single")
+			() => import("@/components/demos/checkbox/checkbox-with-label")
 		),
-		title: "calendar-single",
-		category: "calendar",
-		path: "src/components/demos/calendar/calendar-single.tsx",
+		title: "checkbox-with-label",
+		category: "checkbox",
+		path: "src/components/demos/checkbox/checkbox-with-label.tsx",
 	},
-	"calendar-range": {
+	"checkbox-error": {
 		source:
-			'"use client"\n\nimport { useState } from "react"\nimport { DateRange } from "react-day-picker"\n\nimport { Calendar } from "@/components/ui/calendar"\n\nexport default function CalendarRange() {\n\tconst [range, setRange] = useState<DateRange | undefined>(undefined)\n\n\treturn (\n\t\t<Calendar\n\t\t\tmode="range"\n\t\t\tselected={range}\n\t\t\tonSelect={setRange}\n\t\t\tshowOutsideDays\n\t\t/>\n\t)\n}\n',
+			'import { Checkbox } from "@/components/ui/checkbox"\n\nexport default function CheckboxError() {\n\treturn <Checkbox aria-invalid />\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/calendar/calendar-range")
+			() => import("@/components/demos/checkbox/checkbox-error")
 		),
-		title: "calendar-range",
-		category: "calendar",
-		path: "src/components/demos/calendar/calendar-range.tsx",
+		title: "checkbox-error",
+		category: "checkbox",
+		path: "src/components/demos/checkbox/checkbox-error.tsx",
 	},
-	"calendar-multiple": {
+	"checkbox-disabled": {
 		source:
-			'"use client"\n\nimport { useState } from "react"\n\nimport { Calendar } from "@/components/ui/calendar"\n\nexport default function CalendarMultiple() {\n\tconst [selectedDates, setSelectedDates] = useState<Date[] | undefined>(\n\t\tundefined\n\t)\n\n\treturn (\n\t\t<Calendar\n\t\t\tmode="multiple"\n\t\t\tselected={selectedDates}\n\t\t\tonSelect={setSelectedDates}\n\t\t\tshowOutsideDays\n\t\t/>\n\t)\n}\n',
+			'import { Checkbox } from "@/components/ui/checkbox"\n\nexport default function CheckboxDisabled() {\n\treturn <Checkbox disabled />\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/calendar/calendar-multiple")
+			() => import("@/components/demos/checkbox/checkbox-disabled")
 		),
-		title: "calendar-multiple",
-		category: "calendar",
-		path: "src/components/demos/calendar/calendar-multiple.tsx",
+		title: "checkbox-disabled",
+		category: "checkbox",
+		path: "src/components/demos/checkbox/checkbox-disabled.tsx",
 	},
-	"calendar-disabled": {
+	"checkbox-demo": {
 		source:
-			'"use client"\n\nimport { useState } from "react"\n\nimport { Calendar } from "@/components/ui/calendar"\n\nexport default function CalendarDisabled() {\n\tconst [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined)\n\n\treturn (\n\t\t<Calendar\n\t\t\tmode="single"\n\t\t\tdisabled={(date) => date < new Date()}\n\t\t\tselected={selectedDate}\n\t\t\tonSelect={setSelectedDate}\n\t\t/>\n\t)\n}\n',
+			'import { Checkbox } from "@/components/ui/checkbox"\n\nexport default function CheckboxDemo() {\n\treturn <Checkbox />\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/calendar/calendar-disabled")
+			() => import("@/components/demos/checkbox/checkbox-demo")
 		),
-		title: "calendar-disabled",
-		category: "calendar",
-		path: "src/components/demos/calendar/calendar-disabled.tsx",
-	},
-	"calendar-demo": {
-		source:
-			'import { Calendar } from "@/components/ui/calendar"\n\nexport default function CalendarDemo() {\n\treturn <Calendar showOutsideDays />\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/calendar/calendar-demo")
-		),
-		title: "calendar-demo",
-		category: "calendar",
-		path: "src/components/demos/calendar/calendar-demo.tsx",
+		title: "checkbox-demo",
+		category: "checkbox",
+		path: "src/components/demos/checkbox/checkbox-demo.tsx",
 	},
 	"card-with-image": {
 		source:
@@ -1008,13 +988,59 @@ export const demoRegistry: DemoRegistry = {
 	},
 	"alert-dialog-demo": {
 		source:
-			'import {\n\tAlertDialog,\n\tAlertDialogClose,\n\tAlertDialogContent,\n\tAlertDialogDescription,\n\tAlertDialogFooter,\n\tAlertDialogHeader,\n\tAlertDialogTitle,\n\tAlertDialogTrigger,\n} from "@/components/ui/alert-dialog"\nimport { Button } from "@/components/ui/button"\n\nexport default function AlertDialogDemo() {\n\treturn (\n\t\t<AlertDialog>\n\t\t\t<AlertDialogTrigger\n\t\t\t\trender={(props) => (\n\t\t\t\t\t<Button {...props} variant="destructive">\n\t\t\t\t\t\tDelete Post\n\t\t\t\t\t</Button>\n\t\t\t\t)}\n\t\t\t/>\n\t\t\t<AlertDialogContent className="space-y-4">\n\t\t\t\t<AlertDialogHeader>\n\t\t\t\t\t<AlertDialogTitle>Are you sure?</AlertDialogTitle>\n\t\t\t\t\t<AlertDialogDescription>\n\t\t\t\t\t\tThis action cannot be undone. Your post will be permanently deleted.\n\t\t\t\t\t</AlertDialogDescription>\n\t\t\t\t</AlertDialogHeader>\n\t\t\t\t<AlertDialogFooter>\n\t\t\t\t\t<AlertDialogClose\n\t\t\t\t\t\trender={(props) => (\n\t\t\t\t\t\t\t<Button {...props} size="sm" variant="ghost">\n\t\t\t\t\t\t\t\tCancel\n\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t)}\n\t\t\t\t\t/>\n\t\t\t\t\t<Button size="sm" variant="destructive">\n\t\t\t\t\t\tDelete\n\t\t\t\t\t</Button>\n\t\t\t\t</AlertDialogFooter>\n\t\t\t</AlertDialogContent>\n\t\t</AlertDialog>\n\t)\n}\n',
+			'import { Badge, BadgeIndicator } from "@/components/ui/badge"\n\nexport default function BadgeWarning() {\n\treturn (\n\t\t<div className="flex items-center gap-2">\n\t\t\t<Badge variant="warning">Warning</Badge>\n\t\t\t<Badge variant="outline">\n\t\t\t\t<BadgeIndicator variant="warning" />\n\t\t\t\tWarning\n\t\t\t</Badge>\n\t\t</div>\n\t)\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/alert-dialog/alert-dialog-demo")
+			() => import("@/components/demos/badge/badge-warning")
 		),
-		title: "alert-dialog-demo",
-		category: "alert-dialog",
-		path: "src/components/demos/alert-dialog/alert-dialog-demo.tsx",
+		title: "badge-warning",
+		category: "badge",
+		path: "src/components/demos/badge/badge-warning.tsx",
+	},
+	"badge-success": {
+		source:
+			'import { Badge, BadgeIndicator } from "@/components/ui/badge"\n\nexport default function BadgeSuccess() {\n\treturn (\n\t\t<div className="flex items-center gap-2">\n\t\t\t<Badge variant="success">Success</Badge>\n\t\t\t<Badge variant="outline">\n\t\t\t\t<BadgeIndicator variant="success" />\n\t\t\t\tSuccess\n\t\t\t</Badge>\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/badge/badge-success")
+		),
+		title: "badge-success",
+		category: "badge",
+		path: "src/components/demos/badge/badge-success.tsx",
+	},
+	"badge-outline": {
+		source:
+			'import { Badge } from "@/components/ui/badge"\n\nexport default function BadgeOutline() {\n\treturn <Badge variant="outline">Outline</Badge>\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/badge/badge-outline")
+		),
+		title: "badge-outline",
+		category: "badge",
+		path: "src/components/demos/badge/badge-outline.tsx",
+	},
+	"badge-info": {
+		source:
+			'import { Badge, BadgeIndicator } from "@/components/ui/badge"\n\nexport default function BadgeInfo() {\n\treturn (\n\t\t<div className="flex items-center gap-2">\n\t\t\t<Badge variant="info">Info</Badge>\n\t\t\t<Badge variant="outline">\n\t\t\t\t<BadgeIndicator variant="info" />\n\t\t\t\tInfo\n\t\t\t</Badge>\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(() => import("@/components/demos/badge/badge-info")),
+		title: "badge-info",
+		category: "badge",
+		path: "src/components/demos/badge/badge-info.tsx",
+	},
+	"badge-demo": {
+		source:
+			'import { Badge } from "@/components/ui/badge"\n\nexport default function BadgeDemo() {\n\treturn <Badge>Badge</Badge>\n}\n',
+		component: React.lazy(() => import("@/components/demos/badge/badge-demo")),
+		title: "badge-demo",
+		category: "badge",
+		path: "src/components/demos/badge/badge-demo.tsx",
+	},
+	"badge-danger": {
+		source:
+			'import { Badge, BadgeIndicator } from "@/components/ui/badge"\n\nexport default function BadgeDanger() {\n\treturn (\n\t\t<div className="flex items-center gap-2">\n\t\t\t<Badge variant="danger">Danger</Badge>\n\t\t\t<Badge variant="outline">\n\t\t\t\t<BadgeIndicator variant="danger" />\n\t\t\t\tDanger\n\t\t\t</Badge>\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/badge/badge-danger")
+		),
+		title: "badge-danger",
+		category: "badge",
+		path: "src/components/demos/badge/badge-danger.tsx",
 	},
 	"accordion-demo": {
 		source:
@@ -1025,5 +1051,15 @@ export const demoRegistry: DemoRegistry = {
 		title: "accordion-demo",
 		category: "accordion",
 		path: "src/components/demos/accordion/accordion-demo.tsx",
+	},
+	"accordion-demo": {
+		source:
+			'import {\n\tAlertDialog,\n\tAlertDialogClose,\n\tAlertDialogContent,\n\tAlertDialogDescription,\n\tAlertDialogFooter,\n\tAlertDialogHeader,\n\tAlertDialogTitle,\n\tAlertDialogTrigger,\n} from "@/components/ui/alert-dialog"\nimport { Button } from "@/components/ui/button"\n\nexport default function AlertDialogDemo() {\n\treturn (\n\t\t<AlertDialog>\n\t\t\t<AlertDialogTrigger\n\t\t\t\trender={(props) => (\n\t\t\t\t\t<Button {...props} variant="destructive">\n\t\t\t\t\t\tDelete Post\n\t\t\t\t\t</Button>\n\t\t\t\t)}\n\t\t\t/>\n\t\t\t<AlertDialogContent className="space-y-4">\n\t\t\t\t<AlertDialogHeader>\n\t\t\t\t\t<AlertDialogTitle>Are you sure?</AlertDialogTitle>\n\t\t\t\t\t<AlertDialogDescription>\n\t\t\t\t\t\tThis action cannot be undone. Your post will be permanently deleted.\n\t\t\t\t\t</AlertDialogDescription>\n\t\t\t\t</AlertDialogHeader>\n\t\t\t\t<AlertDialogFooter>\n\t\t\t\t\t<AlertDialogClose\n\t\t\t\t\t\trender={(props) => (\n\t\t\t\t\t\t\t<Button {...props} size="sm" variant="ghost">\n\t\t\t\t\t\t\t\tCancel\n\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t)}\n\t\t\t\t\t/>\n\t\t\t\t\t<Button size="sm" variant="destructive">\n\t\t\t\t\t\tDelete\n\t\t\t\t\t</Button>\n\t\t\t\t</AlertDialogFooter>\n\t\t\t</AlertDialogContent>\n\t\t</AlertDialog>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/alert-dialog/alert-dialog-demo")
+		),
+		title: "alert-dialog-demo",
+		category: "alert-dialog",
+		path: "src/components/demos/alert-dialog/alert-dialog-demo.tsx",
 	},
 }

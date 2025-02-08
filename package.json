@@ -47,7 +47,7 @@
 		"typescript-eslint": "^8.19.0"
 	},
 	"dependencies": {
-		"@base-ui-components/react": "1.0.0-alpha.5",
+		"@base-ui-components/react": "1.0.0-alpha.6",
 		"@hookform/resolvers": "^3.9.1",
 		"@mdx-js/loader": "^3.1.0",
 		"@mdx-js/react": "^3.1.0",
@@ -58,7 +58,7 @@
 		"change-case": "^5.4.4",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
-		"cmdk-base": "^0.0.2",
+		"cmdk-base": "^0.0.3",
 		"dayjs": "^1.11.13",
 		"embla-carousel-react": "^8.5.2",
 		"glob": "^11.0.1",
@@ -86,7 +86,7 @@
 		"unist-builder": "^4.0.0",
 		"unist-util-visit": "^5.0.0",
 		"unist-util-visit-parents": "^6.0.1",
-		"vaul-base": "^0.0.3",
+		"vaul-base": "^0.0.4",
 		"vfile": "^6.0.3",
 		"zod": "^3.24.1"
 	},

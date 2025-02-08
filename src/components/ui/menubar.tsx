@@ -101,13 +101,20 @@ const MenubarMenu = ({
 		state: "open",
 	})
 
-	React.useEffect(() => {
+	const handleOpenChange = (open: boolean) => {
+		setOpen(open)
 		if (open) {
 			setActiveMenuId(id)
 		} else if (activeMenuId === id) {
 			setActiveMenuId(null)
 		}
-	}, [open])
+	}
+
+	React.useEffect(() => {
+		if (activeMenuId !== id) {
+			setOpen(false)
+		}
+	}, [activeMenuId])
 
 	return (
 		<MenubarMenuContext.Provider value={{ id }}>
@@ -116,7 +123,7 @@ const MenubarMenu = ({
 				modal={false}
 				openOnHover={activeMenuId ? activeMenuId !== id : false}
 				delay={0}
-				onOpenChange={setOpen}
+				onOpenChange={handleOpenChange}
 				{...props}
 			>
 				{children}

@@ -1,8 +1,8 @@
 import * as React from "react"
 
-import { Progress, ProgressLabel } from "@/components/ui/progress"
+import { Progress, ProgressValue } from "@/components/ui/progress"
 
-export default function ProgressDemo() {
+export default function ProgressWithValueDemo() {
 	const [value, setValue] = React.useState(0)
 
 	React.useEffect(() => {
@@ -15,7 +15,7 @@ export default function ProgressDemo() {
 	return (
 		<div className="w-80">
 			<Progress value={value}>
-				<ProgressLabel>{value}%</ProgressLabel>
+				<ProgressValue />
 			</Progress>
 		</div>
 	)

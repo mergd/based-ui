@@ -59,7 +59,7 @@ export const ComponentPreview = ({
 
 			<CodeBar label={`${name}.tsx`} content={__source__} />
 
-			{children}
+			<div className="[&_pre]:!max-h-[300px]">{children}</div>
 		</div>
 	)
 }

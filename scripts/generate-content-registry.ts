@@ -1,5 +1,6 @@
 import { readFile, writeFile } from "fs/promises"
 import { join, relative } from "path"
+import * as changeCase from "change-case"
 import { glob } from "glob"
 
 import { getMetadata } from "@/lib/metadata"
@@ -12,6 +13,7 @@ interface ContentFile {
 		description: string
 	}
 	urlPath: string
+	breadcrumbs: Array<{ label: string; path: string }>
 }
 
 const CONTENT_DIR = join(process.cwd(), "src/content")
@@ -37,11 +39,23 @@ async function findContentFiles(): Promise<ContentFile[]> {
 				urlPath = urlPath.replace(/\/index$/, "")
 			}
 
+			// Generate breadcrumbs
+			const segments = urlPath.split("/")
+			const breadcrumbs = segments.map((_, index) => {
+				const path = segments.slice(0, index + 1).join("/")
+				const label = segments[index] || "Home"
+				return {
+					label: changeCase.capitalCase(label),
+					path: `/docs/${path}`,
+				}
+			})
+
 			return {
 				source,
 				path: relativePath,
 				meta,
 				urlPath,
+				breadcrumbs,
 			}
 		})
 	)
@@ -56,12 +70,13 @@ function generateRegistryCode(contents: ContentFile[]): string {
 
 	const registry = contents
 		.map(
-			({ path, meta, urlPath }) => `
+			({ path, meta, urlPath, breadcrumbs }) => `
   "${urlPath}": {
     type: ${JSON.stringify(path.endsWith("/index.mdx") ? "index" : "file")},
     path: ${JSON.stringify(path)},
     meta: ${JSON.stringify(meta)},
-    urlPath: ${JSON.stringify(urlPath)}
+    urlPath: ${JSON.stringify(urlPath)},
+    breadcrumbs: ${JSON.stringify(breadcrumbs)}
   }`
 		)
 		.join(",")

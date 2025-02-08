@@ -1,9 +1,17 @@
 import { readFile } from "fs/promises"
 import { join } from "path"
+import * as React from "react"
 import { Metadata } from "next"
+import Link from "next/link"
 import { notFound } from "next/navigation"
 
 import { TableOfContents } from "@/components/toc"
+import {
+	Breadcrumb,
+	BreadcrumbItem,
+	BreadcrumbList,
+	BreadcrumbSeparator,
+} from "@/components/ui/breadcrumbs"
 
 import { siteConfig } from "@/configs/site"
 
@@ -78,6 +86,7 @@ async function getDocFromParams({ params }: DocPageProps) {
 			source,
 			slug,
 			metadata: entry.meta,
+			breadcrumbs: entry.breadcrumbs,
 		}
 	} catch {
 		return null
@@ -96,6 +105,21 @@ const DocPage = async ({ params }: DocPageProps) => {
 	return (
 		<main className="relative xl:grid xl:grid-cols-[1fr_240px] xl:gap-10">
 			<div className="w-full xl:mx-auto xl:max-w-2xl">
+				<Breadcrumb className="mb-2">
+					<BreadcrumbList>
+						{doc.breadcrumbs.map((breadcrumb, index) => (
+							<React.Fragment key={breadcrumb.path}>
+								<BreadcrumbItem active={index === doc.breadcrumbs.length - 1}>
+									<Link href={breadcrumb.path}>{breadcrumb.label}</Link>
+								</BreadcrumbItem>
+								{index !== doc.breadcrumbs.length - 1 && (
+									<BreadcrumbSeparator />
+								)}
+							</React.Fragment>
+						))}
+					</BreadcrumbList>
+				</Breadcrumb>
+
 				<doc.Doc />
 			</div>
 			{toc.length > 0 && <TableOfContents items={toc} />}

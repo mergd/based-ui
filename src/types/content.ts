@@ -12,6 +12,11 @@ export interface ContentEntry {
 	meta: ContentMeta
 	/** URL path for this content */
 	urlPath: string
+	/** Breadcrumbs for this content */
+	breadcrumbs: {
+		label: string
+		path: string
+	}[]
 }
 
 export type ContentRegistry = Record<string, ContentEntry>

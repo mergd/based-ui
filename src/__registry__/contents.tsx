@@ -9,12 +9,20 @@ export const contentRegistry: ContentRegistry = {
 			description: "Using CSS variables to customize the theme.",
 		},
 		urlPath: "getting-started/theming",
+		breadcrumbs: [
+			{ label: "Getting Started", path: "/docs/getting-started" },
+			{ label: "Theming", path: "/docs/getting-started/theming" },
+		],
 	},
 	"getting-started/roadmap": {
 		type: "file",
 		path: "getting-started/roadmap.mdx",
 		meta: { title: "Roadmap", description: "What's coming next" },
 		urlPath: "getting-started/roadmap",
+		breadcrumbs: [
+			{ label: "Getting Started", path: "/docs/getting-started" },
+			{ label: "Roadmap", path: "/docs/getting-started/roadmap" },
+		],
 	},
 	"getting-started/introduction": {
 		type: "file",
@@ -25,6 +33,10 @@ export const contentRegistry: ContentRegistry = {
 				"Beautiful, customizable components built with Base UI and Tailwind CSS",
 		},
 		urlPath: "getting-started/introduction",
+		breadcrumbs: [
+			{ label: "Getting Started", path: "/docs/getting-started" },
+			{ label: "Introduction", path: "/docs/getting-started/introduction" },
+		],
 	},
 	"getting-started/installation": {
 		type: "file",
@@ -34,6 +46,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "Installing dependencies and setting up the project.",
 		},
 		urlPath: "getting-started/installation",
+		breadcrumbs: [
+			{ label: "Getting Started", path: "/docs/getting-started" },
+			{ label: "Installation", path: "/docs/getting-started/installation" },
+		],
 	},
 	"components/tooltip": {
 		type: "file",
@@ -43,6 +59,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "Used to provide context or hints for elements.",
 		},
 		urlPath: "components/tooltip",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Tooltip", path: "/docs/components/tooltip" },
+		],
 	},
 	"components/toggle": {
 		type: "file",
@@ -52,6 +72,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "Displays a control to toggle between two states.",
 		},
 		urlPath: "components/toggle",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Toggle", path: "/docs/components/toggle" },
+		],
 	},
 	"components/toggle-group": {
 		type: "file",
@@ -62,6 +86,10 @@ export const contentRegistry: ContentRegistry = {
 				"A group of toggles for selecting single or multiple options.",
 		},
 		urlPath: "components/toggle-group",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Toggle Group", path: "/docs/components/toggle-group" },
+		],
 	},
 	"components/toast": {
 		type: "file",
@@ -71,6 +99,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "Displays a message to the user in a toast.",
 		},
 		urlPath: "components/toast",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Toast", path: "/docs/components/toast" },
+		],
 	},
 	"components/textarea": {
 		type: "file",
@@ -80,6 +112,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "A component that allows users to input long text.",
 		},
 		urlPath: "components/textarea",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Textarea", path: "/docs/components/textarea" },
+		],
 	},
 	"components/tabs": {
 		type: "file",
@@ -89,6 +125,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "Used to organize content into tabbed navigation.",
 		},
 		urlPath: "components/tabs",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Tabs", path: "/docs/components/tabs" },
+		],
 	},
 	"components/table": {
 		type: "file",
@@ -99,6 +139,10 @@ export const contentRegistry: ContentRegistry = {
 				"Used to organize and present information in a tabular format.",
 		},
 		urlPath: "components/table",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Table", path: "/docs/components/table" },
+		],
 	},
 	"components/switch": {
 		type: "file",
@@ -108,6 +152,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "A toggle control for switching between two states.",
 		},
 		urlPath: "components/switch",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Switch", path: "/docs/components/switch" },
+		],
 	},
 	"components/slider": {
 		type: "file",
@@ -117,6 +165,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "A control for selecting a value within a range.",
 		},
 		urlPath: "components/slider",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Slider", path: "/docs/components/slider" },
+		],
 	},
 	"components/skeleton": {
 		type: "file",
@@ -126,6 +178,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "Displays a loading state for a component.",
 		},
 		urlPath: "components/skeleton",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Skeleton", path: "/docs/components/skeleton" },
+		],
 	},
 	"components/sheet": {
 		type: "file",
@@ -135,6 +191,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "A sliding panel for displaying content.",
 		},
 		urlPath: "components/sheet",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Sheet", path: "/docs/components/sheet" },
+		],
 	},
 	"components/separator": {
 		type: "file",
@@ -145,6 +205,10 @@ export const contentRegistry: ContentRegistry = {
 				"Displays a divider to organize content visually or contextually.",
 		},
 		urlPath: "components/separator",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Separator", path: "/docs/components/separator" },
+		],
 	},
 	"components/select": {
 		type: "file",
@@ -154,6 +218,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "A dropdown menu for choosing one option from a list..",
 		},
 		urlPath: "components/select",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Select", path: "/docs/components/select" },
+		],
 	},
 	"components/scroll-area": {
 		type: "file",
@@ -163,6 +231,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "A component for creating scrollable regions.",
 		},
 		urlPath: "components/scroll-area",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Scroll Area", path: "/docs/components/scroll-area" },
+		],
 	},
 	"components/radio-group": {
 		type: "file",
@@ -173,6 +245,10 @@ export const contentRegistry: ContentRegistry = {
 				"A set of radio buttons for selecting one option from a group.",
 		},
 		urlPath: "components/radio-group",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Radio Group", path: "/docs/components/radio-group" },
+		],
 	},
 	"components/progress": {
 		type: "file",
@@ -182,6 +258,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "Displays a progress bar with an optional label.",
 		},
 		urlPath: "components/progress",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Progress", path: "/docs/components/progress" },
+		],
 	},
 	"components/preview-card": {
 		type: "file",
@@ -191,12 +271,20 @@ export const contentRegistry: ContentRegistry = {
 			description: "Used to display a preview of content when hovered.",
 		},
 		urlPath: "components/preview-card",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Preview Card", path: "/docs/components/preview-card" },
+		],
 	},
 	"components/popover": {
 		type: "file",
 		path: "components/popover.mdx",
 		meta: { title: "Popover", description: "A popup for displaying content." },
 		urlPath: "components/popover",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Popover", path: "/docs/components/popover" },
+		],
 	},
 	"components/menubar": {
 		type: "file",
@@ -207,6 +295,10 @@ export const contentRegistry: ContentRegistry = {
 				"Displays a top-level bar with expandable menus for easy access.",
 		},
 		urlPath: "components/menubar",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Menubar", path: "/docs/components/menubar" },
+		],
 	},
 	"components/kbd": {
 		type: "file",
@@ -216,6 +308,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "Displays keyboard shortcuts or keypresses.",
 		},
 		urlPath: "components/kbd",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Kbd", path: "/docs/components/kbd" },
+		],
 	},
 	"components/input": {
 		type: "file",
@@ -225,6 +321,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "A component that allows users to input text.",
 		},
 		urlPath: "components/input",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Input", path: "/docs/components/input" },
+		],
 	},
 	"components/input-otp": {
 		type: "file",
@@ -234,6 +334,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "A component for entering OTP codes.",
 		},
 		urlPath: "components/input-otp",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Input Otp", path: "/docs/components/input-otp" },
+		],
 	},
 	"components/form": {
 		type: "file",
@@ -243,6 +347,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "A structured component for collecting and validating data.",
 		},
 		urlPath: "components/form",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Form", path: "/docs/components/form" },
+		],
 	},
 	"components/dropdown": {
 		type: "file",
@@ -252,6 +360,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "Used to display a list of options to the user.",
 		},
 		urlPath: "components/dropdown",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Dropdown", path: "/docs/components/dropdown" },
+		],
 	},
 	"components/drawer": {
 		type: "file",
@@ -262,6 +374,10 @@ export const contentRegistry: ContentRegistry = {
 				"Displays a panel that slides out from the side of a screen to reveal more content.",
 		},
 		urlPath: "components/drawer",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Drawer", path: "/docs/components/drawer" },
+		],
 	},
 	"components/dialog": {
 		type: "file",
@@ -271,6 +387,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "A modal window for displaying content.",
 		},
 		urlPath: "components/dialog",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Dialog", path: "/docs/components/dialog" },
+		],
 	},
 	"components/context-menu": {
 		type: "file",
@@ -280,6 +400,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "Used to provide options specific to an element or area.",
 		},
 		urlPath: "components/context-menu",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Context Menu", path: "/docs/components/context-menu" },
+		],
 	},
 	"components/command": {
 		type: "file",
@@ -290,6 +414,10 @@ export const contentRegistry: ContentRegistry = {
 				"A searchable interface for quickly executing commands or actions.",
 		},
 		urlPath: "components/command",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Command", path: "/docs/components/command" },
+		],
 	},
 	"components/collapsible": {
 		type: "file",
@@ -299,6 +427,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "Display content in a collapsible container.",
 		},
 		urlPath: "components/collapsible",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Collapsible", path: "/docs/components/collapsible" },
+		],
 	},
 	"components/checkbox": {
 		type: "file",
@@ -309,6 +441,10 @@ export const contentRegistry: ContentRegistry = {
 				"Displays a box that can be checked or unchecked by the user.",
 		},
 		urlPath: "components/checkbox",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Checkbox", path: "/docs/components/checkbox" },
+		],
 	},
 	"components/carousel": {
 		type: "file",
@@ -318,6 +454,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "A slider to display multiple items in a scrollable view.",
 		},
 		urlPath: "components/carousel",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Carousel", path: "/docs/components/carousel" },
+		],
 	},
 	"components/card": {
 		type: "file",
@@ -327,6 +467,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "Used to group and present information in a structured box.",
 		},
 		urlPath: "components/card",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Card", path: "/docs/components/card" },
+		],
 	},
 	"components/calendar": {
 		type: "file",
@@ -336,6 +480,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "Provides a visual interface for date selection.",
 		},
 		urlPath: "components/calendar",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Calendar", path: "/docs/components/calendar" },
+		],
 	},
 	"components/button": {
 		type: "file",
@@ -345,6 +493,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "Displays a button for user interaction.",
 		},
 		urlPath: "components/button",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Button", path: "/docs/components/button" },
+		],
 	},
 	"components/breadcrumbs": {
 		type: "file",
@@ -354,6 +506,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "Displays a navigation path for better context.",
 		},
 		urlPath: "components/breadcrumbs",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Breadcrumbs", path: "/docs/components/breadcrumbs" },
+		],
 	},
 	"components/badge": {
 		type: "file",
@@ -363,6 +519,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "Displays a badge for labeling or highlighting content.",
 		},
 		urlPath: "components/badge",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Badge", path: "/docs/components/badge" },
+		],
 	},
 	"components/avatar": {
 		type: "file",
@@ -372,6 +532,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "Displays an avatar with a fallback.",
 		},
 		urlPath: "components/avatar",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Avatar", path: "/docs/components/avatar" },
+		],
 	},
 	"components/aspect-ratio": {
 		type: "file",
@@ -382,6 +546,10 @@ export const contentRegistry: ContentRegistry = {
 				"Allows you to display an element at a specific aspect ratio.",
 		},
 		urlPath: "components/aspect-ratio",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Aspect Ratio", path: "/docs/components/aspect-ratio" },
+		],
 	},
 	"components/alert": {
 		type: "file",
@@ -391,6 +559,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "Used to highlight important messages.",
 		},
 		urlPath: "components/alert",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Alert", path: "/docs/components/alert" },
+		],
 	},
 	"components/alert-dialog": {
 		type: "file",
@@ -401,6 +573,10 @@ export const contentRegistry: ContentRegistry = {
 				"A modal dialog for critical messages or confirmation actions.",
 		},
 		urlPath: "components/alert-dialog",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Alert Dialog", path: "/docs/components/alert-dialog" },
+		],
 	},
 	"components/accordion": {
 		type: "file",
@@ -410,6 +586,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "A collapsible section to show or hide content.",
 		},
 		urlPath: "components/accordion",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Accordion", path: "/docs/components/accordion" },
+		],
 	},
 	"getting-started/dark-mode/vite": {
 		type: "file",
@@ -419,6 +599,11 @@ export const contentRegistry: ContentRegistry = {
 			description: "Setting up dark mode in your Vite project.",
 		},
 		urlPath: "getting-started/dark-mode/vite",
+		breadcrumbs: [
+			{ label: "Getting Started", path: "/docs/getting-started" },
+			{ label: "Dark Mode", path: "/docs/getting-started/dark-mode" },
+			{ label: "Vite", path: "/docs/getting-started/dark-mode/vite" },
+		],
 	},
 	"getting-started/dark-mode/remix": {
 		type: "file",
@@ -428,6 +613,11 @@ export const contentRegistry: ContentRegistry = {
 			description: "Setting up dark mode in your Remix project.",
 		},
 		urlPath: "getting-started/dark-mode/remix",
+		breadcrumbs: [
+			{ label: "Getting Started", path: "/docs/getting-started" },
+			{ label: "Dark Mode", path: "/docs/getting-started/dark-mode" },
+			{ label: "Remix", path: "/docs/getting-started/dark-mode/remix" },
+		],
 	},
 	"getting-started/dark-mode/next": {
 		type: "file",
@@ -437,6 +627,11 @@ export const contentRegistry: ContentRegistry = {
 			description: "Setting up dark mode in your Next.js project.",
 		},
 		urlPath: "getting-started/dark-mode/next",
+		breadcrumbs: [
+			{ label: "Getting Started", path: "/docs/getting-started" },
+			{ label: "Dark Mode", path: "/docs/getting-started/dark-mode" },
+			{ label: "Next", path: "/docs/getting-started/dark-mode/next" },
+		],
 	},
 	"getting-started/dark-mode": {
 		type: "index",
@@ -446,6 +641,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "Setting up dark mode in your project.",
 		},
 		urlPath: "getting-started/dark-mode",
+		breadcrumbs: [
+			{ label: "Getting Started", path: "/docs/getting-started" },
+			{ label: "Dark Mode", path: "/docs/getting-started/dark-mode" },
+		],
 	},
 	"getting-started/dark-mode/astro": {
 		type: "file",
@@ -455,5 +654,10 @@ export const contentRegistry: ContentRegistry = {
 			description: "Setting up dark mode in your Astro project.",
 		},
 		urlPath: "getting-started/dark-mode/astro",
+		breadcrumbs: [
+			{ label: "Getting Started", path: "/docs/getting-started" },
+			{ label: "Dark Mode", path: "/docs/getting-started/dark-mode" },
+			{ label: "Astro", path: "/docs/getting-started/dark-mode/astro" },
+		],
 	},
 }

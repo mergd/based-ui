@@ -28,7 +28,6 @@ export const navConfig: NavConfig = {
 				{
 					title: "Dark mode",
 					href: "/docs/getting-started/dark-mode",
-					disabled: true,
 				},
 				{
 					title: "Changelog",

@@ -19,7 +19,7 @@ html.light code[data-theme*=" "] span {
 }
 
 [data-rehype-pretty-code-figure] pre {
-	@apply max-h-[300px] overflow-auto py-4 !bg-background;
+	@apply max-h-[600px] overflow-auto py-4 !bg-background;
 }
 
 [data-rehype-pretty-code-figure] code {

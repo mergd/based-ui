@@ -23,26 +23,6 @@ export const demoRegistry: DemoRegistry = {
 		category: "tooltip",
 		path: "src/components/demos/tooltip/tooltip-custom-position.tsx",
 	},
-	"toggle-group-multiple": {
-		source:
-			'import { BoldIcon, ItalicIcon, UnderlineIcon } from "lucide-react"\n\nimport { Toggle } from "@/components/ui/toggle"\nimport { ToggleGroup } from "@/components/ui/toggle-group"\n\nexport default function ToggleGroupMultiple() {\n\treturn (\n\t\t<ToggleGroup toggleMultiple>\n\t\t\t<Toggle value="bold">\n\t\t\t\t<BoldIcon />\n\t\t\t</Toggle>\n\t\t\t<Toggle value="italic">\n\t\t\t\t<ItalicIcon />\n\t\t\t</Toggle>\n\t\t\t<Toggle value="underline">\n\t\t\t\t<UnderlineIcon />\n\t\t\t</Toggle>\n\t\t</ToggleGroup>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/toggle-group/toggle-group-multiple")
-		),
-		title: "toggle-group-multiple",
-		category: "toggle-group",
-		path: "src/components/demos/toggle-group/toggle-group-multiple.tsx",
-	},
-	"toggle-group-demo": {
-		source:
-			'import { AlignCenterIcon, AlignLeftIcon, AlignRightIcon } from "lucide-react"\n\nimport { Toggle } from "@/components/ui/toggle"\nimport { ToggleGroup } from "@/components/ui/toggle-group"\n\nexport default function ToggleGroupDemo() {\n\treturn (\n\t\t<ToggleGroup>\n\t\t\t<Toggle value="left">\n\t\t\t\t<AlignLeftIcon />\n\t\t\t</Toggle>\n\t\t\t<Toggle value="center">\n\t\t\t\t<AlignCenterIcon />\n\t\t\t</Toggle>\n\t\t\t<Toggle value="right">\n\t\t\t\t<AlignRightIcon />\n\t\t\t</Toggle>\n\t\t</ToggleGroup>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/toggle-group/toggle-group-demo")
-		),
-		title: "toggle-group-demo",
-		category: "toggle-group",
-		path: "src/components/demos/toggle-group/toggle-group-demo.tsx",
-	},
 	"toggle-sizes": {
 		source:
 			'import { PinIcon } from "lucide-react"\n\nimport { Toggle } from "@/components/ui/toggle"\n\nexport default function ToggleSizes() {\n\treturn (\n\t\t<div className="flex items-center gap-4">\n\t\t\t<Toggle aria-label="Pin" size="sm">\n\t\t\t\t<PinIcon />\n\t\t\t</Toggle>\n\t\t\t<Toggle aria-label="Pin" size="md">\n\t\t\t\t<PinIcon />\n\t\t\t</Toggle>\n\t\t\t<Toggle aria-label="Pin" size="lg">\n\t\t\t\t<PinIcon />\n\t\t\t</Toggle>\n\t\t</div>\n\t)\n}\n',
@@ -82,6 +62,26 @@ export const demoRegistry: DemoRegistry = {
 		title: "toggle-custom-control",
 		category: "toggle",
 		path: "src/components/demos/toggle/toggle-custom-control.tsx",
+	},
+	"toggle-group-multiple": {
+		source:
+			'import { BoldIcon, ItalicIcon, UnderlineIcon } from "lucide-react"\n\nimport { Toggle } from "@/components/ui/toggle"\nimport { ToggleGroup } from "@/components/ui/toggle-group"\n\nexport default function ToggleGroupMultiple() {\n\treturn (\n\t\t<ToggleGroup toggleMultiple>\n\t\t\t<Toggle value="bold">\n\t\t\t\t<BoldIcon />\n\t\t\t</Toggle>\n\t\t\t<Toggle value="italic">\n\t\t\t\t<ItalicIcon />\n\t\t\t</Toggle>\n\t\t\t<Toggle value="underline">\n\t\t\t\t<UnderlineIcon />\n\t\t\t</Toggle>\n\t\t</ToggleGroup>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/toggle-group/toggle-group-multiple")
+		),
+		title: "toggle-group-multiple",
+		category: "toggle-group",
+		path: "src/components/demos/toggle-group/toggle-group-multiple.tsx",
+	},
+	"toggle-group-demo": {
+		source:
+			'import { AlignCenterIcon, AlignLeftIcon, AlignRightIcon } from "lucide-react"\n\nimport { Toggle } from "@/components/ui/toggle"\nimport { ToggleGroup } from "@/components/ui/toggle-group"\n\nexport default function ToggleGroupDemo() {\n\treturn (\n\t\t<ToggleGroup>\n\t\t\t<Toggle value="left">\n\t\t\t\t<AlignLeftIcon />\n\t\t\t</Toggle>\n\t\t\t<Toggle value="center">\n\t\t\t\t<AlignCenterIcon />\n\t\t\t</Toggle>\n\t\t\t<Toggle value="right">\n\t\t\t\t<AlignRightIcon />\n\t\t\t</Toggle>\n\t\t</ToggleGroup>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/toggle-group/toggle-group-demo")
+		),
+		title: "toggle-group-demo",
+		category: "toggle-group",
+		path: "src/components/demos/toggle-group/toggle-group-demo.tsx",
 	},
 	"toast-rich-colors": {
 		source:
@@ -277,6 +277,22 @@ export const demoRegistry: DemoRegistry = {
 		category: "skeleton",
 		path: "src/components/demos/skeleton/skeleton-demo.tsx",
 	},
+	"sheet-sides": {
+		source:
+			'"use client"\n\nimport { Button } from "@/components/ui/button"\nimport { Label } from "@/components/ui/label"\nimport {\n\tSheet,\n\tSheetClose,\n\tSheetContent,\n\tSheetDescription,\n\tSheetFooter,\n\tSheetHeader,\n\tSheetTitle,\n\tSheetTrigger,\n} from "@/components/ui/sheet"\nimport { Textarea } from "@/components/ui/textarea"\n\nconst SHEET_SIDES = ["top", "right", "bottom", "left"] as const\n\nexport default function SheetSides() {\n\treturn (\n\t\t<div className="grid grid-cols-2 gap-2">\n\t\t\t{SHEET_SIDES.map((side) => (\n\t\t\t\t<Sheet key={side}>\n\t\t\t\t\t<SheetTrigger\n\t\t\t\t\t\trender={(props) => (\n\t\t\t\t\t\t\t<Button {...props} className="w-full">\n\t\t\t\t\t\t\t\t{side}\n\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t)}\n\t\t\t\t\t/>\n\t\t\t\t\t<SheetContent side={side}>\n\t\t\t\t\t\t<SheetClose />\n\t\t\t\t\t\t<SheetHeader>\n\t\t\t\t\t\t\t<SheetTitle>Submit Feedback</SheetTitle>\n\t\t\t\t\t\t\t<SheetDescription>\n\t\t\t\t\t\t\t\tPlease share your feedback with us to help improve our service.\n\t\t\t\t\t\t\t</SheetDescription>\n\t\t\t\t\t\t</SheetHeader>\n\t\t\t\t\t\t<div className="my-4 space-y-2">\n\t\t\t\t\t\t\t<Label htmlFor="feedback">Your Feedback</Label>\n\t\t\t\t\t\t\t<Textarea id="feedback" placeholder="Type your feedback here." />\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<SheetFooter>\n\t\t\t\t\t\t\t<SheetClose\n\t\t\t\t\t\t\t\trender={(props) => (\n\t\t\t\t\t\t\t\t\t<Button {...props} size="sm" variant="ghost">\n\t\t\t\t\t\t\t\t\t\tClose\n\t\t\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t<Button size="sm">Submit</Button>\n\t\t\t\t\t\t</SheetFooter>\n\t\t\t\t\t</SheetContent>\n\t\t\t\t</Sheet>\n\t\t\t))}\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(() => import("@/components/demos/sheet/sheet-sides")),
+		title: "sheet-sides",
+		category: "sheet",
+		path: "src/components/demos/sheet/sheet-sides.tsx",
+	},
+	"sheet-demo": {
+		source:
+			'"use client"\n\nimport { Button } from "@/components/ui/button"\nimport { Label } from "@/components/ui/label"\nimport {\n\tSheet,\n\tSheetClose,\n\tSheetContent,\n\tSheetDescription,\n\tSheetFooter,\n\tSheetHeader,\n\tSheetTitle,\n\tSheetTrigger,\n} from "@/components/ui/sheet"\nimport { Textarea } from "@/components/ui/textarea"\n\nexport default function SheetDemo() {\n\treturn (\n\t\t<Sheet>\n\t\t\t<SheetTrigger\n\t\t\t\trender={(props) => <Button {...props}>Open Sheet</Button>}\n\t\t\t/>\n\t\t\t<SheetContent>\n\t\t\t\t<SheetClose />\n\t\t\t\t<SheetHeader>\n\t\t\t\t\t<SheetTitle>Submit Feedback</SheetTitle>\n\t\t\t\t\t<SheetDescription>\n\t\t\t\t\t\tPlease share your feedback with us to help improve our service.\n\t\t\t\t\t</SheetDescription>\n\t\t\t\t</SheetHeader>\n\t\t\t\t<div className="my-4 space-y-2">\n\t\t\t\t\t<Label htmlFor="feedback">Your Feedback</Label>\n\t\t\t\t\t<Textarea id="feedback" placeholder="Type your feedback here." />\n\t\t\t\t</div>\n\t\t\t\t<SheetFooter>\n\t\t\t\t\t<SheetClose\n\t\t\t\t\t\trender={(props) => (\n\t\t\t\t\t\t\t<Button {...props} size="sm" variant="ghost">\n\t\t\t\t\t\t\t\tClose\n\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t)}\n\t\t\t\t\t/>\n\t\t\t\t\t<Button size="sm">Submit</Button>\n\t\t\t\t</SheetFooter>\n\t\t\t</SheetContent>\n\t\t</Sheet>\n\t)\n}\n',
+		component: React.lazy(() => import("@/components/demos/sheet/sheet-demo")),
+		title: "sheet-demo",
+		category: "sheet",
+		path: "src/components/demos/sheet/sheet-demo.tsx",
+	},
 	"select-with-groups": {
 		source:
 			'import {\n\tSelect,\n\tSelectContent,\n\tSelectGroup,\n\tSelectGroupLabel,\n\tSelectItem,\n\tSelectTrigger,\n\tSelectValue,\n} from "@/components/ui/select"\n\nexport default function SelectWithGroups() {\n\treturn (\n\t\t<div className="w-80">\n\t\t\t<Select>\n\t\t\t\t<SelectTrigger>\n\t\t\t\t\t<SelectValue placeholder="Select an option" />\n\t\t\t\t</SelectTrigger>\n\t\t\t\t<SelectContent>\n\t\t\t\t\t<SelectGroup>\n\t\t\t\t\t\t<SelectGroupLabel>Fruits</SelectGroupLabel>\n\t\t\t\t\t\t<SelectItem value="apple">Apple</SelectItem>\n\t\t\t\t\t\t<SelectItem value="banana">Banana</SelectItem>\n\t\t\t\t\t\t<SelectItem value="cherry">Cherry</SelectItem>\n\t\t\t\t\t</SelectGroup>\n\t\t\t\t\t<SelectGroup>\n\t\t\t\t\t\t<SelectGroupLabel>Vegetables</SelectGroupLabel>\n\t\t\t\t\t\t<SelectItem value="carrot">Carrot</SelectItem>\n\t\t\t\t\t\t<SelectItem value="potato">Potato</SelectItem>\n\t\t\t\t\t\t<SelectItem value="tomato">Tomato</SelectItem>\n\t\t\t\t\t</SelectGroup>\n\t\t\t\t</SelectContent>\n\t\t\t</Select>\n\t\t</div>\n\t)\n}\n',
@@ -306,52 +322,6 @@ export const demoRegistry: DemoRegistry = {
 		title: "select-demo",
 		category: "select",
 		path: "src/components/demos/select/select-demo.tsx",
-	},
-	"sheet-sides": {
-		source:
-			'"use client"\n\nimport { Button } from "@/components/ui/button"\nimport { Label } from "@/components/ui/label"\nimport {\n\tSheet,\n\tSheetClose,\n\tSheetContent,\n\tSheetDescription,\n\tSheetFooter,\n\tSheetHeader,\n\tSheetTitle,\n\tSheetTrigger,\n} from "@/components/ui/sheet"\nimport { Textarea } from "@/components/ui/textarea"\n\nconst SHEET_SIDES = ["top", "right", "bottom", "left"] as const\n\nexport default function SheetSides() {\n\treturn (\n\t\t<div className="grid grid-cols-2 gap-2">\n\t\t\t{SHEET_SIDES.map((side) => (\n\t\t\t\t<Sheet key={side}>\n\t\t\t\t\t<SheetTrigger\n\t\t\t\t\t\trender={(props) => (\n\t\t\t\t\t\t\t<Button {...props} className="w-full">\n\t\t\t\t\t\t\t\t{side}\n\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t)}\n\t\t\t\t\t/>\n\t\t\t\t\t<SheetContent side={side}>\n\t\t\t\t\t\t<SheetClose />\n\t\t\t\t\t\t<SheetHeader>\n\t\t\t\t\t\t\t<SheetTitle>Submit Feedback</SheetTitle>\n\t\t\t\t\t\t\t<SheetDescription>\n\t\t\t\t\t\t\t\tPlease share your feedback with us to help improve our service.\n\t\t\t\t\t\t\t</SheetDescription>\n\t\t\t\t\t\t</SheetHeader>\n\t\t\t\t\t\t<div className="my-4 space-y-2">\n\t\t\t\t\t\t\t<Label htmlFor="feedback">Your Feedback</Label>\n\t\t\t\t\t\t\t<Textarea id="feedback" placeholder="Type your feedback here." />\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<SheetFooter>\n\t\t\t\t\t\t\t<SheetClose\n\t\t\t\t\t\t\t\trender={(props) => (\n\t\t\t\t\t\t\t\t\t<Button {...props} size="sm" variant="ghost">\n\t\t\t\t\t\t\t\t\t\tClose\n\t\t\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t<Button size="sm">Submit</Button>\n\t\t\t\t\t\t</SheetFooter>\n\t\t\t\t\t</SheetContent>\n\t\t\t\t</Sheet>\n\t\t\t))}\n\t\t</div>\n\t)\n}\n',
-		component: React.lazy(() => import("@/components/demos/sheet/sheet-sides")),
-		title: "sheet-sides",
-		category: "sheet",
-		path: "src/components/demos/sheet/sheet-sides.tsx",
-	},
-	"sheet-demo": {
-		source:
-			'"use client"\n\nimport { Button } from "@/components/ui/button"\nimport { Label } from "@/components/ui/label"\nimport {\n\tSheet,\n\tSheetClose,\n\tSheetContent,\n\tSheetDescription,\n\tSheetFooter,\n\tSheetHeader,\n\tSheetTitle,\n\tSheetTrigger,\n} from "@/components/ui/sheet"\nimport { Textarea } from "@/components/ui/textarea"\n\nexport default function SheetDemo() {\n\treturn (\n\t\t<Sheet>\n\t\t\t<SheetTrigger\n\t\t\t\trender={(props) => <Button {...props}>Open Sheet</Button>}\n\t\t\t/>\n\t\t\t<SheetContent>\n\t\t\t\t<SheetClose />\n\t\t\t\t<SheetHeader>\n\t\t\t\t\t<SheetTitle>Submit Feedback</SheetTitle>\n\t\t\t\t\t<SheetDescription>\n\t\t\t\t\t\tPlease share your feedback with us to help improve our service.\n\t\t\t\t\t</SheetDescription>\n\t\t\t\t</SheetHeader>\n\t\t\t\t<div className="my-4 space-y-2">\n\t\t\t\t\t<Label htmlFor="feedback">Your Feedback</Label>\n\t\t\t\t\t<Textarea id="feedback" placeholder="Type your feedback here." />\n\t\t\t\t</div>\n\t\t\t\t<SheetFooter>\n\t\t\t\t\t<SheetClose\n\t\t\t\t\t\trender={(props) => (\n\t\t\t\t\t\t\t<Button {...props} size="sm" variant="ghost">\n\t\t\t\t\t\t\t\tClose\n\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t)}\n\t\t\t\t\t/>\n\t\t\t\t\t<Button size="sm">Submit</Button>\n\t\t\t\t</SheetFooter>\n\t\t\t</SheetContent>\n\t\t</Sheet>\n\t)\n}\n',
-		component: React.lazy(() => import("@/components/demos/sheet/sheet-demo")),
-		title: "sheet-demo",
-		category: "sheet",
-		path: "src/components/demos/sheet/sheet-demo.tsx",
-	},
-	"separator-demo": {
-		source:
-			'import { Separator } from "@/components/ui/separator"\n\nexport default function SeparatorDemo() {\n\treturn (\n\t\t<div>\n\t\t\t<p>9ui is a component library for building modern web applications.</p>\n\t\t\t<Separator className="my-2.5" />\n\t\t\t<div className="flex gap-2.5">\n\t\t\t\t<p>Website</p>\n\t\t\t\t<Separator orientation="vertical" />\n\t\t\t\t<p>Documentation</p>\n\t\t\t\t<Separator orientation="vertical" />\n\t\t\t\t<p>Community</p>\n\t\t\t</div>\n\t\t</div>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/separator/separator-demo")
-		),
-		title: "separator-demo",
-		category: "separator",
-		path: "src/components/demos/separator/separator-demo.tsx",
-	},
-	"scroll-area-horizontal": {
-		source:
-			'import { ScrollArea } from "@/components/ui/scroll-area"\n\nconst versions = Array.from({ length: 50 }, (_, i) => `v${i + 1}.0.0`).join(\n\t", "\n)\n\nexport default function ScrollAreaHorizontal() {\n\treturn (\n\t\t<ScrollArea\n\t\t\tclassName="h-fit w-full max-w-60 rounded-lg border p-2"\n\t\t\torientation="horizontal"\n\t\t>\n\t\t\t<div className="mt-2 flex flex-col gap-2 text-nowrap pb-2 text-sm">\n\t\t\t\t{versions}\n\t\t\t</div>\n\t\t</ScrollArea>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/scroll-area/scroll-area-horizontal")
-		),
-		title: "scroll-area-horizontal",
-		category: "scroll-area",
-		path: "src/components/demos/scroll-area/scroll-area-horizontal.tsx",
-	},
-	"scroll-area-demo": {
-		source:
-			'import { ScrollArea } from "@/components/ui/scroll-area"\nimport { Separator } from "@/components/ui/separator"\n\nconst versions = Array.from({ length: 50 }, (_, i) => `v${i + 1}.0.0`)\n\nexport default function ScrollAreaDemo() {\n\treturn (\n\t\t<ScrollArea className="h-60 w-full max-w-60 rounded-lg border p-2">\n\t\t\t<h4 className="text-sm font-medium">Versions</h4>\n\t\t\t<Separator className="my-2" />\n\t\t\t<div className="mt-2 flex flex-col gap-2 text-sm">\n\t\t\t\t{versions.map((version) => (\n\t\t\t\t\t<div key={version}>{version}</div>\n\t\t\t\t))}\n\t\t\t</div>\n\t\t</ScrollArea>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/scroll-area/scroll-area-demo")
-		),
-		title: "scroll-area-demo",
-		category: "scroll-area",
-		path: "src/components/demos/scroll-area/scroll-area-demo.tsx",
 	},
 	"radio-group-disabled": {
 		source:
@@ -403,6 +373,26 @@ export const demoRegistry: DemoRegistry = {
 		category: "preview-card",
 		path: "src/components/demos/preview-card/preview-card-demo.tsx",
 	},
+	"scroll-area-horizontal": {
+		source:
+			'import { ScrollArea } from "@/components/ui/scroll-area"\n\nconst versions = Array.from({ length: 50 }, (_, i) => `v${i + 1}.0.0`).join(\n\t", "\n)\n\nexport default function ScrollAreaHorizontal() {\n\treturn (\n\t\t<ScrollArea\n\t\t\tclassName="h-fit w-full max-w-60 rounded-lg border p-2"\n\t\t\torientation="horizontal"\n\t\t>\n\t\t\t<div className="mt-2 flex flex-col gap-2 text-nowrap pb-2 text-sm">\n\t\t\t\t{versions}\n\t\t\t</div>\n\t\t</ScrollArea>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/scroll-area/scroll-area-horizontal")
+		),
+		title: "scroll-area-horizontal",
+		category: "scroll-area",
+		path: "src/components/demos/scroll-area/scroll-area-horizontal.tsx",
+	},
+	"scroll-area-demo": {
+		source:
+			'import { ScrollArea } from "@/components/ui/scroll-area"\nimport { Separator } from "@/components/ui/separator"\n\nconst versions = Array.from({ length: 50 }, (_, i) => `v${i + 1}.0.0`)\n\nexport default function ScrollAreaDemo() {\n\treturn (\n\t\t<ScrollArea className="h-60 w-full max-w-60 rounded-lg border p-2">\n\t\t\t<h4 className="text-sm font-medium">Versions</h4>\n\t\t\t<Separator className="my-2" />\n\t\t\t<div className="mt-2 flex flex-col gap-2 text-sm">\n\t\t\t\t{versions.map((version) => (\n\t\t\t\t\t<div key={version}>{version}</div>\n\t\t\t\t))}\n\t\t\t</div>\n\t\t</ScrollArea>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/scroll-area/scroll-area-demo")
+		),
+		title: "scroll-area-demo",
+		category: "scroll-area",
+		path: "src/components/demos/scroll-area/scroll-area-demo.tsx",
+	},
 	"popover-demo": {
 		source:
 			'import { CopyIcon, Share2Icon } from "lucide-react"\nimport { toast } from "sonner"\n\nimport { Button } from "@/components/ui/button"\nimport { Input } from "@/components/ui/input"\nimport {\n\tPopover,\n\tPopoverContent,\n\tPopoverDescription,\n\tPopoverHeader,\n\tPopoverTitle,\n\tPopoverTrigger,\n} from "@/components/ui/popover"\n\nexport default function PopoverDemo() {\n\tconst copyToClipboard = () => {\n\t\ttoast.success("Copied to clipboard")\n\t\tnavigator.clipboard.writeText(window.location.href)\n\t}\n\n\treturn (\n\t\t<Popover>\n\t\t\t<PopoverTrigger\n\t\t\t\trender={(props) => (\n\t\t\t\t\t<Button {...props} variant="outline" size="icon">\n\t\t\t\t\t\t<Share2Icon />\n\t\t\t\t\t</Button>\n\t\t\t\t)}\n\t\t\t/>\n\t\t\t<PopoverContent className="w-[calc(100vw-4rem)] sm:w-[500px]">\n\t\t\t\t<PopoverHeader>\n\t\t\t\t\t<PopoverTitle>Share</PopoverTitle>\n\t\t\t\t\t<PopoverDescription>Share this component.</PopoverDescription>\n\t\t\t\t</PopoverHeader>\n\t\t\t\t<div className="mt-2 flex w-full gap-2">\n\t\t\t\t\t<Input\n\t\t\t\t\t\tinputWrapperClassName="w-full"\n\t\t\t\t\t\tdefaultValue={window.location.href}\n\t\t\t\t\t\tautoFocus={false}\n\t\t\t\t\t\treadOnly\n\t\t\t\t\t/>\n\t\t\t\t\t<Button className="shrink-0" size="icon" onClick={copyToClipboard}>\n\t\t\t\t\t\t<CopyIcon />\n\t\t\t\t\t</Button>\n\t\t\t\t</div>\n\t\t\t</PopoverContent>\n\t\t</Popover>\n\t)\n}\n',
@@ -413,6 +403,24 @@ export const demoRegistry: DemoRegistry = {
 		category: "popover",
 		path: "src/components/demos/popover/popover-demo.tsx",
 	},
+	"kbd-demo": {
+		source:
+			'import { Kbd } from "@/components/ui/kbd"\n\nexport default function KbdDemo() {\n\treturn (\n\t\t<div className="flex items-center gap-2 text-sm">\n\t\t\t<Kbd>⌘</Kbd>+<Kbd>K</Kbd>\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(() => import("@/components/demos/kbd/kbd-demo")),
+		title: "kbd-demo",
+		category: "kbd",
+		path: "src/components/demos/kbd/kbd-demo.tsx",
+	},
+	"separator-demo": {
+		source:
+			'import { Separator } from "@/components/ui/separator"\n\nexport default function SeparatorDemo() {\n\treturn (\n\t\t<div>\n\t\t\t<p>9ui is a component library for building modern web applications.</p>\n\t\t\t<Separator className="my-2.5" />\n\t\t\t<div className="flex gap-2.5">\n\t\t\t\t<p>Website</p>\n\t\t\t\t<Separator orientation="vertical" />\n\t\t\t\t<p>Documentation</p>\n\t\t\t\t<Separator orientation="vertical" />\n\t\t\t\t<p>Community</p>\n\t\t\t</div>\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/separator/separator-demo")
+		),
+		title: "separator-demo",
+		category: "separator",
+		path: "src/components/demos/separator/separator-demo.tsx",
+	},
 	"menubar-demo": {
 		source:
 			'import {\n\tMenubar,\n\tMenubarContent,\n\tMenubarItem,\n\tMenubarItemShortcut,\n\tMenubarMenu,\n\tMenubarRadioGroup,\n\tMenubarRadioItem,\n\tMenubarSeparator,\n\tMenubarSubMenu,\n\tMenubarSubTrigger,\n\tMenubarTrigger,\n} from "@/components/ui/menubar"\n\nexport default function MenubarDemo() {\n\treturn (\n\t\t<Menubar>\n\t\t\t<MenubarMenu>\n\t\t\t\t<MenubarTrigger>File</MenubarTrigger>\n\t\t\t\t<MenubarContent>\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tNew File\n\t\t\t\t\t\t<MenubarItemShortcut>⌘N</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tNew Window\n\t\t\t\t\t\t<MenubarItemShortcut>⇧⌘N</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarSeparator />\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tOpen\n\t\t\t\t\t\t<MenubarItemShortcut>⌘O</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tOpen Folder\n\t\t\t\t\t\t<MenubarItemShortcut>⇧⌘O</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarItem>Open Recent</MenubarItem>\n\t\t\t\t\t<MenubarSeparator />\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tSave\n\t\t\t\t\t\t<MenubarItemShortcut>⌘S</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tSave As\n\t\t\t\t\t\t<MenubarItemShortcut>⇧⌘S</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarSeparator />\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tClose Window\n\t\t\t\t\t\t<MenubarItemShortcut>⌘W</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t</MenubarContent>\n\t\t\t</MenubarMenu>\n\t\t\t<MenubarMenu>\n\t\t\t\t<MenubarTrigger>Edit</MenubarTrigger>\n\t\t\t\t<MenubarContent>\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tUndo\n\t\t\t\t\t\t<MenubarItemShortcut>⌘Z</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tRedo\n\t\t\t\t\t\t<MenubarItemShortcut>⌘Y</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarSeparator />\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tCut\n\t\t\t\t\t\t<MenubarItemShortcut>⌘X</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tCopy\n\t\t\t\t\t\t<MenubarItemShortcut>⌘C</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tPaste\n\t\t\t\t\t\t<MenubarItemShortcut>⌘V</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarSeparator />\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tFind\n\t\t\t\t\t\t<MenubarItemShortcut>⌘F</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tReplace\n\t\t\t\t\t\t<MenubarItemShortcut>⌥⌘F</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t</MenubarContent>\n\t\t\t</MenubarMenu>\n\t\t\t<MenubarMenu>\n\t\t\t\t<MenubarTrigger>View</MenubarTrigger>\n\t\t\t\t<MenubarContent>\n\t\t\t\t\t<MenubarSubMenu>\n\t\t\t\t\t\t<MenubarSubTrigger>Appearance</MenubarSubTrigger>\n\t\t\t\t\t\t<MenubarContent>\n\t\t\t\t\t\t\t<MenubarRadioGroup>\n\t\t\t\t\t\t\t\t<MenubarRadioItem value="system">System</MenubarRadioItem>\n\t\t\t\t\t\t\t\t<MenubarRadioItem value="light">Light</MenubarRadioItem>\n\t\t\t\t\t\t\t\t<MenubarRadioItem value="dark">Dark</MenubarRadioItem>\n\t\t\t\t\t\t\t</MenubarRadioGroup>\n\t\t\t\t\t\t</MenubarContent>\n\t\t\t\t\t</MenubarSubMenu>\n\t\t\t\t\t<MenubarSeparator />\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tShow/Hide Sidebar\n\t\t\t\t\t\t<MenubarItemShortcut>⌃⌥⌘*</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tCommand Palette\n\t\t\t\t\t\t<MenubarItemShortcut>⇧⌘P</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarItem>Expand Tabs</MenubarItem>\n\t\t\t\t\t<MenubarSeparator />\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tZoom In\n\t\t\t\t\t\t<MenubarItemShortcut>⌘+</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tZoom Out\n\t\t\t\t\t\t<MenubarItemShortcut>⌘-</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t\t<MenubarItem>\n\t\t\t\t\t\tReset Zoom\n\t\t\t\t\t\t<MenubarItemShortcut>⌘0</MenubarItemShortcut>\n\t\t\t\t\t</MenubarItem>\n\t\t\t\t</MenubarContent>\n\t\t\t</MenubarMenu>\n\t\t\t<MenubarMenu>\n\t\t\t\t<MenubarTrigger>Help</MenubarTrigger>\n\t\t\t\t<MenubarContent>\n\t\t\t\t\t<MenubarItem>Getting Started</MenubarItem>\n\t\t\t\t\t<MenubarItem>Report Issue</MenubarItem>\n\t\t\t\t\t<MenubarItem>Check for Updates</MenubarItem>\n\t\t\t\t\t<MenubarItem>Contact the Team</MenubarItem>\n\t\t\t\t</MenubarContent>\n\t\t\t</MenubarMenu>\n\t\t</Menubar>\n\t)\n}\n',
@@ -422,14 +430,6 @@ export const demoRegistry: DemoRegistry = {
 		title: "menubar-demo",
 		category: "menubar",
 		path: "src/components/demos/menubar/menubar-demo.tsx",
-	},
-	"kbd-demo": {
-		source:
-			'import { Kbd } from "@/components/ui/kbd"\n\nexport default function KbdDemo() {\n\treturn (\n\t\t<div className="flex items-center gap-2 text-sm">\n\t\t\t<Kbd>⌘</Kbd>+<Kbd>K</Kbd>\n\t\t</div>\n\t)\n}\n',
-		component: React.lazy(() => import("@/components/demos/kbd/kbd-demo")),
-		title: "kbd-demo",
-		category: "kbd",
-		path: "src/components/demos/kbd/kbd-demo.tsx",
 	},
 	"input-otp-demo": {
 		source:
@@ -487,13 +487,15 @@ export const demoRegistry: DemoRegistry = {
 		category: "input",
 		path: "src/components/demos/input/input-demo.tsx",
 	},
-	"form-demo": {
+	"dropdown-demo": {
 		source:
-			'"use client"\n\nimport { zodResolver } from "@hookform/resolvers/zod"\nimport { useForm } from "react-hook-form"\nimport { z } from "zod"\n\nimport { Button } from "@/components/ui/button"\nimport {\n\tField,\n\tFieldContent,\n\tFieldControl,\n\tFieldDescription,\n\tFieldError,\n\tFieldLabel,\n} from "@/components/ui/field"\nimport { Form } from "@/components/ui/form"\nimport { Input } from "@/components/ui/input"\n\nconst schema = z.object({\n\tdisplayName: z\n\t\t.string()\n\t\t.min(3, { message: "Please enter at least 3 characters." }),\n\temail: z.string().email({ message: "Please enter a valid email address." }),\n})\n\ntype FormValues = z.infer<typeof schema>\n\nexport default function FormDemo() {\n\tconst form = useForm<FormValues>({\n\t\tresolver: zodResolver(schema),\n\t\tdefaultValues: {\n\t\t\tdisplayName: "",\n\t\t\temail: "",\n\t\t},\n\t})\n\n\tconst onSubmit = (data: FormValues) => {\n\t\tconsole.log(data)\n\t}\n\n\treturn (\n\t\t<Form\n\t\t\tclassName="flex w-96 flex-col gap-4"\n\t\t\tform={form}\n\t\t\tonSubmit={form.handleSubmit(onSubmit)}\n\t\t>\n\t\t\t<Field\n\t\t\t\tname="displayName"\n\t\t\t\tcontrol={form.control}\n\t\t\t\trender={({ field }) => (\n\t\t\t\t\t<FieldContent>\n\t\t\t\t\t\t<FieldLabel>Display Name</FieldLabel>\n\t\t\t\t\t\t<FieldControl>\n\t\t\t\t\t\t\t<Input className="w-full" placeholder="borabalogluu" {...field} />\n\t\t\t\t\t\t</FieldControl>\n\t\t\t\t\t\t<FieldDescription>\n\t\t\t\t\t\t\tThis is the name that will be displayed to other users.\n\t\t\t\t\t\t</FieldDescription>\n\t\t\t\t\t\t<FieldError />\n\t\t\t\t\t</FieldContent>\n\t\t\t\t)}\n\t\t\t/>\n\t\t\t<Field\n\t\t\t\tname="email"\n\t\t\t\tcontrol={form.control}\n\t\t\t\trender={({ field }) => (\n\t\t\t\t\t<FieldContent>\n\t\t\t\t\t\t<FieldLabel>Email</FieldLabel>\n\t\t\t\t\t\t<FieldControl>\n\t\t\t\t\t\t\t<Input\n\t\t\t\t\t\t\t\tclassName="w-full"\n\t\t\t\t\t\t\t\tplaceholder="your@email.com"\n\t\t\t\t\t\t\t\t{...field}\n\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t</FieldControl>\n\t\t\t\t\t\t<FieldDescription>Enter your email address</FieldDescription>\n\t\t\t\t\t\t<FieldError />\n\t\t\t\t\t</FieldContent>\n\t\t\t\t)}\n\t\t\t/>\n\t\t\t<Button type="submit">Submit</Button>\n\t\t</Form>\n\t)\n}\n',
-		component: React.lazy(() => import("@/components/demos/form/form-demo")),
-		title: "form-demo",
-		category: "form",
-		path: "src/components/demos/form/form-demo.tsx",
+			'"use client"\n\nimport { useState } from "react"\nimport {\n\tPauseIcon,\n\tPlayIcon,\n\tSkipBackIcon,\n\tSkipForwardIcon,\n} from "lucide-react"\n\nimport { Button } from "@/components/ui/button"\nimport {\n\tDropdown,\n\tDropdownCheckboxItem,\n\tDropdownContent,\n\tDropdownGroup,\n\tDropdownGroupLabel,\n\tDropdownItem,\n\tDropdownItemShortcut,\n\tDropdownRadioGroup,\n\tDropdownRadioItem,\n\tDropdownSeparator,\n\tDropdownSubTrigger,\n\tDropdownTrigger,\n} from "@/components/ui/dropdown"\n\nexport default function DropdownDemo() {\n\tconst [shuffle, setShuffle] = useState(false)\n\tconst [repeat, setRepeat] = useState(false)\n\tconst [sortBy, setSortBy] = useState("artist")\n\n\treturn (\n\t\t<Dropdown>\n\t\t\t<DropdownTrigger\n\t\t\t\trender={(props) => <Button {...props}>Controls</Button>}\n\t\t\t/>\n\t\t\t<DropdownContent>\n\t\t\t\t<DropdownGroup>\n\t\t\t\t\t<DropdownGroupLabel>Playback</DropdownGroupLabel>\n\t\t\t\t\t<DropdownItem>\n\t\t\t\t\t\t<PlayIcon />\n\t\t\t\t\t\tPlay\n\t\t\t\t\t\t<DropdownItemShortcut>⌘P</DropdownItemShortcut>\n\t\t\t\t\t</DropdownItem>\n\t\t\t\t\t<DropdownItem>\n\t\t\t\t\t\t<PauseIcon />\n\t\t\t\t\t\tPause\n\t\t\t\t\t\t<DropdownItemShortcut>⇧⌘P</DropdownItemShortcut>\n\t\t\t\t\t</DropdownItem>\n\t\t\t\t\t<DropdownItem>\n\t\t\t\t\t\t<SkipBackIcon />\n\t\t\t\t\t\tPrevious\n\t\t\t\t\t\t<DropdownItemShortcut>⌘[</DropdownItemShortcut>\n\t\t\t\t\t</DropdownItem>\n\t\t\t\t\t<DropdownItem>\n\t\t\t\t\t\t<SkipForwardIcon />\n\t\t\t\t\t\tNext\n\t\t\t\t\t\t<DropdownItemShortcut>⌘]</DropdownItemShortcut>\n\t\t\t\t\t</DropdownItem>\n\t\t\t\t</DropdownGroup>\n\t\t\t\t<DropdownSeparator />\n\t\t\t\t<DropdownCheckboxItem checked={shuffle} onCheckedChange={setShuffle}>\n\t\t\t\t\tShuffle\n\t\t\t\t</DropdownCheckboxItem>\n\t\t\t\t<DropdownCheckboxItem checked={repeat} onCheckedChange={setRepeat}>\n\t\t\t\t\tRepeat\n\t\t\t\t</DropdownCheckboxItem>\n\t\t\t\t<DropdownCheckboxItem disabled>Enhanced Audio</DropdownCheckboxItem>\n\t\t\t\t<DropdownSeparator />\n\t\t\t\t<DropdownGroup>\n\t\t\t\t\t<DropdownGroupLabel>Sort by</DropdownGroupLabel>\n\t\t\t\t\t<DropdownRadioGroup value={sortBy} onValueChange={setSortBy}>\n\t\t\t\t\t\t<DropdownRadioItem value="artist">Artist</DropdownRadioItem>\n\t\t\t\t\t\t<DropdownRadioItem value="album">Repeat</DropdownRadioItem>\n\t\t\t\t\t\t<DropdownRadioItem value="title">Title</DropdownRadioItem>\n\t\t\t\t\t</DropdownRadioGroup>\n\t\t\t\t</DropdownGroup>\n\t\t\t\t<DropdownSeparator />\n\t\t\t\t<Dropdown>\n\t\t\t\t\t<DropdownSubTrigger>Add to Playlist</DropdownSubTrigger>\n\t\t\t\t\t<DropdownContent>\n\t\t\t\t\t\t<DropdownItem>Jazz</DropdownItem>\n\t\t\t\t\t\t<DropdownItem>Rock</DropdownItem>\n\t\t\t\t\t\t<DropdownItem>Pop</DropdownItem>\n\t\t\t\t\t</DropdownContent>\n\t\t\t\t</Dropdown>\n\t\t\t</DropdownContent>\n\t\t</Dropdown>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/dropdown/dropdown-demo")
+		),
+		title: "dropdown-demo",
+		category: "dropdown",
+		path: "src/components/demos/dropdown/dropdown-demo.tsx",
 	},
 	"drawer-demo": {
 		source:
@@ -504,16 +506,6 @@ export const demoRegistry: DemoRegistry = {
 		title: "drawer-demo",
 		category: "drawer",
 		path: "src/components/demos/drawer/drawer-demo.tsx",
-	},
-	"dropdown-demo": {
-		source:
-			'"use client"\n\nimport { useState } from "react"\nimport {\n\tPauseIcon,\n\tPlayIcon,\n\tSkipBackIcon,\n\tSkipForwardIcon,\n} from "lucide-react"\n\nimport { Button } from "@/components/ui/button"\nimport {\n\tDropdown,\n\tDropdownCheckboxItem,\n\tDropdownContent,\n\tDropdownGroup,\n\tDropdownGroupLabel,\n\tDropdownItem,\n\tDropdownItemShortcut,\n\tDropdownRadioGroup,\n\tDropdownRadioItem,\n\tDropdownSeparator,\n\tDropdownSubTrigger,\n\tDropdownTrigger,\n} from "@/components/ui/dropdown"\n\nexport default function DropdownDemo() {\n\tconst [shuffle, setShuffle] = useState(false)\n\tconst [repeat, setRepeat] = useState(false)\n\tconst [sortBy, setSortBy] = useState("artist")\n\n\treturn (\n\t\t<Dropdown>\n\t\t\t<DropdownTrigger\n\t\t\t\trender={(props) => <Button {...props}>Controls</Button>}\n\t\t\t/>\n\t\t\t<DropdownContent>\n\t\t\t\t<DropdownGroup>\n\t\t\t\t\t<DropdownGroupLabel>Playback</DropdownGroupLabel>\n\t\t\t\t\t<DropdownItem>\n\t\t\t\t\t\t<PlayIcon />\n\t\t\t\t\t\tPlay\n\t\t\t\t\t\t<DropdownItemShortcut>⌘P</DropdownItemShortcut>\n\t\t\t\t\t</DropdownItem>\n\t\t\t\t\t<DropdownItem>\n\t\t\t\t\t\t<PauseIcon />\n\t\t\t\t\t\tPause\n\t\t\t\t\t\t<DropdownItemShortcut>⇧⌘P</DropdownItemShortcut>\n\t\t\t\t\t</DropdownItem>\n\t\t\t\t\t<DropdownItem>\n\t\t\t\t\t\t<SkipBackIcon />\n\t\t\t\t\t\tPrevious\n\t\t\t\t\t\t<DropdownItemShortcut>⌘[</DropdownItemShortcut>\n\t\t\t\t\t</DropdownItem>\n\t\t\t\t\t<DropdownItem>\n\t\t\t\t\t\t<SkipForwardIcon />\n\t\t\t\t\t\tNext\n\t\t\t\t\t\t<DropdownItemShortcut>⌘]</DropdownItemShortcut>\n\t\t\t\t\t</DropdownItem>\n\t\t\t\t</DropdownGroup>\n\t\t\t\t<DropdownSeparator />\n\t\t\t\t<DropdownCheckboxItem checked={shuffle} onCheckedChange={setShuffle}>\n\t\t\t\t\tShuffle\n\t\t\t\t</DropdownCheckboxItem>\n\t\t\t\t<DropdownCheckboxItem checked={repeat} onCheckedChange={setRepeat}>\n\t\t\t\t\tRepeat\n\t\t\t\t</DropdownCheckboxItem>\n\t\t\t\t<DropdownCheckboxItem disabled>Enhanced Audio</DropdownCheckboxItem>\n\t\t\t\t<DropdownSeparator />\n\t\t\t\t<DropdownGroup>\n\t\t\t\t\t<DropdownGroupLabel>Sort by</DropdownGroupLabel>\n\t\t\t\t\t<DropdownRadioGroup value={sortBy} onValueChange={setSortBy}>\n\t\t\t\t\t\t<DropdownRadioItem value="artist">Artist</DropdownRadioItem>\n\t\t\t\t\t\t<DropdownRadioItem value="album">Repeat</DropdownRadioItem>\n\t\t\t\t\t\t<DropdownRadioItem value="title">Title</DropdownRadioItem>\n\t\t\t\t\t</DropdownRadioGroup>\n\t\t\t\t</DropdownGroup>\n\t\t\t\t<DropdownSeparator />\n\t\t\t\t<Dropdown>\n\t\t\t\t\t<DropdownSubTrigger>Add to Playlist</DropdownSubTrigger>\n\t\t\t\t\t<DropdownContent>\n\t\t\t\t\t\t<DropdownItem>Jazz</DropdownItem>\n\t\t\t\t\t\t<DropdownItem>Rock</DropdownItem>\n\t\t\t\t\t\t<DropdownItem>Pop</DropdownItem>\n\t\t\t\t\t</DropdownContent>\n\t\t\t\t</Dropdown>\n\t\t\t</DropdownContent>\n\t\t</Dropdown>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/dropdown/dropdown-demo")
-		),
-		title: "dropdown-demo",
-		category: "dropdown",
-		path: "src/components/demos/dropdown/dropdown-demo.tsx",
 	},
 	"dialog-nested": {
 		source:
@@ -535,36 +527,6 @@ export const demoRegistry: DemoRegistry = {
 		category: "dialog",
 		path: "src/components/demos/dialog/dialog-demo.tsx",
 	},
-	"collapsible-demo": {
-		source:
-			'import { useState } from "react"\nimport { ChevronRightIcon } from "lucide-react"\n\nimport {\n\tCollapsible,\n\tCollapsibleContent,\n\tCollapsibleTrigger,\n} from "@/components/ui/collapsible"\n\nimport { cn } from "@/lib/utils"\n\nexport default function CollapsibleDemo() {\n\tconst [open, setOpen] = useState(false)\n\n\treturn (\n\t\t<Collapsible\n\t\t\tclassName="mx-auto w-40 py-12"\n\t\t\topen={open}\n\t\t\tonOpenChange={setOpen}\n\t\t>\n\t\t\t<CollapsibleTrigger className="flex w-full items-center justify-between px-1.5 py-1">\n\t\t\t\t<span className="text-sm font-medium">Components</span>\n\t\t\t\t<div className={cn("transition-all duration-200", open && "rotate-90")}>\n\t\t\t\t\t<ChevronRightIcon size={16} />\n\t\t\t\t</div>\n\t\t\t</CollapsibleTrigger>\n\t\t\t<CollapsibleContent>\n\t\t\t\t<ol className="mt-2 space-y-1">\n\t\t\t\t\t<li className="rounded border bg-secondary px-2 py-1">Button</li>\n\t\t\t\t\t<li className="rounded border bg-secondary px-2 py-1">Badge</li>\n\t\t\t\t\t<li className="rounded border bg-secondary px-2 py-1">Breadcrumbs</li>\n\t\t\t\t</ol>\n\t\t\t</CollapsibleContent>\n\t\t</Collapsible>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/collapsible/collapsible-demo")
-		),
-		title: "collapsible-demo",
-		category: "collapsible",
-		path: "src/components/demos/collapsible/collapsible-demo.tsx",
-	},
-	"command-dialog": {
-		source:
-			'"use client"\n\nimport { useEffect, useState } from "react"\nimport {\n\tArrowRightIcon,\n\tLayoutGridIcon,\n\tPlusIcon,\n\tUsersIcon,\n} from "lucide-react"\n\nimport {\n\tCommandDialog,\n\tCommandEmpty,\n\tCommandGroup,\n\tCommandInput,\n\tCommandItem,\n\tCommandList,\n\tCommandSeparator,\n\tCommandShortcut,\n} from "@/components/ui/command"\nimport { Kbd } from "@/components/ui/kbd"\n\nexport default function CommandDialogDemo() {\n\tconst [open, setOpen] = useState(false)\n\n\tuseEffect(() => {\n\t\tconst down = (e: KeyboardEvent) => {\n\t\t\tif (e.key === "k" && (e.metaKey || e.ctrlKey)) {\n\t\t\t\te.preventDefault()\n\t\t\t\tsetOpen((open) => !open)\n\t\t\t}\n\t\t}\n\t\tdocument.addEventListener("keydown", down)\n\t\treturn () => document.removeEventListener("keydown", down)\n\t}, [])\n\n\treturn (\n\t\t<>\n\t\t\t<div className="flex items-center gap-2 text-sm">\n\t\t\t\t<Kbd>⌘</Kbd>+<Kbd>K</Kbd>\n\t\t\t</div>\n\t\t\t<CommandDialog open={open} onOpenChange={setOpen}>\n\t\t\t\t<CommandInput placeholder="Type a command or search..." />\n\t\t\t\t<CommandList>\n\t\t\t\t\t<CommandEmpty>No results found.</CommandEmpty>\n\t\t\t\t\t<CommandGroup heading="Projects">\n\t\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t\t<LayoutGridIcon />\n\t\t\t\t\t\t\t<span>Search projects...</span>\n\t\t\t\t\t\t\t<CommandShortcut>\n\t\t\t\t\t\t\t\t<Kbd>⌘</Kbd>\n\t\t\t\t\t\t\t\t<Kbd>P</Kbd>\n\t\t\t\t\t\t\t</CommandShortcut>\n\t\t\t\t\t\t</CommandItem>\n\t\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t\t<PlusIcon />\n\t\t\t\t\t\t\t<span>Create new projecte...</span>\n\t\t\t\t\t\t\t<CommandShortcut>\n\t\t\t\t\t\t\t\t<Kbd>C</Kbd>\n\t\t\t\t\t\t\t</CommandShortcut>\n\t\t\t\t\t\t</CommandItem>\n\t\t\t\t\t</CommandGroup>\n\t\t\t\t\t<CommandSeparator />\n\t\t\t\t\t<CommandGroup heading="Teams">\n\t\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t\t<UsersIcon />\n\t\t\t\t\t\t\t<span>Search teams...</span>\n\t\t\t\t\t\t</CommandItem>\n\t\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t\t<PlusIcon />\n\t\t\t\t\t\t\t<span>Create new team...</span>\n\t\t\t\t\t\t\t<CommandShortcut>\n\t\t\t\t\t\t\t\t<Kbd>T</Kbd>\n\t\t\t\t\t\t\t</CommandShortcut>\n\t\t\t\t\t\t</CommandItem>\n\t\t\t\t\t</CommandGroup>\n\t\t\t\t\t<CommandGroup heading="Navigation">\n\t\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t\t<ArrowRightIcon />\n\t\t\t\t\t\t\t<span>Go to home</span>\n\t\t\t\t\t\t</CommandItem>\n\t\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t\t<ArrowRightIcon />\n\t\t\t\t\t\t\t<span>Go to profile</span>\n\t\t\t\t\t\t</CommandItem>\n\t\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t\t<ArrowRightIcon />\n\t\t\t\t\t\t\t<span>Go to settings</span>\n\t\t\t\t\t\t</CommandItem>\n\t\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t\t<ArrowRightIcon />\n\t\t\t\t\t\t\t<span>Go to billing</span>\n\t\t\t\t\t\t</CommandItem>\n\t\t\t\t\t</CommandGroup>\n\t\t\t\t</CommandList>\n\t\t\t</CommandDialog>\n\t\t</>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/command/command-dialog")
-		),
-		title: "command-dialog",
-		category: "command",
-		path: "src/components/demos/command/command-dialog.tsx",
-	},
-	"command-demo": {
-		source:
-			'import {\n\tArrowRightIcon,\n\tLayoutGridIcon,\n\tPlusIcon,\n\tUsersIcon,\n} from "lucide-react"\n\nimport {\n\tCommand,\n\tCommandEmpty,\n\tCommandGroup,\n\tCommandInput,\n\tCommandItem,\n\tCommandList,\n\tCommandSeparator,\n\tCommandShortcut,\n} from "@/components/ui/command"\nimport { Kbd } from "@/components/ui/kbd"\n\nexport default function CommandDemo() {\n\treturn (\n\t\t<Command>\n\t\t\t<CommandInput placeholder="Type a command or search..." />\n\t\t\t<CommandList>\n\t\t\t\t<CommandEmpty>No results found.</CommandEmpty>\n\t\t\t\t<CommandGroup heading="Projects">\n\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t<LayoutGridIcon />\n\t\t\t\t\t\t<span>Search projects...</span>\n\t\t\t\t\t\t<CommandShortcut>\n\t\t\t\t\t\t\t<Kbd>⌘</Kbd>\n\t\t\t\t\t\t\t<Kbd>P</Kbd>\n\t\t\t\t\t\t</CommandShortcut>\n\t\t\t\t\t</CommandItem>\n\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t<PlusIcon />\n\t\t\t\t\t\t<span>Create new projecte...</span>\n\t\t\t\t\t\t<CommandShortcut>\n\t\t\t\t\t\t\t<Kbd>C</Kbd>\n\t\t\t\t\t\t</CommandShortcut>\n\t\t\t\t\t</CommandItem>\n\t\t\t\t</CommandGroup>\n\t\t\t\t<CommandSeparator />\n\t\t\t\t<CommandGroup heading="Teams">\n\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t<UsersIcon />\n\t\t\t\t\t\t<span>Search teams...</span>\n\t\t\t\t\t</CommandItem>\n\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t<PlusIcon />\n\t\t\t\t\t\t<span>Create new team...</span>\n\t\t\t\t\t\t<CommandShortcut>\n\t\t\t\t\t\t\t<Kbd>T</Kbd>\n\t\t\t\t\t\t</CommandShortcut>\n\t\t\t\t\t</CommandItem>\n\t\t\t\t</CommandGroup>\n\t\t\t\t<CommandGroup heading="Navigation">\n\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t<ArrowRightIcon />\n\t\t\t\t\t\t<span>Go to home</span>\n\t\t\t\t\t</CommandItem>\n\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t<ArrowRightIcon />\n\t\t\t\t\t\t<span>Go to profile</span>\n\t\t\t\t\t</CommandItem>\n\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t<ArrowRightIcon />\n\t\t\t\t\t\t<span>Go to settings</span>\n\t\t\t\t\t</CommandItem>\n\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t<ArrowRightIcon />\n\t\t\t\t\t\t<span>Go to billing</span>\n\t\t\t\t\t</CommandItem>\n\t\t\t\t</CommandGroup>\n\t\t\t</CommandList>\n\t\t</Command>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/command/command-demo")
-		),
-		title: "command-demo",
-		category: "command",
-		path: "src/components/demos/command/command-demo.tsx",
-	},
 	"context-menu-demo": {
 		source:
 			'"use client"\n\nimport {\n\tContextMenu,\n\tContextMenuCheckboxItem,\n\tContextMenuContent,\n\tContextMenuGroup,\n\tContextMenuGroupLabel,\n\tContextMenuItem,\n\tContextMenuItemShortcut,\n\tContextMenuRadioGroup,\n\tContextMenuRadioItem,\n\tContextMenuSeparator,\n\tContextMenuSubTrigger,\n\tContextMenuTrigger,\n} from "@/components/ui/context-menu"\n\nexport default function ContextMenuDemo() {\n\treturn (\n\t\t<div className="w-80">\n\t\t\t<ContextMenu>\n\t\t\t\t<ContextMenuTrigger className="flex aspect-video w-full items-center justify-center rounded-lg border border-dashed text-sm">\n\t\t\t\t\tRight Click Here\n\t\t\t\t</ContextMenuTrigger>\n\t\t\t\t<ContextMenuContent>\n\t\t\t\t\t<ContextMenuGroup>\n\t\t\t\t\t\t<ContextMenuItem>\n\t\t\t\t\t\t\tBack\n\t\t\t\t\t\t\t<ContextMenuItemShortcut>⌘[</ContextMenuItemShortcut>\n\t\t\t\t\t\t</ContextMenuItem>\n\t\t\t\t\t\t<ContextMenuItem disabled>\n\t\t\t\t\t\t\tForward\n\t\t\t\t\t\t\t<ContextMenuItemShortcut>⌘]</ContextMenuItemShortcut>\n\t\t\t\t\t\t</ContextMenuItem>\n\t\t\t\t\t\t<ContextMenuItem>\n\t\t\t\t\t\t\tReload\n\t\t\t\t\t\t\t<ContextMenuItemShortcut>⌘R</ContextMenuItemShortcut>\n\t\t\t\t\t\t</ContextMenuItem>\n\t\t\t\t\t\t<ContextMenu>\n\t\t\t\t\t\t\t<ContextMenuSubTrigger>More</ContextMenuSubTrigger>\n\t\t\t\t\t\t\t<ContextMenuContent>\n\t\t\t\t\t\t\t\t<ContextMenuItem>Save As</ContextMenuItem>\n\t\t\t\t\t\t\t\t<ContextMenuItem>Print</ContextMenuItem>\n\t\t\t\t\t\t\t\t<ContextMenuItem>Cast</ContextMenuItem>\n\t\t\t\t\t\t\t\t<ContextMenuSeparator />\n\t\t\t\t\t\t\t\t<ContextMenuItem>Inspect</ContextMenuItem>\n\t\t\t\t\t\t\t</ContextMenuContent>\n\t\t\t\t\t\t</ContextMenu>\n\t\t\t\t\t</ContextMenuGroup>\n\t\t\t\t\t<ContextMenuSeparator />\n\t\t\t\t\t<ContextMenuGroup>\n\t\t\t\t\t\t<ContextMenuGroupLabel>Settings</ContextMenuGroupLabel>\n\t\t\t\t\t\t<ContextMenuCheckboxItem>Always on Top</ContextMenuCheckboxItem>\n\t\t\t\t\t\t<ContextMenuCheckboxItem>Show full URL</ContextMenuCheckboxItem>\n\t\t\t\t\t</ContextMenuGroup>\n\t\t\t\t\t<ContextMenuSeparator />\n\t\t\t\t\t<ContextMenuGroup>\n\t\t\t\t\t\t<ContextMenuGroupLabel>Zoom</ContextMenuGroupLabel>\n\t\t\t\t\t\t<ContextMenuRadioGroup defaultValue="100">\n\t\t\t\t\t\t\t<ContextMenuRadioItem value="50">50%</ContextMenuRadioItem>\n\t\t\t\t\t\t\t<ContextMenuRadioItem value="100">100%</ContextMenuRadioItem>\n\t\t\t\t\t\t\t<ContextMenuRadioItem value="150">150%</ContextMenuRadioItem>\n\t\t\t\t\t\t</ContextMenuRadioGroup>\n\t\t\t\t\t</ContextMenuGroup>\n\t\t\t\t</ContextMenuContent>\n\t\t\t</ContextMenu>\n\t\t</div>\n\t)\n}\n',
@@ -574,6 +536,24 @@ export const demoRegistry: DemoRegistry = {
 		title: "context-menu-demo",
 		category: "context-menu",
 		path: "src/components/demos/context-menu/context-menu-demo.tsx",
+	},
+	"form-demo": {
+		source:
+			'"use client"\n\nimport { zodResolver } from "@hookform/resolvers/zod"\nimport { useForm } from "react-hook-form"\nimport { z } from "zod"\n\nimport { Button } from "@/components/ui/button"\nimport {\n\tField,\n\tFieldContent,\n\tFieldControl,\n\tFieldDescription,\n\tFieldError,\n\tFieldLabel,\n} from "@/components/ui/field"\nimport { Form } from "@/components/ui/form"\nimport { Input } from "@/components/ui/input"\n\nconst schema = z.object({\n\tdisplayName: z\n\t\t.string()\n\t\t.min(3, { message: "Please enter at least 3 characters." }),\n\temail: z.string().email({ message: "Please enter a valid email address." }),\n})\n\ntype FormValues = z.infer<typeof schema>\n\nexport default function FormDemo() {\n\tconst form = useForm<FormValues>({\n\t\tresolver: zodResolver(schema),\n\t\tdefaultValues: {\n\t\t\tdisplayName: "",\n\t\t\temail: "",\n\t\t},\n\t})\n\n\tconst onSubmit = (data: FormValues) => {\n\t\tconsole.log(data)\n\t}\n\n\treturn (\n\t\t<Form\n\t\t\tclassName="flex w-96 flex-col gap-4"\n\t\t\tform={form}\n\t\t\tonSubmit={form.handleSubmit(onSubmit)}\n\t\t>\n\t\t\t<Field\n\t\t\t\tname="displayName"\n\t\t\t\tcontrol={form.control}\n\t\t\t\trender={({ field }) => (\n\t\t\t\t\t<FieldContent>\n\t\t\t\t\t\t<FieldLabel>Display Name</FieldLabel>\n\t\t\t\t\t\t<FieldControl>\n\t\t\t\t\t\t\t<Input className="w-full" placeholder="borabalogluu" {...field} />\n\t\t\t\t\t\t</FieldControl>\n\t\t\t\t\t\t<FieldDescription>\n\t\t\t\t\t\t\tThis is the name that will be displayed to other users.\n\t\t\t\t\t\t</FieldDescription>\n\t\t\t\t\t\t<FieldError />\n\t\t\t\t\t</FieldContent>\n\t\t\t\t)}\n\t\t\t/>\n\t\t\t<Field\n\t\t\t\tname="email"\n\t\t\t\tcontrol={form.control}\n\t\t\t\trender={({ field }) => (\n\t\t\t\t\t<FieldContent>\n\t\t\t\t\t\t<FieldLabel>Email</FieldLabel>\n\t\t\t\t\t\t<FieldControl>\n\t\t\t\t\t\t\t<Input\n\t\t\t\t\t\t\t\tclassName="w-full"\n\t\t\t\t\t\t\t\tplaceholder="your@email.com"\n\t\t\t\t\t\t\t\t{...field}\n\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t</FieldControl>\n\t\t\t\t\t\t<FieldDescription>Enter your email address</FieldDescription>\n\t\t\t\t\t\t<FieldError />\n\t\t\t\t\t</FieldContent>\n\t\t\t\t)}\n\t\t\t/>\n\t\t\t<Button type="submit">Submit</Button>\n\t\t</Form>\n\t)\n}\n',
+		component: React.lazy(() => import("@/components/demos/form/form-demo")),
+		title: "form-demo",
+		category: "form",
+		path: "src/components/demos/form/form-demo.tsx",
+	},
+	"collapsible-demo": {
+		source:
+			'import { useState } from "react"\nimport { ChevronRightIcon } from "lucide-react"\n\nimport {\n\tCollapsible,\n\tCollapsibleContent,\n\tCollapsibleTrigger,\n} from "@/components/ui/collapsible"\n\nimport { cn } from "@/lib/utils"\n\nexport default function CollapsibleDemo() {\n\tconst [open, setOpen] = useState(false)\n\n\treturn (\n\t\t<Collapsible\n\t\t\tclassName="mx-auto w-40 py-12"\n\t\t\topen={open}\n\t\t\tonOpenChange={setOpen}\n\t\t>\n\t\t\t<CollapsibleTrigger className="flex w-full items-center justify-between px-1.5 py-1">\n\t\t\t\t<span className="text-sm font-medium">Components</span>\n\t\t\t\t<div className={cn("transition-all duration-200", open && "rotate-90")}>\n\t\t\t\t\t<ChevronRightIcon size={16} />\n\t\t\t\t</div>\n\t\t\t</CollapsibleTrigger>\n\t\t\t<CollapsibleContent>\n\t\t\t\t<ol className="mt-2 space-y-1">\n\t\t\t\t\t<li className="rounded border bg-secondary px-2 py-1">Button</li>\n\t\t\t\t\t<li className="rounded border bg-secondary px-2 py-1">Badge</li>\n\t\t\t\t\t<li className="rounded border bg-secondary px-2 py-1">Breadcrumbs</li>\n\t\t\t\t</ol>\n\t\t\t</CollapsibleContent>\n\t\t</Collapsible>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/collapsible/collapsible-demo")
+		),
+		title: "collapsible-demo",
+		category: "collapsible",
+		path: "src/components/demos/collapsible/collapsible-demo.tsx",
 	},
 	"checkbox-with-label": {
 		source:
@@ -615,23 +595,75 @@ export const demoRegistry: DemoRegistry = {
 		category: "checkbox",
 		path: "src/components/demos/checkbox/checkbox-demo.tsx",
 	},
-	"card-with-image": {
+	"calendar-single": {
 		source:
-			'import Image from "next/image"\n\nimport { Button } from "@/components/ui/button"\nimport {\n\tCard,\n\tCardDescription,\n\tCardFooter,\n\tCardHeader,\n\tCardTitle,\n} from "@/components/ui/card"\n\nexport default function CardWithImage() {\n\treturn (\n\t\t<Card className="max-w-80">\n\t\t\t<CardHeader>\n\t\t\t\t<div className="relative aspect-video rounded-lg">\n\t\t\t\t\t<Image\n\t\t\t\t\t\tsrc="https://images.pexels.com/photos/1616403/pexels-photo-1616403.jpeg?auto=compress&cs=tinysrgb&w=450&h=800&dpr=2"\n\t\t\t\t\t\talt="Blog Image"\n\t\t\t\t\t\tfill\n\t\t\t\t\t\tclassName="rounded-lg"\n\t\t\t\t\t/>\n\t\t\t\t</div>\n\t\t\t\t<CardTitle className="mt-2">What is 9ui?</CardTitle>\n\t\t\t\t<CardDescription>\n\t\t\t\t\tDeep dive into the 9ui components and learn how to use them in your\n\t\t\t\t\town projects.\n\t\t\t\t</CardDescription>\n\t\t\t</CardHeader>\n\t\t\t<CardFooter>\n\t\t\t\t<Button className="w-full">Read more</Button>\n\t\t\t</CardFooter>\n\t\t</Card>\n\t)\n}\n',
+			'"use client"\n\nimport { useState } from "react"\n\nimport { Calendar } from "@/components/ui/calendar"\n\nexport default function CalendarSingle() {\n\tconst [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined)\n\n\treturn (\n\t\t<Calendar\n\t\t\tmode="single"\n\t\t\tselected={selectedDate}\n\t\t\tonSelect={setSelectedDate}\n\t\t\tshowOutsideDays\n\t\t/>\n\t)\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/card/card-with-image")
+			() => import("@/components/demos/calendar/calendar-single")
 		),
-		title: "card-with-image",
-		category: "card",
-		path: "src/components/demos/card/card-with-image.tsx",
+		title: "calendar-single",
+		category: "calendar",
+		path: "src/components/demos/calendar/calendar-single.tsx",
 	},
-	"card-demo": {
+	"calendar-range": {
 		source:
-			'import Image from "next/image"\nimport { LinkIcon, SendIcon } from "lucide-react"\n\nimport { Button } from "@/components/ui/button"\nimport {\n\tCard,\n\tCardContent,\n\tCardDescription,\n\tCardFooter,\n\tCardHeader,\n\tCardTitle,\n} from "@/components/ui/card"\nimport { Input } from "@/components/ui/input"\nimport { toast } from "@/components/ui/sonner"\n\nexport default function CardDemo() {\n\treturn (\n\t\t<Card className="max-w-96">\n\t\t\t<CardHeader>\n\t\t\t\t<CardTitle>Invite Team Members</CardTitle>\n\t\t\t\t<CardDescription>\n\t\t\t\t\tInvite your team members to join your workspace.\n\t\t\t\t</CardDescription>\n\t\t\t</CardHeader>\n\t\t\t<CardContent className="space-y-4">\n\t\t\t\t<div className="flex gap-2">\n\t\t\t\t\t<Input inputWrapperClassName="w-full" placeholder="Email" />\n\t\t\t\t\t<Button className="shrink-0" size="icon">\n\t\t\t\t\t\t<SendIcon />\n\t\t\t\t\t</Button>\n\t\t\t\t</div>\n\t\t\t\t<div className="flex flex-col gap-2">\n\t\t\t\t\t<p className="text-sm text-muted-foreground">\n\t\t\t\t\t\tYou can invite up to 10 team members. You have 8 invites left.\n\t\t\t\t\t</p>\n\t\t\t\t</div>\n\t\t\t\t<div className="flex flex-col gap-4">\n\t\t\t\t\t<h4 className="text-sm font-medium">Invited Members</h4>\n\t\t\t\t\t<div className="flex items-center gap-2">\n\t\t\t\t\t\t<Image\n\t\t\t\t\t\t\tsrc="/memoji-1.png"\n\t\t\t\t\t\t\talt="Avatar"\n\t\t\t\t\t\t\twidth={24}\n\t\t\t\t\t\t\theight={24}\n\t\t\t\t\t\t\tclassName="size-8 rounded-full"\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t<div className="flex flex-col text-xs">\n\t\t\t\t\t\t\t<p className="font-medium">Karen Smith</p>\n\t\t\t\t\t\t\t<p className="text-muted-foreground">karen@9.ui</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div className="flex items-center gap-2">\n\t\t\t\t\t\t<Image\n\t\t\t\t\t\t\tsrc="/memoji-3.png"\n\t\t\t\t\t\t\talt="Avatar"\n\t\t\t\t\t\t\twidth={24}\n\t\t\t\t\t\t\theight={24}\n\t\t\t\t\t\t\tclassName="size-8 rounded-full"\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t<div className="flex flex-col text-xs">\n\t\t\t\t\t\t\t<p className="font-medium">Chris Williams</p>\n\t\t\t\t\t\t\t<p className="text-muted-foreground">chris@9.ui</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</CardContent>\n\t\t\t<CardFooter>\n\t\t\t\t<Button\n\t\t\t\t\tclassName="w-full gap-x-2"\n\t\t\t\t\tvariant="link"\n\t\t\t\t\tonClick={() => {\n\t\t\t\t\t\ttoast.success("Invite link copied to clipboard")\n\t\t\t\t\t}}\n\t\t\t\t>\n\t\t\t\t\t<LinkIcon size={16} />\n\t\t\t\t\tInvite with link\n\t\t\t\t</Button>\n\t\t\t</CardFooter>\n\t\t</Card>\n\t)\n}\n',
-		component: React.lazy(() => import("@/components/demos/card/card-demo")),
-		title: "card-demo",
-		category: "card",
-		path: "src/components/demos/card/card-demo.tsx",
+			'"use client"\n\nimport { useState } from "react"\nimport { DateRange } from "react-day-picker"\n\nimport { Calendar } from "@/components/ui/calendar"\n\nexport default function CalendarRange() {\n\tconst [range, setRange] = useState<DateRange | undefined>(undefined)\n\n\treturn (\n\t\t<Calendar\n\t\t\tmode="range"\n\t\t\tselected={range}\n\t\t\tonSelect={setRange}\n\t\t\tshowOutsideDays\n\t\t/>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/calendar/calendar-range")
+		),
+		title: "calendar-range",
+		category: "calendar",
+		path: "src/components/demos/calendar/calendar-range.tsx",
+	},
+	"calendar-multiple": {
+		source:
+			'"use client"\n\nimport { useState } from "react"\n\nimport { Calendar } from "@/components/ui/calendar"\n\nexport default function CalendarMultiple() {\n\tconst [selectedDates, setSelectedDates] = useState<Date[] | undefined>(\n\t\tundefined\n\t)\n\n\treturn (\n\t\t<Calendar\n\t\t\tmode="multiple"\n\t\t\tselected={selectedDates}\n\t\t\tonSelect={setSelectedDates}\n\t\t\tshowOutsideDays\n\t\t/>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/calendar/calendar-multiple")
+		),
+		title: "calendar-multiple",
+		category: "calendar",
+		path: "src/components/demos/calendar/calendar-multiple.tsx",
+	},
+	"calendar-disabled": {
+		source:
+			'"use client"\n\nimport { useState } from "react"\n\nimport { Calendar } from "@/components/ui/calendar"\n\nexport default function CalendarDisabled() {\n\tconst [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined)\n\n\treturn (\n\t\t<Calendar\n\t\t\tmode="single"\n\t\t\tdisabled={(date) => date < new Date()}\n\t\t\tselected={selectedDate}\n\t\t\tonSelect={setSelectedDate}\n\t\t/>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/calendar/calendar-disabled")
+		),
+		title: "calendar-disabled",
+		category: "calendar",
+		path: "src/components/demos/calendar/calendar-disabled.tsx",
+	},
+	"calendar-demo": {
+		source:
+			'import { Calendar } from "@/components/ui/calendar"\n\nexport default function CalendarDemo() {\n\treturn <Calendar showOutsideDays />\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/calendar/calendar-demo")
+		),
+		title: "calendar-demo",
+		category: "calendar",
+		path: "src/components/demos/calendar/calendar-demo.tsx",
+	},
+	"command-dialog": {
+		source:
+			'"use client"\n\nimport { useEffect, useState } from "react"\nimport {\n\tArrowRightIcon,\n\tLayoutGridIcon,\n\tPlusIcon,\n\tUsersIcon,\n} from "lucide-react"\n\nimport {\n\tCommandDialog,\n\tCommandEmpty,\n\tCommandGroup,\n\tCommandInput,\n\tCommandItem,\n\tCommandList,\n\tCommandSeparator,\n\tCommandShortcut,\n} from "@/components/ui/command"\nimport { Kbd } from "@/components/ui/kbd"\n\nexport default function CommandDialogDemo() {\n\tconst [open, setOpen] = useState(false)\n\n\tuseEffect(() => {\n\t\tconst down = (e: KeyboardEvent) => {\n\t\t\tif (e.key === "k" && (e.metaKey || e.ctrlKey)) {\n\t\t\t\te.preventDefault()\n\t\t\t\tsetOpen((open) => !open)\n\t\t\t}\n\t\t}\n\t\tdocument.addEventListener("keydown", down)\n\t\treturn () => document.removeEventListener("keydown", down)\n\t}, [])\n\n\treturn (\n\t\t<>\n\t\t\t<div className="flex items-center gap-2 text-sm">\n\t\t\t\t<Kbd>⌘</Kbd>+<Kbd>K</Kbd>\n\t\t\t</div>\n\t\t\t<CommandDialog open={open} onOpenChange={setOpen}>\n\t\t\t\t<CommandInput placeholder="Type a command or search..." />\n\t\t\t\t<CommandList>\n\t\t\t\t\t<CommandEmpty>No results found.</CommandEmpty>\n\t\t\t\t\t<CommandGroup heading="Projects">\n\t\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t\t<LayoutGridIcon />\n\t\t\t\t\t\t\t<span>Search projects...</span>\n\t\t\t\t\t\t\t<CommandShortcut>\n\t\t\t\t\t\t\t\t<Kbd>⌘</Kbd>\n\t\t\t\t\t\t\t\t<Kbd>P</Kbd>\n\t\t\t\t\t\t\t</CommandShortcut>\n\t\t\t\t\t\t</CommandItem>\n\t\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t\t<PlusIcon />\n\t\t\t\t\t\t\t<span>Create new projecte...</span>\n\t\t\t\t\t\t\t<CommandShortcut>\n\t\t\t\t\t\t\t\t<Kbd>C</Kbd>\n\t\t\t\t\t\t\t</CommandShortcut>\n\t\t\t\t\t\t</CommandItem>\n\t\t\t\t\t</CommandGroup>\n\t\t\t\t\t<CommandSeparator />\n\t\t\t\t\t<CommandGroup heading="Teams">\n\t\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t\t<UsersIcon />\n\t\t\t\t\t\t\t<span>Search teams...</span>\n\t\t\t\t\t\t</CommandItem>\n\t\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t\t<PlusIcon />\n\t\t\t\t\t\t\t<span>Create new team...</span>\n\t\t\t\t\t\t\t<CommandShortcut>\n\t\t\t\t\t\t\t\t<Kbd>T</Kbd>\n\t\t\t\t\t\t\t</CommandShortcut>\n\t\t\t\t\t\t</CommandItem>\n\t\t\t\t\t</CommandGroup>\n\t\t\t\t\t<CommandGroup heading="Navigation">\n\t\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t\t<ArrowRightIcon />\n\t\t\t\t\t\t\t<span>Go to home</span>\n\t\t\t\t\t\t</CommandItem>\n\t\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t\t<ArrowRightIcon />\n\t\t\t\t\t\t\t<span>Go to profile</span>\n\t\t\t\t\t\t</CommandItem>\n\t\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t\t<ArrowRightIcon />\n\t\t\t\t\t\t\t<span>Go to settings</span>\n\t\t\t\t\t\t</CommandItem>\n\t\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t\t<ArrowRightIcon />\n\t\t\t\t\t\t\t<span>Go to billing</span>\n\t\t\t\t\t\t</CommandItem>\n\t\t\t\t\t</CommandGroup>\n\t\t\t\t</CommandList>\n\t\t\t</CommandDialog>\n\t\t</>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/command/command-dialog")
+		),
+		title: "command-dialog",
+		category: "command",
+		path: "src/components/demos/command/command-dialog.tsx",
+	},
+	"command-demo": {
+		source:
+			'import {\n\tArrowRightIcon,\n\tLayoutGridIcon,\n\tPlusIcon,\n\tUsersIcon,\n} from "lucide-react"\n\nimport {\n\tCommand,\n\tCommandEmpty,\n\tCommandGroup,\n\tCommandInput,\n\tCommandItem,\n\tCommandList,\n\tCommandSeparator,\n\tCommandShortcut,\n} from "@/components/ui/command"\nimport { Kbd } from "@/components/ui/kbd"\n\nexport default function CommandDemo() {\n\treturn (\n\t\t<Command>\n\t\t\t<CommandInput placeholder="Type a command or search..." />\n\t\t\t<CommandList>\n\t\t\t\t<CommandEmpty>No results found.</CommandEmpty>\n\t\t\t\t<CommandGroup heading="Projects">\n\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t<LayoutGridIcon />\n\t\t\t\t\t\t<span>Search projects...</span>\n\t\t\t\t\t\t<CommandShortcut>\n\t\t\t\t\t\t\t<Kbd>⌘</Kbd>\n\t\t\t\t\t\t\t<Kbd>P</Kbd>\n\t\t\t\t\t\t</CommandShortcut>\n\t\t\t\t\t</CommandItem>\n\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t<PlusIcon />\n\t\t\t\t\t\t<span>Create new projecte...</span>\n\t\t\t\t\t\t<CommandShortcut>\n\t\t\t\t\t\t\t<Kbd>C</Kbd>\n\t\t\t\t\t\t</CommandShortcut>\n\t\t\t\t\t</CommandItem>\n\t\t\t\t</CommandGroup>\n\t\t\t\t<CommandSeparator />\n\t\t\t\t<CommandGroup heading="Teams">\n\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t<UsersIcon />\n\t\t\t\t\t\t<span>Search teams...</span>\n\t\t\t\t\t</CommandItem>\n\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t<PlusIcon />\n\t\t\t\t\t\t<span>Create new team...</span>\n\t\t\t\t\t\t<CommandShortcut>\n\t\t\t\t\t\t\t<Kbd>T</Kbd>\n\t\t\t\t\t\t</CommandShortcut>\n\t\t\t\t\t</CommandItem>\n\t\t\t\t</CommandGroup>\n\t\t\t\t<CommandGroup heading="Navigation">\n\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t<ArrowRightIcon />\n\t\t\t\t\t\t<span>Go to home</span>\n\t\t\t\t\t</CommandItem>\n\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t<ArrowRightIcon />\n\t\t\t\t\t\t<span>Go to profile</span>\n\t\t\t\t\t</CommandItem>\n\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t<ArrowRightIcon />\n\t\t\t\t\t\t<span>Go to settings</span>\n\t\t\t\t\t</CommandItem>\n\t\t\t\t\t<CommandItem>\n\t\t\t\t\t\t<ArrowRightIcon />\n\t\t\t\t\t\t<span>Go to billing</span>\n\t\t\t\t\t</CommandItem>\n\t\t\t\t</CommandGroup>\n\t\t\t</CommandList>\n\t\t</Command>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/command/command-demo")
+		),
+		title: "command-demo",
+		category: "command",
+		path: "src/components/demos/command/command-demo.tsx",
 	},
 	"carousel-vertical": {
 		source:
@@ -683,55 +715,74 @@ export const demoRegistry: DemoRegistry = {
 		category: "carousel",
 		path: "src/components/demos/carousel/carousel-demo.tsx",
 	},
-	"calendar-single": {
+	"card-with-image": {
 		source:
-			'"use client"\n\nimport { useState } from "react"\n\nimport { Calendar } from "@/components/ui/calendar"\n\nexport default function CalendarSingle() {\n\tconst [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined)\n\n\treturn (\n\t\t<Calendar\n\t\t\tmode="single"\n\t\t\tselected={selectedDate}\n\t\t\tonSelect={setSelectedDate}\n\t\t\tshowOutsideDays\n\t\t/>\n\t)\n}\n',
+			'import Image from "next/image"\n\nimport { Button } from "@/components/ui/button"\nimport {\n\tCard,\n\tCardDescription,\n\tCardFooter,\n\tCardHeader,\n\tCardTitle,\n} from "@/components/ui/card"\n\nexport default function CardWithImage() {\n\treturn (\n\t\t<Card className="max-w-80">\n\t\t\t<CardHeader>\n\t\t\t\t<div className="relative aspect-video rounded-lg">\n\t\t\t\t\t<Image\n\t\t\t\t\t\tsrc="https://images.pexels.com/photos/1616403/pexels-photo-1616403.jpeg?auto=compress&cs=tinysrgb&w=450&h=800&dpr=2"\n\t\t\t\t\t\talt="Blog Image"\n\t\t\t\t\t\tfill\n\t\t\t\t\t\tclassName="rounded-lg"\n\t\t\t\t\t/>\n\t\t\t\t</div>\n\t\t\t\t<CardTitle className="mt-2">What is 9ui?</CardTitle>\n\t\t\t\t<CardDescription>\n\t\t\t\t\tDeep dive into the 9ui components and learn how to use them in your\n\t\t\t\t\town projects.\n\t\t\t\t</CardDescription>\n\t\t\t</CardHeader>\n\t\t\t<CardFooter>\n\t\t\t\t<Button className="w-full">Read more</Button>\n\t\t\t</CardFooter>\n\t\t</Card>\n\t)\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/calendar/calendar-single")
+			() => import("@/components/demos/card/card-with-image")
 		),
-		title: "calendar-single",
-		category: "calendar",
-		path: "src/components/demos/calendar/calendar-single.tsx",
+		title: "card-with-image",
+		category: "card",
+		path: "src/components/demos/card/card-with-image.tsx",
 	},
-	"calendar-range": {
+	"card-demo": {
 		source:
-			'"use client"\n\nimport { useState } from "react"\nimport { DateRange } from "react-day-picker"\n\nimport { Calendar } from "@/components/ui/calendar"\n\nexport default function CalendarRange() {\n\tconst [range, setRange] = useState<DateRange | undefined>(undefined)\n\n\treturn (\n\t\t<Calendar\n\t\t\tmode="range"\n\t\t\tselected={range}\n\t\t\tonSelect={setRange}\n\t\t\tshowOutsideDays\n\t\t/>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/calendar/calendar-range")
-		),
-		title: "calendar-range",
-		category: "calendar",
-		path: "src/components/demos/calendar/calendar-range.tsx",
+			'import Image from "next/image"\nimport { LinkIcon, SendIcon } from "lucide-react"\n\nimport { Button } from "@/components/ui/button"\nimport {\n\tCard,\n\tCardContent,\n\tCardDescription,\n\tCardFooter,\n\tCardHeader,\n\tCardTitle,\n} from "@/components/ui/card"\nimport { Input } from "@/components/ui/input"\nimport { toast } from "@/components/ui/sonner"\n\nexport default function CardDemo() {\n\treturn (\n\t\t<Card className="max-w-96">\n\t\t\t<CardHeader>\n\t\t\t\t<CardTitle>Invite Team Members</CardTitle>\n\t\t\t\t<CardDescription>\n\t\t\t\t\tInvite your team members to join your workspace.\n\t\t\t\t</CardDescription>\n\t\t\t</CardHeader>\n\t\t\t<CardContent className="space-y-4">\n\t\t\t\t<div className="flex gap-2">\n\t\t\t\t\t<Input inputWrapperClassName="w-full" placeholder="Email" />\n\t\t\t\t\t<Button className="shrink-0" size="icon">\n\t\t\t\t\t\t<SendIcon />\n\t\t\t\t\t</Button>\n\t\t\t\t</div>\n\t\t\t\t<div className="flex flex-col gap-2">\n\t\t\t\t\t<p className="text-sm text-muted-foreground">\n\t\t\t\t\t\tYou can invite up to 10 team members. You have 8 invites left.\n\t\t\t\t\t</p>\n\t\t\t\t</div>\n\t\t\t\t<div className="flex flex-col gap-4">\n\t\t\t\t\t<h4 className="text-sm font-medium">Invited Members</h4>\n\t\t\t\t\t<div className="flex items-center gap-2">\n\t\t\t\t\t\t<Image\n\t\t\t\t\t\t\tsrc="/memoji-1.png"\n\t\t\t\t\t\t\talt="Avatar"\n\t\t\t\t\t\t\twidth={24}\n\t\t\t\t\t\t\theight={24}\n\t\t\t\t\t\t\tclassName="size-8 rounded-full"\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t<div className="flex flex-col text-xs">\n\t\t\t\t\t\t\t<p className="font-medium">Karen Smith</p>\n\t\t\t\t\t\t\t<p className="text-muted-foreground">karen@9.ui</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div className="flex items-center gap-2">\n\t\t\t\t\t\t<Image\n\t\t\t\t\t\t\tsrc="/memoji-3.png"\n\t\t\t\t\t\t\talt="Avatar"\n\t\t\t\t\t\t\twidth={24}\n\t\t\t\t\t\t\theight={24}\n\t\t\t\t\t\t\tclassName="size-8 rounded-full"\n\t\t\t\t\t\t/>\n\t\t\t\t\t\t<div className="flex flex-col text-xs">\n\t\t\t\t\t\t\t<p className="font-medium">Chris Williams</p>\n\t\t\t\t\t\t\t<p className="text-muted-foreground">chris@9.ui</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</CardContent>\n\t\t\t<CardFooter>\n\t\t\t\t<Button\n\t\t\t\t\tclassName="w-full gap-x-2"\n\t\t\t\t\tvariant="link"\n\t\t\t\t\tonClick={() => {\n\t\t\t\t\t\ttoast.success("Invite link copied to clipboard")\n\t\t\t\t\t}}\n\t\t\t\t>\n\t\t\t\t\t<LinkIcon size={16} />\n\t\t\t\t\tInvite with link\n\t\t\t\t</Button>\n\t\t\t</CardFooter>\n\t\t</Card>\n\t)\n}\n',
+		component: React.lazy(() => import("@/components/demos/card/card-demo")),
+		title: "card-demo",
+		category: "card",
+		path: "src/components/demos/card/card-demo.tsx",
 	},
-	"calendar-multiple": {
+	"breadcrumbs-demo": {
 		source:
-			'"use client"\n\nimport { useState } from "react"\n\nimport { Calendar } from "@/components/ui/calendar"\n\nexport default function CalendarMultiple() {\n\tconst [selectedDates, setSelectedDates] = useState<Date[] | undefined>(\n\t\tundefined\n\t)\n\n\treturn (\n\t\t<Calendar\n\t\t\tmode="multiple"\n\t\t\tselected={selectedDates}\n\t\t\tonSelect={setSelectedDates}\n\t\t\tshowOutsideDays\n\t\t/>\n\t)\n}\n',
+			'import Link from "next/link"\nimport { EllipsisIcon } from "lucide-react"\n\nimport {\n\tBreadcrumb,\n\tBreadcrumbItem,\n\tBreadcrumbList,\n\tBreadcrumbSeparator,\n} from "@/components/ui/breadcrumbs"\n\nexport default function BreadcrumbsDemo() {\n\treturn (\n\t\t<Breadcrumb>\n\t\t\t<BreadcrumbList>\n\t\t\t\t<BreadcrumbItem>\n\t\t\t\t\t<Link href="/">Home</Link>\n\t\t\t\t</BreadcrumbItem>\n\t\t\t\t<BreadcrumbSeparator />\n\t\t\t\t<BreadcrumbItem>\n\t\t\t\t\t<EllipsisIcon />\n\t\t\t\t</BreadcrumbItem>\n\t\t\t\t<BreadcrumbSeparator />\n\t\t\t\t<BreadcrumbItem>\n\t\t\t\t\t<Link href="/docs/components">Components</Link>\n\t\t\t\t</BreadcrumbItem>\n\t\t\t\t<BreadcrumbSeparator />\n\t\t\t\t<BreadcrumbItem active>Breadcrumbs</BreadcrumbItem>\n\t\t\t</BreadcrumbList>\n\t\t</Breadcrumb>\n\t)\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/calendar/calendar-multiple")
+			() => import("@/components/demos/breadcrumbs/breadcrumbs-demo")
 		),
-		title: "calendar-multiple",
-		category: "calendar",
-		path: "src/components/demos/calendar/calendar-multiple.tsx",
+		title: "breadcrumbs-demo",
+		category: "breadcrumbs",
+		path: "src/components/demos/breadcrumbs/breadcrumbs-demo.tsx",
 	},
-	"calendar-disabled": {
+	"breadcrumbs-custom-separator": {
 		source:
-			'"use client"\n\nimport { useState } from "react"\n\nimport { Calendar } from "@/components/ui/calendar"\n\nexport default function CalendarDisabled() {\n\tconst [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined)\n\n\treturn (\n\t\t<Calendar\n\t\t\tmode="single"\n\t\t\tdisabled={(date) => date < new Date()}\n\t\t\tselected={selectedDate}\n\t\t\tonSelect={setSelectedDate}\n\t\t/>\n\t)\n}\n',
+			'import Link from "next/link"\n\nimport {\n\tBreadcrumb,\n\tBreadcrumbItem,\n\tBreadcrumbList,\n\tBreadcrumbSeparator,\n} from "@/components/ui/breadcrumbs"\n\nexport default function BreadcrumbsCustomSeparator() {\n\treturn (\n\t\t<Breadcrumb>\n\t\t\t<BreadcrumbList>\n\t\t\t\t<BreadcrumbItem>\n\t\t\t\t\t<Link href="/">Home</Link>\n\t\t\t\t</BreadcrumbItem>\n\t\t\t\t<BreadcrumbSeparator>\n\t\t\t\t\t<span>/</span>\n\t\t\t\t</BreadcrumbSeparator>\n\t\t\t\t<BreadcrumbItem>\n\t\t\t\t\t<Link href="/docs/components">Components</Link>\n\t\t\t\t</BreadcrumbItem>\n\t\t\t\t<BreadcrumbSeparator>\n\t\t\t\t\t<span>/</span>\n\t\t\t\t</BreadcrumbSeparator>\n\t\t\t\t<BreadcrumbItem active>Breadcrumbs</BreadcrumbItem>\n\t\t\t</BreadcrumbList>\n\t\t</Breadcrumb>\n\t)\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/calendar/calendar-disabled")
+			() =>
+				import("@/components/demos/breadcrumbs/breadcrumbs-custom-separator")
 		),
-		title: "calendar-disabled",
-		category: "calendar",
-		path: "src/components/demos/calendar/calendar-disabled.tsx",
+		title: "breadcrumbs-custom-separator",
+		category: "breadcrumbs",
+		path: "src/components/demos/breadcrumbs/breadcrumbs-custom-separator.tsx",
 	},
-	"calendar-demo": {
+	"avatar-sizes": {
 		source:
-			'import { Calendar } from "@/components/ui/calendar"\n\nexport default function CalendarDemo() {\n\treturn <Calendar showOutsideDays />\n}\n',
+			'import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"\n\nexport default function AvatarSizes() {\n\treturn (\n\t\t<div className="flex flex-row items-center gap-4">\n\t\t\t<Avatar size="sm">\n\t\t\t\t<AvatarImage src="/avatars/bora.png" alt="User" />\n\t\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t\t</Avatar>\n\t\t\t<Avatar size="md">\n\t\t\t\t<AvatarImage src="/avatars/bora.png" alt="User" />\n\t\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t\t</Avatar>\n\t\t\t<Avatar size="lg">\n\t\t\t\t<AvatarImage src="/avatars/bora.png" alt="User" />\n\t\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t\t</Avatar>\n\t\t</div>\n\t)\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/calendar/calendar-demo")
+			() => import("@/components/demos/avatar/avatar-sizes")
 		),
-		title: "calendar-demo",
-		category: "calendar",
-		path: "src/components/demos/calendar/calendar-demo.tsx",
+		title: "avatar-sizes",
+		category: "avatar",
+		path: "src/components/demos/avatar/avatar-sizes.tsx",
+	},
+	"avatar-fallback": {
+		source:
+			'import { Avatar, AvatarFallback } from "@/components/ui/avatar"\n\nexport default function AvatarWithFallback() {\n\treturn (\n\t\t<Avatar size="md">\n\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t</Avatar>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/avatar/avatar-fallback")
+		),
+		title: "avatar-fallback",
+		category: "avatar",
+		path: "src/components/demos/avatar/avatar-fallback.tsx",
+	},
+	"avatar-demo": {
+		source:
+			'import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"\n\nexport default function AvatarDemo() {\n\treturn (\n\t\t<Avatar size="md">\n\t\t\t<AvatarImage src="/avatars/bora.png" alt="User" />\n\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t</Avatar>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/avatar/avatar-demo")
+		),
+		title: "avatar-demo",
+		category: "avatar",
+		path: "src/components/demos/avatar/avatar-demo.tsx",
 	},
 	"button-sizes": {
 		source:
@@ -823,56 +874,35 @@ export const demoRegistry: DemoRegistry = {
 		category: "button",
 		path: "src/components/demos/button/button-demo.tsx",
 	},
-	"breadcrumbs-demo": {
+	"aspect-ratio-demo": {
 		source:
-			'import Link from "next/link"\nimport { EllipsisIcon } from "lucide-react"\n\nimport {\n\tBreadcrumb,\n\tBreadcrumbItem,\n\tBreadcrumbList,\n\tBreadcrumbSeparator,\n} from "@/components/ui/breadcrumbs"\n\nexport default function BreadcrumbsDemo() {\n\treturn (\n\t\t<Breadcrumb>\n\t\t\t<BreadcrumbList>\n\t\t\t\t<BreadcrumbItem>\n\t\t\t\t\t<Link href="/">Home</Link>\n\t\t\t\t</BreadcrumbItem>\n\t\t\t\t<BreadcrumbSeparator />\n\t\t\t\t<BreadcrumbItem>\n\t\t\t\t\t<EllipsisIcon />\n\t\t\t\t</BreadcrumbItem>\n\t\t\t\t<BreadcrumbSeparator />\n\t\t\t\t<BreadcrumbItem>\n\t\t\t\t\t<Link href="/docs/components">Components</Link>\n\t\t\t\t</BreadcrumbItem>\n\t\t\t\t<BreadcrumbSeparator />\n\t\t\t\t<BreadcrumbItem active>Breadcrumbs</BreadcrumbItem>\n\t\t\t</BreadcrumbList>\n\t\t</Breadcrumb>\n\t)\n}\n',
+			'import { AspectRatio } from "@/components/ui/aspect-ratio"\n\nexport default function AspectRatioDemo() {\n\treturn (\n\t\t<AspectRatio\n\t\t\tratio={16 / 9}\n\t\t\tclassName="rounded-lg border bg-card text-card-foreground"\n\t\t>\n\t\t\t<div className="flex size-full items-center justify-center font-medium">\n\t\t\t\tContent\n\t\t\t</div>\n\t\t</AspectRatio>\n\t)\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/breadcrumbs/breadcrumbs-demo")
+			() => import("@/components/demos/aspect-ratio/aspect-ratio-demo")
 		),
-		title: "breadcrumbs-demo",
-		category: "breadcrumbs",
-		path: "src/components/demos/breadcrumbs/breadcrumbs-demo.tsx",
+		title: "aspect-ratio-demo",
+		category: "aspect-ratio",
+		path: "src/components/demos/aspect-ratio/aspect-ratio-demo.tsx",
 	},
-	"breadcrumbs-custom-separator": {
+	"alert-dialog-demo": {
 		source:
-			'import Link from "next/link"\n\nimport {\n\tBreadcrumb,\n\tBreadcrumbItem,\n\tBreadcrumbList,\n\tBreadcrumbSeparator,\n} from "@/components/ui/breadcrumbs"\n\nexport default function BreadcrumbsCustomSeparator() {\n\treturn (\n\t\t<Breadcrumb>\n\t\t\t<BreadcrumbList>\n\t\t\t\t<BreadcrumbItem>\n\t\t\t\t\t<Link href="/">Home</Link>\n\t\t\t\t</BreadcrumbItem>\n\t\t\t\t<BreadcrumbSeparator>\n\t\t\t\t\t<span>/</span>\n\t\t\t\t</BreadcrumbSeparator>\n\t\t\t\t<BreadcrumbItem>\n\t\t\t\t\t<Link href="/docs/components">Components</Link>\n\t\t\t\t</BreadcrumbItem>\n\t\t\t\t<BreadcrumbSeparator>\n\t\t\t\t\t<span>/</span>\n\t\t\t\t</BreadcrumbSeparator>\n\t\t\t\t<BreadcrumbItem active>Breadcrumbs</BreadcrumbItem>\n\t\t\t</BreadcrumbList>\n\t\t</Breadcrumb>\n\t)\n}\n',
+			'import {\n\tAlertDialog,\n\tAlertDialogClose,\n\tAlertDialogContent,\n\tAlertDialogDescription,\n\tAlertDialogFooter,\n\tAlertDialogHeader,\n\tAlertDialogTitle,\n\tAlertDialogTrigger,\n} from "@/components/ui/alert-dialog"\nimport { Button } from "@/components/ui/button"\n\nexport default function AlertDialogDemo() {\n\treturn (\n\t\t<AlertDialog>\n\t\t\t<AlertDialogTrigger\n\t\t\t\trender={(props) => (\n\t\t\t\t\t<Button {...props} variant="destructive">\n\t\t\t\t\t\tDelete Post\n\t\t\t\t\t</Button>\n\t\t\t\t)}\n\t\t\t/>\n\t\t\t<AlertDialogContent className="space-y-4">\n\t\t\t\t<AlertDialogHeader>\n\t\t\t\t\t<AlertDialogTitle>Are you sure?</AlertDialogTitle>\n\t\t\t\t\t<AlertDialogDescription>\n\t\t\t\t\t\tThis action cannot be undone. Your post will be permanently deleted.\n\t\t\t\t\t</AlertDialogDescription>\n\t\t\t\t</AlertDialogHeader>\n\t\t\t\t<AlertDialogFooter>\n\t\t\t\t\t<AlertDialogClose\n\t\t\t\t\t\trender={(props) => (\n\t\t\t\t\t\t\t<Button {...props} size="sm" variant="ghost">\n\t\t\t\t\t\t\t\tCancel\n\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t)}\n\t\t\t\t\t/>\n\t\t\t\t\t<Button size="sm" variant="destructive">\n\t\t\t\t\t\tDelete\n\t\t\t\t\t</Button>\n\t\t\t\t</AlertDialogFooter>\n\t\t\t</AlertDialogContent>\n\t\t</AlertDialog>\n\t)\n}\n',
 		component: React.lazy(
-			() =>
-				import("@/components/demos/breadcrumbs/breadcrumbs-custom-separator")
+			() => import("@/components/demos/alert-dialog/alert-dialog-demo")
 		),
-		title: "breadcrumbs-custom-separator",
-		category: "breadcrumbs",
-		path: "src/components/demos/breadcrumbs/breadcrumbs-custom-separator.tsx",
+		title: "alert-dialog-demo",
+		category: "alert-dialog",
+		path: "src/components/demos/alert-dialog/alert-dialog-demo.tsx",
 	},
-	"avatar-sizes": {
+	"accordion-demo": {
 		source:
-			'import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"\n\nexport default function AvatarSizes() {\n\treturn (\n\t\t<div className="flex flex-row items-center gap-4">\n\t\t\t<Avatar size="sm">\n\t\t\t\t<AvatarImage src="/avatars/bora.png" alt="User" />\n\t\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t\t</Avatar>\n\t\t\t<Avatar size="md">\n\t\t\t\t<AvatarImage src="/avatars/bora.png" alt="User" />\n\t\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t\t</Avatar>\n\t\t\t<Avatar size="lg">\n\t\t\t\t<AvatarImage src="/avatars/bora.png" alt="User" />\n\t\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t\t</Avatar>\n\t\t</div>\n\t)\n}\n',
+			'import {\n\tAccordion,\n\tAccordionContent,\n\tAccordionItem,\n\tAccordionTrigger,\n} from "@/components/ui/accordion"\n\nexport default function AccordionDemo() {\n\treturn (\n\t\t<Accordion className="mx-auto w-96" orientation="vertical">\n\t\t\t<AccordionItem>\n\t\t\t\t<AccordionTrigger>Is it an accordion?</AccordionTrigger>\n\t\t\t\t<AccordionContent>\n\t\t\t\t\tYes, it is an accordion. It is a component that allows you to collapse\n\t\t\t\t\tand expand content.\n\t\t\t\t</AccordionContent>\n\t\t\t</AccordionItem>\n\t\t\t<AccordionItem>\n\t\t\t\t<AccordionTrigger>Is it animated?</AccordionTrigger>\n\t\t\t\t<AccordionContent>\n\t\t\t\t\tYes, it is animated. It is a component that allows you to collapse and\n\t\t\t\t\texpand content.\n\t\t\t\t</AccordionContent>\n\t\t\t</AccordionItem>\n\t\t\t<AccordionItem>\n\t\t\t\t<AccordionTrigger>Is it customizable?</AccordionTrigger>\n\t\t\t\t<AccordionContent>\n\t\t\t\t\tYes, it is customizable. It is a component that allows you to collapse\n\t\t\t\t\tand expand content.\n\t\t\t\t</AccordionContent>\n\t\t\t</AccordionItem>\n\t\t</Accordion>\n\t)\n}\n',
 		component: React.lazy(
-			() => import("@/components/demos/avatar/avatar-sizes")
+			() => import("@/components/demos/accordion/accordion-demo")
 		),
-		title: "avatar-sizes",
-		category: "avatar",
-		path: "src/components/demos/avatar/avatar-sizes.tsx",
-	},
-	"avatar-fallback": {
-		source:
-			'import { Avatar, AvatarFallback } from "@/components/ui/avatar"\n\nexport default function AvatarWithFallback() {\n\treturn (\n\t\t<Avatar size="md">\n\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t</Avatar>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/avatar/avatar-fallback")
-		),
-		title: "avatar-fallback",
-		category: "avatar",
-		path: "src/components/demos/avatar/avatar-fallback.tsx",
-	},
-	"avatar-demo": {
-		source:
-			'import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"\n\nexport default function AvatarDemo() {\n\treturn (\n\t\t<Avatar size="md">\n\t\t\t<AvatarImage src="/avatars/bora.png" alt="User" />\n\t\t\t<AvatarFallback>BB</AvatarFallback>\n\t\t</Avatar>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/avatar/avatar-demo")
-		),
-		title: "avatar-demo",
-		category: "avatar",
-		path: "src/components/demos/avatar/avatar-demo.tsx",
+		title: "accordion-demo",
+		category: "accordion",
+		path: "src/components/demos/accordion/accordion-demo.tsx",
 	},
 	"badge-warning": {
 		source:
@@ -940,26 +970,6 @@ export const demoRegistry: DemoRegistry = {
 		category: "badge",
 		path: "src/components/demos/badge/badge-danger.tsx",
 	},
-	"aspect-ratio-demo": {
-		source:
-			'import { AspectRatio } from "@/components/ui/aspect-ratio"\n\nexport default function AspectRatioDemo() {\n\treturn (\n\t\t<AspectRatio ratio={16 / 9} className="rounded-lg bg-secondary">\n\t\t\t<div className="flex size-full items-center justify-center font-medium text-foreground">\n\t\t\t\tContent\n\t\t\t</div>\n\t\t</AspectRatio>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/aspect-ratio/aspect-ratio-demo")
-		),
-		title: "aspect-ratio-demo",
-		category: "aspect-ratio",
-		path: "src/components/demos/aspect-ratio/aspect-ratio-demo.tsx",
-	},
-	"alert-dialog-demo": {
-		source:
-			'import {\n\tAlertDialog,\n\tAlertDialogClose,\n\tAlertDialogContent,\n\tAlertDialogDescription,\n\tAlertDialogFooter,\n\tAlertDialogHeader,\n\tAlertDialogTitle,\n\tAlertDialogTrigger,\n} from "@/components/ui/alert-dialog"\nimport { Button } from "@/components/ui/button"\n\nexport default function AlertDialogDemo() {\n\treturn (\n\t\t<AlertDialog>\n\t\t\t<AlertDialogTrigger\n\t\t\t\trender={(props) => (\n\t\t\t\t\t<Button {...props} variant="destructive">\n\t\t\t\t\t\tDelete Post\n\t\t\t\t\t</Button>\n\t\t\t\t)}\n\t\t\t/>\n\t\t\t<AlertDialogContent className="space-y-4">\n\t\t\t\t<AlertDialogHeader>\n\t\t\t\t\t<AlertDialogTitle>Are you sure?</AlertDialogTitle>\n\t\t\t\t\t<AlertDialogDescription>\n\t\t\t\t\t\tThis action cannot be undone. Your post will be permanently deleted.\n\t\t\t\t\t</AlertDialogDescription>\n\t\t\t\t</AlertDialogHeader>\n\t\t\t\t<AlertDialogFooter>\n\t\t\t\t\t<AlertDialogClose\n\t\t\t\t\t\trender={(props) => (\n\t\t\t\t\t\t\t<Button {...props} size="sm" variant="ghost">\n\t\t\t\t\t\t\t\tCancel\n\t\t\t\t\t\t\t</Button>\n\t\t\t\t\t\t)}\n\t\t\t\t\t/>\n\t\t\t\t\t<Button size="sm" variant="destructive">\n\t\t\t\t\t\tDelete\n\t\t\t\t\t</Button>\n\t\t\t\t</AlertDialogFooter>\n\t\t\t</AlertDialogContent>\n\t\t</AlertDialog>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/alert-dialog/alert-dialog-demo")
-		),
-		title: "alert-dialog-demo",
-		category: "alert-dialog",
-		path: "src/components/demos/alert-dialog/alert-dialog-demo.tsx",
-	},
 	"alert-with-action": {
 		source:
 			'import { AlertTriangleIcon } from "lucide-react"\n\nimport {\n\tAlert,\n\tAlertAction,\n\tAlertContent,\n\tAlertDescription,\n\tAlertIcon,\n\tAlertTitle,\n} from "@/components/ui/alert"\nimport { Button } from "@/components/ui/button"\n\nexport default function AlertWithAction() {\n\treturn (\n\t\t<Alert>\n\t\t\t<AlertIcon>\n\t\t\t\t<AlertTriangleIcon />\n\t\t\t</AlertIcon>\n\t\t\t<AlertContent>\n\t\t\t\t<AlertTitle>No Internet Connection</AlertTitle>\n\t\t\t\t<AlertDescription>\n\t\t\t\t\tPlease check your internet connection and try again.\n\t\t\t\t</AlertDescription>\n\t\t\t</AlertContent>\n\t\t\t<AlertAction>\n\t\t\t\t<Button size="sm" variant="outline">\n\t\t\t\t\tTry Again\n\t\t\t\t</Button>\n\t\t\t</AlertAction>\n\t\t</Alert>\n\t)\n}\n',
@@ -1015,15 +1025,5 @@ export const demoRegistry: DemoRegistry = {
 		title: "alert-danger",
 		category: "alert",
 		path: "src/components/demos/alert/alert-danger.tsx",
-	},
-	"accordion-demo": {
-		source:
-			'import {\n\tAccordion,\n\tAccordionContent,\n\tAccordionItem,\n\tAccordionTrigger,\n} from "@/components/ui/accordion"\n\nexport default function AccordionDemo() {\n\treturn (\n\t\t<Accordion className="mx-auto w-96" orientation="vertical">\n\t\t\t<AccordionItem>\n\t\t\t\t<AccordionTrigger>Is it an accordion?</AccordionTrigger>\n\t\t\t\t<AccordionContent>\n\t\t\t\t\tYes, it is an accordion. It is a component that allows you to collapse\n\t\t\t\t\tand expand content.\n\t\t\t\t</AccordionContent>\n\t\t\t</AccordionItem>\n\t\t\t<AccordionItem>\n\t\t\t\t<AccordionTrigger>Is it animated?</AccordionTrigger>\n\t\t\t\t<AccordionContent>\n\t\t\t\t\tYes, it is animated. It is a component that allows you to collapse and\n\t\t\t\t\texpand content.\n\t\t\t\t</AccordionContent>\n\t\t\t</AccordionItem>\n\t\t\t<AccordionItem>\n\t\t\t\t<AccordionTrigger>Is it customizable?</AccordionTrigger>\n\t\t\t\t<AccordionContent>\n\t\t\t\t\tYes, it is customizable. It is a component that allows you to collapse\n\t\t\t\t\tand expand content.\n\t\t\t\t</AccordionContent>\n\t\t\t</AccordionItem>\n\t\t</Accordion>\n\t)\n}\n',
-		component: React.lazy(
-			() => import("@/components/demos/accordion/accordion-demo")
-		),
-		title: "accordion-demo",
-		category: "accordion",
-		path: "src/components/demos/accordion/accordion-demo.tsx",
 	},
 }

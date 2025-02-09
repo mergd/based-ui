@@ -19,7 +19,7 @@ const SelectTrigger = React.forwardRef<
 	<BaseSelect.Trigger
 		ref={ref}
 		className={cn(
-			"flex h-9 cursor-pointer items-center justify-between rounded-md border px-4 py-2 focus:outline-none focus:ring-1 focus:ring-ring data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:size-4",
+			"flex h-9 cursor-pointer items-center justify-between rounded-md border bg-popover px-4 py-2 text-popover-foreground focus:outline-none focus:ring-1 focus:ring-ring data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:size-4",
 			className
 		)}
 		{...props}
@@ -36,11 +36,7 @@ const SelectValue = React.forwardRef<
 	HTMLSpanElement,
 	React.ComponentPropsWithoutRef<typeof BaseSelect.Value>
 >(({ className, ...props }, ref) => (
-	<BaseSelect.Value
-		ref={ref}
-		className={cn("text-sm text-foreground", className)}
-		{...props}
-	/>
+	<BaseSelect.Value ref={ref} className={cn("text-sm", className)} {...props} />
 ))
 SelectValue.displayName = "SelectValue"
 
@@ -55,7 +51,7 @@ const SelectContent = React.forwardRef<HTMLDivElement, SelectContentProps>(
 			<BaseSelect.Popup
 				ref={ref}
 				className={cn(
-					"w-[--anchor-width] origin-[var(--transform-origin)] overflow-y-auto overscroll-contain rounded-md border bg-background p-1.5 text-sm text-foreground shadow-sm outline-none transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
+					"w-[--anchor-width] origin-[var(--transform-origin)] overflow-y-auto overscroll-contain rounded-md border bg-popover p-1.5 text-sm text-popover-foreground shadow-sm outline-none transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
 					className
 				)}
 				{...props}

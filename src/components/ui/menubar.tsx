@@ -58,7 +58,7 @@ const Menubar = React.forwardRef<
 			<div
 				ref={ref}
 				className={cn(
-					"relative flex w-fit gap-1 rounded-md border px-1 shadow-sm",
+					"relative flex w-fit gap-1 rounded-md border bg-card px-1 shadow-sm",
 					className
 				)}
 				{...props}
@@ -168,7 +168,7 @@ const MenubarTrigger = React.forwardRef<
 		<Menu.Trigger
 			ref={useForkRef(ref, triggerRef)}
 			className={cn(
-				"relative flex min-h-10 cursor-default select-none items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium outline-none data-[popup-open]:text-foreground",
+				"relative z-[1] flex min-h-10 cursor-default select-none items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium outline-none data-[popup-open]:text-foreground",
 				className
 			)}
 			{...props}
@@ -216,7 +216,7 @@ const MenubarIndicator = React.forwardRef<
 		<div
 			ref={ref}
 			className={cn(
-				"absolute left-[var(--active-menu-left)] top-1/2 z-[-1] h-[calc(var(--active-menu-height)-0.5rem)] w-[var(--active-menu-width)] -translate-y-1/2 rounded-md bg-accent transition-all duration-200 ease-in-out",
+				"absolute left-[var(--active-menu-left)] top-1/2 h-[calc(var(--active-menu-height)-0.5rem)] w-[var(--active-menu-width)] -translate-y-1/2 rounded-md bg-accent transition-all duration-200 ease-in-out",
 				className
 			)}
 			style={style}
@@ -237,7 +237,7 @@ const MenubarContent = React.forwardRef<
 			<Menu.Popup
 				ref={ref}
 				className={cn(
-					"min-w-48 origin-[var(--transform-origin)] rounded-md border bg-background p-1 text-foreground shadow-sm outline-none transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
+					"min-w-48 origin-[var(--transform-origin)] rounded-md border bg-popover p-1 text-popover-foreground shadow-sm outline-none transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
 					className
 				)}
 				{...props}

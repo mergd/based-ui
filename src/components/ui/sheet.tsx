@@ -31,7 +31,7 @@ const SheetBackdrop = React.forwardRef<
 SheetBackdrop.displayName = "SheetBackdrop"
 
 const sheetContentVariants = cva(
-	"fixed max-h-[calc(100vh-2rem)] bg-background p-6 text-foreground shadow-md outline-none transition-all duration-500 ease-in-out",
+	"fixed max-h-[calc(100vh-2rem)] bg-popover p-6 text-popover-foreground shadow-md outline-none transition-all duration-500 ease-in-out",
 	{
 		variants: {
 			side: {

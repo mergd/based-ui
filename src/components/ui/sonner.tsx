@@ -11,13 +11,13 @@ type ToasterProps = React.ComponentProps<typeof Sonner>
 
 const Toaster = ({ ...props }: ToasterProps) => (
 	<Sonner
-		className="text-xs text-foreground"
+		className="text-xs text-popover-foreground"
 		theme="system"
 		toastOptions={{
 			unstyled: true,
 			classNames: {
 				toast:
-					"group max-w-96 w-full bg-background rounded-md p-4 border flex gap-2 right-0 shadow-md dark:shadow-none",
+					"group max-w-96 w-full bg-popover rounded-md p-4 border flex gap-2 right-0 shadow-md dark:shadow-none",
 				title: "font-medium",
 				success:
 					"data-[rich-colors]:!bg-success data-[rich-colors]:!text-success-foreground data-[rich-colors]:!border-success-foreground",
@@ -36,7 +36,7 @@ const Toaster = ({ ...props }: ToasterProps) => (
 					buttonVariants({ variant: "destructive", size: "sm" }),
 					"my-auto"
 				),
-				closeButton: "!bg-background text-foreground transition-colors",
+				closeButton: "!bg-popover text-popover-foreground transition-colors",
 				icon: "my-auto",
 			},
 		}}

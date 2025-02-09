@@ -18,22 +18,26 @@ async function findDemoFiles(): Promise<DemoFile[]> {
 		absolute: true,
 	})
 
-	const demoFiles = await Promise.all(
-		files.map(async (file) => {
-			const source = await readFile(file, "utf-8")
-			const relativePath = relative(process.cwd(), file)
-			const name = basename(file, ".tsx")
-			// Get category from parent directory name
-			const category = basename(dirname(relativePath))
+	// Sort files alphabetically before processing
+	const sortedFiles = files.sort()
 
-			return {
-				source,
-				path: relativePath.replace(/\\/g, "/"),
-				category,
-				name,
-			}
+	const demoFiles: DemoFile[] = []
+
+	// Process files sequentially
+	for (const file of sortedFiles) {
+		const source = await readFile(file, "utf-8")
+		const relativePath = relative(process.cwd(), file)
+		const name = basename(file, ".tsx")
+		// Get category from parent directory name
+		const category = basename(dirname(relativePath))
+
+		demoFiles.push({
+			source,
+			path: relativePath.replace(/\\/g, "/"),
+			category,
+			name,
 		})
-	)
+	}
 
 	return demoFiles
 }

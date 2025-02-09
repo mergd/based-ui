@@ -25,40 +25,44 @@ async function findContentFiles(): Promise<ContentFile[]> {
 		absolute: true,
 	})
 
-	const contentFiles = await Promise.all(
-		files.map(async (file) => {
-			const source = await readFile(file, "utf-8")
-			const relativePath = relative(CONTENT_DIR, file)
-			const meta = await getMetadata(source)
+	// Sort files alphabetically before processing
+	const sortedFiles = files.sort()
 
-			// Convert file path to URL path
-			let urlPath = relativePath.replace(/\.mdx$/, "")
+	const contentFiles: ContentFile[] = []
 
-			// Handle index files
-			if (urlPath.endsWith("/index")) {
-				urlPath = urlPath.replace(/\/index$/, "")
-			}
+	// Process files sequentially
+	for (const file of sortedFiles) {
+		const source = await readFile(file, "utf-8")
+		const relativePath = relative(CONTENT_DIR, file)
+		const meta = await getMetadata(source)
 
-			// Generate breadcrumbs
-			const segments = urlPath.split("/")
-			const breadcrumbs = segments.map((_, index) => {
-				const path = segments.slice(0, index + 1).join("/")
-				const label = segments[index] || "Home"
-				return {
-					label: changeCase.capitalCase(label),
-					path: `/docs/${path}`,
-				}
-			})
+		// Convert file path to URL path
+		let urlPath = relativePath.replace(/\.mdx$/, "")
 
+		// Handle index files
+		if (urlPath.endsWith("/index")) {
+			urlPath = urlPath.replace(/\/index$/, "")
+		}
+
+		// Generate breadcrumbs
+		const segments = urlPath.split("/")
+		const breadcrumbs = segments.map((_, index) => {
+			const path = segments.slice(0, index + 1).join("/")
+			const label = segments[index] || "Home"
 			return {
-				source,
-				path: relativePath,
-				meta,
-				urlPath,
-				breadcrumbs,
+				label: changeCase.capitalCase(label),
+				path: `/docs/${path}`,
 			}
 		})
-	)
+
+		contentFiles.push({
+			source,
+			path: relativePath,
+			meta,
+			urlPath,
+			breadcrumbs,
+		})
+	}
 
 	return contentFiles
 }

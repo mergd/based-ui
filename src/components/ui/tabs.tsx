@@ -67,7 +67,7 @@ const Tab = React.forwardRef<
 	<BaseTabs.Tab
 		ref={ref}
 		className={cn(
-			"min-h-10 w-full text-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+			"z-[1] min-h-10 w-full text-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
 			className
 		)}
 		{...props}
@@ -84,7 +84,7 @@ const TabIndicator = React.forwardRef<
 		<BaseTabs.Indicator
 			ref={ref}
 			className={cn(
-				"absolute left-0 z-[-1] w-[var(--active-tab-width)] -translate-y-1/2 translate-x-[var(--active-tab-left)] transition-all duration-200 ease-in-out",
+				"absolute left-0 w-[var(--active-tab-width)] -translate-y-1/2 translate-x-[var(--active-tab-left)] transition-all duration-200 ease-in-out",
 				variant === "underline"
 					? "top-full z-10 h-px bg-primary"
 					: "top-1/2 h-[calc(var(--active-tab-height)-0.5rem)] rounded-md bg-muted",

@@ -18,23 +18,28 @@ DropdownRadioGroup.displayName = "DropdownRadioGroup"
 const DropdownTrigger = Menu.Trigger
 DropdownTrigger.displayName = "DropdownTrigger"
 
-const DropdownContent = React.forwardRef<
-	HTMLDivElement,
-	React.ComponentPropsWithoutRef<typeof Menu.Popup>
->(({ className, ...props }, ref) => (
-	<Menu.Portal>
-		<Menu.Positioner sideOffset={4}>
-			<Menu.Popup
-				ref={ref}
-				className={cn(
-					"min-w-48 origin-[var(--transform-origin)] rounded-md border bg-popover p-1 text-popover-foreground shadow-sm outline-none transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
-					className
-				)}
-				{...props}
-			/>
-		</Menu.Positioner>
-	</Menu.Portal>
-))
+interface DropdownContentProps
+	extends React.ComponentPropsWithoutRef<typeof Menu.Popup> {
+	align?: Menu.Positioner.Props["align"]
+	sideOffset?: Menu.Positioner.Props["sideOffset"]
+}
+
+const DropdownContent = React.forwardRef<HTMLDivElement, DropdownContentProps>(
+	({ className, align = "center", sideOffset = 4, ...props }, ref) => (
+		<Menu.Portal>
+			<Menu.Positioner sideOffset={sideOffset} align={align}>
+				<Menu.Popup
+					ref={ref}
+					className={cn(
+						"min-w-48 origin-[var(--transform-origin)] rounded-md border bg-popover p-1 text-popover-foreground shadow-sm outline-none transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
+						className
+					)}
+					{...props}
+				/>
+			</Menu.Positioner>
+		</Menu.Portal>
+	)
+)
 DropdownContent.displayName = "DropdownContent"
 
 const DropdownItem = React.forwardRef<

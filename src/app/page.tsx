@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { AlarmClockIcon, ArrowRightIcon, BookOpenIcon } from "lucide-react"
+import { ArrowRightIcon, BookOpenIcon } from "lucide-react"
 
 import Examples from "@/components/examples"
 import { Badge } from "@/components/ui/badge"

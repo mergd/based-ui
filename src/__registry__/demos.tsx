@@ -1008,7 +1008,7 @@ export const demoRegistry: DemoRegistry = {
 	},
 	"tooltip-custom-position": {
 		source:
-			'import {\n\tTooltip,\n\tTooltipContent,\n\tTooltipTrigger,\n} from "@/components/ui/tooltip"\n\nconst positions = ["top", "right", "bottom", "left"] as const\n\nexport default function TooltipCustomPosition() {\n\treturn (\n\t\t<div className="grid grid-cols-2 gap-2">\n\t\t\t{positions.map((position) => (\n\t\t\t\t<Tooltip key={position}>\n\t\t\t\t\t<TooltipTrigger className="w-full rounded-md border px-2 py-1.5 text-sm">\n\t\t\t\t\t\t{position}\n\t\t\t\t\t</TooltipTrigger>\n\t\t\t\t\t<TooltipContent\n\t\t\t\t\t\tclassName="max-w-56"\n\t\t\t\t\t\tpositionerProps={{ side: position }}\n\t\t\t\t\t>\n\t\t\t\t\t\t<span>This tooltip is positioned at the {position} side.</span>\n\t\t\t\t\t</TooltipContent>\n\t\t\t\t</Tooltip>\n\t\t\t))}\n\t\t</div>\n\t)\n}\n',
+			'import {\n\tTooltip,\n\tTooltipContent,\n\tTooltipTrigger,\n} from "@/components/ui/tooltip"\n\nconst positions = ["top", "right", "bottom", "left"] as const\n\nexport default function TooltipCustomPosition() {\n\treturn (\n\t\t<div className="grid grid-cols-2 gap-2">\n\t\t\t{positions.map((position) => (\n\t\t\t\t<Tooltip key={position}>\n\t\t\t\t\t<TooltipTrigger className="w-full rounded-md border px-2 py-1.5 text-sm">\n\t\t\t\t\t\t{position}\n\t\t\t\t\t</TooltipTrigger>\n\t\t\t\t\t<TooltipContent className="max-w-56" side={position}>\n\t\t\t\t\t\t<span>This tooltip is positioned at the {position} side.</span>\n\t\t\t\t\t</TooltipContent>\n\t\t\t\t</Tooltip>\n\t\t\t))}\n\t\t</div>\n\t)\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/tooltip/tooltip-custom-position")
 		),
@@ -1018,7 +1018,7 @@ export const demoRegistry: DemoRegistry = {
 	},
 	"tooltip-demo": {
 		source:
-			'import { Icons } from "@/components/icons"\nimport {\n\tTooltip,\n\tTooltipContent,\n\tTooltipTrigger,\n} from "@/components/ui/tooltip"\n\nexport default function TooltipDemo() {\n\treturn (\n\t\t<Tooltip>\n\t\t\t<TooltipTrigger className="rounded-md border p-3">\n\t\t\t\t<Icons.twitter className="size-4" />\n\t\t\t</TooltipTrigger>\n\t\t\t<TooltipContent>\n\t\t\t\t<span>\n\t\t\t\t\tFollow me{" "}\n\t\t\t\t\t<a\n\t\t\t\t\t\tclassName="font-medium"\n\t\t\t\t\t\thref="https://x.com/borabalogluu"\n\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t>\n\t\t\t\t\t\t@borabalogluu\n\t\t\t\t\t</a>\n\t\t\t\t</span>\n\t\t\t</TooltipContent>\n\t\t</Tooltip>\n\t)\n}\n',
+			'import { Icons } from "@/components/icons"\nimport { buttonVariants } from "@/components/ui/button"\nimport {\n\tTooltip,\n\tTooltipContent,\n\tTooltipTrigger,\n} from "@/components/ui/tooltip"\n\nexport default function TooltipDemo() {\n\treturn (\n\t\t<Tooltip>\n\t\t\t<TooltipTrigger\n\t\t\t\tclassName={buttonVariants({ variant: "outline", size: "icon" })}\n\t\t\t>\n\t\t\t\t<Icons.twitter />\n\t\t\t</TooltipTrigger>\n\t\t\t<TooltipContent>\n\t\t\t\t<span>\n\t\t\t\t\tFollow me{" "}\n\t\t\t\t\t<a\n\t\t\t\t\t\tclassName="font-medium"\n\t\t\t\t\t\thref="https://x.com/borabalogluu"\n\t\t\t\t\t\ttarget="_blank"\n\t\t\t\t\t>\n\t\t\t\t\t\t@borabalogluu\n\t\t\t\t\t</a>\n\t\t\t\t</span>\n\t\t\t</TooltipContent>\n\t\t</Tooltip>\n\t)\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/tooltip/tooltip-demo")
 		),

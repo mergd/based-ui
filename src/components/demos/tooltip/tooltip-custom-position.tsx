@@ -14,10 +14,7 @@ export default function TooltipCustomPosition() {
 					<TooltipTrigger className="w-full rounded-md border px-2 py-1.5 text-sm">
 						{position}
 					</TooltipTrigger>
-					<TooltipContent
-						className="max-w-56"
-						positionerProps={{ side: position }}
-					>
+					<TooltipContent className="max-w-56" side={position}>
 						<span>This tooltip is positioned at the {position} side.</span>
 					</TooltipContent>
 				</Tooltip>

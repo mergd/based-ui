@@ -18,6 +18,7 @@ Tooltip.displayName = "Tooltip"
 interface TooltipContentProps
 	extends React.ComponentPropsWithoutRef<typeof BaseTooltip.Popup> {
 	align?: BaseTooltip.Positioner.Props["align"]
+	side?: BaseTooltip.Positioner.Props["side"]
 	sideOffset?: BaseTooltip.Positioner.Props["sideOffset"]
 	arrow?: boolean
 }
@@ -29,13 +30,14 @@ const TooltipContent = React.forwardRef<HTMLDivElement, TooltipContentProps>(
 			className,
 			align = "center",
 			sideOffset = 8,
+			side = "top",
 			arrow = true,
 			...props
 		},
 		ref
 	) => (
 		<BaseTooltip.Portal>
-			<BaseTooltip.Positioner sideOffset={sideOffset} align={align}>
+			<BaseTooltip.Positioner sideOffset={sideOffset} align={align} side={side}>
 				<BaseTooltip.Popup
 					ref={ref}
 					className={cn(

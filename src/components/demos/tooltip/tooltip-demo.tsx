@@ -1,4 +1,5 @@
 import { Icons } from "@/components/icons"
+import { buttonVariants } from "@/components/ui/button"
 import {
 	Tooltip,
 	TooltipContent,
@@ -8,8 +9,10 @@ import {
 export default function TooltipDemo() {
 	return (
 		<Tooltip>
-			<TooltipTrigger className="rounded-md border p-3">
-				<Icons.twitter className="size-4" />
+			<TooltipTrigger
+				className={buttonVariants({ variant: "outline", size: "icon" })}
+			>
+				<Icons.twitter />
 			</TooltipTrigger>
 			<TooltipContent>
 				<span>

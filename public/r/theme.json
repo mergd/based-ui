@@ -44,7 +44,7 @@
 			"chart-5": "#ff2056"
 		},
 		"dark": {
-			"background": "##060606",
+			"background": "#060606",
 			"foreground": "#f4f4f5",
 			"card": "#0a0a0a",
 			"card-foreground": "#f4f4f5",

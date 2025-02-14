@@ -88,7 +88,7 @@
 	}
 
 	html {
-		@apply scroll-smooth;
+		@apply md:scroll-smooth;
 	}
 
 	html[data-base-ui-scroll-locked] {

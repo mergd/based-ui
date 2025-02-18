@@ -106,6 +106,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/carousel",
 				},
 				{
+					title: "Chart",
+					href: "/docs/components/chart",
+				},
+				{
 					title: "Checkbox",
 					href: "/docs/components/checkbox",
 				},

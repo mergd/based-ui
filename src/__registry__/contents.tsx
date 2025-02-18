@@ -146,6 +146,19 @@ export const contentRegistry: ContentRegistry = {
 			{ label: "Carousel", path: "/docs/components/carousel" },
 		],
 	},
+	"components/chart": {
+		type: "file",
+		path: "components/chart.mdx",
+		meta: {
+			title: "Chart",
+			description: "A visual representation of data in various formats.",
+		},
+		urlPath: "components/chart",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Chart", path: "/docs/components/chart" },
+		],
+	},
 	"components/checkbox": {
 		type: "file",
 		path: "components/checkbox.mdx",

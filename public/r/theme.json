@@ -37,11 +37,11 @@
 			"border": "#eaeaea",
 			"input": "#f4f4f5",
 			"ring": "#060606",
-			"chart-1": "#00bc7d",
-			"chart-2": "#00b8db",
-			"chart-3": "#615fff",
-			"chart-4": "#ff6900",
-			"chart-5": "#ff2056"
+			"chart-1": "#155dfc",
+			"chart-2": "#00a63e",
+			"chart-3": "#9810fa",
+			"chart-4": "#f54a00",
+			"chart-5": "#e7000b"
 		},
 		"dark": {
 			"background": "#060606",
@@ -75,11 +75,11 @@
 			"border": "#2a2a2a",
 			"input": "#0a0a0a",
 			"ring": "#f4f4f5",
-			"chart-1": "#00bc7d",
-			"chart-2": "#00b8db",
-			"chart-3": "#615fff",
-			"chart-4": "#ff6900",
-			"chart-5": "#ff2056"
+			"chart-1": "#155dfc",
+			"chart-2": "#00a63e",
+			"chart-3": "#9810fa",
+			"chart-4": "#f54a00",
+			"chart-5": "#e7000b"
 		}
 	},
 	"tailwind": {

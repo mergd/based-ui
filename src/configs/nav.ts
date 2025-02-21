@@ -118,6 +118,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/collapsible",
 				},
 				{
+					title: "Combobox",
+					href: "/docs/components/combobox",
+				},
+				{
 					title: "Command",
 					href: "/docs/components/command",
 				},

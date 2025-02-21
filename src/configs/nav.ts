@@ -130,6 +130,10 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/context-menu",
 				},
 				{
+					title: "Date Picker",
+					href: "/docs/components/date-picker",
+				},
+				{
 					title: "Dialog",
 					href: "/docs/components/dialog",
 				},

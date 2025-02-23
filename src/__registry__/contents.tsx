@@ -186,6 +186,19 @@ export const contentRegistry: ContentRegistry = {
 			{ label: "Collapsible", path: "/docs/components/collapsible" },
 		],
 	},
+	"components/combobox": {
+		type: "file",
+		path: "components/combobox.mdx",
+		meta: {
+			title: "Combobox",
+			description: "Autocomplete component for selecting items from a list.",
+		},
+		urlPath: "components/combobox",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Combobox", path: "/docs/components/combobox" },
+		],
+	},
 	"components/command": {
 		type: "file",
 		path: "components/command.mdx",
@@ -211,6 +224,16 @@ export const contentRegistry: ContentRegistry = {
 		breadcrumbs: [
 			{ label: "Components", path: "/docs/components" },
 			{ label: "Context Menu", path: "/docs/components/context-menu" },
+		],
+	},
+	"components/date-picker": {
+		type: "file",
+		path: "components/date-picker.mdx",
+		meta: { title: "Date Picker", description: "A date picker component." },
+		urlPath: "components/date-picker",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Date Picker", path: "/docs/components/date-picker" },
 		],
 	},
 	"components/dialog": {

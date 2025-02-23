@@ -118,12 +118,20 @@ export const navConfig: NavConfig = {
 					href: "/docs/components/collapsible",
 				},
 				{
+					title: "Combobox",
+					href: "/docs/components/combobox",
+				},
+				{
 					title: "Command",
 					href: "/docs/components/command",
 				},
 				{
 					title: "Context Menu",
 					href: "/docs/components/context-menu",
+				},
+				{
+					title: "Date Picker",
+					href: "/docs/components/date-picker",
 				},
 				{
 					title: "Dialog",

@@ -40,9 +40,9 @@ export const DocsSidebarNavItems = ({
 				>
 					{item.title}
 					{item.label && (
-						<Badge variant="info" className="rounded-md px-2 py-0.5">
+						<span className="rounded bg-info px-1.5 py-0.5 text-xs font-medium text-info-foreground">
 							{item.label}
-						</Badge>
+						</span>
 					)}
 				</Link>
 			) : (
@@ -54,9 +54,9 @@ export const DocsSidebarNavItems = ({
 				>
 					{item.title}
 					{item.label && (
-						<Badge variant="secondary" className="rounded-md px-2 py-0.5">
+						<span className="rounded bg-info px-1.5 py-0.5 text-xs font-medium text-info-foreground">
 							{item.label}
-						</Badge>
+						</span>
 					)}
 				</span>
 			)

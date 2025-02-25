@@ -60,16 +60,9 @@ export default function ChartScatterDemo() {
 					Population vs House Prices in Major Cities
 				</CardDescription>
 			</CardHeader>
-			<CardContent className="flex-1">
-				<Chart config={chartConfig} className="max-h-[250px] w-full">
-					<ScatterChart
-						margin={{
-							top: 12,
-							right: 12,
-							bottom: 12,
-							left: 12,
-						}}
-					>
+			<CardContent>
+				<Chart config={chartConfig} className="max-h-[300px]">
+					<ScatterChart>
 						<CartesianGrid strokeDasharray="3 3" />
 						<XAxis
 							type="number"

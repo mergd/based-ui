@@ -53,16 +53,8 @@ export default function ChartRadarDemo() {
 				</CardDescription>
 			</CardHeader>
 			<CardContent className="flex-1">
-				<Chart config={chartConfig} className="max-h-[250px] w-full">
-					<RadarChart
-						data={chartData}
-						margin={{
-							top: 12,
-							right: 12,
-							bottom: 12,
-							left: 12,
-						}}
-					>
+				<Chart config={chartConfig} className="max-h-[300px]">
+					<RadarChart data={chartData}>
 						<PolarGrid />
 						<PolarAngleAxis dataKey="category" />
 						<ChartTooltip content={<ChartTooltipContent />} />

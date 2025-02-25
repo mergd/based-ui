@@ -51,7 +51,7 @@ export default function ChartBarDemo() {
 				<CardDescription>First half of 2024</CardDescription>
 			</CardHeader>
 			<CardContent className="flex-1">
-				<Chart config={chartConfig} className="max-h-[250px] w-full">
+				<Chart config={chartConfig} className="max-h-[300px]">
 					<BarChart
 						data={chartData}
 						margin={{

@@ -54,7 +54,7 @@ export default function ChartAreaDemo() {
 				<CardDescription>Performance overview for 2024</CardDescription>
 			</CardHeader>
 			<CardContent className="flex-1">
-				<Chart config={chartConfig} className="max-h-[250px] w-full">
+				<Chart config={chartConfig} className="max-h-[300px]">
 					<AreaChart
 						accessibilityLayer
 						data={chartData}

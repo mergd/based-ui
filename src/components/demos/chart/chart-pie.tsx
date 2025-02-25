@@ -62,15 +62,8 @@ export default function ChartPieDemo() {
 				<CardDescription>Department budget allocation for 2024</CardDescription>
 			</CardHeader>
 			<CardContent className="flex-1">
-				<Chart config={chartConfig} className="max-h-[250px] w-full">
-					<PieChart
-						margin={{
-							top: 12,
-							right: 12,
-							bottom: 12,
-							left: 12,
-						}}
-					>
+				<Chart config={chartConfig} className="max-h-[300px]">
+					<PieChart>
 						<ChartTooltip
 							cursor={false}
 							content={<ChartTooltipContent hideLabel />}
@@ -82,7 +75,6 @@ export default function ChartPieDemo() {
 							nameKey="category"
 							cx="50%"
 							cy="50%"
-							outerRadius={80}
 						>
 							{chartData.map((entry, index) => (
 								<Cell key={`cell-${index}`} fill={entry.fill} />

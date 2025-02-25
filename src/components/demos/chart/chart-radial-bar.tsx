@@ -67,7 +67,7 @@ export default function ChartRadialBarDemo() {
 			<CardContent className="flex-1">
 				<Chart
 					config={chartConfig}
-					className="mx-auto aspect-square max-h-[200px]"
+					className="mx-auto aspect-square max-h-[250px]"
 				>
 					<RadialBarChart data={chartData} innerRadius={30} outerRadius={110}>
 						<ChartTooltip

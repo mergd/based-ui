@@ -4,9 +4,9 @@ import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
 import "./syntax.css"
 
+import Script from "next/script"
 import { ThemeProvider } from "next-themes"
 
-import { Analytics } from "@/components/analytics"
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 import { Toaster } from "@/components/ui/sonner"
@@ -70,6 +70,13 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
 	<html lang="en" suppressHydrationWarning>
+		<head>
+			<Script
+				src="https://cdn.seline.so/seline.js"
+				data-token={process.env.SELINE_TOKEN}
+				strategy="afterInteractive"
+			/>
+		</head>
 		<body
 			className={cn(
 				`${geist.variable} ${geistMono.variable}`,
@@ -90,7 +97,6 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => (
 				</div>
 				<Toaster />
 			</ThemeProvider>
-			<Analytics />
 		</body>
 	</html>
 )

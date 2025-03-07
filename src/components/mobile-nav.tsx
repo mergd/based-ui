@@ -30,7 +30,7 @@ export function MobileNav() {
 				<DrawerTrigger
 					render={(props) => (
 						<Button
-							className="mr-2 md:hidden"
+							className="md:hidden"
 							variant="ghost"
 							size="icon"
 							{...props}
@@ -72,7 +72,7 @@ export function MobileNav() {
 				</DrawerPortal>
 			</Drawer>
 			<Link href="/" className="flex items-center md:hidden">
-				<Icons.logo className="h-8" />
+				<Icons.logo className="h-4" />
 			</Link>
 		</div>
 	)

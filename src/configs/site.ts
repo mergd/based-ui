@@ -1,7 +1,7 @@
 export const siteConfig = {
 	name: "9ui",
 	url: "https://9ui.dev",
-	ogImage: "https://9ui.dev/og.jpg?v=2",
+	ogImage: "https://9ui.dev/og.jpg?v=3",
 	description:
 		"Beautiful, customizable components built with Base UI and Tailwind CSS.",
 	links: {
@@ -12,4 +12,4 @@ export const siteConfig = {
 
 export type SiteConfig = typeof siteConfig
 
-export const META_THEME_COLOR = "#09090b"
+export const META_THEME_COLOR = "#060606"

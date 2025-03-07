@@ -14,7 +14,7 @@ export function MainNav() {
 	return (
 		<div className="mr-4 hidden md:flex">
 			<Link href="/" className="mr-6 flex items-center">
-				<Icons.logo className="h-8" />
+				<Icons.logo className="h-4" />
 			</Link>
 			<nav className="flex items-center gap-6 text-sm">
 				<Link

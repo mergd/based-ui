@@ -1,15 +1,16 @@
 <Title content="Installation" />
 <Description content="Installing dependencies and setting up the project." />
 
-<Alert className="mt-4">
+<Alert variant="warning" className="mt-4">
 	<AlertIcon>
 		<MessageSquareWarningIcon />
 	</AlertIcon>
 	<AlertContent>
 		<AlertTitle>Important</AlertTitle>
 		<AlertDescription className="[&_p]:leading-normal">
-			9ui installation relies on shadcn cli to setting up your project and
-			install the components.
+			The installation of 9ui depends on the shadcn cli for setting up your
+			project and installing the components. Note that 9ui does not support
+			Tailwind V4 yet. Please use `shadcn@2.3.0` for the setup.
 		</AlertDescription>
 	</AlertContent>
 </Alert>
@@ -62,4 +63,8 @@ npx shadcn@latest add "https://9ui.dev/r/theme.json"
 
 # Icons
 
-9ui uses [`lucide-react`](https://lucide.dev/) for icons. You can replace it with the icon library of your choice. [Monicon](https://monicon-docs.vercel.app/) provides 200,000+ icons from popular libraries. I recommend you to use it.
+9ui uses [`lucide-react`](https://lucide.dev/) for icons.
+
+For a more extensive collection of icons, consider using [`Monicon`](https://monicon-docs.vercel.app/), which offers over 200,000 icons from various popular libraries.
+
+If you are looking for animated icons, the [`pqoqubbw/icons`](https://icons.pqoqubbw.dev/) library is a great choice.

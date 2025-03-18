@@ -39,6 +39,17 @@ export function MainNav() {
 				>
 					Components
 				</Link>
+				<Link
+					href="/themes"
+					className={cn(
+						"transition-opacity hover:opacity-100",
+						pathname?.startsWith("/docs/themes")
+							? "text-foreground opacity-100"
+							: "opacity-80"
+					)}
+				>
+					Themes
+				</Link>
 				<span
 					className={cn(
 						"flex items-center gap-2 text-foreground/80 opacity-50"

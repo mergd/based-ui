@@ -15,7 +15,7 @@ const Switch = React.forwardRef<
 		)}
 		{...props}
 	>
-		<BaseSwitch.Thumb className="left-0 top-0 aspect-square h-5 rounded-full bg-primary transition-[colors,transform] duration-300 ease-in-out data-[checked]:translate-x-4 data-[checked]:bg-primary-foreground" />
+		<BaseSwitch.Thumb className="left-0 top-0 aspect-square h-5 rounded-full bg-background transition-[colors,transform] duration-300 ease-in-out data-[checked]:translate-x-4 data-[checked]:bg-primary-foreground" />
 	</BaseSwitch.Root>
 ))
 Switch.displayName = "Switch"

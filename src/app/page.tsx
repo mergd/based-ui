@@ -1,13 +1,10 @@
 import Link from "next/link"
 import { ArrowRightIcon, BookOpenIcon } from "lucide-react"
 
-import { CustomizeToolbar } from "@/components/customize-toolbar"
 import Examples from "@/components/examples"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
-
-import "@/app/themes.css"
 
 const Home = () => (
 	<div className="container flex flex-col gap-12 py-10">
@@ -55,7 +52,6 @@ const Home = () => (
 			</div>
 			<Separator />
 			<Examples />
-			<CustomizeToolbar />
 		</main>
 	</div>
 )

@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 
-import "./themes.css"
 import "./globals.css"
 import "./syntax.css"
 
@@ -12,7 +11,7 @@ import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 import { Toaster } from "@/components/ui/sonner"
 
-import { siteConfig } from "@/configs/site"
+import { siteConfig } from "@/config/site"
 
 import { cn } from "@/lib/utils"
 

@@ -13,7 +13,7 @@ import {
 	BreadcrumbSeparator,
 } from "@/components/ui/breadcrumbs"
 
-import { siteConfig } from "@/configs/site"
+import { siteConfig } from "@/config/site"
 
 import { getTableOfContents } from "@/lib/toc"
 import { absoluteUrl } from "@/lib/url"

@@ -1,4 +1,4 @@
-import { siteConfig } from "@/configs/site"
+import { siteConfig } from "@/config/site"
 
 export const joinUrl = (...paths: string[]) => {
 	return paths.join("/").replace(/\/$/, "")

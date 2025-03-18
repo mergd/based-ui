@@ -11,7 +11,7 @@ import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 import { Toaster } from "@/components/ui/sonner"
 
-import { siteConfig } from "@/configs/site"
+import { siteConfig } from "@/config/site"
 
 import { cn } from "@/lib/utils"
 

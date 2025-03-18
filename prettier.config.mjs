@@ -13,7 +13,7 @@ const config = {
 		"",
 		"^@/components/(.*)$",
 		"",
-		"^@/configs/(.*)$",
+		"^@/config/(.*)$",
 		"",
 		"^@/lib/(.*)$",
 		"",

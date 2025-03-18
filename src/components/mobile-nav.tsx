@@ -15,7 +15,7 @@ import {
 	DrawerTrigger,
 } from "@/components/ui/drawer"
 
-import { navConfig } from "@/configs/nav"
+import { navConfig } from "@/config/nav"
 
 import { cn } from "@/lib/utils"
 

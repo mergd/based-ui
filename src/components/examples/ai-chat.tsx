@@ -112,14 +112,14 @@ export const AIChatInterface = () => {
 			{/* Sidebar - hidden on mobile by default */}
 			<div
 				className={cn(
-					"absolute inset-y-0 left-0 z-20 w-[240px] border-r bg-secondary transition-transform md:static md:translate-x-0",
+					"absolute inset-y-0 left-0 z-20 w-[240px] border-r bg-card transition-transform md:static md:translate-x-0",
 					isSidebarOpen ? "translate-x-0" : "-translate-x-full"
 				)}
 			>
 				<div className="flex h-full flex-col gap-2">
 					<div className="flex items-center justify-between px-3 pt-3">
 						<h2 className="text-lg font-semibold">Chats</h2>
-						<div className="flex gap-2">
+						<div className="flex gap-1">
 							<Button variant="ghost" size="icon">
 								<SearchIcon />
 							</Button>
@@ -154,7 +154,7 @@ export const AIChatInterface = () => {
 											<ShareIcon className="size-4" />
 											Share
 										</DropdownItem>
-										<DropdownItem>
+										<DropdownItem className="text-danger-foreground hover:!bg-danger hover:!text-danger-foreground">
 											<TrashIcon className="size-4" />
 											Delete
 										</DropdownItem>
@@ -182,7 +182,7 @@ export const AIChatInterface = () => {
 			</div>
 
 			{/* Main chat area */}
-			<div className="relative grid grid-rows-[1fr,auto] overflow-hidden">
+			<div className="relative grid grid-rows-[1fr,auto] overflow-hidden bg-background">
 				<ScrollArea className="h-full">
 					<div className="mt-8 flex flex-col gap-6 p-6 md:mt-0">
 						{messages.map((message) => (
@@ -229,7 +229,7 @@ export const AIChatInterface = () => {
 				<div className="relative border-t p-4">
 					<form
 						onSubmit={handleSubmit}
-						className="flex flex-col gap-2 overflow-hidden rounded-md border bg-secondary p-2"
+						className="flex flex-col gap-2 overflow-hidden rounded-md border bg-card p-2"
 					>
 						<Textarea
 							placeholder="Type your message..."
@@ -245,11 +245,11 @@ export const AIChatInterface = () => {
 							}}
 						/>
 						<div className="flex gap-1">
-							<Button type="button" variant="ghost" size="icon-sm">
-								<PaperclipIcon className="size-4" />
+							<Button type="button" variant="ghost" size="icon">
+								<PaperclipIcon />
 							</Button>
-							<Button type="button" variant="ghost" size="icon-sm">
-								<GlobeIcon className="size-4" />
+							<Button type="button" variant="ghost" size="icon">
+								<GlobeIcon />
 							</Button>
 						</div>
 					</form>

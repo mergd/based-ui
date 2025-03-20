@@ -29,7 +29,7 @@ export const CardsGrid = () => {
 						<ChatCard />
 					</div>
 				</div>
-				<div className="order-1 lg:order-2">
+				<div className="order-1 overflow-hidden lg:order-2">
 					<TableCard />
 				</div>
 			</div>

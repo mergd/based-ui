@@ -28,9 +28,9 @@ export const DocsSidebarNavItems = ({
 					href={item.href}
 					onClick={onNavItemClick}
 					className={cn(
-						"-mx-2 flex w-full items-center gap-2 rounded-md border px-2 py-1 transition-colors hover:text-foreground md:mx-0",
+						"-ml-2 flex w-full items-center justify-between gap-2 rounded-md border px-2 py-1.5 transition-colors hover:text-foreground",
 						pathname === item.href
-							? "bg-secondary/50 text-foreground"
+							? "bg-secondary/50 pl-2 text-foreground"
 							: "border-transparent text-muted-foreground"
 					)}
 					target={item.external ? "_blank" : ""}
@@ -47,7 +47,7 @@ export const DocsSidebarNavItems = ({
 				<span
 					key={index}
 					className={cn(
-						"-mx-2 flex w-full cursor-not-allowed items-center gap-2 px-2 py-1 text-muted-foreground opacity-60 md:mx-0"
+						"-ml-2 flex w-full cursor-not-allowed items-center justify-between gap-2 border border-transparent px-2 py-1.5 text-muted-foreground opacity-60"
 					)}
 				>
 					{item.title}

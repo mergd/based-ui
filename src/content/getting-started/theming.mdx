@@ -36,37 +36,7 @@ The theme system is built with semantic color tokens that represent specific use
 
 - `chart-1` through `chart-5`: Predefined colors for data visualizations
 
-## Color Format Implementation
-
-### Why Hex in CSS Variables?
-
-In `globals.css`, colors are defined in hexadecimal format for several reasons:
-
-1. **Browser Compatibility**: Hex colors have universal browser support
-2. **Human Readability**: Hex values are widely understood and easier to read
-3. **Tool Integration**: Most design tools export colors in hex format
-
-```css title="globals.css"
-:root {
-	--background: #fafafa;
-	--foreground: #060606;
-	/* ... other colors ... */
-}
-```
-
-### OKLCH Transformation
-
-In `tailwind.config.js`, these hex colors are transformed into OKLCH color space:
-
-```js title="tailwind.config.js"
-colors: {
-  background: "oklch(from var(--background) l c h / <alpha-value>)",
-  foreground: "oklch(from var(--foreground) l c h / <alpha-value>)",
-  // ... other colors ...
-}
-```
-
-This transformation provides several benefits:
+## Why OKLCH?
 
 1. **Wider Color Gamut**: OKLCH can represent a broader range of colors
 2. **Better Color Interpolation**: Smoother transitions and animations
@@ -85,14 +55,14 @@ To add new colors to your theme:
 ```css title="globals.css"
 :root {
 	/* Existing colors */
-	--custom-color: #7c3aed;
-	--custom-color-foreground: #ffffff;
+	--custom-color: oklch(0.627 0.265 303.9);
+	--custom-color-foreground: oklch(0.977 0.014 308.299);
 }
 
 .dark {
 	/* Existing dark mode colors */
-	--custom-color: #9f67ff;
-	--custom-color-foreground: #ffffff;
+	--custom-color: oklch(0.627 0.265 303.9);
+	--custom-color-foreground: oklch(0.977 0.014 308.299);
 }
 ```
 

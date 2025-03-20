@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation"
 import { EqualIcon } from "lucide-react"
 
 import { Icons } from "@/components/icons"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
 	Drawer,
@@ -14,6 +13,7 @@ import {
 	DrawerPortal,
 	DrawerTrigger,
 } from "@/components/ui/drawer"
+import { Separator } from "@/components/ui/separator"
 
 import { navConfig } from "@/config/nav"
 
@@ -25,12 +25,12 @@ export function MobileNav() {
 	const [open, setOpen] = React.useState(false)
 
 	return (
-		<div className="flex items-center gap-2">
+		<div className="flex items-center gap-2 md:hidden">
 			<Drawer open={open} onOpenChange={setOpen}>
 				<DrawerTrigger
 					render={(props) => (
 						<Button
-							className="md:hidden"
+							className="[&>svg]:size-6"
 							variant="ghost"
 							size="icon"
 							{...props}
@@ -40,7 +40,7 @@ export function MobileNav() {
 					)}
 				/>
 				<DrawerPortal>
-					<DrawerContent className="mx-auto max-h-[85svh]">
+					<DrawerContent className="mx-auto max-h-[85svh] pl-2">
 						<div className="overflow-auto p-6 text-sm">
 							<div className="space-y-0.5">
 								{navConfig.mainNav.map((item) => (
@@ -71,8 +71,10 @@ export function MobileNav() {
 					</DrawerContent>
 				</DrawerPortal>
 			</Drawer>
-			<Link href="/" className="flex items-center md:hidden">
-				<Icons.logo className="h-4" />
+			<Separator orientation="vertical" className="mx-2 my-auto h-6" />
+			<Link href="/" className="ml-2 flex items-center">
+				<Icons.logo className="size-3" />
+				<span className="ml-0.5 font-mono text-lg font-black">ui</span>
 			</Link>
 		</div>
 	)
@@ -92,9 +94,9 @@ function MobileNavItem({
 			href={item.href}
 			onClick={onNavItemClick}
 			className={cn(
-				"-mx-2 flex w-full items-center gap-2 rounded-md border px-2 py-1 transition-colors hover:text-foreground md:mx-0",
+				"-ml-2 flex w-full items-center justify-between gap-2 rounded-md border px-2 py-1.5 transition-colors hover:text-foreground",
 				pathname === item.href
-					? "bg-secondary/50 text-foreground"
+					? "bg-secondary/50 pl-2 text-foreground"
 					: "border-transparent text-muted-foreground"
 			)}
 			target={item.external ? "_blank" : ""}
@@ -102,25 +104,22 @@ function MobileNavItem({
 		>
 			{item.title}
 			{item.label && (
-				<Badge className="rounded-md px-2 py-0.5" variant="info">
+				<span className="rounded bg-info px-1.5 py-0.5 text-xs font-medium text-info-foreground">
 					{item.label}
-				</Badge>
+				</span>
 			)}
 		</Link>
 	) : (
 		<span
 			className={cn(
-				"-mx-2 flex w-full cursor-not-allowed items-center gap-2 px-2 py-1 text-muted-foreground opacity-60 md:mx-0"
+				"-ml-2 flex w-full cursor-not-allowed items-center justify-between gap-2 border border-transparent px-2 py-1.5 text-muted-foreground opacity-60"
 			)}
 		>
 			{item.title}
 			{item.label && (
-				<Badge
-					className="rounded-md px-2 py-0.5"
-					variant={item.disabled ? "secondary" : "info"}
-				>
+				<span className="rounded bg-info px-1.5 py-0.5 text-xs font-medium text-info-foreground">
 					{item.label}
-				</Badge>
+				</span>
 			)}
 		</span>
 	)

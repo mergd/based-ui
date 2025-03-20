@@ -16,10 +16,8 @@ export const navConfig: NavConfig = {
 			href: "/docs/components",
 		},
 		{
-			title: "Blocks",
-			href: "/docs/blocks",
-			disabled: true,
-			label: "Coming Soon",
+			title: "Themes",
+			href: "/themes",
 		},
 	],
 	sidebarNav: [

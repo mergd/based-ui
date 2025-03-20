@@ -361,7 +361,7 @@ export const MailInterface = () => {
 				</Button>
 			</div>
 
-			<div className="flex h-full flex-col overflow-auto md:border-r">
+			<div className="flex h-full flex-col overflow-auto bg-background md:border-r">
 				<div className="flex h-14 shrink-0 items-center justify-between border-b px-3">
 					<div className="ml-10 flex gap-1 lg:ml-0">
 						<h2 className="font-semibold">Inbox</h2>
@@ -503,12 +503,14 @@ export const MailInterface = () => {
 					</div>
 				</ScrollArea>
 
-				<footer className="flex flex-col border-t bg-secondary/50 p-4">
+				<footer className="flex flex-col border-t bg-background p-4">
 					<Textarea
 						placeholder="Type your message..."
 						className="min-h-20 resize-none"
 					/>
-					<Button className="mt-2 w-fit self-end">Send</Button>
+					<Button className="mt-2 w-fit self-end" variant="ghost">
+						Send
+					</Button>
 				</footer>
 			</div>
 

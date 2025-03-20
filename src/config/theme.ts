@@ -4,6 +4,7 @@ export type ThemeSettings = {
 	shade: Shade
 	primaryColor: PrimaryColor
 	radius: number
+	flat: boolean
 }
 
 export type ShadeOption = {
@@ -23,12 +24,12 @@ export type RadiusOption = {
 
 export const shadeOptions: ShadeOption[] = [
 	{
-		name: "Neutral",
-		value: "neutral",
-	},
-	{
 		name: "Zinc",
 		value: "zinc",
+	},
+	{
+		name: "Neutral",
+		value: "neutral",
 	},
 	{
 		name: "Slate",
@@ -45,6 +46,10 @@ export const shadeOptions: ShadeOption[] = [
 ]
 
 export const primaryColorOptions: PrimaryColorOption[] = [
+	{
+		name: "Neutral",
+		value: "neutral",
+	},
 	{
 		name: "Red",
 		value: "red",

@@ -11,9 +11,10 @@ import { generateTheme } from "@/lib/generate-theme"
 
 const ThemesPage = () => {
 	const [theme, setTheme] = useState<ThemeSettings>({
-		shade: "neutral",
-		primaryColor: "default",
+		shade: "zinc",
+		primaryColor: "neutral",
 		radius: 0.5,
+		flat: false,
 	})
 
 	return (
@@ -29,7 +30,13 @@ const ThemesPage = () => {
 				<CardsGrid />
 				<Suspense fallback={<div>Loading...</div>}>
 					<style>
-						{generateTheme(theme.shade, theme.primaryColor, theme.radius, true)}
+						{generateTheme(
+							theme.shade,
+							theme.primaryColor,
+							theme.radius,
+							theme.flat,
+							true
+						)}
 					</style>
 				</Suspense>
 			</div>

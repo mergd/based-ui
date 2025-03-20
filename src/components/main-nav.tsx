@@ -4,7 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 import { Icons } from "@/components/icons"
-import { Badge } from "@/components/ui/badge"
+import { Separator } from "@/components/ui/separator"
 
 import { cn } from "@/lib/utils"
 
@@ -13,17 +13,19 @@ export function MainNav() {
 
 	return (
 		<div className="mr-4 hidden md:flex">
-			<Link href="/" className="mr-6 flex items-center">
-				<Icons.logo className="h-4" />
+			<Link href="/" className="flex items-center">
+				<Icons.logo className="size-3" />
+				<span className="ml-0.5 font-mono text-lg font-black">ui</span>
 			</Link>
+			<Separator orientation="vertical" className="mx-4 my-auto h-6" />
 			<nav className="flex items-center gap-6 text-sm">
 				<Link
 					href="/docs"
 					className={cn(
-						"transition-opacity hover:opacity-100",
+						"transition-colors hover:text-foreground",
 						pathname.startsWith("/docs/getting-started")
-							? "text-foreground opacity-100"
-							: "opacity-80"
+							? "font-medium text-foreground"
+							: "text-muted-foreground"
 					)}
 				>
 					Docs
@@ -31,10 +33,10 @@ export function MainNav() {
 				<Link
 					href="/docs/components"
 					className={cn(
-						"transition-opacity hover:opacity-100",
+						"transition-colors hover:text-foreground",
 						pathname?.startsWith("/docs/components")
-							? "text-foreground opacity-100"
-							: "opacity-80"
+							? "font-medium text-foreground"
+							: "text-muted-foreground"
 					)}
 				>
 					Components
@@ -42,22 +44,14 @@ export function MainNav() {
 				<Link
 					href="/themes"
 					className={cn(
-						"transition-opacity hover:opacity-100",
-						pathname?.startsWith("/docs/themes")
-							? "text-foreground opacity-100"
-							: "opacity-80"
+						"transition-colors hover:text-foreground",
+						pathname?.startsWith("/themes")
+							? "font-medium text-foreground"
+							: "text-muted-foreground"
 					)}
 				>
 					Themes
 				</Link>
-				<span
-					className={cn(
-						"flex items-center gap-2 text-foreground/80 opacity-50"
-					)}
-				>
-					Blocks
-					<Badge variant="outline">Coming Soon</Badge>
-				</span>
 			</nav>
 		</div>
 	)

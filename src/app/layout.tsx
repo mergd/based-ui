@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Geist_Mono, Inter } from "next/font/google"
 
 import "./globals.css"
 import "./syntax.css"
@@ -15,10 +15,10 @@ import { siteConfig } from "@/config/site"
 
 import { cn } from "@/lib/utils"
 
-const geist = Geist({
+const inter = Inter({
 	subsets: ["latin"],
 	display: "swap",
-	variable: "--font-geist",
+	variable: "--font-inter",
 })
 
 const geistMono = Geist_Mono({
@@ -79,7 +79,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => (
 		</head>
 		<body
 			className={cn(
-				`${geist.variable} ${geistMono.variable}`,
+				`${inter.variable} ${geistMono.variable}`,
 				"font-sans antialiased"
 			)}
 		>

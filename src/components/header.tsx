@@ -11,18 +11,28 @@ import { Button } from "@/components/ui/button"
 
 export const Header = () => {
 	return (
-		<header className="sticky top-0 z-50 w-full border-b bg-background backdrop-blur supports-[backdrop-filter]:bg-background/60">
-			<div className="container mx-auto flex h-14 items-center px-4">
+		<header className="sticky top-0 z-50 border-b bg-background backdrop-blur supports-[backdrop-filter]:bg-background/80 md:px-2">
+			<div className="container flex h-14 items-center">
 				<MainNav />
 				<MobileNav />
 				<div className="flex-1" />
 				<div className="flex items-center gap-1">
 					<Link
+						href="https://x.com/borabalogluu"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<Button variant="outline" size="icon">
+							<Icons.twitter />
+							<span className="sr-only">X</span>
+						</Button>
+					</Link>
+					<Link
 						href="https://github.com/borabaloglu/9ui"
 						target="_blank"
 						rel="noreferrer"
 					>
-						<Button variant="ghost" size="icon">
+						<Button variant="outline" size="icon">
 							<Icons.gitHub />
 							<span className="sr-only">GitHub</span>
 						</Button>

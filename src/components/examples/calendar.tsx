@@ -5,7 +5,7 @@ import dayjs from "dayjs"
 import { CalendarIcon, ClockIcon, GlobeIcon, UserPlusIcon } from "lucide-react"
 
 import { Icons } from "@/components/icons"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
@@ -59,11 +59,10 @@ export const CalendarInterface = () => {
 
 	const timeSlots = useMemo(() => generateTimeSlots(), [])
 	return (
-		<Card className="relative flex h-[600px] flex-col overflow-y-auto md:h-[800px] md:overflow-hidden">
+		<Card className="relative flex h-[600px] flex-col overflow-y-auto bg-background md:h-[800px] md:overflow-hidden">
 			<div className="grid h-full md:grid-cols-3 lg:grid-cols-[300px_1fr_1fr] xl:grid-cols-[300px_1fr_400px]">
 				<div className="flex flex-col gap-4 border-r p-4">
-					<Avatar size="sm">
-						<AvatarImage src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&auto=format&fit=crop" />
+					<Avatar>
 						<AvatarFallback>ED</AvatarFallback>
 					</Avatar>
 					<div className="flex flex-col gap-4">
@@ -211,7 +210,7 @@ export const CalendarInterface = () => {
 							<h2 className="font-medium">
 								{selectedDate ? formatDate(selectedDate) : "Select a date"}
 							</h2>
-							<div className="flex items-center rounded-md border bg-secondary/30 p-1">
+							<div className="flex items-center rounded-md border bg-card p-1">
 								<Button
 									variant="ghost"
 									size="sm"
@@ -251,7 +250,7 @@ export const CalendarInterface = () => {
 											render={(props) => (
 												<Button
 													{...props}
-													className="bg-secondary/30 hover:border-primary hover:bg-secondary/30"
+													className="bg-secondary hover:border-primary hover:bg-muted"
 													variant="outline"
 												>
 													{display}

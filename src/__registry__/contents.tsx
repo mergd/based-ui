@@ -564,6 +564,19 @@ export const contentRegistry: ContentRegistry = {
 			{ label: "Toggle", path: "/docs/components/toggle" },
 		],
 	},
+	"components/toolbar": {
+		type: "file",
+		path: "components/toolbar.mdx",
+		meta: {
+			title: "Toolbar",
+			description: "Displays a toolbar for user interaction.",
+		},
+		urlPath: "components/toolbar",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Toolbar", path: "/docs/components/toolbar" },
+		],
+	},
 	"components/tooltip": {
 		type: "file",
 		path: "components/tooltip.mdx",

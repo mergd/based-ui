@@ -118,7 +118,6 @@ export const navConfig: NavConfig = {
 				{
 					title: "Combobox",
 					href: "/docs/components/combobox",
-					label: "New",
 				},
 				{
 					title: "Command",
@@ -131,7 +130,6 @@ export const navConfig: NavConfig = {
 				{
 					title: "Date Picker",
 					href: "/docs/components/date-picker",
-					label: "New",
 				},
 				{
 					title: "Dialog",
@@ -232,6 +230,11 @@ export const navConfig: NavConfig = {
 				{
 					title: "Toggle Group",
 					href: "/docs/components/toggle-group",
+				},
+				{
+					title: "Toolbar",
+					href: "/docs/components/toolbar",
+					label: "New",
 				},
 				{
 					title: "Tooltip",

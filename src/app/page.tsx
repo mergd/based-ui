@@ -35,19 +35,28 @@ const Home = () => (
 					</p>
 				</div>
 				<div className="mt-6 flex items-center gap-4">
-					<Link href="/docs">
-						<Button className="gap-2" size="sm">
-							<BookOpenIcon size={16} />
-							Get Started
-						</Button>
-					</Link>
+					<Button
+						className="gap-2"
+						size="sm"
+						render={
+							<Link href="/docs">
+								<BookOpenIcon size={16} />
+								Get Started
+							</Link>
+						}
+					/>
 
-					<Link href="/docs/components">
-						<Button variant="outline" size="sm" className="group gap-2">
-							Browse Components
-							<ArrowRightIcon className="size-4 -translate-x-0.5 transition-transform duration-300 group-hover:translate-x-0.5" />
-						</Button>
-					</Link>
+					<Button
+						variant="outline"
+						size="sm"
+						className="group gap-2"
+						render={
+							<Link href="/docs/components">
+								Browse Components
+								<ArrowRightIcon className="size-4 -translate-x-0.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+							</Link>
+						}
+					/>
 				</div>
 			</div>
 			<Separator />

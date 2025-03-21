@@ -17,26 +17,35 @@ export const Header = () => {
 				<MobileNav />
 				<div className="flex-1" />
 				<div className="flex items-center gap-1">
-					<Link
-						href="https://x.com/borabalogluu"
-						target="_blank"
-						rel="noreferrer"
-					>
-						<Button variant="outline" size="icon">
-							<Icons.twitter />
-							<span className="sr-only">X</span>
-						</Button>
-					</Link>
-					<Link
-						href="https://github.com/borabaloglu/9ui"
-						target="_blank"
-						rel="noreferrer"
-					>
-						<Button variant="outline" size="icon">
-							<Icons.gitHub />
-							<span className="sr-only">GitHub</span>
-						</Button>
-					</Link>
+					<Button
+						variant="outline"
+						size="icon"
+						render={
+							<Link
+								href="https://x.com/borabalogluu"
+								target="_blank"
+								rel="noreferrer"
+							>
+								<Icons.twitter />
+								<span className="sr-only">X</span>
+							</Link>
+						}
+					/>
+
+					<Button
+						variant="outline"
+						size="icon"
+						render={
+							<Link
+								href="https://github.com/borabaloglu/9ui"
+								target="_blank"
+								rel="noreferrer"
+							>
+								<Icons.gitHub />
+								<span className="sr-only">GitHub</span>
+							</Link>
+						}
+					/>
 					<ThemeToggle />
 				</div>
 			</div>

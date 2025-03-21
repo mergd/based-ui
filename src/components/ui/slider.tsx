@@ -3,17 +3,17 @@ import { Slider as BaseSlider } from "@base-ui-components/react/slider"
 
 import { cn } from "@/lib/utils"
 
-const Slider = React.forwardRef<
-	HTMLDivElement,
-	React.ComponentPropsWithoutRef<typeof BaseSlider.Root>
->(({ className, children, ...props }, ref) => {
+const Slider = ({
+	className,
+	children,
+	...props
+}: React.ComponentPropsWithoutRef<typeof BaseSlider.Root>) => {
 	const isRange =
 		(Array.isArray(props.defaultValue) && props.defaultValue.length > 1) ||
 		(Array.isArray(props.value) && props.value.length > 1)
 
 	return (
 		<BaseSlider.Root
-			ref={ref}
 			className={cn(
 				"relative touch-none select-none",
 				props.disabled && "pointer-events-none opacity-50",
@@ -39,7 +39,7 @@ const Slider = React.forwardRef<
 			{children}
 		</BaseSlider.Root>
 	)
-})
+}
 Slider.displayName = "Slider"
 
 const SliderValue = React.forwardRef<

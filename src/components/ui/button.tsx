@@ -1,10 +1,14 @@
+"use client"
+
 import * as React from "react"
+import { mergeProps } from "@base-ui-components/react"
+import { useRender } from "@base-ui-components/react/use-render"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-	"inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium transition-colors duration-200 outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+	"inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium transition-colors duration-200 outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:shrink-0",
 	{
 		variants: {
 			variant: {
@@ -36,16 +40,23 @@ const buttonVariants = cva(
 
 export interface ButtonProps
 	extends VariantProps<typeof buttonVariants>,
-		React.ButtonHTMLAttributes<HTMLButtonElement> {}
+		React.ButtonHTMLAttributes<HTMLButtonElement>,
+		useRender.ComponentProps<"button"> {}
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-	({ className, variant, size, ...props }, ref) => (
-		<button
-			className={cn(buttonVariants({ variant, size, className }))}
-			ref={ref}
-			{...props}
-		/>
-	)
+	({ className, variant, size, render = <button />, ...props }, ref) => {
+		const defaultProps: useRender.ElementProps<"button"> = {
+			className: cn(buttonVariants({ variant, size, className })),
+			ref: ref,
+		}
+
+		const { renderElement } = useRender({
+			render,
+			props: mergeProps<"button">(defaultProps, props),
+		})
+
+		return renderElement()
+	}
 )
 Button.displayName = "Button"
 

@@ -622,6 +622,26 @@ export const demoRegistry: DemoRegistry = {
 		category: "dropdown",
 		path: "src/components/demos/dropdown/dropdown-demo.tsx",
 	},
+	"emoji-picker-demo": {
+		source:
+			'"use client"\n\nimport { toast } from "sonner"\n\nimport {\n\tEmojiPicker,\n\tEmojiPickerContent,\n\tEmojiPickerEmpty,\n\tEmojiPickerList,\n\tEmojiPickerLoading,\n\tEmojiPickerSearch,\n} from "@/components/ui/emoji-picker"\n\nexport default function EmojiPickerDemo() {\n\treturn (\n\t\t<EmojiPicker\n\t\t\tonEmojiSelect={({ emoji, label }) => {\n\t\t\t\ttoast.custom(() => (\n\t\t\t\t\t<p className="flex items-center gap-2 text-sm">\n\t\t\t\t\t\t<span className="text-lg">{emoji}</span>\n\t\t\t\t\t\t{label}\n\t\t\t\t\t</p>\n\t\t\t\t))\n\t\t\t}}\n\t\t>\n\t\t\t<EmojiPickerSearch />\n\t\t\t<EmojiPickerContent>\n\t\t\t\t<EmojiPickerLoading />\n\t\t\t\t<EmojiPickerEmpty>No results</EmojiPickerEmpty>\n\t\t\t\t<EmojiPickerList />\n\t\t\t</EmojiPickerContent>\n\t\t</EmojiPicker>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/emoji-picker/emoji-picker-demo")
+		),
+		title: "emoji-picker-demo",
+		category: "emoji-picker",
+		path: "src/components/demos/emoji-picker/emoji-picker-demo.tsx",
+	},
+	"emoji-picker-popover": {
+		source:
+			'import * as React from "react"\nimport { toast } from "sonner"\n\nimport { Button } from "@/components/ui/button"\nimport {\n\tEmojiPicker,\n\tEmojiPickerContent,\n\tEmojiPickerEmpty,\n\tEmojiPickerList,\n\tEmojiPickerLoading,\n\tEmojiPickerSearch,\n} from "@/components/ui/emoji-picker"\nimport {\n\tPopover,\n\tPopoverContent,\n\tPopoverTrigger,\n} from "@/components/ui/popover"\n\nexport default function EmojiPickerPopoverDemo() {\n\tconst [open, setOpen] = React.useState(false)\n\tconst [emoji, setEmoji] = React.useState<string | undefined>(undefined)\n\n\treturn (\n\t\t<Popover open={open} onOpenChange={setOpen}>\n\t\t\t<PopoverTrigger\n\t\t\t\trender={(props) => (\n\t\t\t\t\t<Button {...props} variant="outline" size="icon">\n\t\t\t\t\t\t{emoji ? emoji : "👇"}\n\t\t\t\t\t</Button>\n\t\t\t\t)}\n\t\t\t/>\n\t\t\t<PopoverContent className="rounded-md p-0 outline-offset-0">\n\t\t\t\t<EmojiPicker\n\t\t\t\t\tclassName="border-none"\n\t\t\t\t\tonEmojiSelect={({ emoji, label }) => {\n\t\t\t\t\t\tsetEmoji(emoji)\n\t\t\t\t\t\ttoast.custom(() => (\n\t\t\t\t\t\t\t<p className="flex items-center gap-2 text-sm">\n\t\t\t\t\t\t\t\t<span className="text-lg">{emoji}</span>\n\t\t\t\t\t\t\t\t{label}\n\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t))\n\t\t\t\t\t}}\n\t\t\t\t>\n\t\t\t\t\t<EmojiPickerSearch />\n\t\t\t\t\t<EmojiPickerContent>\n\t\t\t\t\t\t<EmojiPickerLoading />\n\t\t\t\t\t\t<EmojiPickerEmpty>No results</EmojiPickerEmpty>\n\t\t\t\t\t\t<EmojiPickerList />\n\t\t\t\t\t</EmojiPickerContent>\n\t\t\t\t</EmojiPicker>\n\t\t\t</PopoverContent>\n\t\t</Popover>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/emoji-picker/emoji-picker-popover")
+		),
+		title: "emoji-picker-popover",
+		category: "emoji-picker",
+		path: "src/components/demos/emoji-picker/emoji-picker-popover.tsx",
+	},
 	"form-demo": {
 		source:
 			'"use client"\n\nimport { zodResolver } from "@hookform/resolvers/zod"\nimport { useForm } from "react-hook-form"\nimport { z } from "zod"\n\nimport { Button } from "@/components/ui/button"\nimport {\n\tField,\n\tFieldContent,\n\tFieldControl,\n\tFieldDescription,\n\tFieldError,\n\tFieldLabel,\n} from "@/components/ui/field"\nimport { Form } from "@/components/ui/form"\nimport { Input } from "@/components/ui/input"\n\nconst schema = z.object({\n\tdisplayName: z\n\t\t.string()\n\t\t.min(3, { message: "Please enter at least 3 characters." }),\n\temail: z.string().email({ message: "Please enter a valid email address." }),\n})\n\ntype FormValues = z.infer<typeof schema>\n\nexport default function FormDemo() {\n\tconst form = useForm<FormValues>({\n\t\tresolver: zodResolver(schema),\n\t\tdefaultValues: {\n\t\t\tdisplayName: "",\n\t\t\temail: "",\n\t\t},\n\t})\n\n\tconst onSubmit = (data: FormValues) => {\n\t\tconsole.log(data)\n\t}\n\n\treturn (\n\t\t<Form\n\t\t\tclassName="flex w-96 flex-col gap-4"\n\t\t\tform={form}\n\t\t\tonSubmit={form.handleSubmit(onSubmit)}\n\t\t>\n\t\t\t<Field\n\t\t\t\tname="displayName"\n\t\t\t\tcontrol={form.control}\n\t\t\t\trender={({ field }) => (\n\t\t\t\t\t<FieldContent>\n\t\t\t\t\t\t<FieldLabel>Display Name</FieldLabel>\n\t\t\t\t\t\t<FieldControl>\n\t\t\t\t\t\t\t<Input className="w-full" placeholder="borabalogluu" {...field} />\n\t\t\t\t\t\t</FieldControl>\n\t\t\t\t\t\t<FieldDescription>\n\t\t\t\t\t\t\tThis is the name that will be displayed to other users.\n\t\t\t\t\t\t</FieldDescription>\n\t\t\t\t\t\t<FieldError />\n\t\t\t\t\t</FieldContent>\n\t\t\t\t)}\n\t\t\t/>\n\t\t\t<Field\n\t\t\t\tname="email"\n\t\t\t\tcontrol={form.control}\n\t\t\t\trender={({ field }) => (\n\t\t\t\t\t<FieldContent>\n\t\t\t\t\t\t<FieldLabel>Email</FieldLabel>\n\t\t\t\t\t\t<FieldControl>\n\t\t\t\t\t\t\t<Input\n\t\t\t\t\t\t\t\tclassName="w-full"\n\t\t\t\t\t\t\t\tplaceholder="your@email.com"\n\t\t\t\t\t\t\t\t{...field}\n\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t</FieldControl>\n\t\t\t\t\t\t<FieldDescription>Enter your email address</FieldDescription>\n\t\t\t\t\t\t<FieldError />\n\t\t\t\t\t</FieldContent>\n\t\t\t\t)}\n\t\t\t/>\n\t\t\t<Button type="submit">Submit</Button>\n\t\t</Form>\n\t)\n}\n',

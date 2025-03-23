@@ -276,6 +276,19 @@ export const contentRegistry: ContentRegistry = {
 			{ label: "Dropdown", path: "/docs/components/dropdown" },
 		],
 	},
+	"components/emoji-picker": {
+		type: "file",
+		path: "components/emoji-picker.mdx",
+		meta: {
+			title: "Emoji Picker",
+			description: "A component that allows users to pick an emoji.",
+		},
+		urlPath: "components/emoji-picker",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Emoji Picker", path: "/docs/components/emoji-picker" },
+		],
+	},
 	"components/form": {
 		type: "file",
 		path: "components/form.mdx",

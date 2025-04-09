@@ -74,7 +74,7 @@ If you are looking for animated icons, the [`pqoqubbw/icons`](https://icons.pqoq
 
 If you're using Cursor, add this file to your project:
 
-```md {2} title="based-ui.mdc"
+```md title="based-ui.mdc"
 
 # Based UI
 This is based on base-ui-components, although it has shadcn/ui compatibility.
@@ -138,7 +138,12 @@ Some small differences between based-ui and shadcn/ui:
 Choose your package manager and run the init command:
 
 ### pnpm
+
 pnpm dlx shadcn@2.3.0 init
+
+If you don't have tailwind installed, install 3.4.15
+
+pnpm add tailwindcss@3.4.15 postcss autoprefixer
 
 Follow the prompts. Choose between a Next.js project or a Monorepo.
 

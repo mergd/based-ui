@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react"
 
 import AccordionDemo from "@/components/demos/accordion/accordion-demo"
@@ -73,7 +75,6 @@ const DemoWrapper: React.FC<{ title: string; children: React.ReactNode }> = ({
 const KitchenSinkPage = () => {
 	return (
 		<div className="container space-y-12 py-10">
-			{" "}
 			{/* Increased spacing */}
 			<div className="space-y-2">
 				<h1 className="text-4xl font-bold tracking-tight">Kitchen Sink</h1>
@@ -82,40 +83,33 @@ const KitchenSinkPage = () => {
 				</p>
 			</div>
 			<DemoWrapper title="Accordion">
-				{" "}
-				<AccordionDemo />{" "}
+				<AccordionDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Alert">
-				{" "}
-				<AlertDemo /> {/* Might need others like AlertDestructiveDemo */}{" "}
+				<AlertDemo /> {/* Might need others like AlertDestructiveDemo */}
 			</DemoWrapper>
 			<DemoWrapper title="Alert Dialog">
-				{" "}
-				<AlertDialogDemo />{" "}
+				<AlertDialogDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Aspect Ratio">
-				{" "}
-				<AspectRatioDemo />{" "}
+				<AspectRatioDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Avatar">
-				{" "}
-				<AvatarDemo />{" "}
+				<AvatarDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Badge">
-				{" "}
-				<BadgeDemo /> {/* Might need others */}{" "}
+				<BadgeDemo /> {/* Might need others */}
 			</DemoWrapper>
 			<DemoWrapper title="Breadcrumbs">
-				{" "}
-				<BreadcrumbsDemo />{" "}
+				<BreadcrumbsDemo />
 			</DemoWrapper>
 			{/* --- Buttons --- */}
 			<section className="space-y-4">
 				<h2 className="text-2xl font-semibold tracking-tight">Buttons</h2>
 				<div className="flex flex-wrap items-center gap-4 rounded-lg border bg-card p-4 text-card-foreground">
-					<ButtonDemo /> <ButtonSecondary /> <ButtonDestructive />{" "}
+					<ButtonDemo /> <ButtonSecondary /> <ButtonDestructive />
 					<ButtonGhost />
-					<ButtonOutline /> <ButtonLink /> <ButtonIcon /> <ButtonLoading />{" "}
+					<ButtonOutline /> <ButtonLink /> <ButtonIcon /> <ButtonLoading />
 					<ButtonSuccess />
 				</div>
 				<div className="rounded-lg border bg-card p-4 text-card-foreground">
@@ -126,154 +120,115 @@ const KitchenSinkPage = () => {
 				</div>
 			</section>
 			<DemoWrapper title="Calendar">
-				{" "}
-				<CalendarDemo />{" "}
+				<CalendarDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Card">
-				{" "}
-				<CardDemo />{" "}
+				<CardDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Carousel">
-				{" "}
-				<CarouselDemo />{" "}
+				<CarouselDemo />
 			</DemoWrapper>
-			{/* <DemoWrapper title="Chart"> <ChartDemo /> </DemoWrapper> */}
 			<DemoWrapper title="Checkbox">
-				{" "}
-				<CheckboxDemo />{" "}
+				<CheckboxDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Collapsible">
-				{" "}
-				<CollapsibleDemo />{" "}
+				<CollapsibleDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Combobox">
-				{" "}
-				<ComboboxDemo />{" "}
+				<ComboboxDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Command">
-				{" "}
-				<CommandDemo />{" "}
+				<CommandDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Context Menu">
-				{" "}
-				<ContextMenuDemo />{" "}
+				<ContextMenuDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Date Picker">
-				{" "}
-				<DatePickerDemo />{" "}
+				<DatePickerDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Dialog">
-				{" "}
-				<DialogDemo />{" "}
+				<DialogDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Drawer">
-				{" "}
-				<DrawerDemo />{" "}
+				<DrawerDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Dropdown Menu">
-				{" "}
-				<DropdownDemo />{" "}
+				<DropdownDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Emoji Picker">
-				{" "}
-				<EmojiPickerDemo />{" "}
+				<EmojiPickerDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Form">
-				{" "}
-				<FormDemo />{" "}
+				<FormDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Input">
-				{" "}
-				<InputDemo />{" "}
+				<InputDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Input OTP">
-				{" "}
-				<InputOTPDemo />{" "}
+				<InputOTPDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Kbd">
-				{" "}
-				<KbdDemo />{" "}
+				<KbdDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Menubar">
-				{" "}
-				<MenubarDemo />{" "}
+				<MenubarDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Popover">
-				{" "}
-				<PopoverDemo />{" "}
+				<PopoverDemo />
 			</DemoWrapper>
-			{/* <DemoWrapper title="Preview Card"> <PreviewCardDemo /> </DemoWrapper> */}
 			<DemoWrapper title="Progress">
-				{" "}
-				<ProgressDemo />{" "}
+				<ProgressDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Radio Group">
-				{" "}
-				<RadioGroupDemo />{" "}
+				<RadioGroupDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Scroll Area">
-				{" "}
-				<ScrollAreaDemo />{" "}
+				<ScrollAreaDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Select">
-				{" "}
-				<SelectDemo />{" "}
+				<SelectDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Separator">
-				{" "}
-				<SeparatorDemo />{" "}
+				<SeparatorDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Sheet">
-				{" "}
-				<SheetDemo />{" "}
+				<SheetDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Skeleton">
-				{" "}
-				<SkeletonDemo />{" "}
+				<SkeletonDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Slider">
-				{" "}
-				<SliderDemo />{" "}
+				<SliderDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Switch">
-				{" "}
-				<SwitchDemo />{" "}
+				<SwitchDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Table">
-				{" "}
-				<TableDemo />{" "}
+				<TableDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Tabs">
-				{" "}
-				<TabsDemo />{" "}
+				<TabsDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Textarea">
-				{" "}
-				<TextareaDemo />{" "}
+				<TextareaDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Theme Toggle">
-				{" "}
-				<ThemeToggle />{" "}
+				<ThemeToggle />
 			</DemoWrapper>
 			<DemoWrapper title="Toast">
-				{" "}
-				<ToastDemo />{" "}
+				<ToastDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Toggle">
-				{" "}
-				<ToggleDemo />{" "}
+				<ToggleDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Toggle Group">
-				{" "}
-				<ToggleGroupDemo />{" "}
+				<ToggleGroupDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Toolbar">
-				{" "}
-				<ToolbarDemo />{" "}
+				<ToolbarDemo />
 			</DemoWrapper>
 			<DemoWrapper title="Tooltip">
-				{" "}
-				<TooltipDemo />{" "}
+				<TooltipDemo />
 			</DemoWrapper>
 		</div>
 	)

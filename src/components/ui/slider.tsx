@@ -21,16 +21,16 @@ const Slider = ({
 			)}
 			{...props}
 		>
-			<BaseSlider.Control className="flex w-56 items-center">
-				<BaseSlider.Track className="h-1 w-full rounded-full bg-muted">
-					<BaseSlider.Indicator className="relative rounded-full bg-primary" />
+			<BaseSlider.Control className="flex w-56 touch-none select-none items-center py-3">
+				<BaseSlider.Track className="relative h-1 w-full select-none rounded bg-secondary shadow-[inset_0_0_0_1px] shadow-border">
+					<BaseSlider.Indicator className="select-none rounded bg-primary/80" />
 					<BaseSlider.Thumb
-						className="size-4 rounded-full bg-primary shadow-sm dark:shadow-none"
+						className="size-4 select-none rounded-full bg-primary outline outline-1 outline-border focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring"
 						inputId="1"
 					/>
 					{isRange && (
 						<BaseSlider.Thumb
-							className="size-4 rounded-full bg-primary shadow-sm dark:shadow-none"
+							className="size-4 select-none rounded-full bg-primary outline outline-1 outline-border focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring"
 							inputId="2"
 						/>
 					)}

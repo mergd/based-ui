@@ -199,6 +199,19 @@
 			]
 		},
 		{
+			"name": "data-button",
+			"type": "registry:ui",
+			"dependencies": ["framer-motion", "lucide-react"],
+			"registryDependencies": ["https://9ui.dev/r/button.json"],
+			"files": [
+				{
+					"path": "src/components/ui/data-button.tsx",
+					"type": "registry:ui",
+					"target": ""
+				}
+			]
+		},
+		{
 			"name": "dialog",
 			"type": "registry:ui",
 			"dependencies": [],

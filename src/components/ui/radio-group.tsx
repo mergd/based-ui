@@ -10,7 +10,7 @@ const RadioGroup = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseRadioGroup
 		ref={ref}
-		className={cn("flex flex-col gap-2", className)}
+		className={cn("flex flex-col items-start gap-1", className)}
 		{...props}
 	/>
 ))
@@ -23,12 +23,16 @@ const RadioGroupItem = React.forwardRef<
 	<Radio.Root
 		ref={ref}
 		className={cn(
-			"peer flex size-4 items-center justify-center rounded-full border focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[checked]:border-primary",
+			"peer flex size-5 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[unchecked]:border-[1.5px] data-[unchecked]:border-muted-foreground/60 data-[checked]:bg-primary data-[checked]:text-primary-foreground",
 			className
 		)}
 		{...props}
 	>
-		<Radio.Indicator className="flex before:size-2.5 before:rounded-full before:bg-primary data-[unchecked]:hidden" />
+		<Radio.Indicator
+			className={cn(
+				"flex items-center justify-center before:size-2 before:rounded-full before:bg-current data-[unchecked]:hidden"
+			)}
+		/>
 	</Radio.Root>
 ))
 RadioGroupItem.displayName = "RadioGroupItem"

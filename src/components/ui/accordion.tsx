@@ -26,13 +26,14 @@ const AccordionTrigger = React.forwardRef<
 		<BaseAccordion.Trigger
 			ref={ref}
 			className={cn(
-				"flex w-full items-center justify-between py-2.5 font-semibold hover:underline [&>svg]:transition-transform [&>svg]:duration-200 [&[data-panel-open]>svg]:rotate-180",
+				"group flex w-full cursor-pointer items-baseline justify-between gap-4 py-2 text-left font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-800",
 				className
 			)}
 			{...props}
 		>
 			{children}
-			<ChevronDownIcon className="size-4" />
+			{/* Using PlusIcon from the example */}
+			<ChevronDownIcon className="mr-2 size-4 shrink-0 transition-all ease-out group-data-[panel-open]:rotate-90 group-data-[panel-open]:scale-110" />
 		</BaseAccordion.Trigger>
 	</BaseAccordion.Header>
 ))
@@ -45,16 +46,18 @@ const AccordionContent = ({
 }: React.HTMLAttributes<HTMLDivElement>) => (
 	<BaseAccordion.Panel
 		className={cn(
-			"h-[var(--accordion-panel-height)] overflow-hidden text-sm text-foreground transition-[height] data-[ending-style]:h-0 data-[starting-style]:h-0",
+			"h-[var(--accordion-panel-height)] overflow-hidden text-sm text-foreground/80 transition-[height] ease-out data-[ending-style]:h-0 data-[starting-style]:h-0", // Using text-foreground/80 to approximate text-gray-600, adjusted text size to sm (keeping original), added ease-out
 			className
 		)}
 		{...props}
 	>
-		<div className="pb-2.5" data-accordion-content-wrapper="">
+		<div className="pb-3 pt-1" data-accordion-content-wrapper="">
+			{" "}
+			{/* Adjusted padding based on example (pb-3), added pt-1 for spacing */}
 			{children}
 		</div>
 	</BaseAccordion.Panel>
 )
 AccordionContent.displayName = "AccordionContent"
 
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
+export { Accordion, AccordionContent, AccordionItem, AccordionTrigger }

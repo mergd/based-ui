@@ -206,6 +206,16 @@ export const demoRegistry: DemoRegistry = {
 		category: "breadcrumbs",
 		path: "src/components/demos/breadcrumbs/breadcrumbs-demo.tsx",
 	},
+	"button-data-demo": {
+		source:
+			'"use client"\n\nimport * as React from "react"\nimport { Mail } from "lucide-react"\n\nimport { DataButton } from "@/components/ui/data-button"\n\nexport default function ButtonDataDemo() {\n\tconst [isLoading, setIsLoading] = React.useState(false)\n\tconst [isSuccess, setIsSuccess] = React.useState(false)\n\n\tconst handleClick = async () => {\n\t\tsetIsLoading(true)\n\t\t// Simulate an async operation\n\t\tawait new Promise((resolve) => setTimeout(resolve, 2000))\n\t\tsetIsLoading(false)\n\t\tsetIsSuccess(true)\n\t\t// Reset after a delay\n\t\tawait new Promise((resolve) => setTimeout(resolve, 1500))\n\t\tsetIsSuccess(false)\n\t}\n\n\treturn (\n\t\t<div className="flex flex-col items-center gap-4">\n\t\t\t<DataButton\n\t\t\t\tonClick={handleClick}\n\t\t\t\tisLoading={isLoading}\n\t\t\t\tisSuccess={isSuccess}\n\t\t\t>\n\t\t\t\t<Mail className="mr-2 size-4" />\n\t\t\t\t{isLoading ? "Sending..." : isSuccess ? "Sent!" : "Send Email"}\n\t\t\t</DataButton>\n\n\t\t\t<p className="text-sm text-muted-foreground">\n\t\t\t\tClick the button to see the loading and success states.\n\t\t\t</p>\n\t\t</div>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/button/button-data-demo")
+		),
+		title: "button-data-demo",
+		category: "button",
+		path: "src/components/demos/button/button-data-demo.tsx",
+	},
 	"button-demo": {
 		source:
 			'import { Button } from "@/components/ui/button"\n\nexport default function ButtonDemo() {\n\treturn <Button>Button</Button>\n}\n',
@@ -295,6 +305,16 @@ export const demoRegistry: DemoRegistry = {
 		title: "button-sizes",
 		category: "button",
 		path: "src/components/demos/button/button-sizes.tsx",
+	},
+	"button-success": {
+		source:
+			'import { Check } from "lucide-react"\n\nimport { Button } from "@/components/ui/button"\n\nexport default function ButtonSuccess() {\n\treturn (\n\t\t<Button variant="success">\n\t\t\t<Check className="mr-2 size-4" />\n\t\t\tSuccess\n\t\t</Button>\n\t)\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/button/button-success")
+		),
+		title: "button-success",
+		category: "button",
+		path: "src/components/demos/button/button-success.tsx",
 	},
 	"calendar-demo": {
 		source:

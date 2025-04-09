@@ -8,7 +8,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-	"inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium transition-colors duration-200 outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:shrink-0",
+	"inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium transition-colors duration-200 outline-none select-none focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-blue-800 disabled:pointer-events-none disabled:opacity-70 [&_svg]:shrink-0",
 	{
 		variants: {
 			variant: {
@@ -21,19 +21,20 @@ const buttonVariants = cva(
 				link: "text-foreground hover:underline",
 				destructive:
 					"bg-destructive text-destructive-foreground hover:bg-destructive/80",
+				success: "bg-success text-success-foreground hover:bg-success/80",
 			},
 			size: {
-				sm: "h-8 px-3 text-xs",
-				md: "h-9 px-4 py-2 text-sm",
-				lg: "h-10 px-5 py-3",
-				"icon-sm": "size-8 [&>svg]:size-3",
-				icon: "size-9 [&>svg]:size-4",
-				"icon-lg": "size-10 [&>svg]:size-5",
+				sm: "h-8 px-2.5 text-sm",
+				md: "h-9 px-3 text-base",
+				lg: "h-10 px-3.5 text-base",
+				"icon-sm": "size-8 text-sm [&>svg]:size-4",
+				icon: "size-9 text-base [&>svg]:size-4",
+				"icon-lg": "size-10 text-base [&>svg]:size-5",
 			},
 		},
 		defaultVariants: {
 			variant: "default",
-			size: "md",
+			size: "lg",
 		},
 	}
 )
@@ -44,15 +45,27 @@ export interface ButtonProps
 		useRender.ComponentProps<"button"> {}
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-	({ className, variant, size, render = <button />, ...props }, ref) => {
+	(
+		{
+			className,
+			variant,
+			size,
+			render = <button />,
+			children,
+			disabled,
+			...props
+		},
+		ref
+	) => {
 		const defaultProps: useRender.ElementProps<"button"> = {
 			className: cn(buttonVariants({ variant, size, className })),
 			ref: ref,
+			disabled: disabled,
 		}
 
 		const { renderElement } = useRender({
 			render,
-			props: mergeProps<"button">(defaultProps, props),
+			props: mergeProps<"button">(defaultProps, props, { children }),
 		})
 
 		return renderElement()

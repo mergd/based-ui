@@ -16,7 +16,7 @@ const AlertDialogBackdrop = React.forwardRef<
 	<BaseAlertDialog.Backdrop
 		ref={ref}
 		className={cn(
-			"fixed inset-0 h-dvh bg-black/70 transition-all [&[data-ending-style]]:opacity-0 [&[data-starting-style]]:opacity-0",
+			"fixed inset-0 bg-black/20 transition-all duration-150 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:bg-black/70",
 			className
 		)}
 		{...props}
@@ -33,7 +33,7 @@ const AlertDialogContent = React.forwardRef<
 		<BaseAlertDialog.Popup
 			ref={ref}
 			className={cn(
-				"fixed left-1/2 top-1/2 z-50 grid w-full max-w-[90%] -translate-x-1/2 -translate-y-1/2 scale-[calc(1-0.1*var(--nested-dialogs))] rounded-md border bg-popover p-4 text-popover-foreground shadow-sm duration-200 data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 sm:max-w-96",
+				"fixed left-1/2 top-1/2 z-50 w-96 max-w-[calc(100vw-3rem)] -translate-x-1/2 -translate-y-1/2 rounded-lg border bg-card p-4 text-card-foreground outline-none transition-all duration-150 data-[ending-style]:scale-90 data-[starting-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:border-border",
 				className
 			)}
 			{...props}
@@ -56,13 +56,7 @@ const AlertDialogFooter = ({
 	className,
 	...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
-	<div
-		className={cn(
-			"flex flex-col-reverse gap-2 sm:flex-row sm:justify-end",
-			className
-		)}
-		{...props}
-	/>
+	<div className={cn("flex justify-end gap-4", className)} {...props} />
 )
 AlertDialogFooter.displayName = "AlertDialogFooter"
 
@@ -72,7 +66,10 @@ const AlertDialogTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseAlertDialog.Title
 		ref={ref}
-		className={cn("text-lg font-semibold text-foreground", className)}
+		className={cn(
+			"-mt-1.5 mb-1 text-lg font-medium text-foreground",
+			className
+		)}
 		{...props}
 	/>
 ))
@@ -84,7 +81,7 @@ const AlertDialogDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<BaseAlertDialog.Description
 		ref={ref}
-		className={cn("text-sm text-muted-foreground", className)}
+		className={cn("mb-6 text-base text-muted-foreground", className)}
 		{...props}
 	/>
 ))
@@ -92,11 +89,11 @@ AlertDialogDescription.displayName = "AlertDialogDescription"
 
 export {
 	AlertDialog,
-	AlertDialogContent,
-	AlertDialogTrigger,
 	AlertDialogClose,
-	AlertDialogHeader,
-	AlertDialogFooter,
-	AlertDialogTitle,
+	AlertDialogContent,
 	AlertDialogDescription,
+	AlertDialogFooter,
+	AlertDialogHeader,
+	AlertDialogTitle,
+	AlertDialogTrigger,
 }

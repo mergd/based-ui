@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Select as BaseSelect } from "@base-ui-components/react/select"
-import { CheckIcon, ChevronDownIcon } from "lucide-react"
+import { CheckIcon, ChevronsUpDownIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
@@ -19,14 +19,14 @@ const SelectTrigger = React.forwardRef<
 	<BaseSelect.Trigger
 		ref={ref}
 		className={cn(
-			"flex h-9 cursor-pointer items-center justify-between rounded-md border bg-popover px-4 py-2 text-popover-foreground focus:outline-none focus:ring-1 focus:ring-ring data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:size-4",
+			"flex h-10 min-w-36 cursor-pointer items-center justify-between gap-3 rounded-md border border-input bg-background px-3.5 py-2 pr-3 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 data-[popup-open]:bg-accent data-[popup-open]:text-accent-foreground [&>span]:line-clamp-1",
 			className
 		)}
 		{...props}
 	>
 		{children}
-		<BaseSelect.Icon>
-			<ChevronDownIcon />
+		<BaseSelect.Icon className="flex">
+			<ChevronsUpDownIcon className="size-4 opacity-50" />
 		</BaseSelect.Icon>
 	</BaseSelect.Trigger>
 ))
@@ -47,11 +47,12 @@ interface SelectContentProps
 
 const SelectContent = React.forwardRef<HTMLDivElement, SelectContentProps>(
 	({ children, className, positionerProps, ...props }, ref) => (
-		<BaseSelect.Positioner sideOffset={4} {...positionerProps} className="z-10">
+		<BaseSelect.Positioner sideOffset={8} {...positionerProps} className="z-50">
 			<BaseSelect.Popup
 				ref={ref}
 				className={cn(
-					"w-[--anchor-width] origin-[var(--transform-origin)] overflow-y-auto overscroll-contain rounded-md border bg-popover p-1.5 text-sm text-popover-foreground shadow-sm outline-none transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
+					"relative z-50 max-h-[var(--available-height)] min-w-[--anchor-width] origin-[var(--transform-origin)] overflow-y-auto rounded-md border bg-popover py-1 text-popover-foreground shadow-lg outline-none",
+					"transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0",
 					className
 				)}
 				{...props}
@@ -70,17 +71,21 @@ const SelectItem = React.forwardRef<
 	<BaseSelect.Item
 		ref={ref}
 		className={cn(
-			"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50",
+			"relative grid cursor-default select-none grid-cols-[1rem_1fr] items-center gap-2 rounded-sm py-1.5 pl-2.5 pr-4 text-sm outline-none",
+			"data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground",
+			"data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
 			className
 		)}
 		{...props}
 	>
-		<div className="size-4">
+		<div className="col-start-1 flex size-4 items-center justify-center">
 			<BaseSelect.ItemIndicator>
-				<CheckIcon className="size-full" />
+				<CheckIcon className="size-3" />
 			</BaseSelect.ItemIndicator>
 		</div>
-		<BaseSelect.ItemText>{children}</BaseSelect.ItemText>
+		<BaseSelect.ItemText className="col-start-2">
+			{children}
+		</BaseSelect.ItemText>
 	</BaseSelect.Item>
 ))
 SelectItem.displayName = "SelectItem"
@@ -114,11 +119,11 @@ SelectSeparator.displayName = "SelectSeparator"
 
 export {
 	Select,
-	SelectTrigger,
 	SelectContent,
-	SelectItem,
-	SelectValue,
 	SelectGroup,
 	SelectGroupLabel,
+	SelectItem,
 	SelectSeparator,
+	SelectTrigger,
+	SelectValue,
 }

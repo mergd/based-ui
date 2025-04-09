@@ -11,7 +11,7 @@ export const Footer = () => (
 				>
 					borabalogluu
 				</a>
-				and customized by{" "}
+				&thinsp; and customized by{" "}
 				<a
 					href="https://twitter.com/mergd"
 					target="_blank"

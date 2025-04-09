@@ -68,3 +68,118 @@ npx shadcn@latest add "https://ui.fldr.zip/r/theme.json"
 For a more extensive collection of icons, consider using [`Monicon`](https://monicon-docs.vercel.app/), which offers over 200,000 icons from various popular libraries.
 
 If you are looking for animated icons, the [`pqoqubbw/icons`](https://icons.pqoqubbw.dev/) library is a great choice.
+
+
+# LLMs
+
+If you're using Cursor, add this file to your project:
+
+```md {2} title="based-ui.mdc"
+
+# Based UI
+This is based on base-ui-components, although it has shadcn/ui compatibility.
+
+accordion
+alert-dialog
+alert
+aspect-ratio
+avatar
+badge
+breadcrumbs
+button
+calendar
+card
+carousel
+chart
+checkbox
+collapsible
+command
+context-menu
+data-button
+dialog
+drawer
+dropdown
+emoji-picker
+field
+form
+input-otp
+input
+kbd
+label
+menubar
+popover
+preview-card
+progress
+radio-group
+scroll-area
+select
+separator
+sheet
+skeleton
+slider
+sonner
+switch
+table
+tabs
+textarea
+toggle-group
+toggle
+toolbar
+tooltip
+
+Some small differences between based-ui and shadcn/ui:
+- badge has some special colors and styling
+- action-button is a stateful button for form submission
+
+# Setup based-ui
+
+## 1. Initialize shadcn/ui in your project
+
+Choose your package manager and run the init command:
+
+### pnpm
+pnpm dlx shadcn@2.3.0 init
+
+Follow the prompts. Choose between a Next.js project or a Monorepo.
+
+## 2. Install Base UI
+
+### pnpm
+
+pnpm add @base-ui-components/react
+
+## 3. Add Root class to your app layout
+
+Update your layout file (e.g., `layout.tsx` or `layout.jsx`):
+
+
+// layout.tsx or layout.jsx
+<body>
+  <div className="Root">{children}</div>
+</body>
+
+
+## 4. Update globals.css file
+
+Add the following styles to your `globals.css`:
+
+
+/* globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Existing code */
+
+@layer base {
+  .Root {
+    @apply bg-background isolate;
+  }
+}
+
+
+## 5. Add 9ui theme to your project
+
+### pnpm
+pnpm dlx shadcn@latest add "https://ui.fldr.zip/r/theme.json"
+```

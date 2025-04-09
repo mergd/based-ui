@@ -31,30 +31,14 @@ npm install @base-ui-components/react
 
 ```tsx {2} title="layout.tsx"
 <body>
-	<div className="Root">{children}</div>
+	<div className="isolate">{children}</div>
 </body>
 ```
 
-<Step>Update `globals.css` file.</Step>
-
-```css {7-11} title="globals.css"
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-{/* Existing code */}
-
-@layer base {
-	.Root {
-		@apply bg-background isolate;
-	}
-}
-```
-
-<Step>Add 9ui theme to your project.</Step>
+<Step>Add Based UI theme to your project.</Step>
 
 ```bash title="Terminal"
-npx shadcn@latest add "https://ui.fldr.zip/r/theme.json"
+npx shadcn add "https://ui.fldr.zip/r/theme.json"
 ```
 
 <Step>That's it! You can now install the components.</Step>
@@ -160,31 +144,17 @@ Update your layout file (e.g., `layout.tsx` or `layout.jsx`):
 
 // layout.tsx or layout.jsx
 <body>
-  <div className="Root">{children}</div>
+  <div className="isolate">{children}</div>
 </body>
 
-
-## 4. Update globals.css file
-
-Add the following styles to your `globals.css`:
-
-
-/* globals.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Existing code */
-
-@layer base {
-  .Root {
-    @apply bg-background isolate;
-  }
-}
-
-
-## 5. Add 9ui theme to your project
+## 4. Add 9ui theme to your project
 
 ### pnpm
-pnpm dlx shadcn@latest add "https://ui.fldr.zip/r/theme.json"
+pnpm dlx shadcn add "https://ui.fldr.zip/r/theme.json"
+
+## 5. That's it! You can now install the components.
+### pnpm
+
+npx shadcn add https://ui.fldr.zip/r/button.json
+
 ```

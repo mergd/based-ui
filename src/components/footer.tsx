@@ -11,9 +11,18 @@ export const Footer = () => (
 				>
 					borabalogluu
 				</a>
+				and customized by{" "}
+				<a
+					href="https://twitter.com/mergd"
+					target="_blank"
+					rel="noreferrer"
+					className="font-medium text-foreground underline underline-offset-4"
+				>
+					mergd
+				</a>
 				{" • "}
 				<a
-					href="https://github.com/borabaloglu/9ui"
+					href="https://github.com/mergd/9ui"
 					target="_blank"
 					rel="noreferrer"
 					className="font-medium text-foreground underline underline-offset-4"

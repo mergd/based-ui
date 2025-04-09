@@ -59,14 +59,17 @@ import ToggleDemo from "@/components/demos/toggle/toggle-demo"
 import ToolbarDemo from "@/components/demos/toolbar/toolbar-demo"
 import TooltipDemo from "@/components/demos/tooltip/tooltip-demo"
 
+import { cn } from "@/lib/utils"
+
 // Helper component for wrapping demos
-const DemoWrapper: React.FC<{ title: string; children: React.ReactNode }> = ({
-	title,
-	children,
-}) => (
-	<section className="space-y-4">
+const DemoWrapper: React.FC<{
+	title: string
+	children: React.ReactNode
+	className?: string
+}> = ({ title, children, className }) => (
+	<section className={cn("space-y-4", className)}>
 		<h2 className="text-2xl font-semibold tracking-tight">{title}</h2>
-		<div className="flex flex-wrap items-start gap-4 rounded-lg border bg-card p-4 text-card-foreground">
+		<div className="flex flex-wrap items-start gap-4 rounded-lg p-4">
 			{children}
 		</div>
 	</section>
@@ -82,154 +85,162 @@ const KitchenSinkPage = () => {
 					A collection of available components and their variations for testing.
 				</p>
 			</div>
-			<DemoWrapper title="Accordion">
-				<AccordionDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Alert">
-				<AlertDemo /> {/* Might need others like AlertDestructiveDemo */}
-			</DemoWrapper>
-			<DemoWrapper title="Alert Dialog">
-				<AlertDialogDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Aspect Ratio">
-				<AspectRatioDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Avatar">
-				<AvatarDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Badge">
-				<BadgeDemo /> {/* Might need others */}
-			</DemoWrapper>
-			<DemoWrapper title="Breadcrumbs">
-				<BreadcrumbsDemo />
-			</DemoWrapper>
-			{/* --- Buttons --- */}
-			<section className="space-y-4">
-				<h2 className="text-2xl font-semibold tracking-tight">Buttons</h2>
-				<div className="flex flex-wrap items-center gap-4 rounded-lg border bg-card p-4 text-card-foreground">
-					<ButtonDemo /> <ButtonSecondary /> <ButtonDestructive />
-					<ButtonGhost />
-					<ButtonOutline /> <ButtonLink /> <ButtonIcon /> <ButtonLoading />
-					<ButtonSuccess />
-				</div>
-				<div className="rounded-lg border bg-card p-4 text-card-foreground">
-					<ButtonSizes />
-				</div>
-				<div className="rounded-lg border bg-card p-4 text-card-foreground">
-					<ButtonDataDemo />
-				</div>
-			</section>
-			<DemoWrapper title="Calendar">
-				<CalendarDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Card">
-				<CardDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Carousel">
-				<CarouselDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Checkbox">
-				<CheckboxDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Collapsible">
-				<CollapsibleDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Combobox">
-				<ComboboxDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Command">
-				<CommandDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Context Menu">
-				<ContextMenuDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Date Picker">
-				<DatePickerDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Dialog">
-				<DialogDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Drawer">
-				<DrawerDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Dropdown Menu">
-				<DropdownDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Emoji Picker">
-				<EmojiPickerDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Form">
-				<FormDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Input">
-				<InputDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Input OTP">
-				<InputOTPDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Kbd">
-				<KbdDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Menubar">
-				<MenubarDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Popover">
-				<PopoverDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Progress">
-				<ProgressDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Radio Group">
-				<RadioGroupDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Scroll Area">
-				<ScrollAreaDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Select">
-				<SelectDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Separator">
-				<SeparatorDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Sheet">
-				<SheetDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Skeleton">
-				<SkeletonDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Slider">
-				<SliderDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Switch">
-				<SwitchDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Table">
-				<TableDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Tabs">
-				<TabsDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Textarea">
-				<TextareaDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Theme Toggle">
-				<ThemeToggle />
-			</DemoWrapper>
-			<DemoWrapper title="Toast">
-				<ToastDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Toggle">
-				<ToggleDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Toggle Group">
-				<ToggleGroupDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Toolbar">
-				<ToolbarDemo />
-			</DemoWrapper>
-			<DemoWrapper title="Tooltip">
-				<TooltipDemo />
-			</DemoWrapper>
+			{/* Added grid container */}
+			<div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+				<DemoWrapper title="Accordion">
+					<AccordionDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Alert">
+					<AlertDemo /> {/* Might need others like AlertDestructiveDemo */}
+				</DemoWrapper>
+				<DemoWrapper title="Alert Dialog">
+					<AlertDialogDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Aspect Ratio">
+					<AspectRatioDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Avatar">
+					<AvatarDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Badge">
+					<BadgeDemo /> {/* Might need others */}
+				</DemoWrapper>
+				<DemoWrapper title="Breadcrumbs">
+					<BreadcrumbsDemo />
+				</DemoWrapper>
+				{/* --- Buttons --- (Moved into the grid, spans multiple columns) */}
+				<section className="space-y-4 lg:col-span-3">
+					<h2 className="text-2xl font-semibold tracking-tight">Buttons</h2>
+					{/* Added card styling to the button section container */}
+					<div className="rounded-lg border bg-card p-4 text-card-foreground">
+						<div className="mb-4 flex flex-wrap items-center gap-4">
+							<ButtonDemo /> <ButtonSecondary /> <ButtonDestructive />
+							<ButtonGhost />
+							<ButtonOutline /> <ButtonLink /> <ButtonIcon /> <ButtonLoading />
+							<ButtonSuccess />
+						</div>
+						{/* Added some styling to inner button demo containers */}
+						<div className="mb-4 rounded-lg border bg-background p-4">
+							<ButtonSizes />
+						</div>
+						<div className="rounded-lg border bg-background p-4">
+							<ButtonDataDemo />
+						</div>
+					</div>
+				</section>
+				<DemoWrapper title="Calendar">
+					<CalendarDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Card">
+					<CardDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Carousel">
+					<CarouselDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Checkbox">
+					<CheckboxDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Collapsible">
+					<CollapsibleDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Combobox">
+					<ComboboxDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Command">
+					<CommandDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Context Menu">
+					<ContextMenuDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Date Picker">
+					<DatePickerDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Dialog">
+					<DialogDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Drawer">
+					<DrawerDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Dropdown Menu">
+					<DropdownDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Emoji Picker">
+					<EmojiPickerDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Form">
+					<FormDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Input">
+					<InputDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Input OTP">
+					<InputOTPDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Kbd">
+					<KbdDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Menubar">
+					<MenubarDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Popover">
+					<PopoverDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Progress">
+					<ProgressDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Radio Group">
+					<RadioGroupDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Scroll Area">
+					<ScrollAreaDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Select">
+					<SelectDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Separator">
+					<SeparatorDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Sheet">
+					<SheetDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Skeleton">
+					<SkeletonDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Slider">
+					<SliderDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Switch">
+					<SwitchDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Table" className="lg:col-span-3">
+					<TableDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Tabs">
+					<TabsDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Textarea">
+					<TextareaDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Theme Toggle">
+					<ThemeToggle />
+				</DemoWrapper>
+				<DemoWrapper title="Toast">
+					<ToastDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Toggle">
+					<ToggleDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Toggle Group">
+					<ToggleGroupDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Toolbar">
+					<ToolbarDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Tooltip">
+					<TooltipDemo />
+				</DemoWrapper>
+			</div>{" "}
+			{/* Close grid container */}
 		</div>
 	)
 }

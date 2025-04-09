@@ -1,27 +1,28 @@
 <Title content="Installation" />
 <Description content="Installing dependencies and setting up the project." />
 
-<Alert variant="warning" className="mt-4">
+<Alert variant="info" className="mt-4">
 	<AlertIcon>
-		<MessageSquareWarningIcon />
+		<InfoIcon />
 	</AlertIcon>
 	<AlertContent>
-		<AlertTitle>Important</AlertTitle>
+		<AlertTitle>Project Update: Tailwind CSS v4</AlertTitle>
 		<AlertDescription className="[&_p]:leading-normal">
-			The installation of 9ui depends on the shadcn cli for setting up your
-			project and installing the components. Note that 9ui does not support
-			Tailwind V4 yet. Please use `shadcn@2.3.0` for the setup.
+			This project now uses **Tailwind CSS v4**. Please ensure your own project is set up with Tailwind v4 before adding components from this library.
+			The installation relies on the shadcn/ui CLI for project setup and component installation.
 		</AlertDescription>
 	</AlertContent>
 </Alert>
 
 <Steps>
 
-<Step>Setup shadcn.</Step>
+<Step>Setup Tailwind v4 and shadcn/ui.</Step>
 
-Follow the [shadcn installation guide](https://ui.shadcn.com/docs/installation) to setup your project.
+This project uses Tailwind CSS v4. Ensure your project is also configured for Tailwind v4 (see the [Tailwind v4 Upgrade Guide](https://tailwindcss.com/docs/upgrade-guide) and [shadcn/ui Tailwind v4 docs](https://ui.shadcn.com/docs/tailwind-v4)) **before** proceeding with shadcn/ui setup.
 
-<Step>Install Base UI.</Step>
+Then, follow the [shadcn/ui installation guide](https://ui.shadcn.com/docs/installation) to initialize shadcn/ui in your v4 project.
+
+<Step>Install Base UI Components.</Step>
 
 ```bash title="Terminal"
 npm install @base-ui-components/react
@@ -42,6 +43,7 @@ npx shadcn@latestadd "https://ui.fldr.zip/r/theme.json"
 ```
 
 <Step>That's it! You can now install the components.</Step>
+
 
 </Steps>
 
@@ -119,27 +121,33 @@ Some small differences between based-ui and shadcn/ui:
 
 # Setup based-ui
 
-## 1. Initialize shadcn/ui in your project
+## 1. Setup Tailwind CSS v4
+
+Install Tailwind v4 and its PostCSS plugin:
+
+### pnpm
+
+pnpm add -D tailwindcss@next @tailwindcss/postcss@next
+
+Configure Tailwind according to the [v4 upgrade guide](https://tailwindcss.com/docs/upgrade-guide) (using `@import "tailwindcss";` and `@theme` in your CSS).
+
+## 2. Initialize shadcn/ui in your project
 
 Choose your package manager and run the init command:
 
 ### pnpm
 
-pnpm dlx shadcn@2.3.0 init
+pnpm dlx shadcn-ui@latest init
 
-If you don't have tailwind installed, install 3.4.15
+Follow the prompts.
 
-pnpm add tailwindcss@3.4.15 postcss autoprefixer
-
-Follow the prompts. Choose between a Next.js project or a Monorepo.
-
-## 2. Install Base UI
+## 3. Install Base UI Components
 
 ### pnpm
 
 pnpm add @base-ui-components/react
 
-## 3. Add Root class to your app layout
+## 4. Add Root class to your app layout
 
 Update your layout file (e.g., `layout.tsx` or `layout.jsx`):
 
@@ -149,12 +157,12 @@ Update your layout file (e.g., `layout.tsx` or `layout.jsx`):
   <div className="isolate">{children}</div>
 </body>
 
-## 4. Add 9ui theme to your project
+## 5. Add Project Theme Variables
 
 ### pnpm
 pnpm dlx shadcn add "https://ui.fldr.zip/r/theme.json"
 
-## 5. That's it! You can now install the components.
+## 6. That's it! You can now install the components.
 ### pnpm
 
 npx shadcn@latestadd https://ui.fldr.zip/r/button.json

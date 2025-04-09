@@ -1,6 +1,48 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+	--font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+		Consolas, "Liberation Mono", "Courier New", monospace;
+	--radius: 0.5rem;
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-sm: calc(var(--radius) - 4px);
+
+	--color-background: oklch(from var(--background) l c h);
+	--color-foreground: oklch(from var(--foreground) l c h);
+	--color-card: oklch(from var(--card) l c h);
+	--color-card-foreground: oklch(from var(--card-foreground) l c h);
+	--color-popover: oklch(from var(--popover) l c h);
+	--color-popover-foreground: oklch(from var(--popover-foreground) l c h);
+	--color-primary: oklch(from var(--primary) l c h);
+	--color-primary-foreground: oklch(from var(--primary-foreground) l c h);
+	--color-secondary: oklch(from var(--secondary) l c h);
+	--color-secondary-foreground: oklch(from var(--secondary-foreground) l c h);
+	--color-muted: oklch(from var(--muted) l c h);
+	--color-muted-foreground: oklch(from var(--muted-foreground) l c h);
+	--color-accent: oklch(from var(--accent) l c h);
+	--color-accent-foreground: oklch(from var(--accent-foreground) l c h);
+	--color-destructive: oklch(from var(--destructive) l c h);
+	--color-destructive-foreground: oklch(
+		from var(--destructive-foreground) l c h
+	);
+	--color-border: oklch(from var(--border) l c h);
+	--color-input: oklch(from var(--input) l c h);
+	--color-ring: oklch(from var(--ring) l c h);
+
+	--anim-blink: blink 1s infinite;
+
+	@keyframes blink {
+		0%,
+		100% {
+			opacity: 1;
+		}
+		50% {
+			opacity: 0;
+		}
+	}
+}
 
 @layer base {
 	:root {

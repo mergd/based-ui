@@ -47,11 +47,15 @@ interface SelectContentProps
 
 const SelectContent = React.forwardRef<HTMLDivElement, SelectContentProps>(
 	({ children, className, positionerProps, ...props }, ref) => (
-		<BaseSelect.Positioner sideOffset={8} {...positionerProps} className="z-50">
+		<BaseSelect.Positioner
+			sideOffset={8}
+			{...positionerProps}
+			className={cn("z-50 w-[--anchor-width]", positionerProps?.className)}
+		>
 			<BaseSelect.Popup
 				ref={ref}
 				className={cn(
-					"relative z-50 max-h-[var(--available-height)] min-w-[--anchor-width] origin-[var(--transform-origin)] overflow-y-auto rounded-md border bg-popover py-1 text-popover-foreground shadow-lg outline-none",
+					"relative z-50 max-h-[var(--available-height)] w-[var(--anchor-width)] origin-[var(--transform-origin)] overflow-y-auto rounded-md border bg-popover py-1 text-popover-foreground shadow-lg outline-none",
 					"transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0",
 					className
 				)}

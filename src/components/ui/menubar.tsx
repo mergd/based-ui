@@ -58,7 +58,7 @@ const Menubar = React.forwardRef<
 			<div
 				ref={ref}
 				className={cn(
-					"relative flex w-fit gap-1 rounded-md border bg-card px-1 shadow-sm",
+					"relative flex w-fit gap-0.5 rounded-md border bg-card p-1 shadow-sm",
 					className
 				)}
 				{...props}
@@ -150,7 +150,7 @@ const MenubarTrigger = React.forwardRef<
 				const parentRect = element.parentElement?.getBoundingClientRect()
 				if (parentRect) {
 					registerTrigger(id, {
-						left: rect.left - parentRect.left - 1,
+						left: rect.left - parentRect.left - 0.5,
 						width: rect.width,
 						height: rect.height,
 					})
@@ -168,7 +168,7 @@ const MenubarTrigger = React.forwardRef<
 		<Menu.Trigger
 			ref={useForkRef(ref, triggerRef)}
 			className={cn(
-				"relative z-[1] flex min-h-10 cursor-default select-none items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium outline-none data-[popup-open]:text-foreground",
+				"relative z-[1] flex min-h-8 cursor-default select-none items-center gap-1 rounded px-2 py-1 text-sm font-medium outline-none data-[popup-open]:text-foreground",
 				className
 			)}
 			{...props}
@@ -216,7 +216,7 @@ const MenubarIndicator = React.forwardRef<
 		<div
 			ref={ref}
 			className={cn(
-				"absolute left-[var(--active-menu-left)] top-1/2 h-[calc(var(--active-menu-height)-0.5rem)] w-[var(--active-menu-width)] -translate-y-1/2 rounded-md bg-accent transition-all duration-200 ease-in-out",
+				"absolute left-[var(--active-menu-left)] top-1/2 h-[calc(var(--active-menu-height)-0.25rem)] w-[var(--active-menu-width)] -translate-y-1/2 rounded-xs bg-accent transition-all duration-150 ease-out",
 				className
 			)}
 			style={style}
@@ -237,7 +237,7 @@ interface MenubarContentProps
 
 const MenubarContent = React.forwardRef<HTMLDivElement, MenubarContentProps>(
 	(
-		{ className, align = "start", sideOffset = 4, alignOffset = -5, ...props },
+		{ className, align = "start", sideOffset = 4, alignOffset = -4, ...props },
 		ref
 	) => (
 		<Menu.Portal>
@@ -249,7 +249,7 @@ const MenubarContent = React.forwardRef<HTMLDivElement, MenubarContentProps>(
 				<Menu.Popup
 					ref={ref}
 					className={cn(
-						"min-w-48 origin-[var(--transform-origin)] rounded-md border bg-popover p-1 text-popover-foreground shadow-sm outline-none transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
+						"min-w-40 origin-[var(--transform-origin)] rounded-sm border bg-popover p-0.5 text-popover-foreground shadow-sm outline-none transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 data-[starting-style]:translate-y-1 dark:shadow-none",
 						className
 					)}
 					{...props}
@@ -267,7 +267,7 @@ const MenubarItem = React.forwardRef<
 	<Menu.Item
 		ref={ref}
 		className={cn(
-			"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+			"flex select-none items-center gap-1.5 rounded px-1.5 py-1 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
 			className
 		)}
 		{...props}
@@ -282,7 +282,7 @@ const MenubarItemShortcut = React.forwardRef<
 	<span
 		ref={ref}
 		className={cn(
-			"ml-auto pl-10 text-xs tracking-widest text-muted-foreground",
+			"ml-auto pl-8 text-xs tracking-widest text-muted-foreground",
 			className
 		)}
 		{...props}
@@ -309,7 +309,7 @@ const MenubarSubTrigger = React.forwardRef<
 	<Menu.SubmenuTrigger
 		ref={ref}
 		className={cn(
-			"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[popup-open]:bg-accent data-[highlighted]:text-accent-foreground data-[popup-open]:text-accent-foreground data-[disabled]:opacity-50",
+			"flex select-none items-center gap-1.5 rounded px-1.5 py-1 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[popup-open]:bg-accent data-[highlighted]:text-accent-foreground data-[popup-open]:text-accent-foreground data-[disabled]:opacity-50",
 			className
 		)}
 		{...props}
@@ -327,7 +327,7 @@ const MenubarCheckboxItem = React.forwardRef<
 	<Menu.CheckboxItem
 		ref={ref}
 		className={cn(
-			"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50",
+			"flex select-none items-center gap-1.5 rounded px-1.5 py-1 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50",
 			className
 		)}
 		{...props}
@@ -349,7 +349,7 @@ const MenubarRadioItem = React.forwardRef<
 	<Menu.RadioItem
 		ref={ref}
 		className={cn(
-			"flex select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50",
+			"flex select-none items-center gap-1.5 rounded px-1.5 py-1 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50",
 			className
 		)}
 		{...props}

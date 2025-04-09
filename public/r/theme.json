@@ -2,7 +2,7 @@
 	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
 	"name": "default-theme",
 	"type": "registry:theme",
-	"author": "9ui (https://9ui.dev)",
+	"author": "9ui (https://ui.fldr.zip)",
 	"cssVars": {
 		"light": {
 			"radius": "0.5rem",

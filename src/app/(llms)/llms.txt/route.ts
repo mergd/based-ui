@@ -3,7 +3,7 @@ import { navConfig } from "@/config/nav"
 export const revalidate = false
 
 export async function GET() {
-	const baseUrl = "https://9ui.dev"
+	const baseUrl = "https://ui.fldr.zip"
 
 	// Getting Started bölümü
 	const gettingStartedLinks = navConfig.sidebarNav[0].items

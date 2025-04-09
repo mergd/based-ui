@@ -8,7 +8,7 @@
     "@hookform/resolvers"
   ],
   "registryDependencies": [
-    "https://9ui.dev/r/field.json"
+    "https://ui.fldr.zip/r/field.json"
   ],
   "files": [
     {

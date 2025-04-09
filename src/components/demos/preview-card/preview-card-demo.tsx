@@ -73,11 +73,11 @@ export default function PreviewCardDemo() {
 							Website
 						</span>
 						<a
-							href="https://9ui.dev"
+							href="https://ui.fldr.zip"
 							className="underline underline-offset-2"
 							target="_blank"
 						>
-							9ui.dev
+							ui.fldr.zip
 						</a>
 					</div>
 				</div>

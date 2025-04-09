@@ -1,7 +1,7 @@
 {
 	"$schema": "https://ui.shadcn.com/schema/registry.json",
 	"name": "9ui",
-	"homepage": "https://9ui.dev",
+	"homepage": "https://ui.fldr.zip",
 	"items": [
 		{
 			"name": "accordion",
@@ -124,7 +124,7 @@
 			"name": "carousel",
 			"type": "registry:ui",
 			"dependencies": ["embla-carousel", "embla-carousel-react"],
-			"registryDependencies": ["https://9ui.dev/r/button.json"],
+			"registryDependencies": ["https://ui.fldr.zip/r/button.json"],
 			"files": [
 				{
 					"path": "src/components/ui/carousel.tsx",
@@ -176,7 +176,7 @@
 			"name": "command",
 			"type": "registry:ui",
 			"dependencies": ["cmdk-base"],
-			"registryDependencies": ["https://9ui.dev/r/dialog.json"],
+			"registryDependencies": ["https://ui.fldr.zip/r/dialog.json"],
 			"files": [
 				{
 					"path": "src/components/ui/command.tsx",
@@ -202,7 +202,7 @@
 			"name": "data-button",
 			"type": "registry:ui",
 			"dependencies": ["framer-motion", "lucide-react"],
-			"registryDependencies": ["https://9ui.dev/r/button.json"],
+			"registryDependencies": ["https://ui.fldr.zip/r/button.json"],
 			"files": [
 				{
 					"path": "src/components/ui/data-button.tsx",
@@ -267,7 +267,7 @@
 			"name": "field",
 			"type": "registry:ui",
 			"dependencies": [],
-			"registryDependencies": ["https://9ui.dev/r/label.json"],
+			"registryDependencies": ["https://ui.fldr.zip/r/label.json"],
 			"files": [
 				{
 					"path": "src/components/ui/field.tsx",
@@ -280,7 +280,7 @@
 			"name": "form",
 			"type": "registry:ui",
 			"dependencies": ["react-hook-form", "zod", "@hookform/resolvers"],
-			"registryDependencies": ["https://9ui.dev/r/field.json"],
+			"registryDependencies": ["https://ui.fldr.zip/r/field.json"],
 			"files": [
 				{
 					"path": "src/components/ui/form.tsx",
@@ -488,7 +488,7 @@
 			"name": "sonner",
 			"type": "registry:ui",
 			"dependencies": ["sonner"],
-			"registryDependencies": ["https://9ui.dev/r/button.json"],
+			"registryDependencies": ["https://ui.fldr.zip/r/button.json"],
 			"files": [
 				{
 					"path": "src/components/ui/sonner.tsx",

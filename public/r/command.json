@@ -6,7 +6,7 @@
     "cmdk-base"
   ],
   "registryDependencies": [
-    "https://9ui.dev/r/dialog.json"
+    "https://ui.fldr.zip/r/dialog.json"
   ],
   "files": [
     {

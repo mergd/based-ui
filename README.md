@@ -12,7 +12,7 @@ A collection of components that you can copy and paste into your project. Built 
 
 ## Documentation
 
-Visit [9ui.dev/docs](https://9ui.dev/docs) for documentation and examples.
+Visit [ui.fldr.zip/docs](https://ui.fldr.zip/docs) for documentation and examples.
 
 ## License
 

@@ -25,7 +25,7 @@ export function AuthCard() {
 			<CardContent className="space-y-4">
 				<div className="flex flex-col gap-y-2">
 					<Label htmlFor="email">Email</Label>
-					<Input id="email" placeholder="bora@9ui.dev" />
+					<Input id="email" placeholder="bora@ui.fldr.zip" />
 				</div>
 
 				<Button className="w-full">Get Started</Button>

@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "src/components/ui/toggle-group.tsx",
-      "content": "import * as React from \"react\"\nimport { ToggleGroup as BaseToggleGroup } from \"@base-ui-components/react/toggle-group\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst ToggleGroup = React.forwardRef<\n\tHTMLDivElement,\n\tReact.ComponentPropsWithoutRef<typeof BaseToggleGroup>\n>(({ className, ...props }, ref) => (\n\t<BaseToggleGroup\n\t\tref={ref}\n\t\tclassName={cn(\"flex gap-0.5 rounded-md border bg-card p-0.5\", className)}\n\t\t{...props}\n\t/>\n))\nToggleGroup.displayName = \"ToggleGroup\"\n\nexport { ToggleGroup }\n",
+      "content": "import * as React from \"react\"\nimport { ToggleGroup as BaseToggleGroup } from \"@base-ui-components/react/toggle-group\"\n\nimport { cn } from \"@/lib/utils\"\n\nimport { Toggle as ToggleGroupItem } from \"./toggle\"\n\nconst ToggleGroup = React.forwardRef<\n\tHTMLDivElement,\n\tReact.ComponentPropsWithoutRef<typeof BaseToggleGroup>\n>(({ className, ...props }, ref) => (\n\t<BaseToggleGroup\n\t\tref={ref}\n\t\tclassName={cn(\"flex gap-0.5 rounded-md border bg-card p-0.5\", className)}\n\t\t{...props}\n\t/>\n))\nToggleGroup.displayName = \"ToggleGroup\"\n\nexport { ToggleGroup, ToggleGroupItem }\n",
       "type": "registry:ui",
       "target": ""
     }

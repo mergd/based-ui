@@ -3,6 +3,8 @@ import { ToggleGroup as BaseToggleGroup } from "@base-ui-components/react/toggle
 
 import { cn } from "@/lib/utils"
 
+import { Toggle as ToggleGroupItem } from "./toggle"
+
 const ToggleGroup = React.forwardRef<
 	HTMLDivElement,
 	React.ComponentPropsWithoutRef<typeof BaseToggleGroup>
@@ -15,4 +17,4 @@ const ToggleGroup = React.forwardRef<
 ))
 ToggleGroup.displayName = "ToggleGroup"
 
-export { ToggleGroup }
+export { ToggleGroup, ToggleGroupItem }

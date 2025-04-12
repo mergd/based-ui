@@ -12,6 +12,8 @@ import { Button, ButtonProps } from "./button" // Import original Button
 export interface DataButtonProps extends ButtonProps {
 	isLoading?: boolean
 	isSuccess?: boolean
+	loadingText?: string
+	successText?: string
 }
 
 const DataButton = React.forwardRef<HTMLButtonElement, DataButtonProps>(
@@ -22,14 +24,16 @@ const DataButton = React.forwardRef<HTMLButtonElement, DataButtonProps>(
 			isSuccess,
 			disabled,
 			className,
-			style, // Include style prop
+			style,
 			variant,
+			loadingText = "Loading...",
+			successText = "Success",
 			...props
 		},
 		ref
 	) => {
 		// const internalDisabled = isLoading || disabled || isSuccess // Keep for internal logic if needed elsewhere -> No longer needed
-		const buttonDisabled = isLoading || disabled // Determine actual disabled state for the base Button
+		const buttonDisabled = disabled // Determine actual disabled state for the base Button
 
 		// Explicitly type useRef to ensure it's mutable
 		const internalButtonRef = useRef<HTMLButtonElement | null>(null)
@@ -110,7 +114,6 @@ const DataButton = React.forwardRef<HTMLButtonElement, DataButtonProps>(
 				{...props}
 			>
 				{/* Render children normally initially for measurement. Content will be replaced by absolute positioned elements later */}
-				{/* Add opacity based on state AFTER dimensions are measured */}
 				<span
 					className="inline-flex items-center justify-center"
 					style={{ opacity: dimensions.width === null ? 1 : 0 }}
@@ -123,10 +126,18 @@ const DataButton = React.forwardRef<HTMLButtonElement, DataButtonProps>(
 					<AnimatePresence mode="popLayout" initial={false}>
 						{isLoading ? (
 							<motion.div key="loading" {...motionProps}>
-								<Loader2 className="size-4 animate-spin" />
+								<div className="flex justify-between items-center w-full px-3">
+									<span>{loadingText}</span>
+									<Loader2 className="size-4 animate-spin" />
+								</div>
 							</motion.div>
 						) : isSuccess ? (
-							<motion.div key="success" {...motionProps}>
+							<motion.div
+								key="success"
+								{...motionProps}
+								className="absolute inset-0 flex justify-between items-center w-full px-3"
+							>
+								<span>{successText}</span>
 								<Check className="size-4" />
 							</motion.div>
 						) : (

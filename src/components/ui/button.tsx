@@ -22,6 +22,13 @@ const buttonVariants = cva(
 				destructive:
 					"bg-destructive text-destructive-foreground hover:bg-destructive/80",
 				success: "bg-success text-success-foreground hover:bg-success/80",
+				retro:
+					"relative isolate inline-flex items-center justify-center overflow-hidden rounded-md font-medium transition-all duration-300 ease-[cubic-bezier(0.4,0.36,0,1)] \
+					shadow-[0_1px_theme(colors.white/0.07)_inset,0_1px_3px_theme(colors.black/0.2)] dark:shadow-[0_1px_theme(colors.white/0.05)_inset,0_1px_3px_theme(colors.black/0.4)] \
+					before:pointer-events-none before:absolute before:inset-0 before:-z-10 before:rounded-md before:bg-gradient-to-b before:from-white/20 dark:before:from-white/10 before:opacity-50 before:transition-opacity before:duration-300 before:ease-[cubic-bezier(0.4,0.36,0,1)] \
+					after:pointer-events-none after:absolute after:inset-0 after:-z-10 after:rounded-md after:bg-gradient-to-b after:from-white/10 dark:after:from-white/5 after:from-[46%] after:to-[54%] after:mix-blend-overlay \
+					bg-neutral-200 text-neutral-900 ring-1 ring-black/5 hover:before:opacity-100 active:brightness-95 active:shadow-[0_1px_theme(colors.black/0.05)_inset] \
+					dark:bg-neutral-800 dark:text-neutral-100 dark:ring-white/10 dark:active:shadow-[0_1px_theme(colors.black/0.2)_inset]",
 			},
 			size: {
 				sm: "h-8 px-2.5 text-sm",
@@ -44,6 +51,13 @@ export interface ButtonProps
 		React.ButtonHTMLAttributes<HTMLButtonElement>,
 		useRender.ComponentProps<"button"> {}
 
+/**
+ * @deprecated Use the `render` prop instead for customizing the underlying element.
+ */
+export interface ButtonProps {
+	asChild?: boolean
+}
+
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 	(
 		{
@@ -53,6 +67,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 			render = <button />,
 			children,
 			disabled,
+			// @deprecated Use the `render` prop instead for customizing the underlying element
+			// eslint-disable-next-line @typescript-eslint/no-unused-vars
+			asChild,
 			...props
 		},
 		ref

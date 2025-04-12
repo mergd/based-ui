@@ -208,7 +208,7 @@ export const demoRegistry: DemoRegistry = {
 	},
 	"button-data-demo": {
 		source:
-			'"use client"\n\nimport * as React from "react"\nimport { Mail } from "lucide-react"\n\nimport { DataButton } from "@/components/ui/data-button"\n\nexport default function ButtonDataDemo() {\n\tconst [isLoading, setIsLoading] = React.useState(false)\n\tconst [isSuccess, setIsSuccess] = React.useState(false)\n\n\tconst handleClick = async () => {\n\t\tsetIsLoading(true)\n\t\t// Simulate an async operation\n\t\tawait new Promise((resolve) => setTimeout(resolve, 2000))\n\t\tsetIsLoading(false)\n\t\tsetIsSuccess(true)\n\t\t// Reset after a delay\n\t\tawait new Promise((resolve) => setTimeout(resolve, 1500))\n\t\tsetIsSuccess(false)\n\t}\n\n\treturn (\n\t\t<div className="flex flex-col items-center gap-4">\n\t\t\t<DataButton\n\t\t\t\tonClick={handleClick}\n\t\t\t\tisLoading={isLoading}\n\t\t\t\tisSuccess={isSuccess}\n\t\t\t>\n\t\t\t\t<Mail className="mr-2 size-4" />\n\t\t\t\t{isLoading ? "Sending..." : isSuccess ? "Sent!" : "Send Email"}\n\t\t\t</DataButton>\n\n\t\t\t<p className="text-sm text-muted-foreground">\n\t\t\t\tClick the button to see the loading and success states.\n\t\t\t</p>\n\t\t</div>\n\t)\n}\n',
+			'"use client"\n\nimport * as React from "react"\nimport { Mail } from "lucide-react"\n\nimport { DataButton } from "@/components/ui/data-button"\n\nexport default function ButtonDataDemo() {\n\tconst [isLoading, setIsLoading] = React.useState(false)\n\tconst [isSuccess, setIsSuccess] = React.useState(false)\n\n\tconst handleClick = async () => {\n\t\tsetIsLoading(true)\n\t\t// Simulate an async operation\n\t\tawait new Promise((resolve) => setTimeout(resolve, 2000))\n\t\tsetIsLoading(false)\n\t\tsetIsSuccess(true)\n\t\t// Reset after a delay\n\t\tawait new Promise((resolve) => setTimeout(resolve, 1500))\n\t\tsetIsSuccess(false)\n\t}\n\n\treturn (\n\t\t<div className="flex flex-col items-center min-w-lg gap-4">\n\t\t\t<DataButton\n\t\t\t\tonClick={handleClick}\n\t\t\t\tisLoading={isLoading}\n\t\t\t\tisSuccess={isSuccess}\n\t\t\t>\n\t\t\t\t<Mail className="mr-2 size-4" />\n\t\t\t\t{isLoading ? "Sending..." : isSuccess ? "Sent!" : "Send Email"}\n\t\t\t</DataButton>\n\n\t\t\t<p className="text-sm text-muted-foreground">\n\t\t\t\tClick the button to see the loading and success states.\n\t\t\t</p>\n\t\t</div>\n\t)\n}\n',
 		component: React.lazy(
 			() => import("@/components/demos/button/button-data-demo")
 		),
@@ -285,6 +285,16 @@ export const demoRegistry: DemoRegistry = {
 		title: "button-outline",
 		category: "button",
 		path: "src/components/demos/button/button-outline.tsx",
+	},
+	"button-retro": {
+		source:
+			'import { Button } from "@/components/ui/button"\n\nexport default function ButtonRetro() {\n\treturn <Button variant="retro">Retro</Button>\n}\n',
+		component: React.lazy(
+			() => import("@/components/demos/button/button-retro")
+		),
+		title: "button-retro",
+		category: "button",
+		path: "src/components/demos/button/button-retro.tsx",
 	},
 	"button-secondary": {
 		source:

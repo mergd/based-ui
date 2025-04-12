@@ -27,6 +27,9 @@
 	--color-destructive-foreground: oklch(
 		from var(--destructive-foreground) l c h
 	);
+	--color-success: oklch(from var(--success) l c h);
+	--color-success-foreground: oklch(from var(--success-foreground) l c h);
+	--color-success-border: oklch(from var(--success-border) l c h);
 	--color-border: oklch(from var(--border) l c h);
 	--color-input: oklch(from var(--input) l c h);
 	--color-ring: oklch(from var(--ring) l c h);
@@ -71,8 +74,8 @@
 		--info: oklch(0.951 0.023 255.095);
 		--info-foreground: oklch(0.488 0.243 264.376);
 		--info-border: oklch(0.488 0.243 264.376);
-		--success: oklch(0.962 0.044 156.743);
-		--success-foreground: oklch(0.448 0.119 151.328);
+		--success: oklch(0.85 0.15 150);
+		--success-foreground: oklch(0.25 0.08 145);
 		--success-border: oklch(0.448 0.119 151.328);
 		--border: oklch(0.9 0.005 280);
 		--input: oklch(0.9 0.005 280);
@@ -110,9 +113,9 @@
 		--info: oklch(0.24 0.08 268.5);
 		--info-foreground: oklch(0.665 0.1895 257.22);
 		--info-border: oklch(0.665 0.1895 257.22);
-		--success: oklch(0.23 0.055 153);
-		--success-foreground: oklch(0.627 0.194 149.214);
-		--success-border: oklch(0.627 0.194 149.214);
+		--success: oklch(0.85 0.15 150);
+		--success-foreground: oklch(0.25 0.08 145);
+		--success-border: oklch(0.448 0.119 151.328);
 		--border: oklch(0.35 0.015 280);
 		--input: oklch(0.3 0.01 280);
 		--ring: oklch(0.45 0.02 270);

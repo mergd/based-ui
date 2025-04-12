@@ -21,7 +21,7 @@ export default function ButtonDataDemo() {
 	}
 
 	return (
-		<div className="flex flex-col items-center gap-4">
+		<div className="flex flex-col items-center min-w-lg gap-4">
 			<DataButton
 				onClick={handleClick}
 				isLoading={isLoading}

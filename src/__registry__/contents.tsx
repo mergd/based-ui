@@ -709,16 +709,6 @@ export const contentRegistry: ContentRegistry = {
 			{ label: "Introduction", path: "/docs/getting-started/introduction" },
 		],
 	},
-	"getting-started/roadmap": {
-		type: "file",
-		path: "getting-started/roadmap.mdx",
-		meta: { title: "Roadmap", description: "What's coming next" },
-		urlPath: "getting-started/roadmap",
-		breadcrumbs: [
-			{ label: "Getting Started", path: "/docs/getting-started" },
-			{ label: "Roadmap", path: "/docs/getting-started/roadmap" },
-		],
-	},
 	"getting-started/theming": {
 		type: "file",
 		path: "getting-started/theming.mdx",

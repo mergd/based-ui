@@ -13,7 +13,7 @@ export const Footer = () => (
 				</a>
 				&thinsp; and customized by{" "}
 				<a
-					href="https://twitter.com/mergd"
+					href="https://twitter.com/w_y_x"
 					target="_blank"
 					rel="noreferrer"
 					className="font-medium text-foreground underline underline-offset-4"
@@ -22,7 +22,7 @@ export const Footer = () => (
 				</a>
 				{" • "}
 				<a
-					href="https://github.com/mergd/9ui"
+					href="https://github.com/mergd/based-ui"
 					target="_blank"
 					rel="noreferrer"
 					className="font-medium text-foreground underline underline-offset-4"

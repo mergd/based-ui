@@ -17,7 +17,7 @@ export function AuthCard() {
 	return (
 		<Card className="w-full">
 			<CardHeader>
-				<CardTitle>Join 9ui</CardTitle>
+				<CardTitle>Join Based UI</CardTitle>
 				<CardDescription>
 					Start building your design system with our components.
 				</CardDescription>

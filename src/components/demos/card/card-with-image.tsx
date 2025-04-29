@@ -21,10 +21,10 @@ export default function CardWithImage() {
 						className="rounded-lg"
 					/>
 				</div>
-				<CardTitle className="mt-2">What is 9ui?</CardTitle>
+				<CardTitle className="mt-2">What is Based UI?</CardTitle>
 				<CardDescription>
-					Deep dive into the 9ui components and learn how to use them in your
-					own projects.
+					Deep dive into the Based UI components and learn how to use them in
+					your own projects.
 				</CardDescription>
 			</CardHeader>
 			<CardFooter>

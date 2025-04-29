@@ -37,7 +37,7 @@ export const Header = () => {
 						size="icon"
 						render={
 							<Link
-								href="https://github.com/borabaloglu/9ui"
+								href="https://github.com/mergd/based-ui"
 								target="_blank"
 								rel="noreferrer"
 							>

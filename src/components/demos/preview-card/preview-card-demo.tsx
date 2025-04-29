@@ -1,8 +1,8 @@
 "use client"
 
-import { GithubIcon, GlobeIcon, UserIcon } from "lucide-react"
+import { GitHubLogoIcon } from "@radix-ui/react-icons"
+import { GlobeIcon, UserIcon } from "lucide-react"
 
-import { Icons } from "@/components/icons"
 import {
 	PreviewCard,
 	PreviewCardContent,
@@ -15,12 +15,11 @@ export default function PreviewCardDemo() {
 			<p className="max-w-80 text-balance text-foreground">
 				This is a preview card component from{" "}
 				<PreviewCardTrigger className="cursor-pointer underline underline-offset-2">
-					9ui
+					based-ui
 				</PreviewCardTrigger>
 				.
 			</p>
 			<PreviewCardContent className="max-w-80 text-sm">
-				<Icons.logo className="mx-auto w-10" />
 				<p className="mt-2">
 					Beautiful, customizable components built with{" "}
 					<a
@@ -47,20 +46,20 @@ export default function PreviewCardDemo() {
 							Creator:
 						</span>
 						<a
-							href="https://x.com/borabalogluu"
+							href="https://x.com/w_y_x"
 							className="underline underline-offset-2"
 							target="_blank"
 						>
-							Bora Baloglu
+							mergd
 						</a>
 					</div>
 					<div className="flex items-center gap-2">
 						<span className="flex items-center gap-1 text-muted-foreground">
-							<GithubIcon size={14} />
+							<GitHubLogoIcon className="size-4" />
 							Source code:
 						</span>
 						<a
-							href="https://github.com/borabaloglu/9ui"
+							href="https://github.com/mergd/based-ui"
 							className="underline underline-offset-2"
 							target="_blank"
 						>

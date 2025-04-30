@@ -1,15 +1,13 @@
 # based-ui (mergd version)
 
-forked from 9ui, but more opinionated on styling. All credit to [borabaloglu](https://github.com/borabaloglu) for the original implementation and much of the work
 
-components to improve todo:
+![Based UI](./public/og.png)
 
-- [ ] tabs
-- [ ] switch (wip: pretty hard to nail )
+
+Forked from 9ui, but more opinionated on styling. All credit to [borabaloglu](https://github.com/borabaloglu) for the original implementation and much of the work
 
 A collection of components that you can copy and paste into your project. Built with [Base UI](https://base-ui.com/) and [Tailwind CSS](https://tailwindcss.com/). Easy to customize. Free and open source.
 
-![9ui](./public/og.png)
 
 ## Documentation
 

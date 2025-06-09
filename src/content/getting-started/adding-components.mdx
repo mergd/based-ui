@@ -1,0 +1,252 @@
+---
+title: Adding Components
+description: A guide on how to add new components to the library.
+---
+
+This guide will walk you through the process of adding new components to the based-ui component library.
+
+## Overview
+
+Adding a new component involves several steps:
+
+1. Create the component wrapper in `src/components/ui/`
+2. Create demo components in `src/components/demos/`
+3. Add the component to the kitchen sink page
+4. Create MDX documentation
+5. Update registry files
+
+## Step 1: Create the Component Wrapper
+
+Create a new file in `src/components/ui/` that wraps the base-ui component with custom styling and exports.
+
+### Example: `src/components/ui/example-component.tsx`
+
+```tsx
+"use client"
+
+import * as React from "react"
+import { ExampleComponent } from "@base-ui-components/react/example-component"
+import { cn } from "@/lib/utils"
+
+const ExampleComponentRoot = React.forwardRef<
+  React.ElementRef<typeof ExampleComponent.Root>,
+  React.ComponentPropsWithoutRef<typeof ExampleComponent.Root>
+>(({ className, ...props }, ref) => (
+  <ExampleComponent.Root
+    ref={ref}
+    className={cn(
+      "example-base-styles-here",
+      className
+    )}
+    {...props}
+  />
+))
+ExampleComponentRoot.displayName = ExampleComponent.Root.displayName
+
+// Export all parts
+export {
+  ExampleComponentRoot,
+  // ... other parts
+}
+```
+
+### Key Guidelines:
+
+- Use `"use client"` directive for client components
+- Follow the naming convention: `ExampleComponentPartName`
+- Use `React.forwardRef` for all components
+- Apply consistent styling with the `cn()` utility
+- Set proper `displayName` for better debugging
+
+## Step 2: Create Demo Components
+
+Create demo files in `src/components/demos/example-component/`:
+
+### Basic Demo: `example-component-demo.tsx`
+
+```tsx
+import {
+  ExampleComponentRoot,
+  // ... other parts
+} from "@/components/ui/example-component"
+
+export default function ExampleComponentDemo() {
+  return (
+    <ExampleComponentRoot>
+      {/* Demo content */}
+    </ExampleComponentRoot>
+  )
+}
+```
+
+### Additional Demos
+
+Create additional demo files showing different variants and use cases:
+
+- `example-component-variants.tsx`
+- `example-component-sizes.tsx`
+- `example-component-disabled.tsx`
+
+## Step 3: Add to Kitchen Sink
+
+Update `src/app/kitchen-sink/page.tsx`:
+
+```tsx
+// Add import
+import ExampleComponentDemo from "@/components/demos/example-component/example-component-demo"
+
+// Add to the grid
+<DemoWrapper title="Example Component">
+  <ExampleComponentDemo />
+</DemoWrapper>
+```
+
+## Step 4: Create Documentation
+
+Create `src/content/components/example-component.mdx`:
+
+```mdx
+---
+title: Example Component
+description: Brief description of what the component does.
+---
+
+Show a preview of your component here using ComponentPreview.
+
+## Installation
+
+<ComponentInstallation name="button" />
+
+## Usage
+
+```tsx
+import {
+  ExampleComponentRoot,
+  // ... other parts
+} from "@/components/ui/example-component"
+```
+
+```tsx
+<ExampleComponentRoot>
+  {/* Usage example */}
+</ExampleComponentRoot>
+```
+
+<ComponentAnatomy>
+```tsx
+import { ExampleComponent } from "@base-ui-components/react/example-component"
+
+<ExampleComponent.Root>
+  <ExampleComponent.Part />
+</ExampleComponent.Root>
+```
+</ComponentAnatomy>
+
+## API Reference
+
+### Root
+
+Description of the root component.
+
+<ComponentSource name="button" />
+
+### Part
+
+Description of other parts.
+```
+
+## Step 5: Update Registry Files
+
+### Add to Navigation
+
+Update `src/config/nav.ts` to include your component in the navigation:
+
+```tsx
+{
+  title: "Example Component",
+  href: "/docs/components/example-component",
+}
+```
+
+### Registry Entry
+
+The registry files in `public/r/` and build scripts will automatically generate entries for your component based on the files you create.
+
+## File Structure
+
+Your component should follow this structure:
+
+```
+src/
+├── components/
+│   ├── ui/
+│   │   └── example-component.tsx
+│   └── demos/
+│       └── example-component/
+│           ├── example-component-demo.tsx
+│           ├── example-component-variants.tsx
+│           └── example-component-sizes.tsx
+├── content/
+│   └── components/
+│       └── example-component.mdx
+└── app/
+    └── kitchen-sink/
+        └── page.tsx (updated)
+```
+
+## Best Practices
+
+### Styling
+
+- Use consistent class naming with Tailwind utilities
+- Follow the design system color tokens (`bg-background`, `text-foreground`, etc.)
+- Ensure proper dark mode support
+- Use responsive design principles
+
+### TypeScript
+
+- Properly type all props using `React.ComponentPropsWithoutRef`
+- Use `React.ElementRef` for ref types
+- Extend base component props when appropriate
+
+### Accessibility
+
+- Ensure all interactive elements are keyboard accessible
+- Use proper ARIA attributes
+- Test with screen readers
+- Follow base-ui accessibility guidelines
+
+### Documentation
+
+- Include clear usage examples
+- Document all props and variants
+- Show common use cases
+- Include accessibility notes
+
+## Testing
+
+Before submitting your component:
+
+1. Test in the kitchen sink page
+2. Verify all variants work correctly
+3. Test keyboard navigation
+4. Check dark mode appearance
+5. Ensure responsive behavior
+6. Test with screen readers
+
+## Build and Validation
+
+Run these commands to ensure everything works:
+
+```bash
+# Check for type errors
+pnpm typecheck
+
+# Run linting
+pnpm lint
+
+# Build the project
+pnpm build
+```
+
+Your component is now ready to be used in the library!

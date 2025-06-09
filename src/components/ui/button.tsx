@@ -80,12 +80,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 			disabled: disabled,
 		}
 
-		const { renderElement } = useRender({
+		const renderResult = useRender({
 			render,
 			props: mergeProps<"button">(defaultProps, props, { children }),
 		})
 
-		return renderElement()
+		return renderResult
 	}
 )
 Button.displayName = "Button"

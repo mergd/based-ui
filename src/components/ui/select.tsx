@@ -8,7 +8,7 @@ const SelectGroup = BaseSelect.Group
 SelectGroup.displayName = "SelectGroup"
 
 const Select = <T,>(props: BaseSelect.Root.Props<T>) => (
-	<BaseSelect.Root alignItemToTrigger={false} modal={false} {...props} />
+	<BaseSelect.Root modal={false} {...props} />
 )
 Select.displayName = "Select"
 

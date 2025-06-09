@@ -39,6 +39,7 @@ import InputOTPDemo from "@/components/demos/input-otp/input-otp-demo"
 import InputDemo from "@/components/demos/input/input-demo"
 import KbdDemo from "@/components/demos/kbd/kbd-demo"
 import MenubarDemo from "@/components/demos/menubar/menubar-demo"
+import NavigationMenuDemo from "@/components/demos/navigation-menu/navigation-menu-demo"
 import PopoverDemo from "@/components/demos/popover/popover-demo"
 import ProgressDemo from "@/components/demos/progress/progress-demo"
 import RadioGroupDemo from "@/components/demos/radio-group/radio-group-demo"
@@ -181,6 +182,9 @@ const KitchenSinkPage = () => {
 				</DemoWrapper>
 				<DemoWrapper title="Menubar">
 					<MenubarDemo />
+				</DemoWrapper>
+				<DemoWrapper title="Navigation Menu">
+					<NavigationMenuDemo />
 				</DemoWrapper>
 				<DemoWrapper title="Popover">
 					<PopoverDemo />

@@ -355,6 +355,16 @@ export const contentRegistry: ContentRegistry = {
 			{ label: "Menubar", path: "/docs/components/menubar" },
 		],
 	},
+	"components/navigation-menu": {
+		type: "file",
+		path: "components/navigation-menu.mdx",
+		meta: { title: "", description: "" },
+		urlPath: "components/navigation-menu",
+		breadcrumbs: [
+			{ label: "Components", path: "/docs/components" },
+			{ label: "Navigation Menu", path: "/docs/components/navigation-menu" },
+		],
+	},
 	"components/popover": {
 		type: "file",
 		path: "components/popover.mdx",
@@ -601,6 +611,19 @@ export const contentRegistry: ContentRegistry = {
 		breadcrumbs: [
 			{ label: "Components", path: "/docs/components" },
 			{ label: "Tooltip", path: "/docs/components/tooltip" },
+		],
+	},
+	"getting-started/adding-components": {
+		type: "file",
+		path: "getting-started/adding-components.mdx",
+		meta: { title: "", description: "" },
+		urlPath: "getting-started/adding-components",
+		breadcrumbs: [
+			{ label: "Getting Started", path: "/docs/getting-started" },
+			{
+				label: "Adding Components",
+				path: "/docs/getting-started/adding-components",
+			},
 		],
 	},
 	"getting-started/changelog": {

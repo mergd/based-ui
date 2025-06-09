@@ -1,0 +1,125 @@
+---
+title: Navigation Menu
+description: A collection of links for navigating websites or applications.
+---
+
+<ComponentPreview name="navigation-menu-demo" />
+
+## Installation
+
+<ComponentInstallation name="navigation-menu" />
+
+## Usage
+
+```tsx
+import {
+  NavigationMenuRoot,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuTrigger,
+  NavigationMenuContent,
+  NavigationMenuPortal,
+  NavigationMenuPositioner,
+  NavigationMenuPopup,
+  NavigationMenuArrow,
+  NavigationMenuViewport,
+  NavigationMenuLink,
+} from "@/components/ui/navigation-menu"
+```
+
+```tsx
+<NavigationMenuRoot>
+  <NavigationMenuList>
+    <NavigationMenuItem>
+      <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
+      <NavigationMenuContent>
+        <NavigationMenuLink href="/docs">
+          <div>
+            <div>Link Title</div>
+            <p>Link description here.</p>
+          </div>
+        </NavigationMenuLink>
+      </NavigationMenuContent>
+    </NavigationMenuItem>
+  </NavigationMenuList>
+  <NavigationMenuPortal>
+    <NavigationMenuPositioner>
+      <NavigationMenuPopup>
+        <NavigationMenuArrow />
+        <NavigationMenuViewport />
+      </NavigationMenuPopup>
+    </NavigationMenuPositioner>
+  </NavigationMenuPortal>
+</NavigationMenuRoot>
+```
+
+<ComponentAnatomy>
+```tsx
+import { NavigationMenu } from "@base-ui-components/react/navigation-menu"
+
+<NavigationMenu.Root>
+  <NavigationMenu.List>
+    <NavigationMenu.Item>
+      <NavigationMenu.Trigger />
+      <NavigationMenu.Content />
+    </NavigationMenu.Item>
+  </NavigationMenu.List>
+  <NavigationMenu.Portal>
+    <NavigationMenu.Positioner>
+      <NavigationMenu.Popup>
+        <NavigationMenu.Arrow />
+        <NavigationMenu.Viewport />
+      </NavigationMenu.Popup>
+    </NavigationMenu.Positioner>
+  </NavigationMenu.Portal>
+</NavigationMenu.Root>
+```
+</ComponentAnatomy>
+
+## API Reference
+
+### Root
+
+Contains all the parts of a navigation menu.
+
+<ComponentSource name="navigation-menu" />
+
+### List
+
+Contains the top level menu items.
+
+### Item
+
+A top level menu item, contains a trigger with content combination or a standalone link.
+
+### Trigger
+
+The button that toggles the content. By default, the NavigationMenu.Content will position itself in the viewport according to this trigger.
+
+### Content
+
+Contains the content associated with each trigger.
+
+### Link
+
+A navigational link.
+
+### Portal
+
+When used, portals the content part into the body.
+
+### Positioner
+
+Positions the content relative to the trigger.
+
+### Popup
+
+Contains the content when it is open.
+
+### Arrow
+
+An optional arrow element to render alongside the popup. This can be used to help visually link the trigger with the NavigationMenu.Content. Must be rendered inside NavigationMenu.Popup.
+
+### Viewport
+
+The area that contains the content when a trigger is open.

@@ -35,7 +35,7 @@ export default function SelectWithCustomValue() {
 		<div className="w-80">
 			<Select value={selected} onValueChange={setSelected}>
 				<SelectTrigger>
-					<SelectValue>
+					<SelectValue placeholder="Assign to">
 						{() =>
 							selected ? (
 								<div className="flex items-center gap-2">

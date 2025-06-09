@@ -31,9 +31,10 @@ const PreviewCardContent = React.forwardRef<
 		},
 		ref
 	) => (
-		<BasePreviewCard.Portal ref={ref}>
+		<BasePreviewCard.Portal>
 			<BasePreviewCard.Positioner sideOffset={sideOffset} align={align}>
 				<BasePreviewCard.Popup
+					ref={ref}
 					className={cn(
 						"origin-[var(--transform-origin)] rounded-lg bg-popover p-4 text-popover-foreground shadow-sm outline outline-1 -outline-offset-1 outline-border transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:shadow-none",
 						className

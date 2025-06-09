@@ -26,12 +26,10 @@ const Slider = ({
 					<BaseSlider.Indicator className="select-none rounded bg-primary/80" />
 					<BaseSlider.Thumb
 						className="size-4 select-none rounded-full bg-primary outline outline-1 outline-border focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring"
-						inputId="1"
 					/>
 					{isRange && (
 						<BaseSlider.Thumb
 							className="size-4 select-none rounded-full bg-primary outline outline-1 outline-border focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring"
-							inputId="2"
 						/>
 					)}
 				</BaseSlider.Track>

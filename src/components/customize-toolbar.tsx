@@ -164,7 +164,7 @@ export const CustomizeToolbar = ({
 										value={theme.shade}
 									>
 										<SelectTrigger>
-											<SelectValue>
+											<SelectValue placeholder="Select a shade">
 												{() =>
 													theme.shade ? (
 														<ColorItem
@@ -230,7 +230,7 @@ export const CustomizeToolbar = ({
 										value={theme.primaryColor}
 									>
 										<SelectTrigger>
-											<SelectValue>
+											<SelectValue placeholder="Select a primary color">
 												{() =>
 													theme.primaryColor ? (
 														<ColorItem
@@ -280,7 +280,7 @@ export const CustomizeToolbar = ({
 										value={theme.radius}
 									>
 										<SelectTrigger>
-											<SelectValue>
+											<SelectValue placeholder="Select a radius">
 												{() =>
 													typeof theme.radius === "number" ? (
 														<div className="flex items-center gap-2">

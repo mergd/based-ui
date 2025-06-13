@@ -29,10 +29,6 @@ export const navConfig: NavConfig = {
 					href: "/docs/getting-started/introduction",
 				},
 				{
-					title: "Roadmap",
-					href: "/docs/getting-started/roadmap",
-				},
-				{
 					title: "Installation",
 					href: "/docs/getting-started/installation",
 				},
@@ -43,16 +39,6 @@ export const navConfig: NavConfig = {
 				{
 					title: "Dark mode",
 					href: "/docs/getting-started/dark-mode",
-				},
-				{
-					title: "Changelog",
-					href: "/docs/getting-started/changelog",
-				},
-				{
-					title: "Figma",
-					href: "/docs/getting-started/figma",
-					disabled: true,
-					label: "Coming Soon",
 				},
 			],
 		},
